@@ -9,7 +9,7 @@ pip install -r requirements.txt
 
 ## 2) Rodar o scraping
 '''bash
-cd PriceMonitor mercadolivre =>python scraper2.0.py --termo "pneu 175 70 r13 goodyear kelly edge" --max 70 --modo click --dump-html --debug --detalhes
+cd PriceMonitor mercadolivre =>python scraper2.0.py --termo "pneu 175 70 r13 goodyear kelly edge" --max 70 --modo click --dump-html --debug --detalhes, veja os parsers
 '''
 ##Tratar os dados
 '''bash
