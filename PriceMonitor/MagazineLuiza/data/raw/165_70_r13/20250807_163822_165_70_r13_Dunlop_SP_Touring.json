@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 165 70 r13 Dunlop SP Touring",
+  "produtos_encontrados": 29,
+  "promocoes": 29,
+  "preco_medio": 436.89,
+  "tempo_execucao": 263.6,
+  "arquivos": {
+    "json": "data\\raw\\165-70-r13\\pneu-165-70-r13-dunlop-sp-touring_20250807_133818.json"
+  }
+}

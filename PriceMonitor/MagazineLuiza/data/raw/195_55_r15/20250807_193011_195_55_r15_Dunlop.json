@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 195/55R15 Dunlop",
+  "produtos_encontrados": 50,
+  "promocoes": 50,
+  "preco_medio": 537.71,
+  "tempo_execucao": 316.75,
+  "arquivos": {
+    "json": "data\\raw\\195-55-r15\\pneu-19555r15-dunlop_20250807_163007.json"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 185/70R14 Firestone F700",
+  "produtos_encontrados": 15,
+  "promocoes": 15,
+  "preco_medio": 567.07,
+  "tempo_execucao": 142.27,
+  "arquivos": {
+    "json": "data\\raw\\185-70-r14\\pneu-18570r14-firestone-f700_20250807_161423.json"
+  }
+}

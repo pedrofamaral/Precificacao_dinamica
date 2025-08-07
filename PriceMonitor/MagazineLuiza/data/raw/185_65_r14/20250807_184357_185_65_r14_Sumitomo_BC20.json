@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 185/65R14 Sumitomo BC20",
+  "produtos_encontrados": 6,
+  "promocoes": 6,
+  "preco_medio": 439.8,
+  "tempo_execucao": 187.13,
+  "arquivos": {
+    "json": "data\\raw\\185-65-r14\\pneu-18565r14-sumitomo-bc20_20250807_154353.json"
+  }
+}

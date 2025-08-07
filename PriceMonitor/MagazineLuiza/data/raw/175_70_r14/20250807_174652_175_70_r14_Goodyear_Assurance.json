@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 175/70R14 Goodyear Assurance",
+  "produtos_encontrados": 48,
+  "promocoes": 48,
+  "preco_medio": 537.95,
+  "tempo_execucao": 313.31,
+  "arquivos": {
+    "json": "data\\raw\\175-70-r14\\pneu-17570r14-goodyear-assurance_20250807_144648.json"
+  }
+}

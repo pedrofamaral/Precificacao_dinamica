@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 185/60R15 Pirelli P400",
+  "produtos_encontrados": 35,
+  "promocoes": 35,
+  "preco_medio": 560.05,
+  "tempo_execucao": 246.94,
+  "arquivos": {
+    "json": "data\\raw\\185-60-r15\\pneu-18560r15-pirelli-p400_20250807_152149.json"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 185/70R14 Continental PowerContact",
+  "produtos_encontrados": 35,
+  "promocoes": 35,
+  "preco_medio": 565.61,
+  "tempo_execucao": 225.29,
+  "arquivos": {
+    "json": "data\\raw\\185-70-r14\\pneu-18570r14-continental-powercontact_20250807_160707.json"
+  }
+}

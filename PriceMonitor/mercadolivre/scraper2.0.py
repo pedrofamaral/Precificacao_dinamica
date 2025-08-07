@@ -1106,6 +1106,9 @@ def _parse_lista_ceps(arg: Optional[str]) -> List[str]:
     parts = [p.strip() for p in arg.split(",") if p.strip()]
     return parts
 
+def montar_query_flex(item):
+    return f"pneu {item['width']} {item['aspect']} r{item['rim']} {item['brand']} {item['line_model']}"
+
 def imprimir_produtos(produtos: List[Product]):
     print(f"\n{'='*100}")
     print(f"PRODUTOS ENCONTRADOS: {len(produtos)}")
@@ -1182,7 +1185,7 @@ def main():
             logger.info("Executando lote %s itens (slice %s:%s) do arquivo %s", len(subset), i0, i1, args.lote_json)
             total_itens = 0
             for k, item in enumerate(subset, start=i0):
-                termo = item.get("query_strict") or ""
+                termo = montar_query_flex(item)
                 size_regex = item.get("size_regex")
                 logger.info("(%s) Buscando: %s", k, termo)
                 produtos = scraper.buscar_produtos(
@@ -1224,7 +1227,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-#Problema de CEP

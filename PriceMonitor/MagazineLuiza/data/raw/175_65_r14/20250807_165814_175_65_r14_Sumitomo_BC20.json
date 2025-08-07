@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 175/65R14 Sumitomo BC20",
+  "produtos_encontrados": 12,
+  "promocoes": 12,
+  "preco_medio": 421.06,
+  "tempo_execucao": 192.31,
+  "arquivos": {
+    "json": "data\\raw\\175-65-r14\\pneu-17565r14-sumitomo-bc20_20250807_135809.json"
+  }
+}

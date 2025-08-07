@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 175/65R14 Goodyear Assurance",
+  "produtos_encontrados": 30,
+  "promocoes": 30,
+  "preco_medio": 407.84,
+  "tempo_execucao": 276.65,
+  "arquivos": {
+    "json": "data\\raw\\175-65-r14\\pneu-17565r14-goodyear-assurance_20250807_141533.json"
+  }
+}

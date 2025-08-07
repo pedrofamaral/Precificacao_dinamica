@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 185/60R15 Goodyear Eagle",
+  "produtos_encontrados": 26,
+  "promocoes": 26,
+  "preco_medio": 569.21,
+  "tempo_execucao": 217.09,
+  "arquivos": {
+    "json": "data\\raw\\185-60-r15\\pneu-18560r15-goodyear-eagle_20250807_152531.json"
+  }
+}

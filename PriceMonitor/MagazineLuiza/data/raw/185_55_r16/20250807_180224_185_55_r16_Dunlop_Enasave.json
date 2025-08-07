@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 185/55R16 Dunlop Enasave",
+  "produtos_encontrados": 29,
+  "promocoes": 29,
+  "preco_medio": 702.54,
+  "tempo_execucao": 262.14,
+  "arquivos": {
+    "json": "data\\raw\\185-55-r16\\pneu-18555r16-dunlop-enasave_20250807_150220.json"
+  }
+}

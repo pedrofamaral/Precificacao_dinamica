@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 165/70R14 Goodyear Assurance",
+  "produtos_encontrados": 20,
+  "promocoes": 20,
+  "preco_medio": 511.73,
+  "tempo_execucao": 176.14,
+  "arquivos": {
+    "json": "data\\raw\\165-70-r14\\pneu-16570r14-goodyear-assurance_20250807_134941.json"
+  }
+}

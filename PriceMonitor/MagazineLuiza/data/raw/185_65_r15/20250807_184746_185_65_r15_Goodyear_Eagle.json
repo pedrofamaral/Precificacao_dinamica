@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 185/65R15 Goodyear Eagle",
+  "produtos_encontrados": 33,
+  "promocoes": 33,
+  "preco_medio": 626.63,
+  "tempo_execucao": 225.51,
+  "arquivos": {
+    "json": "data\\raw\\185-65-r15\\pneu-18565r15-goodyear-eagle_20250807_154742.json"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 195/55R15 Pirelli P400 Evo",
+  "produtos_encontrados": 27,
+  "promocoes": 27,
+  "preco_medio": 541.27,
+  "tempo_execucao": 190.33,
+  "arquivos": {
+    "json": "data\\raw\\195-55-r15\\pneu-19555r15-pirelli-p400-evo_20250807_164301.json"
+  }
+}

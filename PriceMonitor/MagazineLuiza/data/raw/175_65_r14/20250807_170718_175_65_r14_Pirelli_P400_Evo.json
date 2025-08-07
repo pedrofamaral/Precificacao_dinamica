@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 175/65R14 Pirelli P400 Evo",
+  "produtos_encontrados": 36,
+  "promocoes": 36,
+  "preco_medio": 629.0,
+  "tempo_execucao": 285.14,
+  "arquivos": {
+    "json": "data\\raw\\175-65-r14\\pneu-17565r14-pirelli-p400-evo_20250807_140713.json"
+  }
+}

@@ -119,6 +119,10 @@ CONFIG = {
     'OUTPUT_FORMATS': ['json', 'csv', 'sqlite']
 }
 
+VENDEDORES_PALAVRAS_INVALIDAS = [
+    "imperador", "imperatriz", "carli", "imperiodospneuspecas"
+]
+
 RE_PRECO = re.compile(r'[\d.,]+')
 
 def delay_humano(min_delay=2.5, max_delay=5.5):
@@ -135,6 +139,13 @@ def slugify(text: str) -> str:
     text = re.sub(r"[\s/]+", "-", text)
     text = text.strip("-")
     return text[:100] if text else "produto"
+
+def normalizar_termo(termo: str) -> str:
+    termo = termo.replace("/", " ")
+    termo = termo.replace("-", " ")
+    termo = termo.replace("  ", " ")
+    termo = termo.replace(" r ", " r")
+    return termo.strip()
 
 def extrair_medida(termo: str) -> str:
     termo = re.sub(r"[-_/]", " ", termo.lower())
@@ -334,8 +345,8 @@ class ScraperMagalu:
             self.logger.error(f"Erro ao inicializar driver: {e}")
             raise
 
-    def construir_url_busca(self, termo: str, pagina: int = 1, 
-                           filtros: Optional[Dict] = None) -> str:
+    def construir_url_busca(self, termo: str, pagina: int = 1, filtros: Optional[Dict] = None) -> str:
+        termo = normalizar_termo(termo)
         termo_url = termo.strip().replace(" ", "+")
         url = f"{self.base_url}/busca/{termo_url}/?page={pagina}"
         
@@ -398,6 +409,30 @@ class ScraperMagalu:
                     return None
 
             link = card.get_attribute('href')
+            vendedor = ""
+
+            aba_atual = self.driver.current_window_handle
+
+            self.driver.execute_script("window.open(arguments[0], '_blank');", link)
+            self.driver.switch_to.window(self.driver.window_handles[-1])
+
+            try:
+                WebDriverWait(self.driver, 10).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, "div[data-testid='mod-sellerdetails'] label[data-testid='link']"))
+                )
+                vendedor_element = self.driver.find_element(By.CSS_SELECTOR, "div[data-testid='mod-sellerdetails'] label[data-testid='link']")
+                vendedor = vendedor_element.text.strip()
+                self.logger.info(f"Vendedor encontrado: {vendedor}")
+                if any(invalido in vendedor.lower() for invalido in VENDEDORES_PALAVRAS_INVALIDAS):
+                    self.logger.info(f"Produto ignorado: {titulo} (vendedor inválido: {vendedor})")
+                    return None
+                    
+            except Exception as e:
+                vendedor = "f{self.marketplace}"
+            finally:
+                self.driver.close()  
+                self.driver.switch_to.window(aba_atual)  
+
 
             precos_no_texto = [parse_preco(l) for l in linhas if "R$" in l and parse_preco(l)]
             precos_validos = [p for p in precos_no_texto if p >= 100]
@@ -423,7 +458,6 @@ class ScraperMagalu:
 
             frete_gratis = any('grátis' in l.lower() for l in linhas)
 
-            vendedor = card.get_attribute('data-brand') or ""
             if not vendedor:
                 for marca in MARCAS:
                     if marca in titulo.lower():
@@ -527,8 +561,6 @@ class ScraperMagalu:
                         self.driver.quit()
                         self.driver = None
         return produtos
-
-
 
     def buscar_multiplas_paginas(self, termo: str, max_paginas: int = 3, 
                                 max_resultados_total: int = 100) -> List[ProdutoMagalu]:
@@ -682,9 +714,8 @@ def main():
     parser = argparse.ArgumentParser(
         description="Scraper Completo do Magazine Luiza",
         formatter_class=argparse.RawDescriptionHelpFormatter,)
-    
-    parser.add_argument("--termo", required=True, 
-                       help="Termo de busca")
+
+    parser.add_argument("--termo", type=str, help="Termo de busca")
     parser.add_argument("--paginas", type=int, default=3, 
                        help="Número máximo de páginas (padrão: 3)")
     parser.add_argument("--max", type=int, default=50, 
@@ -701,9 +732,87 @@ def main():
                        help="Delay de scroll em segundos (padrão: 1.0)")
     parser.add_argument("--verbose", action='store_true', 
                        help="Modo verbose (mais logs)")
-    
+    parser.add_argument("--lote-json", type=str, 
+                       help="Arquivo JSON com termos de busca em lote (opcional)")
+    parser.add_argument("--idx-from",type=int, default=0,
+                       help="Índice inicial para busca em lote (padrão: 0)")
+    parser.add_argument("--idx-to", type=int, help="Índice final para busca em lote (opcional, padrão: até o final)")
+
     args = parser.parse_args()
-    
+
+    if args.lote_json and not os.path.isfile(args.lote_json):
+        root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        alt_path = os.path.join(root_path, args.lote_json)
+        if os.path.isfile(alt_path):
+            args.lote_json = alt_path
+
+    if args.lote_json:
+        with open(args.lote_json, "r", encoding="utf-8") as f:
+            queries = json.load(f)
+        idx_to = args.idx_to if args.idx_to is not None else len(queries)
+        for idx, item in enumerate(queries[args.idx_from:idx_to], start=args.idx_from):
+            print(f"\n==== Buscando produto {idx}: {item.get('brand')} {item.get('line_model')} {item.get('width')}/{item.get('aspect')}R{item.get('rim')} ====")
+            termo = item.get("query_flex") or item.get("query_strict")
+            scraper = ScraperMagalu(
+                headless=args.headless.lower() == 'true',
+                delay_scroll=args.delay,
+                output_dir=args.output, 
+                termo_busca=termo
+            )
+            try:
+                relatorio = scraper.executar_busca_completa(
+                    termo=termo,
+                    max_paginas=args.paginas,
+                    max_resultados=args.max,
+                    formatos=args.formatos
+                )
+
+                medida = f"{item.get('width', '')}_{item.get('aspect', '')}_r{item.get('rim', '')}"
+                marca = item.get('brand', '').replace(" ", "_")
+                modelo = item.get('line_model', '').replace(" ", "_")
+                nome_produto = f"{marca}_{modelo}".strip("_")
+                timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+                output_dir = os.path.join(args.output, "raw", medida)
+                os.makedirs(output_dir, exist_ok=True)
+
+                for formato in args.formatos:
+                    nome_arquivo = f"{timestamp}_{medida}_{nome_produto}.{formato}"
+                    caminho_arquivo = os.path.join(output_dir, nome_arquivo)
+
+                    if formato == "json":
+                        with open(caminho_arquivo, "w", encoding="utf-8") as fjson:
+                            json.dump(relatorio, fjson, ensure_ascii=False, indent=2)
+                    elif formato == "csv":
+                        import csv
+                        produtos = relatorio.get("produtos", [])
+                        if produtos:
+                            with open(caminho_arquivo, "w", encoding="utf-8", newline="") as fcsv:
+                                writer = csv.DictWriter(fcsv, fieldnames=produtos[0].keys())
+                                writer.writeheader()
+                                writer.writerows(produtos)
+                    elif formato == "sqlite":
+                        import sqlite3
+                        produtos = relatorio.get("produtos", [])
+                        if produtos:
+                            conn = sqlite3.connect(caminho_arquivo)
+                            cur = conn.cursor()
+                            keys = produtos[0].keys()
+                            columns = ', '.join([f"{k} TEXT" for k in keys])
+                            cur.execute(f"CREATE TABLE IF NOT EXISTS produtos ({columns})")
+                            for prod in produtos:
+                                values = tuple(str(prod[k]) for k in keys)
+                                placeholders = ', '.join('?' for _ in keys)
+                                cur.execute(f"INSERT INTO produtos VALUES ({placeholders})", values)
+                            conn.commit()
+                            conn.close()
+                    print(f"Arquivo salvo: {caminho_arquivo}")
+
+            except Exception as e:
+                print(f"Erro no produto {idx}: {e}")
+            finally:
+                scraper.fechar()
+        exit(0)
+
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
     
