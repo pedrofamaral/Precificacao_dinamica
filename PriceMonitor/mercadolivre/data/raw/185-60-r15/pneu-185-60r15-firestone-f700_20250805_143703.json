@@ -1,0 +1,25 @@
+[
+  {
+    "titulo": "Pneu 185/60r15 Ecopia Ep150 84h H",
+    "link": "https://www.mercadolivre.com.br/pneu-18560r15-ecopia-ep150-84h/up/MLBU1090450037",
+    "preco": 641.0,
+    "query_strict": "pneu 185/60R15 Firestone F700",
+    "size_norm": "185/60R15",
+    "brand_expected": "Firestone",
+    "line_expected": "F700",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "",
+    "data_coleta": "2025-08-05 17:36:44",
+    "preco_original": null,
+    "preco_desconto": 641.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -1,0 +1,1491 @@
+[
+
+  {
+    "width": "165",
+    "aspect": "70",
+    "rim": "13",
+    "size_norm": "165/70R13",
+    "brand": "Dunlop",
+    "line_model": "SP Touring",
+    "original_label": "Dunlop Sp touring",
+    "query_strict": "pneu 165/70R13 Dunlop SP Touring",
+    "keywords": [
+      "165/70R13",
+      "165 70 R13",
+      "165 70 r13",
+      "Dunlop",
+      "SP Touring"
+    ],
+    "size_regex": "\\b165[/\\s-]?70\\s*R?\\s*13\\b"
+  },
+  {
+    "width": "165",
+    "aspect": "70",
+    "rim": "13",
+    "size_norm": "165/70R13",
+    "brand": "Goodyear",
+    "line_model": "Kelly Edge",
+    "original_label": "Goodyear Kelly edge",
+    "query_strict": "pneu 165/70R13 Goodyear Kelly Edge",
+    "keywords": [
+      "165/70R13",
+      "165 70 R13",
+      "165 70 r13",
+      "Goodyear",
+      "Kelly Edge"
+    ],
+    "size_regex": "\\b165[/\\s-]?70\\s*R?\\s*13\\b"
+  },
+  {
+    "width": "165",
+    "aspect": "70",
+    "rim": "13",
+    "size_norm": "165/70R13",
+    "brand": "Goodyear",
+    "line_model": "Assurance",
+    "original_label": "Goodyear assurance",
+    "query_strict": "pneu 165/70R13 Goodyear Assurance",
+    "keywords": [
+      "165/70R13",
+      "165 70 R13",
+      "165 70 r13",
+      "Goodyear",
+      "Assurance"
+    ],
+    "size_regex": "\\b165[/\\s-]?70\\s*R?\\s*13\\b"
+  },
+  {
+    "width": "165",
+    "aspect": "70",
+    "rim": "14",
+    "size_norm": "165/70R14",
+    "brand": "Goodyear",
+    "line_model": "Assurance",
+    "original_label": "Goodyear assurance",
+    "query_strict": "pneu 165/70R14 Goodyear Assurance",
+    "keywords": [
+      "165/70R14",
+      "165 70 R14",
+      "Goodyear",
+      "Assurance"
+    ],
+    "size_regex": "\\b165[/\\s-]?70\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "65",
+    "rim": "14",
+    "size_norm": "175/65R14",
+    "brand": "Dunlop",
+    "line_model": "SP Touring",
+    "original_label": "Dunlop sp touring",
+    "query_strict": "pneu 175/65R14 Dunlop SP Touring",
+    "keywords": [
+      "175/65R14",
+      "175 65 R14",
+      "Dunlop",
+      "SP Touring"
+    ],
+    "size_regex": "\\b175[/\\s-]?65\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "65",
+    "rim": "14",
+    "size_norm": "175/65R14",
+    "brand": "Sumitomo",
+    "line_model": "BC20",
+    "original_label": "Sumitomo BC20",
+    "query_strict": "pneu 175/65R14 Sumitomo BC20",
+    "keywords": [
+      "175/65R14",
+      "175 65 R14",
+      "Sumitomo",
+      "BC20"
+    ],
+    "size_regex": "\\b175[/\\s-]?65\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "65",
+    "rim": "14",
+    "size_norm": "175/65R14",
+    "brand": "Goodyear",
+    "line_model": "Direction",
+    "original_label": "Goodyear Direction",
+    "query_strict": "pneu 175/65R14 Goodyear Direction",
+    "keywords": [
+      "175/65R14",
+      "175 65 R14",
+      "Goodyear",
+      "Direction"
+    ],
+    "size_regex": "\\b175[/\\s-]?65\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "65",
+    "rim": "14",
+    "size_norm": "175/65R14",
+    "brand": "Pirelli",
+    "line_model": "P400 Evo",
+    "original_label": "pirelli p400 evo",
+    "query_strict": "pneu 175/65R14 Pirelli P400 Evo",
+    "keywords": [
+      "175/65R14",
+      "175 65 R14",
+      "Pirelli",
+      "P400 Evo"
+    ],
+    "size_regex": "\\b175[/\\s-]?65\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "65",
+    "rim": "14",
+    "size_norm": "175/65R14",
+    "brand": "Goodyear",
+    "line_model": "Kelly Edge",
+    "original_label": "Goodyear Kelly edge",
+    "query_strict": "pneu 175/65R14 Goodyear Kelly Edge",
+    "keywords": [
+      "175/65R14",
+      "175 65 R14",
+      "Goodyear",
+      "Kelly Edge"
+    ],
+    "size_regex": "\\b175[/\\s-]?65\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "65",
+    "rim": "14",
+    "size_norm": "175/65R14",
+    "brand": "Goodyear",
+    "line_model": "Assurance",
+    "original_label": "Goodyear Assurance",
+    "query_strict": "pneu 175/65R14 Goodyear Assurance",
+    "keywords": [
+      "175/65R14",
+      "175 65 R14",
+      "Goodyear",
+      "Assurance"
+    ],
+    "size_regex": "\\b175[/\\s-]?65\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "175/65R15",
+    "brand": "Goodyear",
+    "line_model": "Kelly Edge",
+    "original_label": "Goodyear Kelly edge",
+    "query_strict": "pneu 175/65R15 Goodyear Kelly Edge",
+    "keywords": [
+      "175/65R15",
+      "175 65 R15",
+      "Goodyear",
+      "Kelly Edge"
+    ],
+    "size_regex": "\\b175[/\\s-]?65\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "70",
+    "rim": "13",
+    "size_norm": "175/70R13",
+    "brand": "Formula",
+    "line_model": "Energy",
+    "original_label": "Formula energy",
+    "query_strict": "pneu 175/70R13 Formula Energy",
+    "keywords": [
+      "175/70R13",
+      "175 70 R13",
+      "Formula",
+      "Energy"
+    ],
+    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*13\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "70",
+    "rim": "13",
+    "size_norm": "175/70R13",
+    "brand": "Dunlop",
+    "line_model": "SP Touring",
+    "original_label": "Dunlop sp touring",
+    "query_strict": "pneu 175/70R13 Dunlop SP Touring",
+    "keywords": [
+      "175/70R13",
+      "175 70 R13",
+      "Dunlop",
+      "SP Touring"
+    ],
+    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*13\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "70",
+    "rim": "13",
+    "size_norm": "175/70R13",
+    "brand": "Goodyear",
+    "line_model": "Assurance",
+    "original_label": "Goodyear Assurance",
+    "query_strict": "pneu 175/70R13 Goodyear Assurance",
+    "keywords": [
+      "175/70R13",
+      "175 70 R13",
+      "Goodyear",
+      "Assurance"
+    ],
+    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*13\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "70",
+    "rim": "13",
+    "size_norm": "175/70R13",
+    "brand": "Goodyear",
+    "line_model": "Kelly Edge",
+    "original_label": "Goodyear Kelly edge",
+    "query_strict": "pneu 175/70R13 Goodyear Kelly Edge",
+    "keywords": [
+      "175/70R13",
+      "175 70 R13",
+      "Goodyear",
+      "Kelly Edge"
+    ],
+    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*13\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "70",
+    "rim": "14",
+    "size_norm": "175/70R14",
+    "brand": "Pirelli",
+    "line_model": "P400 Evo",
+    "original_label": "Pirelli p400 evo",
+    "query_strict": "pneu 175/70R14 Pirelli P400 Evo",
+    "keywords": [
+      "175/70R14",
+      "175 70 R14",
+      "Pirelli",
+      "P400 Evo"
+    ],
+    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "70",
+    "rim": "14",
+    "size_norm": "175/70R14",
+    "brand": "Dunlop",
+    "line_model": "Grandtrek",
+    "original_label": "Dunlop Grandtrek",
+    "query_strict": "pneu 175/70R14 Dunlop Grandtrek",
+    "keywords": [
+      "175/70R14",
+      "175 70 R14",
+      "Dunlop",
+      "Grandtrek"
+    ],
+    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "70",
+    "rim": "14",
+    "size_norm": "175/70R14",
+    "brand": "Goodyear",
+    "line_model": "Assurance",
+    "original_label": "Goodyear Assurance",
+    "query_strict": "pneu 175/70R14 Goodyear Assurance",
+    "keywords": [
+      "175/70R14",
+      "175 70 R14",
+      "Goodyear",
+      "Assurance"
+    ],
+    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "70",
+    "rim": "14",
+    "size_norm": "175/70R14",
+    "brand": "Dunlop",
+    "line_model": "SP Touring",
+    "original_label": "Dunlop sp touring",
+    "query_strict": "pneu 175/70R14 Dunlop SP Touring",
+    "keywords": [
+      "175/70R14",
+      "175 70 R14",
+      "Dunlop",
+      "SP Touring"
+    ],
+    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "175",
+    "aspect": "70",
+    "rim": "14",
+    "size_norm": "175/70R14",
+    "brand": "Goodyear",
+    "line_model": "Kelly Edge SUV",
+    "original_label": "Goodyear Kelly edge Suv",
+    "query_strict": "pneu 175/70R14 Goodyear Kelly Edge SUV",
+    "keywords": [
+      "175/70R14",
+      "175 70 R14",
+      "Goodyear",
+      "Kelly Edge SUV"
+    ],
+    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "185/55R16",
+    "brand": "Goodyear",
+    "line_model": "Eagle",
+    "original_label": "Goodyear eagle",
+    "query_strict": "pneu 185/55R16 Goodyear Eagle",
+    "keywords": [
+      "185/55R16",
+      "185 55 R16",
+      "Goodyear",
+      "Eagle"
+    ],
+    "size_regex": "\\b185[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "185/55R16",
+    "brand": "Dunlop",
+    "line_model": "Enasave",
+    "original_label": "Dunlop enasave",
+    "query_strict": "pneu 185/55R16 Dunlop Enasave",
+    "keywords": [
+      "185/55R16",
+      "185 55 R16",
+      "Dunlop",
+      "Enasave"
+    ],
+    "size_regex": "\\b185[/\\s-]?55\\s*R?\\s*16\\b"
+  }
+
+,
+  {
+    "width": "185",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "185/55R16",
+    "brand": "Dunlop",
+    "line_model": "FM800",
+    "original_label": "Dunlop fm800",
+    "query_strict": "pneu 185/55R16 Dunlop FM800",
+    "keywords": [
+      "185/55R16",
+      "185 55 R16",
+      "Dunlop",
+      "FM800"
+    ],
+    "size_regex": "\\b185[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "60",
+    "rim": "14",
+    "size_norm": "185/60R14",
+    "brand": "Dunlop",
+    "line_model": "LM704",
+    "original_label": "Dunlop lm704",
+    "query_strict": "pneu 185/60R14 Dunlop LM704",
+    "keywords": [
+      "185/60R14",
+      "185 60 R14",
+      "Dunlop",
+      "LM704"
+    ],
+    "size_regex": "\\b185[/\\s-]?60\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "185/60R15",
+    "brand": "Michelin",
+    "line_model": "Primacy 4",
+    "original_label": "Michelin primacy 4",
+    "query_strict": "pneu 185/60R15 Michelin Primacy 4",
+    "keywords": [
+      "185/60R15",
+      "185 60 R15",
+      "Michelin",
+      "Primacy 4"
+    ],
+    "size_regex": "\\b185[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "185/60R15",
+    "brand": "Firestone",
+    "line_model": "F700",
+    "original_label": "Firestone f700",
+    "query_strict": "pneu 185/60R15 Firestone F700",
+    "keywords": [
+      "185/60R15",
+      "185 60 R15",
+      "Firestone",
+      "F700"
+    ],
+    "size_regex": "\\b185[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "185/60R15",
+    "brand": "Dunlop",
+    "line_model": "FM800",
+    "original_label": "Dunlop fm800",
+    "query_strict": "pneu 185/60R15 Dunlop FM800",
+    "keywords": [
+      "185/60R15",
+      "185 60 R15",
+      "Dunlop",
+      "FM800"
+    ],
+    "size_regex": "\\b185[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "185/60R15",
+    "brand": "Pirelli",
+    "line_model": "P400",
+    "original_label": "pirelli p400",
+    "query_strict": "pneu 185/60R15 Pirelli P400",
+    "keywords": [
+      "185/60R15",
+      "185 60 R15",
+      "Pirelli",
+      "P400"
+    ],
+    "size_regex": "\\b185[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "185/60R15",
+    "brand": "Goodyear",
+    "line_model": "Eagle",
+    "original_label": "Goodyear eagle",
+    "query_strict": "pneu 185/60R15 Goodyear Eagle",
+    "keywords": [
+      "185/60R15",
+      "185 60 R15",
+      "Goodyear",
+      "Eagle"
+    ],
+    "size_regex": "\\b185[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "185/60R15",
+    "brand": "Pirelli",
+    "line_model": "P400 Evo",
+    "original_label": "Pirelli p400 evo",
+    "query_strict": "pneu 185/60R15 Pirelli P400 Evo",
+    "keywords": [
+      "185/60R15",
+      "185 60 R15",
+      "Pirelli",
+      "P400 Evo"
+    ],
+    "size_regex": "\\b185[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "65",
+    "rim": "14",
+    "size_norm": "185/65R14",
+    "brand": "Goodyear",
+    "line_model": "Assurance",
+    "original_label": "Goodyear assurance",
+    "query_strict": "pneu 185/65R14 Goodyear Assurance",
+    "keywords": [
+      "185/65R14",
+      "185 65 R14",
+      "Goodyear",
+      "Assurance"
+    ],
+    "size_regex": "\\b185[/\\s-]?65\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "65",
+    "rim": "14",
+    "size_norm": "185/65R14",
+    "brand": "Goodyear",
+    "line_model": "Kelly",
+    "original_label": "Goodyear kelly",
+    "query_strict": "pneu 185/65R14 Goodyear Kelly",
+    "keywords": [
+      "185/65R14",
+      "185 65 R14",
+      "Goodyear",
+      "Kelly"
+    ],
+    "size_regex": "\\b185[/\\s-]?65\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "65",
+    "rim": "14",
+    "size_norm": "185/65R14",
+    "brand": "Dunlop",
+    "line_model": "SP Touring",
+    "original_label": "Dunlop sp touring",
+    "query_strict": "pneu 185/65R14 Dunlop SP Touring",
+    "keywords": [
+      "185/65R14",
+      "185 65 R14",
+      "Dunlop",
+      "SP Touring"
+    ],
+    "size_regex": "\\b185[/\\s-]?65\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "65",
+    "rim": "14",
+    "size_norm": "185/65R14",
+    "brand": "Sumitomo",
+    "line_model": "BC20",
+    "original_label": "Sumitomo bc20",
+    "query_strict": "pneu 185/65R14 Sumitomo BC20",
+    "keywords": [
+      "185/65R14",
+      "185 65 R14",
+      "Sumitomo",
+      "BC20"
+    ],
+    "size_regex": "\\b185[/\\s-]?65\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "185/65R15",
+    "brand": "Goodyear",
+    "line_model": "Eagle",
+    "original_label": "Goodyear eagle",
+    "query_strict": "pneu 185/65R15 Goodyear Eagle",
+    "keywords": [
+      "185/65R15",
+      "185 65 R15",
+      "Goodyear",
+      "Eagle"
+    ],
+    "size_regex": "\\b185[/\\s-]?65\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "185/65R15",
+    "brand": "Michelin",
+    "line_model": "Energy",
+    "original_label": "Michelin energy",
+    "query_strict": "pneu 185/65R15 Michelin Energy",
+    "keywords": [
+      "185/65R15",
+      "185 65 R15",
+      "Michelin",
+      "Energy"
+    ],
+    "size_regex": "\\b185[/\\s-]?65\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "185/65R15",
+    "brand": "Dunlop",
+    "line_model": "FM800",
+    "original_label": "Dunlop fm800",
+    "query_strict": "pneu 185/65R15 Dunlop FM800",
+    "keywords": [
+      "185/65R15",
+      "185 65 R15",
+      "Dunlop",
+      "FM800"
+    ],
+    "size_regex": "\\b185[/\\s-]?65\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "70",
+    "rim": "13",
+    "size_norm": "185/70R13",
+    "brand": "Dunlop",
+    "line_model": "Touring",
+    "original_label": "Dunlop touring",
+    "query_strict": "pneu 185/70R13 Dunlop Touring",
+    "keywords": [
+      "185/70R13",
+      "185 70 R13",
+      "Dunlop",
+      "Touring"
+    ],
+    "size_regex": "\\b185[/\\s-]?70\\s*R?\\s*13\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "70",
+    "rim": "14",
+    "size_norm": "185/70R14",
+    "brand": "Goodyear",
+    "line_model": "Assurance",
+    "original_label": "Goodyear assurance",
+    "query_strict": "pneu 185/70R14 Goodyear Assurance",
+    "keywords": [
+      "185/70R14",
+      "185 70 R14",
+      "Goodyear",
+      "Assurance"
+    ],
+    "size_regex": "\\b185[/\\s-]?70\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "70",
+    "rim": "14",
+    "size_norm": "185/70R14",
+    "brand": "Goodyear",
+    "line_model": "Kelly",
+    "original_label": "Goodyear kelly",
+    "query_strict": "pneu 185/70R14 Goodyear Kelly",
+    "keywords": [
+      "185/70R14",
+      "185 70 R14",
+      "Goodyear",
+      "Kelly"
+    ],
+    "size_regex": "\\b185[/\\s-]?70\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "70",
+    "rim": "14",
+    "size_norm": "185/70R14",
+    "brand": "Continental",
+    "line_model": "PowerContact",
+    "original_label": "Continental powerontact",
+    "query_strict": "pneu 185/70R14 Continental PowerContact",
+    "keywords": [
+      "185/70R14",
+      "185 70 R14",
+      "Continental",
+      "PowerContact"
+    ],
+    "size_regex": "\\b185[/\\s-]?70\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "70",
+    "rim": "14",
+    "size_norm": "185/70R14",
+    "brand": "Dunlop",
+    "line_model": "SP Touring",
+    "original_label": "Dunlop sp touring",
+    "query_strict": "pneu 185/70R14 Dunlop SP Touring",
+    "keywords": [
+      "185/70R14",
+      "185 70 R14",
+      "Dunlop",
+      "SP Touring"
+    ],
+    "size_regex": "\\b185[/\\s-]?70\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "185",
+    "aspect": "70",
+    "rim": "14",
+    "size_norm": "185/70R14",
+    "brand": "Firestone",
+    "line_model": "F700",
+    "original_label": "Firestone f700",
+    "query_strict": "pneu 185/70R14 Firestone F700",
+    "keywords": [
+      "185/70R14",
+      "185 70 R14",
+      "Firestone",
+      "F700"
+    ],
+    "size_regex": "\\b185[/\\s-]?70\\s*R?\\s*14\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "50",
+    "rim": "16",
+    "size_norm": "195/50R16",
+    "brand": "Dunlop",
+    "line_model": "Direzza",
+    "original_label": "Dunlop direzza",
+    "query_strict": "pneu 195/50R16 Dunlop Direzza",
+    "keywords": [
+      "195/50R16",
+      "195 50 R16",
+      "Dunlop",
+      "Direzza"
+    ],
+    "size_regex": "\\b195[/\\s-]?50\\s*R?\\s*16\\b"
+  }
+
+,
+  {
+    "width": "195",
+    "aspect": "50",
+    "rim": "16",
+    "size_norm": "195/50R16",
+    "brand": "Goodyear",
+    "line_model": "Kelly",
+    "original_label": "Goodyear kelly",
+    "query_strict": "pneu 195/50R16 Goodyear Kelly",
+    "keywords": [
+      "195/50R16",
+      "195 50 R16",
+      "Goodyear",
+      "Kelly"
+    ],
+    "size_regex": "\\b195[/\\s-]?50\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "55",
+    "rim": "15",
+    "size_norm": "195/55R15",
+    "brand": "Goodyear",
+    "line_model": "Eagle",
+    "original_label": "Goodyear eagle",
+    "query_strict": "pneu 195/55R15 Goodyear Eagle",
+    "keywords": [
+      "195/55R15",
+      "195 55 R15",
+      "Goodyear",
+      "Eagle"
+    ],
+    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "55",
+    "rim": "15",
+    "size_norm": "195/55R15",
+    "brand": "Goodyear",
+    "line_model": "EfficientGrip",
+    "original_label": "Goodyear efficientgrip",
+    "query_strict": "pneu 195/55R15 Goodyear EfficientGrip",
+    "keywords": [
+      "195/55R15",
+      "195 55 R15",
+      "Goodyear",
+      "EfficientGrip"
+    ],
+    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "55",
+    "rim": "15",
+    "size_norm": "195/55R15",
+    "brand": "Dunlop",
+    "line_model": "",
+    "original_label": "Dunlop",
+    "query_strict": "pneu 195/55R15 Dunlop",
+    "keywords": [
+      "195/55R15",
+      "195 55 R15",
+      "Dunlop"
+    ],
+    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "55",
+    "rim": "15",
+    "size_norm": "195/55R15",
+    "brand": "Dunlop",
+    "line_model": "FM800",
+    "original_label": "fm800",
+    "query_strict": "pneu 195/55R15 Dunlop FM800",
+    "keywords": [
+      "195/55R15",
+      "195 55 R15",
+      "Dunlop",
+      "FM800"
+    ],
+    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "55",
+    "rim": "15",
+    "size_norm": "195/55R15",
+    "brand": "Bridgestone",
+    "line_model": "Ecopia",
+    "original_label": "Bridgestone ecopia",
+    "query_strict": "pneu 195/55R15 Bridgestone Ecopia",
+    "keywords": [
+      "195/55R15",
+      "195 55 R15",
+      "Bridgestone",
+      "Ecopia"
+    ],
+    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "55",
+    "rim": "15",
+    "size_norm": "195/55R15",
+    "brand": "Pirelli",
+    "line_model": "P400 Evo",
+    "original_label": "Pirelli p400 evo",
+    "query_strict": "pneu 195/55R15 Pirelli P400 Evo",
+    "keywords": [
+      "195/55R15",
+      "195 55 R15",
+      "Pirelli",
+      "P400 Evo"
+    ],
+    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "195/55R16",
+    "brand": "Falken",
+    "line_model": "Ziex",
+    "original_label": "Falken ziex",
+    "query_strict": "pneu 195/55R16 Falken Ziex",
+    "keywords": [
+      "195/55R16",
+      "195 55 R16",
+      "Falken",
+      "Ziex"
+    ],
+    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "195/55R16",
+    "brand": "Michelin",
+    "line_model": "Primacy",
+    "original_label": "Michelin primacy",
+    "query_strict": "pneu 195/55R16 Michelin Primacy",
+    "keywords": [
+      "195/55R16",
+      "195 55 R16",
+      "Michelin",
+      "Primacy"
+    ],
+    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "195/55R16",
+    "brand": "Continental",
+    "line_model": "PowerContact",
+    "original_label": "Continental powercontact",
+    "query_strict": "pneu 195/55R16 Continental PowerContact",
+    "keywords": [
+      "195/55R16",
+      "195 55 R16",
+      "Continental",
+      "PowerContact"
+    ],
+    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "195/55R16",
+    "brand": "Dunlop",
+    "line_model": "FM800",
+    "original_label": "Dunlop fm800",
+    "query_strict": "pneu 195/55R16 Dunlop FM800",
+    "keywords": [
+      "195/55R16",
+      "195 55 R16",
+      "Dunlop",
+      "FM800"
+    ],
+    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "195/55R16",
+    "brand": "Goodyear",
+    "line_model": "Eagle",
+    "original_label": "Goodyear eagle",
+    "query_strict": "pneu 195/55R16 Goodyear Eagle",
+    "keywords": [
+      "195/55R16",
+      "195 55 R16",
+      "Goodyear",
+      "Eagle"
+    ],
+    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "195/60R15",
+    "brand": "Continental",
+    "line_model": "PowerContact",
+    "original_label": "Continental power contact",
+    "query_strict": "pneu 195/60R15 Continental PowerContact",
+    "keywords": [
+      "195/60R15",
+      "195 60 R15",
+      "Continental",
+      "PowerContact"
+    ],
+    "size_regex": "\\b195[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "195/60R15",
+    "brand": "Goodyear",
+    "line_model": "Kelly",
+    "original_label": "Goodyear kelly",
+    "query_strict": "pneu 195/60R15 Goodyear Kelly",
+    "keywords": [
+      "195/60R15",
+      "195 60 R15",
+      "Goodyear",
+      "Kelly"
+    ],
+    "size_regex": "\\b195[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "195/60R15",
+    "brand": "Dunlop",
+    "line_model": "FM800",
+    "original_label": "Dunlop fm800",
+    "query_strict": "pneu 195/60R15 Dunlop FM800",
+    "keywords": [
+      "195/60R15",
+      "195 60 R15",
+      "Dunlop",
+      "FM800"
+    ],
+    "size_regex": "\\b195[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "195/60R15",
+    "brand": "Michelin",
+    "line_model": "Energy XM2",
+    "original_label": "Michelin energy xm2",
+    "query_strict": "pneu 195/60R15 Michelin Energy XM2",
+    "keywords": [
+      "195/60R15",
+      "195 60 R15",
+      "Michelin",
+      "Energy XM2"
+    ],
+    "size_regex": "\\b195[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "195/60R15",
+    "brand": "Goodyear",
+    "line_model": "EfficientGrip",
+    "original_label": "Goodyear efficientgrip",
+    "query_strict": "pneu 195/60R15 Goodyear EfficientGrip",
+    "keywords": [
+      "195/60R15",
+      "195 60 R15",
+      "Goodyear",
+      "EfficientGrip"
+    ],
+    "size_regex": "\\b195[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "195/65R15",
+    "brand": "Dunlop",
+    "line_model": "FM800",
+    "original_label": "Dunlop fm800",
+    "query_strict": "pneu 195/65R15 Dunlop FM800",
+    "keywords": [
+      "195/65R15",
+      "195 65 R15",
+      "Dunlop",
+      "FM800"
+    ],
+    "size_regex": "\\b195[/\\s-]?65\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "195/65R15",
+    "brand": "Continental",
+    "line_model": "PowerContact",
+    "original_label": "Continental powercontact",
+    "query_strict": "pneu 195/65R15 Continental PowerContact",
+    "keywords": [
+      "195/65R15",
+      "195 65 R15",
+      "Continental",
+      "PowerContact"
+    ],
+    "size_regex": "\\b195[/\\s-]?65\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "195/65R15",
+    "brand": "Michelin",
+    "line_model": "Primacy",
+    "original_label": "Michelin primacy",
+    "query_strict": "pneu 195/65R15 Michelin Primacy",
+    "keywords": [
+      "195/65R15",
+      "195 65 R15",
+      "Michelin",
+      "Primacy"
+    ],
+    "size_regex": "\\b195[/\\s-]?65\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "195/65R15",
+    "brand": "Goodyear",
+    "line_model": "Eagle",
+    "original_label": "Goodyear eagle",
+    "query_strict": "pneu 195/65R15 Goodyear Eagle",
+    "keywords": [
+      "195/65R15",
+      "195 65 R15",
+      "Goodyear",
+      "Eagle"
+    ],
+    "size_regex": "\\b195[/\\s-]?65\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "195",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "195/65R15",
+    "brand": "Goodyear",
+    "line_model": "EfficientGrip",
+    "original_label": "Goodyear efficientgrip",
+    "query_strict": "pneu 195/65R15 Goodyear EfficientGrip",
+    "keywords": [
+      "195/65R15",
+      "195 65 R15",
+      "Goodyear",
+      "EfficientGrip"
+    ],
+    "size_regex": "\\b195[/\\s-]?65\\s*R?\\s*15\\b"
+  }
+
+,
+  {
+    "width": "195",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "195/65R15",
+    "brand": "Firestone",
+    "line_model": "F700",
+    "original_label": "Firestone f700",
+    "query_strict": "pneu 195/65R15 Firestone F700",
+    "keywords": [
+      "195/65R15",
+      "195 65 R15",
+      "Firestone",
+      "F700"
+    ],
+    "size_regex": "\\b195[/\\s-]?65\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "40",
+    "rim": "17",
+    "size_norm": "205/40R17",
+    "brand": "Goodyear",
+    "line_model": "Kelly",
+    "original_label": "Goodyear kelly",
+    "query_strict": "pneu 205/40R17 Goodyear Kelly",
+    "keywords": [
+      "205/40R17",
+      "205 40 R17",
+      "Goodyear",
+      "Kelly"
+    ],
+    "size_regex": "\\b205[/\\s-]?40\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "45",
+    "rim": "17",
+    "size_norm": "205/45R17",
+    "brand": "Dunlop",
+    "line_model": "DZ10",
+    "original_label": "Dunlop dz10",
+    "query_strict": "pneu 205/45R17 Dunlop DZ10",
+    "keywords": [
+      "205/45R17",
+      "205 45 R17",
+      "Dunlop",
+      "DZ10"
+    ],
+    "size_regex": "\\b205[/\\s-]?45\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "50",
+    "rim": "17",
+    "size_norm": "205/50R17",
+    "brand": "Goodyear",
+    "line_model": "Eagle",
+    "original_label": "Goodyear eagle",
+    "query_strict": "pneu 205/50R17 Goodyear Eagle",
+    "keywords": [
+      "205/50R17",
+      "205 50 R17",
+      "Goodyear",
+      "Eagle"
+    ],
+    "size_regex": "\\b205[/\\s-]?50\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "50",
+    "rim": "17",
+    "size_norm": "205/50R17",
+    "brand": "Michelin",
+    "line_model": "Primacy",
+    "original_label": "Michelin primacy",
+    "query_strict": "pneu 205/50R17 Michelin Primacy",
+    "keywords": [
+      "205/50R17",
+      "205 50 R17",
+      "Michelin",
+      "Primacy"
+    ],
+    "size_regex": "\\b205[/\\s-]?50\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "50",
+    "rim": "17",
+    "size_norm": "205/50R17",
+    "brand": "Dunlop",
+    "line_model": "FM800",
+    "original_label": "Dunlop fm800",
+    "query_strict": "pneu 205/50R17 Dunlop FM800",
+    "keywords": [
+      "205/50R17",
+      "205 50 R17",
+      "Dunlop",
+      "FM800"
+    ],
+    "size_regex": "\\b205[/\\s-]?50\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "205/55R16",
+    "brand": "Pirelli",
+    "line_model": "P400 Evo",
+    "original_label": "Pirelli p400 evo",
+    "query_strict": "pneu 205/55R16 Pirelli P400 Evo",
+    "keywords": [
+      "205/55R16",
+      "205 55 R16",
+      "Pirelli",
+      "P400 Evo"
+    ],
+    "size_regex": "\\b205[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "205/55R16",
+    "brand": "Michelin",
+    "line_model": "Primacy",
+    "original_label": "Michelin primacy",
+    "query_strict": "pneu 205/55R16 Michelin Primacy",
+    "keywords": [
+      "205/55R16",
+      "205 55 R16",
+      "Michelin",
+      "Primacy"
+    ],
+    "size_regex": "\\b205[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "205/55R16",
+    "brand": "Dunlop",
+    "line_model": "FM800",
+    "original_label": "Dunlop fm800",
+    "query_strict": "pneu 205/55R16 Dunlop FM800",
+    "keywords": [
+      "205/55R16",
+      "205 55 R16",
+      "Dunlop",
+      "FM800"
+    ],
+    "size_regex": "\\b205[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "205/55R16",
+    "brand": "Continental",
+    "line_model": "PowerContact",
+    "original_label": "Continental powercontact",
+    "query_strict": "pneu 205/55R16 Continental PowerContact",
+    "keywords": [
+      "205/55R16",
+      "205 55 R16",
+      "Continental",
+      "PowerContact"
+    ],
+    "size_regex": "\\b205[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "205/55R16",
+    "brand": "Dunlop",
+    "line_model": "Enasave",
+    "original_label": "Dunlop enasave",
+    "query_strict": "pneu 205/55R16 Dunlop Enasave",
+    "keywords": [
+      "205/55R16",
+      "205 55 R16",
+      "Dunlop",
+      "Enasave"
+    ],
+    "size_regex": "\\b205[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "205/55R16",
+    "brand": "Goodyear",
+    "line_model": "Eagle",
+    "original_label": "Goodyear eagle",
+    "query_strict": "pneu 205/55R16 Goodyear Eagle",
+    "keywords": [
+      "205/55R16",
+      "205 55 R16",
+      "Goodyear",
+      "Eagle"
+    ],
+    "size_regex": "\\b205[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "55",
+    "rim": "17",
+    "size_norm": "205/55R17",
+    "brand": "Michelin",
+    "line_model": "Primacy",
+    "original_label": "Michelin primacy",
+    "query_strict": "pneu 205/55R17 Michelin Primacy",
+    "keywords": [
+      "205/55R17",
+      "205 55 R17",
+      "Michelin",
+      "Primacy"
+    ],
+    "size_regex": "\\b205[/\\s-]?55\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "205/60R15",
+    "brand": "Michelin",
+    "line_model": "Energy",
+    "original_label": "Michelin energy",
+    "query_strict": "pneu 205/60R15 Michelin Energy",
+    "keywords": [
+      "205/60R15",
+      "205 60 R15",
+      "Michelin",
+      "Energy"
+    ],
+    "size_regex": "\\b205[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "205/60R15",
+    "brand": "Goodyear",
+    "line_model": "EfficientGrip",
+    "original_label": "Goodyear efficientgrip",
+    "query_strict": "pneu 205/60R15 Goodyear EfficientGrip",
+    "keywords": [
+      "205/60R15",
+      "205 60 R15",
+      "Goodyear",
+      "EfficientGrip"
+    ],
+    "size_regex": "\\b205[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "205/60R15",
+    "brand": "Dunlop",
+    "line_model": "FM800",
+    "original_label": "Dunlop fm800",
+    "query_strict": "pneu 205/60R15 Dunlop FM800",
+    "keywords": [
+      "205/60R15",
+      "205 60 R15",
+      "Dunlop",
+      "FM800"
+    ],
+    "size_regex": "\\b205[/\\s-]?60\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "60",
+    "rim": "16",
+    "size_norm": "205/60R16",
+    "brand": "Goodyear",
+    "line_model": "Wrangler",
+    "original_label": "Goodyear Wrangler",
+    "query_strict": "pneu 205/60R16 Goodyear Wrangler",
+    "keywords": [
+      "205/60R16",
+      "205 60 R16",
+      "Goodyear",
+      "Wrangler"
+    ],
+    "size_regex": "\\b205[/\\s-]?60\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "60",
+    "rim": "16",
+    "size_norm": "205/60R16",
+    "brand": "Dunlop",
+    "line_model": "Enasave",
+    "original_label": "Dunlop enasave",
+    "query_strict": "pneu 205/60R16 Dunlop Enasave",
+    "keywords": [
+      "205/60R16",
+      "205 60 R16",
+      "Dunlop",
+      "Enasave"
+    ],
+    "size_regex": "\\b205[/\\s-]?60\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "60",
+    "rim": "16",
+    "size_norm": "205/60R16",
+    "brand": "Michelin",
+    "line_model": "Primacy",
+    "original_label": "Michelin primacy",
+    "query_strict": "pneu 205/60R16 Michelin Primacy",
+    "keywords": [
+      "205/60R16",
+      "205 60 R16",
+      "Michelin",
+      "Primacy"
+    ],
+    "size_regex": "\\b205[/\\s-]?60\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "60",
+    "rim": "16",
+    "size_norm": "205/60R16",
+    "brand": "Sumitomo",
+    "line_model": "BC100",
+    "original_label": "Sumitomo bc100",
+    "query_strict": "pneu 205/60R16 Sumitomo BC100",
+    "keywords": [
+      "205/60R16",
+      "205 60 R16",
+      "Sumitomo",
+      "BC100"
+    ],
+    "size_regex": "\\b205[/\\s-]?60\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "60",
+    "rim": "16",
+    "size_norm": "205/60R16",
+    "brand": "Dunlop",
+    "line_model": "Grandtrek",
+    "original_label": "Dunlop grandtrek",
+    "query_strict": "pneu 205/60R16 Dunlop Grandtrek",
+    "keywords": [
+      "205/60R16",
+      "205 60 R16",
+      "Dunlop",
+      "Grandtrek"
+    ],
+    "size_regex": "\\b205[/\\s-]?60\\s*R?\\s*16\\b"
+  }
+
+]

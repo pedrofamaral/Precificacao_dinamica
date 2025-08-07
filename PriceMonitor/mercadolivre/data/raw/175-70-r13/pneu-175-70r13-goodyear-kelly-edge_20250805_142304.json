@@ -1,0 +1,25 @@
+[
+  {
+    "titulo": "Pneu Edge Touring 175/70 R13 82t",
+    "link": "https://produto.mercadolivre.com.br/MLB-1926185729-pneu-edge-touring-17570-r13-82t-_JM",
+    "preco": 519.64,
+    "query_strict": "pneu 175/70R13 Goodyear Kelly Edge",
+    "size_norm": "175/70R13",
+    "brand_expected": "Goodyear",
+    "line_expected": "Kelly Edge",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "",
+    "data_coleta": "2025-08-05 17:22:24",
+    "preco_original": null,
+    "preco_desconto": 519.64,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

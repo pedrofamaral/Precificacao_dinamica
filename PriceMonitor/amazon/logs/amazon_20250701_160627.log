@@ -1,0 +1,18 @@
+2025-07-01 16:06:27 [    INFO] 📝 Log iniciado: logs\amazon_20250701_160627.log
+2025-07-01 16:06:27 [    INFO] 🚀 Iniciando scraper Amazon - Termo: 'pneu 175/70 r13 assurance ', Max: 20
+2025-07-01 16:06:27 [   DEBUG] 🔧 Configurando ChromeDriver (headless=False)
+2025-07-01 16:06:31 [   DEBUG] ✅ ChromeDriver configurado com sucesso
+2025-07-01 16:06:31 [    INFO] 🔍 Buscando 'pneu 175/70 r13 assurance ' em amazon
+2025-07-01 16:06:31 [   DEBUG] 📍 URL: https://www.amazon.com.br/s?k=pneu+175%2F70+r13+assurance+&page=1
+2025-07-01 16:06:33 [   DEBUG] ℹ️ Banner de cookies não encontrado ou já aceito
+2025-07-01 16:06:33 [   DEBUG] 📄 Processando página 1
+2025-07-01 16:06:33 [   DEBUG] 📜 Rolando página (altura: 740px, step: 700px)
+2025-07-01 16:06:50 [ WARNING] ⚠️ Timeout aguardando carregamento da página
+2025-07-01 16:06:50 [    INFO] 📦 Página 1: +0 produtos (Total: 0/20)
+2025-07-01 16:06:50 [ WARNING] ⚠️ Página 1 sem produtos novos (1/3)
+2025-07-01 16:06:50 [   DEBUG] 🔚 Não há próxima página ou botão não encontrado
+2025-07-01 16:06:50 [    INFO] 🔚 Não há mais páginas disponíveis
+2025-07-01 16:06:50 [   DEBUG] 🔧 Fechando navegador
+2025-07-01 16:06:52 [    INFO] ✅ Busca finalizada: 0 produtos coletados
+2025-07-01 16:06:52 [    INFO] ✅ Finalizado - 0 produtos coletados
+2025-07-01 16:06:52 [ WARNING] ⚠️ Nenhum produto foi encontrado

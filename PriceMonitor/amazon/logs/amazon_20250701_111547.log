@@ -1,0 +1,28 @@
+2025-07-01 11:15:47 [    INFO] 📝 Log iniciado: logs\amazon_20250701_111547.log
+2025-07-01 11:15:47 [    INFO] 🚀 Iniciando scraper Amazon - Termo: 'pneu 175/70 r13 assurance ', Max: 20
+2025-07-01 11:15:47 [   DEBUG] 🔧 Configurando ChromeDriver (headless=False)
+2025-07-01 11:15:57 [   DEBUG] ✅ ChromeDriver configurado com sucesso
+2025-07-01 11:15:57 [    INFO] 🔍 Buscando 'pneu 175/70 r13 assurance ' em amazon
+2025-07-01 11:15:57 [   DEBUG] 📍 URL: https://www.amazon.com.br/s?k=pneu+175%2F70+r13+assurance+&page=1
+2025-07-01 11:16:00 [   DEBUG] ✅ Cookies aceitos via seletor: #a-autoid-0-announce
+2025-07-01 11:16:01 [   DEBUG] 📄 Processando página 1
+2025-07-01 11:16:01 [   DEBUG] 📜 Rolando página (altura: 7654px, step: 956px)
+2025-07-01 11:16:08 [   DEBUG] ✅ Encontrados 49 produtos com seletor: div[data-component-type='s-search-result']
+2025-07-01 11:16:14 [   DEBUG] ⚠️ Produto sem preço: Pneu 175/70R14 AT Aro 14 ROADCRUZA A/T RA1100 98/9
+2025-07-01 11:16:14 [    INFO] 📦 Coletados 48 novos produtos nesta página
+2025-07-01 11:16:14 [    INFO] 📦 Página 1: +48 produtos (Total: 48/20)
+2025-07-01 11:16:14 [    INFO] 🎯 Meta de 20 produtos atingida
+2025-07-01 11:16:14 [   DEBUG] 🔧 Fechando navegador
+2025-07-01 11:16:16 [    INFO] ✅ Busca finalizada: 48 produtos coletados
+2025-07-01 11:16:16 [    INFO] ✅ Finalizado - 20 produtos coletados
+2025-07-01 11:16:16 [    INFO] 📋 Primeiros produtos encontrados:
+2025-07-01 11:16:16 [    INFO]   1. Pneu 175/70R13 General Tire Altimax One 82T... - R$ 412.00
+2025-07-01 11:16:16 [    INFO]   2. Pneu 175/70R13 Barum Bravuris 5HM 82T By Continental... - R$ 362.00
+2025-07-01 11:16:16 [    INFO]   3. Pneu 175/70R13 Goodyear Kelly Edge Touring 2 82T... - R$ 411.66
+2025-07-01 11:16:16 [    INFO]   4. Pneu Goodyear Aro 13 Assurance Maxlife 175/70r13 82t... - R$ 478.27
+2025-07-01 11:16:16 [    INFO]   5. Pneu 175/70/13 Kit C/2 Unidades Aro 13 - Remold Profissional... - R$ 90.00
+2025-07-01 11:16:16 [    INFO]   6. Pneu 175/70R14 Goodyear Assurance Maxlife 88T... - R$ 5.00
+2025-07-01 11:16:16 [    INFO]   7. PNEU 175/70R13 FORMULA EVO 82T PIRELLI... - R$ 489.00
+2025-07-01 11:16:16 [    INFO]   8. Kit 2 Pneus Goodyear Aro 13 175/70R13 Edge Touring 82T... - R$ 70.00
+2025-07-01 11:16:16 [    INFO]   9. PNEU 175/70 R13 82T SP TOURING R1L... - R$ 43.00
+2025-07-01 11:16:16 [    INFO]   10. Pneu Aro 13 Xbri 175/70R13 82T Premium F1... - R$ 62.00

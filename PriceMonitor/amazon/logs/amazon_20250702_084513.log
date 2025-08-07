@@ -1,0 +1,50 @@
+2025-07-02 08:45:13 [    INFO] amazon_scraper: 📝 Sistema de logging inicializado
+2025-07-02 08:45:13 [   DEBUG] amazon_scraper: 📁 Arquivo de log: logs\amazon_20250702_084513.log
+2025-07-02 08:45:13 [   DEBUG] amazon_scraper: 🔧 Configurando ChromeDriver (headless=False)
+2025-07-02 08:45:16 [   DEBUG] amazon_scraper: ✅ ChromeDriver configurado com sucesso
+2025-07-02 08:45:16 [    INFO] amazon_scraper: 🔍 Buscando 'pneu 175/70 r13 continental' em amazon
+2025-07-02 08:45:16 [   DEBUG] amazon_scraper: 📍 URL: https://www.amazon.com.br/s?k=pneu+175%2F70+r13+continental&s=price-asc-rank&page=1
+2025-07-02 08:45:26 [   DEBUG] amazon_scraper: 📄 Processando página 1
+2025-07-02 08:45:26 [   DEBUG] amazon_scraper: 📜 Rolando página (altura: 8581px, step: 1072px)
+2025-07-02 08:45:34 [    INFO] amazon_scraper: 📦 0 novos
+2025-07-02 08:45:34 [    INFO] amazon_scraper: 📦 Página 1: +0 produtos (Total: 0/20)
+2025-07-02 08:45:34 [ WARNING] amazon_scraper: ⚠️ Página 1 sem produtos novos (1/3)
+2025-07-02 08:45:37 [   DEBUG] amazon_scraper: ⏱️ Pausa entre páginas: 0.89s
+2025-07-02 08:45:37 [   DEBUG] amazon_scraper: 📄 Processando página 2
+2025-07-02 08:45:37 [   DEBUG] amazon_scraper: 📜 Rolando página (altura: 9669px, step: 1208px)
+2025-07-02 08:45:46 [    INFO] amazon_scraper: 📦 0 novos
+2025-07-02 08:45:46 [    INFO] amazon_scraper: 📦 Página 2: +0 produtos (Total: 0/20)
+2025-07-02 08:45:46 [ WARNING] amazon_scraper: ⚠️ Página 2 sem produtos novos (2/3)
+2025-07-02 08:45:48 [   DEBUG] amazon_scraper: ⏱️ Pausa entre páginas: 1.21s
+2025-07-02 08:45:49 [   DEBUG] amazon_scraper: 📄 Processando página 3
+2025-07-02 08:45:49 [   DEBUG] amazon_scraper: 📜 Rolando página (altura: 8861px, step: 1107px)
+2025-07-02 08:45:58 [    INFO] amazon_scraper: 📦 0 novos
+2025-07-02 08:45:58 [    INFO] amazon_scraper: 📦 Página 3: +0 produtos (Total: 0/20)
+2025-07-02 08:45:58 [ WARNING] amazon_scraper: ⚠️ Página 3 sem produtos novos (3/3)
+2025-07-02 08:45:58 [ WARNING] amazon_scraper: 🛑 3 páginas sem novos produtos - encerrando
+2025-07-02 08:45:58 [   DEBUG] amazon_scraper: 🔧 Fechando navegador
+2025-07-02 08:46:01 [    INFO] amazon_scraper: ✅ Busca finalizada: 0 produtos coletados
+2025-07-02 08:46:01 [   DEBUG] amazon_scraper: 🔧 Configurando ChromeDriver (headless=False)
+2025-07-02 08:46:04 [   DEBUG] amazon_scraper: ✅ ChromeDriver configurado com sucesso
+2025-07-02 08:46:04 [    INFO] amazon_scraper: 🔍 Buscando 'pneu 175 70 r13 goodyear' em amazon
+2025-07-02 08:46:04 [   DEBUG] amazon_scraper: 📍 URL: https://www.amazon.com.br/s?k=pneu+175+70+r13+goodyear&s=price-asc-rank&page=1
+2025-07-02 08:46:08 [   DEBUG] amazon_scraper: 📄 Processando página 1
+2025-07-02 08:46:08 [   DEBUG] amazon_scraper: 📜 Rolando página (altura: 8549px, step: 1068px)
+2025-07-02 08:46:16 [    INFO] amazon_scraper: 📦 0 novos
+2025-07-02 08:46:16 [    INFO] amazon_scraper: 📦 Página 1: +0 produtos (Total: 0/20)
+2025-07-02 08:46:16 [ WARNING] amazon_scraper: ⚠️ Página 1 sem produtos novos (1/3)
+2025-07-02 08:46:19 [   DEBUG] amazon_scraper: ⏱️ Pausa entre páginas: 1.22s
+2025-07-02 08:46:20 [   DEBUG] amazon_scraper: 📄 Processando página 2
+2025-07-02 08:46:20 [   DEBUG] amazon_scraper: 📜 Rolando página (altura: 9380px, step: 1172px)
+2025-07-02 08:46:29 [    INFO] amazon_scraper: 📦 0 novos
+2025-07-02 08:46:29 [    INFO] amazon_scraper: 📦 Página 2: +0 produtos (Total: 0/20)
+2025-07-02 08:46:29 [ WARNING] amazon_scraper: ⚠️ Página 2 sem produtos novos (2/3)
+2025-07-02 08:46:32 [   DEBUG] amazon_scraper: ⏱️ Pausa entre páginas: 1.14s
+2025-07-02 08:46:33 [   DEBUG] amazon_scraper: 📄 Processando página 3
+2025-07-02 08:46:33 [   DEBUG] amazon_scraper: 📜 Rolando página (altura: 4717px, step: 700px)
+2025-07-02 08:46:41 [    INFO] amazon_scraper: 📦 0 novos
+2025-07-02 08:46:41 [    INFO] amazon_scraper: 📦 Página 3: +0 produtos (Total: 0/20)
+2025-07-02 08:46:41 [ WARNING] amazon_scraper: ⚠️ Página 3 sem produtos novos (3/3)
+2025-07-02 08:46:41 [ WARNING] amazon_scraper: 🛑 3 páginas sem novos produtos - encerrando
+2025-07-02 08:46:41 [   DEBUG] amazon_scraper: 🔧 Fechando navegador
+2025-07-02 08:46:43 [    INFO] amazon_scraper: ✅ Busca finalizada: 0 produtos coletados

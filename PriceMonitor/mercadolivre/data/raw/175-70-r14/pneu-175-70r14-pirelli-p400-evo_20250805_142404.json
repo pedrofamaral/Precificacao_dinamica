@@ -1,0 +1,25 @@
+[
+  {
+    "titulo": "Pneu General Aro 14 175/70r14 Altimax One 88t",
+    "link": "https://www.mercadolivre.com.br/pneu-general-aro-14-17570r14-altimax-one-88t/p/MLB42152263",
+    "preco": 473.05,
+    "query_strict": "pneu 175/70R14 Pirelli P400 Evo",
+    "size_norm": "175/70R14",
+    "brand_expected": "Pirelli",
+    "line_expected": "P400 Evo",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "",
+    "data_coleta": "2025-08-05 17:23:22",
+    "preco_original": null,
+    "preco_desconto": 473.05,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]
