@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 185/55R16 Dunlop FM800",
+  "produtos_encontrados": 19,
+  "promocoes": 19,
+  "preco_medio": 668.95,
+  "tempo_execucao": 224.08,
+  "arquivos": {
+    "json": "data\\raw\\185-55-r16\\pneu-18555r16-dunlop-fm800_20250808_144113.json",
+    "csv": "data\\raw\\185-55-r16\\pneu-18555r16-dunlop-fm800_20250808_144113.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

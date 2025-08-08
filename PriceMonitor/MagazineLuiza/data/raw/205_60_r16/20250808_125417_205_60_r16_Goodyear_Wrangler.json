@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 205/60R16 Goodyear Wrangler",
+  "produtos_encontrados": 23,
+  "promocoes": 23,
+  "preco_medio": 846.28,
+  "tempo_execucao": 184.85,
+  "arquivos": {
+    "json": "data\\raw\\205-60-r16\\pneu-20560r16-goodyear-wrangler_20250808_095413.json"
+  }
+}

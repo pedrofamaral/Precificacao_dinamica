@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 195/55R16 Michelin Primacy",
+  "produtos_encontrados": 24,
+  "promocoes": 24,
+  "preco_medio": 780.45,
+  "tempo_execucao": 209.09,
+  "arquivos": {
+    "json": "data\\raw\\195-55-r16\\pneu-19555r16-michelin-primacy_20250808_163608.json",
+    "csv": "data\\raw\\195-55-r16\\pneu-19555r16-michelin-primacy_20250808_163608.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

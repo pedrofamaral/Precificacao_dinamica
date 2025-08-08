@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 205/55R16 Michelin Primacy",
+  "produtos_encontrados": 50,
+  "promocoes": 50,
+  "preco_medio": 695.83,
+  "tempo_execucao": 285.49,
+  "arquivos": {
+    "json": "data\\raw\\205-55-r16\\pneu-20555r16-michelin-primacy_20250808_091835.json"
+  }
+}

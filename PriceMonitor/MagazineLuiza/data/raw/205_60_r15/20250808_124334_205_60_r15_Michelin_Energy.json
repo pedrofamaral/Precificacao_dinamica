@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 205/60R15 Michelin Energy",
+  "produtos_encontrados": 24,
+  "promocoes": 24,
+  "preco_medio": 896.1,
+  "tempo_execucao": 195.25,
+  "arquivos": {
+    "json": "data\\raw\\205-60-r15\\pneu-20560r15-michelin-energy_20250808_094330.json"
+  }
+}

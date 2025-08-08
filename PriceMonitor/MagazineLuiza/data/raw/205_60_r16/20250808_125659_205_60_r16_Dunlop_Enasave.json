@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 205/60R16 Dunlop Enasave",
+  "produtos_encontrados": 20,
+  "promocoes": 20,
+  "preco_medio": 745.69,
+  "tempo_execucao": 159.68,
+  "arquivos": {
+    "json": "data\\raw\\205-60-r16\\pneu-20560r16-dunlop-enasave_20250808_095657.json"
+  }
+}

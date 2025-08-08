@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 205/60R16 Dunlop Grandtrek",
+  "produtos_encontrados": 10,
+  "promocoes": 10,
+  "preco_medio": 893.76,
+  "tempo_execucao": 120.66,
+  "arquivos": {
+    "json": "data\\raw\\205-60-r16\\pneu-20560r16-dunlop-grandtrek_20250808_100247.json"
+  }
+}

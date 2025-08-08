@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 205/50R17 Dunlop FM800",
+  "produtos_encontrados": 8,
+  "promocoes": 8,
+  "preco_medio": 834.83,
+  "tempo_execucao": 174.78,
+  "arquivos": {
+    "json": "data\\raw\\205-50-r17\\pneu-20550r17-dunlop-fm800_20250808_091014.json"
+  }
+}

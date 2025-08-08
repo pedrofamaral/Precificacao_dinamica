@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 195/60R15 Continental PowerContact",
+  "produtos_encontrados": 39,
+  "promocoes": 39,
+  "preco_medio": 559.79,
+  "tempo_execucao": 283.87,
+  "arquivos": {
+    "json": "data\\raw\\195-60-r15\\pneu-19560r15-continental-powercontact_20250808_165357.json",
+    "csv": "data\\raw\\195-60-r15\\pneu-19560r15-continental-powercontact_20250808_165357.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

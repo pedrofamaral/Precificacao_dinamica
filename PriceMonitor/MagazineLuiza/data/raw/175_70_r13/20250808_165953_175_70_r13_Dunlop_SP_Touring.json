@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 175/70R13 Dunlop SP Touring",
+  "produtos_encontrados": 50,
+  "promocoes": 50,
+  "preco_medio": 431.06,
+  "tempo_execucao": 336.25,
+  "arquivos": {
+    "json": "data\\raw\\175-70-r13\\pneu-17570r13-dunlop-sp-touring_20250808_135944.json",
+    "csv": "data\\raw\\175-70-r13\\pneu-17570r13-dunlop-sp-touring_20250808_135944.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

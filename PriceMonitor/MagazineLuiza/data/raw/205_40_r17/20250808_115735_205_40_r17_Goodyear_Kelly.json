@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 205/40R17 Goodyear Kelly",
+  "produtos_encontrados": 5,
+  "promocoes": 5,
+  "preco_medio": 540.02,
+  "tempo_execucao": 108.9,
+  "arquivos": {
+    "json": "data\\raw\\205-40-r17\\pneu-20540r17-goodyear-kelly_20250808_085733.json"
+  }
+}

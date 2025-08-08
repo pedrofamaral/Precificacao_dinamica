@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 175/70R14 Dunlop Grandtrek",
+  "produtos_encontrados": 22,
+  "promocoes": 22,
+  "preco_medio": 650.15,
+  "tempo_execucao": 217.93,
+  "arquivos": {
+    "json": "data\\raw\\175-70-r14\\pneu-17570r14-dunlop-grandtrek_20250808_141643.json",
+    "csv": "data\\raw\\175-70-r14\\pneu-17570r14-dunlop-grandtrek_20250808_141643.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

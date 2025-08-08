@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 195/65R15 Dunlop FM800",
+  "produtos_encontrados": 29,
+  "promocoes": 29,
+  "preco_medio": 615.91,
+  "tempo_execucao": 368.62,
+  "arquivos": {
+    "json": "data\\raw\\195-65-r15\\pneu-19565r15-dunlop-fm800_20250808_083711.json"
+  }
+}

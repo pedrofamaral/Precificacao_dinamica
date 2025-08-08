@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 205/50R17 Michelin Primacy",
+  "produtos_encontrados": 33,
+  "promocoes": 33,
+  "preco_medio": 1113.33,
+  "tempo_execucao": 246.49,
+  "arquivos": {
+    "json": "data\\raw\\205-50-r17\\pneu-20550r17-michelin-primacy_20250808_090715.json"
+  }
+}

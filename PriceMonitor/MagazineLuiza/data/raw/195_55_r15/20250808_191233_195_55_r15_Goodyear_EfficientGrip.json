@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 195/55R15 Goodyear EfficientGrip",
+  "produtos_encontrados": 23,
+  "promocoes": 23,
+  "preco_medio": 646.31,
+  "tempo_execucao": 189.06,
+  "arquivos": {
+    "json": "data\\raw\\195-55-r15\\pneu-19555r15-goodyear-efficientgrip_20250808_161225.json",
+    "csv": "data\\raw\\195-55-r15\\pneu-19555r15-goodyear-efficientgrip_20250808_161225.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

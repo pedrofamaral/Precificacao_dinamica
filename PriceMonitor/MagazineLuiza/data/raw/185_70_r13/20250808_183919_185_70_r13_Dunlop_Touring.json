@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 185/70R13 Dunlop Touring",
+  "produtos_encontrados": 28,
+  "promocoes": 28,
+  "preco_medio": 492.0,
+  "tempo_execucao": 317.37,
+  "arquivos": {
+    "json": "data\\raw\\185-70-r13\\pneu-18570r13-dunlop-touring_20250808_153910.json",
+    "csv": "data\\raw\\185-70-r13\\pneu-18570r13-dunlop-touring_20250808_153910.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

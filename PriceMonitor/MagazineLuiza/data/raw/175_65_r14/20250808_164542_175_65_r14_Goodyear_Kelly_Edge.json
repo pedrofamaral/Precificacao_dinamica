@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 175/65R14 Goodyear Kelly Edge",
+  "produtos_encontrados": 15,
+  "promocoes": 15,
+  "preco_medio": 409.24,
+  "tempo_execucao": 158.2,
+  "arquivos": {
+    "json": "data\\raw\\175-65-r14\\pneu-17565r14-goodyear-kelly-edge_20250808_134535.json",
+    "csv": "data\\raw\\175-65-r14\\pneu-17565r14-goodyear-kelly-edge_20250808_134535.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

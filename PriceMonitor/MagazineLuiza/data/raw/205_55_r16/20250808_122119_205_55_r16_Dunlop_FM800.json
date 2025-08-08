@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 205/55R16 Dunlop FM800",
+  "produtos_encontrados": 23,
+  "promocoes": 23,
+  "preco_medio": 631.89,
+  "tempo_execucao": 157.25,
+  "arquivos": {
+    "json": "data\\raw\\205-55-r16\\pneu-20555r16-dunlop-fm800_20250808_092116.json"
+  }
+}

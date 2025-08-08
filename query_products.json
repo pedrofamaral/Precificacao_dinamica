@@ -1486,6 +1486,277 @@
       "Grandtrek"
     ],
     "size_regex": "\\b205[/\\s-]?60\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "205/65R15",
+    "brand": "Goodyear",
+    "line_model": "Direction",
+    "original_label": "Goodyear Direction",
+    "query_strict": "pneu 205/65R15 Goodyear Direction",
+    "keywords": [
+      "205/65R15",
+      "205 65 R15",
+      "Dunlop",
+      "FM800"
+    ],
+    "size_regex": "\\b205[/\\s-]?65\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "205/65R15",
+    "brand": "Goodyear",
+    "line_model": "Wrangler",
+    "original_label": "Goodyear Wrangler",
+    "query_strict": "pneu 205/65R15 Goodyear Direction",
+    "keywords": [
+      "205/65R15",
+      "205 65 R15",
+      "Goodyear",
+      "Wrangler"
+    ],
+    "size_regex": "\\b205[/\\s-]?65\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "205/65R15",
+    "brand": "Michelin",
+    "line_model": "Ltx Force",
+    "original_label": "Michelin Ltx Force",
+    "query_strict": "pneu 205/65R15 Michelin Ltx Force",
+    "keywords": [
+      "205/65R15",
+      "205 65 R15",
+      "Michelin",
+      "Ltx Force"
+    ],
+    "size_regex": "\\b205[/\\s-]?65\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "65",
+    "rim": "16",
+    "size_norm": "205/65R16",
+    "brand": "Pirelli",
+    "line_model": "Scorpion ks",
+    "original_label": "Pirelli scporion ks",
+    "query_strict": "pneu 205/65R16 Pirelli Scorpion ks",
+    "keywords": [
+      "205/65R16",
+      "205 65 R16",
+      "Pirelli",
+      "Scorpion ks"
+    ],
+    "size_regex": "\\b205[/\\s-]?65\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "65",
+    "rim": "16",
+    "size_norm": "205/65R16",
+    "brand": "Firestone",
+    "line_model": "destination",
+    "original_label": "Firestone destination",
+    "query_strict": "pneu 205/65R16 Firestone destination",
+    "keywords": [
+      "205/65R16",
+      "205 65 R16",
+      "Firestone",
+      "destination"
+    ],
+    "size_regex": "\\b205[/\\s-]?65\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "70",
+    "rim": "15",
+    "size_norm": "205/70R15",
+    "brand": "Michelin",
+    "line_model": "agilis",
+    "original_label": "Michelin agilis",
+    "query_strict": "pneu 205/65R16 Michelin Agilis",
+    "keywords": [
+      "205/70R15",
+      "205 70 R15",
+      "Michelin",
+      "Agilis"
+    ],
+    "size_regex": "\\b205[/\\s-]?70\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "70",
+    "rim": "15",
+    "size_norm": "205/70R15",
+    "brand": "Goodyear",
+    "line_model": "cargo marathon",
+    "original_label": "Goodyear cargo marathon",
+    "query_strict": "pneu 205/70R15 Goodyear Cargo Marathon",
+    "keywords": [
+      "205/70R15",
+      "205 70 R15",
+      "Goodyear",
+      "Cargo Marathon"
+    ],
+    "size_regex": "\\b205[/\\s-]?70\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "70",
+    "rim": "15",
+    "size_norm": "205/70R15",
+    "brand": "Goodyear",
+    "line_model": "Wrangler",
+    "original_label": "Goodyear Wrangler",
+    "query_strict": "pneu 205/70R15 Goodyear wrangler",
+    "keywords": [
+      "205/70R15",
+      "205 70 R15",
+      "Goodyear",
+      "Wrangler"
+    ],
+    "size_regex": "\\b205[/\\s-]?70\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "70",
+    "rim": "15",
+    "size_norm": "205/70R15",
+    "brand": "Dunlop",
+    "line_model": "Grandtrek",
+    "original_label": "Dunlop grandtrek",
+    "query_strict": "pneu 205/70R15 Dunlop grandtrek",
+    "keywords": [
+      "205/70R15",
+      "205 70 R15",
+      "Dunlop",
+      "Grandtrek"
+    ],
+    "size_regex": "\\b205[/\\s-]?70\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "205",
+    "aspect": "70",
+    "rim": "15",
+    "size_norm": "205/70R15",
+    "brand": "Michelin",
+    "line_model": "Ltx Force",
+    "original_label": "Michelin Ltx Force",
+    "query_strict": "pneu 205/70R15 Michelin Ltx Force",
+    "keywords": [
+      "205/70R15",
+      "205 70 R15",
+      "Michelin",
+      "Ltx Force"
+    ],
+    "size_regex": "\\b205[/\\s-]?70\\s*R?\\s*15\\b"
+  },
+  {
+    "width": "215",
+    "aspect": "45",
+    "rim": "17",
+    "size_norm": "215/45R17",
+    "brand": "Pirelli",
+    "line_model": "Powergy",
+    "original_label": "Pirelli powergy",
+    "query_strict": "pneu 205/70R15 Pirelli Powergy",
+    "keywords": [
+      "205/70R15",
+      "205 70 R15",
+      "Pirelli",
+      "Powergy"
+    ],
+    "size_regex": "\\b215[/\\s-]?45\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "215",
+    "aspect": "45",
+    "rim": "17",
+    "size_norm": "215/45R17",
+    "brand": "Sumitomo",
+    "line_model": "BC100",
+    "original_label": "Sumitomo bc100",
+    "query_strict": "pneu 215/55R16 Sumitomo BC100",
+    "keywords": [
+      "215/55R16",
+      "215 55 R16",
+      "Sumitomo",
+      "BC100"
+    ],
+    "size_regex": "\\b215[/\\s-]?45\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "215",
+    "aspect": "50",
+    "rim": "17",
+    "size_norm": "215/50R17",
+    "brand": "Michelin",
+    "line_model": "Primacy 4",
+    "original_label": "Michelin primacy 4",
+    "query_strict": "pneu 215/50R17 Michelin Primacy 4",
+    "keywords": [
+      "215/50R17",
+      "215 50 R17",
+      "Michelin",
+      "Primacy 4"
+    ],
+    "size_regex": "\\b215[/\\s-]?55\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "215",
+    "aspect": "50",
+    "rim": "17",
+    "size_norm": "215/50R17",
+    "brand": "Goodyear",
+    "line_model": "EfficientGrip",
+    "original_label": "Goodyear efficientgrip",
+    "query_strict": "pneu 215/50R17 Goodyear EfficientGrip",
+    "keywords": [
+      "215/50R17",
+      "215 50 R17",
+      "Goodyear",
+      "EfficientGrip"
+    ],
+    "size_regex": "\\b215[/\\s-]?55\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "215",
+    "aspect": "50",
+    "rim": "17",
+    "size_norm": "215/50R17",
+    "brand": "Pirelli",
+    "line_model": "Cint p7",
+    "original_label": "Pirelli cint p7",
+    "query_strict": "pneu 215/50R17 Pirelli Cint P7",
+    "keywords": [
+      "215/50R17",
+      "215 50 R17",
+      "Pirelli",
+      "Cint p7"
+    ],
+    "size_regex": "\\b215[/\\s-]?50\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "215",
+    "aspect": "50",
+    "rim": "17",
+    "size_norm": "215/50R17",
+    "brand": "Dunlop",
+    "line_model": "FM800",
+    "original_label": "Dunlop fm800",
+    "query_strict": "pneu 215/50R17 Dunlop FM800",
+    "keywords": [
+      "215/50R17",
+      "215 50 R17",
+      "Dunlop",
+      "FM800"
+    ],
+    "size_regex": "\\b215[/\\s-]?50\\s*R?\\s*17\\b"    
   }
-
 ]

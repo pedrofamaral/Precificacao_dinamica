@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 195/50R16 Dunlop Direzza",
+  "produtos_encontrados": 26,
+  "promocoes": 26,
+  "preco_medio": 680.02,
+  "tempo_execucao": 229.22,
+  "arquivos": {
+    "json": "data\\raw\\195-50-r16\\pneu-19550r16-dunlop-direzza_20250808_160420.json",
+    "csv": "data\\raw\\195-50-r16\\pneu-19550r16-dunlop-direzza_20250808_160420.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

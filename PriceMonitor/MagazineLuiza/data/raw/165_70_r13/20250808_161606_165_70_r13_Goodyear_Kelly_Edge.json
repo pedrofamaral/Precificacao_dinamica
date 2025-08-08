@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 165/70R13 Goodyear Kelly Edge",
+  "produtos_encontrados": 15,
+  "promocoes": 15,
+  "preco_medio": 370.38,
+  "tempo_execucao": 203.8,
+  "arquivos": {
+    "json": "data\\raw\\165-70-r13\\pneu-16570r13-goodyear-kelly-edge_20250808_131558.json",
+    "csv": "data\\raw\\165-70-r13\\pneu-16570r13-goodyear-kelly-edge_20250808_131558.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

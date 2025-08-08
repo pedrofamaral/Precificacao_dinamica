@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 175/70R14 Dunlop SP Touring",
+  "produtos_encontrados": 34,
+  "promocoes": 34,
+  "preco_medio": 538.55,
+  "tempo_execucao": 274.32,
+  "arquivos": {
+    "json": "data\\raw\\175-70-r14\\pneu-17570r14-dunlop-sp-touring_20250808_142629.json",
+    "csv": "data\\raw\\175-70-r14\\pneu-17570r14-dunlop-sp-touring_20250808_142629.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

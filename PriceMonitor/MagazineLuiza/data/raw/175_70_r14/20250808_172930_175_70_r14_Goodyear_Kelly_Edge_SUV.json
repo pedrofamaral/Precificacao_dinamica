@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 175/70R14 Goodyear Kelly Edge SUV",
+  "produtos_encontrados": 5,
+  "promocoes": 5,
+  "preco_medio": 485.02,
+  "tempo_execucao": 166.95,
+  "arquivos": {
+    "json": "data\\raw\\175-70-r14\\pneu-17570r14-goodyear-kelly-edge-suv_20250808_142924.json",
+    "csv": "data\\raw\\175-70-r14\\pneu-17570r14-goodyear-kelly-edge-suv_20250808_142924.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

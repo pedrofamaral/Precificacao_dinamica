@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 185/55R16 Goodyear Eagle",
+  "produtos_encontrados": 16,
+  "promocoes": 16,
+  "preco_medio": 650.95,
+  "tempo_execucao": 146.26,
+  "arquivos": {
+    "json": "data\\raw\\185-55-r16\\pneu-18555r16-goodyear-eagle_20250808_143156.json",
+    "csv": "data\\raw\\185-55-r16\\pneu-18555r16-goodyear-eagle_20250808_143156.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

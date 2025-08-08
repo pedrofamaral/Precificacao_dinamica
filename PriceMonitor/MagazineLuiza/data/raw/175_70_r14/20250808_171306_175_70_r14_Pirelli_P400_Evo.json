@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 175/70R14 Pirelli P400 Evo",
+  "produtos_encontrados": 33,
+  "promocoes": 33,
+  "preco_medio": 555.03,
+  "tempo_execucao": 209.59,
+  "arquivos": {
+    "json": "data\\raw\\175-70-r14\\pneu-17570r14-pirelli-p400-evo_20250808_141258.json",
+    "csv": "data\\raw\\175-70-r14\\pneu-17570r14-pirelli-p400-evo_20250808_141258.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

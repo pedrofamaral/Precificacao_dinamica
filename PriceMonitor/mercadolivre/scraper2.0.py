@@ -722,16 +722,20 @@ class ScraperMercadoLivre(ScraperBase):
     
     def _filtrar_produto(self, prod: Product, termo_busca: str) -> tuple[Optional[Product], str]:
         if not prod:
+            self.logger.debug("Produto não pôde ser criado a partir do card HTML (parse_fail)")
             return None, "parse_fail"
         titulo = prod.titulo or ""
         pat = self._dim_pattern
         if pat and not pat.search(titulo):
+            self.logger.debug(f"sem_dim - Título: {titulo} | Regex: {pat.pattern}")
             return None, "sem_dim"
         if eh_kit_ou_multiplos_pneus(titulo):
-            return None, "é kit"
-        marca_desejada = (self._query_meta.get("brand") or detectar_marca(termo_busca))
+            self.logger.debug(f"é kit - Título: {titulo}")
+            return None
+        marca_desejada = detectar_marca(termo_busca)
         marca_prod = detectar_marca(titulo)
         if marca_desejada and marca_prod and marca_prod != marca_desejada:
+            self.logger.debug(f"marca_diff - Título: {titulo} | Marca detectada: {marca_prod} | Marca desejada: {marca_desejada}")
             return None, "marca_diff"
         prod.marca = marca_prod or ""
         prod.frete_gratis = prod.free_ship and (prod.frete in (None, 0.0))
@@ -1050,8 +1054,7 @@ def criar_parser():
     group.add_argument("--termo",
                        help="Termo de busca")
     group.add_argument("--lote-json",
-                       help="Caminho do JSON de queries (ex: pneus_queries_strict.json)")
-
+                       help="Caminho do JSON de queries (ex: query_products.json)")
     parser.add_argument("--max",
                         type=int,
                         default=100,
@@ -1090,7 +1093,6 @@ def criar_parser():
                         help="Delay extra (s) após cooldown")
     parser.add_argument("--delay-scroll", type=float, default=1.0,
                         help="Delay (s) entre scrolls individuais")
-
     parser.add_argument("--idx-from", type=int, default=0,
                         help="Índice inicial (inclusive) dentro do lote")
     parser.add_argument("--idx-to", type=int, default=None,
@@ -1193,9 +1195,7 @@ def main():
                     max_resultados=args.max,
                     ordenacao=args.ordenacao,
                     ceps=ceps,
-                    enriquecer=args.detalhes,
-                    size_regex_override=size_regex,
-                    query_meta=item
+                    enriquecer=args.detalhes
                 )
                 imprimir_produtos(produtos)
                 salvar_resultados(produtos=produtos, termo=termo, em_csv=args.csv, ceps=ceps)

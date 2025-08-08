@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 205/55R16 Continental PowerContact",
+  "produtos_encontrados": 46,
+  "promocoes": 46,
+  "preco_medio": 535.84,
+  "tempo_execucao": 308.74,
+  "arquivos": {
+    "json": "data\\raw\\205-55-r16\\pneu-20555r16-continental-powercontact_20250808_092627.json"
+  }
+}

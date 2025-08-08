@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 195/60R15 Goodyear Kelly",
+  "produtos_encontrados": 15,
+  "promocoes": 15,
+  "preco_medio": 623.59,
+  "tempo_execucao": 155.84,
+  "arquivos": {
+    "json": "data\\raw\\195-60-r15\\pneu-19560r15-goodyear-kelly_20250808_165641.json",
+    "csv": "data\\raw\\195-60-r15\\pneu-19560r15-goodyear-kelly_20250808_165641.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

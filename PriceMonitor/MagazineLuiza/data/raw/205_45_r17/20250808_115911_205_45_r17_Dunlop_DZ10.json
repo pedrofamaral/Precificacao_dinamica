@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 205/45R17 Dunlop DZ10",
+  "produtos_encontrados": 5,
+  "promocoes": 5,
+  "preco_medio": 660.01,
+  "tempo_execucao": 93.56,
+  "arquivos": {
+    "json": "data\\raw\\205-45-r17\\pneu-20545r17-dunlop-dz10_20250808_085909.json"
+  }
+}

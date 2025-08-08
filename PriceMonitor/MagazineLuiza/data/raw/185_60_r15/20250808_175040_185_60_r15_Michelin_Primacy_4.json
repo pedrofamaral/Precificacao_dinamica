@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 185/60R15 Michelin Primacy 4",
+  "produtos_encontrados": 21,
+  "promocoes": 21,
+  "preco_medio": 768.56,
+  "tempo_execucao": 325.82,
+  "arquivos": {
+    "json": "data\\raw\\185-60-r15\\pneu-18560r15-michelin-primacy-4_20250808_145030.json",
+    "csv": "data\\raw\\185-60-r15\\pneu-18560r15-michelin-primacy-4_20250808_145030.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

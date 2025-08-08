@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 195/55R15 Goodyear Eagle",
+  "produtos_encontrados": 15,
+  "promocoes": 15,
+  "preco_medio": 540.09,
+  "tempo_execucao": 148.08,
+  "arquivos": {
+    "json": "data\\raw\\195-55-r15\\pneu-19555r15-goodyear-eagle_20250808_160909.json",
+    "csv": "data\\raw\\195-55-r15\\pneu-19555r15-goodyear-eagle_20250808_160909.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "termo": "pneu 195/60R15 Goodyear EfficientGrip",
+  "produtos_encontrados": 15,
+  "promocoes": 15,
+  "preco_medio": 641.93,
+  "tempo_execucao": 145.51,
+  "arquivos": {
+    "json": "data\\raw\\195-60-r15\\pneu-19560r15-goodyear-efficientgrip_20250808_083100.json"
+  }
+}

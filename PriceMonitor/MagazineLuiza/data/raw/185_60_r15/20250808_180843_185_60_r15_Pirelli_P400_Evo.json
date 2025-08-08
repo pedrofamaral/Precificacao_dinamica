@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 185/60R15 Pirelli P400 Evo",
+  "produtos_encontrados": 33,
+  "promocoes": 33,
+  "preco_medio": 576.73,
+  "tempo_execucao": 287.99,
+  "arquivos": {
+    "json": "data\\raw\\185-60-r15\\pneu-18560r15-pirelli-p400-evo_20250808_150835.json",
+    "csv": "data\\raw\\185-60-r15\\pneu-18560r15-pirelli-p400-evo_20250808_150835.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

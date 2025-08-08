@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 185/60R14 Dunlop LM704",
+  "produtos_encontrados": 16,
+  "promocoes": 16,
+  "preco_medio": 513.44,
+  "tempo_execucao": 214.3,
+  "arquivos": {
+    "json": "data\\raw\\185-60-r14\\pneu-18560r14-dunlop-lm704_20250808_144456.json",
+    "csv": "data\\raw\\185-60-r14\\pneu-18560r14-dunlop-lm704_20250808_144456.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

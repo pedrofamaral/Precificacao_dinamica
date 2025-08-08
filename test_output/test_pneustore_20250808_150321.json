@@ -1,0 +1,38 @@
+[
+  {
+    "titulo": "Pneu Goodyear 175/70R13",
+    "preco": 299.9,
+    "link": "https://exemplo.com/pneu1",
+    "marketplace": "pneustore",
+    "categoria": "",
+    "marca": "goodyear",
+    "marca_filho": "",
+    "local": "",
+    "vendedor": "",
+    "condicao": "",
+    "frete_gratis": false,
+    "data_coleta": "2025-08-08 15:03:21",
+    "caracteristicas": {},
+    "medida": "175-70-r13",
+    "aro": null,
+    "termo_busca": ""
+  },
+  {
+    "titulo": "Pneu Michelin 185/65R14",
+    "preco": 399.9,
+    "link": "https://exemplo.com/pneu2",
+    "marketplace": "pneustore",
+    "categoria": "",
+    "marca": "michelin",
+    "marca_filho": "",
+    "local": "",
+    "vendedor": "",
+    "condicao": "",
+    "frete_gratis": false,
+    "data_coleta": "2025-08-08 15:03:21",
+    "caracteristicas": {},
+    "medida": "185-65-r14",
+    "aro": null,
+    "termo_busca": ""
+  }
+]

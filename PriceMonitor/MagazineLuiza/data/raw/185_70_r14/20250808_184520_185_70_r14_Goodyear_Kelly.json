@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 185/70R14 Goodyear Kelly",
+  "produtos_encontrados": 10,
+  "promocoes": 10,
+  "preco_medio": 448.73,
+  "tempo_execucao": 153.0,
+  "arquivos": {
+    "json": "data\\raw\\185-70-r14\\pneu-18570r14-goodyear-kelly_20250808_154513.json",
+    "csv": "data\\raw\\185-70-r14\\pneu-18570r14-goodyear-kelly_20250808_154513.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

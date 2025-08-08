@@ -1,0 +1,12 @@
+{
+  "termo": "pneu 185/65R14 Goodyear Assurance",
+  "produtos_encontrados": 21,
+  "promocoes": 21,
+  "preco_medio": 641.34,
+  "tempo_execucao": 201.48,
+  "arquivos": {
+    "json": "data\\raw\\185-65-r14\\pneu-18565r14-goodyear-assurance_20250808_151204.json",
+    "csv": "data\\raw\\185-65-r14\\pneu-18565r14-goodyear-assurance_20250808_151204.csv",
+    "sqlite": "data\\magalu_products.db"
+  }
+}

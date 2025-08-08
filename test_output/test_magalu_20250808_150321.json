@@ -1,0 +1,40 @@
+[
+  {
+    "titulo": "Pneu Goodyear 175/70R13",
+    "preco": 299.9,
+    "link": "https://exemplo.com/pneu1",
+    "data_coleta": "2025-08-08 15:03:21",
+    "preco_original": null,
+    "promocao": false,
+    "imagem": "",
+    "marketplace": "magazineluiza",
+    "categoria": "",
+    "disponivel": true,
+    "avaliacoes": 0,
+    "nota_media": 0.0,
+    "vendedor": "",
+    "frete_gratis": false,
+    "parcelamento": "",
+    "descricao": "",
+    "frete": null
+  },
+  {
+    "titulo": "Pneu Michelin 185/65R14",
+    "preco": 399.9,
+    "link": "https://exemplo.com/pneu2",
+    "data_coleta": "2025-08-08 15:03:21",
+    "preco_original": null,
+    "promocao": false,
+    "imagem": "",
+    "marketplace": "magazineluiza",
+    "categoria": "",
+    "disponivel": true,
+    "avaliacoes": 0,
+    "nota_media": 0.0,
+    "vendedor": "",
+    "frete_gratis": false,
+    "parcelamento": "",
+    "descricao": "",
+    "frete": null
+  }
+]

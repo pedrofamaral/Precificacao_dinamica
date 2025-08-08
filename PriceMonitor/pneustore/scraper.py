@@ -4,6 +4,8 @@ import json
 import logging
 import random
 import re
+import csv
+import sqlite3
 import time
 import unicodedata
 from dataclasses import dataclass, asdict, field
@@ -166,12 +168,15 @@ def extrair_filtros_busca(termo: str):
     return medida, marca, modelo
 
 
-@dataclass(slots=True)
+@dataclass
 class Product:
     titulo: str
     preco: Optional[float]
     link: str
     marketplace: str
+    medida: str = ""
+    aro: Optional[int] = None
+    termo_busca: str = ""
     categoria: str = ""
     marca: str = ""
     marca_filho: str = ""
@@ -181,9 +186,6 @@ class Product:
     frete_gratis: bool = False
     data_coleta: str = ""
     caracteristicas: dict = field(default_factory=dict)
-    medida: str = ""
-    aro: Optional[int] = None
-    termo_busca: str = ""
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -581,8 +583,55 @@ class ScraperPneuStore(ScraperBase):
             self.logger.warning(f"[detalhes] Falha em {product.link}: {e}")
 
 
-def salvar_produtos(produtos: List[Product], termo: str, output_dir: str = "data") -> Optional[Path]:
+def salvar_produtos_csv(produtos: List[Product], termo: str, output_dir: str = "data") -> Optional[Path]:
     if not produtos:
+        return None
+
+    medida = _extrair_medida(termo) or "medida_desconhecida"
+    termo_slug = _slugify_termo(termo)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    base_path = Path(output_dir) / "raw" / medida
+    base_path.mkdir(parents=True, exist_ok=True)
+    file_path = base_path / f"{termo_slug}_{timestamp}.csv"
+
+    with file_path.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=produtos[0].to_dict().keys())
+        writer.writeheader()
+        for p in produtos:
+            writer.writerow(p.to_dict())
+
+    return file_path
+
+def salvar_produtos_sqlite(produtos: List[Product], termo: str, output_dir: str = "data") -> Optional[Path]:
+    if not produtos:
+        return None
+
+    medida = _extrair_medida(termo) or "medida_desconhecida"
+    termo_slug = _slugify_termo(termo)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    base_path = Path(output_dir) / "raw" / medida
+    base_path.mkdir(parents=True, exist_ok=True)
+    file_path = base_path / f"{termo_slug}_{timestamp}.sqlite"
+
+    conn = sqlite3.connect(file_path)
+    cursor = conn.cursor()
+    d = produtos[0].to_dict()
+    columns = ', '.join([f"{k} TEXT" for k in d.keys()])
+    cursor.execute(f"CREATE TABLE IF NOT EXISTS produtos ({columns})")
+
+    for p in produtos:
+        values = tuple(str(v) for v in p.to_dict().values())
+        placeholders = ', '.join('?' for _ in d.keys())
+        cursor.execute(f"INSERT INTO produtos VALUES ({placeholders})", values)
+
+    conn.commit()
+    conn.close()
+    return file_path
+
+
+def salvar_produtos_json(produtos: List[Product], termo: str, output_dir: str = "data") -> Optional[Path]:
+    if not produtos:
+        print("Nenhum produto encontrado para salvar.")
         return None
     
     medida = _extrair_medida(termo) or "medida_desconhecida"
@@ -595,24 +644,73 @@ def salvar_produtos(produtos: List[Product], termo: str, output_dir: str = "data
         json.dump([p.to_dict() for p in produtos], f, ensure_ascii=False, indent=2)
     return file_path
 
+def salvar_produtos_multiformato(produtos: List[Product], termo: str, output_dir: str = "data", formatos=None) -> dict:
+    if formatos is None:
+        formatos = ["json"]
 
+    caminhos = {}
+
+    if "json" in formatos:
+        caminho_json = salvar_produtos_json(produtos, termo, output_dir)
+        if caminho_json:
+            caminhos["json"] = str(caminho_json)
+
+    if "csv" in formatos:
+        caminho_csv = salvar_produtos_csv(produtos, termo, output_dir)
+        if caminho_csv:
+            caminhos["csv"] = str(caminho_csv)
+
+    if "sqlite" in formatos:
+        caminho_sqlite = salvar_produtos_sqlite(produtos, termo, output_dir)
+        if caminho_sqlite:
+            caminhos["sqlite"] = str(caminho_sqlite)
+
+    return caminhos
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--termo", required=True, help="Termo de busca")
+    parser.add_argument("--termo", help="Termo de busca")
     parser.add_argument("--max", type=int, default=100, help="Máximo de resultados")
     parser.add_argument("--output-dir", default="dados", help="Pasta de saída")
     parser.add_argument("--sort", default="relevance",
                         choices=["relevance", "price-asc", "price-desc", "name-asc", "name-desc", "top-sellers"],
                         help="Critério de ordenação.")
     parser.add_argument("--window", action="store_true", help="Mostrar navegador (não-headless)")
+    parser.add_argument("--lote-json", type=str, help="Caminho do JSON de queries (ex: query_products.json)")
+    parser.add_argument("--formatos", nargs="+", choices=["json", "csv", "sqlite"], default=["csv"],
+                        help="Formatos de saída (csv, sqlite, json).")
     args = parser.parse_args()
+
+    if args.lote_json:
+        with open(args.lote_json, "r", encoding="utf-8") as f:
+            queries = json.load(f)
+        for idx, item in enumerate(queries):
+            termo = (
+                item.get("query_flex") or
+                item.get("query_strict") or
+                item.get("termo") or
+                f"pneu {item.get('width')}/{item.get('aspect')}R{item.get('rim')} {item.get('brand')} {item.get('line_model')}"
+            )
+            print(f"\n=== {idx+1}/{len(queries)}: {termo} ===")
+            scraper = ScraperPneuStore(headless=not args.window)
+            produtos = scraper.buscar(termo, max_resultados=args.max, sort=args.sort)
+            caminhos = salvar_produtos_multiformato(produtos, termo, args.output_dir, args.formatos)
+            if not caminhos:
+                print("⚠️ Nenhum produto encontrado, nada salvo.")
+            else:
+                for formato, caminho in caminhos.items():
+                    print(f"✅ {len(produtos)} produtos salvos em {caminho}")
+        exit(0)
+
+    if not args.termo:
+        print("Você deve passar --termo ou --lote-json.")
+        exit(1)
 
     scraper = ScraperPneuStore(headless=not args.window)
     produtos = scraper.buscar(args.termo, max_resultados=args.max, sort=args.sort)
-
-    caminho = salvar_produtos(produtos, args.termo, args.output_dir)
-    if not caminho:
+    caminhos = salvar_produtos_multiformato(produtos, args.termo, args.output_dir, args.formatos)
+    if not caminhos:
         print("⚠️ Nenhum produto encontrado, nada salvo.")
     else:
-        print(f"✅ {len(produtos)} produtos salvos em {caminho}")
+        for formato, caminho in caminhos.items():
+            print(f"✅ {len(produtos)} produtos salvos em {caminho}")

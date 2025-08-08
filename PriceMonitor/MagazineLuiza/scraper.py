@@ -156,7 +156,6 @@ def extrair_medida(termo: str) -> str:
     return slugify(termo[:30])
 
 @dataclass
-@dataclass
 class ProdutoMagalu:
     titulo: str
     preco: float
@@ -610,7 +609,7 @@ class ScraperMagalu:
         if 'csv' in formatos and produtos:
             arquivo_csv = output_dir / f"{slug}_{timestamp}.csv"
             with open(arquivo_csv, "w", newline="", encoding="utf-8") as f:
-                writer = csv.DictWriter(f, fieldnames=produtos[0].__dict__.keys())
+                writer = csv.DictWriter(f, fieldnames=produtos[0].to_dict().keys())
                 writer.writeheader()
                 for produto in produtos:
                     writer.writerow(produto.to_dict())
