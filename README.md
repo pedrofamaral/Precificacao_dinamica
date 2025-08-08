@@ -180,5 +180,3 @@ Distribuído sob a licença **MIT** – veja o arquivo [`LICENSE`](LICENSE) para
 _Ciência da Computação @ PUC-Minas · apaixonado por IA e café ☕._
 
 ---
-
-> _Última atualização: 08 ago 2025 – sinta-se à vontade para editar e adaptar._
