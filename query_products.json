@@ -1758,5 +1758,90 @@
       "FM800"
     ],
     "size_regex": "\\b215[/\\s-]?50\\s*R?\\s*17\\b"    
+  },
+  {
+    "width": "215",
+    "aspect": "55",
+    "rim": "17",
+    "size_norm": "215/55R17",
+    "brand": "Pirelli",
+    "line_model": "Scorpion",
+    "original_label": "Pirelli scporion",
+    "query_strict": "pneu 215/55R17 Pirelli scorpion",
+    "keywords": [
+      "215/55R17",
+      "215 55 R17",
+      "Pirelli",
+      "scorpion"
+    ],
+    "size_regex": "\\b215[/\\s-]?55\\s*R?\\s*16\\b"
+  },
+  {
+    "width": "215",
+    "aspect": "55",
+    "rim": "17",
+    "size_norm": "215/55R17",
+    "brand": "Goodyear",
+    "line_model": "EfficientGrip",
+    "original_label": "Goodyear efficientgrip",
+    "query_strict": "pneu 215/55R17 Goodyear EfficientGrip",
+    "keywords": [
+      "215/55R17",
+      "215 55 R17",
+      "Goodyear",
+      "EfficientGrip"
+    ],
+    "size_regex": "\\b215[/\\s-]?55\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "215",
+    "aspect": "55",
+    "rim": "17",
+    "size_norm": "215/55R17",
+    "brand": "Goodyear",
+    "line_model": "EfficientGrip suv",
+    "original_label": "Goodyear efficientgrip suv",
+    "query_strict": "pneu 215/55R17 Goodyear EfficientGrip SUV",
+    "keywords": [
+      "215/55R17",
+      "215 55 R17",
+      "Goodyear",
+      "EfficientGrip suv"
+    ],
+    "size_regex": "\\b215[/\\s-]?55\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "215",
+    "aspect": "55",
+    "rim": "17",
+    "size_norm": "215/55R17",
+    "brand": "Michelin",
+    "line_model": "Primacy 4",
+    "original_label": "Michelin primacy 4",
+    "query_strict": "pneu 215/55R17 Michelin Primacy 4",
+    "keywords": [
+      "215/55R17",
+      "215 55 R17",
+      "Michelin",
+      "Primacy 4"
+    ],
+    "size_regex": "\\b215[/\\s-]?55\\s*R?\\s*17\\b"
+  },
+  {
+    "width": "215",
+    "aspect": "60",
+    "rim": "17",
+    "size_norm": "215/60R17",
+    "brand": "Dunlop",
+    "line_model": "Grandtrek",
+    "original_label": "Dunlop Grandtrek",
+    "query_strict": "pneu 215/60R17 Dunlop grandtrek",
+    "keywords": [
+      "215/60R17",
+      "215 60 R17",
+      "Dunlop",
+      "FM800"
+    ],
+    "size_regex": "\\b215[/\\s-]?60\\s*R?\\s*17\\b"
   }
 ]
