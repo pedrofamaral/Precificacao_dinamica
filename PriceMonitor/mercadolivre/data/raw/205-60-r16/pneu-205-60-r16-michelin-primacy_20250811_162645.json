@@ -1,0 +1,28 @@
+[
+  {
+    "titulo": "Pneu Michelin Ltx Force 205/60 R16 92h H",
+    "link": "https://www.mercadolivre.com.br/pneu-michelin-ltx-force-20560-r16-92h/up/MLBU3336869836",
+    "preco": 1083.0,
+    "brand": "michelin",
+    "model": "primacy",
+    "size": "",
+    "query_strict": "pneu 205/60R16 Michelin Primacy",
+    "size_norm": "205-60-r16",
+    "brand_expected": "michelin",
+    "line_expected": "primacy",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "michelin",
+    "data_coleta": "2025-08-11 19:26:21",
+    "preco_original": null,
+    "preco_desconto": 1083.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "titulo": "Pneus Michelin 215/55/17 Usados Meia Vida Ótimo Estado",
+    "link": "https://produto.mercadolivre.com.br/MLB-5248628696-pneus-michelin-2155517-usados-meia-vida-otimo-estado-_JM?searchVariation=186677575589",
+    "preco": 700.0,
+    "brand": "michelin",
+    "model": "primacy 4",
+    "size": "",
+    "query_strict": "pneu 215/55R17 Michelin Primacy 4",
+    "size_norm": "215-55-r17",
+    "brand_expected": "michelin",
+    "line_expected": "primacy 4",
+    "size_ok": true,
+    "free_ship": false,
+    "frete": null,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": false,
+    "marketplace": "mercadolivre",
+    "marca": "michelin",
+    "data_coleta": "2025-08-11 20:23:54",
+    "preco_original": null,
+    "preco_desconto": 700.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

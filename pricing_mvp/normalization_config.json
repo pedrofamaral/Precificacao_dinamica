@@ -1,0 +1,25 @@
+{
+  "known_brands": [
+    "goodyear","kelly","pirelli","continental","michelin",
+    "bridgestone","firestone","dunlop","maxxis","kumho",
+    "yokohama","hankook","bfgoodrich","toyo","cooper","falken","nexen","sumitomo","formula"
+  ],
+  "brand_aliases": {
+    "good year": "goodyear",
+    "goodyer": "goodyear",
+    "kelly": "goodyear"
+  },
+  "known_model_phrases": [
+    "assurance maxlife","assurance","eagle","eagle sport","efficientgrip","wrangler","kelly edge",
+    "powercontact","cinturato p7","p400","p400 evo","scorpion",
+    "energy xm2","primacy 4","ltx force",
+    "sp touring","sp sport","fm800","lm704","enasave ec300"
+  ],
+  "model_aliases": {
+    "power contact": "powercontact",
+    "cint p7": "cinturato p7",
+    "energy xm2+": "energy xm2",
+    "scporion": "scorpion",
+    "powerontact": "powercontact"
+  }
+}

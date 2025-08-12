@@ -1,0 +1,28 @@
+[
+  {
+    "titulo": "Pneu 205/50/17 Michelin Primacy Hp Zp Run Flat 89v",
+    "link": "https://produto.mercadolivre.com.br/MLB-3559589877-pneu-2055017-michelin-primacy-hp-zp-run-flat-89v-_JM?searchVariation=181328562927",
+    "preco": 1500.0,
+    "brand": "michelin",
+    "model": "primacy",
+    "size": "",
+    "query_strict": "pneu 205/50R17 Michelin Primacy",
+    "size_norm": "205-50-r17",
+    "brand_expected": "michelin",
+    "line_expected": "primacy",
+    "size_ok": true,
+    "free_ship": false,
+    "frete": null,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": false,
+    "marketplace": "mercadolivre",
+    "marca": "michelin",
+    "data_coleta": "2025-08-11 18:42:36",
+    "preco_original": null,
+    "preco_desconto": 1500.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

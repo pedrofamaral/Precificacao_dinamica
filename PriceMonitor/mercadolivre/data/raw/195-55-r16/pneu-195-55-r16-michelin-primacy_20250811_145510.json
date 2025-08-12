@@ -1,0 +1,28 @@
+[
+  {
+    "titulo": "Pneu Michelin Primacy4 195/55 R16 Hb20 B",
+    "link": "https://produto.mercadolivre.com.br/MLB-4091652767-pneu-michelin-primacy4-19555-r16-hb20-b-_JM?searchVariation=188336804887",
+    "preco": 199.99,
+    "brand": "michelin",
+    "model": "primacy",
+    "size": "",
+    "query_strict": "pneu 195/55R16 Michelin Primacy",
+    "size_norm": "195-55-r16",
+    "brand_expected": "michelin",
+    "line_expected": "primacy",
+    "size_ok": true,
+    "free_ship": false,
+    "frete": null,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": false,
+    "marketplace": "mercadolivre",
+    "marca": "michelin",
+    "data_coleta": "2025-08-11 17:54:21",
+    "preco_original": null,
+    "preco_desconto": 199.99,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

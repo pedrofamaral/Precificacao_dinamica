@@ -9,6 +9,7 @@ import re
 import sys
 import time
 import requests
+import unicodedata
 from datetime import datetime
 from pathlib import Path
 from typing import List, Set, Optional, Dict
@@ -17,7 +18,6 @@ from decimal import Decimal
 from urllib.parse import urlencode, quote_plus
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver import ActionChains
 from selenium.common.exceptions import MoveTargetOutOfBoundsException
 from selenium.webdriver.common.by import By
@@ -27,17 +27,18 @@ from selenium.common.exceptions import (
     NoSuchElementException, TimeoutException, ElementClickInterceptedException,
     StaleElementReferenceException, WebDriverException
 )
-from selenium.webdriver.remote.webelement import WebElement
 from bs4 import BeautifulSoup
+from dataclasses import dataclass, asdict, field
 
+# =========================
+# Helpers do seu projeto (mantidos)
+# =========================
 try:
     from utils.helpers import (
-        extrair_medida,
-        construir_dim_pattern,
-        detectar_marca,
+        extrair_medida,              # usado para nome de pasta (ex.: 175-70-r13)
+        construir_dim_pattern,       # regex de dimensão pra filtrar
+        detectar_marca,              # sua detecção antiga (mantida como fallback)
         eh_kit_ou_multiplos_pneus,
-        #limpar_preco,
-        #extrair_texto_seguro,
         slugify,
         _parse_valor,
         _delay_between_cards,
@@ -48,15 +49,154 @@ except ImportError:
         construir_dim_pattern,
         detectar_marca,
         eh_kit_ou_multiplos_pneus,
-        #limpar_preco,
-        #extrair_texto_seguro,
         slugify,
         _parse_valor,
         _delay_between_cards,
     )
 
-from dataclasses import dataclass, asdict, field
+# =========================
+# Normalização (brand/model/size) — novo
+# =========================
 
+DEFAULT_KNOWN_BRANDS = [
+    "goodyear", "kelly", "pirelli", "continental", "michelin",
+    "bridgestone", "firestone", "dunlop", "maxxis", "kumho",
+    "yokohama", "hankook", "bfgoodrich", "toyo", "cooper", "falken", "nexen", "sumitomo", "formula"
+]
+
+DEFAULT_MODEL_PHRASES = [
+    # Goodyear / Kelly
+    "assurance maxlife", "assurance", "wrangler", "eagle", "efficientgrip", "eagle sport", "kelly edge",
+    # Michelin
+    "energy xm2", "primacy 4", "ltx force",
+    # Pirelli
+    "cinturato p7", "p400 evo", "p400", "formula evo",
+    # Continental
+    "powercontact",
+    # Dunlop
+    "sp touring", "sp sport", "fm800", "lm704", "enasave ec300",
+    # Outros recorrentes
+    "direction", "f700", "bc20", "scorpion"
+]
+
+# preenchido via --config se existir
+CONFIG_NORM: Dict[str, Dict | List] = {
+    "known_brands": DEFAULT_KNOWN_BRANDS.copy(),
+    "brand_aliases": { "kelly": "goodyear" },  # exemplo
+    "known_model_phrases": DEFAULT_MODEL_PHRASES.copy(),
+    "model_aliases": {
+        "power contact": "powercontact",
+        "powerontact": "powercontact",
+        "cint p7": "cinturato p7",
+        "scporion": "scorpion",
+        "scporion ks": "scorpion",
+    },
+}
+
+SIZE_CANON_RE = re.compile(r"(\d{3})\s*[/\-\s]?\s*(\d{2,3})\s*[rR]?\s*[-\s]?\s*(\d{2})")
+
+def _norm_text(s: str) -> str:
+    s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode("ascii")
+    s = re.sub(r"[^a-z0-9 /\-]", " ", s.lower())
+    return re.sub(r"\s+", " ", s).strip()
+
+def _load_config_norm(path: Optional[str]):
+    global CONFIG_NORM
+    if not path:
+        return
+    p = Path(path).expanduser().resolve()
+    if not p.exists():
+        print(f"[WARN] --config não encontrado: {p}. Usando defaults.")
+        return
+    try:
+        with open(p, "r", encoding="utf-8") as f:
+            cfg = json.load(f)
+        for k in ("known_brands", "brand_aliases", "known_model_phrases", "model_aliases"):
+            if k in cfg:
+                CONFIG_NORM[k] = cfg[k]
+        # normaliza para lower/sem acento
+        CONFIG_NORM["known_brands"] = sorted({_norm_text(b) for b in CONFIG_NORM.get("known_brands", []) if b})
+        CONFIG_NORM["brand_aliases"] = { _norm_text(k): _norm_text(v) for k,v in CONFIG_NORM.get("brand_aliases", {}).items() }
+        CONFIG_NORM["known_model_phrases"] = sorted({_norm_text(m) for m in CONFIG_NORM.get("known_model_phrases", []) if m})
+        CONFIG_NORM["model_aliases"] = { _norm_text(k): _norm_text(v) for k,v in CONFIG_NORM.get("model_aliases", {}).items() }
+    except Exception as e:
+        print(f"[WARN] Falha ao ler --config: {e}. Usando defaults.")
+
+def _canon_brand(s: str) -> str:
+    s = _norm_text(s)
+    if not s:
+        return ""
+    # alias
+    if s in CONFIG_NORM["brand_aliases"]:
+        return CONFIG_NORM["brand_aliases"][s]
+    # match exato
+    for kb in CONFIG_NORM["known_brands"]:
+        if s == kb:
+            return kb
+    # token contido
+    for kb in CONFIG_NORM["known_brands"]:
+        if f" {kb} " in f" {s} ":
+            return kb
+    return s.split()[0]
+
+def _brand_from_title(title: str, expected: str = "") -> str:
+    t = _norm_text(title)
+    exp = _canon_brand(expected)
+    if exp:
+        return exp
+    # detecta alias primeiro
+    for alias, target in CONFIG_NORM["brand_aliases"].items():
+        if f" {alias} " in f" {t} ":
+            return target
+    # detecta marca conhecida
+    for kb in CONFIG_NORM["known_brands"]:
+        if f" {kb} " in f" {t} ":
+            return kb
+    # fallback antigo
+    try:
+        det = detectar_marca(title)  # do seu helpers
+        if det:
+            return _canon_brand(det)
+    except Exception:
+        pass
+    return ""
+
+def _canon_model(s: str) -> str:
+    s = _norm_text(s)
+    if not s:
+        return ""
+    if s in CONFIG_NORM["model_aliases"]:
+        return CONFIG_NORM["model_aliases"][s]
+    return s
+
+def _model_from_title(title: str, brand: str = "", expected: str = "") -> str:
+    t = _norm_text(title)
+    if expected:
+        return _canon_model(expected)
+    # frases conhecidas
+    for phrase in CONFIG_NORM["known_model_phrases"]:
+        if phrase in t:
+            return _canon_model(phrase)
+    # heurística: token(s) após a marca
+    if brand and brand in t:
+        after = t.split(brand, 1)[1].strip()
+        toks = [w for w in after.split() if w not in {
+            "pneu","aro","r12","r13","r14","r15","r16","r17","r18","r19","r20",
+            "175/70r13","175/70","175-70","p","t","h","v","xl","runflat","rf","aro"
+        }]
+        if toks:
+            return _canon_model(" ".join(toks[:2]))
+    return ""
+
+def _size_canonical(s: str) -> str:
+    m = SIZE_CANON_RE.search(_norm_text(s))
+    if not m:
+        return ""
+    return f"{m.group(1)}/{m.group(2)}R{m.group(3)}".upper()
+
+# =========================
+# Logger
+# =========================
 def _setup_logger(debug: bool = False) -> logging.Logger:
     os.makedirs("logs", exist_ok=True)
     logger = logging.getLogger("mlscraper")
@@ -76,13 +216,22 @@ def _setup_logger(debug: bool = False) -> logging.Logger:
     logger.addHandler(sh)
     return logger
 
+# =========================
+# Dados
+# =========================
 @dataclass
 class Product:
     titulo: str
     link: str
     preco: float | None
+    # canônicos novos
+    brand: str = ""
+    model: str = ""
+    size: str = ""        # 175/70R13
+
+    # existentes/compatibilidade
     query_strict: str = ""
-    size_norm: str = ""
+    size_norm: str = ""   # do termo (pode ser 175-70-r13)
     brand_expected: str = ""
     line_expected: str = ""
     size_ok: bool = True
@@ -93,39 +242,46 @@ class Product:
     condicao: str = "Novo"
     frete_gratis: bool = False
     marketplace: str = "mercadolivre"
-    marca: str = ""
+    marca: str = ""       # mantido (espelha brand)
     data_coleta: str = ""
     preco_original: float | None = None
     preco_desconto: float | None = None
     desconto_pct: float | None = None
     shipping: Dict[str, float | None] = field(default_factory=dict)
-    
+
     def __post_init__(self):
         if self.free_ship and (self.frete in (None, 0.0)):
             self.frete_gratis = True
         elif self.frete_gratis:
             self.free_ship = True
+        # manter marca espelhada com brand
+        if self.brand and not self.marca:
+            self.marca = self.brand
+
     def to_dict(self) -> dict:
         return asdict(self)
 
+# =========================
+# Scraper
+# =========================
 class ScraperBase:
     def __init__(self, headless: bool = True, delay_scroll: float = 1.0, logger: Optional[logging.Logger] = None):
         self.headless = headless
         self.delay_scroll = delay_scroll
         self.logger = logger or _setup_logger(False)
         self.driver = self._criar_driver(headless=self.headless)
-    
+
     @staticmethod
     def _criar_driver(headless: bool = True, proxy: str | None = None):
         _UAS = [
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/126.0.0.0 Safari/537.36",
-        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/126.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/126.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/126.0.0.0 Safari/537.36",
         ]
         opt = Options()
         if headless:
@@ -136,24 +292,21 @@ class ScraperBase:
         opt.add_argument("--user-agent=" + random.choice(_UAS))
         opt.add_experimental_option("excludeSwitches", ["enable-automation"])
         opt.add_experimental_option("useAutomationExtension", False)
-
         if proxy:
             opt.add_argument(f"--proxy-server={proxy}")
-
         driver = webdriver.Chrome(options=opt)
-
         driver.execute_cdp_cmd(
             "Page.addScriptToEvaluateOnNewDocument",
             {"source": "Object.defineProperty(navigator,'webdriver',{get:()=>undefined})"},
         )
         return driver
-    
+
     def fechar(self):
         try:
             self.driver.quit()
         except Exception:
             pass
-    
+
     def _delay_aleatorio(self, a: float = 0.5, b: float = 1.5) -> float:
         return random.uniform(a, b)
 
@@ -161,7 +314,7 @@ class ScraperMercadoLivre(ScraperBase):
     base_url = "https://lista.mercadolivre.com.br"
     marketplace = "mercadolivre"
     MAX_RETRIES = 4
-    DELAY_MIN = 900 
+
     CARD_SEL_CANDIDATOS = (
         "div.ui-search-result__wrapper",
         "div.ui-search-result",
@@ -226,7 +379,6 @@ class ScraperMercadoLivre(ScraperBase):
         "meta[itemprop='price']",
         ".andes-money-amount.ui-pdp-price__part.andes-money-amount--cents-superscript.andes-money-amount--compact"
     )
-
     PDP_PRECO_ANTIGO_SELS = (
         ".ui-pdp-price__original-value",
         ".andes-money-amount--previous",
@@ -236,21 +388,6 @@ class ScraperMercadoLivre(ScraperBase):
         ".andes-money-amount--previous.andes-money-amount--cents-superscript"
         ".andes-money-amount--compact"
     )
-
-    PDP_SHIPPING_TRIGGER_SELS = (
-        "button[data-testid='shipping-calculator']", "button.ui-pdp-shipping__modal-trigger",
-        "a.ui-pdp-media__action", "button[aria-label*='frete']",
-        "span.ui-pdp-color--BLUE", "a.ui-pdp-action--link"
-    )
-    PDP_SHIPPING_INPUT_SELS = (
-        "input#zip-code-input", "input[data-testid='zip-code-input']",
-        "input[placeholder*='CEP']", "input.ui-pdp-input",
-        "input.andes-form-control__field"
-    )
-    PDP_SHIPPING_SUBMIT_SELS = (
-        "button[data-testid='calculate-shipping']", "button.ui-pdp-calculate__button",
-        "button.andes-button", "button[type='submit']"
-    )
     PRECO_CLASSES_ANTIGOS = ("price-tag-previous","andes-money-amount--previous","line-through","ui-search-price__original-value","ui-pdp-price__original-value")
     CARD_PRECO_BLOCOS = (
         ".ui-search-price__second-line",
@@ -259,18 +396,15 @@ class ScraperMercadoLivre(ScraperBase):
         ".price-tag",
         ".ui-search-result__content-wrapper .price-tag",
     )
-
     PDP_SHIPPING_RESULT_SELS = (
         ".ui-pdp-shipping__options", ".ui-pdp-shipping__summary", ".ui-pdp-srp__shipping",
         ".ui-pdp-shipping__item", ".ui-pdp-shipping__text"
     )
     _PRECO_REGEX = re.compile(r"(?:R\$|\$)?\s*([\d\.\,]+(?:[\,\.]\d{1,2})?)")
-    
-    def __init__(self, headless: bool = True, delay_scroll: float = 1.0, modo: str = "click", dump_html: bool = False, logger: Optional[logging.Logger] = None, min_delay: float = 1.0, max_delay: float = 2.0, page_delay_min: float = 5.0,
-                 page_delay_max: float = 10.0,
-                 pages_before_cooldown: int = 5,
-                 cooldown_delay: float = 60.0,
-               **kwargs):
+
+    def __init__(self, headless: bool = True, delay_scroll: float = 1.0, modo: str = "click", dump_html: bool = False, logger: Optional[logging.Logger] = None,
+                 min_delay: float = 1.0, max_delay: float = 2.0, page_delay_min: float = 5.0, page_delay_max: float = 10.0,
+                 pages_before_cooldown: int = 5, cooldown_delay: float = 60.0, **kwargs):
         super().__init__(headless=headless, delay_scroll=delay_scroll, logger=logger)
         self.modo = modo
         self.dump_html = dump_html
@@ -285,7 +419,9 @@ class ScraperMercadoLivre(ScraperBase):
         self.pages_before_cooldown = pages_before_cooldown
         self.cooldown_delay = cooldown_delay
         self.pages_scraped = 0
-    
+        self._query_meta: Dict = {}
+
+    # ---------- navegação / util ----------
     def _construir_url_busca(self, termo: str, pagina: int = 1, ordenacao: str | None = None, usar_offset: bool = True, page_size: int = 48, filtros: dict | None = None) -> str:
         slug = slugify(termo)
         path = slug
@@ -299,7 +435,7 @@ class ScraperMercadoLivre(ScraperBase):
             qs.update(filtros)
         querystring = f"?{urlencode(qs)}" if qs else ""
         return f"{self.base_url}/{quote_plus(path)}{querystring}"
-    
+
     def _aceitar_cookies(self):
         if self._cookies_ok:
             return
@@ -325,29 +461,11 @@ class ScraperMercadoLivre(ScraperBase):
                     return
             except Exception:
                 continue
-        xpaths = [
-            "//button[contains(text(),'Entendi') or contains(text(),'Aceitar') or contains(text(),'OK')]",
-            "//button[contains(@class, 'cookie')]",
-            "//button[contains(@data-testid, 'cookie')]"
-        ]
-        for xp in xpaths:
-            try:
-                btn = self.driver.find_element(By.XPATH, xp)
-                if btn.is_displayed():
-                    btn.click()
-                    time.sleep(self._delay_aleatorio())
-                    self._cookies_ok = True
-                    self.logger.info("cookies aceitos xp=%s", xp)
-                    return
-            except Exception:
-                continue
-    
+
     def _rolar_pagina(self):
         n_scrolls = random.randint(3, 7)
         for _ in range(n_scrolls):
-            self.driver.execute_script(
-                "window.scrollBy(0, window.innerHeight * 0.8);"
-            )
+            self.driver.execute_script("window.scrollBy(0, window.innerHeight * 0.8);")
             time.sleep(random.uniform(0.5, 1.2))
             self._move_mouse_randomly()
 
@@ -357,15 +475,13 @@ class ScraperMercadoLivre(ScraperBase):
             height = self.driver.execute_script("return window.innerHeight")
             x = random.randint(0, width)
             y = random.randint(0, height)
-
             actions = ActionChains(self.driver)
             actions.move_by_offset(x, y).pause(random.uniform(0.5, 1.5)).perform()
             actions.move_by_offset(-x, -y).perform()
         except MoveTargetOutOfBoundsException:
             pass
 
-
-
+    # ---------- coleta ----------
     def _find_cards(self):
         for sel in self.CARD_SEL_CANDIDATOS:
             try:
@@ -383,27 +499,20 @@ class ScraperMercadoLivre(ScraperBase):
             except Exception:
                 continue
         return [], None
-    
+
     def _esperar_cards(self, timeout: float = 15) -> tuple[int, str | None]:
         fim = time.time() + timeout
-        tent = 0
         while time.time() < fim:
             els, sel = self._find_cards()
             if els:
                 self.logger.info("cards encontrados page=%s n=%s sel=%s", self._pagina_atual, len(els), sel)
                 return len(els), sel
-            tent += 1
-            if tent % 10 == 0:
-                self.logger.debug("aguardando cards... tentativa=%s", tent)
             time.sleep(0.5)
         src_len = len(self.driver.page_source or "")
         current_url = self.driver.current_url
         self.logger.warning("cards NAO encontrados page=%s html_len=%s title=%s url=%s", self._pagina_atual, src_len, self.driver.title, current_url)
-        msgs = self.driver.find_elements(By.CSS_SELECTOR, ".ui-search-rescue, .ui-search-results__error, .ui-search-rescue__title")
-        if msgs:
-            self.logger.warning("mensagens_erro=%s", [m.text for m in msgs])
         return 0, None
-    
+
     def _esperar_dom_estavel(self, timeout: float = 10, estabilidade: float = 0.5) -> int:
         fim = time.time() + timeout
         ultimo_len = None
@@ -420,7 +529,7 @@ class ScraperMercadoLivre(ScraperBase):
                 ultimo_ts = agora
             time.sleep(0.1)
         return ultimo_len or 0
-    
+
     def _snap_cards_html(self) -> tuple[list[str], int, str | None]:
         est = self._esperar_dom_estavel()
         cards, sel_usado = self._find_cards()
@@ -445,7 +554,7 @@ class ScraperMercadoLivre(ScraperBase):
         anchors = sum(1 for h in htmls if "href=" in h)
         self.logger.info("snapshot page=%s cards=%s stale=%s est=%s anchors=%s sel=%s", self._pagina_atual, len(cards), stale, est, anchors, sel_usado)
         return htmls, anchors, sel_usado
-    
+
     def _first_text(self, soup, seletores):
         for sel in seletores:
             try:
@@ -457,36 +566,27 @@ class ScraperMercadoLivre(ScraperBase):
             except Exception:
                 continue
         return ""
-    
+
     def _extrair_precos_multi(self, soup: BeautifulSoup) -> tuple[float|None, float|None]:
         preco_antigo = None
         preco_atual  = None
 
         if soup.select_one("div.poly-price__current"):
-            orig_frac = soup.select_one(
-                "div.poly-price__original .andes-money-amount__fraction"
-            )
-            orig_cents = soup.select_one(
-                "div.poly-price__original .andes-money-amount__cents"
-            )
+            orig_frac = soup.select_one("div.poly-price__original .andes-money-amount__fraction")
+            orig_cents = soup.select_one("div.poly-price__original .andes-money-amount__cents")
             if orig_frac:
                 i = re.sub(r"\D", "", orig_frac.get_text(strip=True))
                 c = re.sub(r"\D", "", orig_cents.get_text(strip=True)) if orig_cents else "00"
                 preco_antigo = float( Decimal(f"{int(i)}.{int(c):02d}") )
 
-            curr_frac = soup.select_one(
-                "div.poly-price__current .andes-money-amount__fraction"
-            )
-            curr_cents = soup.select_one(
-                "div.poly-price__current .andes-money-amount__cents"
-            )
+            curr_frac = soup.select_one("div.poly-price__current .andes-money-amount__fraction")
+            curr_cents = soup.select_one("div.poly-price__current .andes-money-amount__cents")
             if curr_frac:
                 i = re.sub(r"\D", "", curr_frac.get_text(strip=True))
                 c = re.sub(r"\D", "", curr_cents.get_text(strip=True)) if curr_cents else "00"
                 preco_atual = float( Decimal(f"{int(i)}.{int(c):02d}") )
 
             return preco_antigo, preco_atual
-
 
         script = soup.find("script", {"type": "application/ld+json"})
         if script and script.string:
@@ -578,7 +678,6 @@ class ScraperMercadoLivre(ScraperBase):
             if m:
                 preco_atual = _parse_valor(m.group(1))
 
-        # último sanity-check
         if preco_antigo is not None and preco_atual is not None and preco_atual >= preco_antigo:
             preco_antigo = None
 
@@ -611,56 +710,8 @@ class ScraperMercadoLivre(ScraperBase):
                     pass
         txt = bloco.get_text(" ", strip=True)
         return _parse_valor(txt)
-    
-    def _extrair_preco_soup(self, soup) -> float | None:
-        inteiro_txt = self._first_text(soup, self.PRECO_INTEIRO_SELETORES)
-        cents_txt = self._first_text(soup, self.PRECO_CENTS_SELETORES)
-        if inteiro_txt:
-            try:
-                inteiro_digits = re.sub(r"\D", "", inteiro_txt)
-                cents_digits = re.sub(r"\D", "", cents_txt) if cents_txt else "00"
-                if inteiro_digits:
-                    val = Decimal(f"{int(inteiro_digits)}.{int(cents_digits or 0):02d}")
-                    return float(val)
-            except Exception:
-                pass
-        for sel in self.PRECO_ATTR_SELETORES:
-            try:
-                el = soup.select_one(sel)
-                if not el:
-                    continue
-                for attr in ("data-price", "content", "value"):
-                    if el.has_attr(attr):
-                        v = _parse_valor(el[attr])
-                        if v is not None:
-                            return v
-            except Exception:
-                continue
-        try:
-            raw = soup.get_text(" ", strip=True)
-            m = self._PRECO_REGEX.search(raw)
-            if m:
-                v = _parse_valor(m.group(1))
-                if v is not None:
-                    return v
-        except Exception:
-            pass
-        return None
-    
-    def _extrair_frete_soup(self, soup) -> tuple[bool, float | None]:
-        try:
-            txt = soup.get_text(" ", strip=True).lower()
-            if "frete grátis" in txt or "frete gratis" in txt or "envio grátis" in txt or "envio gratis" in txt:
-                return True, 0.0
-            m = re.search(r"(?:frete|envio).*?([\d\.,]+)", txt)
-            if m:
-                v = _parse_valor(m.group(1))
-                if v is not None:
-                    return False, v
-        except Exception:
-            pass
-        return False, None
-    
+
+    # ---------- parsing de card ----------
     def _parse_card_html(self, card_html: str) -> Optional[Product]:
         try:
             soup = BeautifulSoup(card_html, "lxml")
@@ -686,6 +737,15 @@ class ScraperMercadoLivre(ScraperBase):
             preco = preco_atual
             free_ship, frete = self._extrair_frete_soup(soup)
 
+            # ---- NOVO: normalização canônica ----
+            brand_exp = self._query_meta.get("brand", "")
+            model_exp = self._query_meta.get("line_model", "")
+            size_exp  = self._query_meta.get("size_norm", "")
+
+            brand = _brand_from_title(titulo, expected=brand_exp)
+            model = _model_from_title(titulo, brand=brand, expected=model_exp)
+            size  = _size_canonical(size_exp or titulo)
+
             prod = Product(
                 titulo=titulo,
                 link=link,
@@ -698,9 +758,15 @@ class ScraperMercadoLivre(ScraperBase):
                 preco_desconto=preco_atual,
                 desconto_pct=self._calc_desconto_pct(preco_orig, preco_atual),
                 query_strict=self._query_meta.get("query_strict",""),
-                size_norm=self._query_meta.get("size_norm",""),
-                brand_expected=self._query_meta.get("brand",""),
-                line_expected=self._query_meta.get("line_model",""),
+                size_norm=size_exp or extrair_medida(titulo) or "",
+                brand_expected=_canon_brand(brand_exp),
+                line_expected=_canon_model(model_exp),
+                # novos:
+                brand=brand,
+                model=model,
+                size=size,
+                # compat:
+                marca=brand,
             )
             try:
                 if self._dim_pattern:
@@ -708,59 +774,62 @@ class ScraperMercadoLivre(ScraperBase):
             except Exception:
                 prod.size_ok = True
 
-            self.logger.debug("card_price titulo=%s orig=%s atual=%s", titulo[:40], preco_orig, preco_atual)
+            self.logger.debug("card_price titulo=%s orig=%s atual=%s brand=%s model=%s size=%s",
+                              titulo[:60], preco_orig, preco_atual, brand, model, size)
             return prod
         except Exception as e:
             self.logger.debug("parse_card_html_fail page=%s err=%s", self._pagina_atual, e)
             return None
 
-    
+    def _extrair_frete_soup(self, soup) -> tuple[bool, float | None]:
+        try:
+            txt = soup.get_text(" ", strip=True).lower()
+            if "frete grátis" in txt or "frete gratis" in txt or "envio grátis" in txt or "envio gratis" in txt:
+                return True, 0.0
+            m = re.search(r"(?:frete|envio).*?([\d\.,]+)", txt)
+            if m:
+                v = _parse_valor(m.group(1))
+                if v is not None:
+                    return False, v
+        except Exception:
+            pass
+        return False, None
+
     def _calc_desconto_pct(self, orig: float | None, desc: float | None) -> float | None:
         if orig is None or desc is None or orig <= 0:
             return None
         return round((orig - desc) / orig * 100, 2)
-    
+
     def _filtrar_produto(self, prod: Product, termo_busca: str) -> tuple[Optional[Product], str]:
         if not prod:
-            self.logger.debug("Produto não pôde ser criado a partir do card HTML (parse_fail)")
             return None, "parse_fail"
         titulo = prod.titulo or ""
         pat = self._dim_pattern
         if pat and not pat.search(titulo):
-            self.logger.debug(f"sem_dim - Título: {titulo} | Regex: {pat.pattern}")
             return None, "sem_dim"
         if eh_kit_ou_multiplos_pneus(titulo):
-            self.logger.debug(f"é kit - Título: {titulo}")
-            return None
-        marca_desejada = detectar_marca(termo_busca)
-        marca_prod = detectar_marca(titulo)
+            return None, "kit"
+
+        # checagem de marca (desejada vs detectada)
+        marca_desejada = _canon_brand(detectar_marca(termo_busca) or self._query_meta.get("brand",""))
+        marca_prod = prod.brand or _brand_from_title(titulo, expected="")
         if marca_desejada and marca_prod and marca_prod != marca_desejada:
-            self.logger.debug(f"marca_diff - Título: {titulo} | Marca detectada: {marca_prod} | Marca desejada: {marca_desejada}")
             return None, "marca_diff"
-        prod.marca = marca_prod or ""
+
+        # Garante campo 'marca' compatível
+        prod.marca = prod.brand or marca_prod or marca_desejada or ""
+
         prod.frete_gratis = prod.free_ship and (prod.frete in (None, 0.0))
         return prod, "ok"
-    
-    def _dump_pagina_html(self, termo_slug: str, pagina: int):
-        try:
-            base_dir = Path("dumps") / "mercadolivre" / termo_slug
-            base_dir.mkdir(parents=True, exist_ok=True)
-            path = base_dir / f"p{pagina:03}.html"
-            html = self.driver.execute_script("return document.documentElement.outerHTML;")
-            with open(path, "w", encoding="utf-8") as f:
-                f.write(html)
-            self.logger.info("dump_html page=%s path=%s", pagina, path)
-        except Exception as e:
-            self.logger.warning("dump_html_erro page=%s err=%s", pagina, e)
-    
+
+    # ---------- paginação ----------
     def _delay_after_page(self):
         d = random.uniform(self.page_delay_min, self.page_delay_max)
         self.logger.info(f"Delaying {d:.2f}s after finishing page")
         time.sleep(d)
         self.pages_scraped += 1
         if self.pages_scraped % self.pages_before_cooldown == 0:
-            self.logger.warning(f"Cooldown de {self.cooldown_delay}s após "
-                                f"{self.pages_before_cooldown} páginas")
+            self.logger.warning(f"Cooldown de {self.cooldown_delay}s após {self.pages_before_cooldown} páginas")
             time.sleep(self.cooldown_delay)
 
     def _ir_proxima_pagina(self) -> bool:
@@ -769,16 +838,12 @@ class ScraperMercadoLivre(ScraperBase):
                 btns = self.driver.find_elements(By.CSS_SELECTOR, sel)
                 if not btns:
                     continue
-
                 btn = btns[0]
                 if not (btn.is_displayed() and btn.is_enabled()):
                     continue
-
                 self.driver.execute_script("arguments[0].scrollIntoView(true);", btn)
                 time.sleep(self._delay_aleatorio(0.3, 0.6))
-
                 url = btn.get_attribute("href")
-
                 try:
                     head = requests.head(url, allow_redirects=True, timeout=5)
                     if head.status_code != 200:
@@ -786,142 +851,102 @@ class ScraperMercadoLivre(ScraperBase):
                         continue
                 except Exception:
                     pass
-
                 btn.click()
                 self.logger.info("next_click page=%s sel=%s", self._pagina_atual, sel)
-
                 WebDriverWait(self.driver, 10).until(EC.staleness_of(btn))
-
                 self._delay_after_page()
-                self.logger.info("Passando para a próxima página")
                 return True
-
             except (ElementClickInterceptedException, StaleElementReferenceException, TimeoutException):
                 continue
-
         backoff = random.uniform(10, 20)
         self.logger.error("Falha ao mudar de página, backoff %.2f s", backoff)
         time.sleep(backoff)
-        self.logger.info("next_click_fail page=%s", self._pagina_atual)
         return False
 
-    
-    def buscar_produtos(self, termo: str, max_resultados: int = 100, ordenacao: str | None = None, max_paginas: int | None = None, filtros: dict | None = None, page_size: int = 48, ceps: Optional[List[str]] = None, enriquecer: bool = False,
-        size_regex_override: Optional[str] = None, query_meta: Optional[dict] = None) -> List[Product]:
+    # ---------- ciclo principal ----------
+    def buscar_produtos(self, termo: str, max_resultados: int = 100, ordenacao: str | None = None, max_paginas: int | None = None,
+                        filtros: dict | None = None, page_size: int = 48, ceps: Optional[List[str]] = None,
+                        enriquecer: bool = False, size_regex_override: Optional[str] = None, query_meta: Optional[dict] = None) -> List[Product]:
         vistos: Set[str] = set()
         resultados: List[Product] = []
         pagina = 1
         self._pagina_atual = 1
         self._slug_termo = slugify(termo)
-        
+
+        # guarda metadados da query (brand/line/size)
+        self._query_meta = query_meta or {}
+
+        # regex da dimensão
         if size_regex_override:
             try:
                 self._dim_pattern = re.compile(size_regex_override, flags=re.I)
             except re.error:
-                self.logger.warning("size_regex inválido, usando construir_dim_pattern(termo)")
                 self._dim_pattern = construir_dim_pattern(termo)
         else:
             self._dim_pattern = construir_dim_pattern(termo)
-        self._query_meta = query_meta or {}
 
         usar_offset = (self.modo == "offset")
         url = self._construir_url_busca(termo, pagina=1, ordenacao=ordenacao, usar_offset=usar_offset, page_size=page_size, filtros=filtros)
         self.logger.info("URL inicial p1: %s", url)
         self.driver.get(url)
-        if "account-verification" in self.driver.current_url:
-            self.logger.warning("Mercado Livre pediu account-verification — trocando user-agent e recarregando")
-            self.driver.quit()
-            time.sleep(random.uniform(3, 6))
-            self.driver = self._criar_driver(headless=self.headless)
-            self.driver.get(url)    
-        self.logger.info("URL carregada final: %s", self.driver.current_url)
         self._aceitar_cookies()
+
         while True:
             n_cards, sel_usado = self._esperar_cards()
-            
             if n_cards == 0:
                 self.logger.warning("Nenhum card encontrado na página %s", pagina)
-                if self.dump_html:
-                    self._dump_pagina_html(self._slug_termo, pagina)
                 break
             time.sleep(self._delay_aleatorio(1, 2))
             self._rolar_pagina()
-            
-            if self.dump_html:
-                self._dump_pagina_html(self._slug_termo, pagina)
-            novos = self._coletar_produtos_pagina(termo, vistos)
-            resultados.extend(novos)
-            self.logger.info("Página %s novos=%s acumulado=%s", pagina, len(novos), len(resultados))
-            
+
+            html_cards, anchors, _ = self._snap_cards_html()
+            cont_parse_fail = cont_sem_dim = cont_kit = cont_marca = cont_dup = 0
+            mantidos = 0
+            for card_html in html_cards:
+                try:
+                    p = self._parse_card_html(card_html)
+                    p, motivo = self._filtrar_produto(p, termo)
+                    if not p:
+                        if   motivo == "sem_dim": cont_sem_dim += 1
+                        elif motivo == "kit":     cont_kit += 1
+                        elif motivo == "marca_diff": cont_marca += 1
+                        else: cont_parse_fail += 1
+                        continue
+                    if p.link in vistos:
+                        cont_dup += 1
+                        continue
+                    vistos.add(p.link)
+                    resultados.append(p)
+                    _delay_between_cards(self.min_delay, self.max_delay, logger=None)
+                    mantidos += 1
+                except Exception:
+                    cont_parse_fail += 1
+
+            self.logger.info("Página %s novos=%s acumulado=%s parse=%s sem_dim=%s kit=%s marca=%s dup=%s",
+                             pagina, mantidos, len(resultados), cont_parse_fail, cont_sem_dim, cont_kit, cont_marca, cont_dup)
+
             if len(resultados) >= max_resultados:
-                self.logger.info("max_resultados atingido total=%s", len(resultados))
                 break
-            
             if max_paginas and pagina >= max_paginas:
-                self.logger.info("max_paginas atingido page=%s", pagina)
                 break
             pagina += 1
             self._pagina_atual = pagina
-            
+
             if usar_offset:
                 next_url = self._construir_url_busca(termo, pagina=pagina, ordenacao=ordenacao, usar_offset=True, page_size=page_size, filtros=filtros)
                 self.logger.info("URL p%s: %s", pagina, next_url)
                 self.driver.get(next_url)
-                if "account-verification" in self.driver.current_url:
-                    self.logger.warning("Mercado Livre pediu account-verification — trocando user-agent e recarregando")
-                    self.driver.quit()
-                    time.sleep(random.uniform(3, 6))
-                    self.driver = self._criar_driver(headless=self.headless)
-                    self.driver.get(next_url)
-                self.logger.info("URL carregada final: %s", self.driver.current_url)
             else:
                 if not self._ir_proxima_pagina():
-                    self.logger.info("sem próxima página p%s", pagina - 1)
                     break
             time.sleep(self._delay_aleatorio(0.5, 1.5))
+
         if ceps:
             enriquecer = True
         if enriquecer and resultados:
-            self._enriquecer_produtos(resultados, ceps or [])
+            self._enriquecer_produtos(resultados, [re.sub(r"\D","",c) for c in (ceps or []) if c.strip()])
         return resultados[:max_resultados]
-    
-    def _coletar_produtos_pagina(self, termo_busca: str, links_vistos: Set[str]) -> List[Product]:
-        html_cards, anchors, sel_usado = self._snap_cards_html()
-        cont_parse_fail = 0
-        cont_sem_dim = 0
-        cont_kit = 0
-        cont_marca = 0
-        cont_dup = 0
-        mantidos = 0
-        produtos: List[Product] = []
-        for card_html in html_cards:
-            try:
-                p = self._parse_card_html(card_html)
-                p, motivo = self._filtrar_produto(p, termo_busca)
-                if not p:
-                    if motivo == "sem_dim":
-                        cont_sem_dim += 1
-                    elif motivo == "kit":
-                        cont_kit += 1
-                    elif motivo == "marca_diff":
-                        cont_marca += 1
-                    else:
-                        cont_parse_fail += 1
-                    continue
-                if p.link in links_vistos:
-                    cont_dup += 1
-                    continue
-                links_vistos.add(p.link)
-                produtos.append(p)
-                _delay_between_cards(self.min_delay, self.max_delay, logger=None)
-                mantidos += 1
-            except Exception:
-                cont_parse_fail += 1
-        self.logger.info("coleta p%s sel=%s cards=%s anchors=%s mantidos=%s parse=%s sem_dim=%s kit=%s marca=%s dup=%s",
-                         self._pagina_atual, sel_usado, len(html_cards), anchors, mantidos,
-                         cont_parse_fail, cont_sem_dim, cont_kit, cont_marca, cont_dup)
-        return produtos
-    
+
     def _enriquecer_produtos(self, produtos: List[Product], ceps: List[str]):
         self.logger.info("iniciando enriquecimento %s produtos ceps=%s", len(produtos), ceps)
         ceps_norm = [re.sub(r"\D", "", c) for c in ceps if c.strip()]
@@ -949,10 +974,9 @@ class ScraperMercadoLivre(ScraperBase):
                         ship_map[cep] = v
                         time.sleep(self._delay_aleatorio(0.5,1.2))
                     p.shipping = ship_map
-                self.logger.info("detalhes_ok %s preco_atual=%s preco_antigo=%s desconto=%s ship=%s", p.link, p.preco_desconto, p.preco_original, p.desconto_pct, p.shipping)
             except Exception as e:
                 self.logger.warning("detalhes_fail %s err=%s", p.link, e)
-    
+
     def _extrair_preco_pdp(self, soup) -> float | None:
         for sel in self.PDP_PRECO_ATUAL_SELS:
             el = soup.select_one(sel)
@@ -966,7 +990,7 @@ class ScraperMercadoLivre(ScraperBase):
         if m:
             return _parse_valor(m.group(1))
         return None
-    
+
     def _extrair_preco_pdp_antigo(self, soup) -> float | None:
         for sel in self.PDP_PRECO_ANTIGO_SELS:
             el = soup.select_one(sel)
@@ -976,137 +1000,18 @@ class ScraperMercadoLivre(ScraperBase):
             if v is not None:
                 return v
         return None
-    
-    def _abrir_modal_frete(self):
-        for sel in self.PDP_SHIPPING_TRIGGER_SELS:
-            try:
-                el = self.driver.find_element(By.CSS_SELECTOR, sel)
-                if el.is_displayed():
-                    el.click()
-                    time.sleep(self._delay_aleatorio(0.5,1))
-                    return True
-            except Exception:
-                continue
-        xps = [
-            "//button[contains(.,'Calcular') or contains(.,'Frete') or contains(.,'CEP')]",
-            "//a[contains(.,'Calcular') or contains(.,'Frete') or contains(.,'CEP')]",
-        ]
-        for xp in xps:
-            try:
-                el = self.driver.find_element(By.XPATH, xp)
-                if el.is_displayed():
-                    el.click()
-                    time.sleep(self._delay_aleatorio(0.5,1))
-                    return True
-            except Exception:
-                continue
-        return False
-    
+
     def _calcular_frete_cep(self, cep_digits: str) -> float | None:
-        vis = self._abrir_modal_frete()
-        if not vis:
-            pass
-        for sel in self.PDP_SHIPPING_INPUT_SELS:
-            try:
-                inp = self.driver.find_element(By.CSS_SELECTOR, sel)
-                inp.clear()
-                inp.send_keys(cep_digits)
-                time.sleep(self._delay_aleatorio(0.2,0.5))
-                break
-            except Exception:
-                continue
-        else:
-            return None
-        for sel in self.PDP_SHIPPING_SUBMIT_SELS:
-            try:
-                btn = self.driver.find_element(By.CSS_SELECTOR, sel)
-                if btn.is_displayed() and btn.is_enabled():
-                    btn.click()
-                    break
-            except Exception:
-                continue
-        time.sleep(self._delay_aleatorio(1,2))
-        html = self.driver.page_source
-        soup = BeautifulSoup(html, "lxml")
-        for sel in self.PDP_SHIPPING_RESULT_SELS:
-            el = soup.select_one(sel)
-            if not el:
-                continue
-            txt = el.get_text(" ", strip=True).lower()
-            if "frete grátis" in txt or "frete gratis" in txt:
-                return 0.0
-            m = re.search(r"([\d\.,]+)", txt)
-            if m:
-                v = _parse_valor(m.group(1))
-                if v is not None:
-                    return v
-        return None
+        # (pode ser implementado no futuro: abrir modal, etc.)
+        return None  # placeholder
 
-def criar_parser():
-    parser = argparse.ArgumentParser(description="Scraper MercadoLivre v2.0")
-
-    parser.add_argument("--modo",
-                        choices=["click", "offset"],
-                        default="click",
-                        help="Modo de paginação")
-
-    group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("--termo",
-                       help="Termo de busca")
-    group.add_argument("--lote-json",
-                       help="Caminho do JSON de queries (ex: query_products.json)")
-    parser.add_argument("--max",
-                        type=int,
-                        default=100,
-                        help="Máximo de itens buscados")
-    parser.add_argument("--ordenacao", default=None,
-                        help="price_asc, price_desc, relevance")
-    parser.add_argument("--csv", action="store_true",
-                        help="Salvar CSV de saída")
-    parser.add_argument("--headless",
-                        dest="headless",
-                        action="store_true",
-                        help="Executar sem janela")
-    parser.add_argument("--window",
-                        dest="headless",
-                        action="store_false",
-                        help="Executar com janela visível")
-    parser.add_argument("--dump-html", action="store_true",
-                        help="Salvar HTML bruto de cada página")
-    parser.add_argument("--debug", action="store_true",
-                        help="Habilitar logging DEBUG")
-    parser.add_argument("--detalhes", action="store_true",
-                        help="Abrir PDPs para coletar detalhes")
-    parser.add_argument("--ceps", default=None,
-                        help="Lista de CEPs separados por vírgula")
-    parser.add_argument("--min-delay", type=float, default=1.0,
-                        help="Delay mínimo (s) entre cada card")
-    parser.add_argument("--max-delay", type=float, default=2.0,
-                        help="Delay máximo (s) entre cada card")
-    parser.add_argument("--page-delay-min", type=float, default=5.0,
-                        help="Delay mínimo (s) ao trocar de página")
-    parser.add_argument("--page-delay-max", type=float, default=10.0,
-                        help="Delay máximo (s) ao trocar de página")
-    parser.add_argument("--pages-before-cooldown", type=int, default=5,
-                        help="Páginas antes de cooldown maior")
-    parser.add_argument("--cooldown-delay", type=float, default=60.0,
-                        help="Delay extra (s) após cooldown")
-    parser.add_argument("--delay-scroll", type=float, default=1.0,
-                        help="Delay (s) entre scrolls individuais")
-    parser.add_argument("--idx-from", type=int, default=0,
-                        help="Índice inicial (inclusive) dentro do lote")
-    parser.add_argument("--idx-to", type=int, default=None,
-                        help="Índice final (exclusivo) dentro do lote")
-
-    parser.set_defaults(headless=True)
-    return parser
-
-
+# =========================
+# I/O
+# =========================
 def _parse_lista_ceps(arg: Optional[str]) -> List[str]:
     if not arg:
         return []
-    parts = [p.strip() for p in arg.split(",") if p.strip()]
-    return parts
+    return [p.strip() for p in arg.split(",") if p.strip()]
 
 def montar_query_flex(item):
     return f"pneu {item['width']} {item['aspect']} r{item['rim']} {item['brand']} {item['line_model']}"
@@ -1123,9 +1028,8 @@ def imprimir_produtos(produtos: List[Product]):
     print(f"{'='*100}")
 
 def salvar_resultados(produtos: List[Product], termo: str, em_csv: bool, ceps: List[str]):
-
     base_dir = Path(__file__).parent / "data"
-    medida = extrair_medida(termo)
+    medida = extrair_medida(termo)  # para pasta (ex.: 175-70-r13)
     out_dir = base_dir / "raw" / medida
     out_dir.mkdir(parents=True, exist_ok=True)
     slug = slugify(termo)
@@ -1138,7 +1042,10 @@ def salvar_resultados(produtos: List[Product], termo: str, em_csv: bool, ceps: L
 
     if em_csv and produtos:
         cep_cols = [re.sub(r'\D','',c) for c in ceps]
-        header = ["titulo","link","preco","free_ship","frete","frete_gratis","marketplace","marca","data_coleta","preco_original","preco_desconto","desconto_pct"]
+        header = [
+            "titulo","link","preco","free_ship","frete","frete_gratis","marketplace",
+            "brand","model","size","marca","data_coleta","preco_original","preco_desconto","desconto_pct"
+        ]
         for c in cep_cols:
             header.append(f"shipping_{c}")
         csv_path = out_dir / f"{slug}_{timestamp}.csv"
@@ -1147,19 +1054,63 @@ def salvar_resultados(produtos: List[Product], termo: str, em_csv: bool, ceps: L
             w.writerow(header)
             for p in produtos:
                 row = [
-                    p.titulo, p.link, p.preco, p.free_ship, p.frete, p.frete_gratis,
-                    p.marketplace, p.marca, p.data_coleta, p.preco_original,
+                    p.titulo, p.link, p.preco, p.free_ship, p.frete, p.frete_gratis, p.marketplace,
+                    p.brand, p.model, p.size, p.marca, p.data_coleta, p.preco_original,
                     p.preco_desconto, p.desconto_pct
                 ]
                 for c in cep_cols:
                     row.append(p.shipping.get(c))
                 w.writerow(row)
         print(f"CSV:  {csv_path}")
+
+# =========================
+# CLI
+# =========================
+def criar_parser():
+    parser = argparse.ArgumentParser(description="Scraper MercadoLivre v2.0 (com normalização brand/model/size)")
+
+    parser.add_argument("--modo", choices=["click", "offset"], default="click", help="Modo de paginação")
+
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--termo", help="Termo de busca")
+    group.add_argument("--lote-json", help="Caminho do JSON de queries (ex: query_products.json)")
+
+    parser.add_argument("--max", type=int, default=100, help="Máximo de itens buscados")
+    parser.add_argument("--ordenacao", default=None, help="price_asc, price_desc, relevance")
+
+    parser.add_argument("--csv", action="store_true", help="Salvar CSV de saída")
+
+    parser.add_argument("--headless", dest="headless", action="store_true", help="Executar sem janela")
+    parser.add_argument("--window", dest="headless", action="store_false", help="Executar com janela visível")
+    parser.set_defaults(headless=True)
+
+    parser.add_argument("--dump-html", action="store_true", help="Salvar HTML bruto de cada página")
+    parser.add_argument("--debug", action="store_true", help="Habilitar logging DEBUG")
+    parser.add_argument("--detalhes", action="store_true", help="Abrir PDPs para coletar detalhes")
+    parser.add_argument("--ceps", default=None, help="Lista de CEPs separados por vírgula")
+
+    parser.add_argument("--min-delay", type=float, default=1.0, help="Delay mínimo (s) entre cada card")
+    parser.add_argument("--max-delay", type=float, default=2.0, help="Delay máximo (s) entre cada card")
+    parser.add_argument("--page-delay-min", type=float, default=5.0, help="Delay mínimo (s) ao trocar de página")
+    parser.add_argument("--page-delay-max", type=float, default=10.0, help="Delay máximo (s) ao trocar de página")
+    parser.add_argument("--pages-before-cooldown", type=int, default=5, help="Páginas antes de cooldown maior")
+    parser.add_argument("--cooldown-delay", type=float, default=60.0, help="Delay extra (s) após cooldown")
+    parser.add_argument("--delay-scroll", type=float, default=1.0, help="Delay (s) entre scrolls individuais")
+
+    parser.add_argument("--idx-from", type=int, default=0, help="Índice inicial (inclusive) dentro do lote")
+    parser.add_argument("--idx-to", type=int, default=None, help="Índice final (exclusivo) dentro do lote")
+
+    # NOVO: config de normalização
+    parser.add_argument("--config", help="JSON com known_brands/brand_aliases/known_model_phrases/model_aliases")
+
+    return parser
+
 def main():
     parser = criar_parser()
     args = parser.parse_args()
 
     logger = _setup_logger(args.debug)
+    _load_config_norm(args.config)  # carrega normalização
 
     ceps = _parse_lista_ceps(args.ceps)
 
@@ -1188,16 +1139,27 @@ def main():
             total_itens = 0
             for k, item in enumerate(subset, start=i0):
                 termo = montar_query_flex(item)
-                size_regex = item.get("size_regex")
                 logger.info("(%s) Buscando: %s", k, termo)
+                # passa meta pra extração (brand/line/size)
+                meta = {
+                    "brand": item.get("brand",""),
+                    "line_model": item.get("line_model",""),
+                    "size_norm": f"{item.get('width','')}-{item.get('aspect','')}-r{item.get('rim','')}",
+                    "query_strict": item.get("query_strict","")
+                }
                 produtos = scraper.buscar_produtos(
                     termo=termo,
                     max_resultados=args.max,
                     ordenacao=args.ordenacao,
                     ceps=ceps,
-                    enriquecer=args.detalhes
+                    enriquecer=args.detalhes,
+                    query_meta=meta
                 )
                 imprimir_produtos(produtos)
+                tops = sorted([p for p in produtos if p.preco is not None], key=lambda p: p.preco)[:10]
+                if tops:
+                    media = sum(p.preco for p in tops) / len(tops)
+                    print(f"Média dos {len(tops)} mais baratos: R$ {media:.2f}")
                 salvar_resultados(produtos=produtos, termo=termo, em_csv=args.csv, ceps=ceps)
                 total_itens += len(produtos)
             print(f"\nTotal coletado no lote: {total_itens} itens")
@@ -1207,7 +1169,8 @@ def main():
                 max_resultados=args.max,
                 ordenacao=args.ordenacao,
                 ceps=ceps,
-                enriquecer=args.detalhes
+                enriquecer=args.detalhes,
+                query_meta={}
             )
             imprimir_produtos(produtos)
             tops = sorted([p for p in produtos if p.preco is not None], key=lambda p: p.preco)[:10]
@@ -1223,7 +1186,6 @@ def main():
         print(f"Erro: {e}")
     finally:
         scraper.fechar()
-
 
 if __name__ == "__main__":
     main()

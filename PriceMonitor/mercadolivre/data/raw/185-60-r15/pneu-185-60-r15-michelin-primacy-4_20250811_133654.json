@@ -1,0 +1,28 @@
+[
+  {
+    "titulo": "Pneu Aro 15 185/60 R15 Michelin Toyota Etios",
+    "link": "https://produto.mercadolivre.com.br/MLB-3403146335-pneu-aro-15-18560-r15-michelin-toyota-etios-_JM",
+    "preco": 978.78,
+    "brand": "michelin",
+    "model": "primacy 4",
+    "size": "",
+    "query_strict": "pneu 185/60R15 Michelin Primacy 4",
+    "size_norm": "185-60-r15",
+    "brand_expected": "michelin",
+    "line_expected": "primacy 4",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "michelin",
+    "data_coleta": "2025-08-11 16:35:33",
+    "preco_original": null,
+    "preco_desconto": 978.78,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

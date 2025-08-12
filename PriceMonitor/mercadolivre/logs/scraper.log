@@ -12524,3 +12524,1291 @@ FileNotFoundError: [Errno 2] No such file or directory: 'pneu 215/50R17 Dunlop F
 2025-08-08 14:31:50,601 ERROR Falha ao mudar de página, backoff 16.28 s
 2025-08-08 14:32:06,881 INFO next_click_fail page=3
 2025-08-08 14:32:06,881 INFO sem próxima página p2
+2025-08-11 12:28:20,771 ERROR Erro ao executar scraper: [Errno 2] No such file or directory: '.\\query_products.json'
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\Precificação_AI\PriceMonitor\mercadolivre\scraper2.0.py", line 1133, in main
+    with open(args.lote_json, "r", encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '.\\query_products.json'
+2025-08-11 12:29:11,404 INFO Executando lote 108 itens (slice 0:108) do arquivo C:\Users\user\Desktop\Precificação_AI\query_products.json
+2025-08-11 12:29:11,408 INFO (0) Buscando: pneu 165 70 r13 Dunlop SP Touring
+2025-08-11 12:29:11,409 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-165-70-r13-dunlop-sp-touring
+2025-08-11 12:29:39,118 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 12:29:51,981 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 12:30:12,196 INFO Página 1 novos=14 acumulado=14 parse=0 sem_dim=8 kit=28 marca=0 dup=0
+2025-08-11 12:30:15,092 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 12:30:15,158 INFO Delaying 9.07s after finishing page
+2025-08-11 12:30:25,537 INFO cards encontrados page=2 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 12:30:39,732 INFO snapshot page=2 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 12:30:52,883 INFO Página 2 novos=9 acumulado=23 parse=0 sem_dim=8 kit=33 marca=0 dup=0
+2025-08-11 12:30:54,902 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 12:30:54,957 INFO Delaying 5.20s after finishing page
+2025-08-11 12:31:01,578 INFO cards encontrados page=3 n=47 sel=div.ui-search-result__wrapper
+2025-08-11 12:31:24,070 INFO snapshot page=3 cards=47 stale=0 est=47 anchors=47 sel=div.ui-search-result__wrapper
+2025-08-11 12:31:47,555 INFO Página 3 novos=16 acumulado=39 parse=0 sem_dim=16 kit=15 marca=0 dup=0
+2025-08-11 12:31:47,672 ERROR Falha ao mudar de página, backoff 14.17 s
+2025-08-11 12:32:01,896 INFO (1) Buscando: pneu 165 70 r13 Goodyear Kelly Edge
+2025-08-11 12:32:01,897 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-165-70-r13-goodyear-kelly-edge
+2025-08-11 12:32:29,723 INFO cards encontrados page=1 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 12:32:40,615 INFO snapshot page=1 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 12:33:08,009 INFO Página 1 novos=19 acumulado=19 parse=0 sem_dim=4 kit=31 marca=0 dup=0
+2025-08-11 12:33:11,281 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 12:33:11,351 INFO Delaying 8.03s after finishing page
+2025-08-11 12:33:20,280 INFO cards encontrados page=2 n=34 sel=div.ui-search-result__wrapper
+2025-08-11 12:33:32,390 INFO snapshot page=2 cards=34 stale=0 est=34 anchors=34 sel=div.ui-search-result__wrapper
+2025-08-11 12:33:51,062 INFO Página 2 novos=11 acumulado=30 parse=0 sem_dim=3 kit=20 marca=0 dup=0
+2025-08-11 12:33:51,170 ERROR Falha ao mudar de página, backoff 12.78 s
+2025-08-11 12:34:03,959 INFO (2) Buscando: pneu 165 70 r13 Goodyear Assurance
+2025-08-11 12:34:03,959 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-165-70-r13-goodyear-assurance
+2025-08-11 12:34:32,013 INFO cards encontrados page=1 n=53 sel=div.ui-search-result__wrapper
+2025-08-11 12:34:42,770 INFO snapshot page=1 cards=53 stale=0 est=53 anchors=53 sel=div.ui-search-result__wrapper
+2025-08-11 12:35:07,887 INFO Página 1 novos=16 acumulado=16 parse=0 sem_dim=1 kit=36 marca=0 dup=0
+2025-08-11 12:35:10,818 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 12:35:10,866 INFO Delaying 5.26s after finishing page
+2025-08-11 12:35:17,886 INFO cards encontrados page=2 n=27 sel=div.ui-search-result__wrapper
+2025-08-11 12:35:31,207 INFO snapshot page=2 cards=27 stale=0 est=27 anchors=27 sel=div.ui-search-result__wrapper
+2025-08-11 12:35:48,715 INFO Página 2 novos=12 acumulado=28 parse=0 sem_dim=0 kit=15 marca=0 dup=0
+2025-08-11 12:35:48,815 ERROR Falha ao mudar de página, backoff 11.57 s
+2025-08-11 12:36:00,414 INFO (3) Buscando: pneu 165 70 r14 Goodyear Assurance
+2025-08-11 12:36:00,417 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-165-70-r14-goodyear-assurance
+2025-08-11 12:36:27,656 INFO cards encontrados page=1 n=45 sel=div.ui-search-result__wrapper
+2025-08-11 12:36:45,704 INFO snapshot page=1 cards=45 stale=0 est=45 anchors=45 sel=div.ui-search-result__wrapper
+2025-08-11 12:37:25,507 INFO Página 1 novos=27 acumulado=27 parse=0 sem_dim=1 kit=17 marca=0 dup=0
+2025-08-11 12:37:25,588 ERROR Falha ao mudar de página, backoff 10.19 s
+2025-08-11 12:37:36,747 INFO (4) Buscando: pneu 175 65 r14 Dunlop SP Touring
+2025-08-11 12:37:36,750 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-65-r14-dunlop-sp-touring
+2025-08-11 12:38:04,104 INFO cards encontrados page=1 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 12:38:15,287 INFO snapshot page=1 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 12:38:43,584 INFO Página 1 novos=17 acumulado=17 parse=0 sem_dim=0 kit=35 marca=0 dup=0
+2025-08-11 12:38:46,590 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 12:38:47,995 INFO Delaying 5.74s after finishing page
+2025-08-11 12:38:53,735 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 12:39:55,488 INFO cards encontrados page=2 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 12:40:11,850 INFO snapshot page=2 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 12:40:32,731 INFO Página 2 novos=15 acumulado=32 parse=0 sem_dim=0 kit=37 marca=0 dup=0
+2025-08-11 12:40:36,107 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 12:40:36,361 INFO Delaying 9.82s after finishing page
+2025-08-11 12:40:47,747 INFO cards encontrados page=3 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 12:41:06,474 INFO snapshot page=3 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 12:41:31,891 INFO Página 3 novos=17 acumulado=49 parse=0 sem_dim=3 kit=31 marca=0 dup=0
+2025-08-11 12:41:36,524 INFO next_click page=4 sel=a[title='Seguinte']
+2025-08-11 12:41:36,646 INFO Delaying 6.35s after finishing page
+2025-08-11 12:41:45,159 INFO cards encontrados page=4 n=48 sel=div.ui-search-result__wrapper
+2025-08-11 12:42:08,458 INFO snapshot page=4 cards=48 stale=0 est=48 anchors=48 sel=div.ui-search-result__wrapper
+2025-08-11 12:42:36,419 INFO Página 4 novos=17 acumulado=66 parse=0 sem_dim=9 kit=22 marca=0 dup=0
+2025-08-11 12:42:36,594 ERROR Falha ao mudar de página, backoff 14.59 s
+2025-08-11 12:42:51,218 INFO (5) Buscando: pneu 175 65 r14 Sumitomo BC20
+2025-08-11 12:42:51,219 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-65-r14-sumitomo-bc20
+2025-08-11 12:43:23,292 INFO cards encontrados page=1 n=46 sel=div.ui-search-result__wrapper
+2025-08-11 12:43:45,593 INFO snapshot page=1 cards=46 stale=0 est=46 anchors=46 sel=div.ui-search-result__wrapper
+2025-08-11 12:44:10,836 INFO Página 1 novos=16 acumulado=16 parse=0 sem_dim=0 kit=30 marca=0 dup=0
+2025-08-11 12:44:10,954 ERROR Falha ao mudar de página, backoff 13.73 s
+2025-08-11 12:44:24,717 INFO (6) Buscando: pneu 175 65 r14 Goodyear Direction
+2025-08-11 12:44:24,719 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-65-r14-goodyear-direction
+2025-08-11 12:44:54,381 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 12:45:21,677 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 12:45:44,179 INFO Página 1 novos=14 acumulado=14 parse=0 sem_dim=1 kit=43 marca=0 dup=0
+2025-08-11 12:45:47,031 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 12:45:47,064 INFO Delaying 5.75s after finishing page
+2025-08-11 12:45:54,571 INFO cards encontrados page=2 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 12:46:10,320 INFO snapshot page=2 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 12:46:35,655 INFO Página 2 novos=17 acumulado=31 parse=0 sem_dim=0 kit=41 marca=0 dup=0
+2025-08-11 12:46:45,053 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 12:46:45,076 INFO Delaying 9.90s after finishing page
+2025-08-11 12:46:57,096 INFO cards encontrados page=3 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 12:47:11,349 INFO snapshot page=3 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 12:47:46,120 INFO Página 3 novos=22 acumulado=53 parse=0 sem_dim=0 kit=36 marca=0 dup=0
+2025-08-11 12:47:54,151 INFO next_click page=4 sel=a[title='Seguinte']
+2025-08-11 12:47:54,161 INFO Delaying 7.01s after finishing page
+2025-08-11 12:48:01,181 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 12:49:17,490 WARNING cards NAO encontrados page=4 html_len=633791 title= url=https://lista.mercadolivre.com.br/acessorios-veiculos/pneus/pneus-carros-caminhonetes/relacao-de-aspecto-65/175-mm/aro-14/pneu-175-65-r14-goodyear-direction_Desde_151_NoIndex_True
+2025-08-11 12:49:17,491 WARNING Nenhum card encontrado na página 4
+2025-08-11 12:49:17,508 INFO (7) Buscando: pneu 175 65 r14 Pirelli P400 Evo
+2025-08-11 12:49:17,509 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-65-r14-pirelli-p400-evo
+2025-08-11 12:49:49,970 INFO cards encontrados page=1 n=53 sel=div.ui-search-result__wrapper
+2025-08-11 12:50:08,066 INFO snapshot page=1 cards=53 stale=0 est=53 anchors=53 sel=div.ui-search-result__wrapper
+2025-08-11 12:50:43,233 INFO Página 1 novos=25 acumulado=25 parse=0 sem_dim=2 kit=26 marca=0 dup=0
+2025-08-11 12:51:13,503 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 12:51:13,543 INFO Delaying 7.91s after finishing page
+2025-08-11 12:51:23,145 INFO cards encontrados page=2 n=18 sel=div.ui-search-result__wrapper
+2025-08-11 12:51:36,060 INFO snapshot page=2 cards=18 stale=0 est=18 anchors=18 sel=div.ui-search-result__wrapper
+2025-08-11 12:51:50,457 INFO Página 2 novos=9 acumulado=34 parse=0 sem_dim=0 kit=9 marca=0 dup=0
+2025-08-11 12:51:50,561 ERROR Falha ao mudar de página, backoff 10.02 s
+2025-08-11 12:52:00,617 INFO (8) Buscando: pneu 175 65 r14 Goodyear Kelly Edge
+2025-08-11 12:52:00,618 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-65-r14-goodyear-kelly-edge
+2025-08-11 12:52:30,420 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 12:52:53,020 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 12:53:16,340 INFO Página 1 novos=15 acumulado=15 parse=0 sem_dim=0 kit=43 marca=0 dup=0
+2025-08-11 12:53:25,134 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 12:53:25,293 INFO Delaying 8.90s after finishing page
+2025-08-11 12:53:35,263 INFO cards encontrados page=2 n=40 sel=div.ui-search-result__wrapper
+2025-08-11 12:53:46,496 INFO snapshot page=2 cards=40 stale=0 est=40 anchors=40 sel=div.ui-search-result__wrapper
+2025-08-11 12:54:10,822 INFO Página 2 novos=16 acumulado=31 parse=0 sem_dim=0 kit=24 marca=0 dup=0
+2025-08-11 12:54:11,004 ERROR Falha ao mudar de página, backoff 12.56 s
+2025-08-11 12:54:23,594 INFO (9) Buscando: pneu 175 65 r14 Goodyear Assurance
+2025-08-11 12:54:23,598 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-65-r14-goodyear-assurance
+2025-08-11 12:54:52,969 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 12:55:12,758 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 12:55:33,091 INFO Página 1 novos=14 acumulado=14 parse=0 sem_dim=0 kit=44 marca=0 dup=0
+2025-08-11 12:55:35,902 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 12:55:35,942 INFO Delaying 9.88s after finishing page
+2025-08-11 12:55:47,265 INFO cards encontrados page=2 n=30 sel=div.ui-search-result__wrapper
+2025-08-11 12:55:57,993 INFO snapshot page=2 cards=30 stale=0 est=30 anchors=30 sel=div.ui-search-result__wrapper
+2025-08-11 12:56:17,982 INFO Página 2 novos=13 acumulado=27 parse=0 sem_dim=0 kit=17 marca=0 dup=0
+2025-08-11 12:56:18,090 ERROR Falha ao mudar de página, backoff 15.15 s
+2025-08-11 12:56:33,285 INFO (10) Buscando: pneu 175 65 r15 Goodyear Kelly Edge
+2025-08-11 12:56:33,296 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-65-r15-goodyear-kelly-edge
+2025-08-11 12:57:06,864 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 12:57:27,166 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 12:58:00,904 INFO Página 1 novos=22 acumulado=22 parse=0 sem_dim=0 kit=28 marca=0 dup=0
+2025-08-11 12:58:01,086 ERROR Falha ao mudar de página, backoff 19.82 s
+2025-08-11 12:58:20,922 INFO (11) Buscando: pneu 175 70 r13 Formula Energy
+2025-08-11 12:58:20,922 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-70-r13-formula-energy
+2025-08-11 12:58:52,837 INFO cards encontrados page=1 n=57 sel=div.ui-search-result__wrapper
+2025-08-11 12:59:13,778 INFO snapshot page=1 cards=57 stale=0 est=57 anchors=57 sel=div.ui-search-result__wrapper
+2025-08-11 12:59:41,392 INFO Página 1 novos=17 acumulado=17 parse=0 sem_dim=0 kit=40 marca=0 dup=0
+2025-08-11 12:59:44,998 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 12:59:45,031 INFO Delaying 7.19s after finishing page
+2025-08-11 12:59:53,927 INFO cards encontrados page=2 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:00:06,715 INFO snapshot page=2 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:00:29,618 INFO Página 2 novos=16 acumulado=33 parse=0 sem_dim=0 kit=42 marca=0 dup=0
+2025-08-11 13:00:36,097 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 13:00:36,126 INFO Delaying 5.81s after finishing page
+2025-08-11 13:00:41,934 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 13:01:43,140 INFO cards encontrados page=3 n=57 sel=div.ui-search-result__wrapper
+2025-08-11 13:01:55,726 INFO snapshot page=3 cards=57 stale=0 est=57 anchors=57 sel=div.ui-search-result__wrapper
+2025-08-11 13:02:23,761 INFO Página 3 novos=18 acumulado=51 parse=0 sem_dim=1 kit=38 marca=0 dup=0
+2025-08-11 13:02:26,163 INFO next_click page=4 sel=a[title='Seguinte']
+2025-08-11 13:02:26,240 INFO Delaying 7.21s after finishing page
+2025-08-11 13:02:34,596 INFO cards encontrados page=4 n=46 sel=div.ui-search-result__wrapper
+2025-08-11 13:02:52,660 INFO snapshot page=4 cards=46 stale=0 est=46 anchors=46 sel=div.ui-search-result__wrapper
+2025-08-11 13:03:12,407 INFO Página 4 novos=13 acumulado=64 parse=0 sem_dim=1 kit=32 marca=0 dup=0
+2025-08-11 13:03:12,723 ERROR Falha ao mudar de página, backoff 11.03 s
+2025-08-11 13:03:23,778 INFO (12) Buscando: pneu 175 70 r13 Dunlop SP Touring
+2025-08-11 13:03:23,779 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-70-r13-dunlop-sp-touring
+2025-08-11 13:03:51,826 INFO cards encontrados page=1 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 13:04:02,568 INFO snapshot page=1 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 13:04:32,273 INFO Página 1 novos=19 acumulado=19 parse=0 sem_dim=1 kit=32 marca=0 dup=0
+2025-08-11 13:04:34,412 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:04:34,446 INFO Delaying 8.64s after finishing page
+2025-08-11 13:04:44,051 INFO cards encontrados page=2 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 13:05:03,341 INFO snapshot page=2 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 13:05:41,967 INFO Página 2 novos=25 acumulado=44 parse=0 sem_dim=0 kit=27 marca=0 dup=0
+2025-08-11 13:05:45,826 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 13:05:45,883 INFO Delaying 7.30s after finishing page
+2025-08-11 13:05:54,373 INFO cards encontrados page=3 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 13:06:10,127 INFO snapshot page=3 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 13:06:35,505 INFO Página 3 novos=16 acumulado=60 parse=0 sem_dim=10 kit=26 marca=0 dup=0
+2025-08-11 13:06:38,511 INFO next_click page=4 sel=a[title='Seguinte']
+2025-08-11 13:06:38,651 INFO Delaying 8.97s after finishing page
+2025-08-11 13:06:49,095 INFO cards encontrados page=4 n=20 sel=div.ui-search-result__wrapper
+2025-08-11 13:06:58,486 INFO snapshot page=4 cards=20 stale=0 est=20 anchors=20 sel=div.ui-search-result__wrapper
+2025-08-11 13:07:15,067 INFO Página 4 novos=12 acumulado=72 parse=0 sem_dim=0 kit=8 marca=0 dup=0
+2025-08-11 13:07:15,192 ERROR Falha ao mudar de página, backoff 10.29 s
+2025-08-11 13:07:25,527 INFO (13) Buscando: pneu 175 70 r13 Goodyear Assurance
+2025-08-11 13:07:25,528 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-70-r13-goodyear-assurance
+2025-08-11 13:07:52,916 INFO cards encontrados page=1 n=53 sel=div.ui-search-result__wrapper
+2025-08-11 13:08:12,122 INFO snapshot page=1 cards=53 stale=0 est=53 anchors=53 sel=div.ui-search-result__wrapper
+2025-08-11 13:08:39,252 INFO Página 1 novos=18 acumulado=18 parse=0 sem_dim=0 kit=35 marca=0 dup=0
+2025-08-11 13:08:42,077 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:08:42,139 INFO Delaying 6.12s after finishing page
+2025-08-11 13:08:48,265 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 13:09:49,242 INFO cards encontrados page=2 n=16 sel=div.ui-search-result__wrapper
+2025-08-11 13:10:03,627 INFO snapshot page=2 cards=16 stale=0 est=16 anchors=16 sel=div.ui-search-result__wrapper
+2025-08-11 13:10:11,310 INFO Página 2 novos=5 acumulado=23 parse=0 sem_dim=1 kit=10 marca=0 dup=0
+2025-08-11 13:10:11,441 ERROR Falha ao mudar de página, backoff 16.61 s
+2025-08-11 13:10:28,070 INFO (14) Buscando: pneu 175 70 r13 Goodyear Kelly Edge
+2025-08-11 13:10:28,071 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-70-r13-goodyear-kelly-edge
+2025-08-11 13:10:55,700 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:11:14,426 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:11:38,115 INFO Página 1 novos=15 acumulado=15 parse=0 sem_dim=1 kit=42 marca=0 dup=0
+2025-08-11 13:11:40,934 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:11:41,062 INFO Delaying 8.18s after finishing page
+2025-08-11 13:11:50,292 INFO cards encontrados page=2 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:12:06,718 INFO snapshot page=2 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:12:45,211 INFO Página 2 novos=27 acumulado=42 parse=0 sem_dim=1 kit=30 marca=0 dup=0
+2025-08-11 13:12:48,798 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 13:12:50,505 INFO Delaying 6.17s after finishing page
+2025-08-11 13:12:57,873 INFO cards encontrados page=3 n=21 sel=div.ui-search-result__wrapper
+2025-08-11 13:13:13,626 INFO snapshot page=3 cards=21 stale=0 est=21 anchors=21 sel=div.ui-search-result__wrapper
+2025-08-11 13:13:22,207 INFO Página 3 novos=6 acumulado=48 parse=0 sem_dim=1 kit=14 marca=0 dup=0
+2025-08-11 13:13:22,365 ERROR Falha ao mudar de página, backoff 11.09 s
+2025-08-11 13:13:33,467 INFO (15) Buscando: pneu 175 70 r14 Pirelli P400 Evo
+2025-08-11 13:13:33,467 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-70-r14-pirelli-p400-evo
+2025-08-11 13:14:00,983 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:14:21,910 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:15:03,637 INFO Página 1 novos=27 acumulado=27 parse=0 sem_dim=0 kit=31 marca=0 dup=0
+2025-08-11 13:15:06,017 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:15:06,057 INFO Delaying 6.06s after finishing page
+2025-08-11 13:15:12,799 INFO cards encontrados page=2 n=17 sel=div.ui-search-result__wrapper
+2025-08-11 13:15:28,489 INFO snapshot page=2 cards=17 stale=0 est=17 anchors=17 sel=div.ui-search-result__wrapper
+2025-08-11 13:15:39,248 INFO Página 2 novos=7 acumulado=34 parse=0 sem_dim=1 kit=9 marca=0 dup=0
+2025-08-11 13:15:39,375 ERROR Falha ao mudar de página, backoff 10.85 s
+2025-08-11 13:15:50,285 INFO (16) Buscando: pneu 175 70 r14 Dunlop Grandtrek
+2025-08-11 13:15:50,287 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-70-r14-dunlop-grandtrek
+2025-08-11 13:16:17,702 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 13:16:38,936 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 13:17:04,984 INFO Página 1 novos=17 acumulado=17 parse=0 sem_dim=3 kit=30 marca=0 dup=0
+2025-08-11 13:17:05,052 ERROR Falha ao mudar de página, backoff 11.76 s
+2025-08-11 13:17:16,945 INFO (17) Buscando: pneu 175 70 r14 Goodyear Assurance
+2025-08-11 13:17:16,946 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-70-r14-goodyear-assurance
+2025-08-11 13:17:46,072 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:18:03,934 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:18:24,163 INFO Página 1 novos=14 acumulado=14 parse=0 sem_dim=1 kit=43 marca=0 dup=0
+2025-08-11 13:18:26,762 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:18:26,849 INFO Delaying 8.06s after finishing page
+2025-08-11 13:18:35,993 INFO cards encontrados page=2 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:18:53,958 INFO snapshot page=2 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:19:33,771 INFO Página 2 novos=27 acumulado=41 parse=0 sem_dim=7 kit=24 marca=0 dup=0
+2025-08-11 13:19:35,876 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 13:19:35,934 INFO Delaying 8.86s after finishing page
+2025-08-11 13:19:44,799 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 13:20:45,778 INFO cards encontrados page=3 n=1 sel=div.ui-search-result__wrapper
+2025-08-11 13:20:56,955 INFO snapshot page=3 cards=1 stale=0 est=1 anchors=1 sel=div.ui-search-result__wrapper
+2025-08-11 13:20:56,960 INFO Página 3 novos=0 acumulado=41 parse=0 sem_dim=1 kit=0 marca=0 dup=0
+2025-08-11 13:20:57,095 ERROR Falha ao mudar de página, backoff 12.17 s
+2025-08-11 13:21:09,280 INFO (18) Buscando: pneu 175 70 r14 Dunlop SP Touring
+2025-08-11 13:21:09,280 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-70-r14-dunlop-sp-touring
+2025-08-11 13:21:37,662 INFO cards encontrados page=1 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 13:21:53,628 INFO snapshot page=1 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 13:22:22,883 INFO Página 1 novos=19 acumulado=19 parse=0 sem_dim=1 kit=31 marca=0 dup=0
+2025-08-11 13:22:25,410 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:22:25,439 INFO Delaying 6.47s after finishing page
+2025-08-11 13:22:33,704 INFO cards encontrados page=2 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 13:22:46,794 INFO snapshot page=2 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 13:23:06,683 INFO Página 2 novos=13 acumulado=32 parse=0 sem_dim=1 kit=37 marca=0 dup=0
+2025-08-11 13:23:08,949 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 13:23:09,001 INFO Delaying 8.82s after finishing page
+2025-08-11 13:23:19,223 INFO cards encontrados page=3 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 13:23:29,703 INFO snapshot page=3 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 13:23:57,397 INFO Página 3 novos=18 acumulado=50 parse=0 sem_dim=3 kit=30 marca=0 dup=0
+2025-08-11 13:23:59,698 INFO next_click page=4 sel=a[title='Seguinte']
+2025-08-11 13:23:59,736 INFO Delaying 6.11s after finishing page
+2025-08-11 13:24:08,144 INFO cards encontrados page=4 n=35 sel=div.ui-search-result__wrapper
+2025-08-11 13:24:17,549 INFO snapshot page=4 cards=35 stale=0 est=35 anchors=35 sel=div.ui-search-result__wrapper
+2025-08-11 13:24:33,006 INFO Página 4 novos=10 acumulado=60 parse=0 sem_dim=7 kit=18 marca=0 dup=0
+2025-08-11 13:24:33,281 ERROR Falha ao mudar de página, backoff 15.30 s
+2025-08-11 13:24:48,604 INFO (19) Buscando: pneu 175 70 r14 Goodyear Kelly Edge SUV
+2025-08-11 13:24:48,605 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-175-70-r14-goodyear-kelly-edge-suv
+2025-08-11 13:25:17,700 INFO cards encontrados page=1 n=57 sel=div.ui-search-result__wrapper
+2025-08-11 13:25:33,158 INFO snapshot page=1 cards=57 stale=0 est=57 anchors=57 sel=div.ui-search-result__wrapper
+2025-08-11 13:26:02,312 INFO Página 1 novos=19 acumulado=19 parse=0 sem_dim=1 kit=37 marca=0 dup=0
+2025-08-11 13:26:04,774 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:26:04,866 INFO Delaying 6.98s after finishing page
+2025-08-11 13:26:13,273 INFO cards encontrados page=2 n=19 sel=div.ui-search-result__wrapper
+2025-08-11 13:26:28,606 INFO snapshot page=2 cards=19 stale=0 est=19 anchors=19 sel=div.ui-search-result__wrapper
+2025-08-11 13:26:37,582 INFO Página 2 novos=6 acumulado=25 parse=0 sem_dim=0 kit=13 marca=0 dup=0
+2025-08-11 13:26:37,679 ERROR Falha ao mudar de página, backoff 16.56 s
+2025-08-11 13:26:54,257 INFO (20) Buscando: pneu 185 55 r16 Goodyear Eagle
+2025-08-11 13:26:54,258 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-55-r16-goodyear-eagle
+2025-08-11 13:27:22,043 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 13:27:42,830 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 13:28:15,363 INFO Página 1 novos=22 acumulado=22 parse=0 sem_dim=1 kit=27 marca=0 dup=0
+2025-08-11 13:28:15,512 ERROR Falha ao mudar de página, backoff 14.16 s
+2025-08-11 13:28:29,729 INFO (21) Buscando: pneu 185 55 r16 Dunlop Enasave
+2025-08-11 13:28:29,729 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-55-r16-dunlop-enasave
+2025-08-11 13:28:57,152 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 13:29:12,929 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 13:29:49,185 INFO Página 1 novos=24 acumulado=24 parse=0 sem_dim=3 kit=23 marca=0 dup=0
+2025-08-11 13:29:49,252 ERROR Falha ao mudar de página, backoff 11.74 s
+2025-08-11 13:30:01,003 INFO (22) Buscando: pneu 185 55 r16 Dunlop FM800
+2025-08-11 13:30:01,003 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-55-r16-dunlop-fm800
+2025-08-11 13:30:31,577 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 13:30:42,419 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 13:31:05,796 INFO Página 1 novos=17 acumulado=17 parse=0 sem_dim=0 kit=33 marca=0 dup=0
+2025-08-11 13:31:08,257 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:31:08,277 INFO Delaying 8.42s after finishing page
+2025-08-11 13:31:16,698 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 13:32:18,261 INFO cards encontrados page=2 n=2 sel=div.ui-search-result__wrapper
+2025-08-11 13:32:37,455 INFO snapshot page=2 cards=2 stale=0 est=2 anchors=2 sel=div.ui-search-result__wrapper
+2025-08-11 13:32:39,770 INFO Página 2 novos=2 acumulado=19 parse=0 sem_dim=0 kit=0 marca=0 dup=0
+2025-08-11 13:32:40,085 ERROR Falha ao mudar de página, backoff 16.48 s
+2025-08-11 13:32:56,572 INFO (23) Buscando: pneu 185 60 r14 Dunlop LM704
+2025-08-11 13:32:56,573 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-60-r14-dunlop-lm704
+2025-08-11 13:33:24,399 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:33:45,959 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:34:17,648 INFO Página 1 novos=22 acumulado=22 parse=0 sem_dim=0 kit=36 marca=0 dup=0
+2025-08-11 13:34:19,756 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:34:19,772 INFO Delaying 9.40s after finishing page
+2025-08-11 13:34:44,807 WARNING cards NAO encontrados page=2 html_len=573652 title= url=https://lista.mercadolivre.com.br/acessorios-veiculos/pneus/pneus-carros-caminhonetes/relacao-de-aspecto-60/185-mm/aro-14/pneu-185-60-r14-dunlop-lm704_Desde_51_NoIndex_True
+2025-08-11 13:34:44,808 WARNING Nenhum card encontrado na página 2
+2025-08-11 13:34:44,825 INFO (24) Buscando: pneu 185 60 r15 Michelin Primacy 4
+2025-08-11 13:34:44,826 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-60-r15-michelin-primacy-4
+2025-08-11 13:35:12,627 INFO cards encontrados page=1 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 13:35:33,169 INFO snapshot page=1 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 13:35:35,040 INFO Página 1 novos=1 acumulado=1 parse=0 sem_dim=0 kit=50 marca=0 dup=0
+2025-08-11 13:35:38,384 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:35:38,443 INFO Delaying 9.10s after finishing page
+2025-08-11 13:35:50,066 INFO cards encontrados page=2 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 13:36:15,426 INFO snapshot page=2 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 13:36:16,155 INFO Página 2 novos=0 acumulado=1 parse=0 sem_dim=0 kit=51 marca=0 dup=0
+2025-08-11 13:36:18,608 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 13:36:18,638 INFO Delaying 5.71s after finishing page
+2025-08-11 13:36:25,623 INFO cards encontrados page=3 n=10 sel=div.ui-search-result__wrapper
+2025-08-11 13:36:42,759 INFO snapshot page=3 cards=10 stale=0 est=10 anchors=10 sel=div.ui-search-result__wrapper
+2025-08-11 13:36:42,791 INFO Página 3 novos=0 acumulado=1 parse=0 sem_dim=0 kit=10 marca=0 dup=0
+2025-08-11 13:36:42,878 ERROR Falha ao mudar de página, backoff 11.29 s
+2025-08-11 13:36:54,287 INFO (25) Buscando: pneu 185 60 r15 Firestone F700
+2025-08-11 13:36:54,293 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-60-r15-firestone-f700
+2025-08-11 13:37:21,251 INFO cards encontrados page=1 n=13 sel=div.ui-search-result__wrapper
+2025-08-11 13:37:39,772 INFO snapshot page=1 cards=13 stale=0 est=13 anchors=13 sel=div.ui-search-result__wrapper
+2025-08-11 13:37:46,077 INFO Página 1 novos=5 acumulado=5 parse=0 sem_dim=0 kit=8 marca=0 dup=0
+2025-08-11 13:37:46,289 ERROR Falha ao mudar de página, backoff 19.29 s
+2025-08-11 13:38:05,582 INFO (26) Buscando: pneu 185 60 r15 Dunlop FM800
+2025-08-11 13:38:05,583 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-60-r15-dunlop-fm800
+2025-08-11 13:38:34,095 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 13:38:51,890 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 13:39:21,082 INFO Página 1 novos=19 acumulado=19 parse=0 sem_dim=0 kit=31 marca=0 dup=0
+2025-08-11 13:39:24,126 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:39:24,149 INFO Delaying 5.54s after finishing page
+2025-08-11 13:39:30,969 INFO cards encontrados page=2 n=49 sel=div.ui-search-result__wrapper
+2025-08-11 13:39:41,673 INFO snapshot page=2 cards=49 stale=0 est=49 anchors=49 sel=div.ui-search-result__wrapper
+2025-08-11 13:40:09,612 INFO Página 2 novos=18 acumulado=37 parse=0 sem_dim=11 kit=20 marca=0 dup=0
+2025-08-11 13:40:12,836 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 13:40:12,872 INFO Delaying 7.95s after finishing page
+2025-08-11 13:40:20,827 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 13:41:22,003 INFO cards encontrados page=3 n=2 sel=div.ui-search-result__wrapper
+2025-08-11 13:41:35,069 INFO snapshot page=3 cards=2 stale=0 est=2 anchors=2 sel=div.ui-search-result__wrapper
+2025-08-11 13:41:36,690 INFO Página 3 novos=1 acumulado=38 parse=0 sem_dim=0 kit=1 marca=0 dup=0
+2025-08-11 13:41:37,093 ERROR Falha ao mudar de página, backoff 16.01 s
+2025-08-11 13:41:53,131 INFO (27) Buscando: pneu 185 60 r15 Pirelli P400
+2025-08-11 13:41:53,131 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-60-r15-pirelli-p400
+2025-08-11 13:42:21,763 INFO cards encontrados page=1 n=56 sel=div.ui-search-result__wrapper
+2025-08-11 13:42:36,393 INFO snapshot page=1 cards=56 stale=0 est=56 anchors=56 sel=div.ui-search-result__wrapper
+2025-08-11 13:43:13,518 INFO Página 1 novos=24 acumulado=24 parse=0 sem_dim=0 kit=32 marca=0 dup=0
+2025-08-11 13:43:16,988 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:43:17,093 INFO Delaying 8.11s after finishing page
+2025-08-11 13:43:26,663 INFO cards encontrados page=2 n=21 sel=div.ui-search-result__wrapper
+2025-08-11 13:43:45,459 INFO snapshot page=2 cards=21 stale=0 est=21 anchors=21 sel=div.ui-search-result__wrapper
+2025-08-11 13:43:55,923 INFO Página 2 novos=7 acumulado=31 parse=0 sem_dim=0 kit=14 marca=0 dup=0
+2025-08-11 13:43:56,255 ERROR Falha ao mudar de página, backoff 15.68 s
+2025-08-11 13:44:11,949 INFO (28) Buscando: pneu 185 60 r15 Goodyear Eagle
+2025-08-11 13:44:11,950 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-60-r15-goodyear-eagle
+2025-08-11 13:44:39,470 INFO cards encontrados page=1 n=49 sel=div.ui-search-result__wrapper
+2025-08-11 13:45:01,263 INFO snapshot page=1 cards=49 stale=0 est=49 anchors=49 sel=div.ui-search-result__wrapper
+2025-08-11 13:45:57,045 INFO Página 1 novos=37 acumulado=37 parse=0 sem_dim=0 kit=12 marca=0 dup=0
+2025-08-11 13:45:57,184 ERROR Falha ao mudar de página, backoff 12.83 s
+2025-08-11 13:46:10,026 INFO (29) Buscando: pneu 185 60 r15 Pirelli P400 Evo
+2025-08-11 13:46:10,026 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-60-r15-pirelli-p400-evo
+2025-08-11 13:46:38,601 INFO cards encontrados page=1 n=56 sel=div.ui-search-result__wrapper
+2025-08-11 13:46:54,747 INFO snapshot page=1 cards=56 stale=0 est=56 anchors=56 sel=div.ui-search-result__wrapper
+2025-08-11 13:47:31,380 INFO Página 1 novos=24 acumulado=24 parse=0 sem_dim=0 kit=32 marca=0 dup=0
+2025-08-11 13:47:33,400 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:47:33,479 INFO Delaying 6.85s after finishing page
+2025-08-11 13:47:41,265 INFO cards encontrados page=2 n=21 sel=div.ui-search-result__wrapper
+2025-08-11 13:47:55,057 INFO snapshot page=2 cards=21 stale=0 est=21 anchors=21 sel=div.ui-search-result__wrapper
+2025-08-11 13:48:06,973 INFO Página 2 novos=7 acumulado=31 parse=0 sem_dim=0 kit=14 marca=0 dup=0
+2025-08-11 13:48:07,081 ERROR Falha ao mudar de página, backoff 10.46 s
+2025-08-11 13:48:17,559 INFO (30) Buscando: pneu 185 65 r14 Goodyear Assurance
+2025-08-11 13:48:17,560 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-65-r14-goodyear-assurance
+2025-08-11 13:48:53,421 INFO cards encontrados page=1 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 13:49:12,063 INFO snapshot page=1 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 13:49:49,467 INFO Página 1 novos=24 acumulado=24 parse=0 sem_dim=1 kit=26 marca=0 dup=0
+2025-08-11 13:49:52,069 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:49:52,090 INFO Delaying 9.11s after finishing page
+2025-08-11 13:50:02,326 INFO cards encontrados page=2 n=7 sel=div.ui-search-result__wrapper
+2025-08-11 13:50:19,009 INFO snapshot page=2 cards=7 stale=0 est=7 anchors=7 sel=div.ui-search-result__wrapper
+2025-08-11 13:50:27,047 INFO Página 2 novos=5 acumulado=29 parse=0 sem_dim=0 kit=2 marca=0 dup=0
+2025-08-11 13:50:27,149 ERROR Falha ao mudar de página, backoff 16.52 s
+2025-08-11 13:50:43,677 INFO (31) Buscando: pneu 185 65 r14 Goodyear Kelly
+2025-08-11 13:50:43,677 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-65-r14-goodyear-kelly
+2025-08-11 13:51:10,624 INFO cards encontrados page=1 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 13:51:31,214 INFO snapshot page=1 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 13:52:01,062 INFO Página 1 novos=20 acumulado=20 parse=0 sem_dim=0 kit=34 marca=0 dup=0
+2025-08-11 13:52:01,310 ERROR Falha ao mudar de página, backoff 14.88 s
+2025-08-11 13:52:16,206 INFO (32) Buscando: pneu 185 65 r14 Dunlop SP Touring
+2025-08-11 13:52:16,207 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-65-r14-dunlop-sp-touring
+2025-08-11 13:52:44,704 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:52:57,560 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:53:26,278 INFO Página 1 novos=17 acumulado=17 parse=0 sem_dim=1 kit=40 marca=0 dup=0
+2025-08-11 13:53:28,771 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:53:28,787 INFO Delaying 9.20s after finishing page
+2025-08-11 13:53:39,333 INFO cards encontrados page=2 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:54:02,878 INFO snapshot page=2 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 13:54:33,714 INFO Página 2 novos=22 acumulado=39 parse=0 sem_dim=2 kit=34 marca=0 dup=0
+2025-08-11 13:54:35,635 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 13:54:35,684 INFO Delaying 6.25s after finishing page
+2025-08-11 13:54:41,941 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 13:55:42,870 INFO cards encontrados page=3 n=39 sel=div.ui-search-result__wrapper
+2025-08-11 13:56:01,385 INFO snapshot page=3 cards=39 stale=0 est=39 anchors=39 sel=div.ui-search-result__wrapper
+2025-08-11 13:56:26,738 INFO Página 3 novos=16 acumulado=55 parse=0 sem_dim=8 kit=15 marca=0 dup=0
+2025-08-11 13:56:26,938 ERROR Falha ao mudar de página, backoff 16.74 s
+2025-08-11 13:56:43,736 INFO (33) Buscando: pneu 185 65 r14 Sumitomo BC20
+2025-08-11 13:56:43,736 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-65-r14-sumitomo-bc20
+2025-08-11 13:57:11,996 INFO cards encontrados page=1 n=32 sel=div.ui-search-result__wrapper
+2025-08-11 13:57:28,901 INFO snapshot page=1 cards=32 stale=0 est=32 anchors=32 sel=div.ui-search-result__wrapper
+2025-08-11 13:57:41,505 INFO Página 1 novos=9 acumulado=9 parse=0 sem_dim=6 kit=17 marca=0 dup=0
+2025-08-11 13:57:41,668 ERROR Falha ao mudar de página, backoff 18.37 s
+2025-08-11 13:58:00,055 INFO (34) Buscando: pneu 185 65 r15 Goodyear Eagle
+2025-08-11 13:58:00,057 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-65-r15-goodyear-eagle
+2025-08-11 13:58:33,708 INFO cards encontrados page=1 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 13:58:53,701 INFO snapshot page=1 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 13:59:42,092 INFO Página 1 novos=32 acumulado=32 parse=0 sem_dim=1 kit=21 marca=0 dup=0
+2025-08-11 13:59:46,768 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 13:59:46,856 INFO Delaying 9.88s after finishing page
+2025-08-11 13:59:59,104 INFO cards encontrados page=2 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 14:00:16,454 INFO snapshot page=2 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 14:00:41,384 INFO Página 2 novos=16 acumulado=48 parse=0 sem_dim=0 kit=38 marca=0 dup=0
+2025-08-11 14:00:45,666 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 14:00:45,823 INFO Delaying 8.17s after finishing page
+2025-08-11 14:00:57,968 INFO cards encontrados page=3 n=53 sel=div.ui-search-result__wrapper
+2025-08-11 14:01:15,116 INFO snapshot page=3 cards=53 stale=0 est=53 anchors=53 sel=div.ui-search-result__wrapper
+2025-08-11 14:01:45,134 INFO Página 3 novos=20 acumulado=68 parse=0 sem_dim=0 kit=33 marca=0 dup=0
+2025-08-11 14:01:45,356 ERROR Falha ao mudar de página, backoff 11.03 s
+2025-08-11 14:01:56,444 INFO (35) Buscando: pneu 185 65 r15 Michelin Energy
+2025-08-11 14:01:56,444 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-65-r15-michelin-energy
+2025-08-11 14:02:23,789 INFO cards encontrados page=1 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 14:02:38,918 INFO snapshot page=1 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 14:03:23,079 INFO Página 1 novos=29 acumulado=29 parse=0 sem_dim=0 kit=22 marca=0 dup=0
+2025-08-11 14:03:25,600 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:03:25,708 INFO Delaying 7.70s after finishing page
+2025-08-11 14:03:34,400 INFO cards encontrados page=2 n=32 sel=div.ui-search-result__wrapper
+2025-08-11 14:03:50,123 INFO snapshot page=2 cards=32 stale=0 est=32 anchors=32 sel=div.ui-search-result__wrapper
+2025-08-11 14:04:21,573 INFO Página 2 novos=21 acumulado=50 parse=0 sem_dim=0 kit=11 marca=0 dup=0
+2025-08-11 14:04:21,698 ERROR Falha ao mudar de página, backoff 13.52 s
+2025-08-11 14:04:35,353 INFO (36) Buscando: pneu 185 65 r15 Dunlop FM800
+2025-08-11 14:04:35,357 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-65-r15-dunlop-fm800
+2025-08-11 14:05:04,993 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:05:24,298 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:05:51,499 INFO Página 1 novos=16 acumulado=16 parse=0 sem_dim=0 kit=34 marca=0 dup=0
+2025-08-11 14:05:55,359 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:05:55,389 INFO Delaying 7.97s after finishing page
+2025-08-11 14:06:04,323 INFO cards encontrados page=2 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:06:19,552 INFO snapshot page=2 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:06:32,183 INFO Página 2 novos=8 acumulado=24 parse=0 sem_dim=18 kit=24 marca=0 dup=0
+2025-08-11 14:06:34,411 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 14:06:34,494 INFO Delaying 8.78s after finishing page
+2025-08-11 14:06:43,275 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 14:07:44,559 INFO cards encontrados page=3 n=9 sel=div.ui-search-result__wrapper
+2025-08-11 14:07:54,236 INFO snapshot page=3 cards=9 stale=0 est=9 anchors=9 sel=div.ui-search-result__wrapper
+2025-08-11 14:07:56,583 INFO Página 3 novos=2 acumulado=26 parse=0 sem_dim=1 kit=6 marca=0 dup=0
+2025-08-11 14:07:56,676 ERROR Falha ao mudar de página, backoff 11.47 s
+2025-08-11 14:08:08,185 INFO (37) Buscando: pneu 185 70 r13 Dunlop Touring
+2025-08-11 14:08:08,189 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-70-r13-dunlop-touring
+2025-08-11 14:08:37,106 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:08:59,641 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:09:21,966 INFO Página 1 novos=15 acumulado=15 parse=0 sem_dim=0 kit=35 marca=0 dup=0
+2025-08-11 14:09:24,374 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:09:24,397 INFO Delaying 8.80s after finishing page
+2025-08-11 14:09:34,170 INFO cards encontrados page=2 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:09:47,621 INFO snapshot page=2 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:10:08,677 INFO Página 2 novos=15 acumulado=30 parse=0 sem_dim=1 kit=34 marca=0 dup=0
+2025-08-11 14:10:11,478 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 14:10:11,559 INFO Delaying 7.72s after finishing page
+2025-08-11 14:10:21,286 INFO cards encontrados page=3 n=34 sel=div.ui-search-result__wrapper
+2025-08-11 14:10:40,988 INFO snapshot page=3 cards=34 stale=0 est=34 anchors=34 sel=div.ui-search-result__wrapper
+2025-08-11 14:10:56,350 INFO Página 3 novos=10 acumulado=40 parse=0 sem_dim=9 kit=15 marca=0 dup=0
+2025-08-11 14:10:56,706 ERROR Falha ao mudar de página, backoff 15.73 s
+2025-08-11 14:11:12,790 INFO (38) Buscando: pneu 185 70 r14 Goodyear Assurance
+2025-08-11 14:11:12,792 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-70-r14-goodyear-assurance
+2025-08-11 14:11:44,467 INFO cards encontrados page=1 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 14:11:56,285 INFO snapshot page=1 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 14:12:30,479 INFO Página 1 novos=22 acumulado=22 parse=0 sem_dim=0 kit=32 marca=0 dup=0
+2025-08-11 14:12:33,928 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:12:36,443 INFO Delaying 5.32s after finishing page
+2025-08-11 14:12:43,651 INFO cards encontrados page=2 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 14:13:05,091 INFO snapshot page=2 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 14:13:48,209 INFO Página 2 novos=28 acumulado=50 parse=0 sem_dim=0 kit=26 marca=0 dup=0
+2025-08-11 14:13:50,988 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 14:13:51,016 INFO Delaying 9.55s after finishing page
+2025-08-11 14:14:03,179 INFO cards encontrados page=3 n=30 sel=div.ui-search-result__wrapper
+2025-08-11 14:14:20,083 INFO snapshot page=3 cards=30 stale=0 est=30 anchors=30 sel=div.ui-search-result__wrapper
+2025-08-11 14:14:51,887 INFO Página 3 novos=21 acumulado=71 parse=0 sem_dim=0 kit=9 marca=0 dup=0
+2025-08-11 14:14:52,824 ERROR Falha ao mudar de página, backoff 13.58 s
+2025-08-11 14:15:06,553 INFO (39) Buscando: pneu 185 70 r14 Goodyear Kelly
+2025-08-11 14:15:06,554 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-70-r14-goodyear-kelly
+2025-08-11 14:15:41,026 INFO cards encontrados page=1 n=44 sel=div.ui-search-result__wrapper
+2025-08-11 14:15:54,686 INFO snapshot page=1 cards=44 stale=0 est=44 anchors=44 sel=div.ui-search-result__wrapper
+2025-08-11 14:16:36,581 INFO Página 1 novos=27 acumulado=27 parse=0 sem_dim=0 kit=17 marca=0 dup=0
+2025-08-11 14:16:36,659 ERROR Falha ao mudar de página, backoff 14.38 s
+2025-08-11 14:16:51,054 INFO (40) Buscando: pneu 185 70 r14 Continental PowerContact
+2025-08-11 14:16:51,055 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-70-r14-continental-powercontact
+2025-08-11 14:17:20,662 INFO cards encontrados page=1 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 14:17:48,130 INFO snapshot page=1 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 14:18:26,073 INFO Página 1 novos=22 acumulado=22 parse=0 sem_dim=0 kit=32 marca=0 dup=0
+2025-08-11 14:18:28,514 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:18:28,650 INFO Delaying 5.63s after finishing page
+2025-08-11 14:18:34,278 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 14:19:37,390 INFO cards encontrados page=2 n=32 sel=div.ui-search-result__wrapper
+2025-08-11 14:19:56,202 INFO snapshot page=2 cards=32 stale=0 est=32 anchors=32 sel=div.ui-search-result__wrapper
+2025-08-11 14:20:18,654 INFO Página 2 novos=15 acumulado=37 parse=0 sem_dim=0 kit=17 marca=0 dup=0
+2025-08-11 14:20:18,773 ERROR Falha ao mudar de página, backoff 11.81 s
+2025-08-11 14:20:30,608 INFO (41) Buscando: pneu 185 70 r14 Dunlop SP Touring
+2025-08-11 14:20:30,609 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-70-r14-dunlop-sp-touring
+2025-08-11 14:20:59,764 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:21:17,874 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:21:53,855 INFO Página 1 novos=23 acumulado=23 parse=0 sem_dim=0 kit=27 marca=0 dup=0
+2025-08-11 14:21:58,243 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:21:58,642 INFO Delaying 6.13s after finishing page
+2025-08-11 14:22:06,316 INFO cards encontrados page=2 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:22:38,415 INFO snapshot page=2 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:23:00,876 INFO Página 2 novos=14 acumulado=37 parse=0 sem_dim=3 kit=33 marca=0 dup=0
+2025-08-11 14:23:05,936 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 14:23:05,965 INFO Delaying 8.04s after finishing page
+2025-08-11 14:23:15,000 INFO cards encontrados page=3 n=44 sel=div.ui-search-result__wrapper
+2025-08-11 14:23:33,009 INFO snapshot page=3 cards=44 stale=0 est=44 anchors=44 sel=div.ui-search-result__wrapper
+2025-08-11 14:23:54,556 INFO Página 3 novos=15 acumulado=52 parse=0 sem_dim=7 kit=22 marca=0 dup=0
+2025-08-11 14:23:54,683 ERROR Falha ao mudar de página, backoff 16.24 s
+2025-08-11 14:24:11,662 INFO (42) Buscando: pneu 185 70 r14 Firestone F700
+2025-08-11 14:24:11,687 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-185-70-r14-firestone-f700
+2025-08-11 14:24:43,426 INFO cards encontrados page=1 n=46 sel=div.ui-search-result__wrapper
+2025-08-11 14:24:56,195 INFO snapshot page=1 cards=46 stale=0 est=46 anchors=46 sel=div.ui-search-result__wrapper
+2025-08-11 14:25:32,412 INFO Página 1 novos=23 acumulado=23 parse=0 sem_dim=2 kit=21 marca=0 dup=0
+2025-08-11 14:25:32,677 ERROR Falha ao mudar de página, backoff 18.12 s
+2025-08-11 14:25:50,903 INFO (43) Buscando: pneu 195 50 r16 Dunlop Direzza
+2025-08-11 14:25:50,905 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-50-r16-dunlop-direzza
+2025-08-11 14:26:22,019 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:26:37,505 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:27:07,363 INFO Página 1 novos=19 acumulado=19 parse=0 sem_dim=0 kit=31 marca=0 dup=0
+2025-08-11 14:27:11,373 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:27:11,394 INFO Delaying 6.01s after finishing page
+2025-08-11 14:27:18,478 INFO cards encontrados page=2 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:27:37,549 INFO snapshot page=2 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:28:01,644 INFO Página 2 novos=16 acumulado=35 parse=0 sem_dim=0 kit=34 marca=0 dup=0
+2025-08-11 14:28:03,754 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 14:28:03,779 INFO Delaying 9.08s after finishing page
+2025-08-11 14:28:13,596 INFO cards encontrados page=3 n=8 sel=div.ui-search-result__wrapper
+2025-08-11 14:28:24,193 INFO snapshot page=3 cards=8 stale=0 est=8 anchors=8 sel=div.ui-search-result__wrapper
+2025-08-11 14:28:29,432 INFO Página 3 novos=3 acumulado=38 parse=0 sem_dim=0 kit=5 marca=0 dup=0
+2025-08-11 14:28:29,853 ERROR Falha ao mudar de página, backoff 14.51 s
+2025-08-11 14:28:44,414 INFO (44) Buscando: pneu 195 50 r16 Goodyear Kelly
+2025-08-11 14:28:44,414 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-50-r16-goodyear-kelly
+2025-08-11 14:29:13,868 INFO cards encontrados page=1 n=57 sel=div.ui-search-result__wrapper
+2025-08-11 14:29:29,659 INFO snapshot page=1 cards=57 stale=0 est=57 anchors=57 sel=div.ui-search-result__wrapper
+2025-08-11 14:30:12,363 INFO Página 1 novos=26 acumulado=26 parse=0 sem_dim=0 kit=31 marca=0 dup=0
+2025-08-11 14:30:16,406 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:30:20,372 INFO Delaying 6.57s after finishing page
+2025-08-11 14:30:26,939 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 14:31:30,547 INFO cards encontrados page=2 n=57 sel=div.ui-search-result__wrapper
+2025-08-11 14:31:43,556 INFO snapshot page=2 cards=57 stale=0 est=57 anchors=57 sel=div.ui-search-result__wrapper
+2025-08-11 14:32:20,426 INFO Página 2 novos=24 acumulado=50 parse=0 sem_dim=0 kit=33 marca=0 dup=0
+2025-08-11 14:32:23,950 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 14:32:23,955 INFO Delaying 5.88s after finishing page
+2025-08-11 14:32:30,884 INFO cards encontrados page=3 n=53 sel=div.ui-search-result__wrapper
+2025-08-11 14:32:41,715 INFO snapshot page=3 cards=53 stale=0 est=53 anchors=53 sel=div.ui-search-result__wrapper
+2025-08-11 14:33:13,491 INFO Página 3 novos=20 acumulado=70 parse=0 sem_dim=0 kit=33 marca=0 dup=0
+2025-08-11 14:33:17,878 INFO next_click page=4 sel=a[title='Seguinte']
+2025-08-11 14:33:17,905 INFO Delaying 8.30s after finishing page
+2025-08-11 14:33:27,822 INFO cards encontrados page=4 n=30 sel=div.ui-search-result__wrapper
+2025-08-11 14:33:40,952 INFO snapshot page=4 cards=30 stale=0 est=30 anchors=30 sel=div.ui-search-result__wrapper
+2025-08-11 14:34:06,308 INFO Página 4 novos=16 acumulado=86 parse=0 sem_dim=1 kit=13 marca=0 dup=0
+2025-08-11 14:34:06,411 ERROR Falha ao mudar de página, backoff 14.51 s
+2025-08-11 14:34:20,952 INFO (45) Buscando: pneu 195 55 r15 Goodyear Eagle
+2025-08-11 14:34:20,953 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-55-r15-goodyear-eagle
+2025-08-11 14:34:49,050 INFO cards encontrados page=1 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 14:35:08,028 INFO snapshot page=1 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 14:35:47,532 INFO Página 1 novos=27 acumulado=27 parse=0 sem_dim=0 kit=24 marca=0 dup=0
+2025-08-11 14:35:50,359 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:35:50,461 INFO Delaying 7.45s after finishing page
+2025-08-11 14:35:59,505 INFO cards encontrados page=2 n=28 sel=div.ui-search-result__wrapper
+2025-08-11 14:36:17,199 INFO snapshot page=2 cards=28 stale=0 est=28 anchors=28 sel=div.ui-search-result__wrapper
+2025-08-11 14:36:34,947 INFO Página 2 novos=11 acumulado=38 parse=0 sem_dim=1 kit=16 marca=0 dup=0
+2025-08-11 14:36:36,392 ERROR Falha ao mudar de página, backoff 12.65 s
+2025-08-11 14:36:49,073 INFO (46) Buscando: pneu 195 55 r15 Goodyear EfficientGrip
+2025-08-11 14:36:49,074 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-55-r15-goodyear-efficientgrip
+2025-08-11 14:37:19,211 INFO cards encontrados page=1 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 14:37:33,912 INFO snapshot page=1 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 14:38:28,731 INFO Página 1 novos=37 acumulado=37 parse=0 sem_dim=1 kit=16 marca=0 dup=0
+2025-08-11 14:38:31,627 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:38:31,654 INFO Delaying 5.12s after finishing page
+2025-08-11 14:38:38,570 INFO cards encontrados page=2 n=26 sel=div.ui-search-result__wrapper
+2025-08-11 14:38:59,903 INFO snapshot page=2 cards=26 stale=0 est=26 anchors=26 sel=div.ui-search-result__wrapper
+2025-08-11 14:39:29,208 INFO Página 2 novos=21 acumulado=58 parse=0 sem_dim=1 kit=4 marca=0 dup=0
+2025-08-11 14:39:29,601 ERROR Falha ao mudar de página, backoff 12.60 s
+2025-08-11 14:39:42,218 INFO (47) Buscando: pneu 195 55 r15 Dunlop 
+2025-08-11 14:39:42,219 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-55-r15-dunlop
+2025-08-11 14:40:12,930 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 14:40:30,492 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 14:40:56,556 INFO Página 1 novos=17 acumulado=17 parse=0 sem_dim=0 kit=41 marca=0 dup=0
+2025-08-11 14:41:01,639 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:41:01,656 INFO Delaying 8.22s after finishing page
+2025-08-11 14:41:09,879 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 14:42:11,570 INFO cards encontrados page=2 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 14:42:30,410 INFO snapshot page=2 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 14:43:05,621 INFO Página 2 novos=23 acumulado=40 parse=0 sem_dim=6 kit=29 marca=0 dup=0
+2025-08-11 14:43:08,261 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 14:43:08,383 INFO Delaying 8.63s after finishing page
+2025-08-11 14:43:18,766 INFO cards encontrados page=3 n=23 sel=div.ui-search-result__wrapper
+2025-08-11 14:43:29,589 INFO snapshot page=3 cards=23 stale=0 est=23 anchors=23 sel=div.ui-search-result__wrapper
+2025-08-11 14:43:36,454 INFO Página 3 novos=5 acumulado=45 parse=0 sem_dim=0 kit=18 marca=0 dup=0
+2025-08-11 14:43:36,545 ERROR Falha ao mudar de página, backoff 12.94 s
+2025-08-11 14:43:49,894 INFO (48) Buscando: pneu 195 55 r15 Dunlop FM800
+2025-08-11 14:43:49,895 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-55-r15-dunlop-fm800
+2025-08-11 14:44:18,851 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:44:37,746 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 14:45:04,265 INFO Página 1 novos=18 acumulado=18 parse=0 sem_dim=0 kit=32 marca=0 dup=0
+2025-08-11 14:45:06,666 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:45:06,698 INFO Delaying 6.06s after finishing page
+2025-08-11 14:45:14,254 INFO cards encontrados page=2 n=8 sel=div.ui-search-result__wrapper
+2025-08-11 14:45:26,049 INFO snapshot page=2 cards=8 stale=0 est=8 anchors=8 sel=div.ui-search-result__wrapper
+2025-08-11 14:45:33,805 INFO Página 2 novos=5 acumulado=23 parse=0 sem_dim=1 kit=2 marca=0 dup=0
+2025-08-11 14:45:33,899 ERROR Falha ao mudar de página, backoff 12.86 s
+2025-08-11 14:45:46,798 INFO (49) Buscando: pneu 195 55 r15 Bridgestone Ecopia
+2025-08-11 14:45:46,799 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-55-r15-bridgestone-ecopia
+2025-08-11 14:46:14,101 INFO cards encontrados page=1 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 14:46:33,264 INFO snapshot page=1 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 14:47:15,707 INFO Página 1 novos=27 acumulado=27 parse=0 sem_dim=0 kit=24 marca=0 dup=0
+2025-08-11 14:47:18,927 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:47:18,958 INFO Delaying 6.70s after finishing page
+2025-08-11 14:47:27,388 INFO cards encontrados page=2 n=37 sel=div.ui-search-result__wrapper
+2025-08-11 14:47:49,527 INFO snapshot page=2 cards=37 stale=0 est=37 anchors=37 sel=div.ui-search-result__wrapper
+2025-08-11 14:48:23,545 INFO Página 2 novos=21 acumulado=48 parse=0 sem_dim=0 kit=16 marca=0 dup=0
+2025-08-11 14:48:23,676 ERROR Falha ao mudar de página, backoff 12.06 s
+2025-08-11 14:48:35,804 INFO (50) Buscando: pneu 195 55 r15 Pirelli P400 Evo
+2025-08-11 14:48:35,804 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-55-r15-pirelli-p400-evo
+2025-08-11 14:49:03,602 INFO cards encontrados page=1 n=57 sel=div.ui-search-result__wrapper
+2025-08-11 14:49:18,371 INFO snapshot page=1 cards=57 stale=0 est=57 anchors=57 sel=div.ui-search-result__wrapper
+2025-08-11 14:49:52,383 INFO Página 1 novos=23 acumulado=23 parse=0 sem_dim=0 kit=34 marca=0 dup=0
+2025-08-11 14:49:55,602 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:49:55,665 INFO Delaying 9.44s after finishing page
+2025-08-11 14:50:06,427 INFO cards encontrados page=2 n=21 sel=div.ui-search-result__wrapper
+2025-08-11 14:50:19,289 INFO snapshot page=2 cards=21 stale=0 est=21 anchors=21 sel=div.ui-search-result__wrapper
+2025-08-11 14:50:28,889 INFO Página 2 novos=6 acumulado=29 parse=0 sem_dim=0 kit=15 marca=0 dup=0
+2025-08-11 14:50:29,317 ERROR Falha ao mudar de página, backoff 13.79 s
+2025-08-11 14:50:43,204 INFO (51) Buscando: pneu 195 55 r16 Falken Ziex
+2025-08-11 14:50:43,223 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-55-r16-falken-ziex
+2025-08-11 14:51:14,107 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 14:51:32,197 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 14:52:08,573 INFO Página 1 novos=23 acumulado=23 parse=0 sem_dim=2 kit=33 marca=0 dup=0
+2025-08-11 14:52:11,555 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:52:11,572 INFO Delaying 5.28s after finishing page
+2025-08-11 14:52:16,855 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 14:53:33,072 WARNING cards NAO encontrados page=2 html_len=634836 title= url=https://lista.mercadolivre.com.br/acessorios-veiculos/pneus/pneu-195-55-r16-falken-ziex_Desde_51_AUTOMOTIVE*TIRE*ASPECT*RATIO_55-55_NoIndex_True_RIM*DIAMETER_16%22-16%22_SECTION*WIDTH_195mm-195mm
+2025-08-11 14:53:33,074 WARNING Nenhum card encontrado na página 2
+2025-08-11 14:53:33,143 INFO (52) Buscando: pneu 195 55 r16 Michelin Primacy
+2025-08-11 14:53:33,146 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-55-r16-michelin-primacy
+2025-08-11 14:54:02,739 INFO cards encontrados page=1 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 14:54:21,620 INFO snapshot page=1 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 14:54:23,140 INFO Página 1 novos=1 acumulado=1 parse=0 sem_dim=0 kit=51 marca=0 dup=0
+2025-08-11 14:54:26,321 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:54:26,382 INFO Delaying 6.56s after finishing page
+2025-08-11 14:54:34,441 INFO cards encontrados page=2 n=5 sel=div.ui-search-result__wrapper
+2025-08-11 14:54:50,209 INFO snapshot page=2 cards=5 stale=0 est=5 anchors=5 sel=div.ui-search-result__wrapper
+2025-08-11 14:54:50,241 INFO Página 2 novos=0 acumulado=1 parse=0 sem_dim=0 kit=5 marca=0 dup=0
+2025-08-11 14:54:50,404 ERROR Falha ao mudar de página, backoff 19.99 s
+2025-08-11 14:55:10,411 INFO (53) Buscando: pneu 195 55 r16 Continental PowerContact
+2025-08-11 14:55:10,413 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-55-r16-continental-powercontact
+2025-08-11 14:55:40,435 INFO cards encontrados page=1 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 14:56:04,671 INFO snapshot page=1 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 14:56:44,862 INFO Página 1 novos=26 acumulado=26 parse=0 sem_dim=0 kit=26 marca=0 dup=0
+2025-08-11 14:56:48,315 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 14:56:48,398 INFO Delaying 7.49s after finishing page
+2025-08-11 14:56:57,555 INFO cards encontrados page=2 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 14:57:10,746 INFO snapshot page=2 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 14:57:38,039 INFO Página 2 novos=18 acumulado=44 parse=0 sem_dim=1 kit=33 marca=0 dup=0
+2025-08-11 14:57:40,696 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 14:57:40,759 INFO Delaying 7.82s after finishing page
+2025-08-11 14:57:49,356 INFO cards encontrados page=3 n=12 sel=div.ui-search-result__wrapper
+2025-08-11 14:58:11,186 INFO snapshot page=3 cards=12 stale=0 est=12 anchors=12 sel=div.ui-search-result__wrapper
+2025-08-11 14:58:26,270 INFO Página 3 novos=10 acumulado=54 parse=0 sem_dim=1 kit=1 marca=0 dup=0
+2025-08-11 14:58:26,391 ERROR Falha ao mudar de página, backoff 15.49 s
+2025-08-11 14:58:41,903 INFO (54) Buscando: pneu 195 55 r16 Dunlop FM800
+2025-08-11 14:58:41,904 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-55-r16-dunlop-fm800
+2025-08-11 14:59:09,621 INFO cards encontrados page=1 n=27 sel=div.ui-search-result__wrapper
+2025-08-11 14:59:21,904 INFO snapshot page=1 cards=27 stale=0 est=27 anchors=27 sel=div.ui-search-result__wrapper
+2025-08-11 14:59:36,875 INFO Página 1 novos=9 acumulado=9 parse=0 sem_dim=1 kit=17 marca=0 dup=0
+2025-08-11 14:59:37,860 ERROR Falha ao mudar de página, backoff 17.38 s
+2025-08-11 14:59:55,439 INFO (55) Buscando: pneu 195 55 r16 Goodyear Eagle
+2025-08-11 14:59:55,460 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-55-r16-goodyear-eagle
+2025-08-11 15:00:27,227 INFO cards encontrados page=1 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 15:00:49,549 INFO snapshot page=1 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 15:01:32,976 INFO Página 1 novos=28 acumulado=28 parse=0 sem_dim=0 kit=26 marca=0 dup=0
+2025-08-11 15:01:36,106 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:01:38,415 INFO Delaying 7.35s after finishing page
+2025-08-11 15:01:47,474 INFO cards encontrados page=2 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 15:02:05,277 INFO snapshot page=2 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 15:02:42,554 INFO Página 2 novos=24 acumulado=52 parse=0 sem_dim=1 kit=29 marca=0 dup=0
+2025-08-11 15:02:45,105 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 15:02:45,125 INFO Delaying 6.49s after finishing page
+2025-08-11 15:02:51,612 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 15:03:52,447 INFO cards encontrados page=3 n=15 sel=div.ui-search-result__wrapper
+2025-08-11 15:04:09,725 INFO snapshot page=3 cards=15 stale=0 est=15 anchors=15 sel=div.ui-search-result__wrapper
+2025-08-11 15:04:21,169 INFO Página 3 novos=7 acumulado=59 parse=0 sem_dim=6 kit=2 marca=0 dup=0
+2025-08-11 15:04:21,298 ERROR Falha ao mudar de página, backoff 10.71 s
+2025-08-11 15:04:32,082 INFO (56) Buscando: pneu 195 60 r15 Continental PowerContact
+2025-08-11 15:04:32,103 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-60-r15-continental-powercontact
+2025-08-11 15:05:00,406 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 15:05:13,700 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 15:05:59,661 INFO Página 1 novos=29 acumulado=29 parse=0 sem_dim=1 kit=20 marca=0 dup=0
+2025-08-11 15:06:03,346 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:06:03,441 INFO Delaying 9.65s after finishing page
+2025-08-11 15:06:15,066 INFO cards encontrados page=2 n=45 sel=div.ui-search-result__wrapper
+2025-08-11 15:06:35,475 INFO snapshot page=2 cards=45 stale=0 est=45 anchors=45 sel=div.ui-search-result__wrapper
+2025-08-11 15:07:06,537 INFO Página 2 novos=22 acumulado=51 parse=0 sem_dim=0 kit=23 marca=0 dup=0
+2025-08-11 15:07:06,670 ERROR Falha ao mudar de página, backoff 14.16 s
+2025-08-11 15:07:20,928 INFO (57) Buscando: pneu 195 60 r15 Goodyear Kelly
+2025-08-11 15:07:20,929 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-60-r15-goodyear-kelly
+2025-08-11 15:07:49,078 INFO cards encontrados page=1 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 15:08:02,708 INFO snapshot page=1 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 15:08:46,497 INFO Página 1 novos=28 acumulado=28 parse=0 sem_dim=0 kit=26 marca=0 dup=0
+2025-08-11 15:08:49,017 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:08:49,042 INFO Delaying 9.25s after finishing page
+2025-08-11 15:08:59,540 INFO cards encontrados page=2 n=16 sel=div.ui-search-result__wrapper
+2025-08-11 15:09:15,211 INFO snapshot page=2 cards=16 stale=0 est=16 anchors=16 sel=div.ui-search-result__wrapper
+2025-08-11 15:09:23,715 INFO Página 2 novos=6 acumulado=34 parse=0 sem_dim=0 kit=10 marca=0 dup=0
+2025-08-11 15:09:23,863 ERROR Falha ao mudar de página, backoff 18.37 s
+2025-08-11 15:09:42,249 INFO (58) Buscando: pneu 195 60 r15 Dunlop FM800
+2025-08-11 15:09:42,249 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-60-r15-dunlop-fm800
+2025-08-11 15:10:11,866 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 15:10:29,745 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 15:11:08,114 INFO Página 1 novos=22 acumulado=22 parse=0 sem_dim=2 kit=26 marca=0 dup=0
+2025-08-11 15:11:12,775 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:11:12,800 INFO Delaying 9.38s after finishing page
+2025-08-11 15:11:23,333 INFO cards encontrados page=2 n=37 sel=div.ui-search-result__wrapper
+2025-08-11 15:11:39,492 INFO snapshot page=2 cards=37 stale=0 est=37 anchors=37 sel=div.ui-search-result__wrapper
+2025-08-11 15:11:53,526 INFO Página 2 novos=9 acumulado=31 parse=0 sem_dim=0 kit=28 marca=0 dup=0
+2025-08-11 15:11:53,642 ERROR Falha ao mudar de página, backoff 18.62 s
+2025-08-11 15:12:12,304 INFO (59) Buscando: pneu 195 60 r15 Michelin Energy XM2
+2025-08-11 15:12:12,304 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-60-r15-michelin-energy-xm2
+2025-08-11 15:12:44,608 INFO cards encontrados page=1 n=53 sel=div.ui-search-result__wrapper
+2025-08-11 15:13:05,895 INFO snapshot page=1 cards=53 stale=0 est=53 anchors=53 sel=div.ui-search-result__wrapper
+2025-08-11 15:13:48,936 INFO Página 1 novos=25 acumulado=25 parse=0 sem_dim=0 kit=28 marca=0 dup=0
+2025-08-11 15:13:55,520 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:13:55,563 INFO Delaying 5.33s after finishing page
+2025-08-11 15:14:04,926 INFO cards encontrados page=2 n=53 sel=div.ui-search-result__wrapper
+2025-08-11 15:14:18,908 INFO snapshot page=2 cards=53 stale=0 est=53 anchors=53 sel=div.ui-search-result__wrapper
+2025-08-11 15:14:53,820 INFO Página 2 novos=23 acumulado=48 parse=0 sem_dim=0 kit=30 marca=0 dup=0
+2025-08-11 15:14:56,622 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 15:14:56,651 INFO Delaying 5.15s after finishing page
+2025-08-11 15:15:01,808 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 15:16:03,492 INFO cards encontrados page=3 n=13 sel=div.ui-search-result__wrapper
+2025-08-11 15:16:19,275 INFO snapshot page=3 cards=13 stale=0 est=13 anchors=13 sel=div.ui-search-result__wrapper
+2025-08-11 15:16:26,843 INFO Página 3 novos=5 acumulado=53 parse=0 sem_dim=0 kit=8 marca=0 dup=0
+2025-08-11 15:16:26,975 ERROR Falha ao mudar de página, backoff 15.74 s
+2025-08-11 15:16:42,771 INFO (60) Buscando: pneu 195 60 r15 Goodyear EfficientGrip
+2025-08-11 15:16:42,772 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-60-r15-goodyear-efficientgrip
+2025-08-11 15:17:13,077 INFO cards encontrados page=1 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 15:17:27,624 INFO snapshot page=1 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 15:17:55,949 INFO Página 1 novos=18 acumulado=18 parse=0 sem_dim=0 kit=33 marca=0 dup=0
+2025-08-11 15:17:56,039 ERROR Falha ao mudar de página, backoff 12.84 s
+2025-08-11 15:18:08,900 INFO (61) Buscando: pneu 195 65 r15 Dunlop FM800
+2025-08-11 15:18:08,903 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-65-r15-dunlop-fm800
+2025-08-11 15:18:38,379 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 15:18:54,389 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 15:19:17,581 INFO Página 1 novos=13 acumulado=13 parse=0 sem_dim=0 kit=37 marca=0 dup=0
+2025-08-11 15:19:23,615 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:19:25,057 INFO Delaying 6.23s after finishing page
+2025-08-11 15:19:33,113 INFO cards encontrados page=2 n=8 sel=div.ui-search-result__wrapper
+2025-08-11 15:19:54,076 INFO snapshot page=2 cards=8 stale=0 est=8 anchors=8 sel=div.ui-search-result__wrapper
+2025-08-11 15:20:00,474 INFO Página 2 novos=4 acumulado=17 parse=0 sem_dim=0 kit=4 marca=0 dup=0
+2025-08-11 15:20:00,777 ERROR Falha ao mudar de página, backoff 17.69 s
+2025-08-11 15:20:19,237 INFO (62) Buscando: pneu 195 65 r15 Continental PowerContact
+2025-08-11 15:20:19,239 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-65-r15-continental-powercontact
+2025-08-11 15:20:51,697 INFO cards encontrados page=1 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 15:21:04,066 INFO snapshot page=1 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 15:21:29,887 INFO Página 1 novos=16 acumulado=16 parse=0 sem_dim=0 kit=35 marca=0 dup=0
+2025-08-11 15:21:32,819 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:21:32,869 INFO Delaying 8.82s after finishing page
+2025-08-11 15:21:43,215 INFO cards encontrados page=2 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 15:22:25,748 INFO snapshot page=2 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 15:23:21,801 INFO Página 2 novos=31 acumulado=47 parse=0 sem_dim=0 kit=19 marca=0 dup=0
+2025-08-11 15:23:22,043 ERROR Falha ao mudar de página, backoff 18.84 s
+2025-08-11 15:23:41,979 INFO (63) Buscando: pneu 195 65 r15 Michelin Primacy
+2025-08-11 15:23:41,979 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-65-r15-michelin-primacy
+2025-08-11 15:24:15,941 INFO cards encontrados page=1 n=57 sel=div.ui-search-result__wrapper
+2025-08-11 15:24:47,852 INFO snapshot page=1 cards=57 stale=0 est=57 anchors=57 sel=div.ui-search-result__wrapper
+2025-08-11 15:24:49,858 INFO Página 1 novos=0 acumulado=0 parse=0 sem_dim=0 kit=57 marca=0 dup=0
+2025-08-11 15:24:59,559 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:24:59,696 INFO Delaying 5.01s after finishing page
+2025-08-11 15:25:07,497 INFO cards encontrados page=2 n=29 sel=div.ui-search-result__wrapper
+2025-08-11 15:25:31,401 INFO snapshot page=2 cards=29 stale=0 est=29 anchors=29 sel=div.ui-search-result__wrapper
+2025-08-11 15:25:31,890 INFO Página 2 novos=0 acumulado=0 parse=0 sem_dim=0 kit=29 marca=0 dup=0
+2025-08-11 15:25:32,138 ERROR Falha ao mudar de página, backoff 18.94 s
+2025-08-11 15:25:51,131 INFO (64) Buscando: pneu 195 65 r15 Goodyear Eagle
+2025-08-11 15:25:51,133 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-65-r15-goodyear-eagle
+2025-08-11 15:26:24,604 INFO cards encontrados page=1 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 15:26:53,502 INFO snapshot page=1 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 15:27:22,465 INFO Página 1 novos=17 acumulado=17 parse=0 sem_dim=0 kit=35 marca=0 dup=0
+2025-08-11 15:27:30,734 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:27:30,819 INFO Delaying 5.09s after finishing page
+2025-08-11 15:27:36,953 INFO cards encontrados page=2 n=21 sel=div.ui-search-result__wrapper
+2025-08-11 15:27:54,643 INFO snapshot page=2 cards=21 stale=0 est=21 anchors=21 sel=div.ui-search-result__wrapper
+2025-08-11 15:28:08,258 INFO Página 2 novos=8 acumulado=25 parse=0 sem_dim=0 kit=13 marca=0 dup=0
+2025-08-11 15:28:08,788 ERROR Falha ao mudar de página, backoff 14.59 s
+2025-08-11 15:28:23,450 INFO (65) Buscando: pneu 195 65 r15 Goodyear EfficientGrip
+2025-08-11 15:28:23,452 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-65-r15-goodyear-efficientgrip
+2025-08-11 15:28:57,390 INFO cards encontrados page=1 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 15:29:30,805 INFO snapshot page=1 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 15:30:22,340 INFO Página 1 novos=33 acumulado=33 parse=0 sem_dim=0 kit=19 marca=0 dup=0
+2025-08-11 15:30:27,552 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:30:27,750 INFO Delaying 7.70s after finishing page
+2025-08-11 15:30:35,450 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 15:31:37,277 INFO cards encontrados page=2 n=46 sel=div.ui-search-result__wrapper
+2025-08-11 15:32:03,426 INFO snapshot page=2 cards=46 stale=0 est=46 anchors=46 sel=div.ui-search-result__wrapper
+2025-08-11 15:32:39,276 INFO Página 2 novos=22 acumulado=55 parse=0 sem_dim=0 kit=24 marca=0 dup=0
+2025-08-11 15:32:39,906 ERROR Falha ao mudar de página, backoff 10.74 s
+2025-08-11 15:32:50,888 INFO (66) Buscando: pneu 195 65 r15 Firestone F700
+2025-08-11 15:32:50,892 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-195-65-r15-firestone-f700
+2025-08-11 15:33:20,973 INFO cards encontrados page=1 n=39 sel=div.ui-search-result__wrapper
+2025-08-11 15:33:46,387 INFO snapshot page=1 cards=39 stale=0 est=39 anchors=39 sel=div.ui-search-result__wrapper
+2025-08-11 15:34:14,535 INFO Página 1 novos=18 acumulado=18 parse=0 sem_dim=0 kit=21 marca=0 dup=0
+2025-08-11 15:34:15,504 ERROR Falha ao mudar de página, backoff 19.66 s
+2025-08-11 15:34:35,178 INFO (67) Buscando: pneu 205 40 r17 Goodyear Kelly
+2025-08-11 15:34:35,193 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-40-r17-goodyear-kelly
+2025-08-11 15:35:08,440 INFO cards encontrados page=1 n=40 sel=div.ui-search-result__wrapper
+2025-08-11 15:35:30,243 INFO snapshot page=1 cards=40 stale=0 est=40 anchors=40 sel=div.ui-search-result__wrapper
+2025-08-11 15:35:30,702 INFO Página 1 novos=0 acumulado=0 parse=0 sem_dim=0 kit=40 marca=0 dup=0
+2025-08-11 15:35:30,848 ERROR Falha ao mudar de página, backoff 11.55 s
+2025-08-11 15:35:42,404 INFO (68) Buscando: pneu 205 45 r17 Dunlop DZ10
+2025-08-11 15:35:42,405 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-45-r17-dunlop-dz10
+2025-08-11 15:36:16,231 INFO cards encontrados page=1 n=33 sel=div.ui-search-result__wrapper
+2025-08-11 15:36:40,449 INFO snapshot page=1 cards=33 stale=0 est=33 anchors=33 sel=div.ui-search-result__wrapper
+2025-08-11 15:36:41,451 INFO Página 1 novos=0 acumulado=0 parse=0 sem_dim=0 kit=33 marca=0 dup=0
+2025-08-11 15:36:42,890 ERROR Falha ao mudar de página, backoff 17.73 s
+2025-08-11 15:37:00,710 INFO (69) Buscando: pneu 205 50 r17 Goodyear Eagle
+2025-08-11 15:37:00,712 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-50-r17-goodyear-eagle
+2025-08-11 15:37:34,310 INFO cards encontrados page=1 n=53 sel=div.ui-search-result__wrapper
+2025-08-11 15:37:55,840 INFO snapshot page=1 cards=53 stale=0 est=53 anchors=53 sel=div.ui-search-result__wrapper
+2025-08-11 15:38:37,374 INFO Página 1 novos=27 acumulado=27 parse=0 sem_dim=0 kit=26 marca=0 dup=0
+2025-08-11 15:38:45,999 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:38:46,333 INFO Delaying 5.70s after finishing page
+2025-08-11 15:38:54,529 INFO cards encontrados page=2 n=38 sel=div.ui-search-result__wrapper
+2025-08-11 15:39:24,461 INFO snapshot page=2 cards=38 stale=0 est=38 anchors=38 sel=div.ui-search-result__wrapper
+2025-08-11 15:39:35,828 INFO Página 2 novos=7 acumulado=34 parse=0 sem_dim=0 kit=31 marca=0 dup=0
+2025-08-11 15:39:37,311 ERROR Falha ao mudar de página, backoff 16.90 s
+2025-08-11 15:39:54,244 INFO (70) Buscando: pneu 205 50 r17 Michelin Primacy
+2025-08-11 15:39:54,245 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-50-r17-michelin-primacy
+2025-08-11 15:40:26,749 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 15:41:03,675 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 15:41:05,752 INFO Página 1 novos=0 acumulado=0 parse=0 sem_dim=0 kit=58 marca=0 dup=0
+2025-08-11 15:41:11,808 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:41:11,844 INFO Delaying 7.24s after finishing page
+2025-08-11 15:41:23,506 INFO cards encontrados page=2 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 15:41:50,553 INFO snapshot page=2 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 15:41:51,089 INFO Página 2 novos=0 acumulado=0 parse=0 sem_dim=0 kit=58 marca=0 dup=0
+2025-08-11 15:41:55,317 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 15:41:57,249 INFO Delaying 8.60s after finishing page
+2025-08-11 15:42:07,276 INFO cards encontrados page=3 n=19 sel=div.ui-search-result__wrapper
+2025-08-11 15:42:36,659 INFO snapshot page=3 cards=19 stale=0 est=19 anchors=19 sel=div.ui-search-result__wrapper
+2025-08-11 15:42:38,199 INFO Página 3 novos=1 acumulado=1 parse=0 sem_dim=0 kit=18 marca=0 dup=0
+2025-08-11 15:42:38,448 ERROR Falha ao mudar de página, backoff 15.25 s
+2025-08-11 15:42:53,739 INFO (71) Buscando: pneu 205 50 r17 Dunlop FM800
+2025-08-11 15:42:53,746 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-50-r17-dunlop-fm800
+2025-08-11 15:43:23,892 INFO cards encontrados page=1 n=43 sel=div.ui-search-result__wrapper
+2025-08-11 15:43:40,179 INFO snapshot page=1 cards=43 stale=0 est=43 anchors=43 sel=div.ui-search-result__wrapper
+2025-08-11 15:44:03,941 INFO Página 1 novos=15 acumulado=15 parse=0 sem_dim=0 kit=28 marca=0 dup=0
+2025-08-11 15:44:04,011 ERROR Falha ao mudar de página, backoff 13.81 s
+2025-08-11 15:44:17,876 INFO (72) Buscando: pneu 205 55 r16 Pirelli P400 Evo
+2025-08-11 15:44:17,890 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-55-r16-pirelli-p400-evo
+2025-08-11 15:44:53,868 INFO cards encontrados page=1 n=57 sel=div.ui-search-result__wrapper
+2025-08-11 15:45:11,925 INFO snapshot page=1 cards=57 stale=0 est=57 anchors=57 sel=div.ui-search-result__wrapper
+2025-08-11 15:45:49,163 INFO Página 1 novos=24 acumulado=24 parse=0 sem_dim=0 kit=33 marca=0 dup=0
+2025-08-11 15:45:56,143 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:45:56,233 INFO Delaying 6.42s after finishing page
+2025-08-11 15:46:10,049 INFO cards encontrados page=2 n=40 sel=div.ui-search-result__wrapper
+2025-08-11 15:46:37,303 INFO snapshot page=2 cards=40 stale=0 est=40 anchors=40 sel=div.ui-search-result__wrapper
+2025-08-11 15:46:58,001 INFO Página 2 novos=13 acumulado=37 parse=0 sem_dim=2 kit=25 marca=0 dup=0
+2025-08-11 15:46:59,580 ERROR Falha ao mudar de página, backoff 11.35 s
+2025-08-11 15:47:11,031 INFO (73) Buscando: pneu 205 55 r16 Michelin Primacy
+2025-08-11 15:47:11,035 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-55-r16-michelin-primacy
+2025-08-11 15:47:43,484 INFO cards encontrados page=1 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 15:48:02,740 INFO snapshot page=1 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 15:48:08,310 INFO Página 1 novos=4 acumulado=4 parse=0 sem_dim=0 kit=48 marca=0 dup=0
+2025-08-11 15:48:10,956 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:48:10,987 INFO Delaying 7.20s after finishing page
+2025-08-11 15:48:18,185 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 15:49:20,830 INFO cards encontrados page=2 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 15:49:40,182 INFO snapshot page=2 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 15:49:41,991 INFO Página 2 novos=1 acumulado=5 parse=0 sem_dim=0 kit=51 marca=0 dup=0
+2025-08-11 15:49:45,115 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 15:49:45,214 INFO Delaying 6.95s after finishing page
+2025-08-11 15:49:54,191 INFO cards encontrados page=3 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 15:50:08,578 INFO snapshot page=3 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 15:50:13,107 INFO Página 3 novos=3 acumulado=8 parse=0 sem_dim=5 kit=44 marca=0 dup=0
+2025-08-11 15:50:14,167 ERROR Falha ao mudar de página, backoff 18.05 s
+2025-08-11 15:50:32,286 INFO (74) Buscando: pneu 205 55 r16 Dunlop FM800
+2025-08-11 15:50:32,291 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-55-r16-dunlop-fm800
+2025-08-11 15:51:05,797 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 15:51:36,185 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 15:51:58,194 INFO Página 1 novos=14 acumulado=14 parse=0 sem_dim=0 kit=36 marca=0 dup=0
+2025-08-11 15:52:01,499 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:52:01,562 INFO Delaying 8.06s after finishing page
+2025-08-11 15:52:12,154 INFO cards encontrados page=2 n=13 sel=div.ui-search-result__wrapper
+2025-08-11 15:52:32,717 INFO snapshot page=2 cards=13 stale=0 est=13 anchors=13 sel=div.ui-search-result__wrapper
+2025-08-11 15:52:43,511 INFO Página 2 novos=6 acumulado=20 parse=0 sem_dim=0 kit=7 marca=0 dup=0
+2025-08-11 15:52:44,167 ERROR Falha ao mudar de página, backoff 15.11 s
+2025-08-11 15:53:01,368 INFO (75) Buscando: pneu 205 55 r16 Continental PowerContact
+2025-08-11 15:53:01,403 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-55-r16-continental-powercontact
+2025-08-11 15:53:35,786 INFO cards encontrados page=1 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 15:53:54,871 INFO snapshot page=1 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 15:54:30,139 INFO Página 1 novos=24 acumulado=24 parse=0 sem_dim=0 kit=30 marca=0 dup=0
+2025-08-11 15:54:34,345 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:54:34,354 INFO Delaying 5.03s after finishing page
+2025-08-11 15:54:41,622 INFO cards encontrados page=2 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 15:55:12,759 INFO snapshot page=2 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 15:55:55,485 INFO Página 2 novos=27 acumulado=51 parse=0 sem_dim=0 kit=27 marca=0 dup=0
+2025-08-11 15:55:59,420 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 15:55:59,555 INFO Delaying 5.54s after finishing page
+2025-08-11 15:56:08,368 INFO cards encontrados page=3 n=18 sel=div.ui-search-result__wrapper
+2025-08-11 15:56:21,330 INFO snapshot page=3 cards=18 stale=0 est=18 anchors=18 sel=div.ui-search-result__wrapper
+2025-08-11 15:56:34,296 INFO Página 3 novos=9 acumulado=60 parse=0 sem_dim=1 kit=8 marca=0 dup=0
+2025-08-11 15:56:34,393 ERROR Falha ao mudar de página, backoff 14.81 s
+2025-08-11 15:56:49,341 INFO (76) Buscando: pneu 205 55 r16 Dunlop Enasave
+2025-08-11 15:56:49,348 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-55-r16-dunlop-enasave
+2025-08-11 15:57:20,712 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 15:57:49,369 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 15:58:14,895 INFO Página 1 novos=16 acumulado=16 parse=0 sem_dim=1 kit=33 marca=0 dup=0
+2025-08-11 15:58:20,894 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 15:58:20,928 INFO Delaying 5.58s after finishing page
+2025-08-11 15:58:26,521 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 15:59:32,414 INFO cards encontrados page=2 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 16:00:11,477 INFO snapshot page=2 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 16:00:39,600 INFO Página 2 novos=17 acumulado=33 parse=0 sem_dim=19 kit=14 marca=0 dup=0
+2025-08-11 16:00:44,184 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 16:00:44,236 INFO Delaying 5.23s after finishing page
+2025-08-11 16:00:50,605 INFO cards encontrados page=3 n=27 sel=div.ui-search-result__wrapper
+2025-08-11 16:01:19,376 INFO snapshot page=3 cards=27 stale=0 est=27 anchors=27 sel=div.ui-search-result__wrapper
+2025-08-11 16:01:29,451 INFO Página 3 novos=7 acumulado=40 parse=0 sem_dim=4 kit=16 marca=0 dup=0
+2025-08-11 16:01:29,703 ERROR Falha ao mudar de página, backoff 16.49 s
+2025-08-11 16:01:46,225 INFO (77) Buscando: pneu 205 55 r16 Goodyear Eagle
+2025-08-11 16:01:46,226 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-55-r16-goodyear-eagle
+2025-08-11 16:02:15,112 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 16:02:29,999 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 16:03:03,855 INFO Página 1 novos=20 acumulado=20 parse=0 sem_dim=0 kit=30 marca=0 dup=0
+2025-08-11 16:03:10,101 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 16:03:10,184 INFO Delaying 5.28s after finishing page
+2025-08-11 16:03:20,836 INFO cards encontrados page=2 n=46 sel=div.ui-search-result__wrapper
+2025-08-11 16:03:41,464 INFO snapshot page=2 cards=46 stale=0 est=46 anchors=46 sel=div.ui-search-result__wrapper
+2025-08-11 16:04:11,163 INFO Página 2 novos=18 acumulado=38 parse=0 sem_dim=5 kit=23 marca=0 dup=0
+2025-08-11 16:04:13,453 ERROR Falha ao mudar de página, backoff 13.06 s
+2025-08-11 16:04:26,527 INFO (78) Buscando: pneu 205 55 r17 Michelin Primacy
+2025-08-11 16:04:26,530 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-55-r17-michelin-primacy
+2025-08-11 16:04:58,844 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:05:17,056 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:05:18,961 INFO Página 1 novos=1 acumulado=1 parse=0 sem_dim=4 kit=53 marca=0 dup=0
+2025-08-11 16:05:25,716 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 16:05:25,779 INFO Delaying 6.89s after finishing page
+2025-08-11 16:05:35,845 INFO cards encontrados page=2 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:06:10,241 INFO snapshot page=2 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:06:14,004 INFO Página 2 novos=2 acumulado=3 parse=0 sem_dim=1 kit=55 marca=0 dup=0
+2025-08-11 16:06:19,083 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 16:06:19,529 INFO Delaying 7.03s after finishing page
+2025-08-11 16:06:41,932 INFO cards encontrados page=3 n=53 sel=div.ui-search-result__wrapper
+2025-08-11 16:07:11,831 INFO snapshot page=3 cards=53 stale=0 est=53 anchors=53 sel=div.ui-search-result__wrapper
+2025-08-11 16:07:23,514 INFO Página 3 novos=4 acumulado=7 parse=0 sem_dim=0 kit=49 marca=0 dup=0
+2025-08-11 16:07:26,575 ERROR Falha ao mudar de página, backoff 14.17 s
+2025-08-11 16:07:43,426 INFO (79) Buscando: pneu 205 60 r15 Michelin Energy
+2025-08-11 16:07:43,428 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-60-r15-michelin-energy
+2025-08-11 16:08:19,291 INFO cards encontrados page=1 n=48 sel=div.ui-search-result__wrapper
+2025-08-11 16:08:45,541 INFO snapshot page=1 cards=48 stale=0 est=48 anchors=48 sel=div.ui-search-result__wrapper
+2025-08-11 16:09:15,409 INFO Página 1 novos=20 acumulado=20 parse=0 sem_dim=0 kit=28 marca=0 dup=0
+2025-08-11 16:09:15,606 ERROR Falha ao mudar de página, backoff 11.69 s
+2025-08-11 16:09:27,386 INFO (80) Buscando: pneu 205 60 r15 Goodyear EfficientGrip
+2025-08-11 16:09:27,387 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-60-r15-goodyear-efficientgrip
+2025-08-11 16:10:02,073 INFO cards encontrados page=1 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 16:10:47,114 INFO snapshot page=1 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 16:11:43,779 INFO Página 1 novos=33 acumulado=33 parse=0 sem_dim=0 kit=18 marca=0 dup=0
+2025-08-11 16:11:48,953 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 16:11:49,031 INFO Delaying 5.50s after finishing page
+2025-08-11 16:11:54,531 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 16:12:58,977 INFO cards encontrados page=2 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 16:13:24,357 INFO snapshot page=2 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 16:13:56,209 INFO Página 2 novos=21 acumulado=54 parse=0 sem_dim=0 kit=30 marca=0 dup=0
+2025-08-11 16:13:59,754 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 16:13:59,848 INFO Delaying 7.69s after finishing page
+2025-08-11 16:14:08,887 INFO cards encontrados page=3 n=17 sel=div.ui-search-result__wrapper
+2025-08-11 16:14:23,900 INFO snapshot page=3 cards=17 stale=0 est=17 anchors=17 sel=div.ui-search-result__wrapper
+2025-08-11 16:14:42,666 INFO Página 3 novos=11 acumulado=65 parse=0 sem_dim=1 kit=5 marca=0 dup=0
+2025-08-11 16:14:46,503 ERROR Falha ao mudar de página, backoff 12.20 s
+2025-08-11 16:14:58,795 INFO (81) Buscando: pneu 205 60 r15 Dunlop FM800
+2025-08-11 16:14:58,804 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-60-r15-dunlop-fm800
+2025-08-11 16:15:31,819 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 16:16:05,208 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 16:16:33,301 INFO Página 1 novos=16 acumulado=16 parse=0 sem_dim=0 kit=34 marca=0 dup=0
+2025-08-11 16:16:38,333 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 16:16:38,432 INFO Delaying 9.42s after finishing page
+2025-08-11 16:16:52,373 INFO cards encontrados page=2 n=5 sel=div.ui-search-result__wrapper
+2025-08-11 16:17:07,122 INFO snapshot page=2 cards=5 stale=0 est=5 anchors=5 sel=div.ui-search-result__wrapper
+2025-08-11 16:17:09,147 INFO Página 2 novos=1 acumulado=17 parse=0 sem_dim=0 kit=4 marca=0 dup=0
+2025-08-11 16:17:09,515 ERROR Falha ao mudar de página, backoff 14.28 s
+2025-08-11 16:17:23,869 INFO (82) Buscando: pneu 205 60 r16 Goodyear Wrangler
+2025-08-11 16:17:23,872 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-60-r16-goodyear-wrangler
+2025-08-11 16:18:00,468 INFO cards encontrados page=1 n=53 sel=div.ui-search-result__wrapper
+2025-08-11 16:18:24,433 INFO snapshot page=1 cards=53 stale=0 est=53 anchors=53 sel=div.ui-search-result__wrapper
+2025-08-11 16:19:29,790 INFO Página 1 novos=40 acumulado=40 parse=0 sem_dim=0 kit=13 marca=0 dup=0
+2025-08-11 16:19:39,540 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 16:19:39,891 INFO Delaying 8.51s after finishing page
+2025-08-11 16:19:50,160 INFO cards encontrados page=2 n=53 sel=div.ui-search-result__wrapper
+2025-08-11 16:20:17,228 INFO snapshot page=2 cards=53 stale=0 est=53 anchors=53 sel=div.ui-search-result__wrapper
+2025-08-11 16:20:46,081 INFO Página 2 novos=18 acumulado=58 parse=0 sem_dim=0 kit=35 marca=0 dup=0
+2025-08-11 16:20:50,676 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 16:20:50,901 INFO Delaying 5.65s after finishing page
+2025-08-11 16:21:00,276 INFO cards encontrados page=3 n=9 sel=div.ui-search-result__wrapper
+2025-08-11 16:21:23,239 INFO snapshot page=3 cards=9 stale=0 est=9 anchors=9 sel=div.ui-search-result__wrapper
+2025-08-11 16:21:31,245 INFO Página 3 novos=5 acumulado=63 parse=0 sem_dim=0 kit=4 marca=0 dup=0
+2025-08-11 16:21:31,458 ERROR Falha ao mudar de página, backoff 17.88 s
+2025-08-11 16:21:49,930 INFO (83) Buscando: pneu 205 60 r16 Dunlop Enasave
+2025-08-11 16:21:49,937 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-60-r16-dunlop-enasave
+2025-08-11 16:22:19,234 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 16:22:39,908 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 16:23:10,030 INFO Página 1 novos=18 acumulado=18 parse=0 sem_dim=0 kit=32 marca=0 dup=0
+2025-08-11 16:23:16,328 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 16:23:16,445 INFO Delaying 8.96s after finishing page
+2025-08-11 16:23:25,406 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 16:24:28,691 INFO cards encontrados page=2 n=30 sel=div.ui-search-result__wrapper
+2025-08-11 16:24:49,508 INFO snapshot page=2 cards=30 stale=0 est=30 anchors=30 sel=div.ui-search-result__wrapper
+2025-08-11 16:25:06,118 INFO Página 2 novos=10 acumulado=28 parse=0 sem_dim=2 kit=18 marca=0 dup=0
+2025-08-11 16:25:09,017 ERROR Falha ao mudar de página, backoff 11.63 s
+2025-08-11 16:25:21,300 INFO (84) Buscando: pneu 205 60 r16 Michelin Primacy
+2025-08-11 16:25:21,306 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-60-r16-michelin-primacy
+2025-08-11 16:25:54,637 INFO cards encontrados page=1 n=47 sel=div.ui-search-result__wrapper
+2025-08-11 16:26:21,739 INFO snapshot page=1 cards=47 stale=0 est=47 anchors=47 sel=div.ui-search-result__wrapper
+2025-08-11 16:26:23,993 INFO Página 1 novos=1 acumulado=1 parse=0 sem_dim=0 kit=46 marca=0 dup=0
+2025-08-11 16:26:24,127 ERROR Falha ao mudar de página, backoff 19.55 s
+2025-08-11 16:26:45,189 INFO (85) Buscando: pneu 205 60 r16 Sumitomo BC100
+2025-08-11 16:26:45,189 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-60-r16-sumitomo-bc100
+2025-08-11 16:27:20,585 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:28:12,098 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:28:42,719 INFO Página 1 novos=19 acumulado=19 parse=0 sem_dim=1 kit=38 marca=0 dup=0
+2025-08-11 16:28:48,208 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 16:28:48,287 INFO Delaying 6.37s after finishing page
+2025-08-11 16:29:04,830 INFO cards encontrados page=2 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:29:40,215 INFO snapshot page=2 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:30:15,235 INFO Página 2 novos=20 acumulado=39 parse=0 sem_dim=0 kit=38 marca=0 dup=0
+2025-08-11 16:30:21,577 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 16:30:21,591 INFO Delaying 7.74s after finishing page
+2025-08-11 16:30:35,431 INFO cards encontrados page=3 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:31:07,724 INFO snapshot page=3 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:31:50,267 INFO Página 3 novos=27 acumulado=66 parse=0 sem_dim=0 kit=31 marca=0 dup=0
+2025-08-11 16:31:56,089 INFO next_click page=4 sel=a[title='Seguinte']
+2025-08-11 16:31:56,130 INFO Delaying 7.64s after finishing page
+2025-08-11 16:32:06,367 INFO cards encontrados page=4 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:32:24,003 INFO snapshot page=4 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:32:43,974 INFO Página 4 novos=13 acumulado=79 parse=0 sem_dim=0 kit=44 marca=0 dup=1
+2025-08-11 16:32:48,104 INFO next_click page=5 sel=a[title='Seguinte']
+2025-08-11 16:32:48,112 INFO Delaying 9.66s after finishing page
+2025-08-11 16:32:59,470 INFO cards encontrados page=5 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 16:33:23,451 INFO snapshot page=5 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 16:33:49,147 INFO Página 5 novos=16 acumulado=95 parse=0 sem_dim=1 kit=36 marca=0 dup=1
+2025-08-11 16:33:49,468 ERROR Falha ao mudar de página, backoff 13.31 s
+2025-08-11 16:34:03,040 INFO (86) Buscando: pneu 205 60 r16 Dunlop Grandtrek
+2025-08-11 16:34:03,051 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-60-r16-dunlop-grandtrek
+2025-08-11 16:34:35,075 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 16:34:51,490 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 16:35:14,882 INFO Página 1 novos=15 acumulado=15 parse=0 sem_dim=0 kit=35 marca=0 dup=0
+2025-08-11 16:35:22,314 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 16:35:22,569 INFO Delaying 5.64s after finishing page
+2025-08-11 16:35:28,212 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 16:36:30,534 INFO cards encontrados page=2 n=30 sel=div.ui-search-result__wrapper
+2025-08-11 16:36:57,923 INFO snapshot page=2 cards=30 stale=0 est=30 anchors=30 sel=div.ui-search-result__wrapper
+2025-08-11 16:37:19,786 INFO Página 2 novos=13 acumulado=28 parse=0 sem_dim=2 kit=15 marca=0 dup=0
+2025-08-11 16:37:20,017 ERROR Falha ao mudar de página, backoff 11.67 s
+2025-08-11 16:37:32,529 INFO (87) Buscando: pneu 205 65 r15 Goodyear Direction
+2025-08-11 16:37:32,565 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-65-r15-goodyear-direction
+2025-08-11 16:38:04,366 INFO cards encontrados page=1 n=45 sel=div.ui-search-result__wrapper
+2025-08-11 16:38:28,402 INFO snapshot page=1 cards=45 stale=0 est=45 anchors=45 sel=div.ui-search-result__wrapper
+2025-08-11 16:38:56,671 INFO Página 1 novos=18 acumulado=18 parse=0 sem_dim=1 kit=26 marca=0 dup=0
+2025-08-11 16:38:58,708 ERROR Falha ao mudar de página, backoff 17.32 s
+2025-08-11 16:39:16,067 INFO (88) Buscando: pneu 205 65 r15 Goodyear Wrangler
+2025-08-11 16:39:16,068 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-65-r15-goodyear-wrangler
+2025-08-11 16:39:46,262 INFO cards encontrados page=1 n=44 sel=div.ui-search-result__wrapper
+2025-08-11 16:40:11,380 INFO snapshot page=1 cards=44 stale=0 est=44 anchors=44 sel=div.ui-search-result__wrapper
+2025-08-11 16:40:38,833 INFO Página 1 novos=18 acumulado=18 parse=0 sem_dim=0 kit=26 marca=0 dup=0
+2025-08-11 16:40:38,934 ERROR Falha ao mudar de página, backoff 12.29 s
+2025-08-11 16:40:51,333 INFO (89) Buscando: pneu 205 65 r15 Michelin Ltx Force
+2025-08-11 16:40:51,334 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-65-r15-michelin-ltx-force
+2025-08-11 16:41:21,427 INFO cards encontrados page=1 n=19 sel=div.ui-search-result__wrapper
+2025-08-11 16:41:36,798 INFO snapshot page=1 cards=19 stale=0 est=19 anchors=19 sel=div.ui-search-result__wrapper
+2025-08-11 16:41:54,001 INFO Página 1 novos=11 acumulado=11 parse=0 sem_dim=0 kit=8 marca=0 dup=0
+2025-08-11 16:41:54,107 ERROR Falha ao mudar de página, backoff 18.77 s
+2025-08-11 16:42:12,894 INFO (90) Buscando: pneu 205 65 r16 Pirelli Scorpion ks
+2025-08-11 16:42:12,895 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-65-r16-pirelli-scorpion-ks
+2025-08-11 16:42:42,110 INFO cards encontrados page=1 n=20 sel=div.ui-search-result__wrapper
+2025-08-11 16:43:05,268 INFO snapshot page=1 cards=20 stale=0 est=20 anchors=20 sel=div.ui-search-result__wrapper
+2025-08-11 16:43:24,635 INFO Página 1 novos=12 acumulado=12 parse=0 sem_dim=0 kit=8 marca=0 dup=0
+2025-08-11 16:43:25,621 ERROR Falha ao mudar de página, backoff 10.15 s
+2025-08-11 16:43:35,805 INFO (91) Buscando: pneu 205 65 r16 Firestone destination
+2025-08-11 16:43:35,806 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-65-r16-firestone-destination
+2025-08-11 16:44:08,531 INFO cards encontrados page=1 n=23 sel=div.ui-search-result__wrapper
+2025-08-11 16:44:24,621 INFO snapshot page=1 cards=23 stale=0 est=23 anchors=23 sel=div.ui-search-result__wrapper
+2025-08-11 16:44:40,054 INFO Página 1 novos=10 acumulado=10 parse=0 sem_dim=0 kit=13 marca=0 dup=0
+2025-08-11 16:44:40,535 ERROR Falha ao mudar de página, backoff 19.42 s
+2025-08-11 16:45:00,065 INFO (92) Buscando: pneu 205 70 r15 Michelin agilis
+2025-08-11 16:45:00,067 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-70-r15-michelin-agilis
+2025-08-11 16:45:32,820 INFO cards encontrados page=1 n=18 sel=div.ui-search-result__wrapper
+2025-08-11 16:45:46,688 INFO snapshot page=1 cards=18 stale=0 est=18 anchors=18 sel=div.ui-search-result__wrapper
+2025-08-11 16:45:51,855 INFO Página 1 novos=3 acumulado=3 parse=0 sem_dim=13 kit=2 marca=0 dup=0
+2025-08-11 16:45:51,970 ERROR Falha ao mudar de página, backoff 18.07 s
+2025-08-11 16:46:10,087 INFO (93) Buscando: pneu 205 70 r15 Goodyear cargo marathon
+2025-08-11 16:46:10,090 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-70-r15-goodyear-cargo-marathon
+2025-08-11 16:46:43,595 INFO cards encontrados page=1 n=49 sel=div.ui-search-result__wrapper
+2025-08-11 16:47:00,946 INFO snapshot page=1 cards=49 stale=0 est=49 anchors=49 sel=div.ui-search-result__wrapper
+2025-08-11 16:47:01,514 INFO Página 1 novos=0 acumulado=0 parse=0 sem_dim=38 kit=6 marca=5 dup=0
+2025-08-11 16:47:01,624 ERROR Falha ao mudar de página, backoff 18.70 s
+2025-08-11 16:47:20,333 INFO (94) Buscando: pneu 205 70 r15 Goodyear Wrangler
+2025-08-11 16:47:20,334 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-70-r15-goodyear-wrangler
+2025-08-11 16:47:53,118 INFO cards encontrados page=1 n=53 sel=div.ui-search-result__wrapper
+2025-08-11 16:48:12,112 INFO snapshot page=1 cards=53 stale=0 est=53 anchors=53 sel=div.ui-search-result__wrapper
+2025-08-11 16:48:41,494 INFO Página 1 novos=19 acumulado=19 parse=0 sem_dim=0 kit=34 marca=0 dup=0
+2025-08-11 16:48:47,592 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 16:48:47,603 INFO Delaying 8.59s after finishing page
+2025-08-11 16:48:59,756 INFO cards encontrados page=2 n=41 sel=div.ui-search-result__wrapper
+2025-08-11 16:49:33,692 INFO snapshot page=2 cards=41 stale=0 est=41 anchors=41 sel=div.ui-search-result__wrapper
+2025-08-11 16:49:53,712 INFO Página 2 novos=11 acumulado=30 parse=0 sem_dim=0 kit=30 marca=0 dup=0
+2025-08-11 16:49:54,307 ERROR Falha ao mudar de página, backoff 19.32 s
+2025-08-11 16:50:13,658 INFO (95) Buscando: pneu 205 70 r15 Dunlop Grandtrek
+2025-08-11 16:50:13,659 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-70-r15-dunlop-grandtrek
+2025-08-11 16:50:49,757 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 16:51:16,989 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 16:51:46,281 INFO Página 1 novos=18 acumulado=18 parse=0 sem_dim=0 kit=32 marca=0 dup=0
+2025-08-11 16:51:50,292 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 16:51:50,460 INFO Delaying 7.75s after finishing page
+2025-08-11 16:51:59,397 INFO cards encontrados page=2 n=19 sel=div.ui-search-result__wrapper
+2025-08-11 16:52:26,161 INFO snapshot page=2 cards=19 stale=0 est=19 anchors=19 sel=div.ui-search-result__wrapper
+2025-08-11 16:52:35,757 INFO Página 2 novos=6 acumulado=24 parse=0 sem_dim=0 kit=13 marca=0 dup=0
+2025-08-11 16:52:36,006 ERROR Falha ao mudar de página, backoff 17.69 s
+2025-08-11 16:52:53,762 INFO (96) Buscando: pneu 205 70 r15 Michelin Ltx Force
+2025-08-11 16:52:53,765 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-205-70-r15-michelin-ltx-force
+2025-08-11 16:53:28,521 INFO cards encontrados page=1 n=18 sel=div.ui-search-result__wrapper
+2025-08-11 16:53:49,927 INFO snapshot page=1 cards=18 stale=0 est=18 anchors=18 sel=div.ui-search-result__wrapper
+2025-08-11 16:53:55,343 INFO Página 1 novos=3 acumulado=3 parse=0 sem_dim=13 kit=2 marca=0 dup=0
+2025-08-11 16:53:57,032 ERROR Falha ao mudar de página, backoff 17.32 s
+2025-08-11 16:54:14,389 INFO (97) Buscando: pneu 215 45 r17 Pirelli Powergy
+2025-08-11 16:54:14,404 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-215-45-r17-pirelli-powergy
+2025-08-11 16:54:44,146 INFO cards encontrados page=1 n=7 sel=div.ui-search-result__wrapper
+2025-08-11 16:55:07,511 INFO snapshot page=1 cards=7 stale=0 est=7 anchors=7 sel=div.ui-search-result__wrapper
+2025-08-11 16:55:07,767 INFO Página 1 novos=0 acumulado=0 parse=0 sem_dim=0 kit=7 marca=0 dup=0
+2025-08-11 16:55:08,527 ERROR Falha ao mudar de página, backoff 11.51 s
+2025-08-11 16:55:20,162 INFO (98) Buscando: pneu 215 45 r17 Sumitomo BC100
+2025-08-11 16:55:20,164 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-215-45-r17-sumitomo-bc100
+2025-08-11 16:55:53,168 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:56:08,998 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:56:10,868 INFO Página 1 novos=0 acumulado=0 parse=0 sem_dim=4 kit=54 marca=0 dup=0
+2025-08-11 16:56:15,111 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 16:56:15,330 INFO Delaying 8.53s after finishing page
+2025-08-11 16:56:26,735 INFO cards encontrados page=2 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:56:56,801 INFO snapshot page=2 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:56:58,330 INFO Página 2 novos=0 acumulado=0 parse=0 sem_dim=1 kit=57 marca=0 dup=0
+2025-08-11 16:57:02,548 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 16:57:02,604 INFO Delaying 9.44s after finishing page
+2025-08-11 16:57:13,981 INFO cards encontrados page=3 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:57:29,365 INFO snapshot page=3 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 16:57:29,897 INFO Página 3 novos=0 acumulado=0 parse=0 sem_dim=3 kit=55 marca=0 dup=0
+2025-08-11 16:57:33,118 INFO next_click page=4 sel=a[title='Seguinte']
+2025-08-11 16:57:33,313 INFO Delaying 6.31s after finishing page
+2025-08-11 16:57:39,631 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 16:58:40,845 INFO cards encontrados page=4 n=4 sel=div.ui-search-result__wrapper
+2025-08-11 16:59:01,513 INFO snapshot page=4 cards=4 stale=0 est=4 anchors=4 sel=div.ui-search-result__wrapper
+2025-08-11 16:59:01,654 INFO Página 4 novos=0 acumulado=0 parse=0 sem_dim=0 kit=4 marca=0 dup=0
+2025-08-11 16:59:02,964 ERROR Falha ao mudar de página, backoff 14.12 s
+2025-08-11 16:59:17,204 INFO (99) Buscando: pneu 215 50 r17 Michelin Primacy 4
+2025-08-11 16:59:17,215 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-215-50-r17-michelin-primacy-4
+2025-08-11 16:59:51,543 INFO cards encontrados page=1 n=57 sel=div.ui-search-result__wrapper
+2025-08-11 17:00:29,406 INFO snapshot page=1 cards=57 stale=0 est=57 anchors=57 sel=div.ui-search-result__wrapper
+2025-08-11 17:00:30,225 INFO Página 1 novos=0 acumulado=0 parse=0 sem_dim=0 kit=57 marca=0 dup=0
+2025-08-11 17:00:34,091 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 17:00:34,121 INFO Delaying 7.83s after finishing page
+2025-08-11 17:00:48,449 INFO cards encontrados page=2 n=57 sel=div.ui-search-result__wrapper
+2025-08-11 17:01:16,424 INFO snapshot page=2 cards=57 stale=0 est=57 anchors=57 sel=div.ui-search-result__wrapper
+2025-08-11 17:01:19,108 INFO Página 2 novos=0 acumulado=0 parse=0 sem_dim=0 kit=57 marca=0 dup=0
+2025-08-11 17:01:21,315 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 17:01:21,339 INFO Delaying 6.63s after finishing page
+2025-08-11 17:01:36,343 INFO cards encontrados page=3 n=21 sel=div.ui-search-result__wrapper
+2025-08-11 17:01:55,067 INFO snapshot page=3 cards=21 stale=0 est=21 anchors=21 sel=div.ui-search-result__wrapper
+2025-08-11 17:01:55,185 INFO Página 3 novos=0 acumulado=0 parse=0 sem_dim=1 kit=20 marca=0 dup=0
+2025-08-11 17:01:56,357 ERROR Falha ao mudar de página, backoff 17.13 s
+2025-08-11 17:02:13,529 INFO (100) Buscando: pneu 215 50 r17 Goodyear EfficientGrip
+2025-08-11 17:02:13,530 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-215-50-r17-goodyear-efficientgrip
+2025-08-11 17:02:43,566 INFO cards encontrados page=1 n=51 sel=div.ui-search-result__wrapper
+2025-08-11 17:03:04,294 INFO snapshot page=1 cards=51 stale=0 est=51 anchors=51 sel=div.ui-search-result__wrapper
+2025-08-11 17:03:38,697 INFO Página 1 novos=22 acumulado=22 parse=0 sem_dim=2 kit=27 marca=0 dup=0
+2025-08-11 17:03:46,670 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 17:03:46,768 INFO Delaying 8.44s after finishing page
+2025-08-11 17:03:56,627 INFO cards encontrados page=2 n=2 sel=div.ui-search-result__wrapper
+2025-08-11 17:04:18,908 INFO snapshot page=2 cards=2 stale=0 est=2 anchors=2 sel=div.ui-search-result__wrapper
+2025-08-11 17:04:18,930 INFO Página 2 novos=0 acumulado=22 parse=0 sem_dim=0 kit=2 marca=0 dup=0
+2025-08-11 17:04:20,818 ERROR Falha ao mudar de página, backoff 18.53 s
+2025-08-11 17:04:40,789 INFO (101) Buscando: pneu 215 50 r17 Pirelli Cint p7
+2025-08-11 17:04:40,790 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-215-50-r17-pirelli-cint-p7
+2025-08-11 17:05:10,420 INFO cards encontrados page=1 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 17:05:37,138 INFO snapshot page=1 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 17:06:16,660 INFO Página 1 novos=25 acumulado=25 parse=0 sem_dim=2 kit=31 marca=0 dup=0
+2025-08-11 17:06:19,983 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 17:06:22,289 INFO Delaying 6.42s after finishing page
+2025-08-11 17:06:33,460 INFO cards encontrados page=2 n=58 sel=div.ui-search-result__wrapper
+2025-08-11 17:07:01,927 INFO snapshot page=2 cards=58 stale=0 est=58 anchors=58 sel=div.ui-search-result__wrapper
+2025-08-11 17:07:44,348 INFO Página 2 novos=25 acumulado=50 parse=0 sem_dim=2 kit=31 marca=0 dup=0
+2025-08-11 17:07:50,300 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 17:07:50,481 INFO Delaying 7.61s after finishing page
+2025-08-11 17:07:58,212 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 17:09:02,007 INFO cards encontrados page=3 n=33 sel=div.ui-search-result__wrapper
+2025-08-11 17:09:21,031 INFO snapshot page=3 cards=33 stale=0 est=33 anchors=33 sel=div.ui-search-result__wrapper
+2025-08-11 17:09:49,213 INFO Página 3 novos=17 acumulado=67 parse=0 sem_dim=0 kit=16 marca=0 dup=0
+2025-08-11 17:09:52,693 ERROR Falha ao mudar de página, backoff 16.80 s
+2025-08-11 17:10:09,517 INFO (102) Buscando: pneu 215 50 r17 Dunlop FM800
+2025-08-11 17:10:09,518 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-215-50-r17-dunlop-fm800
+2025-08-11 17:10:39,942 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 17:10:59,707 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 17:11:22,342 INFO Página 1 novos=14 acumulado=14 parse=0 sem_dim=0 kit=36 marca=0 dup=0
+2025-08-11 17:11:32,632 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 17:11:32,655 INFO Delaying 9.36s after finishing page
+2025-08-11 17:11:47,237 INFO cards encontrados page=2 n=9 sel=div.ui-search-result__wrapper
+2025-08-11 17:12:14,819 INFO snapshot page=2 cards=9 stale=0 est=9 anchors=9 sel=div.ui-search-result__wrapper
+2025-08-11 17:12:18,474 INFO Página 2 novos=2 acumulado=16 parse=0 sem_dim=0 kit=7 marca=0 dup=0
+2025-08-11 17:12:20,186 ERROR Falha ao mudar de página, backoff 11.22 s
+2025-08-11 17:12:31,482 INFO (103) Buscando: pneu 215 55 r17 Pirelli Scorpion
+2025-08-11 17:12:31,483 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-215-55-r17-pirelli-scorpion
+2025-08-11 17:13:03,263 INFO cards encontrados page=1 n=54 sel=div.ui-search-result__wrapper
+2025-08-11 17:13:32,160 INFO snapshot page=1 cards=54 stale=0 est=54 anchors=54 sel=div.ui-search-result__wrapper
+2025-08-11 17:14:00,260 INFO Página 1 novos=17 acumulado=17 parse=0 sem_dim=0 kit=37 marca=0 dup=0
+2025-08-11 17:14:06,021 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 17:14:06,066 INFO Delaying 8.81s after finishing page
+2025-08-11 17:14:17,425 INFO cards encontrados page=2 n=17 sel=div.ui-search-result__wrapper
+2025-08-11 17:14:36,413 INFO snapshot page=2 cards=17 stale=0 est=17 anchors=17 sel=div.ui-search-result__wrapper
+2025-08-11 17:14:46,886 INFO Página 2 novos=7 acumulado=24 parse=0 sem_dim=1 kit=9 marca=0 dup=0
+2025-08-11 17:14:47,110 ERROR Falha ao mudar de página, backoff 14.31 s
+2025-08-11 17:15:01,568 INFO (104) Buscando: pneu 215 55 r17 Goodyear EfficientGrip
+2025-08-11 17:15:01,568 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-215-55-r17-goodyear-efficientgrip
+2025-08-11 17:15:32,634 INFO cards encontrados page=1 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 17:15:48,245 INFO snapshot page=1 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 17:16:31,188 INFO Página 1 novos=26 acumulado=26 parse=0 sem_dim=0 kit=26 marca=0 dup=0
+2025-08-11 17:16:37,236 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 17:16:37,263 INFO Delaying 8.72s after finishing page
+2025-08-11 17:16:53,742 INFO cards encontrados page=2 n=13 sel=div.ui-search-result__wrapper
+2025-08-11 17:17:19,125 INFO snapshot page=2 cards=13 stale=0 est=13 anchors=13 sel=div.ui-search-result__wrapper
+2025-08-11 17:17:33,724 INFO Página 2 novos=10 acumulado=36 parse=0 sem_dim=3 kit=0 marca=0 dup=0
+2025-08-11 17:17:34,330 ERROR Falha ao mudar de página, backoff 11.43 s
+2025-08-11 17:17:45,857 INFO (105) Buscando: pneu 215 55 r17 Goodyear EfficientGrip suv
+2025-08-11 17:17:45,859 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-215-55-r17-goodyear-efficientgrip-suv
+2025-08-11 17:18:15,820 INFO cards encontrados page=1 n=52 sel=div.ui-search-result__wrapper
+2025-08-11 17:18:34,388 INFO snapshot page=1 cards=52 stale=0 est=52 anchors=52 sel=div.ui-search-result__wrapper
+2025-08-11 17:19:14,942 INFO Página 1 novos=26 acumulado=26 parse=0 sem_dim=0 kit=26 marca=0 dup=0
+2025-08-11 17:19:20,678 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 17:19:20,712 INFO Delaying 5.28s after finishing page
+2025-08-11 17:19:27,492 INFO cards encontrados page=2 n=11 sel=div.ui-search-result__wrapper
+2025-08-11 17:19:48,693 INFO snapshot page=2 cards=11 stale=0 est=11 anchors=11 sel=div.ui-search-result__wrapper
+2025-08-11 17:20:01,184 INFO Página 2 novos=8 acumulado=34 parse=0 sem_dim=3 kit=0 marca=0 dup=0
+2025-08-11 17:20:01,313 ERROR Falha ao mudar de página, backoff 17.59 s
+2025-08-11 17:20:18,920 INFO (106) Buscando: pneu 215 55 r17 Michelin Primacy 4
+2025-08-11 17:20:18,921 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-215-55-r17-michelin-primacy-4
+2025-08-11 17:20:49,531 INFO cards encontrados page=1 n=56 sel=div.ui-search-result__wrapper
+2025-08-11 17:21:17,142 INFO snapshot page=1 cards=56 stale=0 est=56 anchors=56 sel=div.ui-search-result__wrapper
+2025-08-11 17:21:17,848 INFO Página 1 novos=0 acumulado=0 parse=0 sem_dim=0 kit=56 marca=0 dup=0
+2025-08-11 17:21:20,279 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 17:21:20,366 INFO Delaying 7.38s after finishing page
+2025-08-11 17:21:27,751 WARNING Cooldown de 60.0s após 5 páginas
+2025-08-11 17:22:29,409 INFO cards encontrados page=2 n=56 sel=div.ui-search-result__wrapper
+2025-08-11 17:22:49,310 INFO snapshot page=2 cards=56 stale=0 est=56 anchors=56 sel=div.ui-search-result__wrapper
+2025-08-11 17:22:49,674 INFO Página 2 novos=0 acumulado=0 parse=0 sem_dim=0 kit=56 marca=0 dup=0
+2025-08-11 17:22:54,332 INFO next_click page=3 sel=a[title='Seguinte']
+2025-08-11 17:22:54,399 INFO Delaying 8.35s after finishing page
+2025-08-11 17:23:04,396 INFO cards encontrados page=3 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 17:23:31,083 INFO snapshot page=3 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 17:23:31,434 INFO Página 3 novos=0 acumulado=0 parse=0 sem_dim=0 kit=50 marca=0 dup=0
+2025-08-11 17:23:34,083 INFO next_click page=4 sel=a[title='Seguinte']
+2025-08-11 17:23:34,094 INFO Delaying 5.31s after finishing page
+2025-08-11 17:23:40,863 INFO cards encontrados page=4 n=31 sel=div.ui-search-result__wrapper
+2025-08-11 17:23:53,888 INFO snapshot page=4 cards=31 stale=0 est=31 anchors=31 sel=div.ui-search-result__wrapper
+2025-08-11 17:23:55,740 INFO Página 4 novos=1 acumulado=1 parse=0 sem_dim=0 kit=30 marca=0 dup=0
+2025-08-11 17:23:56,663 ERROR Falha ao mudar de página, backoff 16.32 s
+2025-08-11 17:24:13,071 INFO (107) Buscando: pneu 215 60 r17 Dunlop Grandtrek
+2025-08-11 17:24:13,072 INFO URL inicial p1: https://lista.mercadolivre.com.br/pneu-215-60-r17-dunlop-grandtrek
+2025-08-11 17:24:41,496 INFO cards encontrados page=1 n=50 sel=div.ui-search-result__wrapper
+2025-08-11 17:25:01,036 INFO snapshot page=1 cards=50 stale=0 est=50 anchors=50 sel=div.ui-search-result__wrapper
+2025-08-11 17:25:32,772 INFO Página 1 novos=19 acumulado=19 parse=0 sem_dim=0 kit=31 marca=0 dup=0
+2025-08-11 17:25:39,642 INFO next_click page=2 sel=a[title='Seguinte']
+2025-08-11 17:25:39,825 INFO Delaying 9.08s after finishing page
+2025-08-11 17:25:55,039 INFO cards encontrados page=2 n=48 sel=div.ui-search-result__wrapper
+2025-08-11 17:26:25,068 INFO snapshot page=2 cards=48 stale=0 est=48 anchors=48 sel=div.ui-search-result__wrapper
+2025-08-11 17:26:47,297 INFO Página 2 novos=15 acumulado=34 parse=0 sem_dim=5 kit=28 marca=0 dup=0
+2025-08-11 17:26:47,399 ERROR Falha ao mudar de página, backoff 10.64 s
