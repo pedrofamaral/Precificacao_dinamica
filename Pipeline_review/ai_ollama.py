@@ -27,7 +27,7 @@ def precheck_price_sanity(stats):
     p10 = stats.get("p10")
     p90 = stats.get("p90")
     med = stats.get("median")
-    tmean = stats.get("trimmed_mean_10_90")
+    tmean = stats.get("media_correta")
     minp = stats.get("min_price")
     maxp = stats.get("max_price")
     n = stats.get("n_listings", 0)
@@ -129,7 +129,6 @@ def fetch_listings_sample(conn, canonical_key, k_titles=5, k_sellers=3):
     top_titles = [t for t, _ in Counter(titles).most_common(k_titles)]
     top_sellers = [s for s, _ in Counter(sellers).most_common(k_sellers)]
 
-    # Remove None e duplicatas em examples
     seen_urls = set()
     dedup_examples = []
     for ex in examples:
@@ -178,7 +177,6 @@ def call_ollama_generate(
     resp = requests.post(url, json=payload, timeout=timeout)
     resp.raise_for_status()
     data = resp.json()
-    # Ollama /api/generate retorna {"response": "...", ...}
     return data.get("response", "").strip(), data
 
 # -----------------------------
@@ -205,7 +203,6 @@ NÃO inclua texto fora do JSON. NÃO explique.
 """.strip()
 
 def build_prompt(brand, model, size, stats, sample):
-    # Compacto para reduzir tokens
     obj = {
         "brand": brand,
         "model": model,
@@ -217,7 +214,7 @@ def build_prompt(brand, model, size, stats, sample):
             "median": stats.get("median"),
             "p90": stats.get("p90"),
             "max": stats.get("max_price"),
-            "trimmed_mean_10_90": stats.get("trimmed_mean_10_90")
+            "media_correta": stats.get("media_correta")
         },
         "titles_sample": sample.get("titles", [])[:5],
         "sellers_top": sample.get("sellers_top", [])[:3],
@@ -356,19 +353,17 @@ def main():
                 "median": r["median_price"],
                 "p10": r["p10"],
                 "p90": r["p90"],
-                "trimmed_mean_10_90": r["trimmed_mean_10_90"],
+                "media_correta": r["media_correta"],
                 "marketplaces": r["marketplaces"]
             }
 
             sample = fetch_listings_sample(conn, canonical_key, k_titles=args.sample_titles, k_sellers=args.sample_sellers)
 
-            # Pré-checagens determinísticas
             pre_alerts = precheck_price_sanity(stats)
             pre_alerts += precheck_title_flags(sample.get("titles", []))
             if stats["n_listings"] and stats["n_listings"] < 4:
                 pre_alerts.append("precheck_low_sample_reliability")
 
-            # Prompt p/ LLM
             prompt = build_prompt(brand, model, size, stats, sample)
 
             try:
@@ -382,7 +377,6 @@ def main():
                     max_tokens=args.max_tokens,
                     timeout=args.timeout
                 )
-                # Força JSON estrito
                 try:
                     llm_obj = json.loads(text)
                     llm_ok = bool(llm_obj.get("ok"))
@@ -399,7 +393,6 @@ def main():
                 llm_alerts = ["llm_request_failed"]
                 llm_conf = 0.0
 
-            # Registro final
             record = {
                 "canonical_key": canonical_key,
                 "brand": brand,
