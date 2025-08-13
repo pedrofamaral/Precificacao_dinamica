@@ -1,8 +1,6 @@
-# dashboards/menu_amazon.py
 from dashboard_amazon import DashboardAmazon, MonitorAmazon
 
 def executar_analise_completa(dash: DashboardAmazon, mon: MonitorAmazon):
-    """Pipeline 100 %  dashboards, comparativo, Excel e monitor."""
     dados = dash.carregar_dados()
     if not dados:
         print("❌ Nenhum dado encontrado. Rode o scraper antes.")
