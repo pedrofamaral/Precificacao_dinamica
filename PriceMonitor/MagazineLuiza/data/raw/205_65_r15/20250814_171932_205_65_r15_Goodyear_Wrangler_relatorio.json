@@ -1,0 +1,58 @@
+{
+  "termo": "pneu 205/65R15 Goodyear Direction",
+  "produtos_encontrados": 2,
+  "promocoes": 2,
+  "preco_medio": 579.9,
+  "tempo_execucao": 80.38,
+  "arquivos": {
+    "json_produtos": "data\\raw\\205-65-r15\\pneu-20565r15-goodyear-direction_20250814_141929.json",
+    "csv_produtos": "data\\raw\\205-65-r15\\pneu-20565r15-goodyear-direction_20250814_141929.csv",
+    "sqlite_db": null
+  },
+  "produtos": [
+    {
+      "titulo": "Pneu Aro 15” 205/65R15 Goodyear 94T Direction 2 SUV",
+      "preco": 579.9,
+      "link": "https://www.magazineluiza.com.br/pneu-aro-15-205-65r15-goodyear-94t-direction-2-suv/p/236189300/au/pine/",
+      "data_coleta": "2025-08-14 17:18:40",
+      "medida": "205/65R15",
+      "marca": "goodyear",
+      "modelo": "direction",
+      "preco_original": 629.0,
+      "promocao": true,
+      "imagem": "https://a-static.mlcdn.com.br/280x210/pneu-aro-15-205-65r15-goodyear-94t-direction-2-suv/magazineluiza/236189300/4f72e01430f5801ea427031b2f1e017b.jpg",
+      "marketplace": "magazineluiza",
+      "categoria": "",
+      "disponivel": true,
+      "avaliacoes": 175,
+      "nota_media": 8.0,
+      "vendedor": "magazineluiza",
+      "frete_gratis": false,
+      "parcelamento": "",
+      "descricao": "",
+      "frete": null
+    },
+    {
+      "titulo": "Pneu Aro 15” 205/65R15 Goodyear 94T Direction 2 SUV",
+      "preco": 579.9,
+      "link": "https://www.magazineluiza.com.br/pneu-aro-15-205-65r15-goodyear-94t-direction-2-suv/p/236189300/au/pine/",
+      "data_coleta": "2025-08-14 17:19:17",
+      "medida": "205/65R15",
+      "marca": "goodyear",
+      "modelo": "direction",
+      "preco_original": 629.0,
+      "promocao": true,
+      "imagem": "https://a-static.mlcdn.com.br/280x210/pneu-aro-15-205-65r15-goodyear-94t-direction-2-suv/magazineluiza/236189300/4f72e01430f5801ea427031b2f1e017b.jpg",
+      "marketplace": "magazineluiza",
+      "categoria": "",
+      "disponivel": true,
+      "avaliacoes": 175,
+      "nota_media": 8.0,
+      "vendedor": "magazineluiza",
+      "frete_gratis": false,
+      "parcelamento": "",
+      "descricao": "",
+      "frete": null
+    }
+  ]
+}

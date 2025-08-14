@@ -133,8 +133,12 @@ def safe_part(s: str) -> str:
 def apply_config_lowerdedup():
     CONFIG["known_brands"] = sorted({norm_text(b) for b in CONFIG.get("known_brands", []) if b})
     CONFIG["brand_aliases"] = {norm_text(k): norm_text(v) for k, v in CONFIG.get("brand_aliases", {}).items()}
-    CONFIG["known_model_phrases"] = sorted({norm_text(m) for m in CONFIG.get("known_model_phrases", []) if m})
+
+    phrases = {norm_text(m) for m in CONFIG.get("known_model_phrases", []) if m}
+    CONFIG["known_model_phrases"] = sorted(phrases, key=len, reverse=True)
+
     CONFIG["model_aliases"] = {norm_text(k): norm_text(v) for k, v in CONFIG.get("model_aliases", {}).items()}
+
 
 SOURCE_TAG_TAIL_SEGMENTS = 3
 def make_source_tag(file_path: Path, base_dir: Path, tail_segments: int = SOURCE_TAG_TAIL_SEGMENTS) -> str:
@@ -193,7 +197,13 @@ def extract_brand(row: Dict[str, Any]) -> str:
     for alias, target in CONFIG["brand_aliases"].items():
         if f" {alias} " in f" {t} ":
             return target
+    # fallback pra tomar a marca com mais cuidado
+    if t:
+        first = t.split()[0]
+        if first in CONFIG["known_brands"] or first in CONFIG["brand_aliases"]:
+            return CONFIG["brand_aliases"].get(first, first)
     return ""
+
 
 def extract_model(row: Dict[str, Any], brand: str) -> str:
     m = _canon_model(row.get("model_raw") or "")
@@ -219,8 +229,13 @@ def extract_model(row: Dict[str, Any], brand: str) -> str:
         brand_spaced = f" {brand} "
         if brand_spaced in t_spaced:
             after = t_spaced.split(brand_spaced, 1)[1].strip()
-
-            msize = SIZE_RE.search(after)
+            
+            msize = None
+            for rx in SIZE_RES:
+                m = rx.search(after)
+                if m:
+                    msize = m
+                    break
             if msize:
                 after = after[:msize.start()].strip()
 
@@ -259,7 +274,7 @@ def extract_size_from_title_series(series: pd.Series) -> pd.Series:
         m = t.str.extract(rx, expand=True)
         if m.isnull().all().all():
             continue
-        if i == len(SIZE_RES) - 1:  # padrão 31x10.5R15
+        if i == len(SIZE_RES) - 1:  
             fill = (m[0] + "x" + m[1] + "R" + m[2]).str.upper()
         else:
             fill = (m[0] + "/" + m[1] + "R" + m[2]).str.upper()
@@ -614,9 +629,14 @@ def process_input_folders(input_dirs: List[Path]) -> pd.DataFrame:
 
     u["_dedup_global"] = np.where(with_url, key_url, key_no_url)
     u = u.drop_duplicates(subset=["_dedup_global"]).copy()
-    unified["price"] = unified["price"].astype(float)
-    logger.info(f"[process] TOTAL UNIFIED: {len(unified)} linhas")
-    return unified
+    u["price"] = u["price"].astype(float)
+    logger.info(f"[process] TOTAL UNIFIED (dedupe global): {len(u)} linhas")
+
+    cols = ["marketplace","title","price","url","brand","model","size",
+            "canonical_key","collected_at","seller","source_file"]
+    cols = [c for c in cols if c in u.columns]
+    return u[cols]
+
 
 def apply_filters(unified: pd.DataFrame, only_brand: str, only_size: str, only_model: str) -> pd.DataFrame:
     df = unified
@@ -644,7 +664,7 @@ def summarize_and_save(unified: pd.DataFrame, out_path: Path, append: bool):
     try:
         unified.to_sql("unified_listings", con, if_exists=mode, index=False)
         try:
-            con.execute("CREATE UNIQUE INDEX IF NOT EXISTS ux_unified ON unified_listings (marketplace, url, seller, collected_at, price)")
+            con.execute("CREATE UNIQUE INDEX IF NOT EXISTS ux_unified ON unified_listings (marketplace, url, seller, collected_at)")
         except Exception:
             pass
         summary = summarize_canonical(unified)
@@ -679,7 +699,6 @@ def save_partitioned(
     logger = logging.getLogger("unify")
     output = Path(output)
 
-    # Caso 1: arquivo único
     if _is_file_target(output) or not split_by:
         output.parent.mkdir(parents=True, exist_ok=True)
         mode_append = append or output.exists()
@@ -687,7 +706,6 @@ def save_partitioned(
         logger.info(f"[save_partitioned] {len(unified)} linhas -> {output}")
         return {output}
 
-    # Caso 2: pasta + particionamento
     out_dir = output
     out_dir.mkdir(parents=True, exist_ok=True)
     created = set()

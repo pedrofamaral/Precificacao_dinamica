@@ -1,0 +1,58 @@
+{
+  "termo": "pneu 205/65R16 Michelin Agilis",
+  "produtos_encontrados": 2,
+  "promocoes": 2,
+  "preco_medio": 882.49,
+  "tempo_execucao": 98.06,
+  "arquivos": {
+    "json_produtos": "data\\raw\\205-65-r16\\pneu-20565r16-michelin-agilis_20250814_142635.json",
+    "csv_produtos": "data\\raw\\205-65-r16\\pneu-20565r16-michelin-agilis_20250814_142635.csv",
+    "sqlite_db": null
+  },
+  "produtos": [
+    {
+      "titulo": "Pneu Michelin Aro 16 Energy XM2+ 205/65R16 95H",
+      "preco": 882.49,
+      "link": "https://www.magazineluiza.com.br/pneu-michelin-aro-16-energy-xm2-205-65r16-95h/p/ffkghe99f8/au/aupa/",
+      "data_coleta": "2025-08-14 17:25:23",
+      "medida": "205/65R16",
+      "marca": "michelin",
+      "modelo": "energy xm2",
+      "preco_original": 1204.47,
+      "promocao": true,
+      "imagem": "https://a-static.mlcdn.com.br/280x210/pneu-michelin-aro-16-energy-xm2-205-65r16-95h/pneustore/16002749/74026b318f4c5eb6f3ff8b71ea1fb723.jpeg",
+      "marketplace": "magazineluiza",
+      "categoria": "",
+      "disponivel": true,
+      "avaliacoes": 0,
+      "nota_media": 0.0,
+      "vendedor": "PneuStore",
+      "frete_gratis": false,
+      "parcelamento": "",
+      "descricao": "",
+      "frete": null
+    },
+    {
+      "titulo": "Pneu Michelin Aro 16 Energy XM2+ 205/65R16 95H",
+      "preco": 882.49,
+      "link": "https://www.magazineluiza.com.br/pneu-michelin-aro-16-energy-xm2-205-65r16-95h/p/ffkghe99f8/au/aupa/",
+      "data_coleta": "2025-08-14 17:26:09",
+      "medida": "205/65R16",
+      "marca": "michelin",
+      "modelo": "energy xm2",
+      "preco_original": 1204.47,
+      "promocao": true,
+      "imagem": "https://a-static.mlcdn.com.br/280x210/pneu-michelin-aro-16-energy-xm2-205-65r16-95h/pneustore/16002749/74026b318f4c5eb6f3ff8b71ea1fb723.jpeg",
+      "marketplace": "magazineluiza",
+      "categoria": "",
+      "disponivel": true,
+      "avaliacoes": 0,
+      "nota_media": 0.0,
+      "vendedor": "PneuStore",
+      "frete_gratis": false,
+      "parcelamento": "",
+      "descricao": "",
+      "frete": null
+    }
+  ]
+}

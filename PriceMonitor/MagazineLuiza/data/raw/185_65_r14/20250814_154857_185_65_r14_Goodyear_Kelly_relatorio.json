@@ -1,0 +1,58 @@
+{
+  "termo": "pneu 185/65R14 Goodyear Kelly",
+  "produtos_encontrados": 2,
+  "promocoes": 2,
+  "preco_medio": 485.02,
+  "tempo_execucao": 59.44,
+  "arquivos": {
+    "json_produtos": "data\\raw\\185-65-r14\\pneu-18565r14-goodyear-kelly_20250814_124854.json",
+    "csv_produtos": "data\\raw\\185-65-r14\\pneu-18565r14-goodyear-kelly_20250814_124854.csv",
+    "sqlite_db": null
+  },
+  "produtos": [
+    {
+      "titulo": "Pneu 185/65R14 Goodyear Kelly Edge Touring 2 86H Aro 14",
+      "preco": 485.02,
+      "link": "https://www.magazineluiza.com.br/pneu-185-65r14-goodyear-kelly-edge-touring-2-86h-aro-14/p/cckj4331a9/au/aupa/",
+      "data_coleta": "2025-08-14 15:48:19",
+      "medida": "185/65R14",
+      "marca": "goodyear",
+      "modelo": "kelly edge",
+      "preco_original": 52720775.31,
+      "promocao": true,
+      "imagem": "https://a-static.mlcdn.com.br/280x210/pneu-185-65r14-goodyear-kelly-edge-touring-2-86h-aro-14/lojaacheipneus/51285/e96a8111a552544b46167ad94cb7ffcb.jpeg",
+      "marketplace": "magazineluiza",
+      "categoria": "",
+      "disponivel": true,
+      "avaliacoes": 0,
+      "nota_media": 0.0,
+      "vendedor": "Achei Pneus",
+      "frete_gratis": false,
+      "parcelamento": "",
+      "descricao": "",
+      "frete": null
+    },
+    {
+      "titulo": "Pneu 185/65R14 Goodyear Kelly Edge Touring 2 86H Aro 14",
+      "preco": 485.02,
+      "link": "https://www.magazineluiza.com.br/pneu-185-65r14-goodyear-kelly-edge-touring-2-86h-aro-14/p/cckj4331a9/au/aupa/",
+      "data_coleta": "2025-08-14 15:48:45",
+      "medida": "185/65R14",
+      "marca": "goodyear",
+      "modelo": "kelly edge",
+      "preco_original": 52720775.31,
+      "promocao": true,
+      "imagem": "https://a-static.mlcdn.com.br/280x210/pneu-185-65r14-goodyear-kelly-edge-touring-2-86h-aro-14/lojaacheipneus/51285/e96a8111a552544b46167ad94cb7ffcb.jpeg",
+      "marketplace": "magazineluiza",
+      "categoria": "",
+      "disponivel": true,
+      "avaliacoes": 0,
+      "nota_media": 0.0,
+      "vendedor": "Achei Pneus",
+      "frete_gratis": false,
+      "parcelamento": "",
+      "descricao": "",
+      "frete": null
+    }
+  ]
+}

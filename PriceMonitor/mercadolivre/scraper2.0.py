@@ -144,17 +144,14 @@ def _brand_from_title(title: str, expected: str = "") -> str:
     exp = _canon_brand(expected)
     if exp:
         return exp
-    # detecta alias primeiro
     for alias, target in CONFIG_NORM["brand_aliases"].items():
         if f" {alias} " in f" {t} ":
             return target
-    # detecta marca conhecida
     for kb in CONFIG_NORM["known_brands"]:
         if f" {kb} " in f" {t} ":
             return kb
-    # fallback antigo
     try:
-        det = detectar_marca(title)  # do seu helpers
+        det = detectar_marca(title)  
         if det:
             return _canon_brand(det)
     except Exception:
@@ -173,11 +170,9 @@ def _model_from_title(title: str, brand: str = "", expected: str = "") -> str:
     t = _norm_text(title)
     if expected:
         return _canon_model(expected)
-    # frases conhecidas
     for phrase in CONFIG_NORM["known_model_phrases"]:
         if phrase in t:
             return _canon_model(phrase)
-    # heurística: token(s) após a marca
     if brand and brand in t:
         after = t.split(brand, 1)[1].strip()
         toks = [w for w in after.split() if w not in {
@@ -1029,7 +1024,7 @@ def imprimir_produtos(produtos: List[Product]):
 
 def salvar_resultados(produtos: List[Product], termo: str, em_csv: bool, ceps: List[str]):
     base_dir = Path(__file__).parent / "data"
-    medida = extrair_medida(termo)  # para pasta (ex.: 175-70-r13)
+    medida = extrair_medida(termo)  
     out_dir = base_dir / "raw" / medida
     out_dir.mkdir(parents=True, exist_ok=True)
     slug = slugify(termo)

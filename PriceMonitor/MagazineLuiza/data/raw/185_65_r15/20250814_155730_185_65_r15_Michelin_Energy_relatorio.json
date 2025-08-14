@@ -1,0 +1,58 @@
+{
+  "termo": "pneu 185/65R15 Michelin Energy",
+  "produtos_encontrados": 2,
+  "promocoes": 2,
+  "preco_medio": 664.91,
+  "tempo_execucao": 62.92,
+  "arquivos": {
+    "json_produtos": "data\\raw\\185-65-r15\\pneu-18565r15-michelin-energy_20250814_125728.json",
+    "csv_produtos": "data\\raw\\185-65-r15\\pneu-18565r15-michelin-energy_20250814_125728.csv",
+    "sqlite_db": null
+  },
+  "produtos": [
+    {
+      "titulo": "Pneu michelin aro 15 energy xm2+ 185/65r15 88h tl",
+      "preco": 664.91,
+      "link": "https://www.magazineluiza.com.br/pneu-michelin-aro-15-energy-xm2-185-65r15-88h-tl/p/fcajf8j7ad/au/pine/",
+      "data_coleta": "2025-08-14 15:56:47",
+      "medida": "185/65R15",
+      "marca": "michelin",
+      "modelo": "energy xm2",
+      "preco_original": 734.4,
+      "promocao": true,
+      "imagem": "https://a-static.mlcdn.com.br/280x210/pneu-michelin-aro-15-energy-xm2-185-65r15-88h-tl/maniavirtual/9033954-01/4151b3d7af75746c82ad420e9a490f49.jpeg",
+      "marketplace": "magazineluiza",
+      "categoria": "",
+      "disponivel": true,
+      "avaliacoes": 36,
+      "nota_media": 8.0,
+      "vendedor": "Mania Virtual",
+      "frete_gratis": false,
+      "parcelamento": "",
+      "descricao": "",
+      "frete": null
+    },
+    {
+      "titulo": "Pneu michelin aro 15 energy xm2+ 185/65r15 88h tl",
+      "preco": 664.91,
+      "link": "https://www.magazineluiza.com.br/pneu-michelin-aro-15-energy-xm2-185-65r15-88h-tl/p/fcajf8j7ad/au/pine/",
+      "data_coleta": "2025-08-14 15:57:15",
+      "medida": "185/65R15",
+      "marca": "michelin",
+      "modelo": "energy xm2",
+      "preco_original": 734.4,
+      "promocao": true,
+      "imagem": "https://a-static.mlcdn.com.br/280x210/pneu-michelin-aro-15-energy-xm2-185-65r15-88h-tl/maniavirtual/9033954-01/4151b3d7af75746c82ad420e9a490f49.jpeg",
+      "marketplace": "magazineluiza",
+      "categoria": "",
+      "disponivel": true,
+      "avaliacoes": 36,
+      "nota_media": 8.0,
+      "vendedor": "Mania Virtual",
+      "frete_gratis": false,
+      "parcelamento": "",
+      "descricao": "",
+      "frete": null
+    }
+  ]
+}

@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Scraper Magazine Luiza — ajustado para:
-- Salvar JSON/CSV/SQLite também no modo --lote-json
-- Incluir medida, marca e modelo no dataclass e na persistência
-- Corrigir fallback de vendedor
-"""
-
 import os
 import re
 import time
@@ -99,7 +91,6 @@ def normalizar_termo(termo: str) -> str:
     termo = termo.replace(" r ", " r")
     return termo.strip()
 
-# Medida para NOME DE PASTA (mantém seu padrão 175-70-r13)
 def extrair_medida_path(termo_ou_titulo: str) -> str:
     termo = re.sub(r"[-_/]", " ", (termo_ou_titulo or "").lower())
     m = re.search(r'(\d{3})\s*(\d{2,3})\s*r?\s*(\d{2})', termo)
@@ -107,7 +98,6 @@ def extrair_medida_path(termo_ou_titulo: str) -> str:
         return f"{m.group(1)}-{m.group(2)}-r{m.group(3)}"
     return slugify(termo[:30])
 
-# Medida canônica para DADO (175/70R13)
 def normalizar_medida_valor(s: str) -> str:
     if not s: return ""
     s2 = re.sub(r"[-_/]", " ", s.lower())
@@ -321,7 +311,6 @@ class ScraperMagalu:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.driver = None
         self.logger = self._setup_logger()
-        # Banco dentro do output
         self.db_manager = DatabaseManager(db_path=str(self.output_dir / "magalu_products.db"))
 
     def _setup_logger(self) -> logging.Logger:
@@ -362,7 +351,8 @@ class ScraperMagalu:
         options.add_argument(f"--user-agent={user_agent}")
         options.add_argument("--lang=pt-BR")
         options.add_experimental_option('prefs', {
-            'intl.accept_languages': 'pt-BR,pt,en-US,en'
+            'intl.accept_languages': 'pt-BR,pt,en-US,en',
+            'profile.managed_default_content_settings.images': 2
         })
         try:
             driver = webdriver.Chrome(options=options)
@@ -411,11 +401,9 @@ class ScraperMagalu:
                 self.logger.info(f"Produto ignorado: {titulo} (kit, múltiplos ou casal)")
                 return None
 
-            # Filtros da query (se vieram)
             if hasattr(self, 'filtro_medida') and self.filtro_medida:
                 medida_produto_dir = extrair_medida_path(titulo)
                 medida_valor = normalizar_medida_valor(titulo)
-                # compara com valor canônico
                 if not medida_valor or medida_valor != self.filtro_medida:
                     self.logger.info(f"Produto ignorado: {titulo} (medida não bate)")
                     return None
@@ -434,7 +422,6 @@ class ScraperMagalu:
             link = card.get_attribute('href')
             vendedor = ""
 
-            # abre em nova aba para extrair vendedor (se disponível)
             aba_atual = self.driver.current_window_handle
             self.driver.execute_script("window.open(arguments[0], '_blank');", link)
             self.driver.switch_to.window(self.driver.window_handles[-1])
@@ -489,7 +476,6 @@ class ScraperMagalu:
             except Exception:
                 pass
 
-            # Derivar medida/marca/modelo:
             medida_valor = normalizar_medida_valor(titulo) or (self.filtro_medida or "")
             marca_valor = _extrair_marca_titulo(titulo) or (self.filtro_marca or "")
             modelo_valor = extrair_modelo_titulo(titulo) or (self.filtro_modelo or "")
@@ -669,9 +655,14 @@ class ScraperMagalu:
                 'promocoes': promocoes,
                 'preco_medio': round(preco_medio, 2),
                 'tempo_execucao': round(tempo_total, 2),
-                'arquivos': arquivos,
-                'produtos': [p.to_dict() for p in produtos]   # <== ESSENCIAL para --lote-json salvar CSV/SQLite
+                'arquivos': {
+                    'json_produtos': arquivos.get('json'),
+                    'csv_produtos': arquivos.get('csv'),
+                    'sqlite_db': arquivos.get('sqlite'),
+                },
+                'produtos': [p.to_dict() for p in produtos]
             }
+
             self.logger.info(f"Execução concluída em {tempo_total:.2f}s")
             return relatorio
 
@@ -709,22 +700,18 @@ def main():
     parser.add_argument("--output", default="data", help="Diretório de saída (padrão: data)")
     parser.add_argument("--delay", type=float, default=1.0, help="Delay de scroll em segundos (padrão: 1.0)")
     parser.add_argument("--verbose", action='store_true', help="Modo verbose (mais logs)")
-
-    # Lote
     parser.add_argument("--lote-json", type=str, help="Arquivo JSON com termos de busca em lote (opcional)")
     parser.add_argument("--idx-from", type=int, default=0, help="Índice inicial no lote (padrão: 0)")
     parser.add_argument("--idx-to", type=int, help="Índice final no lote (padrão: até o fim)")
 
     args = parser.parse_args()
 
-    # Corrige caminho relativo do --lote-json se vier relativo à raiz do projeto
     if args.lote_json and not os.path.isfile(args.lote_json):
         root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         alt_path = os.path.join(root_path, args.lote_json)
         if os.path.isfile(alt_path):
             args.lote_json = alt_path
 
-    # Execução em lote
     if args.lote_json:
         with open(args.lote_json, "r", encoding="utf-8") as f:
             queries = json.load(f)
@@ -733,6 +720,9 @@ def main():
         for idx, item in enumerate(queries[args.idx_from:idx_to], start=args.idx_from):
             print(f"\n==== Buscando produto {idx}: {item.get('brand')} {item.get('line_model')} {item.get('width')}/{item.get('aspect')}R{item.get('rim')} ====")
             termo = item.get("query_flex") or item.get("query_strict")
+            if not termo:
+                print(f"Termo de busca não encontrado. PULANDO {idx}")
+                continue
 
             scraper = ScraperMagalu(
                 headless=args.headless.lower() == 'true',
@@ -748,7 +738,6 @@ def main():
                     formatos=args.formatos
                 )
 
-                # Monta nomes de arquivos por medida/marca/modelo do LOTE
                 medida = f"{item.get('width', '')}_{item.get('aspect', '')}_r{item.get('rim', '')}"
                 marca = (item.get('brand', '') or '').replace(" ", "_")
                 modelo = (item.get('line_model', '') or '').replace(" ", "_")
@@ -762,8 +751,17 @@ def main():
                     caminho_arquivo = os.path.join(output_dir, nome_arquivo)
 
                     if formato == "json":
-                        with open(caminho_arquivo, "w", encoding="utf-8") as fjson:
-                            json.dump(relatorio, fjson, ensure_ascii=False, indent=2)
+                        produtos = relatorio.get("produtos", [])
+                        caminho_prod = caminho_arquivo.replace(".json", "_produtos.json")
+                        with open(caminho_prod, "w", encoding="utf-8") as fjsonp:
+                            json.dump(produtos, fjsonp, ensure_ascii=False, indent=2)
+
+                        caminho_rel = caminho_arquivo.replace(".json", "_relatorio.json")
+                        with open(caminho_rel, "w", encoding="utf-8") as fjsonr:
+                            json.dump(relatorio, fjsonr, ensure_ascii=False, indent=2)
+
+                        print(f"Arquivo salvo (produtos): {caminho_prod}")
+                        print(f"Arquivo salvo (relatório): {caminho_rel}")
 
                     elif formato == "csv":
                         produtos = relatorio.get("produtos", [])
@@ -794,9 +792,8 @@ def main():
                 print(f"Erro no produto {idx}: {e}")
             finally:
                 scraper.fechar()
-        return  # encerra após o lote
+        return  
 
-    # Execução única (não-lote)
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
 

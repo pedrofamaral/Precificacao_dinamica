@@ -1,0 +1,58 @@
+{
+  "termo": "pneu 205/40R17 Goodyear Kelly",
+  "produtos_encontrados": 2,
+  "promocoes": 2,
+  "preco_medio": 540.02,
+  "tempo_execucao": 70.48,
+  "arquivos": {
+    "json_produtos": "data\\raw\\205-40-r17\\pneu-20540r17-goodyear-kelly_20250814_133826.json",
+    "csv_produtos": "data\\raw\\205-40-r17\\pneu-20540r17-goodyear-kelly_20250814_133826.csv",
+    "sqlite_db": null
+  },
+  "produtos": [
+    {
+      "titulo": "Pneu 205/40R17 Goodyear Kelly Edge Sport 2 84W Aro 17",
+      "preco": 540.02,
+      "link": "https://www.magazineluiza.com.br/pneu-205-40r17-goodyear-kelly-edge-sport-2-84w-aro-17/p/cg44477728/au/aupa/",
+      "data_coleta": "2025-08-14 16:37:46",
+      "medida": "205/40R17",
+      "marca": "goodyear",
+      "modelo": "kelly edge",
+      "preco_original": 58698873.37,
+      "promocao": true,
+      "imagem": "https://a-static.mlcdn.com.br/280x210/pneu-205-40r17-goodyear-kelly-edge-sport-2-84w-aro-17/lojaacheipneus/52191/199d1328be8e275f25a4f69cccf45da6.jpeg",
+      "marketplace": "magazineluiza",
+      "categoria": "",
+      "disponivel": true,
+      "avaliacoes": 0,
+      "nota_media": 0.0,
+      "vendedor": "magazineluiza",
+      "frete_gratis": false,
+      "parcelamento": "",
+      "descricao": "",
+      "frete": null
+    },
+    {
+      "titulo": "Pneu 205/40R17 Goodyear Kelly Edge Sport 2 84W Aro 17",
+      "preco": 540.02,
+      "link": "https://www.magazineluiza.com.br/pneu-205-40r17-goodyear-kelly-edge-sport-2-84w-aro-17/p/cg44477728/au/aupa/?seller_id=lojaacheipneus",
+      "data_coleta": "2025-08-14 16:38:15",
+      "medida": "205/40R17",
+      "marca": "goodyear",
+      "modelo": "kelly edge",
+      "preco_original": 58698873.37,
+      "promocao": true,
+      "imagem": "https://a-static.mlcdn.com.br/280x210/pneu-205-40r17-goodyear-kelly-edge-sport-2-84w-aro-17/lojaacheipneus/52191/199d1328be8e275f25a4f69cccf45da6.jpeg",
+      "marketplace": "magazineluiza",
+      "categoria": "",
+      "disponivel": true,
+      "avaliacoes": 0,
+      "nota_media": 0.0,
+      "vendedor": "Achei Pneus",
+      "frete_gratis": false,
+      "parcelamento": "",
+      "descricao": "",
+      "frete": null
+    }
+  ]
+}

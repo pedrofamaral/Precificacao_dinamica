@@ -21,3 +21,5 @@ xgboost==2.0.3
 flask==2.3.3
 playwright==1.37.0
 ollama==0.0.1
+pyarrow==21.0.0
+fastparquet==2.11.0
