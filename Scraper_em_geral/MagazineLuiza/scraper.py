@@ -12,6 +12,12 @@ from dataclasses import dataclass, asdict
 from typing import List, Optional, Dict, Any
 import argparse
 import sqlite3
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from Scraper_em_geral._common.canon import to_canonical
+from Scraper_em_geral._common.io_utils import write_jsonl
+from Scraper_em_geral._common.validate import validate_or_warn
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -69,6 +75,25 @@ CONFIG = {
 # =========================
 # Utilidades
 # =========================
+
+def _magalu_to_raw(prod) -> dict:
+    if hasattr(prod, "__dict__"):  
+        d = prod.__dict__
+    else:
+        d = prod or {}
+    return {
+        "url": d.get("link"),
+        "title": d.get("titulo"),
+        "price": d.get("preco"),
+        "promo_price": d.get("preco_original") if d.get("promocao") else None,
+        "currency": "BRL",
+        "brand": d.get("marca"),
+        "model": d.get("modelo"),
+        "availability": "in_stock" if d.get("disponivel", True) else "out_of_stock",
+        "seller": d.get("vendedor"),
+        "extra_text": d.get("titulo"),
+    }
+
 
 def delay_humano(min_delay=2.5, max_delay=5.5):
     delay = random.uniform(min_delay, max_delay)
@@ -691,7 +716,9 @@ def main():
         description="Scraper Completo do Magazine Luiza",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-
+    
+    parser.add_argument("--run-id", required=False, default=None)
+    parser.add_argument("--out-jsonl", required=False, default=None)
     parser.add_argument("--termo", type=str, help="Termo de busca")
     parser.add_argument("--paginas", type=int, default=3, help="Número máximo de páginas (padrão: 3)")
     parser.add_argument("--max", type=int, default=50, help="Número máximo de produtos (padrão: 50)")
@@ -715,6 +742,11 @@ def main():
     if args.lote_json:
         with open(args.lote_json, "r", encoding="utf-8") as f:
             queries = json.load(f)
+
+        run_id = args.run_id or datetime.utcnow().strftime("%Y%m%d_%H%M%S") + "_magalu"
+        out_jsonl = args.out_jsonl or os.path.join(args.output, "jsonl", "magalu", f"{run_id}.jsonl")
+        batch_docs = []
+
         idx_to = args.idx_to if args.idx_to is not None else len(queries)
 
         for idx, item in enumerate(queries[args.idx_from:idx_to], start=args.idx_from):
@@ -737,6 +769,14 @@ def main():
                     max_resultados=args.max,
                     formatos=args.formatos
                 )
+
+                for prod in relatorio.get("produtos", []):
+                    raw = _magalu_to_raw(prod)
+                    doc = to_canonical(raw, "magalu", item.get("cod_prod", "") or "", run_id)
+                    ok, msg = validate_or_warn(doc)
+                    if not ok and args.verbose:
+                        print("[WARN]", msg, doc.get("url"))
+                    batch_docs.append(doc)
 
                 medida = f"{item.get('width', '')}_{item.get('aspect', '')}_r{item.get('rim', '')}"
                 marca = (item.get('brand', '') or '').replace(" ", "_")
@@ -792,7 +832,12 @@ def main():
                 print(f"Erro no produto {idx}: {e}")
             finally:
                 scraper.fechar()
-        return  
+
+        if batch_docs:
+            write_jsonl(out_jsonl, batch_docs)
+            print("[OUT_JSONL]", out_jsonl, "itens:", len(batch_docs))
+        return
+
 
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)

@@ -1,13 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Scraper PneuStore — com normalização brand/model/size por --config
-
-- Normaliza marca e modelo (aliases/frases conhecidas) via JSON de config
-- Extrai 'size' canônico (ex.: 175/70R13) além de 'medida' para pasta (175-70-r13)
-- Adiciona brand/model/size no Product e nos arquivos (json/csv/sqlite)
-- Mantém filtros por medida/marca/modelo usando as formas canônicas
-"""
-
 import abc
 import argparse
 import json
@@ -23,6 +13,12 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Optional, Set, Any, Dict
 from urllib.parse import quote_plus
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from Scraper_em_geral._common.canon import to_canonical
+from Scraper_em_geral._common.io_utils import write_jsonl
+from Scraper_em_geral._common.validate import validate_or_warn
 
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -77,7 +73,6 @@ def _norm_text(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 def _load_config_norm(path: Optional[str]):
-    """Carrega e normaliza o JSON de configuração (se existir)."""
     global CONFIG_NORM
     if not path:
         return
@@ -116,15 +111,20 @@ def _canon_brand(s: str) -> str:
 def _brand_from_title(title: str, expected: str = "") -> str:
     t = _norm_text(title)
     exp = _canon_brand(expected)
-    if exp:
+
+    if exp and f" {exp} " in f" {t} ":
         return exp
+
     for alias, target in CONFIG_NORM["brand_aliases"].items():
         if f" {alias} " in f" {t} ":
             return target
+
     for kb in CONFIG_NORM["known_brands"]:
         if f" {kb} " in f" {t} ":
             return kb
+
     return ""
+
 
 def _canon_model(s: str) -> str:
     s = _norm_text(s)
@@ -136,11 +136,16 @@ def _canon_model(s: str) -> str:
 
 def _model_from_title(title: str, brand: str = "", expected: str = "") -> str:
     t = _norm_text(title)
+
     if expected:
-        return _canon_model(expected)
+        exp = _canon_model(expected)
+        if exp and exp in t:
+            return exp
+
     for phrase in CONFIG_NORM["known_model_phrases"]:
         if phrase in t:
             return _canon_model(phrase)
+
     if brand and brand in t:
         after = t.split(brand, 1)[1].strip()
         toks = [w for w in after.split() if w not in {
@@ -149,7 +154,9 @@ def _model_from_title(title: str, brand: str = "", expected: str = "") -> str:
         }]
         if toks:
             return _canon_model(" ".join(toks[:2]))
+
     return ""
+
 
 def _size_canonical(s: str) -> str:
     m = SIZE_CANON_RE.search(_norm_text(s))
@@ -224,7 +231,6 @@ def construir_url(base, termo: str, page: int = 1, sort: str = "relevance"):
 def extrair_filtros_busca(termo: str):
     termo_low = _norm_text(termo or "")
     medida_path = _extrair_medida_path(termo_low)
-    # brand esperado a partir do termo (token/alias)
     brand = ""
     for alias, target in CONFIG_NORM["brand_aliases"].items():
         if f" {alias} " in f" {termo_low} ":
@@ -268,6 +274,20 @@ class Product:
 
     def to_dict(self) -> dict:
         return asdict(self)
+
+
+def _product_to_raw(p: Product) -> dict:
+    return {
+        "url": p.link,
+        "title": p.titulo,
+        "price": p.preco,
+        "currency": "BRL",
+        "brand": p.brand or p.marca,
+        "model": p.model or p.marca_filho,
+        "availability": "in_stock", 
+        "seller": p.vendedor or None,
+        "extra_text": p.titulo,
+    }
 
 # =========================
 # Base Scraper
@@ -454,7 +474,6 @@ class ScraperPneuStore(ScraperBase):
         except Exception:
             pass
 
-    # ------- helpers de scraping -------
     def _encontrar_elemento_com_fallback(self, parent, selectors: List[str],
                                          required: bool = True) -> Optional[Any]:
         for selector in selectors:
@@ -519,10 +538,11 @@ class ScraperPneuStore(ScraperBase):
 
                 size_canon = _size_canonical(titulo) or ""
                 medida_path = _extrair_medida_path(titulo) or ""
-                brand = _brand_from_title(titulo, expected=self.filtro_marca or "")
-                model = _model_from_title(titulo, brand=brand, expected=self.filtro_modelo or "")
+                brand = _brand_from_title(titulo)
+                model = _model_from_title(titulo, brand=brand)
 
                 if self.filtro_marca and brand != _canon_brand(self.filtro_marca):
+                    self.logger.debug("descartado: marca '%s' != filtro '%s' (titulo: %s)", brand, self.filtro_marca, titulo)
                     continue
                 if self.filtro_modelo:
                     fm = _canon_model(self.filtro_modelo)
@@ -540,11 +560,9 @@ class ScraperPneuStore(ScraperBase):
                     link=link,
                     marketplace=self.marketplace,
                     data_coleta=datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"),
-                    # canônicos
                     brand=brand,
                     model=model,
                     size=size_canon,
-                    # compat
                     marca=brand,
                     marca_filho=model.title() if model else "",
                     medida=medida_path,
@@ -571,7 +589,6 @@ class ScraperPneuStore(ScraperBase):
             )
             time.sleep(self._delay_aleatorio(1.5, 2.5))
 
-            # reforça título/medida/brand/model
             try:
                 titulo_det = (self.driver.find_element(By.CSS_SELECTOR, "h1").text or "").strip()
                 if titulo_det:
@@ -581,11 +598,15 @@ class ScraperPneuStore(ScraperBase):
                     if not product.medida:
                         product.medida = _extrair_medida_path(titulo_det) or product.medida
                     if not product.brand:
-                        product.brand = _brand_from_title(titulo_det, expected=product.brand)
-                        product.marca = product.brand
+                        detected_brand = _brand_from_title(titulo_det)
+                        if detected_brand:
+                            product.brand = detected_brand
+                            product.marca = product.brand
                     if not product.model:
-                        product.model = _model_from_title(titulo_det, brand=product.brand, expected=product.model)
-                        product.marca_filho = product.model.title() if product.model else product.marca_filho
+                        detected_model = _model_from_title(titulo_det, brand=product.brand)
+                        if detected_model:
+                            product.model = detected_model
+                            product.marca_filho = product.model.title()
                     if not product.aro and product.size and "R" in product.size:
                         product.aro = int(product.size.split("R")[-1])
             except Exception:
@@ -601,7 +622,6 @@ class ScraperPneuStore(ScraperBase):
                     v = _extrair_preco_texto(els[0].text.strip())
                     if v: product.preco = v; break
 
-            # specs (opcional)
             specs_selectors = [
                 'div[data-testid="drawer-technical-details"]',
                 '.technical-details','.product-specs','.specifications'
@@ -698,9 +718,13 @@ if __name__ == "__main__":
                         help="Critério de ordenação.")
     parser.add_argument("--window", action="store_true", help="Mostrar navegador (não-headless)")
     parser.add_argument("--lote-json", type=str, help="Caminho do JSON de queries (ex: query_products.json)")
-    parser.add_argument("--formatos", nargs="+", choices=["json","csv","sqlite"], default=["csv"],
-                        help="Formatos de saída")
+    parser.add_argument("--formatos", nargs="+", choices=["json","csv","sqlite"], default=["csv"], help="Formatos de saída")
     parser.add_argument("--config", help="JSON com known_brands/brand_aliases/known_model_phrases/model_aliases")
+    parser.add_argument("--debug", action="store_true", help="Ativa logs de depuração")
+    parser.add_argument("--run-id", required=False, default=None)
+    parser.add_argument("--out-jsonl", required=False, default=None)
+    parser.add_argument("--idx-from", type=int, default=0)
+    parser.add_argument("--idx-to", type=int, default=None)
 
     args = parser.parse_args()
     _load_config_norm(args.config)
@@ -708,15 +732,30 @@ if __name__ == "__main__":
     if args.lote_json:
         with open(args.lote_json, "r", encoding="utf-8") as f:
             queries = json.load(f)
-        for idx, item in enumerate(queries):
+
+        i0 = max(0, int(args.idx_from or 0))
+        i1 = int(args.idx_to) if args.idx_to is not None else len(queries)
+        subset = queries[i0:i1]
+        print(f"[Lote] slice {i0}:{i1} -> {len(subset)} itens")
+
+        run_id = args.run_id or datetime.utcnow().strftime("%Y%m%d_%H%M%S") + "_pneustore"
+        out_jsonl = args.out_jsonl or str(Path(args.output_dir) / "jsonl" / "pneustore" / f"{run_id}.jsonl")
+        batch_docs = []
+
+        scraper = ScraperPneuStore(headless=not args.window)
+        if args.debug:
+            scraper.logger.setLevel(logging.INFO)
+
+        total_itens = 0
+        for pos, item in enumerate(subset, start=1):
             termo = (
                 item.get("query_flex")
                 or item.get("query_strict")
                 or item.get("termo")
                 or f"pneu {item.get('width')}/{item.get('aspect')}R{item.get('rim')} {item.get('brand')} {item.get('line_model')}"
             )
-            print(f"\n=== {idx+1}/{len(queries)}: {termo} ===")
-            scraper = ScraperPneuStore(headless=not args.window)
+            print(f"\n=== {pos}/{len(subset)}: {termo} ===")
+
             produtos = scraper.buscar(termo, max_resultados=args.max, sort=args.sort)
             caminhos = salvar_produtos_multiformato(produtos, termo, args.output_dir, args.formatos)
             if not caminhos:
@@ -724,6 +763,21 @@ if __name__ == "__main__":
             else:
                 for formato, caminho in caminhos.items():
                     print(f"✅ {len(produtos)} produtos salvos em {caminho}")
+
+            for p in produtos:
+                raw = _product_to_raw(p)
+                doc = to_canonical(raw, "pneustore", item.get("cod_prod", "") or "", run_id)
+                ok, msg = validate_or_warn(doc)
+                if not ok and args.debug:
+                    print("[WARN]", msg, doc.get("url"))
+                batch_docs.append(doc)
+
+            total_itens += len(produtos)
+
+        print(f"\nTotal coletado no lote: {total_itens} itens")
+        if batch_docs:
+            write_jsonl(out_jsonl, batch_docs)
+            print("[OUT_JSONL]", out_jsonl, "itens:", len(batch_docs))
         exit(0)
 
     if not args.termo:
@@ -738,3 +792,18 @@ if __name__ == "__main__":
     else:
         for formato, caminho in caminhos.items():
             print(f"✅ {len(produtos)} produtos salvos em {caminho}")
+
+    if args.out_jsonl:
+        run_id = args.run_id or datetime.utcnow().strftime("%Y%m%d_%H%M%S") + "_pneustore"
+        docs = []
+        for p in produtos:
+            raw = _product_to_raw(p)
+            doc = to_canonical(raw, "pneustore", "", run_id)
+            ok, msg = validate_or_warn(doc)
+            if not ok and args.debug:
+                print("[WARN]", msg, doc.get("url"))
+            docs.append(doc)
+        if docs:
+            write_jsonl(args.out_jsonl, docs)
+            print("[OUT_JSONL]", args.out_jsonl, "itens:", len(docs))
+

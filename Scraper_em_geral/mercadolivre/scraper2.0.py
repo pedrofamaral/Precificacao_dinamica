@@ -1,4 +1,10 @@
 from __future__ import annotations
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from Scraper_em_geral._common.canon import to_canonical
+from Scraper_em_geral._common.io_utils import write_jsonl
+from Scraper_em_geral._common.validate import validate_or_warn
 import argparse
 import csv
 import json
@@ -35,9 +41,9 @@ from dataclasses import dataclass, asdict, field
 # =========================
 try:
     from utils.helpers import (
-        extrair_medida,              # usado para nome de pasta (ex.: 175-70-r13)
-        construir_dim_pattern,       # regex de dimensão pra filtrar
-        detectar_marca,              # sua detecção antiga (mantida como fallback)
+        extrair_medida,              
+        construir_dim_pattern,       
+        detectar_marca,              
         eh_kit_ou_multiplos_pneus,
         slugify,
         _parse_valor,
@@ -79,7 +85,6 @@ DEFAULT_MODEL_PHRASES = [
     "direction", "f700", "bc20", "scorpion"
 ]
 
-# preenchido via --config se existir
 CONFIG_NORM: Dict[str, Dict | List] = {
     "known_brands": DEFAULT_KNOWN_BRANDS.copy(),
     "brand_aliases": { "kelly": "goodyear" },  # exemplo
@@ -114,7 +119,6 @@ def _load_config_norm(path: Optional[str]):
         for k in ("known_brands", "brand_aliases", "known_model_phrases", "model_aliases"):
             if k in cfg:
                 CONFIG_NORM[k] = cfg[k]
-        # normaliza para lower/sem acento
         CONFIG_NORM["known_brands"] = sorted({_norm_text(b) for b in CONFIG_NORM.get("known_brands", []) if b})
         CONFIG_NORM["brand_aliases"] = { _norm_text(k): _norm_text(v) for k,v in CONFIG_NORM.get("brand_aliases", {}).items() }
         CONFIG_NORM["known_model_phrases"] = sorted({_norm_text(m) for m in CONFIG_NORM.get("known_model_phrases", []) if m})
@@ -126,14 +130,11 @@ def _canon_brand(s: str) -> str:
     s = _norm_text(s)
     if not s:
         return ""
-    # alias
     if s in CONFIG_NORM["brand_aliases"]:
         return CONFIG_NORM["brand_aliases"][s]
-    # match exato
     for kb in CONFIG_NORM["known_brands"]:
         if s == kb:
             return kb
-    # token contido
     for kb in CONFIG_NORM["known_brands"]:
         if f" {kb} " in f" {s} ":
             return kb
@@ -189,6 +190,20 @@ def _size_canonical(s: str) -> str:
         return ""
     return f"{m.group(1)}/{m.group(2)}R{m.group(3)}".upper()
 
+def _product_to_raw(p: Product) -> dict:
+    return {
+        "url": p.link,
+        "title": p.titulo,
+        "price": p.preco,
+        "promo_price": p.preco_desconto,
+        "currency": "BRL",
+        "brand": p.brand or p.marca,
+        "model": p.model or p.line_expected,
+        "availability": "unknown",
+        "seller": p.vendedor or None,
+        "extra_text": p.titulo,
+    }
+
 # =========================
 # Logger
 # =========================
@@ -219,14 +234,12 @@ class Product:
     titulo: str
     link: str
     preco: float | None
-    # canônicos novos
     brand: str = ""
     model: str = ""
-    size: str = ""        # 175/70R13
+    size: str = ""        
 
-    # existentes/compatibilidade
     query_strict: str = ""
-    size_norm: str = ""   # do termo (pode ser 175-70-r13)
+    size_norm: str = ""   
     brand_expected: str = ""
     line_expected: str = ""
     size_ok: bool = True
@@ -237,7 +250,7 @@ class Product:
     condicao: str = "Novo"
     frete_gratis: bool = False
     marketplace: str = "mercadolivre"
-    marca: str = ""       # mantido (espelha brand)
+    marca: str = ""       
     data_coleta: str = ""
     preco_original: float | None = None
     preco_desconto: float | None = None
@@ -249,12 +262,12 @@ class Product:
             self.frete_gratis = True
         elif self.frete_gratis:
             self.free_ship = True
-        # manter marca espelhada com brand
         if self.brand and not self.marca:
             self.marca = self.brand
 
     def to_dict(self) -> dict:
         return asdict(self)
+
 
 # =========================
 # Scraper
@@ -1083,6 +1096,8 @@ def criar_parser():
     parser.add_argument("--debug", action="store_true", help="Habilitar logging DEBUG")
     parser.add_argument("--detalhes", action="store_true", help="Abrir PDPs para coletar detalhes")
     parser.add_argument("--ceps", default=None, help="Lista de CEPs separados por vírgula")
+    parser.add_argument("--run-id", required=False, default=None)
+    parser.add_argument("--out-jsonl", required=False, default=None)
 
     parser.add_argument("--min-delay", type=float, default=1.0, help="Delay mínimo (s) entre cada card")
     parser.add_argument("--max-delay", type=float, default=2.0, help="Delay máximo (s) entre cada card")
@@ -1094,8 +1109,6 @@ def criar_parser():
 
     parser.add_argument("--idx-from", type=int, default=0, help="Índice inicial (inclusive) dentro do lote")
     parser.add_argument("--idx-to", type=int, default=None, help="Índice final (exclusivo) dentro do lote")
-
-    # NOVO: config de normalização
     parser.add_argument("--config", help="JSON com known_brands/brand_aliases/known_model_phrases/model_aliases")
 
     return parser
@@ -1105,8 +1118,7 @@ def main():
     args = parser.parse_args()
 
     logger = _setup_logger(args.debug)
-    _load_config_norm(args.config)  # carrega normalização
-
+    _load_config_norm(args.config)
     ceps = _parse_lista_ceps(args.ceps)
 
     scraper = ScraperMercadoLivre(
@@ -1120,44 +1132,69 @@ def main():
         page_delay_max=args.page_delay_max,
         pages_before_cooldown=args.pages_before_cooldown,
         cooldown_delay=args.cooldown_delay,
-        delay_scroll=args.delay_scroll
+        delay_scroll=args.delay_scroll,
     )
 
     try:
         if args.lote_json:
+            run_id = args.run_id or datetime.utcnow().strftime("%Y%m%d_%H%M%S") + "_mercadolivre"
+            out_jsonl = args.out_jsonl or os.path.join(Path(__file__).parent, "data", "jsonl", f"{run_id}.jsonl")
+            batch_docs = []
+
             with open(args.lote_json, "r", encoding="utf-8") as f:
                 lote = json.load(f)
+
             i0 = max(0, int(args.idx_from or 0))
             i1 = int(args.idx_to) if args.idx_to is not None else len(lote)
             subset = lote[i0:i1]
+
             logger.info("Executando lote %s itens (slice %s:%s) do arquivo %s", len(subset), i0, i1, args.lote_json)
             total_itens = 0
+
             for k, item in enumerate(subset, start=i0):
                 termo = montar_query_flex(item)
                 logger.info("(%s) Buscando: %s", k, termo)
-                # passa meta pra extração (brand/line/size)
+
                 meta = {
-                    "brand": item.get("brand",""),
-                    "line_model": item.get("line_model",""),
+                    "brand": item.get("brand", ""),
+                    "line_model": item.get("line_model", ""),
                     "size_norm": f"{item.get('width','')}-{item.get('aspect','')}-r{item.get('rim','')}",
-                    "query_strict": item.get("query_strict","")
+                    "query_strict": item.get("query_strict", ""),
                 }
+
                 produtos = scraper.buscar_produtos(
                     termo=termo,
                     max_resultados=args.max,
                     ordenacao=args.ordenacao,
                     ceps=ceps,
                     enriquecer=args.detalhes,
-                    query_meta=meta
+                    query_meta=meta,
                 )
+
                 imprimir_produtos(produtos)
                 tops = sorted([p for p in produtos if p.preco is not None], key=lambda p: p.preco)[:10]
                 if tops:
                     media = sum(p.preco for p in tops) / len(tops)
                     print(f"Média dos {len(tops)} mais baratos: R$ {media:.2f}")
+
                 salvar_resultados(produtos=produtos, termo=termo, em_csv=args.csv, ceps=ceps)
+
+                for p in produtos:
+                    raw = _product_to_raw(p)  
+                    doc = to_canonical(raw, "mercadolivre", item.get("cod_prod", "") or "", run_id)
+                    ok, msg = validate_or_warn(doc)
+                    if not ok and args.debug:
+                        print("[WARN]", msg, doc.get("url"))
+                    batch_docs.append(doc)
+
                 total_itens += len(produtos)
+
             print(f"\nTotal coletado no lote: {total_itens} itens")
+
+            if batch_docs:
+                write_jsonl(out_jsonl, batch_docs)
+                print("[OUT_JSONL]", out_jsonl, "itens:", len(batch_docs))
+
         else:
             produtos = scraper.buscar_produtos(
                 termo=args.termo,
@@ -1165,7 +1202,7 @@ def main():
                 ordenacao=args.ordenacao,
                 ceps=ceps,
                 enriquecer=args.detalhes,
-                query_meta={}
+                query_meta={},
             )
             imprimir_produtos(produtos)
             tops = sorted([p for p in produtos if p.preco is not None], key=lambda p: p.preco)[:10]
@@ -1181,6 +1218,7 @@ def main():
         print(f"Erro: {e}")
     finally:
         scraper.fechar()
+
 
 if __name__ == "__main__":
     main()
