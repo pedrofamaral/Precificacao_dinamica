@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Speedmax Aro 17 Controlmax Plus Cp12 185/35r17 74v Xl",
+    "link": "https://produto.mercadolivre.com.br/MLB-4053466179-pneu-speedmax-aro-17-controlmax-plus-cp12-18535r17-74v-xl-_JM?searchVariation=183539239184",
+    "preco": 699.0,
+    "brand": "speedmax",
+    "model": "controlmax",
+    "size": "",
+    "speed_index": "74V",
+    "query_strict": "pneu 185 35 r17 Speedmax Controlmax",
+    "size_norm": "185-35-r17",
+    "brand_expected": "speedmax",
+    "line_expected": "controlmax",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "speedmax",
+    "data_coleta": "2025-08-22 02:01:16",
+    "preco_original": null,
+    "preco_desconto": 699.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

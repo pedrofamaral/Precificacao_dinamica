@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Hifly Aro 15 195/65 R15 Hf261",
+    "link": "https://produto.mercadolivre.com.br/MLB-4067428097-pneu-hifly-aro-15-19565-r15-hf261-_JM?searchVariation=183661497820",
+    "preco": 498.0,
+    "brand": "hifly",
+    "model": "hf261",
+    "size": "",
+    "speed_index": "",
+    "query_strict": "pneu 195 65 r15 Hifly Hf261",
+    "size_norm": "195-65-r15",
+    "brand_expected": "hifly",
+    "line_expected": "hf261",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "hifly",
+    "data_coleta": "2025-08-21 22:33:50",
+    "preco_original": null,
+    "preco_desconto": 498.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

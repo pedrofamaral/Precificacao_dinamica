@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Speedmax Aro 18 265/60r18 114/110s Pangea At Wl",
+    "link": "https://www.mercadolivre.com.br/pneu-speedmax-aro-18-26560r18-114110s-pangea-at-wl/up/MLBU3240693405",
+    "preco": 1516.0,
+    "brand": "speedmax",
+    "model": "pangea at",
+    "size": "",
+    "speed_index": "110S",
+    "query_strict": "pneu 265 60 r18 Speedmax Pangea At",
+    "size_norm": "265-60-r18",
+    "brand_expected": "speedmax",
+    "line_expected": "pangea at",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "speedmax",
+    "data_coleta": "2025-08-22 23:25:51",
+    "preco_original": null,
+    "preco_desconto": 1516.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

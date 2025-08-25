@@ -24,14 +24,15 @@ if __package__ is None or __package__ == "":
     import os as _os, sys as _sys
     _sys.path.append(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 
+import json  
 import argparse
 import os
 import re
 import sqlite3
+import unicodedata
 from pathlib import Path
 from typing import Dict, Any, Iterable, List, Optional
 from urllib.parse import urlparse, unquote, parse_qs
-
 import numpy as np
 import pandas as pd
 
@@ -51,6 +52,140 @@ except ImportError:
 # ============================================================
 
 GENERIC_TOKENS = {"p","produto","products","product","click","clicks","count","item"}
+
+SCRAPER_ROOT = Path(__file__).resolve().parents[2] / "Scraper_em_geral"
+MARKET_PATHS = {
+    "mercadolivre": [SCRAPER_ROOT / "mercadolivre"    / "data"  / "raw"],
+    "magalu":       [SCRAPER_ROOT / "MagazineLuiza"   / "data"  / "raw"],
+    "pneustore":    [SCRAPER_ROOT / "pneustore"       / "dados" / "raw"],
+}
+
+SPEED_RE = re.compile(r"\b\d{2,3}[A-Z]{1,2}\b", re.I)
+
+SIZE_RE = re.compile(r""" 
+    (?P<w>\d{3})
+    [\s/_-]*
+    (?P<a>\d{2})
+    [\s/_-]*[Rr]?\s*
+    (?P<r>\d{2})
+ """, re.VERBOSE)
+
+def _nfkd(s: str) -> str:
+    return unicodedata.normalize("NFKD", s or "").encode("ascii","ignore").decode("ascii")
+
+def _norm(s: str) -> str:
+    s = _nfkd(str(s or ""))
+    s = re.sub(r"[^A-Za-z0-9 /_-]+", " ", s).lower()
+    return re.sub(r"\s+", " ", s).strip()
+
+def extract_size(text: str):
+    if not text: return None
+    m = SIZE_RE.search(text)
+    if not m: return None
+    w, a, r = m.group("w","a","r")
+    return {
+        "width": w, "aspect": a, "rim": r,
+        "size_norm": f"{w}/{a}R{r}",
+        "size_regex": rf"\b{w}[/\s-]?{a}\s*R?\s*{r}\b"
+    }
+
+def iter_input_files():
+    exts = {".jsonl", ".json", ".csv"}
+    for mp, dirs in MARKET_PATHS.items():
+        for d in dirs:
+            if not d.exists():
+                continue
+            for p in d.rglob("*"):
+                if p.suffix.lower() in exts and p.is_file():
+                    yield mp, p
+
+def extract_speed_index(text: str) -> str:
+    if not text: return ""
+    m = SPEED_RE.search(text.upper())
+    return m.group(0).upper() if m else ""
+
+def clean_speed_tokens(s: str) -> str:
+    t = re.sub(r"\(\s*(?:\d{2,3}[A-Z]{1,2})\s*\)", " ", s or "", flags=re.I)
+    t = SPEED_RE.sub(" ", t)
+    return re.sub(r"\s{2,}", " ", t).strip()
+
+def load_known_lists_from_lote() -> tuple[set, set]:
+    candidates = [
+        Path(__file__).resolve().parents[2] / "Extracao_e_Insercao" / "data" / "query_products.json",
+        Path(__file__).resolve().parents[1] / "data" / "query_products.json",
+        Path.cwd() / "data" / "query_products.json",
+    ]
+    brands, models = set(), set()
+    for p in candidates:
+        if p.exists():
+            try:
+                data = pd.read_json(p, dtype=False).to_dict(orient="records")
+                for it in data:
+                    b = (it.get("brand") or "").strip()
+                    m = (it.get("line_model") or "").strip()
+                    if b and not SPEED_RE.fullmatch(b.replace(" ","")):
+                        brands.add(b.title())
+                    if m:
+                        m = re.sub(r"\(\s*(?:\d{2,3}[A-Z]{1,2})\s*\)","",m).strip()
+                        if m: models.add(m.title())
+                break
+            except Exception:
+                pass
+    return brands, models
+
+def extract_brand(text: str, known_brands: set[str], brand_aliases: dict[str,str] | None = None) -> str:
+    brand_aliases = brand_aliases or {}
+    t = _norm(text)
+    for alias, target in brand_aliases.items():
+        a = _norm(alias); tgt = _norm(target)
+        if re.search(rf"\b{re.escape(a)}\b", t): return target.title()
+    for b in sorted(known_brands, key=len, reverse=True):
+        nb = _norm(b)
+        if nb and re.search(rf"\b{re.escape(nb)}\b", t): return b.title()
+    tokens = [x for x in re.split(r"[^\w]+", t) if x]
+    for tok in tokens:
+        if SPEED_RE.fullmatch(tok): continue
+        if tok.isdigit(): continue
+        if len(tok) >= 2: return tok.title()
+    return ""
+
+def extract_model(text: str, brand: str, size_norm: str) -> str:
+    t = clean_speed_tokens(text or "")
+    if size_norm:
+        nums = re.findall(r"\d{2,3}", size_norm)
+        if len(nums) >= 3:
+            w,a,r = nums[0], nums[1], nums[-1]
+            t = re.sub(rf"\b{w}\D*{a}\D*[Rr]?\D*{r}\b", " ", t, flags=re.I)
+    if brand:
+        b = _norm(brand)
+        t = re.sub(rf"\b{re.escape(b)}\b", " ", _norm(t), flags=re.I)
+    t = re.sub(r"\b(pneu|aro|tl|xl|runflat|rf|indice|velocidade|tubeless|std)\b", " ", t, flags=re.I)
+    t = re.sub(r"\s{2,}", " ", t).strip(" -/").strip()
+    return t.title()
+
+def split_title(title: str, known_brands: set[str], brand_aliases: dict[str,str] | None = None) -> dict:
+    sz = extract_size(title or "")
+    brand = extract_brand(title or "", known_brands, brand_aliases)
+    model = extract_model(title or "", brand, sz["size_norm"] if sz else "")
+    speed = extract_speed_index(title or "")
+    base = {"brand": brand, "model": model, "speed_index": speed}
+    if sz: base.update(sz)
+    else:  base.update({"width":None,"aspect":None,"rim":None,"size_norm":"","size_regex":""})
+    return base
+
+def enrich_with_parsed_fields(df: pd.DataFrame) -> pd.DataFrame:
+    if df.empty: return df
+    brands, models = load_known_lists_from_lote()
+    brand_aliases = {"Kelly":"Goodyear"}
+    src_title = df["title"].fillna(df.get("product_name")).fillna(df.get("sku_text")).astype(str)
+    parsed = src_title.apply(lambda t: split_title(t, brands, brand_aliases))
+    parsed_df = pd.DataFrame(parsed.tolist(), index=df.index)
+    for col in ("brand","model","speed_index","width","aspect","rim","size_norm","size_regex"):
+        if col not in df.columns:
+            df[col] = parsed_df[col]
+        else:
+            df[col] = df[col].fillna(parsed_df[col])
+    return df
 
 def to_float(x):
     if x is None or (isinstance(x, float) and pd.isna(x)):
@@ -116,7 +251,6 @@ def name_from_url(url: str | None) -> str | None:
         return None
 
 def name_from_query(query: str | None) -> str | None:
-    """Extrai nome legível do nome do arquivo de busca (ex.: pneu-185-60-r14-dunlop_20250808_101010.json)."""
     if not query or not isinstance(query, str):
         return None
     m = re.match(r"(.+?)(?:_\d{8}_\d{6})?\.(json|csv|txt)$", query, flags=re.I)
@@ -155,7 +289,7 @@ def parse_captured_from_query(q: str | None):
         return pd.NaT
 
 # ============================================================
-# Ingestão heterogênea (JSON/CSV/SQLite)
+# Ingestão heterogênea (JSON/CSV/SQLite) + pastas dos scrapers
 # ============================================================
 
 def normalize_record(raw: Dict[str, Any], meta: Dict[str, Any]) -> Dict[str, Any]:
@@ -183,6 +317,7 @@ def normalize_record(raw: Dict[str, Any], meta: Dict[str, Any]) -> Dict[str, Any
         "marketplace": meta.get("marketplace", meta.get("source", "unknown")),
         "query": meta.get("query"),
         "title": title,
+        "title_raw": title,
         "sku_text": sku or title,
         "sku_norm": norm_sku(sku or title or ""),
         "price": to_float(price),
@@ -196,27 +331,67 @@ def normalize_record(raw: Dict[str, Any], meta: Dict[str, Any]) -> Dict[str, Any
         "captured_at": captured_at,
     }
 
-
 def meta_from_path(p: Path) -> Dict[str, str]:
-    parts = p.parts
-    marketplace = "unknown"
-    if "raw" in parts:
-        idx = parts.index("raw")
-        if idx + 1 < len(parts):
-            marketplace = parts[idx + 1]
+    parts_low = [s.lower() for s in p.parts]
+    if any("mercadolivre" in s for s in parts_low):
+        marketplace = "mercadolivre"
+    elif any(("magazineluiza" in s) or ("magalu" in s) for s in parts_low):
+        marketplace = "magalu"
+    elif any("pneustore" in s for s in parts_low):
+        marketplace = "pneustore"
+    else:
+        marketplace = "unknown"
     query = p.name
     ts = parse_captured_from_query(query)
     captured_at = ts.isoformat() if pd.notna(ts) else None
-
-    m_low = str(marketplace).lower()
-    if "magazineluiza" in m_low or "magalu" in m_low or "magazine" in m_low:
-        marketplace = "magalu"
-    elif "mercado" in m_low and "livre" in m_low:
-        marketplace = "mercadolivre"
-    elif "pneustore" in m_low:
-        marketplace = "pneustore"
-
     return {"source": marketplace, "marketplace": marketplace, "query": query, "captured_at": captured_at}
+
+def ingest_scraper_dirs() -> List[Dict[str, Any]]:
+    rows: List[Dict[str, Any]] = []
+    for _mp, path in iter_input_files():
+        try:
+            if path.suffix.lower() == ".jsonl":
+                fid = "jsonl:" + file_fingerprint(path)
+                if seen("market_items", fid):
+                    logger.debug("PULANDO JSONL já visto: %s", path)
+                    continue
+                meta = meta_from_path(path)
+                with path.open("r", encoding="utf-8") as f:
+                    for line in f:
+                        line = line.strip()
+                        if not line:
+                            continue
+                        raw = json.loads(line)
+                        rows.append(normalize_record(raw, meta))
+                mark_seen("market_items", fid)
+
+            elif path.suffix.lower() == ".json":
+                fid = "json:" + file_fingerprint(path)
+                if seen("market_items", fid):
+                    logger.debug("PULANDO JSON já visto: %s", path)
+                    continue
+                meta = meta_from_path(path)
+                data = json.loads(path.read_text(encoding="utf-8"))
+                if isinstance(data, list):
+                    for raw in data:
+                        rows.append(normalize_record(raw, meta))
+                elif isinstance(data, dict):
+                    rows.append(normalize_record(data, meta))
+                mark_seen("market_items", fid)
+
+            elif path.suffix.lower() == ".csv":
+                fid = "csv:" + file_fingerprint(path)
+                if seen("market_items", fid):
+                    logger.debug("PULANDO CSV já visto: %s", path)
+                    continue
+                meta = meta_from_path(path)
+                df = pd.read_csv(path, encoding="utf-8")
+                for rec in df.to_dict(orient="records"):
+                    rows.append(normalize_record(rec, meta))
+                mark_seen("market_items", fid)
+        except Exception as e:
+            logger.warning("Falha ao ler %s: %s", path, e)
+    return rows
 
 def ingest_json() -> List[Dict[str, Any]]:
     rows = []
@@ -351,15 +526,17 @@ def clean_and_snapshot(all_rows_df: pd.DataFrame):
     clean.drop(columns=["url_unwrapped"], inplace=True)
 
     clean.sort_values(["marketplace", "url", "captured_at"], inplace=True)
-    clean = clean[~clean.duplicated()]  # exato
-    clean = clean[~clean.duplicated(subset=["marketplace", "url"], keep="last")]  # por URL
-    clean = clean[~clean.duplicated(subset=["marketplace", "title", "price"], keep="last")]  # por título+preço
+    clean = clean[~clean.duplicated()] 
+    clean = clean[~clean.duplicated(subset=["marketplace", "url"], keep="last")]  
+    clean = clean[~clean.duplicated(subset=["marketplace", "title", "price"], keep="last")]
 
     canon = clean.groupby(["marketplace", "sku_norm"], dropna=False)["title"] \
                  .agg(lambda s: s.value_counts().index[0] if len(s) > 0 else None) \
                  .rename("product_name").reset_index()
     clean = clean.merge(canon, on=["marketplace", "sku_norm"], how="left")
 
+    clean = enrich_with_parsed_fields(clean)
+    
     to_sql(clean, "market_items_clean", if_exists="replace", index=False)
     snap = clean[
         clean.groupby(["marketplace", "sku_norm"])["captured_at"].transform("max") == clean["captured_at"]
@@ -385,21 +562,18 @@ def clean_and_snapshot(all_rows_df: pd.DataFrame):
         )
         diag = miss.assign(marketplace=miss["marketplace"].fillna("unknown"))
         tops = diag.groupby("marketplace")["miss_reason"].value_counts().sort_values(ascending=False).head(12)
-        logger.info("Top motivos de descarte (amostra):\n%s", tops.to_string())
-        logger.info("market_items_clean por marketplace:\n%s", clean["marketplace"].value_counts().to_string())
+        logger.info("Top motivos de descarte (amostra):n%s", tops.to_string())
+        logger.info("market_items_clean por marketplace:n%s", clean["marketplace"].value_counts().to_string())
     except Exception as _e:
         logger.debug("diagnóstico de descarte falhou: %s", _e)
 
     logger.info("Limpeza ok → market_items_clean=%d, unifier_input=%d", len(clean), len(snap))
 
-
-# ============================================================
-# Pipeline principal
-# ============================================================
-
 def main():
     ensure_dirs()
     all_rows: List[Dict[str, Any]] = []
+
+    all_rows += ingest_scraper_dirs()  
     all_rows += ingest_json()
     all_rows += ingest_csv()
     all_rows += ingest_sqlite()

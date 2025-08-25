@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 185/65 R14 Aro 14 Ferentino Verso 86h Tl",
+    "link": "https://www.mercadolivre.com.br/pneu-18565-r14-aro-14-ferentino-verso-86h-tl/p/MLB30395534",
+    "preco": 505.99,
+    "brand": "ferentino",
+    "model": "verso",
+    "size": "",
+    "speed_index": "86H",
+    "query_strict": "pneu 185 65 r14 Ferentino Verso",
+    "size_norm": "185-65-r14",
+    "brand_expected": "ferentino",
+    "line_expected": "verso",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "ferentino",
+    "data_coleta": "2025-08-21 19:52:59",
+    "preco_original": null,
+    "preco_desconto": 505.99,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Dunlop 265 60 R18 Grandtrek At5 110 H H",
+    "link": "https://www.mercadolivre.com.br/pneu-dunlop-265-60-r18-grandtrek-at5-110-h/up/MLBU3210563035",
+    "preco": 1288.0,
+    "brand": "dunlop",
+    "model": "grandtrek at5",
+    "size": "",
+    "speed_index": "",
+    "query_strict": "pneu 265 60 r18 Dunlop Grandtrek At5",
+    "size_norm": "265-60-r18",
+    "brand_expected": "dunlop",
+    "line_expected": "grandtrek at5",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "dunlop",
+    "data_coleta": "2025-08-21 18:37:17",
+    "preco_original": null,
+    "preco_desconto": 1288.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

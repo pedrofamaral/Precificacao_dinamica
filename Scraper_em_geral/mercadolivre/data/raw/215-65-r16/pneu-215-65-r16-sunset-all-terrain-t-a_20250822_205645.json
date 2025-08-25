@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Sunset Tire 215/65r16 8 Lonas 103/100s All-terrain T/a",
+    "link": "https://www.mercadolivre.com.br/pneu-sunset-tire-21565r16-8-lonas-103100s-all-terrain-ta/p/MLB20964930",
+    "preco": 705.55,
+    "brand": "sunset",
+    "model": "all terrain t a",
+    "size": "",
+    "speed_index": "100S",
+    "query_strict": "pneu 215 65 r16 Sunset All Terrain T/A",
+    "size_norm": "215-65-r16",
+    "brand_expected": "sunset",
+    "line_expected": "all terrain t/a",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "sunset",
+    "data_coleta": "2025-08-22 23:56:04",
+    "preco_original": null,
+    "preco_desconto": 705.55,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

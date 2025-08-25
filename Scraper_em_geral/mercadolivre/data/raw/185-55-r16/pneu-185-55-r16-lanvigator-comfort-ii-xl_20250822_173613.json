@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Lanvigator Comfort Ii 185/55r16 Aro 16 87v Xl",
+    "link": "https://www.mercadolivre.com.br/pneu-lanvigator-comfort-ii-18555r16-aro-16-87v-xl/p/MLB36215360",
+    "preco": 478.2,
+    "brand": "lanvigator",
+    "model": "comfort ii xl",
+    "size": "",
+    "speed_index": "87V",
+    "query_strict": "pneu 185 55 r16 Lanvigator Comfort Ii Xl",
+    "size_norm": "185-55-r16",
+    "brand_expected": "lanvigator",
+    "line_expected": "comfort ii xl",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "lanvigator",
+    "data_coleta": "2025-08-22 20:35:58",
+    "preco_original": null,
+    "preco_desconto": 478.2,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

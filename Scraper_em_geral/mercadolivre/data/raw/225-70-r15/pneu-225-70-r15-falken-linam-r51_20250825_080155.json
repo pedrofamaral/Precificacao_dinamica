@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Falken Aro 15 225/70r15 Linam R51",
+    "link": "https://www.mercadolivre.com.br/pneu-falken-aro-15-22570r15-linam-r51/p/MLB33949533",
+    "preco": 1087.0,
+    "brand": "falken",
+    "model": "linam r51",
+    "size": "",
+    "speed_index": "",
+    "query_strict": "pneu 225 70 r15 Falken Linam R51",
+    "size_norm": "225-70-r15",
+    "brand_expected": "falken",
+    "line_expected": "linam r51",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "falken",
+    "data_coleta": "2025-08-25 11:01:42",
+    "preco_original": null,
+    "preco_desconto": 1087.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

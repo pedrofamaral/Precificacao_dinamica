@@ -67,7 +67,10 @@ except ImportError:
 DEFAULT_KNOWN_BRANDS = [
     "goodyear", "kelly", "pirelli", "continental", "michelin",
     "bridgestone", "firestone", "dunlop", "maxxis", "kumho",
-    "yokohama", "hankook", "bfgoodrich", "toyo", "cooper", "falken", "nexen", "sumitomo", "formula"
+    "yokohama", "hankook", "bfgoodrich", "toyo", "cooper", "falken", "nexen", "sumitomo", "formula",
+    "xbri","Westlake", "Zmax", "Wanli", "chituma", "aderenza", "anteo", "aplus", "aptany", "atlander", "austone", "Bf Goodrich",
+    "Bfgoodrich", "Blackarrow", "Bridgestone", "Ceat", "Chengshan", "Chituma", "Comforser", "Compasal", "ferentino"
+
 ]
 
 DEFAULT_MODEL_PHRASES = [
@@ -83,7 +86,11 @@ DEFAULT_MODEL_PHRASES = [
     "sp touring", "sp sport", "fm800", "lm704", "enasave ec300",
     # Outros recorrentes
     "direction", "f700", "bc20", "scorpion"
+
+    "verso"
 ]
+
+SPEED_IDX_RE = re.compile(r"\b\d{2,3}[A-Z]{1,2}\b", re.I)
 
 CONFIG_NORM: Dict[str, Dict | List] = {
     "known_brands": DEFAULT_KNOWN_BRANDS.copy(),
@@ -99,6 +106,71 @@ CONFIG_NORM: Dict[str, Dict | List] = {
 }
 
 SIZE_CANON_RE = re.compile(r"(\d{3})\s*[/\-\s]?\s*(\d{2,3})\s*[rR]?\s*[-\s]?\s*(\d{2})")
+DEFAULT_LOTE_PATH = Path(__file__).resolve().parents[2] / "Extracao_e_Insercao" / "data" / "query_products.json"
+
+def _extract_speed_index(text: str) -> str:
+    if not text:
+        return ""
+    m = SPEED_IDX_RE.search(text.upper())
+    return m.group(0).upper() if m else ""
+
+def _bootstrap_norm_from_lote(lote: list[dict]):
+    brands = set(CONFIG_NORM.get("known_brands", []))
+    models = set(CONFIG_NORM.get("known_model_phrases", []))
+
+    for it in lote:
+        b = _norm_text(it.get("brand", ""))
+        m = _norm_text(it.get("line_model", ""))
+        if b and not SPEED_IDX_RE.fullmatch(b.replace(" ", "")):  # evita '79t' virar marca
+            brands.add(b)
+        if m:
+            m = re.sub(r"\(\s*(?:\d{1,3}[a-z]{1,2}|[a-z])\s*\)", "", m, flags=re.I).strip()
+            if m:
+                models.add(_norm_text(m))
+
+    CONFIG_NORM["known_brands"] = sorted(brands)
+    CONFIG_NORM["known_model_phrases"] = sorted(models)
+
+
+def _size_regex_from_norm(size_norm: str):
+    if not size_norm:
+        return None
+    m = re.findall(r"\d{2,3}", size_norm)
+    if len(m) < 3:
+        return None
+    w, a, r = m[0], m[1], m[-1]
+    return re.compile(rf"\b{w}\D*{a}\D*[Rr]?\D*{r}\b", re.I)
+
+def _strict_match(title: str, brand_expected: str, model_expected: str, size_norm: str) -> bool:
+    t = _norm_text(title)
+    be = _canon_brand(brand_expected)
+    aliases = [k for k, v in CONFIG_NORM.get("brand_aliases", {}).items() if v == be]
+    allowed = [x for x in [be, *aliases] if x]
+
+    if be and not any(re.search(rf"\b{re.escape(x)}\b", t) for x in allowed):
+        return False
+
+    for b in CONFIG_NORM.get("known_brands", []):
+        if b in allowed:
+            continue
+        if re.search(rf"\b{re.escape(b)}\b", t):
+            return False
+
+    parts = _tokens_from_model(model_expected)
+    if parts and not all(re.search(rf"\b{re.escape(p)}\b", t) for p in parts):
+        return False
+
+    sr = _size_regex_from_norm(size_norm)
+    if sr and not sr.search(title):
+        return False
+
+    return True
+
+def _tokens_from_model(value: str):
+    t = _norm_text(value or "")
+    t = re.sub(r"\b\d{2,3}[a-z]{1,2}\b", " ", t)
+    return [x for x in re.split(r"[\s\-_/]+", t) if x]
+
 
 def _norm_text(s: str) -> str:
     s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode("ascii")
@@ -130,6 +202,10 @@ def _canon_brand(s: str) -> str:
     s = _norm_text(s)
     if not s:
         return ""
+    
+    if re.fullmatch(r"\d{2,3}[a-z]{1,2}", s):
+        return ""
+
     if s in CONFIG_NORM["brand_aliases"]:
         return CONFIG_NORM["brand_aliases"][s]
     for kb in CONFIG_NORM["known_brands"]:
@@ -138,26 +214,37 @@ def _canon_brand(s: str) -> str:
     for kb in CONFIG_NORM["known_brands"]:
         if f" {kb} " in f" {s} ":
             return kb
-    return s.split()[0]
+    for tok in s.split():
+        if not re.fullmatch(r"\d{2,3}[a-z]{1,2}", tok):
+            return tok
+    return ""
+
 
 def _brand_from_title(title: str, expected: str = "") -> str:
     t = _norm_text(title)
     exp = _canon_brand(expected)
+
     if exp:
-        return exp
-    for alias, target in CONFIG_NORM["brand_aliases"].items():
-        if f" {alias} " in f" {t} ":
-            return target
-    for kb in CONFIG_NORM["known_brands"]:
-        if f" {kb} " in f" {t} ":
+        if re.search(rf"\b{re.escape(exp)}\b", t):
+            return exp
+        for alias, target in CONFIG_NORM.get("brand_aliases", {}).items():
+            if target == exp and re.search(rf"\b{re.escape(alias)}\b", t):
+                return exp
+
+    for kb in CONFIG_NORM.get("known_brands", []):
+        if re.search(rf"\b{re.escape(kb)}\b", t):
             return kb
+
     try:
-        det = detectar_marca(title)  
-        if det:
-            return _canon_brand(det)
+        det = detectar_marca(title)
+        c = _canon_brand(det)
+        if c:
+            return c
     except Exception:
         pass
     return ""
+
+
 
 def _canon_model(s: str) -> str:
     s = _norm_text(s)
@@ -170,7 +257,11 @@ def _canon_model(s: str) -> str:
 def _model_from_title(title: str, brand: str = "", expected: str = "") -> str:
     t = _norm_text(title)
     if expected:
-        return _canon_model(expected)
+        parts = [p for p in re.split(r"[\s\-_/]+", _norm_text(expected)) if p]
+        parts = [p for p in parts if not SPEED_IDX_RE.fullmatch(p)]
+        if parts and all(re.search(rf"\b{re.escape(p)}\b", t) for p in parts):
+            return _canon_model(" ".join(parts))
+        return ""
     for phrase in CONFIG_NORM["known_model_phrases"]:
         if phrase in t:
             return _canon_model(phrase)
@@ -183,6 +274,7 @@ def _model_from_title(title: str, brand: str = "", expected: str = "") -> str:
         if toks:
             return _canon_model(" ".join(toks[:2]))
     return ""
+
 
 def _size_canonical(s: str) -> str:
     m = SIZE_CANON_RE.search(_norm_text(s))
@@ -202,6 +294,7 @@ def _product_to_raw(p: Product) -> dict:
         "availability": "unknown",
         "seller": p.vendedor or None,
         "extra_text": p.titulo,
+        "speed_index": p.speed_index
     }
 
 # =========================
@@ -237,7 +330,7 @@ class Product:
     brand: str = ""
     model: str = ""
     size: str = ""        
-
+    speed_index: str = ""
     query_strict: str = ""
     size_norm: str = ""   
     brand_expected: str = ""
@@ -719,33 +812,38 @@ class ScraperMercadoLivre(ScraperBase):
         txt = bloco.get_text(" ", strip=True)
         return _parse_valor(txt)
 
-    # ---------- parsing de card ----------
     def _parse_card_html(self, card_html: str) -> Optional[Product]:
         try:
             soup = BeautifulSoup(card_html, "lxml")
             link_el = soup.select_one("a.ui-search-link, a.ui-search-item__group__element, a[href*='produto'], a[href*='item']")
             if not link_el:
                 link_el = soup.select_one("a[href]")
+            
             if not link_el:
                 self.logger.debug("card sem anchor page=%s", self._pagina_atual)
                 return None
             link = (link_el.get("href") or "").split("#")[0]
+            
             if not link or not ("mercadolivre" in link or link.startswith("/")):
                 self.logger.debug("card anchor sem href válido page=%s link=%s", self._pagina_atual, link)
                 return None
+            
             if link.startswith("/"):
                 link = f"https://www.mercadolivre.com.br{link}"
             titulo = self._first_text(soup, self.TITULO_SELETORES)
+            
             if not titulo:
                 titulo = link_el.get_text(strip=True) if link_el else ""
+            
             if not titulo:
                 titulo = soup.get_text(" ", strip=True)[:100]
+            
+            speed_idx = _extract_speed_index(titulo)
 
             preco_orig, preco_atual = self._extrair_precos_multi(soup)
             preco = preco_atual
             free_ship, frete = self._extrair_frete_soup(soup)
 
-            # ---- NOVO: normalização canônica ----
             brand_exp = self._query_meta.get("brand", "")
             model_exp = self._query_meta.get("line_model", "")
             size_exp  = self._query_meta.get("size_norm", "")
@@ -762,6 +860,7 @@ class ScraperMercadoLivre(ScraperBase):
                 frete=frete,
                 marketplace=self.marketplace,
                 data_coleta=datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"),
+                speed_index=speed_idx,
                 preco_original=preco_orig,
                 preco_desconto=preco_atual,
                 desconto_pct=self._calc_desconto_pct(preco_orig, preco_atual),
@@ -769,11 +868,9 @@ class ScraperMercadoLivre(ScraperBase):
                 size_norm=size_exp or extrair_medida(titulo) or "",
                 brand_expected=_canon_brand(brand_exp),
                 line_expected=_canon_model(model_exp),
-                # novos:
                 brand=brand,
                 model=model,
                 size=size,
-                # compat:
                 marca=brand,
             )
             try:
@@ -808,34 +905,46 @@ class ScraperMercadoLivre(ScraperBase):
             return None
         return round((orig - desc) / orig * 100, 2)
 
-    def _filtrar_produto(self, prod: Product, termo_busca: str) -> tuple[Optional[Product], str]:
+    def _filtrar_produto(self, prod: Product) -> tuple[Optional[Product], str]:
         if not prod:
             return None, "parse_fail"
         titulo = prod.titulo or ""
-        pat = self._dim_pattern
-        if pat and not pat.search(titulo):
+        if self._dim_pattern and not self._dim_pattern.search(titulo):
             return None, "sem_dim"
         if eh_kit_ou_multiplos_pneus(titulo):
             return None, "kit"
 
-        # checagem de marca (desejada vs detectada)
-        marca_desejada = _canon_brand(detectar_marca(termo_busca) or self._query_meta.get("brand",""))
-        marca_prod = prod.brand or _brand_from_title(titulo, expected="")
-        if marca_desejada and marca_prod and marca_prod != marca_desejada:
+        marca_desejada = _canon_brand(self._query_meta.get("brand",""))
+        marca_prod = _brand_from_title(titulo, expected=marca_desejada)
+        if marca_desejada and marca_prod != marca_desejada:
+            self.logger.warning(
+            f"REJEIÇÃO DE MARCA: Esperado='{marca_desejada}', "
+            f"Encontrado='{marca_prod}', Título='{titulo[:80]}...'"
+        )
+
+        if marca_desejada and (not marca_prod or marca_prod != marca_desejada):
             return None, "marca_diff"
 
-        # Garante campo 'marca' compatível
-        prod.marca = prod.brand or marca_prod or marca_desejada or ""
+        prod.marca = marca_prod or marca_desejada or ""
+
+        if not _strict_match(
+            title=titulo,
+            brand_expected=self._query_meta.get("brand",""),
+            model_expected=self._query_meta.get("line_model",""),
+            size_norm=self._query_meta.get("size_norm","") or prod.size_norm
+        ):
+            return None, "not_strict"
 
         prod.frete_gratis = prod.free_ship and (prod.frete in (None, 0.0))
         return prod, "ok"
 
-    # ---------- paginação ----------
+
     def _delay_after_page(self):
         d = random.uniform(self.page_delay_min, self.page_delay_max)
         self.logger.info(f"Delaying {d:.2f}s after finishing page")
         time.sleep(d)
         self.pages_scraped += 1
+        
         if self.pages_scraped % self.pages_before_cooldown == 0:
             self.logger.warning(f"Cooldown de {self.cooldown_delay}s após {self.pages_before_cooldown} páginas")
             time.sleep(self.cooldown_delay)
@@ -871,7 +980,6 @@ class ScraperMercadoLivre(ScraperBase):
         time.sleep(backoff)
         return False
 
-    # ---------- ciclo principal ----------
     def buscar_produtos(self, termo: str, max_resultados: int = 100, ordenacao: str | None = None, max_paginas: int | None = None,
                         filtros: dict | None = None, page_size: int = 48, ceps: Optional[List[str]] = None,
                         enriquecer: bool = False, size_regex_override: Optional[str] = None, query_meta: Optional[dict] = None) -> List[Product]:
@@ -881,10 +989,8 @@ class ScraperMercadoLivre(ScraperBase):
         self._pagina_atual = 1
         self._slug_termo = slugify(termo)
 
-        # guarda metadados da query (brand/line/size)
         self._query_meta = query_meta or {}
 
-        # regex da dimensão
         if size_regex_override:
             try:
                 self._dim_pattern = re.compile(size_regex_override, flags=re.I)
@@ -900,54 +1006,65 @@ class ScraperMercadoLivre(ScraperBase):
         self._aceitar_cookies()
 
         while True:
-            n_cards, sel_usado = self._esperar_cards()
-            if n_cards == 0:
-                self.logger.warning("Nenhum card encontrado na página %s", pagina)
-                break
-            time.sleep(self._delay_aleatorio(1, 2))
-            self._rolar_pagina()
-
-            html_cards, anchors, _ = self._snap_cards_html()
-            cont_parse_fail = cont_sem_dim = cont_kit = cont_marca = cont_dup = 0
-            mantidos = 0
-            for card_html in html_cards:
-                try:
-                    p = self._parse_card_html(card_html)
-                    p, motivo = self._filtrar_produto(p, termo)
-                    if not p:
-                        if   motivo == "sem_dim": cont_sem_dim += 1
-                        elif motivo == "kit":     cont_kit += 1
-                        elif motivo == "marca_diff": cont_marca += 1
-                        else: cont_parse_fail += 1
-                        continue
-                    if p.link in vistos:
-                        cont_dup += 1
-                        continue
-                    vistos.add(p.link)
-                    resultados.append(p)
-                    _delay_between_cards(self.min_delay, self.max_delay, logger=None)
-                    mantidos += 1
-                except Exception:
-                    cont_parse_fail += 1
-
-            self.logger.info("Página %s novos=%s acumulado=%s parse=%s sem_dim=%s kit=%s marca=%s dup=%s",
-                             pagina, mantidos, len(resultados), cont_parse_fail, cont_sem_dim, cont_kit, cont_marca, cont_dup)
-
-            if len(resultados) >= max_resultados:
-                break
-            if max_paginas and pagina >= max_paginas:
-                break
-            pagina += 1
-            self._pagina_atual = pagina
-
-            if usar_offset:
-                next_url = self._construir_url_busca(termo, pagina=pagina, ordenacao=ordenacao, usar_offset=True, page_size=page_size, filtros=filtros)
-                self.logger.info("URL p%s: %s", pagina, next_url)
-                self.driver.get(next_url)
-            else:
-                if not self._ir_proxima_pagina():
+            try:
+                n_cards, sel_usado = self._esperar_cards()
+                if n_cards == 0:
+                    self.logger.warning("Nenhum card encontrado na página %s", pagina)
                     break
-            time.sleep(self._delay_aleatorio(0.5, 1.5))
+                time.sleep(self._delay_aleatorio(1, 2))
+                self._rolar_pagina()
+
+                html_cards, anchors, _ = self._snap_cards_html()
+                cont_parse_fail = cont_sem_dim = cont_kit = cont_marca = cont_dup = 0
+                mantidos = 0
+                for card_html in html_cards:
+                    try:
+                        p = self._parse_card_html(card_html)
+                        p, motivo = self._filtrar_produto(p)
+                        if not p:
+                            if   motivo == "sem_dim": cont_sem_dim += 1
+                            elif motivo == "kit":     cont_kit += 1
+                            elif motivo == "marca_diff": cont_marca += 1
+                            else: cont_parse_fail += 1
+                            continue
+                        if p.link in vistos:
+                            cont_dup += 1
+                            continue
+                        vistos.add(p.link)
+                        resultados.append(p)
+                        _delay_between_cards(self.min_delay, self.max_delay, logger=None)
+                        mantidos += 1
+                    except Exception:
+                        cont_parse_fail += 1
+
+                self.logger.info("Página %s novos=%s acumulado=%s parse=%s sem_dim=%s kit=%s marca=%s dup=%s",
+                                pagina, mantidos, len(resultados), cont_parse_fail, cont_sem_dim, cont_kit, cont_marca, cont_dup)
+
+                if len(resultados) >= max_resultados:
+                    break
+                if max_paginas and pagina >= max_paginas:
+                    break
+                pagina += 1
+                self._pagina_atual = pagina
+
+                if usar_offset:
+                    next_url = self._construir_url_busca(termo, pagina=pagina, ordenacao=ordenacao, usar_offset=True, page_size=page_size, filtros=filtros)
+                    self.logger.info("URL p%s: %s", pagina, next_url)
+                    self.driver.get(next_url)
+                else:
+                    if not self._ir_proxima_pagina():
+                        break
+                time.sleep(self._delay_aleatorio(0.5, 1.5))
+            except KeyboardInterrupt:
+                print("\n\n[AVISO] Interrupção detectada!")
+                resposta = input("Deseja realmente parar o scraper? (s/n): ").lower().strip()
+                if resposta == 's':
+                    self.logger.warning("Execução interrompida pelo usuário.")
+                    print("Parando o scraper...")
+                    break  
+                else:
+                    print("Continuando a raspagem...")
+                    continue 
 
         if ceps:
             enriquecer = True
@@ -1011,7 +1128,7 @@ class ScraperMercadoLivre(ScraperBase):
 
     def _calcular_frete_cep(self, cep_digits: str) -> float | None:
         # (pode ser implementado no futuro: abrir modal, etc.)
-        return None  # placeholder
+        return None  
 
 # =========================
 # I/O
@@ -1051,8 +1168,9 @@ def salvar_resultados(produtos: List[Product], termo: str, em_csv: bool, ceps: L
     if em_csv and produtos:
         cep_cols = [re.sub(r'\D','',c) for c in ceps]
         header = [
-            "titulo","link","preco","free_ship","frete","frete_gratis","marketplace",
-            "brand","model","size","marca","data_coleta","preco_original","preco_desconto","desconto_pct"
+                "titulo","link","preco","free_ship","frete","frete_gratis","marketplace",
+                "brand","model","size","speed_index","marca","data_coleta",
+                "preco_original","preco_desconto","desconto_pct"
         ]
         for c in cep_cols:
             header.append(f"shipping_{c}")
@@ -1063,9 +1181,10 @@ def salvar_resultados(produtos: List[Product], termo: str, em_csv: bool, ceps: L
             for p in produtos:
                 row = [
                     p.titulo, p.link, p.preco, p.free_ship, p.frete, p.frete_gratis, p.marketplace,
-                    p.brand, p.model, p.size, p.marca, p.data_coleta, p.preco_original,
-                    p.preco_desconto, p.desconto_pct
+                    p.brand, p.model, p.size, p.speed_index, p.marca, p.data_coleta,
+                    p.preco_original, p.preco_desconto, p.desconto_pct
                 ]
+
                 for c in cep_cols:
                     row.append(p.shipping.get(c))
                 w.writerow(row)
@@ -1121,6 +1240,15 @@ def main():
     _load_config_norm(args.config)
     ceps = _parse_lista_ceps(args.ceps)
 
+    try:
+        if DEFAULT_LOTE_PATH.exists():
+            with open(DEFAULT_LOTE_PATH, "r", encoding="utf-8") as f:
+                lote_default = json.load(f)
+            _bootstrap_norm_from_lote(lote_default)
+            logger.info("norm_bootstrap: brands=%s modelos=%s",len(CONFIG_NORM["known_brands"]), len(CONFIG_NORM["known_model_phrases"]))
+    except Exception:
+        pass
+
     scraper = ScraperMercadoLivre(
         modo=args.modo,
         headless=args.headless,
@@ -1143,6 +1271,9 @@ def main():
 
             with open(args.lote_json, "r", encoding="utf-8") as f:
                 lote = json.load(f)
+
+            _bootstrap_norm_from_lote(lote)
+            logger.info("norm_bootstrap: brands=%s modelos=%s",len(CONFIG_NORM["known_brands"]), len(CONFIG_NORM["known_model_phrases"]))
 
             i0 = max(0, int(args.idx_from or 0))
             i1 = int(args.idx_to) if args.idx_to is not None else len(lote)
@@ -1196,14 +1327,27 @@ def main():
                 print("[OUT_JSONL]", out_jsonl, "itens:", len(batch_docs))
 
         else:
+            logger.info("Executando busca por termo único: %s", args.termo)
+            
+            meta = {
+                "brand": _brand_from_title(args.termo),
+                "line_model": "", 
+                "size_norm": _size_canonical(args.termo),
+                "query_strict": "",
+            }
+            if meta["brand"]:
+                meta["line_model"] = _model_from_title(args.termo, brand=meta["brand"])
+
+            logger.info("Meta-dados extraídos do termo: %s", meta)
             produtos = scraper.buscar_produtos(
                 termo=args.termo,
                 max_resultados=args.max,
                 ordenacao=args.ordenacao,
                 ceps=ceps,
                 enriquecer=args.detalhes,
-                query_meta={},
+                query_meta=meta,
             )
+
             imprimir_produtos(produtos)
             tops = sorted([p for p in produtos if p.preco is not None], key=lambda p: p.preco)[:10]
             if tops:

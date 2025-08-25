@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Lanvigator Aro 17 Performax 225/65r17 102h Ht",
+    "link": "https://www.mercadolivre.com.br/pneu-lanvigator-aro-17-performax-22565r17-102h-ht/p/MLB37768369",
+    "preco": 894.99,
+    "brand": "lanvigator",
+    "model": "performax ht",
+    "size": "",
+    "speed_index": "102H",
+    "query_strict": "pneu 225 65 r17 Lanvigator Performax Ht",
+    "size_norm": "225-65-r17",
+    "brand_expected": "lanvigator",
+    "line_expected": "performax ht",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "lanvigator",
+    "data_coleta": "2025-08-22 20:38:41",
+    "preco_original": null,
+    "preco_desconto": 894.99,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

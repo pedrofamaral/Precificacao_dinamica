@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Sunny 205/50r17 93w Na305",
+    "link": "https://www.mercadolivre.com.br/pneu-sunny-20550r17-93w-na305/p/MLB51395383",
+    "preco": 566.51,
+    "brand": "sunny",
+    "model": "na305",
+    "size": "",
+    "speed_index": "93W",
+    "query_strict": "pneu 205 50 r17 Sunny Na305",
+    "size_norm": "205-50-r17",
+    "brand_expected": "sunny",
+    "line_expected": "na305",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "sunny",
+    "data_coleta": "2025-08-22 02:35:33",
+    "preco_original": null,
+    "preco_desconto": 566.51,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

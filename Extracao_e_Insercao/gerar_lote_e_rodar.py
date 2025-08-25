@@ -1,96 +1,117 @@
 import os, json, csv, urllib.parse, argparse, subprocess, pyodbc
+import pandas as pd
 from datetime import datetime
 from typing import Dict, List
 from sqlalchemy import create_engine, text
 from dotenv import load_dotenv
 from pathlib import Path
+import sys
 
+CURRENT_DIR = Path(__file__).resolve().parent
+DATA_DIR = CURRENT_DIR / "data"
 MARKETPLACES = ["mercadolivre", "magalu", "pneustore"]
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 QUERY = r"""
 WITH src AS (
-  SELECT
-    p.FILIAL,
-    p.COD_PROD,
-    p.NOME,
-    p.MARCA_PROD,
-    p.REFERENCIA_PROD,
-    p.CODBARRA_PROD,
-    p.ESTOQUE_PROD,
-    p.PRECOBASE_PROD,
-    p.DATAULTIMACOMPRA_PROD,
-    COALESCE(p.DATAATUALIZACAOPRECOBASE_PROD, p.DATAULTIMACOMPRA_PROD) AS ModifiedAt
-  FROM dbo.PRODUTOS AS p
-  WHERE p.FILIAL = :filial
-    AND p.NOME LIKE :nome_like
-    AND p.ESTOQUE_PROD >= :min_estoque
-    AND p.DATAULTIMACOMPRA_PROD >= :date_from
-    AND p.DATAULTIMACOMPRA_PROD <  :date_to
+  SELECT
+    p.FILIAL,
+    p.COD_PROD,
+    p.NOME,
+    p.MARCA_PROD,
+    p.REFERENCIA_PROD,
+    p.CODBARRA_PROD,
+    p.ESTOQUE_PROD,
+    p.PRECOBASE_PROD,
+    p.DATAULTIMACOMPRA_PROD,
+    COALESCE(p.DATAATUALIZACAOPRECOBASE_PROD, p.DATAULTIMACOMPRA_PROD) AS ModifiedAt
+  FROM dbo.PRODUTOS AS p
+  WHERE p.FILIAL = :filial
+    AND p.NOME LIKE :nome_like
+    AND p.ESTOQUE_PROD >= :min_estoque
 ),
-norm AS (
-  SELECT
-    FILIAL,
-    COD_PROD,
-    EAN         = CODBARRA_PROD,
-    ESTOQUE     = ESTOQUE_PROD,
-    PRECO_BASE  = PRECOBASE_PROD,
-    DATAULTIMACOMPRA_PROD,
-    ModifiedAt,
-    MarcaNorm   = UPPER(LTRIM(RTRIM(COALESCE(MARCA_PROD, '')))),
-    ModeloNorm  = UPPER(LTRIM(RTRIM(COALESCE(REFERENCIA_PROD, NOME, '')))),
-    FonteTam    = UPPER(LTRIM(RTRIM(COALESCE(NOME, ''))))
-  FROM src
+-- ETAPA 1: Pega os dados brutos como antes, mas sem o UPPER
+norm_raw AS (
+  SELECT
+    *,
+    RawMarca   = LTRIM(RTRIM(COALESCE(MARCA_PROD, ''))),
+    RawModelo  = LTRIM(RTRIM(COALESCE(REFERENCIA_PROD, NOME, ''))),
+    FonteTam   = UPPER(LTRIM(RTRIM(COALESCE(NOME, ''))))
+  FROM src
+),
+-- ETAPA 2: Nova etapa para limpar os prefixos (79), (86H), etc.
+norm_cleaned AS (
+  SELECT
+    *,
+    -- Lógica para remover o prefixo: se começar com '(', remove tudo até o ')'
+    MarcaNorm = UPPER(
+        CASE 
+            WHEN LEFT(RawMarca, 1) = '(' AND CHARINDEX(')', RawMarca) > 2 THEN 
+                LTRIM(SUBSTRING(RawMarca, CHARINDEX(')', RawMarca) + 1, LEN(RawMarca)))
+            ELSE RawMarca
+        END
+    ),
+    ModeloNorm = UPPER(
+        CASE 
+            WHEN LEFT(RawModelo, 1) = '(' AND CHARINDEX(')', RawModelo) > 2 THEN 
+                LTRIM(SUBSTRING(RawModelo, CHARINDEX(')', RawModelo) + 1, LEN(RawModelo)))
+            ELSE RawModelo
+        END
+    )
+  FROM norm_raw
 ),
 prep AS (
-  SELECT
-    n.*,
-    FonteUni = REPLACE(REPLACE(REPLACE(REPLACE(n.FonteTam, '-', '/'), ' ', '/'), '/R', 'R'), 'R/', 'R')
-  FROM norm AS n
+  SELECT
+    n.*,
+    FonteUni = REPLACE(REPLACE(REPLACE(REPLACE(n.FonteTam, '-', '/'), ' ', '/'), '/R', 'R'), 'R/', 'R')
+  -- A query agora usa a CTE 'norm_cleaned' que contém os dados limpos
+  FROM norm_cleaned AS n
 ),
 pos AS (
-  SELECT
-    p.*,
-    pos1 = PATINDEX('%[0-9][0-9][0-9]/[0-9][0-9]R[0-9][0-9]%', p.FonteUni),
-    pos2 = PATINDEX('%[0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]%', p.FonteUni)
-  FROM prep AS p
+  SELECT
+    p.*,
+    pos1 = PATINDEX('%[0-9][0-9][0-9]/[0-9][0-9]R[0-9][0-9]%', p.FonteUni),
+    pos2 = PATINDEX('%[0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]%', p.FonteUni)
+  FROM prep AS p
 ),
 calc AS (
-  SELECT *,
-         CASE WHEN pos1 > 0 THEN pos1 ELSE pos2 END AS use_pos
-  FROM pos
+  SELECT * ,
+         CASE WHEN pos1 > 0 THEN pos1 ELSE pos2 END AS use_pos
+  FROM pos
 ),
 sizes AS (
-  SELECT
-    c.*,
-    TRY_CONVERT(INT, SUBSTRING(FonteUni, use_pos,     3)) AS width,
-    TRY_CONVERT(INT, SUBSTRING(FonteUni, use_pos + 4, 2)) AS aspect,
-    TRY_CONVERT(INT, SUBSTRING(FonteUni, use_pos + 7, 2)) AS rim
-  FROM calc AS c
+  SELECT
+    c.*,
+    TRY_CONVERT(INT, SUBSTRING(FonteUni, use_pos,     3)) AS width,
+    TRY_CONVERT(INT, SUBSTRING(FonteUni, use_pos + 4, 2)) AS aspect,
+    TRY_CONVERT(INT, SUBSTRING(FonteUni, use_pos + 7, 2)) AS rim
+  FROM calc AS c
 )
 SELECT
-  FILIAL,
-  COD_PROD,
-  Marca      = MarcaNorm,
-  Modelo     = ModeloNorm,
-  MedidaNorm = CASE WHEN width IS NOT NULL AND aspect IS NOT NULL AND rim IS NOT NULL
-                    THEN CONCAT(width, '/', aspect, 'R', rim) END,
-  width, aspect, rim,
-  EAN,
-  ESTOQUE,
-  PRECO_BASE,
-  DATAULTIMACOMPRA_PROD,
-  termo_busca_1 = CONCAT('PNEU ', CONCAT(width, '/', aspect, 'R', rim), ' ', MarcaNorm, ' ', ModeloNorm),
-  termo_busca_2 = CONCAT('PNEU ', CONCAT(width, '/', aspect, '/', rim),  ' ', MarcaNorm, ' ', ModeloNorm),
-  termo_busca_3 = CONCAT(MarcaNorm, ' ', ModeloNorm, ' ', CONCAT(width, '/', aspect, 'R', rim)),
-  size_regex    = CASE WHEN width IS NOT NULL AND aspect IS NOT NULL AND rim IS NOT NULL
-                       THEN CONCAT('\\b', width, '[/\\s-]?', aspect, '\\s*R?\\s*', rim, '\\b') END,
-  ModifiedAt
+  FILIAL,
+  COD_PROD,
+  Marca      = MarcaNorm,
+  Modelo     = ModeloNorm,
+  MedidaNorm = CASE WHEN width IS NOT NULL AND aspect IS NOT NULL AND rim IS NOT NULL
+                    THEN CONCAT(width, '/', aspect, 'R', rim) END,
+  width, aspect, rim,
+  -- A CORREÇÃO ESTÁ AQUI --
+  EAN = CODBARRA_PROD,
+  ESTOQUE = ESTOQUE_PROD,
+  PRECO_BASE = PRECOBASE_PROD,
+  --------------------------
+  DATAULTIMACOMPRA_PROD,
+  termo_busca_1 = CONCAT('PNEU ', CONCAT(width, '/', aspect, 'R', rim), ' ', MarcaNorm, ' ', ModeloNorm),
+  termo_busca_2 = CONCAT('PNEU ', CONCAT(width, '/', aspect, '/', rim),  ' ', MarcaNorm, ' ', ModeloNorm),
+  termo_busca_3 = CONCAT(MarcaNorm, ' ', ModeloNorm, ' ', CONCAT(width, '/', aspect, 'R', rim)),
+  size_regex    = CASE WHEN width IS NOT NULL AND aspect IS NOT NULL AND rim IS NOT NULL
+                       THEN CONCAT('\\b', width, '[/\\s-]?', aspect, '\\s*R?\\s*', rim, '\\b') END,
+  ModifiedAt
 FROM sizes
 WHERE width IS NOT NULL AND aspect IS NOT NULL AND rim IS NOT NULL
 ORDER BY MarcaNorm, ModeloNorm, MedidaNorm, COD_PROD;
 """
 
+# ------------------ DB ------------------
 def build_engine():
     load_dotenv()
 
@@ -98,15 +119,11 @@ def build_engine():
         "ODBC Driver 18 for SQL Server",
         "ODBC Driver 17 for SQL Server",
         "ODBC Driver 13 for SQL Server",
-        "SQL Server Native Client 11.0",  
-        "SQL Server"                      
+        "SQL Server Native Client 11.0",
+        "SQL Server",
     ]
     installed = [d.strip() for d in pyodbc.drivers()]
-    driver = None
-    for c in candidates:
-        if c in installed:
-            driver = c
-            break
+    driver = next((c for c in candidates if c in installed), None)
     if not driver:
         raise SystemExit(
             f"Nenhum driver ODBC da Microsoft encontrado. Instale o 'ODBC Driver 18 for SQL Server' (x64). "
@@ -134,51 +151,18 @@ def build_engine():
     params = urllib.parse.quote_plus(odbc)
     return create_engine(f"mssql+pyodbc:///?odbc_connect={params}", pool_pre_ping=True)
 
-
-def row_to_item(r: Dict) -> Dict:
-    w = str(r["width"])
-    a = str(r["aspect"])
-    rim = str(r["rim"])
-    brand = " ".join(p.capitalize() for p in (r.get("Marca") or "").split())
-    model = " ".join(p.capitalize() for p in (r.get("Modelo") or "").split())
-    size_norm = f"{w} {a} r{rim}"
-    k1 = f"{w}/{a}R{rim}"
-    k2 = f"{w} {a} R{rim}"
-    k3 = f"{w} {a} r{rim}"
-    query_strict = f"pneu {k3} {brand} {model}".strip()
-    return {
-        "cod_prod": r["COD_PROD"],
-        "width": w,
-        "aspect": a,
-        "rim": rim,
-        "size_norm": size_norm,
-        "brand": brand,
-        "line_model": model,
-        "original_label": (r.get("NOME") or "").strip(),
-        "query_strict": query_strict,
-        "keywords": [k1, k2, k3, brand, model],
-        "size_regex": rf"\b{w}[/\s-]?{a}\s*R?\s*{rim}\b",
-        "ean_gtin": r.get("EAN"),
-        "estoque": int(r.get("ESTOQUE") or 0),
-        "preco_base": float(r.get("PRECO_BASE") or 0.0)
-    }
-
 def fetch_all(engine, filial, nome_prefix, min_estoque, year, page_size=None, max_pages=None):
-    date_from = f"{year}-01-01"
-    date_to   = f"{year+1}-01-01"
     with engine.begin() as conn:
         rows = conn.execute(text(QUERY), {
             "filial": filial,
             "nome_like": f"{nome_prefix}%",
             "min_estoque": min_estoque,
-            "date_from": date_from,
-            "date_to": date_to,
         }).mappings().all()
 
     print(f"[INFO] Linhas SQL: {len(rows)}")
 
     seen = set()
-    items = []
+    items: List[Dict] = []
     for r in rows:
         r = dict(r)
         if r["COD_PROD"] in seen:
@@ -202,44 +186,108 @@ def fetch_all(engine, filial, nome_prefix, min_estoque, year, page_size=None, ma
     print(f"[INFO] Após dedupe por COD_PROD: {len(items)}")
     return items
 
-def run_scrapers(json_path, cmd_magalu, cmd_meli, cmd_pstore, debug, formatos, base_out_dir=None,
-                 idx_from=0, idx_to=375):
-    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    base_out_dir = base_out_dir or os.path.join(os.path.dirname(json_path), "out_jsonl")
-    os.makedirs(base_out_dir, exist_ok=True)
-    common = ['--lote-json', json_path, '--idx-from', str(idx_from)]
-    if idx_to is not None:
-        common += ['--idx-to', str(idx_to)]
-
-    cmds = []
-    if cmd_meli:
-        cmds.append(['python', cmd_meli, '--lote-json', json_path,
-                     '--idx-from', str(idx_from), '--idx-to', str(idx_to),
-                     '--run-id', f'{ts}_mercadolivre',
-                     '--out-jsonl', os.path.join(base_out_dir, 'mercadolivre', f'{ts}.jsonl'),
-                     '--formatos', *formatos] + (['--debug'] if debug else []))
-    if cmd_magalu:
-        cmds.append(['python', cmd_magalu, '--lote-json', json_path,
-                     '--idx-from', str(idx_from), '--idx-to', str(idx_to),
-                     '--run-id', f'{ts}_magalu',
-                     '--out-jsonl', os.path.join(base_out_dir, 'magalu', f'{ts}.jsonl'),
-                     '--formatos', *formatos] + (['--debug'] if debug else []))
-    if cmd_pstore:
-        cmds.append(['python', cmd_pstore, '--lote-json', json_path,
-                     '--idx-from', str(idx_from), '--idx-to', str(idx_to),
-                     '--run-id', f'{ts}_pneustore',
-                     '--out-jsonl', os.path.join(base_out_dir, 'pneustore', f'{ts}.jsonl'),
-                     '--formatos', *formatos] + (['--debug'] if debug else []))
+def converter_jsonl_para_csv(lista_arquivos_jsonl: List[str], caminho_saida_csv: str):
+    todos_os_dados = []
+    print("\n[INFO] Iniciando conversão de .jsonl para .csv...")
+    for arquivo in lista_arquivos_jsonl:
+        if not Path(arquivo).exists():
+            print(f"[AVISO] Arquivo de resultado não encontrado, pulando: {arquivo}")
+            continue
+        
+        print(f"[INFO] Lendo dados de: {arquivo}")
+        with open(arquivo, 'r', encoding='utf-8') as f:
+            for linha in f:
+                try:
+                    todos_os_dados.append(json.loads(linha))
+                except json.JSONDecodeError:
+                    print(f"[AVISO] Linha inválida no arquivo {arquivo}, pulando linha.")
     
+    if not todos_os_dados:
+        print("[AVISO] Nenhum dado encontrado nos arquivos .jsonl para converter.")
+        return
+
+    print(f"[INFO] Total de {len(todos_os_dados)} registros consolidados.")
+    
+    df = pd.DataFrame(todos_os_dados)
+    
+    df.to_csv(caminho_saida_csv, index=False, sep=';', decimal=',', encoding='utf-8-sig')
+    print(f"[SUCESSO] Arquivo CSV consolidado salvo em: {caminho_saida_csv}")
+
+def ensure_data_dirs():
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    for sub in ("mercadolivre", "magalu", "pneustore", "manifest"):
+        (DATA_DIR / sub).mkdir(parents=True, exist_ok=True)
+
+def run_scrapers(json_path, cmd_magalu, cmd_meli, cmd_pstore, debug=False, formatos=None,
+                 idx_from=0, idx_to=None):
+    ensure_data_dirs()
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+    arquivos_de_saida = []
+
     env = os.environ.copy()
-    env['PYTHONPATH'] = str(PROJECT_ROOT) + os.pathsep + env.get('PYTHONPATH', '')
+    # habilitar imports compartilhados, adicionar o Scraper_em_geral ao PYTHONPATH:
+    # common_root = (CURRENT_DIR.parent / "Scraper_em_geral").resolve()
+    # env["PYTHONPATH"] = str(common_root) + os.pathsep + env.get("PYTHONPATH", "")
+    # Mantendo sua ideia (não atrapalha, mas não resolve imports por si só):
+    env["PYTHONPATH"] = str(DATA_DIR) + os.pathsep + env.get("PYTHONPATH", "")
 
-    for c in cmds:
-        print("[RUN]", " ".join(c))
-        os.makedirs(os.path.dirname(c[c.index('--out-jsonl')+1]), exist_ok=True)
-        subprocess.run(c, check=False)
+    if cmd_meli:
+        meli_out = str((DATA_DIR / "mercadolivre" / f"{ts}.jsonl").resolve())
+        arquivos_de_saida.append(meli_out)
+        meli_cmd = [
+            sys.executable, cmd_meli,
+            "--lote-json", str(json_path),
+            "--idx-from", str(idx_from),
+            "--run-id", f"{ts}_mercadolivre",
+            "--out-jsonl", meli_out,
+        ]
+        if idx_to is not None:
+            meli_cmd += ["--idx-to", str(idx_to)]
+        if debug:
+            meli_cmd += ["--debug"]
+        print("[RUN]", " ".join(meli_cmd))
+        os.makedirs(Path(meli_out).parent, exist_ok=True)
+        subprocess.run(meli_cmd, check=False, env=env)
 
+    if cmd_magalu:
+        magalu_out = str((DATA_DIR / "magalu" / f"{ts}.jsonl").resolve())
+        arquivos_de_saida.append(magalu_out)
+        magalu_cmd = [
+            sys.executable, cmd_magalu,
+            "--lote-json", str(json_path),
+            "--idx-from", str(idx_from),
+            "--run-id", f"{ts}_magalu",
+            "--out-jsonl", magalu_out,
+        ]
+        if idx_to is not None:
+            magalu_cmd += ["--idx-to", str(idx_to)]
+        if formatos:
+            magalu_cmd += ["--formatos", *formatos]  
+        print("[RUN]", " ".join(magalu_cmd))
+        os.makedirs(Path(magalu_out).parent, exist_ok=True)
+        subprocess.run(magalu_cmd, check=False, env=env)
 
+    if cmd_pstore:
+        pstore_out = str((DATA_DIR / "pneustore" / f"{ts}.jsonl").resolve())
+        arquivos_de_saida.append(pstore_out)
+        pstore_cmd = [
+            sys.executable, cmd_pstore,
+            "--lote-json", str(json_path),
+            "--idx-from", str(idx_from),
+            "--run-id", f"{ts}_pneustore",
+            "--out-jsonl", pstore_out,
+        ]
+        if idx_to is not None:
+            pstore_cmd += ["--idx-to", str(idx_to)]
+        if debug:
+            pstore_cmd += ["--debug"]
+        if formatos:
+            pstore_cmd += ["--formatos", *formatos]
+        print("[RUN]", " ".join(pstore_cmd))
+        os.makedirs(Path(pstore_out).parent, exist_ok=True)
+        subprocess.run(pstore_cmd, check=False, env=env)
+        return arquivos_de_saida
 
 def main():
     ap = argparse.ArgumentParser()
@@ -249,49 +297,76 @@ def main():
     ap.add_argument("--year", type=int, default=2025)
     ap.add_argument("--page-size", type=int, default=5000)
     ap.add_argument("--max-pages", type=int, default=200)
-    ap.add_argument("--out-json", default="query_products.json")
-    ap.add_argument("--out-csv", default="")
+    ap.add_argument("--out-json", default="query_products.json")  # será forçado para DATA_DIR/<nome>
+    ap.add_argument("--out-csv", default="query_products.csv")    # idem
     ap.add_argument("--rodar", action="store_true")
     ap.add_argument("--cmd-magalu", default=r"C:\Users\user\Desktop\Precificação_AI\Scraper_em_geral\MagazineLuiza\scraper.py")
     ap.add_argument("--cmd-meli",   default=r"C:\Users\user\Desktop\Precificação_AI\Scraper_em_geral\mercadolivre\scraper2.0.py")
     ap.add_argument("--cmd-pstore", default=r"C:\Users\user\Desktop\Precificação_AI\Scraper_em_geral\pneustore\scraperps.py")
-    ap.add_argument("--formatos", nargs="+", default=["csv","json"])
+    ap.add_argument("--formatos", nargs="+", default=["json","csv"])
     ap.add_argument("--debug", action="store_true")
     ap.add_argument("--idx-from", type=int, default=0, help="Índice inicial (inclusive) no JSON do lote")
     ap.add_argument("--idx-to", type=int, default=None, help="Índice final (exclusivo) no JSON do lote")
-
     args = ap.parse_args()
+    
+    ensure_data_dirs()
+    out_json_path = DATA_DIR / Path(args.out_json).name
+    out_csv_path  = DATA_DIR / Path(args.out_csv).name 
 
+    print("Conectando ao banco de dados para gerar o lote...")
     engine = build_engine()
     items = fetch_all(engine, args.filial, args.nome_prefix, args.min_estoque, args.year, args.page_size, args.max_pages)
+
     start = max(0, args.idx_from or 0)
     end = len(items) if args.idx_to is None else min(len(items), args.idx_to)
-    subset = items[start:end]
-    print(f"[INFO] Slice aplicado: {start}:{end} -> {len(subset)} itens")
+    print(f"[INFO] Slice aplicado: {start}:{end} -> {end - start} itens")
 
     if not items:
         print("Nenhum item encontrado.")
         return
 
-    with open(args.out_json, "w", encoding="utf-8") as f:
+    with open(out_json_path, "w", encoding="utf-8") as f:
         json.dump(items, f, ensure_ascii=False, indent=2)
-    print(f"JSON salvo em: {os.path.abspath(args.out_json)} (itens: {len(items)})")
+        print(f"JSON salvo em: {out_json_path.resolve()} (itens: {len(items)})")
 
-    if args.out_csv:
-        with open(args.out_csv, "w", newline="", encoding="utf-8") as f:
+    if out_csv_path:
+        with open(out_csv_path, "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=list(items[0].keys()))
             writer.writeheader()
             writer.writerows(items)
-        print(f"CSV salvo em: {os.path.abspath(args.out_csv)}")
+        print(f"CSV salvo em: {out_csv_path.resolve()}")
 
     if args.rodar:
-      run_scrapers(
-        os.path.abspath(args.out_json),
-        args.cmd_magalu, args.cmd_meli, args.cmd_pstore,
-        args.debug, args.formatos,
-        idx_from=start, idx_to=end
-    )
+        while True:
+            try:
+                print("\nIniciando a execução dos scrapers...")
+                lista_jsonl_gerados = run_scrapers(
+                    json_path=str(out_json_path.resolve()),
+                    cmd_magalu=args.cmd_magalu,
+                    cmd_meli=args.cmd_meli,
+                    cmd_pstore=args.cmd_pstore,
+                    debug=args.debug,
+                    formatos=args.formatos,
+                    idx_from=start, idx_to=end
+                )
 
+                if lista_jsonl_gerados:
+                    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+                    caminho_csv_final = DATA_DIR / f"dados_consolidados_{ts}.csv"
+                    converter_jsonl_para_csv(lista_jsonl_gerados, str(caminho_csv_final.resolve()))
+            except KeyboardInterrupt:
+                print("\n\n[AVISO] Interrupção detectada no orquestrador!")
+                resposta = input("Deseja realmente parar todo o processo? (s/n): ").lower().strip()
+                if resposta == 's':
+                    print("Processo finalizado pelo usuário.")
+                    break
+                elif resposta == 'n':
+                    print("\n[AVISO] Reiniciando o processo de scraping. Pressione Ctrl+C novamente para sair.")
+                    continue
+                else:
+                    print("\n[AVISO] Resposta não reconhecida. Pressione Ctrl+C novamente para sair.")
+
+    print("\n[INFO] Script orquestrador finalizado.")
 
 if __name__ == "__main__":
     main()

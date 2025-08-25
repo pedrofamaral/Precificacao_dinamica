@@ -411,121 +411,92 @@ class ScraperMagalu:
 
     def extrair_produto_detalhado(self, card) -> Optional[ProdutoMagalu]:
         try:
-            linhas = [l.strip() for l in card.text.split('\n') if l.strip()]
+            # --- VALIDAÇÃO PRÉVIA (AQUI ESTÁ A MUDANÇA PRINCIPAL) ---
+            
+            # 1. Pega o título diretamente do card, sem abrir nova aba ainda.
+            titulo_element = card.find_element(By.CSS_SELECTOR, "h2[data-testid='product-title']")
+            titulo = titulo_element.text.strip() if titulo_element else ""
 
-            def linha_titulo(linhas_):
-                for l in linhas_:
-                    if ("pneu" in l.lower()
-                        and not any(x in l.lower() for x in ["full", "patrocinado", "anúncio", "compre junto"])
-                        and len(l) > 8):
-                        return l
-                return card.text.strip()
+            if not titulo:
+                return None # Ignora cards sem título
 
-            titulo = linha_titulo(linhas)
-            if not titulo or eh_kit_ou_multiplos_pneus(titulo):
-                self.logger.info(f"Produto ignorado: {titulo} (kit, múltiplos ou casal)")
+            # 2. Primeira barreira: é um kit ou múltiplos?
+            if eh_kit_ou_multiplos_pneus(titulo):
+                self.logger.info(f"Produto ignorado (kit/múltiplos): {titulo}")
                 return None
 
-            if hasattr(self, 'filtro_medida') and self.filtro_medida:
-                medida_produto_dir = extrair_medida_path(titulo)
-                medida_valor = normalizar_medida_valor(titulo)
-                if not medida_valor or medida_valor != self.filtro_medida:
-                    self.logger.info(f"Produto ignorado: {titulo} (medida não bate)")
+            # 3. Segunda barreira: a medida bate com a busca?
+            if self.filtro_medida:
+                medida_encontrada = normalizar_medida_valor(titulo)
+                if self.filtro_medida != medida_encontrada:
+                    self.logger.info(f"Produto ignorado (medida não bate: esperado '{self.filtro_medida}', encontrado '{medida_encontrada}'): {titulo}")
                     return None
 
-            if hasattr(self, 'filtro_marca') and self.filtro_marca:
-                marca_produto = _extrair_marca_titulo(titulo)
-                if not marca_produto or marca_produto.lower() != self.filtro_marca.lower():
-                    self.logger.info(f"Produto ignorado: {titulo} (marca não bate)")
+            # 4. Terceira barreira: a marca bate com a busca?
+            if self.filtro_marca:
+                marca_encontrada = _extrair_marca_titulo(titulo)
+                if self.filtro_marca.lower() != marca_encontrada.lower():
+                    self.logger.info(f"Produto ignorado (marca não bate: esperado '{self.filtro_marca}', encontrado '{marca_encontrada}'): {titulo}")
                     return None
-
-            if hasattr(self, 'filtro_modelo') and self.filtro_modelo:
+            
+            # 5. Quarta barreira: o modelo bate com a busca?
+            if self.filtro_modelo:
                 if self.filtro_modelo.lower() not in titulo.lower():
-                    self.logger.info(f"Produto ignorado: {titulo} (modelo não bate)")
+                    self.logger.info(f"Produto ignorado (modelo não bate): {titulo}")
                     return None
+            
+            # SE PASSOU EM TUDO, O PRODUTO É RELEVANTE. AGORA SIM, PEGAMOS OS DETALHES.
 
             link = card.get_attribute('href')
-            vendedor = ""
-
+            
+            # Extrai o preço do card
+            preco_element = card.find_element(By.CSS_SELECTOR, "p[data-testid='price-value']")
+            preco = parse_preco(preco_element.text) if preco_element else None
+            
+            if not preco or preco < 100:
+                self.logger.warning(f"Preço inválido ou baixo demais (R$ {preco}) para o produto: {titulo}")
+                return None
+                
+            # Abre a nova aba APENAS para pegar o vendedor (muito mais rápido)
+            vendedor = f"{self.marketplace}" # Vendedor padrão
             aba_atual = self.driver.current_window_handle
             self.driver.execute_script("window.open(arguments[0], '_blank');", link)
             self.driver.switch_to.window(self.driver.window_handles[-1])
-
             try:
-                WebDriverWait(self.driver, 10).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, "div[data-testid='mod-sellerdetails'] label[data-testid='link']"))
+                # Espera o elemento do vendedor carregar
+                vendedor_element = WebDriverWait(self.driver, 10).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, "p[data-testid='seller-name'] button, p[data-testid='seller-name'] span"))
                 )
-                vendedor_element = self.driver.find_element(By.CSS_SELECTOR, "div[data-testid='mod-sellerdetails'] label[data-testid='link']")
-                vendedor = (vendedor_element.text or "").strip()
-                self.logger.info(f"Vendedor encontrado: {vendedor}")
-                if any(invalido in vendedor.lower() for invalido in VENDEDORES_PALAVRAS_INVALIDAS):
-                    self.logger.info(f"Produto ignorado: {titulo} (vendedor inválido: {vendedor})")
-                    return None
-            except Exception:
-                vendedor = f"{self.marketplace}"
+                vendedor = vendedor_element.text.strip()
+            except TimeoutException:
+                self.logger.warning(f"Não foi possível encontrar o vendedor para o produto: {titulo}. Usando '{self.marketplace}'.")
             finally:
                 self.driver.close()
                 self.driver.switch_to.window(aba_atual)
-
-            precos_no_texto = [parse_preco(l) for l in linhas if "R$" in l and parse_preco(l)]
-            precos_validos = [p for p in precos_no_texto if p and p >= 100]
-            preco = min(precos_validos) if precos_validos else None
-            preco_original = None
-            promocao = False
-            if len(precos_no_texto) >= 2 and precos_no_texto[0] and precos_no_texto[-1] and precos_no_texto[0] > precos_no_texto[-1]:
-                preco_original = precos_no_texto[0]
-                promocao = True
-            if not preco:
-                return None
-
-            avaliacoes = 0
-            nota_media = 0.0
-            for l in linhas:
-                m = re.search(r'(\d+(?:,\d+)?)\s*\((\d+)\)', l)
-                if m:
-                    nota_media = float(m.group(1).replace(',', '.'))
-                    avaliacoes = int(m.group(2))
-                    break
-
-            frete_gratis = any('grátis' in l.lower() for l in linhas)
-
-            if not vendedor:
-                m_ = _extrair_marca_titulo(titulo)
-                if m_:
-                    vendedor = m_
-
+            
+            # Extrai outros detalhes do card
             imagem = ""
             try:
-                img = card.find_element(By.TAG_NAME, "img")
-                imagem = img.get_attribute("src")
-            except Exception:
-                pass
-
-            medida_valor = normalizar_medida_valor(titulo) or (self.filtro_medida or "")
-            marca_valor = _extrair_marca_titulo(titulo) or (self.filtro_marca or "")
-            modelo_valor = extrair_modelo_titulo(titulo) or (self.filtro_modelo or "")
-
+                img_element = card.find_element(By.CSS_SELECTOR, "img[data-testid='image-product']")
+                imagem = img_element.get_attribute("src")
+            except Exception: pass
+            
             produto = ProdutoMagalu(
                 titulo=titulo,
                 preco=preco,
                 link=link,
                 data_coleta=datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"),
-                preco_original=preco_original,
-                promocao=promocao,
-                imagem=imagem,
-                avaliacoes=avaliacoes,
-                nota_media=nota_media,
-                frete_gratis=frete_gratis,
                 vendedor=vendedor,
-                medida=medida_valor,
-                marca=marca_valor,
-                modelo=modelo_valor
+                imagem=imagem,
+                medida=self.filtro_medida or "",
+                marca=self.filtro_marca or "",
+                modelo=self.filtro_modelo or ""
             )
 
             return produto if produto.is_valid() else None
 
         except Exception as e:
-            self.logger.warning(f"Erro ao extrair produto: {e}")
+            self.logger.error(f"Erro inesperado ao extrair produto: {e}")
             return None
 
     def buscar_produtos(self, termo: str, pagina: int = 1,
@@ -590,21 +561,32 @@ class ScraperMagalu:
         todos = []
         pagina = 1
         while len(todos) < max_resultados and pagina <= max_paginas:
-            self.logger.info(f"--- Buscando página {pagina} ---")
-            prods = self.buscar_produtos(
-                termo=termo,
-                pagina=pagina,
-                max_resultados=max_resultados - len(todos),
-                filtros=filtros,
-                scroll_pages=True
-            )
-            if not prods:
-                self.logger.info(f"Nenhum produto na página {pagina}. Parando.")
-                break
-            todos.extend(prods)
-            self.logger.info(f"Acumulado: {len(todos)}")
-            pagina += 1
-            delay_humano(2, 4)
+            try:
+                self.logger.info(f"--- Buscando página {pagina} ---")
+                prods = self.buscar_produtos(
+                    termo=termo,
+                    pagina=pagina,
+                    max_resultados=max_resultados - len(todos),
+                    filtros=filtros,
+                    scroll_pages=True
+                )
+                if not prods:
+                    self.logger.info(f"Nenhum produto na página {pagina}. Parando.")
+                    break
+                todos.extend(prods)
+                self.logger.info(f"Acumulado: {len(todos)}")
+                pagina += 1
+                delay_humano(2, 4)
+            except KeyboardInterrupt:
+                print("\n\n[AVISO] Interrupção detectada!")
+                resposta = input("Deseja realmente parar o scraper? (s/n): ").lower().strip()
+                if resposta == 's':
+                    self.logger.warning("Execução interrompida pelo usuário.")
+                    print("Parando o scraper...")
+                    break  
+                else:
+                    print("Continuando a raspagem...")
+                    continue
         return todos
 
     def salvar_resultados(self, produtos: List[ProdutoMagalu], termo: str, formatos: List[str] = None) -> Dict[str, str]:

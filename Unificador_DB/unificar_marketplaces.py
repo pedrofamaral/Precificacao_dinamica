@@ -14,22 +14,17 @@ from typing import List, Dict, Any, Optional
 import numpy as np
 import pandas as pd
 
-# -----------------------------
-# Regex de tamanho (abrangentes)
-# -----------------------------
 SIZE_PATTERNS = [
-    r"(?<!\d)(\d{3})\s*[/xX\-]\s*(\d{2})\s*[rRzZ][fF]?\s*-?\s*(\d{2})(?!\d)",  # 195/55R16 | 195x55R16 | 195/55ZR16
-    r"(?<!\d)(\d{3})\s*[/\-]\s*(\d{2})\s*(\d{2})(?!\d)",                        # 195/55 16
-    r"(?<!\d)(\d{3})(\d{2})[rRzZ][fF]?(\d{2})(?!\d)",                           # 19555R16 | 19555ZR16
-    r"(?<!\d)(\d{2})\s*[xX]\s*(\d{2}\.?\d*)\s*[rR]\s*(\d{2})(?!\d)",            # 31x10.5R15 (off-road)
+    r"(?<!\d)(\d{3})\s*[/xX\-]\s*(\d{2})\s*[rRzZ][fF]?\s*-?\s*(\d{2})(?!\d)",  
+    r"(?<!\d)(\d{3})\s*[/\-]\s*(\d{2})\s*(\d{2})(?!\d)",                        
+    r"(?<!\d)(\d{3})(\d{2})[rRzZ][fF]?(\d{2})(?!\d)",                           
+    r"(?<!\d)(\d{2})\s*[xX]\s*(\d{2}\.?\d*)\s*[rR]\s*(\d{2})(?!\d)",            
 ]
 SIZE_RES = [re.compile(p) for p in SIZE_PATTERNS]
 
 SIZE_RE = re.compile(r"(\d{3})\s*[/\-]\s*(\d{2,3})\s*[r]?\s*[- ]?\s*(\d{2})", re.IGNORECASE)
 
-# -----------------------------
-# Config
-# -----------------------------
+
 DEFAULT_KNOWN_BRANDS = [
     "goodyear", "pirelli", "michelin", "dunlop", "bridgestone", "continental",
     "hankook", "bfgoodrich", "firestone", "kumho", "atras", "maxxis", "formula",
@@ -66,9 +61,7 @@ COLUMN_ALIASES = {
     "source_file": ["source_file","arquivo","fonte","raw_file"],
 }
 
-# -----------------------------
-# Logging helpers
-# -----------------------------
+
 def setup_logging(path: str, level: str = "INFO") -> logging.Logger:
     logger = logging.getLogger("unify")
     logger.setLevel(getattr(logging, level, logging.INFO))

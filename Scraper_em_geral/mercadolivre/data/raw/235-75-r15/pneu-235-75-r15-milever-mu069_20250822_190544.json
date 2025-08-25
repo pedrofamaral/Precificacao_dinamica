@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Milever Mu069 Aro 15 235/75r15 105t Ht",
+    "link": "https://www.mercadolivre.com.br/pneu-milever-mu069-aro-15-23575r15-105t-ht/up/MLBU3379573268",
+    "preco": 783.15,
+    "brand": "milever",
+    "model": "mu069",
+    "size": "",
+    "speed_index": "105T",
+    "query_strict": "pneu 235 75 r15 Milever Mu069",
+    "size_norm": "235-75-r15",
+    "brand_expected": "milever",
+    "line_expected": "mu069",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "milever",
+    "data_coleta": "2025-08-22 22:03:53",
+    "preco_original": null,
+    "preco_desconto": 783.15,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

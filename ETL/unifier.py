@@ -31,7 +31,7 @@ import pandas as pd
 try:
     from .common import SETTINGS, logger, read_sql, to_sql, ensure_dirs
 except ImportError:
-    from pricing_mvp.common import SETTINGS, logger, read_sql, to_sql, ensure_dirs
+    from ETL.common import SETTINGS, logger, read_sql, to_sql, ensure_dirs
 
 # --------------------- helpers ---------------------
 

@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Bf Goodrich All Terrain T/a Ko 265/70r16 117/114s S",
+    "link": "https://www.mercadolivre.com.br/pneu-bf-goodrich-all-terrain-ta-ko-26570r16-117114s/up/MLBU2255034448",
+    "preco": 1399.0,
+    "brand": "bf goodrich",
+    "model": "all terrain t a",
+    "size": "",
+    "speed_index": "114S",
+    "query_strict": "pneu 265 70 r16 Bf Goodrich All Terrain T/A",
+    "size_norm": "265-70-r16",
+    "brand_expected": "bf goodrich",
+    "line_expected": "all terrain t/a",
+    "size_ok": true,
+    "free_ship": false,
+    "frete": null,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": false,
+    "marketplace": "mercadolivre",
+    "marca": "bf goodrich",
+    "data_coleta": "2025-08-22 14:28:10",
+    "preco_original": null,
+    "preco_desconto": 1399.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

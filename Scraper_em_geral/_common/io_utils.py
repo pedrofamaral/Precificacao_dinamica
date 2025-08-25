@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import json, csv, os
 
 def ensure_dir_for(path: str):

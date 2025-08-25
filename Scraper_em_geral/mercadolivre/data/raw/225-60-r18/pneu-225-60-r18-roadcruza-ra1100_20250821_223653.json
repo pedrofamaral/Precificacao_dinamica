@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 225/60r18 Roadcruza A/t Ra1100 104t Roadcruza 30574 Índice De Velocidade T",
+    "link": "https://www.mercadolivre.com.br/pneu-22560r18-roadcruza-at-ra1100-104t-roadcruza-30574-indice-de-velocidade-t/p/MLB33305820",
+    "preco": 805.3,
+    "brand": "roadcruza",
+    "model": "ra1100",
+    "size": "",
+    "speed_index": "104T",
+    "query_strict": "pneu 225 60 r18 Roadcruza Ra1100",
+    "size_norm": "225-60-r18",
+    "brand_expected": "roadcruza",
+    "line_expected": "ra1100",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "roadcruza",
+    "data_coleta": "2025-08-22 01:36:40",
+    "preco_original": null,
+    "preco_desconto": 805.3,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 185/70r14 88h Premium F1 Xbri",
+    "link": "https://www.mercadolivre.com.br/pneu-18570r14-88h-premium-f1-xbri/p/MLB29304459",
+    "preco": 519.74,
+    "brand": "xbri",
+    "model": "premium f1",
+    "size": "",
+    "speed_index": "88H",
+    "query_strict": "pneu 185 70 r14 Xbri Premium F1",
+    "size_norm": "185-70-r14",
+    "brand_expected": "xbri",
+    "line_expected": "premium f1",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "xbri",
+    "data_coleta": "2025-08-22 03:45:35",
+    "preco_original": null,
+    "preco_desconto": 519.74,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

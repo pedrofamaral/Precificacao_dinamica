@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 245/70r16 Kpatos Fm518 Xl 111h Kpatos 31032 Índice De Velocidade H",
+    "link": "https://www.mercadolivre.com.br/pneu-24570r16-kpatos-fm518-xl-111h-kpatos-31032-indice-de-velocidade-h/p/MLB35356673",
+    "preco": 763.2,
+    "brand": "kpatos",
+    "model": "fm518",
+    "size": "",
+    "speed_index": "111H",
+    "query_strict": "pneu 245 70 r16 Kpatos Fm518",
+    "size_norm": "245-70-r16",
+    "brand_expected": "kpatos",
+    "line_expected": "fm518",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "kpatos",
+    "data_coleta": "2025-08-22 20:16:43",
+    "preco_original": null,
+    "preco_desconto": 763.2,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

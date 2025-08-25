@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Vucanizado Formula Evo 195/55 R15 85h",
+    "link": "https://produto.mercadolivre.com.br/MLB-3973263731-pneu-vucanizado-formula-evo-19555-r15-85h-_JM?searchVariation=182879284786",
+    "preco": 110.0,
+    "brand": "formula",
+    "model": "evo",
+    "size": "",
+    "speed_index": "85H",
+    "query_strict": "pneu 195 55 r15 Formula Evo",
+    "size_norm": "195-55-r15",
+    "brand_expected": "formula",
+    "line_expected": "evo",
+    "size_ok": true,
+    "free_ship": false,
+    "frete": null,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": false,
+    "marketplace": "mercadolivre",
+    "marca": "formula",
+    "data_coleta": "2025-08-22 17:55:34",
+    "preco_original": null,
+    "preco_desconto": 110.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Dewostone Wr9086a Aro 16 265/70r16 112t Ht T",
+    "link": "https://www.mercadolivre.com.br/pneu-dewostone-wr9086a-aro-16-26570r16-112t-ht/up/MLBU3267673362",
+    "preco": 1035.0,
+    "brand": "dewostone",
+    "model": "wr9086a ht",
+    "size": "",
+    "speed_index": "112T",
+    "query_strict": "pneu 265 70 r16 Dewostone Wr9086A Ht",
+    "size_norm": "265-70-r16",
+    "brand_expected": "dewostone",
+    "line_expected": "wr9086a ht",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "dewostone",
+    "data_coleta": "2025-08-21 17:55:43",
+    "preco_original": null,
+    "preco_desconto": 1035.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

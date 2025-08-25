@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Landspider Citytraxx Aro 14 175/65r14 82h",
+    "link": "https://www.mercadolivre.com.br/pneu-landspider-citytraxx-aro-14-17565r14-82h/up/MLBU3334445849",
+    "preco": 439.12,
+    "brand": "landspider",
+    "model": "citytraxx",
+    "size": "",
+    "speed_index": "82H",
+    "query_strict": "pneu 175 65 r14 Landspider Citytraxx",
+    "size_norm": "175-65-r14",
+    "brand_expected": "landspider",
+    "line_expected": "citytraxx",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "landspider",
+    "data_coleta": "2025-08-22 20:24:50",
+    "preco_original": null,
+    "preco_desconto": 439.12,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Vucanizado Mazzini Eco603 195/55 R15 85v",
+    "link": "https://produto.mercadolivre.com.br/MLB-5352117110-pneu-vucanizado-mazzini-eco603-19555-r15-85v-_JM?searchVariation=187535386531",
+    "preco": 170.0,
+    "brand": "mazzini",
+    "model": "eco603",
+    "size": "",
+    "speed_index": "85V",
+    "query_strict": "pneu 195 55 r15 Mazzini Eco603",
+    "size_norm": "195-55-r15",
+    "brand_expected": "mazzini",
+    "line_expected": "eco603",
+    "size_ok": true,
+    "free_ship": false,
+    "frete": null,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": false,
+    "marketplace": "mercadolivre",
+    "marca": "mazzini",
+    "data_coleta": "2025-08-21 23:33:34",
+    "preco_original": null,
+    "preco_desconto": 170.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

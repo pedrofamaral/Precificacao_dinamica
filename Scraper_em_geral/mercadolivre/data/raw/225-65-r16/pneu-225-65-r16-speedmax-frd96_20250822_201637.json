@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Avulso Aro 16 225/65 R16 Frd96 Speedmax Prime 1 Und",
+    "link": "https://www.mercadolivre.com.br/pneu-avulso-aro-16-22565-r16-frd96-speedmax-prime-1-und/up/MLBU3219677839",
+    "preco": 810.0,
+    "brand": "speedmax",
+    "model": "frd96",
+    "size": "",
+    "speed_index": "",
+    "query_strict": "pneu 225 65 r16 Speedmax Frd96",
+    "size_norm": "225-65-r16",
+    "brand_expected": "speedmax",
+    "line_expected": "frd96",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "speedmax",
+    "data_coleta": "2025-08-22 23:16:25",
+    "preco_original": null,
+    "preco_desconto": 810.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]
