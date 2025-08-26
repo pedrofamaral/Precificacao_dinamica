@@ -81,8 +81,8 @@ def vincular_produtos(df_internos: pd.DataFrame, df_mercado: pd.DataFrame) -> pd
     return df_final
 
 def main():
-    ARQUIVO_PRODUTOS_INTERNOS = "Precificação_AI/Extracao_e_Insercao/data/query_products.json"
-    BANCO_DE_DADOS_ETL = "Precificação_AI/ETL/data/processed/pricing.db"
+    ARQUIVO_PRODUTOS_INTERNOS = "Precificação_AI/Extracao_e_Insercao/data/Extracao_e_Insercao/data/dados_consolidados_20250825_041845.csv"
+    BANCO_DE_DADOS_ETL = "Precificação_AI/ETL/data/processed/ETL/data/processed/market_items_clean.parquet"
     ARQUIVO_SAIDA = "Precificação_AI/data/resultado_vinculado.csv"
 
     df_internos = carregar_produtos_internos(ARQUIVO_PRODUTOS_INTERNOS)

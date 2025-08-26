@@ -6,9 +6,8 @@
 ![Python](https://img.shields.io/badge/Python-3.11-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.111.0-009688?logo=fastapi&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-<!-- Quando configurar CI, troque o link abaixo pelo badge real -->
 ![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)
-
+**CICLO PIPELINE**->Gerar_lote_e_rodar.py->Etl.ingest->pricing
 ---
 
 ## Índice <!-- omit in toc -->

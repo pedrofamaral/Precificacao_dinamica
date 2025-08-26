@@ -544,7 +544,6 @@ def main():
         print("Nenhum registro encontrado para auditar com os filtros aplicados.")
         return
 
-    # --- LOOP DE PROCESSAMENTO PRINCIPAL ---
     processed = 0
     with out_path.open("a", encoding="utf-8") as fo:
         for r in tqdm(rows_to_process, desc="Auditing", unit="item", disable=args.quiet):
