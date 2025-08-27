@@ -10,7 +10,7 @@
 **CICLO PIPELINE**->Gerar_lote_e_rodar.py->Etl.ingest->pricing
 ---
 
-## Índice <!-- omit in toc -->
+## Índice 
 - [✨ Principais funcionalidades](#✨-principais-funcionalidades)
 - [🗂️ Estrutura do projeto](#🗂️-estrutura-do-projeto)
 - [⚙️ Instalação rápida](#⚙️-instalação-rápida)
@@ -27,8 +27,9 @@
 ## ✨ Principais funcionalidades
 | Módulo | Descrição |
 | ------ | --------- |
-| **PriceMonitor** | Scraper (Selenium/Playwright) que coleta preços no Mercado Livre; HTML bruto salvo em `data/raw/`. |
-| **pricing_mvp** | Pipeline ETL → features → modelos → **API**; inclui scripts de agregação e merge de bases internas. |
+| **Scraper em geral** | Scraper (Selenium/Playwright) que coleta preços no Mercado Livre; HTML bruto salvo em `data/raw/`. |
+| **ETL** | Pipeline ETL → features → modelos → **API**; inclui scripts de agregação e merge de bases internas. |
+| **Extracao e Insercao**|Fazer a busca no BD da empresa, gera lote e busca nos scrapers.|
 | **src/pricing_ai** | Pacote reutilizável com loaders, transformações e métricas customizadas. |
 | **API FastAPI** | `POST /suggest-price` devolve preço ótimo, demanda esperada, elasticidade e *confidence interval*. |
 | **Discord bot** (opcional) | Envia alertas de pricing em tempo real para um canal do Discord. |

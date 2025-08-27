@@ -135,7 +135,7 @@ def ingest_files(directory: Path) -> List[Dict[str, Any]]:
         if not p.is_file() or p.suffix.lower() not in {".csv", ".json", ".jsonl"}:
             continue
 
-        logger.info("� Lendo arquivo: %s", p)
+        logger.info("Lendo arquivo: %s", p)
         meta = {"query": p.name}
         try:
             if p.suffix.lower() == ".csv":
