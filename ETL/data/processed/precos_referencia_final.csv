@@ -1,0 +1,434 @@
+cod_prod;product_title;final_ref_price_mean;total_competitors;num_marketplaces
+3153;Pneu Onix 185/70r14 88t F700 Firestone + Bico Valvula Tr414;582,64;9,0;2
+3212;Pneu 195/65r15 91h Radial Tubeless F700 Firestone;685,32;6,0;1
+3240;Pneu Aro 15” Bridgestone 205/70R15 96T - Dueler A/T D693;757,48;6,0;1
+3297;Pneu Michelin Aro 16 Agilis 3 - 225/75 R16 C;1434,37;9,0;3
+3749;Pneu Moto Metzeler Aro 17 Cruisetec 130/80B17 65H TL - Dianteiro;1605,89;100,0;1
+5196;Pneu Goodyear Aro 15 Wrangler Fortitude HT 205/65R15 94H;706,71;3,0;2
+5197;Pneu Michelin Aro 15 Energy Xm2+ 195/60 R15;656,68;42,0;3
+5956;Pneu Bridgestone Aro 17 Dueler H/t 684 Ii 265/65r17 112s;1296,4;21,0;3
+7195;Pneu Steelmark Goodyear Aro 22,5 AGS Direcional Liso 295/80R22.5;3733,8;3,0;1
+7639;Pneu Pirelli Aro 14 Chrono 175/70R14C 88T XL;401,64;20,0;2
+8101;Pneu Speedmax Aro 14 VT Max 175/65R14 82T;349,63;16,0;2
+10753;Pneu 225/65r16 G32 Cargo 112r Goodyear;1368,24;24,0;3
+10860;Pneu Dunlop Aro 15 205/70r15 96t Grandtrek At5 T;740,41;22,0;2
+11105;Pneu Speedmax Aro 17.5 Townmax A 215/75R17.5 135/133J 18 Lonas;820,77;11,0;2
+12477;Pneu Goodyear 195 65 R15 Efficientgrip Performance 91 H;659,55;57,0;3
+15347;Pneu Pirelli Aro 17 Powergy 215/50R17 91V;679,9;4,0;1
+15407;Pneu Pirelli Aro 16 Scorpion HT 245/70R16 113T;1063,33;24,0;2
+16457;Pneu Dunlop 185/60 R14 82H SP LM704 JP EV;613,53;11,0;2
+16821;Pneu Pirelli Aro 20 Scorpion STR 245/50R20 102H;1970,23;11,0;3
+17111;Pneu Dunlop 185/55R16 83V ENASAVE EC300 MV;721,38;36,0;2
+17319;Pneu Firestone Aro 15 Destination H/T 235/75R15 109T;816,28;12,0;2
+18650;Pneu Falken 225/70R15C 112R R51;1117,53;6,0;2
+18871;Pneu Bridgestone Aro 14 Dueler A/t Revo 2 175/70r14 88h;605,39;15,0;3
+18885;Pneu Continental Aro 16 Powercontact 2 205/55r16 91v;548,74;44,0;3
+19455;Pneu Michelin Aro 15 Agilis 3 205/70R15C 106/104R;958,44;3,0;3
+19500;Pneu Speedmax Prime Aro 20 FRD26 225/35R20 90W;748,39;2,0;2
+19553;Pneu Speedmax Aro 14 ST Max 185/65R14 85T;400,25;16,0;3
+19887;Pneu Goodyear 205 60 R15 Efficientgrip Performance 91 H H;656,15;64,0;3
+19888;Pneu 215/65r16 Goodyear Wrangler Fortitude Ht 102h Aro 16;849,21;13,0;2
+20539;Pneu Kelly By Goodyear Aro 15 Edge Sport 2 195/60r15 88v V;626,18;32,0;2
+20751;Pneu Speedmax Aro 17.5 Townmax A 215/75R17.5 135/133J 18 Lonas;829,9;9,0;2
+21264;Pneu Goodyear Aro 17 EfficientGrip Performance 215/50R17 91V;585,71;14,0;2
+21310;Pneu 175/65R14 Firestone F700 82T;495,18;18,0;2
+22137;Pneu Aplus Aro 17 235/60r17 A919 102h;793,58;23,0;3
+22270;Pneu 195/50 R16 Dunlop Direzza Dz102 84v;682,78;10,0;2
+22852;Pneu Aro 17 Pirelli Scorpion ATR 225/65 R17 106H XL;1267,55;15,0;3
+23142;Pneu Saveiro/Corsa 195/40-17 Zmax Zealion-85;546,05;10,0;1
+23403;Pneu 205/40R17 Goodyear Kelly Edge Sport 2 84W Aro 17;540,02;1,0;1
+23957;Pneu Bridgestone Aro 15 Ecopia Ep150 195/55r15 85h;627,94;49,0;2
+23968;Pneu Carro 175/80r14 Kelly Edge Suv 2 88t Goodyear;741,09;14,0;2
+24119;Pneu Aro 14 Goodyear Direction Touring 2 175/65r14 86h - 2un H;537,4;5,0;2
+24289;Pneu Aplus Aro 16 235/60r16 A609 100h;673,35;24,0;3
+24344;Pneu Speedmax Prime Aro 18 FRD26 225/45R18 95W;1257,59;17,0;1
+24500;Pneu Goodyear Aro 18 Eagle LS2 235/45R18 94V;1169,76;18,0;2
+24580;Pneu Aro 17 Michelin 235/55 R17 103Y XL Primacy 4+;1426,06;1,0;1
+25765;Pneu Pirelli Aro 17 Powergy 215/45R17 91V XL;630,34;5,0;2
+25770;Pneu Aplus Aro 16 265/70r16 A919 112h;962,86;29,0;3
+25982;Pneu Dunlop Aro 17,5 215/75R17,5 SP320 126/124M;1659,3;1,0;1
+26009;Pneu Speedmax Prime Aro 17 FRD26 205/45R17 88W;874,9;12,0;1
+26061;Pneu Continental Aro 20 SportContact 6 245/35R20 (95Y) XL;738,5;150,0;2
+26085;Pneu Westlake Aro 22.5 CR976A 295/80R22.5 152/149M 18 Lonas;2384,06;37,0;2
+26256;Pneu Kumho Aro 19 Crugen Premium Kl33 225/55r19 99h;985,08;12,0;3
+26465;Pneu Michelin Aro 16 205/55R16 Primacy 4 91V;649,81;10,0;1
+26475;Pneu Pirelli Aro 14 P400 Evo 175/70r14 84t;513,35;27,0;3
+26627;Pneu Speedmax Aro 18 Racemax 225/40R18 88W Semi Slick;1026,03;25,0;2
+26686;Pneu Dunlop Aro 14 175/65r14 Touring Sp R1 Ril 82t T;491,98;61,0;2
+26852;Pneu Goodyear Aro 18 Eagle LS2 235/45R18 94V;1045,1;9,0;2
+27073;Pneu Goodyear Aro 16 225/75r16 Cargo Marathon 2 118/116r R;1370,67;11,0;3
+27147;Pneu Dunlop 185/70R14 88T SP Touring R1L;554,43;42,0;2
+27196;Pneu Farroad Aro 18 215/40R18 89W FRD26;907,5;10,0;2
+27229;Pneu Dunlop 215/60 R17 100H GRANDTREK AT5;824,32;43,0;2
+27232;Pneu Goodyear Aro 15 Cargo Marathon 2 225/70r15 112/110r A1;1035,63;9,0;3
+27235;Pneu Goodyear 195 55 R15 85h Tl Efficientgrip Performace;641,36;37,0;3
+27237;Pneu 225/55r18 Goodyear Efficientgrip Suv 98v Aro 18 Ix35;927,64;28,0;3
+27238;Pneu Goodyear Aro 19 EfficientGrip SUV 255/55R19 111V XL;1529,39;13,0;3
+27243;Pneu 215/55r17 Goodyear Efficientgrip Suv 94v Aro 17;742,73;30,0;3
+27454;Pneu Dunlop 185/70R13 86T SP Touring R1L;502,9;33,0;2
+27494;Pneu Dunlop 175/70r14 88t Sp Touring R1;533,47;68,0;2
+27495;Pneu Dunlop Aro 14 185/65r14 Sp Touring R1 86t T;513,04;46,0;2
+27497;Pneu Michelin 185/60 R15 88h Xl Tl Primacy 4;722,66;1,0;1
+27542;Pneu Kumho Aro 17 Crugen HP71 235/60R17 102V;794,89;15,0;2
+27722;Pneu 205/70r15 Goodyear Cargo Marathon 2 106/104r Aro 15;905,57;9,0;3
+27774;Pneu Firestone Aro 16 Destination H/T 235/70R16 106T;815,59;21,0;3
+27789;Pneu Delinte Aro 16 225/75 R16 115/112s Dx-10 A/t Bandit Lt 10pr;907,19;35,0;3
+27978;Pneu Continental 215/60 R17 96h Conticrosscontact Lx2;832,18;12,0;3
+28007;Pneu Dunlop 175/70r13 82t Sp Touring R1;442,46;76,0;2
+28008;Pneu Dunlop 165/70R13 79T SP Touring R1L;453,44;34,0;2
+28049;Pneu Michelin 225/45 R17 94w Xl Tl Primacy 4+;757,61;1,0;1
+28242;Pneu Pirelli Aro 16 P400 Evo 205/55R16 91V;511,93;34,0;3
+28666;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;593,29;19,0;3
+28684;Pneu Dunlop Aro 22,5 275/80R22,5 SP320 149/146L;3223,38;1,0;1
+28822;Pneu Pirelli Aro 15 P400 Evo 195/55r15 85h;535,22;34,0;3
+30451;Pneu Goodyear Aro 13 Assurance Maxlife 175/70R13 82T;394,58;7,0;2
+30456;Pneu Kelly by Goodyear Aro 14 Edge Touring 2 175/65R14 86H XL;374,05;5,0;2
+30535;Pneu Speedmax Aro 14 VT Max 185/70R14 88T;463,41;19,0;3
+30544;Pneu Bridgestone Aro 17 Turanza T005 * 225/45R17 94Y XL;878,63;5,0;2
+30616;Pneu Vucanizado Formula Evo 195/55 R15 85h;110,0;1,0;1
+30832;Pneu Goodyear Aro 17 Wrangler Fortitude HT 245/65R17 111H XL;1146,29;19,0;2
+30968;Pneu Continental 225/75r16 Vancontact Ap 10 Lonas 118/116r R;1427,78;8,0;2
+31104;Pneu Iris Aro 16 Sefar 215/55R16 97V;545,31;11,0;2
+31117;Pneu Aro 16 205/55r16 Xbri Ecology 91 V Novo Com Garantia;557,97;29,0;3
+31552;Pneu Speedmax Aro 17 Drivemax C10 205/40R17 84W XL;429,66;8,0;2
+31764;Pneu Goodyear Aro 14 Assurance Maxlife 175/70R14 88T XL;517,22;14,0;2
+31810;Pneu Bridgestone Aro 18 Turanza T005A 235/45R18 94W;1441,39;2,0;2
+31994;Pneu Michelin Aro 15 Primacy 4 195/65R15 91H;765,46;4,0;1
+32171;Pneu 195/50 R16 Kelly Edge Sport 84v Goodyear;650,86;19,0;2
+32219;Pneu Speedmax Prime Aro 15 FRD96 205/70R15C 106/104S;696,12;100,0;1
+32422;Pneu Comforser Aro 15 195/60R15 88H CF510;443,7;17,0;3
+32448;Pneu Comforser Aro 15 195/55R15 85V CF510;448,03;19,0;3
+32522;Pneu 900-20 140/137 14 Lonas At59 Anteo;2074,43;3,0;1
+32527;Pneu Firestone Aro 17 Destination H/t 265/65r17 112h;1126,14;17,0;3
+32665;Pneu Goodyear Aro 19 EfficientGrip SUV 235/55R19 105V XL;1448,78;6,0;3
+32851;Pneu Dunlop 195/50 R15 82V DZ102 EV;574,85;9,0;2
+32859;Pneu Iris Aro 16 Sefar 215/55R16 97V;609,36;10,0;2
+32874;Pneu Dunlop 195/55R16 91V XL SP SPORT FM800;726,71;15,0;2
+33074;Pneu Bfgoodrich 265/60r18 114s All-terrain T/a Ko3 Lrd Go;2119,18;7,0;3
+33115;Pneu Dunlop Aro 15 195/60r15 Sp Sport Fm800 88v;593,62;35,0;2
+33117;Pneu Dunlop Aro 17 225/50r17 Sp Sport Fm800 94w;754,15;8,0;1
+33170;Pneu Dunlop Aro 15 195/55r15 Sp Sport Fm800 85v V;614,19;18,0;2
+33171;Pneu Dunlop 205/60 R15 91V SP SPORT FM800;701,43;16,0;2
+33194;Pneu Goodyear Aro 14 Assurance Maxlife 185/70R14 88H;535,87;8,0;2
+33336;Pneu Westlake Aro 22.5 275/80r22.5 Cr976a 149/146m;1922,05;22,0;3
+33372;Pneu Goodyear Aro 13 Assurance Maxlife 165/70R13 83T XL;394,5;7,0;2
+33374;Pneu Dunlop 195/65 R15 91H SP SPORT FM800;622,29;19,0;2
+33378;Pneu Bridgestone Aro 17 205/55r17 Turanza T005 91v;1018,71;74,0;3
+33412;Pneu Michelin 215/50 R17 95w Xl Tl Primacy 4+;891,36;1,0;1
+33621;Pneu Pirelli Scorpion HT 265/65 R17 HT Aro 17 112T;1128,4;51,0;2
+33696;Pneu Pirelli Scorpion HT 265/65 R17 HT Aro 17 112T;1124,03;51,0;2
+33803;Pneu Dunlop 185/65R15 88H SP SPORT FM800;599,86;36,0;2
+34125;Pneu Ceat Aro 22.5 Winmile X3-R 295/80R22.5 154/149M 18 Lonas;2483,33;38,0;2
+34170;Pneu Goodyear Aro 17 Wrangler Fortitude HT 245/65R17 111H XL;1204,19;20,0;3
+34236;Pneu Goodyear Aro 16 Wrangler Fortitude Ht 235/60r16 100h;926,15;11,0;2
+34338;Pneu 235/75R17.5 Firestone FS558 132/130L - LISO/TRAÇÃO 12 LONAS;1907,46;2,0;1
+34373;Pneu Farroad Aro 18 FRD26 235/40R18 95W;850,13;10,0;2
+34374;Pneu Barum by Continental Aro 15 Bravuris 5HM 175/65R15 84T;391,58;10,0;2
+34388;Pneu Speedmax Prime Aro 17 Pangea All-Terrain 255/65R17 114H - Letras Brancas;1491,48;10,0;2
+34564;Pneu Goodyear Aro 14 Assurance Maxlife 165/70R14 85T XL;459,37;5,0;2
+34724;Pneu Dunlop Aro 15 185/60r15 Sp Sport Fm800 88h H;635,1;27,0;2
+34725;Pneu Dunlop 175/70R14 88T GRANDTREK AT5 XL;658,04;16,0;2
+34726;Pneu aro 17 225/45 r17 dunlop sp sport fm800 xl dev 94w;643,44;2,0;1
+34808;Pneu Dunlop Aro 17 215/60r17 Enasave Ec300 96h;814,12;27,0;2
+34820;Pneu Dunlop Aro 16 205/55r16 Sp Sport Fm800 91v V;662,68;20,0;2
+35009;Pneu Continental Aro 16 Powercontact 2 195/55r16 87h;620,55;60,0;3
+35089;Pneu Speedmax Aro 17 Controlmax CP11 215/45R17 91W XL;575,48;25,0;2
+35247;Pneu Goodyear Aro 17 Efficientgrip Suv 215/60r17 96h;890,82;49,0;3
+35437;Pneu Michelin Aro 17 Primacy 4 215/55R17 94V;1189,75;10,0;1
+35475;Pneu Speedmax Prime Aro 16 FRD96 225/65R16C 112/110T;897,64;15,0;2
+35667;Pneu 205/70r15 Goodyear Wrangler Fortitude Ht 96t;796,77;11,0;3
+35709;Pneu Aro 16 Michelin 225/65 R16 Tl 112/110r Agilis 3 Dt;1571,88;7,0;3
+35869;Pneu Michelin Aro 18 LTX Force 225/60R18 104H XL TL;1259,9;1,0;1
+35898;Pneu Goodyear Aro 18 Wrangler Fortitude HT 235/60R18 103V;1200,6;8,0;3
+35931;Pneu Continental Aro 14 Powercontact 2 185/70r14 88h;543,09;40,0;3
+35952;Pneu Speedmax Aro 17.5 Townmax A 215/75R17.5 135/133J 18 Lonas;829,07;8,0;1
+35966;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;779,72;15,0;1
+36000;Pneu Goodyear Aro 16 Eagle Sport 2 205/55R16 91V;520,36;21,0;3
+36016;Pneu Dunlop 265/70r16 112t Grandtrek At5;1313,31;13,0;2
+36025;Pneu 195/55r15 Goodyear Eagle Sport 2 85h Aro 15;586,73;36,0;3
+36182;Pneu Michelin Aro 15 LTX Force 205/65R15 94T;820,69;17,0;3
+36249;Pneu Bridgestone Aro 17 Dueler H/t 684 Iii 245/65r17 111t Xl;1466,26;10,0;3
+36336;Pneu Aro 17 Michelin 205/55 R17 95V XL TL PRIMACY 4+;913,82;1,0;1
+36529;Pneu Barum By Continental Aro 14 Bravuris 5hm 185/60r14 82h H;406,41;7,0;3
+36536;Pneu 185/65R14 Barum Bravuris 5HM 86H by Continental Aro 14;443,7;15,0;3
+36587;Pneu Firestone Aro 16 Destination H/T 245/70R16 107H;1053,44;12,0;2
+36629;Pneu Continental Aro 15 Powercontact 2 195/65r15 91h H;604,46;46,0;3
+36726;Pneu Barum by Continental Aro 17 Bravuris 4X4 265/65R17 112T;858,66;3,0;2
+36981;Pneu Carro 185/65r15 88h Eagle Sport 2 Goodyear Aro 15;611,17;43,0;3
+37048;Pneu Goodyear Aro 15 Eagle Sport 2 185/60r15 88h Xl;577,09;36,0;3
+37195;Pneu 225/50r17 Eagle Sport 2 94v Goodyear;754,8;30,0;3
+37198;Pneu Carro 185/55r16 Eagle Sport 2 83v Goodyear Aro 16;690,73;22,0;3
+37209;Pneu Pirelli Aro 18 Scorpion HT 265/60R18 110H;915,34;16,0;2
+37226;Pneu Dunlop 225/45 R17 94W DZ102 XL JP EV;739,39;29,0;1
+37365;Pneu Aro 15 195/65r15 Eagle Sport 2 91v Goodyear Carro;612,76;28,0;3
+37407;Pneu 205/60r16 92h Wrangler Territory Ht Goodyear;817,85;32,0;3
+37586;Pneu Michelin Aro 20 XLT A/S 2 265/50R20 111H XL;1520,35;3,0;3
+37632;Pneu Kumho Aro 17 Ecsta HS52 205/55R17 95V XL;653,8;13,0;3
+37657;Pneu Speedmax Aro 18 W01 235/60R18 103T;932,87;33,0;3
+37661;Pneu Speedmax Aro 225/50r17 98w Spm305 Sc;758,94;61,0;3
+37662;Pneu 265/70r16 firestone destination atx;1199,99;35,0;3
+37670;Pneu Xbri Aro 14 175/80 R14 Forza E1 A/T !;461,64;13,0;2
+37680;Pneu Michelin 185 65 R15 Energy Xm2+ 88 H Renault Sandero 20;705,04;56,0;2
+37734;Pneu Continental 195/60 R15 88h Power Contact 2 H;561,67;18,0;3
+37851;Pneu Tornel Aro 13 America Selecta Plus 185/70R13 85T;398,05;6,0;2
+37864;Pneu Barum by Continental Aro 16 Bravuris AT 265/70R16 112T;980,96;32,0;2
+37888;Pneu Dunlop 235/75 R15 104/101S GRANDTREK AT5 DEV;1009,8;9,0;1
+37907;Pneu Dunlop 265/60 R18 110H GRANDTREK AT5 DEV;1435,58;7,0;2
+37925;Pneu 205 55r 17 Original Goodyear Wrangler Territory 91v V;965,44;77,0;3
+37978;Pneu Speedmax Prime Aro 18 FRD26 225/45R18 95W;1196,79;33,0;2
+38026;Pneu Dunlop 195/50 R15 82V DZ102 EV;451,96;24,0;2
+38167;Pneu Continental Aro 17 ContiSportContact 3 * 205/45R17 84W Run Flat;1414,82;3,0;2
+38375;Pneu Speedmax Aro 20 265/50r20 Dsu02 111w Xl W;1198,6;38,0;3
+38611;Pneu Michelin Aro 18 Primacy 4 225/55R18 98V;1056,39;4,0;1
+38763;Pneu Aro 17 Michelin 205/50 R17 93W XL TL Primacy 4+;1042,31;1,0;1
+38766;Pneu Kumho Aro 19 Crugen HP71 235/50R19 99H;1187,46;10,0;3
+38767;Pneu Speedmax Aro 18 Racemax 225/40R18 88W Semi Slick;1036,48;27,0;2
+38791;Pneu 195/55r16 Goodyear Eagle Sport 2 91v Aro 16;697,05;13,0;3
+38993;Pneu 185/70R14 Barum Bravuris 5HM 88H By Continental Aro 14;448,55;8,0;3
+39213;Pneu Michelin Aro 17 LTX Force 225/65R17 106H XL TL;894,32;12,0;3
+39636;Pneu Dunlop 225 70 R17 Grandtrek At20 108 106 S S;992,58;11,0;2
+39860;Pneu 255/65 R17 Hankook Dynapro AT2 RF11 110T;1189,47;1,0;1
+39887;Pneu Kumho Aro 14 Ecowing ES31 185/70R14 88T;353,44;4,0;2
+39933;Pneu Hankook Aro 17 Dynapro At2 Rf11 265/65r17 112t Wl;1396,22;4,0;2
+39938;Pneu Michelin Aro 18 Ltx Force 265/60r18 110t;1510,23;11,0;2
+39967;Pneu SpeedMax Aro 19 235/40R19 96W HU901;1440,37;5,0;2
+40025;Pneu Michelin Aro 18 Ltx Force 225/60r18 104h Xl Tl;1481,58;16,0;2
+40059;Pneu Speedmax Prime Aro 16 FRD96 225/65R16C 112/110T;859,64;15,0;2
+40093;Pneu Michelin Aro 19 Pilot Sport 5 235/45R19 (99Y) XL;1389,9;2,0;1
+40176;Pneu Speedmax Aro 17.5 Townmax A 215/75R17.5 135/133J 18 Lonas;799,76;17,0;2
+40229;Pneu Aro 16 Michelin 205/60 R16 92V TL Primacy 4+;884,65;1,0;1
+40283;Pneu Goodyear Aro 16 Wrangler Workhorse AT 235/70R16 109T;1143,18;15,0;3
+40532;Pneu SUMITOMO 175/65R14 82T BC20;469,5;19,0;2
+40602;Pneu Pirelli Powergy 225/45 R17 Aro 17 91W;732,26;8,0;2
+40706;Pneu Michelin XLT A/S LT 265/70R16 112 T;1654,0;11,0;3
+40757;Pneu Hankook Aro 17 265/65 R17 XL 112T Dynapro A/T2 Xtreme RF12;1308,22;4,0;1
+40765;Pneu Dunlop 205/55r16 91h Enasave Ec300;610,29;47,0;2
+40774;Pneu Michelin Aro 17 Primacy 4 215/60R17 96H TL;1070,11;3,0;1
+41068;Pneu Pirelli Aro 17 Scorpion Seal Inside 215/55r17 94v;780,81;18,0;3
+41274;Pneu Toro 225/60r17 Wrangler Ht Fortitude 103h Goodyear;1139,17;28,0;3
+41354;Pneu Dunlop 185/60 R14 82H SP LM704 JP EV;395,07;40,0;3
+41383;Pneu Aro 15” 205/65R15 Goodyear 94T Direction 2 SUV;559,9;1,0;1
+41389;Pneu 205 55 R16 91V D1D1;511,93;49,0;2
+41403;Pneu Speedmax Aro 14 VT Max 175/65R14 82T;349,63;16,0;2
+41459;Pneu Goodyear Aro 18 EfficientGrip SUV 235/50R18 97V;1224,38;8,0;2
+41465;Pneu 215 55 R18 Wrangler Territory Ht Goodyear 95v V;1004,4;81,0;3
+41483;Pneu Nexen 275/70r18 Roadian At Pro Ra8 125/122r Dodge Ram;2199,5;2,0;1
+41486;Pneu Goodyear Aro 16 Wrangler Workhorse AT 215/80R16 107S;1159,08;9,0;3
+41568;Pneu Xbri Aro 18 265/65r18 122/119r 10pr Brutus T/a;1504,18;12,0;2
+41748;Pneu Itaro Aro 13 Comformax 175/75R13 84T;377,55;14,0;3
+41872;Pneu Pirelli Aro 18 Scorpion 225/60r18 104h Xl;1544,59;64,0;3
+42123;Pneu Goodyear Aro 17 EfficientGrip Performance 215/50R17 91V;608,58;13,0;2
+42157;Pneu Speedmax Prime Aro 16 Pangea All-Terrain 205/55R16 94H XL;482,54;19,0;3
+42165;Pneu Aro 17 205/55r17 Aptany Ra305 95w Xl;634,69;54,0;3
+42225;Pneu Firestone Aro 15 Destination H/T 255/75R15 110S;1209,65;7,0;2
+42287;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;646,87;27,0;3
+42322;Pneu Farroad Aro 18 FRD26 215/35R18 84W;484,04;7,0;3
+42426;Pneu Royal Black Royal Mile P 205/55r16 91 V;499,8;19,0;3
+42462;Pneu Xbri Aro 13 175/75r13 84t Forza A/t 2;355,75;9,0;3
+42508;Pneu Aro 14 175/80 R14 88t Dewostone Wr9001 At;514,21;10,0;3
+42577;Pneu Michelin Aro 16 Primacy 4 195/55R16 87V TL;820,91;3,0;1
+42652;Pneu Lanvigator Aro 16 235/60r16 Comfort Ii 100h H;695,5;21,0;3
+42656;Pneu dunlop 265/70r16 112q grandtrek mt2;1754,44;6,0;1
+42990;Pneu 175/70r14 Goodyear Kelly Edge Touring 2 88t;525,74;20,0;2
+43054;Pneu Compasal aro 16 205/60r16 Blazer HP 92V;590,55;25,0;3
+43067;Pneu Dunlop 205/60R16 92H AT5;916,04;7,0;1
+43336;Pneu Levorin 100/80-17 M/c 58s Matrix Sport Ii Tl + Válvula;440,92;12,0;3
+43353;Pneu Kelly By Goodyear 165/70r13 83t Edge Touring 2 Xl T;374,06;17,0;3
+43354;Pneu Goodyear Kelly Edge Touring 2 P 175/70R13 82 T;403,81;22,0;2
+43429;Pneu Iris Aro 16 Sefar 215/55R16 97V;566,36;9,0;2
+43455;Pneu Kelly Edge Touring 2 Goodyear Carro 185/65r14 86 H;536,08;18,0;2
+43503;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;668,86;18,0;3
+43532;Pneu Pirelli Aro 16 Scorpion 205/60R16 92H;665,44;54,0;2
+43536;Pneu General Tire by Continental Aro 16 Grabber AT3 215/65R16 98T;709,39;14,0;2
+43590;Pneu Pirelli Aro 17 Powergy 215/45R17 91V XL;564,9;2,0;1
+43695;Pneu Itaro Aro 15 MH01 185/60R15 88H XL;458,4;40,0;2
+43699;Pneu Speedmax Aro 16 H12 185/55R16 83V;466,22;8,0;3
+43708;Pneu Farroad Aro 14 FRD16 195/70R14 91H;454,42;8,0;2
+43736;Pneu Speedmax Aro 19 DSU02 225/45R19 96W;1366,0;9,0;2
+43749;Pneu Aro 17 - Michelin Ltx Force 225/65 R17 106 H;1237,67;14,0;3
+43758;Pneu Aro 17 Michelin 225/50 R17 98Y Xl Tl Primacy 4+ DT;991,17;1,0;1
+43759;Pneu Michelin 265/60 R18 114h Ltx Trail St Mi On 50/50 Off H;1357,54;10,0;2
+43808;Pneu Kumho Aro 19 Crugen HP91 235/45R19 95W;1374,47;9,0;1
+43810;Pneu Michelin Aro 19 Pilot Sport 5 235/45R19 (99Y) XL;1330,82;3,0;2
+43859;Pneu Dunlop 205/45 R17 88W DZ102 XL JP EV;816,6;30,0;2
+43982;Pneu Speedmax Aro 17 W01 225/60R17 99T;1022,75;20,0;2
+43998;Pneu Carro Goodyear Kelly Edge Suv 2 215/80r16 107s;1221,88;12,0;1
+44043;Pneu Goodyear 175/65 R14 Kelly Edge Touring 2 86h Ht;440,04;26,0;2
+44072;Pneu Aro 18 Michelin 235/55 R18 104v Xl Primacy 4+;1423,69;1,0;1
+44138;Pneu Speedmax Aro 14 ST Max 185/65R14 85T;359,9;12,0;1
+44183;Pneu Pirelli Aro 16 Carrier 215/65R16C 109T;737,8;36,0;2
+44238;Pneu SUMITOMO 185/65R14 86T BC20;539,38;6,0;1
+44269;Pneu Continental Aro 14 VancoContact 2 175/70R14C 95/93T 6 Lonas;531,15;7,0;2
+44329;Pneu Goodyear Aro 14 185/65r14 Assurance Maxlife 86h;598,47;26,0;3
+44562;Pneu 195 60 R15 88h Bc20 Sumitomo Gol Marea Punto Parati Corolla Vectra 415126;459,91;1,0;1
+44605;Pneu Delinte Aro 18 225/45R18 DS7 Sport 95Y;1304,01;47,0;2
+44629;Pneu Pirelli Aro 16 Cinturato P7 Seal Inside 195/55R16 91V XL;683,52;33,0;2
+44683;Pneu Speedmax Aro 14 MH01 185/70R14 88H;423,55;36,0;2
+44684;Pneu doublestar 215/75r17,5 16pr 126/124l tl dsrs01;943,47;15,0;3
+44817;Pneu Advance Aro 17.5 GL283A 235/75R17.5 143/141L TL 16 Lonas;967,4;8,0;1
+44822;Pneu Roadcruza Aro 18 235/60r18 Ra1100 103t T;1067,05;17,0;3
+44854;Pneu Dunlop 215/60 R17 100H GRANDTREK AT5;978,62;8,0;1
+44925;Pneu Pirelli Scorpion HT 265/65 R17 HT Aro 17 112T;1127,43;52,0;2
+44930;Pneu Itaro Aro 17 Altermax A/T 265/65R17 112T - Letras Brancas;1086,49;16,0;2
+45003;Pneu Falken 205/70 R15 8PR 106R R51;631,65;51,0;2
+45005;Pneu Dunlop 195/50 R15 82V DZ102 EV;451,77;22,0;2
+45018;Pneu Speedmax Aro 16 Drivemax Van V10 215/75R16C 113/111S 8 Lonas;666,52;9,0;2
+45019;Pneu Michelin Aro 17 X LT A/S 265/70R17 121/118R TL 10 Lonas - Letra Branca;1268,05;10,0;3
+45073;Pneu Michelin Aro 16 Ltx Force 215/65r16 102h Xl;1038,31;57,0;3
+45190;Pneu Bridgestone Aro 18 Dueler H/T 684 II Ecopia 265/60R18 110T;1073,68;17,0;2
+45201;Pneu Speedmax Aro 16 H12 185/55R16 83V;530,44;11,0;3
+45208;Pneu Speedmax Aro 18 DSU02 215/40R18 89Y;990,84;6,0;2
+45389;Pneu Speedmax Prime Aro 15 FRD16 185/65R15 88H;478,26;16,0;2
+45390;Pneu Pirelli Aro 16 Powergy 195/55R16 87V;589,78;14,0;2
+45477;Pneu Dunlop Aro 16 185/55r16 Sp Sport Fm800 83v;698,86;26,0;2
+45478;Pneu Dunlop Aro 17 205/55r17 Sp Sport Fm800 91v V;1077,97;8,0;2
+45516;Pneu 205/65r16 Firestone Destination Le3 95h Aro 16;699,12;18,0;3
+45529;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;491,42;46,0;2
+45533;Pneu Speedmax Aro 17 Controlmax CP11 215/45R17 91W XL;571,52;27,0;2
+45534;Pneu Speedmax Prime Aro 16 Pangea All-Terrain 205/55R16 94H XL;527,21;17,0;1
+45783;Pneu Dunlop 225/45 R17 94W DZ102 XL JP EV;666,66;68,0;2
+45831;Pneu 225/60r18 Goodyear Wrangler Fortitude Ht 104h H;1011,66;10,0;3
+45839;Pneu Wrangler Territory Ht Goodyear Carro 225/50r18 95 V;1028,81;15,0;3
+45843;Pneu Michelin Aro 16 LTX Force 265/70R16 112T;1069,01;20,0;2
+45848;Pneu Pirelli Aro 17 Scorpion ATR (KS) 265/65R17 112S;1097,22;19,0;2
+45879;Pneu Kumho Aro 19 Crugen HP91 235/45R19 95W;1528,82;16,0;2
+46033;Pneu Dunlop Aro 18 255/60R18 Grandtrek AT-25 112T;1438,32;2,0;1
+46043;Pneu Pirelli Aro 18 Scorpion HT 225/60R18 104H XL;949,82;14,0;2
+46045;Pneu 265/70r16 Bf Roadcruza 111t Ra1100 Novo Com Garantia;1246,99;30,0;3
+46047;Pneu Aro 14 Roadcruza 175/70 R14 Tl 98/96s Ra1100;527,69;33,0;3
+46086;Pneu Speedmax Prime Aro 16 Pangea All-Terrain 285/75R16 126/123R 10 Lonas - Letras Brancas;1644,28;10,0;1
+46091;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;749,72;15,0;1
+46092;Pneu Falken 205/70 R15 8PR 106R R51;699,44;52,0;3
+46126;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;587,86;27,0;3
+46127;Pneu 235/75r15 Roadcruza Ra1100 105t Roadcruza 30154;1044,07;21,0;3
+46128;Pneu Aro 15 Roadcruza 205/70 R15 96t Ra1100;630,69;26,0;3
+46209;Pneu Pirelli Aro 16 Carrier 215/65R16C 109T;818,91;45,0;3
+46224;Pneu Aro 14 185/70r14 Kelly By Edge Touring 2 88h Ht H;594,09;22,0;1
+46226;Pneu Westlake Aro 22.5 CR976A 295/80R22.5 152/149M 18 Lonas;2342,62;36,0;2
+46238;Pneu Speedmax Aro 22.5 S3 275/80R22.5 147/144M 16 Lonas;1857,04;17,0;1
+46262;Pneu Speedmax Aro 14 ST Max 185/65R14 85T;404,9;15,0;2
+46263;Pneu Farroad Aro 18 FRD26 215/35R18 84W;430,04;5,0;2
+46284;Pneu Aptany Aro 16 265/70r16 Ru025 112t;1022,45;34,0;3
+46286;Pneu Aptany Aro 17 225/50r17 Ra301 98w W;701,51;53,0;3
+46291;Pneu Speedmax Aro 15 Hh301 195/55r15 85v;378,79;12,0;2
+46348;Pneu Bridgestone Aro 17 Dueler H/P Sport AO 235/55R17 99V;684,59;8,0;2
+46467;Pneu Michelin Aro 15 Energy XM2+ 205/60R15 91V;971,52;19,0;3
+46476;Pneu Speedmax Prime Aro 18 FRD26 225/45R18 95W;1257,59;17,0;1
+46479;Pneu Pirelli Aro 16 Scorpion HT 245/70R16 113T;791,77;17,0;3
+46482;Pneu Firemax Aro 18 235/50R18 101W XL FM601;1216,59;20,0;2
+46483;Pneu Speedmax Prime Aro 16 Pangea All-Terrain 265/75R16 123/120S 10 Lonas - Letras Brancas;1491,01;13,0;1
+46485;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;607,51;18,0;3
+46490;Pneu Speedmax Aro 18 W01 215/55R18 95T;791,72;22,0;3
+46492;Pneu Aro 17 Pirelli Scorpion ATR 225/65 R17 106H XL;878,75;41,0;3
+46494;Pneu Dunlop 235/75 R15 104/101S GRANDTREK AT5 DEV;850,67;47,0;3
+46526;Pneu Goodyear Aro 18 Wrangler Fortitude HT 235/60R18 103V;1033,83;31,0;2
+46528;Pneu Delmax Aro 16 215/55r16 Ultimapro Up1 97w Xl W;560,67;12,0;3
+46529;Pneu Goodyear Aro 17 Wrangler Fortitude HT 225/65R17 106H XL;1087,76;11,0;3
+46534;Pneu 265/75r16 Goodyear Wrangler Rt/s 123/120r R;1734,55;11,0;3
+46538;Pneu Xbri Aro 13 175/75 R13 84T Fastway F2;310,62;15,0;2
+46541;Pneu Itaro Aro 15 Comformax 195/65R15 91V;477,08;45,0;3
+46551;Pneu Dunlop 265/70 R16 112T GRANDTREK AT5 DEV;1079,84;58,0;3
+46652;Pneu Pirelli Aro 16 Scorpion KS 205/65R16 95H;655,34;14,0;3
+46717;Pneu Speedmax Aro 14 VT Max 175/65R14 82T;376,12;17,0;3
+46718;Pneu Speedmax Aro 16 H12 185/55R16 83V;554,74;23,0;2
+46720;Pneu Speedmax Prime Aro 15 FRD16 195/65R15 91V;468,74;16,0;3
+46784;Pneu Delmax Aro 18 215/55r18 Furious S1 99v Xl V;859,2;12,0;2
+46787;Pneu Goodyear Aro 17 Wrangler Territory HT 205/55R17 91V;608,44;41,0;2
+46799;Pneu Farroad Aro 14 FRD18 175/75R14C 99/98S;413,5;7,0;3
+46801;Pneu Goodyear Aro 15 EfficientGrip Performance 195/60R15 88V;641,78;16,0;3
+46858;Pneu Goodyear Aro 17 Wrangler Territory HT 205/55R17 91V;577,79;14,0;3
+46900;Pneu Xbri Aro 13 175/75 R13 84T Fastway F2;305,98;15,0;2
+46905;Pneu Nexen Aro 17 225/65R17 Roadian HTX RH5 102H;1208,58;1,0;1
+46906;Pneu Pirelli Aro 15 P400 Evo 185/60 R15 84h;534,75;30,0;3
+47046;Pneu Goodyear Carro 265/70r16 112h Kelly Edge Suv 2;1245,64;18,0;2
+47080;Pneu Aro 15” 185/65R15 Goodyear 88H;413,55;42,0;2
+47082;Pneu Dunlop 265/65R17 112S GRANDTREK AT5;1569,64;6,0;1
+47129;Pneu Pirelli Aro 16 Carrier 215/65R16C 109T;650,73;15,0;1
+47172;Pneu aro 17 195/40 r17 aptany ra301 81w;531,85;1,0;1
+47173;Pneu Goodyear Aro 16 Wrangler Fortitude HT 215/60R16 95V;694,54;5,0;2
+47176;Pneu Speedmax Prime Aro 18 FRD26 245/45R18 100W;891,59;14,0;2
+47182;Pneu Falken 205/70 R15 8PR 106R R51;620,42;46,0;2
+47191;Pneu Dunlop Aro 16 205/60r16 92h Enasave Ec350+ H;782,87;11,0;2
+47242;Pneu Speedmax Aro 14 175/65r14 Street-h Mh01 86t T;387,96;26,0;3
+47244;Pneu Speedmax Aro 18 Controlmax CP11 215/45R18 93W XL;868,7;15,0;2
+47245;Pneu Dunlop 225/45 R17 94W DZ102 XL JP EV;678,72;63,0;2
+47254;Pneu Speedmax Prime Aro 17 FRD26 205/45R17 88W;874,9;12,0;1
+47255;Pneu Speedmax Aro 17 Drivemax C10 205/40R17 84W XL;435,98;11,0;2
+47305;Pneu 255/75R15 Goodyear Kelly Edge SUV 2 109S Aro 15;1312,32;16,0;3
+47342;Pneu Continental Aro 15 PowerContact 2 195/65R15 91H;446,01;43,0;2
+47529;Pneu Speedmax Prime Aro 17 FRD26 205/50R17 93W;714,97;29,0;2
+47542;Pneu Pirelli Aro 15 Scorpion ATR 255/75R15 109/105S;1256,62;6,0;2
+47548;Pneu Speedmax Aro 18 Controlmax CP11 215/45R18 93W XL;791,51;8,0;2
+47549;Pneu Ceat Aro 14 Ecodrive 165/70R14 81T TL;371,18;22,0;2
+47552;Pneu Speedmax Prime Aro 15 FRD16 195/65R15 91V;481,26;17,0;2
+47554;Pneu Goodyear Aro 16 Wrangler Fortitude HT 235/60R16 100H;810,93;7,0;2
+47555;Pneu Goodyear Aro 18 Wrangler All Terrain Adventure 265/60R18 110T - Letra Branca;1246,72;19,0;2
+47609;Pneu Durable Aro 15 175/65r15 City Dc01 84h H;432,47;18,0;3
+47627;Pneu Bridgestone Aro 17 Dueler H/P Sport * 225/50R17 94H Run Flat;784,94;23,0;2
+47629;Pneu Speedmax Prime Aro 15 FRD16 195/55R15 85V;325,22;63,0;3
+47636;Pneu Goodyear Aro 18 Eagle F1 Asymmetric 6 215/45R18 93V XL;901,36;4,0;2
+47640;Pneu Speedmax Prime Aro 16 FRD96 225/65R16C 112/110T;778,85;18,0;3
+47641;Pneu Speedmax Aro 17 185/35R17 74V SPM301;536,99;9,0;3
+47643;Pneu Itaro Aro 17.5 ITR02P 215/75R17.5 135/133J 18 Lonas - Direcional / Liso;724,38;11,0;2
+47740;Pneu Speedmax Prime Aro 15 FRD96 205/70R15C 106/104S;528,52;100,0;1
+47741;Pneu Roadking Aro 14 175/75 R14 87T Radial-109 !;377,03;16,0;3
+47814;Pneu Speedmax Aro 18 W01 215/55R18 95T;799,9;8,0;1
+47865;Pneu Speedmax Aro 14 175/70r14 84T MH01;404,49;50,0;2
+47891;Pneu 225/50r18 Tl Aplus A610-27 Xl Aro 18;1182,87;30,0;3
+47898;Pneu Continental Aro 18 ContiCrossContact LX2 225/55R18 98V;772,21;44,0;2
+47930;Pneu Speedmax Prime Aro 17 Pangea All-Terrain 265/65R17 120/117S - Letras Brancas;1048,05;55,0;2
+47965;Pneu Wanli 205/60 R16 92H Su009 At;584,4;16,0;2
+47966;Pneu Milever Aro 15 185/65r15 Mp270 88h H;485,57;17,0;3
+47967;Pneu Zmax 195/55r15 85v Landgema;430,31;28,0;3
+47968;Pneu Pirelli Aro 16 Scorpion HT 245/70R16 113T;858,99;15,0;1
+47970;Pneu Pirelli Aro 15 P400 Evo 185/60 R15 84h;534,75;30,0;3
+47971;Pneu Pirelli Aro 16 Scorpion Verde All Season 235/60R16 100H;719,9;5,0;1
+47981;Pneu Speedmax Aro 18 W01 215/55R18 95T;792,36;21,0;3
+48023;Pneu Dunlop 215/60 R17 100H GRANDTREK AT5;757,36;50,0;3
+48024;Pneu Pirelli Aro 18 Scorpion HT 265/60R18 110H;1081,39;15,0;2
+48025;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;460,94;22,0;3
+48030;Pneu Aro 16 195/55 R16 Comforser Cf510;568,28;30,0;3
+48045;Pneu Kumho Aro 19 Crugen HP71 235/50R19 99H;1704,75;24,0;2
+48047;Pneu Aplus Aro 15 225/70r15 A609 100h;761,77;20,0;3
+48081;Pneu Goodyear Aro 18 Wrangler Fortitude HT 235/60R18 103V;854,23;14,0;3
+48089;Pneu Delinte Aro 16 185/55R16 97V XL DS2;522,49;12,0;3
+48093;Pneu Continental Aro 14 Powercontact 2 175/65R14 82T;340,58;51,0;2
+48094;Pneu Pirelli Aro 16 Scorpion HT 245/70R16 113T;734,0;17,0;3
+48095;Pneu Speedmax Aro 14 VT Max 185/70R14 88T;388,44;12,0;2
+48096;Pneu Speedmax Prime Aro 14 Pangea All-Terrain 185/70R14 88T - Letras Brancas;420,73;8,0;1
+48148;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;745,7;14,0;1
+48149;Pneu Speedmax Prime Aro 16 FRD96 205/75R16C 110/108R 8 Lonas;733,99;12,0;2
+48150;Pneu Falken 205/70 R15 8PR 106R R51;620,42;46,0;2
+48152;Pneu Bridgestone Aro 18 Turanza T005 * 225/50R18 99W Run Flat XL;1393,59;3,0;2
+48153;Pneu Pirelli Aro 16 Powergy 195/55R16 87V;634,43;30,0;2
+48154;Pneu Zmax 205/55 R17 95w Zmax Zealion;590,97;42,0;3
+48155;Pneu Speedmax Aro 16 Drivemax Van V10 205/65R16C 107/105T 8 Lonas;641,43;11,0;2
+48160;Pneu Speedmax Aro 13 MH01 175/70R13 82T;327,87;15,0;3
+48162;Pneu Pirelli Aro 17 Scorpion ATR (KS) 265/65R17 112S;1161,76;23,0;2
+48167;Pneu Pirelli Aro 14 Chrono 175/70R14C 88T XL;452,04;26,0;2
+48250;Pneu Bridgestone Aro 18 Dueler H/P Sport AO 235/50R18 97V;1254,6;15,0;2
+48257;Pneu 225/70r16 Aplus A919 107h Xl Tl Aro 16;810,97;14,0;3
+48263;Pneu Speedmax Aro 15 Racemax 195/50R15 82W Semi Slick;390,62;7,0;2
+48267;Pneu Kumho Aro 13 Ecowing ES31 165/70R13 79T;308,4;27,0;2
+48269;Pneu Dunlop 235/75 R15 104/101S GRANDTREK AT5 DEV;832,67;43,0;3
+48271;Pneu Speedmax Prime Aro 18 Pangea All-Terrain 265/65R18 122/119S - Letras Brancas;1342,18;10,0;3
+48273;Pneu Speedmax Prime Aro 16 Pangea All-Terrain 245/70R16 113/110S - Letras Brancas;939,79;17,0;2
+48274;Pneu General Tire by Continental Aro 15 Grabber A/TX 235/75R15 104/101S 6 Lonas - Letra Branca;777,04;9,0;1
+48277;Pneu Speedmax Prime Aro 18 Pangea All-Terrain 235/60R18 108/104S - Letras Brancas;901,9;11,0;1
+48278;Pneu Speedmax Prime Aro 18 Pangea All-Terrain 265/60R18 114/110S - Letras Brancas;1138,78;32,0;3
+48316;Pneu Aptany Aro 17 235/55r17 Ra301 103v Xl V;822,95;23,0;3
+48317;Pneu 235/55r19 101w Ra301 Sport Aptany;1207,77;45,0;3
+48318;Pneu Kumho Aro 19 Crugen HP91 235/45R19 95W;1378,5;15,0;2
+48319;Pneu Speedmax Aro 16 MH01 195/60R16 89V;532,69;7,0;2
+48321;Pneu Dunlop 215/55 R17 94W SP SPORT FM800;752,34;25,0;3
+48323;Pneu Dunlop 235/55 R18 100H DUNLOP GRANDTREK ST30;1182,82;32,0;3
+48324;Pneu Speedmax Aro 17 225/60r17 99H HH301 SC;929,08;18,0;2
+48325;Pneu Pirelli Aro 16 Scorpion All Terrain Plus 265/70R16 112T;1456,03;25,0;3
+48326;Pneu Bf Goodrich Aro 17 - 265/70 R17 Trail-terrain T/a;2192,32;23,0;3
+48328;Pneu Aro 17 Pirelli Scorpion ATR 225/65 R17 106H XL;906,55;48,0;3
+48329;Pneu Speedmax Aro 17 Controlmax CP11 215/45R17 91W XL;578,01;23,0;2
+48399;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;557,23;52,0;3
+48400;Pneu Falken 205/70 R15 8PR 106R R51;663,94;57,0;3
+48401;Pneu Aro 16 205/60r16 Comforser Cf1100 At 92t Owl;693,12;26,0;3
+48408;Pneu Itaro Aro 15 MH01 185/60R15 88H XL;450,45;33,0;2
+48412;Pneu Speedmax Prime Aro 20 Pangea All-Terrain 255/55R20 117/114S 10 Lonas - Letras Brancas;2252,4;4,0;1
