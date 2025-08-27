@@ -1,0 +1,31 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- dev
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.11' 
+  displayName: 'Setup Python version'
+
+- script: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+  displayName: 'Install dependencies'
+
+- script: python Extracao_e_Insercao/gerar_lote_e_rodar.py
+  displayName: 'Run script: gerar_lote_e_rodar.py'
+
+- script: python ETL/etl_ingest.py
+  displayName: 'Run script: etl_ingest.py'
+
+- script: python ETL/pricing.py
+  displayName: 'Run script: pricing.py'
+
