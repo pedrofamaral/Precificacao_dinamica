@@ -81,6 +81,82 @@ def precheck_title_flags(titles):
         alerts.append("precheck_title_maybe_kit_or_multiunit")
     return alerts
 
+# ==============================================================================
+# FUNÇÕES PARA PROCESSAR PARQUET
+# ==============================================================================
+def load_and_aggregate_parquet(parquet_path: str):
+    try:
+        df_listings = pd.read_parquet(parquet_path)
+    except FileNotFoundError:
+        print(f"[ERRO] Arquivo de entrada não encontrado: {parquet_path}")
+        return None, None
+    except Exception as e:
+        print(f"[ERRO] Ocorreu um erro ao ler o arquivo Parquet: {e}")
+        return None, None
+    
+    rename_map = {
+        "marca": "brand",
+        "modelo": "line_model",
+        "medida": "size_norm",
+        "titulo": "title",
+        "preco": "price",
+        "vendedor": "seller",
+        "marketplace": "marketplace",
+        "link": "url",
+    }
+    df_listings.rename(columns=rename_map, inplace=True)
+    for col in ["brand", "model", "size", "price", "title", "seller", "url", "marketplace"]:
+        if col not in df_listings.columns:
+            df_listings[col] = None
+
+    df_listings["brand"] = df_listings["brand"].astype(str).str.strip()
+    df_listings["model"] = df_listings["model"].astype(str).str.strip()
+    df_listings["size"] = df_listings["size"].astype(str).str.strip()
+    df_listings["price"] = pd.to_numeric(df_listings["price"], errors="coerce")
+
+    df_listings.dropna(subset=["brand", "model", "size", "price"], inplace=True)
+
+    df_listings["canonical_key"] = (
+        df_listings["brand"].astype(str).str.strip()
+        + "|"
+        + df_listings["model"].astype(str).str.strip()
+        + "|"
+        + df_listings["size"].astype(str).str.strip()
+    )
+
+    def q10(x):
+        return x.quantile(0.10)
+
+    def q90(x):
+        return x.quantile(0.90)
+
+    df_summary = (
+        df_listings.groupby(["canonical_key", "brand", "model", "size"]).agg(
+            min_price=("price", "min"),
+            max_price=("price", "max"),
+            mean_price=("price", "mean"),
+            median_price=("price", "median"),
+            p10=("price", q10),
+            p90=("price", q90),
+            n_listings=("price", "size"),
+            marketplaces=("marketplace", lambda s: list(pd.Series(s).dropna().unique())),
+        )
+    ).reset_index()
+
+    def trimmed_mean(g: pd.Series) -> float:
+        if g.empty:
+            return float("nan")
+        lo = g.quantile(0.10)
+        hi = g.quantile(0.90)
+        cut = g[(g >= lo) & (g <= hi)]
+        return float(cut.mean() if not cut.empty else g.mean())
+
+    media_correta_series = (
+        df_listings.groupby("canonical_key")["price"].apply(trimmed_mean).rename("media_correta")
+    )
+    df_summary = df_summary.merge(media_correta_series, on="canonical_key", how="left")
+
+    return df_summary, df_listings
 
 # ==============================================================================
 # FUNÇÕES PARA PROCESSAR JSON/JSONL
@@ -339,23 +415,27 @@ def call_ollama_generate(host="http://localhost:11434", model="llama3", prompt="
         raise RuntimeError(f"Request to Ollama failed: {e}") from e
 
 
-def build_prompt(brand, model, size, stats, sample):
-    obj = {
-        "brand": brand,
-        "model": model,
-        "size": size,
-        "n_listings": stats.get("n_listings"),
-        "prices": {
+def build_prompt(truth_data: dict, stats: dict, sample: dict):    
+    reference_obj = {
+        "cod_prod": truth_data.get("cod_prod"),
+        "brand_correta": truth_data.get("brand"),
+        "model_correto": truth_data.get("model"),
+        "size_correto": truth_data.get("size"),
+    }
+
+    collected_obj = {
+        "n_listings_encontrados": stats.get("n_listings"),
+        "estatisticas_preco": {
             "min": stats.get("min_price"),
             "p10": stats.get("p10"),
-            "median": stats.get("median") or stats.get("median_price"),
+            "median": stats.get("median_price"),
             "p90": stats.get("p90"),
             "max": stats.get("max_price"),
-            "media_correta": stats.get("media_correta"),
+            "media_aparada": stats.get("media_correta"),
         },
-        "titles_sample": (sample.get("titles", []) or [])[:5],
-        "sellers_top": (sample.get("sellers_top", []) or [])[:3],
-        "examples": [
+        "amostra_titulos": (sample.get("titles", []) or [])[:5],
+        "principais_vendedores": (sample.get("sellers_top", []) or [])[:3],
+        "exemplos_anuncios": [
             {
                 "title": e.get("title"),
                 "price": e.get("price"),
@@ -365,21 +445,33 @@ def build_prompt(brand, model, size, stats, sample):
             for e in (sample.get("examples", []) or [])
         ],
     }
+
     preface = (
-        "Você é um auditor de catálogo de pneus. Avalie se a normalização (brand/model/size) e as estatísticas de preço estão consistentes para o grupo canônico informado. "
-        "Procure: divergência de marca nos títulos, kits/múltiplas unidades, mistura de modelos parecidos que deveriam estar separados, e se os agregados (p10/p90/mediana/trimmed_mean) fazem sentido dado o número de ofertas. "
-        "Se notar outliers remanescentes, sinalize."
+        "Você é um auditor de catálogo de pneus. Compare os DADOS DE REFERÊNCIA (a fonte da verdade do nosso sistema) com os DADOS COLETADOS de anúncios online para o mesmo `cod_prod`. "
+        "Sua tarefa é verificar se os anúncios coletados são realmente do produto de referência. "
+        "Procure por: \n"
+        "- Divergência de marca, modelo ou medida nos títulos dos anúncios.\n"
+        "- Anúncios que parecem ser kits/combos (ex: 'Kit 2 Pneus').\n"
+        "- Anúncios de produtos usados ou recondicionados se não for o esperado.\n"
+        "- Preços que parecem ser outliers (muito altos ou muito baixos), mesmo após a média aparada.\n"
+        "Se os dados coletados parecem consistentes e corretos em relação à referência, responda com 'ok: true'."
     )
     SCHEMA_INSTRUCTIONS = (
         'Responda ESTRITAMENTE em JSON minificado, no formato:\n'
         '{"ok":true|false,"alerts":[<strings>],"confidence":0..1}\n\n'
-        'Onde:\n- "ok" = true se os dados parecem consistentes (normalização/estatísticas) e não há indícios fortes de problema.\n'
-        '- "alerts" = lista de códigos curtos. Use somente dos exemplos abaixo quando aplicável (pode incluir outros quando necessário):\n'
-        '  - "brand_title_mismatch"\n  - "possible_kit_or_multiunit"\n  - "ambiguous_model_grouping"\n  - "outlier_prices_remaining"\n  - "suspicious_trimmed_mean"\n  - "inconsistent_titles_vs_size"\n  - "seller_cluster_risk"\n  - "low_sample_reliability"\n'
-        '- "confidence" = sua confiança na avaliação (0..1).\n'
+        'Onde:\n- "ok" = true se os dados COLETADOS parecem consistentes com os de REFERÊNCIA.\n'
+        '- "alerts" = lista de códigos. Use os existentes ou crie novos se necessário. Exemplos:\n'
+        '  - "brand_mismatch"\n  - "model_mismatch"\n  - "size_mismatch"\n  - "possible_kit_or_multiunit"\n  - "contains_used_items"\n  - "outlier_prices_detected"\n  - "low_sample_reliability"\n'
+        '- "confidence" = sua confiança na avaliação (0 a 1).\n'
         'NÃO inclua texto fora do JSON. NÃO explique.'
     )
-    return f"{preface}\n\nDADOS:\n{json.dumps(obj, ensure_ascii=False)}\n\n{SCHEMA_INSTRUCTIONS}"
+    
+    prompt_content = (
+        f"DADOS DE REFERÊNCIA (VERDADE):\n{json.dumps(reference_obj, ensure_ascii=False, indent=2)}\n\n"
+        f"DADOS COLETADOS (PARA AUDITAR):\n{json.dumps(collected_obj, ensure_ascii=False, indent=2)}"
+    )
+
+    return f"{preface}\n\n{prompt_content}\n\n{SCHEMA_INSTRUCTIONS}"
 
 
 def ensure_ai_audit_table(conn):
@@ -470,7 +562,7 @@ def main():
     ap.add_argument("--out-dir", default="data/AI")
     ap.add_argument("--out-db", default=None)
     ap.add_argument("--out", default=None)
-    ap.add_argument("--model", default="llama3.2:3b")
+    ap.add_argument("--model", default="Magistral")
     ap.add_argument("--ollama-host", default="http://localhost:11434")
     ap.add_argument("--sample-titles", type=int, default=5)
     ap.add_argument("--sample-sellers", type=int, default=3)
@@ -513,6 +605,7 @@ def main():
     suffix = input_path.suffix.lower()
     is_json = suffix in [".json", ".jsonl"]
     is_sqlite = suffix in [".db", ".sqlite"]
+    is_parquet = suffix in [".parquet"]
 
     if is_json:
         print(f"Lendo e agregando dados do arquivo JSON(L): {input_path}")
@@ -529,13 +622,29 @@ def main():
             df_summary = df_summary[df_summary["model"].str.lower() == args.only_model.lower()]
 
         rows_to_process = df_summary.to_dict("records")
+    
     elif is_sqlite:
         print(f"Lendo dados do banco de dados SQLite: {input_path}")
         conn_uni = connect_sqlite(input_path.as_posix())
         db_rows = fetch_canonical_rows(conn_uni, args.only_brand, args.only_size, args.only_model)
         rows_to_process = [dict(r) for r in db_rows]
+    
+    elif is_parquet:
+        print(f"Lendo e agregando dados do arquivo Parquet: {input_path}")
+        df_summary, df_listings_full = load_and_aggregate_parquet(input_path.as_posix())
+        if df_summary is None:
+            print("[ERRO] Falha ao carregar e agregar o arquivo Parquet.")
+            sys.exit(2)
+        if args.only_brand:
+            df_summary = df_summary[df_summary["brand"].str.lower() == args.only_brand.lower()]
+        if args.only_size:
+            df_summary = df_summary[df_summary["size"].str.lower() == args.only_size.lower()]
+        if args.only_model:
+            df_summary = df_summary[df_summary["model"].str.lower() == args.only_model.lower()]
+
+        rows_to_process = df_summary.to_dict("records")
     else:
-        print(f"[ERRO] Formato de arquivo não suportado: {suffix}. Use .db, .sqlite, .json ou .jsonl")
+        print(f"[ERRO] Formato de arquivo não suportado: {suffix}. Use .db, .sqlite, .json ou .jsonl ou .parquet")
         sys.exit(3)
 
     if not rows_to_process:
@@ -552,7 +661,7 @@ def main():
             model = r.get("model")
             size = r.get("size")
 
-            if is_json:
+            if is_json or is_parquet:
                 stats = {
                     "n_listings": r.get("n_listings"),
                     "min_price": r.get("min_price"),
