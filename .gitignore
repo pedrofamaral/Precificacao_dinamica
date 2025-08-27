@@ -4,9 +4,9 @@ venv/
 __pycache__/
 *.pkl
 *.h5
-*.csv
 *.xlsx
-*.db
+Scraper_em_geral/**/*.csv
+Scraper_em_geral/**/*.db
 *logs
 *log
 .env

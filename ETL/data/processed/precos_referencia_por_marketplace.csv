@@ -1,0 +1,958 @@
+cod_prod;product_title;marketplace;ref_price_mean;ref_price_median;competitors_count_original;competitors_count_final;min_price;max_price;std_dev
+3153;Pneu Onix 185/70r14 88t F700 Firestone + Bico Valvula Tr414;magalu;575,86;594,13;3,0;3,0;536,66;596,8;33,98
+3153;Pneu Onix 185/70r14 88t F700 Firestone + Bico Valvula Tr414;mercadolivre;589,42;590,79;6,0;4,0;552,58;806,33;20,31
+3212;Pneu 195/65r15 91h Radial Tubeless F700 Firestone;mercadolivre;685,32;698,03;6,0;4,0;593,89;771,92;45,43
+3240;Pneu Aro 15” Bridgestone 205/70R15 96T - Dueler A/T D693;magalu;757,48;748,72;6,0;4,0;695,53;822,71;30,79
+3297;Pneu Michelin Aro 16 Agilis 3 - 225/75 R16 C;magalu;1421,37;1421,37;1,0;1,0;1421,37;1421,37;
+3297;Pneu Michelin Aro 16 Agilis 3 - 225/75 R16 C;mercadolivre;1471,83;1474,5;6,0;6,0;1341,0;1600,0;116,64
+3297;Pneu Michelin Aro 16 Agilis 3 - 225/75 R16 C;pneustore;1409,9;1409,9;2,0;2,0;1179,9;1639,9;325,27
+3749;Pneu Moto Metzeler Aro 17 Cruisetec 130/80B17 65H TL - Dianteiro;pneustore;1605,89;944,9;100,0;80,0;269,9;37999,9;1649,01
+5196;Pneu Goodyear Aro 15 Wrangler Fortitude HT 205/65R15 94H;magalu;733,52;733,52;2,0;2,0;698,02;769,01;50,2
+5196;Pneu Goodyear Aro 15 Wrangler Fortitude HT 205/65R15 94H;pneustore;679,9;679,9;1,0;1,0;679,9;679,9;
+5197;Pneu Michelin Aro 15 Energy Xm2+ 195/60 R15;magalu;694,85;611,79;3,0;3,0;580,61;892,15;171,58
+5197;Pneu Michelin Aro 15 Energy Xm2+ 195/60 R15;mercadolivre;715,28;726,23;38,0;31,0;180,0;852,35;46,58
+5197;Pneu Michelin Aro 15 Energy Xm2+ 195/60 R15;pneustore;559,9;559,9;1,0;1,0;559,9;559,9;
+5956;Pneu Bridgestone Aro 17 Dueler H/t 684 Ii 265/65r17 112s;magalu;1296,1;1296,1;1,0;1,0;1296,1;1296,1;
+5956;Pneu Bridgestone Aro 17 Dueler H/t 684 Ii 265/65r17 112s;mercadolivre;1458,21;1405,5;18,0;14,0;210,0;2628,0;146,19
+5956;Pneu Bridgestone Aro 17 Dueler H/t 684 Ii 265/65r17 112s;pneustore;1134,9;1134,9;2,0;2,0;1049,9;1219,9;120,21
+7195;Pneu Steelmark Goodyear Aro 22,5 AGS Direcional Liso 295/80R22.5;magalu;3733,8;3717,1;3,0;3,0;3183,8;4300,5;558,54
+7639;Pneu Pirelli Aro 14 Chrono 175/70R14C 88T XL;magalu;416,05;416,05;1,0;1,0;416,05;416,05;
+7639;Pneu Pirelli Aro 14 Chrono 175/70R14C 88T XL;pneustore;387,23;359,9;19,0;15,0;269,9;749,9;66,14
+8101;Pneu Speedmax Aro 14 VT Max 175/65R14 82T;magalu;360,0;360,0;1,0;1,0;360,0;360,0;
+8101;Pneu Speedmax Aro 14 VT Max 175/65R14 82T;pneustore;339,26;329,9;15,0;11,0;259,9;394,9;31,31
+10753;Pneu 225/65r16 G32 Cargo 112r Goodyear;magalu;1347,23;1347,23;4,0;2,0;1229,9;1809,4;138,35
+10753;Pneu 225/65r16 G32 Cargo 112r Goodyear;mercadolivre;1497,6;1490,0;19,0;15,0;180,0;1773,0;88,37
+10753;Pneu 225/65r16 G32 Cargo 112r Goodyear;pneustore;1259,9;1259,9;1,0;1,0;1259,9;1259,9;
+10860;Pneu Dunlop Aro 15 205/70r15 96t Grandtrek At5 T;magalu;717,2;717,2;1,0;1,0;717,2;717,2;
+10860;Pneu Dunlop Aro 15 205/70r15 96t Grandtrek At5 T;mercadolivre;763,62;760,53;21,0;18,0;629,68;848,41;48,06
+11105;Pneu Speedmax Aro 17.5 Townmax A 215/75R17.5 135/133J 18 Lonas;magalu;820,39;820,39;1,0;1,0;820,39;820,39;
+11105;Pneu Speedmax Aro 17.5 Townmax A 215/75R17.5 135/133J 18 Lonas;pneustore;821,15;822,4;10,0;8,0;749,9;979,9;34,51
+12477;Pneu Goodyear 195 65 R15 Efficientgrip Performance 91 H;magalu;670,06;659,75;5,0;3,0;580,02;735,79;21,73
+12477;Pneu Goodyear 195 65 R15 Efficientgrip Performance 91 H;mercadolivre;723,68;741,36;51,0;42,0;120,0;1054,0;142,8
+12477;Pneu Goodyear 195 65 R15 Efficientgrip Performance 91 H;pneustore;584,9;584,9;1,0;1,0;584,9;584,9;
+15347;Pneu Pirelli Aro 17 Powergy 215/50R17 91V;pneustore;679,9;679,9;4,0;2,0;499,9;959,9;56,57
+15407;Pneu Pirelli Aro 16 Scorpion HT 245/70R16 113T;magalu;1256,2;799,9;11,0;9,0;534,63;2139,51;618,76
+15407;Pneu Pirelli Aro 16 Scorpion HT 245/70R16 113T;pneustore;870,46;859,9;13,0;9,0;549,9;1139,9;107,37
+16457;Pneu Dunlop 185/60 R14 82H SP LM704 JP EV;magalu;551,08;608,68;10,0;9,0;358,29;608,68;80,15
+16457;Pneu Dunlop 185/60 R14 82H SP LM704 JP EV;mercadolivre;675,97;675,97;1,0;1,0;675,97;675,97;
+16821;Pneu Pirelli Aro 20 Scorpion STR 245/50R20 102H;magalu;2012,79;2012,79;4,0;2,0;1827,0;2204,88;151,17
+16821;Pneu Pirelli Aro 20 Scorpion STR 245/50R20 102H;mercadolivre;2098,0;2121,5;6,0;4,0;847,87;2584,0;282,02
+16821;Pneu Pirelli Aro 20 Scorpion STR 245/50R20 102H;pneustore;1799,9;1799,9;1,0;1,0;1799,9;1799,9;
+17111;Pneu Dunlop 185/55R16 83V ENASAVE EC300 MV;magalu;723,37;775,0;11,0;9,0;600,9;818,74;64,95
+17111;Pneu Dunlop 185/55R16 83V ENASAVE EC300 MV;mercadolivre;719,39;740,73;25,0;19,0;150,0;815,82;56,71
+17319;Pneu Firestone Aro 15 Destination H/T 235/75R15 109T;magalu;848,78;848,78;1,0;1,0;848,78;848,78;
+17319;Pneu Firestone Aro 15 Destination H/T 235/75R15 109T;pneustore;783,79;774,9;11,0;9,0;499,9;1274,9;96,4
+18650;Pneu Falken 225/70R15C 112R R51;magalu;1148,07;1148,07;5,0;5,0;1148,07;1148,07;0,0
+18650;Pneu Falken 225/70R15C 112R R51;mercadolivre;1087,0;1087,0;1,0;1,0;1087,0;1087,0;
+18871;Pneu Bridgestone Aro 14 Dueler A/t Revo 2 175/70r14 88h;magalu;700,06;696,54;7,0;6,0;559,42;768,07;68,58
+18871;Pneu Bridgestone Aro 14 Dueler A/t Revo 2 175/70r14 88h;mercadolivre;616,22;617,27;7,0;5,0;585,94;777,07;24,2
+18871;Pneu Bridgestone Aro 14 Dueler A/t Revo 2 175/70r14 88h;pneustore;499,9;499,9;1,0;1,0;499,9;499,9;
+18885;Pneu Continental Aro 16 Powercontact 2 205/55r16 91v;magalu;531,79;516,71;10,0;8,0;480,86;726,17;37,83
+18885;Pneu Continental Aro 16 Powercontact 2 205/55r16 91v;mercadolivre;629,52;633,78;33,0;25,0;514,0;823,28;53,43
+18885;Pneu Continental Aro 16 Powercontact 2 205/55r16 91v;pneustore;484,9;484,9;1,0;1,0;484,9;484,9;
+19455;Pneu Michelin Aro 15 Agilis 3 205/70R15C 106/104R;magalu;944,43;944,43;1,0;1,0;944,43;944,43;
+19455;Pneu Michelin Aro 15 Agilis 3 205/70R15C 106/104R;mercadolivre;1011,0;1011,0;1,0;1,0;1011,0;1011,0;
+19455;Pneu Michelin Aro 15 Agilis 3 205/70R15C 106/104R;pneustore;919,9;919,9;1,0;1,0;919,9;919,9;
+19500;Pneu Speedmax Prime Aro 20 FRD26 225/35R20 90W;mercadolivre;956,88;956,88;1,0;1,0;956,88;956,88;
+19500;Pneu Speedmax Prime Aro 20 FRD26 225/35R20 90W;pneustore;539,9;539,9;1,0;1,0;539,9;539,9;
+19553;Pneu Speedmax Aro 14 ST Max 185/65R14 85T;magalu;381,52;381,52;2,0;2,0;325,38;437,67;79,4
+19553;Pneu Speedmax Aro 14 ST Max 185/65R14 85T;mercadolivre;459,33;459,33;2,0;2,0;399,4;519,26;84,75
+19553;Pneu Speedmax Aro 14 ST Max 185/65R14 85T;pneustore;359,9;344,9;12,0;8,0;289,9;499,9;47,58
+19887;Pneu Goodyear 205 60 R15 Efficientgrip Performance 91 H H;magalu;669,38;666,14;6,0;4,0;539,9;821,75;84,57
+19887;Pneu Goodyear 205 60 R15 Efficientgrip Performance 91 H H;mercadolivre;739,18;763,57;57,0;45,0;90,0;1521,0;107,76
+19887;Pneu Goodyear 205 60 R15 Efficientgrip Performance 91 H H;pneustore;559,9;559,9;1,0;1,0;559,9;559,9;
+19888;Pneu 215/65r16 Goodyear Wrangler Fortitude Ht 102h Aro 16;mercadolivre;928,53;933,08;11,0;9,0;804,89;1052,0;77,91
+19888;Pneu 215/65r16 Goodyear Wrangler Fortitude Ht 102h Aro 16;pneustore;769,9;769,9;2,0;2,0;749,9;789,9;28,28
+20539;Pneu Kelly By Goodyear Aro 15 Edge Sport 2 195/60r15 88v V;magalu;595,03;595,03;1,0;1,0;595,03;595,03;
+20539;Pneu Kelly By Goodyear Aro 15 Edge Sport 2 195/60r15 88v V;mercadolivre;657,33;670,69;31,0;26,0;530,88;812,6;53,29
+20751;Pneu Speedmax Aro 17.5 Townmax A 215/75R17.5 135/133J 18 Lonas;magalu;830,72;830,72;1,0;1,0;830,72;830,72;
+20751;Pneu Speedmax Aro 17.5 Townmax A 215/75R17.5 135/133J 18 Lonas;pneustore;829,07;822,4;8,0;6,0;749,9;979,9;30,73
+21264;Pneu Goodyear Aro 17 EfficientGrip Performance 215/50R17 91V;mercadolivre;464,29;340,0;12,0;9,0;120,0;922,32;329,57
+21264;Pneu Goodyear Aro 17 EfficientGrip Performance 215/50R17 91V;pneustore;707,12;707,12;2,0;2,0;669,9;744,33;52,63
+21310;Pneu 175/65R14 Firestone F700 82T;magalu;493,28;508,2;8,0;7,0;446,63;508,2;26,03
+21310;Pneu 175/65R14 Firestone F700 82T;mercadolivre;497,08;504,3;10,0;8,0;418,32;595,57;35,19
+22137;Pneu Aplus Aro 17 235/60r17 A919 102h;magalu;869,79;799,88;10,0;8,0;648,49;1518,4;216,94
+22137;Pneu Aplus Aro 17 235/60r17 A919 102h;mercadolivre;821,75;828,4;5,0;4,0;765,51;840,45;24,17
+22137;Pneu Aplus Aro 17 235/60r17 A919 102h;pneustore;689,19;649,9;8,0;7,0;524,9;1249,9;182,47
+22270;Pneu 195/50 R16 Dunlop Direzza Dz102 84v;magalu;714,54;714,54;2,0;2,0;696,46;732,61;25,56
+22270;Pneu 195/50 R16 Dunlop Direzza Dz102 84v;mercadolivre;651,03;658,92;8,0;6,0;533,0;723,26;51,45
+22852;Pneu Aro 17 Pirelli Scorpion ATR 225/65 R17 106H XL;magalu;1559,25;1559,25;6,0;5,0;1559,25;1715,17;0,0
+22852;Pneu Aro 17 Pirelli Scorpion ATR 225/65 R17 106H XL;mercadolivre;1233,5;1231,5;6,0;4,0;1182,0;1329,0;29,29
+22852;Pneu Aro 17 Pirelli Scorpion ATR 225/65 R17 106H XL;pneustore;1009,9;1089,9;3,0;3,0;839,9;1099,9;147,31
+23142;Pneu Saveiro/Corsa 195/40-17 Zmax Zealion-85;magalu;546,05;564,93;10,0;8,0;338,43;747,95;117,05
+23403;Pneu 205/40R17 Goodyear Kelly Edge Sport 2 84W Aro 17;magalu;540,02;540,02;1,0;1,0;540,02;540,02;
+23957;Pneu Bridgestone Aro 15 Ecopia Ep150 195/55r15 85h;magalu;623,69;610,7;7,0;5,0;526,41;788,27;44,95
+23957;Pneu Bridgestone Aro 15 Ecopia Ep150 195/55r15 85h;mercadolivre;632,19;628,89;42,0;32,0;531,43;1017,0;53,47
+23968;Pneu Carro 175/80r14 Kelly Edge Suv 2 88t Goodyear;magalu;779,25;779,25;2,0;2,0;710,03;848,47;97,89
+23968;Pneu Carro 175/80r14 Kelly Edge Suv 2 88t Goodyear;mercadolivre;702,93;690,97;12,0;9,0;624,94;790,45;22,29
+24119;Pneu Aro 14 Goodyear Direction Touring 2 175/65r14 86h - 2un H;magalu;359,9;359,9;4,0;2,0;330,79;380,95;28,28
+24119;Pneu Aro 14 Goodyear Direction Touring 2 175/65r14 86h - 2un H;mercadolivre;714,9;714,9;1,0;1,0;714,9;714,9;
+24289;Pneu Aplus Aro 16 235/60r16 A609 100h;magalu;666,83;704,89;13,0;9,0;390,56;885,83;99,09
+24289;Pneu Aplus Aro 16 235/60r16 A609 100h;mercadolivre;649,33;635,72;4,0;3,0;635,72;677,29;23,57
+24289;Pneu Aplus Aro 16 235/60r16 A609 100h;pneustore;703,9;699,9;7,0;5,0;429,9;884,9;95,35
+24344;Pneu Speedmax Prime Aro 18 FRD26 225/45R18 95W;pneustore;1257,59;1299,9;17,0;13,0;419,9;1989,9;454,74
+24500;Pneu Goodyear Aro 18 Eagle LS2 235/45R18 94V;magalu;1009,98;981,63;10,0;8,0;679,9;1531,1;259,12
+24500;Pneu Goodyear Aro 18 Eagle LS2 235/45R18 94V;pneustore;1329,53;1404,9;8,0;6,0;574,9;1659,9;231,44
+24580;Pneu Aro 17 Michelin 235/55 R17 103Y XL Primacy 4+;magalu;1426,06;1426,06;1,0;1,0;1426,06;1426,06;
+25765;Pneu Pirelli Aro 17 Powergy 215/45R17 91V XL;magalu;695,79;730,03;3,0;3,0;626,9;730,44;59,66
+25765;Pneu Pirelli Aro 17 Powergy 215/45R17 91V XL;pneustore;564,9;564,9;2,0;2,0;539,9;589,9;35,36
+25770;Pneu Aplus Aro 16 265/70r16 A919 112h;magalu;957,53;957,53;2,0;2,0;949,49;965,57;11,37
+25770;Pneu Aplus Aro 16 265/70r16 A919 112h;mercadolivre;876,78;877,48;7,0;6,0;805,11;988,31;67,82
+25770;Pneu Aplus Aro 16 265/70r16 A919 112h;pneustore;1054,28;1054,9;20,0;16,0;679,9;2499,9;198,36
+25982;Pneu Dunlop Aro 17,5 215/75R17,5 SP320 126/124M;magalu;1659,3;1659,3;1,0;1,0;1659,3;1659,3;
+26009;Pneu Speedmax Prime Aro 17 FRD26 205/45R17 88W;pneustore;874,9;884,9;12,0;8,0;329,9;2099,9;360,27
+26061;Pneu Continental Aro 20 SportContact 6 245/35R20 (95Y) XL;magalu;519,17;514,44;50,0;40,0;129,9;1144,37;128,82
+26061;Pneu Continental Aro 20 SportContact 6 245/35R20 (95Y) XL;pneustore;957,83;799,9;100,0;82,0;289,9;3699,9;534,07
+26085;Pneu Westlake Aro 22.5 CR976A 295/80R22.5 152/149M 18 Lonas;magalu;2523,22;2523,22;2,0;2,0;2449,95;2596,5;103,63
+26085;Pneu Westlake Aro 22.5 CR976A 295/80R22.5 152/149M 18 Lonas;pneustore;2244,9;2259,9;35,0;27,0;1599,9;3199,9;189,17
+26256;Pneu Kumho Aro 19 Crugen Premium Kl33 225/55r19 99h;magalu;1221,27;1389,04;3,0;3,0;830,77;1444,0;339,3
+26256;Pneu Kumho Aro 19 Crugen Premium Kl33 225/55r19 99h;mercadolivre;909,07;916,71;8,0;7,0;842,48;1261,0;51,14
+26256;Pneu Kumho Aro 19 Crugen Premium Kl33 225/55r19 99h;pneustore;824,9;824,9;1,0;1,0;824,9;824,9;
+26465;Pneu Michelin Aro 16 205/55R16 Primacy 4 91V;magalu;649,81;650,42;10,0;8,0;560,5;938,69;65,08
+26475;Pneu Pirelli Aro 14 P400 Evo 175/70r14 84t;magalu;568,14;599,0;7,0;5,0;433,89;666,88;46,65
+26475;Pneu Pirelli Aro 14 P400 Evo 175/70r14 84t;mercadolivre;572,0;591,76;19,0;15,0;429,23;759,0;42,55
+26475;Pneu Pirelli Aro 14 P400 Evo 175/70r14 84t;pneustore;399,9;399,9;1,0;1,0;399,9;399,9;
+26627;Pneu Speedmax Aro 18 Racemax 225/40R18 88W Semi Slick;magalu;925,9;846,16;15,0;11,0;555,64;1561,95;278,89
+26627;Pneu Speedmax Aro 18 Racemax 225/40R18 88W Semi Slick;pneustore;1126,15;1364,9;10,0;8,0;459,9;1649,9;428,41
+26686;Pneu Dunlop Aro 14 175/65r14 Touring Sp R1 Ril 82t T;magalu;509,62;542,85;18,0;14,0;309,9;591,9;55,01
+26686;Pneu Dunlop Aro 14 175/65r14 Touring Sp R1 Ril 82t T;mercadolivre;474,33;469,58;43,0;36,0;394,53;853,86;35,58
+26852;Pneu Goodyear Aro 18 Eagle LS2 235/45R18 94V;magalu;760,67;760,67;1,0;1,0;760,67;760,67;
+26852;Pneu Goodyear Aro 18 Eagle LS2 235/45R18 94V;pneustore;1329,53;1404,9;8,0;6,0;574,9;1659,9;231,44
+27073;Pneu Goodyear Aro 16 225/75r16 Cargo Marathon 2 118/116r R;magalu;1356,6;1356,6;1,0;1,0;1356,6;1356,6;
+27073;Pneu Goodyear Aro 16 225/75r16 Cargo Marathon 2 118/116r R;mercadolivre;1585,5;1585,0;6,0;4,0;1463,0;1914,0;64,32
+27073;Pneu Goodyear Aro 16 225/75r16 Cargo Marathon 2 118/116r R;pneustore;1169,9;1169,9;4,0;2,0;824,9;1649,9;70,71
+27147;Pneu Dunlop 185/70R14 88T SP Touring R1L;magalu;544,35;542,85;11,0;9,0;463,05;700,9;29,36
+27147;Pneu Dunlop 185/70R14 88T SP Touring R1L;mercadolivre;564,52;580,9;31,0;26,0;420,0;669,75;42,85
+27196;Pneu Farroad Aro 18 215/40R18 89W FRD26;magalu;606,76;590,33;5,0;3,0;420,62;741,62;33,49
+27196;Pneu Farroad Aro 18 215/40R18 89W FRD26;pneustore;1208,23;1439,9;5,0;3,0;409,9;1774,9;569,04
+27229;Pneu Dunlop 215/60 R17 100H GRANDTREK AT5;magalu;876,4;886,37;27,0;21,0;592,52;1668,87;138,23
+27229;Pneu Dunlop 215/60 R17 100H GRANDTREK AT5;pneustore;772,23;759,9;16,0;12,0;519,9;1389,9;148,88
+27232;Pneu Goodyear Aro 15 Cargo Marathon 2 225/70r15 112/110r A1;magalu;1074,98;1074,98;2,0;2,0;964,96;1185,0;155,59
+27232;Pneu Goodyear Aro 15 Cargo Marathon 2 225/70r15 112/110r A1;mercadolivre;1092,0;1043,0;6,0;5,0;1018,0;1259,0;91,76
+27232;Pneu Goodyear Aro 15 Cargo Marathon 2 225/70r15 112/110r A1;pneustore;939,9;939,9;1,0;1,0;939,9;939,9;
+27235;Pneu Goodyear 195 55 R15 85h Tl Efficientgrip Performace;magalu;630,79;630,79;4,0;2,0;555,24;864,49;27,2
+27235;Pneu Goodyear 195 55 R15 85h Tl Efficientgrip Performace;mercadolivre;733,4;759,42;32,0;25,0;349,0;957,64;68,75
+27235;Pneu Goodyear 195 55 R15 85h Tl Efficientgrip Performace;pneustore;559,9;559,9;1,0;1,0;559,9;559,9;
+27237;Pneu 225/55r18 Goodyear Efficientgrip Suv 98v Aro 18 Ix35;magalu;1037,43;1050,04;9,0;7,0;769,41;1380,53;169,82
+27237;Pneu 225/55r18 Goodyear Efficientgrip Suv 98v Aro 18 Ix35;mercadolivre;865,59;1016,0;18,0;15,0;110,0;1270,0;431,4
+27237;Pneu 225/55r18 Goodyear Efficientgrip Suv 98v Aro 18 Ix35;pneustore;879,9;879,9;1,0;1,0;879,9;879,9;
+27238;Pneu Goodyear Aro 19 EfficientGrip SUV 255/55R19 111V XL;magalu;1586,64;1586,64;2,0;2,0;1540,06;1633,21;65,87
+27238;Pneu Goodyear Aro 19 EfficientGrip SUV 255/55R19 111V XL;mercadolivre;1601,62;1575,0;10,0;8,0;190,0;1910,0;118,26
+27238;Pneu Goodyear Aro 19 EfficientGrip SUV 255/55R19 111V XL;pneustore;1399,9;1399,9;1,0;1,0;1399,9;1399,9;
+27243;Pneu 215/55r17 Goodyear Efficientgrip Suv 94v Aro 17;magalu;811,7;811,7;1,0;1,0;811,7;811,7;
+27243;Pneu 215/55r17 Goodyear Efficientgrip Suv 94v Aro 17;mercadolivre;641,59;808,74;28,0;22,0;150,0;1142,0;354,53
+27243;Pneu 215/55r17 Goodyear Efficientgrip Suv 94v Aro 17;pneustore;774,9;774,9;1,0;1,0;774,9;774,9;
+27454;Pneu Dunlop 185/70R13 86T SP Touring R1L;magalu;520,7;549,78;12,0;9,0;393,32;617,94;36,85
+27454;Pneu Dunlop 185/70R13 86T SP Touring R1L;mercadolivre;485,11;459,99;21,0;17,0;430,0;715,75;37,88
+27494;Pneu Dunlop 175/70r14 88t Sp Touring R1;magalu;544,23;542,85;19,0;15,0;449,16;896,88;37,64
+27494;Pneu Dunlop 175/70r14 88t Sp Touring R1;mercadolivre;522,71;527,0;49,0;43,0;429,73;990,04;48,18
+27495;Pneu Dunlop Aro 14 185/65r14 Sp Touring R1 86t T;magalu;522,91;542,85;14,0;10,0;338,99;849,55;45,38
+27495;Pneu Dunlop Aro 14 185/65r14 Sp Touring R1 86t T;mercadolivre;503,18;504,41;32,0;27,0;349,0;944,06;49,06
+27497;Pneu Michelin 185/60 R15 88h Xl Tl Primacy 4;magalu;722,66;722,66;1,0;1,0;722,66;722,66;
+27542;Pneu Kumho Aro 17 Crugen HP71 235/60R17 102V;magalu;900,59;739,54;7,0;5,0;549,19;1518,4;263,07
+27542;Pneu Kumho Aro 17 Crugen HP71 235/60R17 102V;pneustore;689,19;649,9;8,0;7,0;524,9;1249,9;182,47
+27722;Pneu 205/70r15 Goodyear Cargo Marathon 2 106/104r Aro 15;magalu;901,49;901,49;1,0;1,0;901,49;901,49;
+27722;Pneu 205/70r15 Goodyear Cargo Marathon 2 106/104r Aro 15;mercadolivre;1047,0;1058,0;5,0;3,0;908,59;1103,0;38,69
+27722;Pneu 205/70r15 Goodyear Cargo Marathon 2 106/104r Aro 15;pneustore;768,23;759,9;3,0;3,0;724,9;819,9;48,05
+27774;Pneu Firestone Aro 16 Destination H/T 235/70R16 106T;magalu;752,46;760,67;3,0;3,0;663,92;832,8;84,74
+27774;Pneu Firestone Aro 16 Destination H/T 235/70R16 106T;mercadolivre;687,34;687,34;2,0;2,0;640,66;734,03;66,02
+27774;Pneu Firestone Aro 16 Destination H/T 235/70R16 106T;pneustore;1006,98;992,4;16,0;12,0;489,9;1949,9;187,6
+27789;Pneu Delinte Aro 16 225/75 R16 115/112s Dx-10 A/t Bandit Lt 10pr;magalu;1089,51;1063,6;18,0;14,0;592,7;2600,59;312,01
+27789;Pneu Delinte Aro 16 225/75 R16 115/112s Dx-10 A/t Bandit Lt 10pr;mercadolivre;682,58;682,58;1,0;1,0;682,58;682,58;
+27789;Pneu Delinte Aro 16 225/75 R16 115/112s Dx-10 A/t Bandit Lt 10pr;pneustore;949,48;807,4;16,0;12,0;469,9;1799,9;334,46
+27978;Pneu Continental 215/60 R17 96h Conticrosscontact Lx2;magalu;761,38;761,38;1,0;1,0;761,38;761,38;
+27978;Pneu Continental 215/60 R17 96h Conticrosscontact Lx2;mercadolivre;921,93;934,96;8,0;6,0;835,11;990,29;34,28
+27978;Pneu Continental 215/60 R17 96h Conticrosscontact Lx2;pneustore;813,23;739,9;3,0;3,0;689,9;1009,9;172,14
+28007;Pneu Dunlop 175/70r13 82t Sp Touring R1;magalu;429,95;427,35;22,0;16,0;299,9;706,38;38,45
+28007;Pneu Dunlop 175/70r13 82t Sp Touring R1;mercadolivre;454,97;449,99;54,0;42,0;367,65;815,92;38,46
+28008;Pneu Dunlop 165/70R13 79T SP Touring R1L;magalu;481,31;508,2;13,0;9,0;345,18;576,9;36,2
+28008;Pneu Dunlop 165/70R13 79T SP Touring R1L;mercadolivre;425,56;423,12;21,0;18,0;376,0;546,7;48,27
+28049;Pneu Michelin 225/45 R17 94w Xl Tl Primacy 4+;magalu;757,61;757,61;1,0;1,0;757,61;757,61;
+28242;Pneu Pirelli Aro 16 P400 Evo 205/55R16 91V;magalu;496,82;505,9;7,0;5,0;446,9;756,39;36,73
+28242;Pneu Pirelli Aro 16 P400 Evo 205/55R16 91V;mercadolivre;569,07;567,74;26,0;20,0;480,0;684,9;34,61
+28242;Pneu Pirelli Aro 16 P400 Evo 205/55R16 91V;pneustore;469,9;469,9;1,0;1,0;469,9;469,9;
+28666;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;magalu;611,29;611,29;1,0;1,0;611,29;611,29;
+28666;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;mercadolivre;662,84;662,84;2,0;2,0;656,28;669,41;9,28
+28666;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;pneustore;505,73;467,4;16,0;12,0;299,9;869,9;86,47
+28684;Pneu Dunlop Aro 22,5 275/80R22,5 SP320 149/146L;magalu;3223,38;3223,38;1,0;1,0;3223,38;3223,38;
+28822;Pneu Pirelli Aro 15 P400 Evo 195/55r15 85h;magalu;548,26;545,9;7,0;5,0;413,16;720,37;41,87
+28822;Pneu Pirelli Aro 15 P400 Evo 195/55r15 85h;mercadolivre;627,5;629,22;26,0;20,0;496,73;1223,0;50,44
+28822;Pneu Pirelli Aro 15 P400 Evo 195/55r15 85h;pneustore;429,9;429,9;1,0;1,0;429,9;429,9;
+30451;Pneu Goodyear Aro 13 Assurance Maxlife 175/70R13 82T;magalu;426,76;424,18;5,0;3,0;389,49;462,01;17,64
+30451;Pneu Goodyear Aro 13 Assurance Maxlife 175/70R13 82T;pneustore;362,4;362,4;2,0;2,0;324,9;399,9;53,03
+30456;Pneu Kelly by Goodyear Aro 14 Edge Touring 2 175/65R14 86H XL;magalu;389,2;377,71;3,0;3,0;339,9;449,99;55,94
+30456;Pneu Kelly by Goodyear Aro 14 Edge Touring 2 175/65R14 86H XL;pneustore;358,9;358,9;2,0;2,0;349,9;367,9;12,73
+30535;Pneu Speedmax Aro 14 VT Max 185/70R14 88T;magalu;464,49;446,41;7,0;5,0;377,49;591,16;62,29
+30535;Pneu Speedmax Aro 14 VT Max 185/70R14 88T;mercadolivre;519,74;519,74;1,0;1,0;519,74;519,74;
+30535;Pneu Speedmax Aro 14 VT Max 185/70R14 88T;pneustore;406,01;409,9;11,0;9,0;289,9;544,9;73,09
+30544;Pneu Bridgestone Aro 17 Turanza T005 * 225/45R17 94Y XL;magalu;567,36;567,36;1,0;1,0;567,36;567,36;
+30544;Pneu Bridgestone Aro 17 Turanza T005 * 225/45R17 94Y XL;pneustore;1189,9;1189,9;4,0;2,0;724,9;1269,9;42,43
+30616;Pneu Vucanizado Formula Evo 195/55 R15 85h;mercadolivre;110,0;110,0;1,0;1,0;110,0;110,0;
+30832;Pneu Goodyear Aro 17 Wrangler Fortitude HT 245/65R17 111H XL;magalu;1188,93;1180,8;7,0;5,0;729,28;1902,9;224,67
+30832;Pneu Goodyear Aro 17 Wrangler Fortitude HT 245/65R17 111H XL;pneustore;1103,65;1144,9;12,0;8,0;539,9;1724,9;206,53
+30968;Pneu Continental 225/75r16 Vancontact Ap 10 Lonas 118/116r R;mercadolivre;1502,33;1525,0;5,0;3,0;1399,0;1592,0;61,23
+30968;Pneu Continental 225/75r16 Vancontact Ap 10 Lonas 118/116r R;pneustore;1353,23;1219,9;3,0;3,0;1189,9;1649,9;257,36
+31104;Pneu Iris Aro 16 Sefar 215/55R16 97V;magalu;667,38;674,11;8,0;6,0;465,12;1163,63;81,62
+31104;Pneu Iris Aro 16 Sefar 215/55R16 97V;pneustore;423,23;409,9;3,0;3,0;399,9;459,9;32,15
+31117;Pneu Aro 16 205/55r16 Xbri Ecology 91 V Novo Com Garantia;magalu;323,43;323,43;1,0;1,0;323,43;323,43;
+31117;Pneu Aro 16 205/55r16 Xbri Ecology 91 V Novo Com Garantia;mercadolivre;823,27;542,97;11,0;10,0;199,99;1561,0;513,18
+31117;Pneu Aro 16 205/55r16 Xbri Ecology 91 V Novo Com Garantia;pneustore;527,21;499,9;17,0;13,0;279,9;1149,9;88,78
+31552;Pneu Speedmax Aro 17 Drivemax C10 205/40R17 84W XL;magalu;477,75;519,48;3,0;3,0;346,67;567,1;115,99
+31552;Pneu Speedmax Aro 17 Drivemax C10 205/40R17 84W XL;pneustore;381,57;399,9;5,0;3,0;309,9;449,9;54,85
+31764;Pneu Goodyear Aro 14 Assurance Maxlife 175/70R14 88T XL;magalu;577,04;554,56;10,0;8,0;446,41;735,75;76,93
+31764;Pneu Goodyear Aro 14 Assurance Maxlife 175/70R14 88T XL;pneustore;457,4;457,4;4,0;2,0;419,9;509,9;10,61
+31810;Pneu Bridgestone Aro 18 Turanza T005A 235/45R18 94W;magalu;1222,88;1222,88;1,0;1,0;1222,88;1222,88;
+31810;Pneu Bridgestone Aro 18 Turanza T005A 235/45R18 94W;pneustore;1659,9;1659,9;1,0;1,0;1659,9;1659,9;
+31994;Pneu Michelin Aro 15 Primacy 4 195/65R15 91H;magalu;765,46;765,46;4,0;2,0;691,87;804,52;27,67
+32171;Pneu 195/50 R16 Kelly Edge Sport 84v Goodyear;magalu;605,03;605,03;1,0;1,0;605,03;605,03;
+32171;Pneu 195/50 R16 Kelly Edge Sport 84v Goodyear;mercadolivre;696,7;704,62;18,0;14,0;475,0;797,04;29,71
+32219;Pneu Speedmax Prime Aro 15 FRD96 205/70R15C 106/104S;pneustore;696,12;559,9;100,0;82,0;269,9;4159,9;353,08
+32422;Pneu Comforser Aro 15 195/60R15 88H CF510;magalu;422,39;422,39;4,0;2,0;399,72;451,22;26,57
+32422;Pneu Comforser Aro 15 195/60R15 88H CF510;mercadolivre;464,42;465,12;3,0;3,0;435,05;493,1;29,03
+32422;Pneu Comforser Aro 15 195/60R15 88H CF510;pneustore;444,28;439,9;10,0;8,0;289,9;569,9;90,53
+32448;Pneu Comforser Aro 15 195/55R15 85V CF510;magalu;431,7;431,7;4,0;2,0;408,53;498,23;27,16
+32448;Pneu Comforser Aro 15 195/55R15 85V CF510;mercadolivre;525,49;525,49;2,0;2,0;524,99;525,99;0,71
+32448;Pneu Comforser Aro 15 195/55R15 85V CF510;pneustore;386,9;364,9;13,0;10,0;269,9;559,9;56,23
+32522;Pneu 900-20 140/137 14 Lonas At59 Anteo;magalu;2074,43;2063,94;3,0;3,0;1941,22;2218,12;138,75
+32527;Pneu Firestone Aro 17 Destination H/t 265/65r17 112h;magalu;1174,85;1196,36;8,0;6,0;1054,49;1368,24;72,56
+32527;Pneu Firestone Aro 17 Destination H/t 265/65r17 112h;mercadolivre;1188,67;1176,0;5,0;3,0;1057,0;1258,0;47,29
+32527;Pneu Firestone Aro 17 Destination H/t 265/65r17 112h;pneustore;1014,9;1014,9;4,0;2,0;919,9;1069,9;21,21
+32665;Pneu Goodyear Aro 19 EfficientGrip SUV 235/55R19 105V XL;magalu;1506,76;1506,76;2,0;2,0;1363,44;1650,07;202,68
+32665;Pneu Goodyear Aro 19 EfficientGrip SUV 235/55R19 105V XL;mercadolivre;1464,67;1475,0;3,0;3,0;1429,0;1490,0;31,79
+32665;Pneu Goodyear Aro 19 EfficientGrip SUV 235/55R19 105V XL;pneustore;1374,9;1374,9;1,0;1,0;1374,9;1374,9;
+32851;Pneu Dunlop 195/50 R15 82V DZ102 EV;magalu;590,2;590,2;6,0;5,0;448,18;590,2;0,0
+32851;Pneu Dunlop 195/50 R15 82V DZ102 EV;mercadolivre;559,5;555,75;3,0;3,0;541,36;581,4;20,28
+32859;Pneu Iris Aro 16 Sefar 215/55R16 97V;magalu;795,48;737,97;7,0;5,0;542,33;1163,63;197,89
+32859;Pneu Iris Aro 16 Sefar 215/55R16 97V;pneustore;423,23;409,9;3,0;3,0;399,9;459,9;32,15
+32874;Pneu Dunlop 195/55R16 91V XL SP SPORT FM800;magalu;755,37;755,37;7,0;5,0;625,63;762,35;0,0
+32874;Pneu Dunlop 195/55R16 91V XL SP SPORT FM800;mercadolivre;698,05;684,99;8,0;7,0;613,9;728,98;29,12
+33074;Pneu Bfgoodrich 265/60r18 114s All-terrain T/a Ko3 Lrd Go;magalu;2249,64;2249,64;1,0;1,0;2249,64;2249,64;
+33074;Pneu Bfgoodrich 265/60r18 114s All-terrain T/a Ko3 Lrd Go;mercadolivre;2308,0;2308,0;4,0;2,0;2078,0;2538,0;57,98
+33074;Pneu Bfgoodrich 265/60r18 114s All-terrain T/a Ko3 Lrd Go;pneustore;1799,9;1799,9;2,0;2,0;1699,9;1899,9;141,42
+33115;Pneu Dunlop Aro 15 195/60r15 Sp Sport Fm800 88v;magalu;619,85;649,11;10,0;9,0;531,05;649,11;45,68
+33115;Pneu Dunlop Aro 15 195/60r15 Sp Sport Fm800 88v;mercadolivre;567,38;561,72;25,0;19,0;497,8;686,81;33,55
+33117;Pneu Dunlop Aro 17 225/50r17 Sp Sport Fm800 94w;mercadolivre;754,15;747,04;8,0;6,0;696,09;805,92;18,47
+33170;Pneu Dunlop Aro 15 195/55r15 Sp Sport Fm800 85v V;magalu;651,89;699,49;3,0;3,0;541,28;714,9;96,1
+33170;Pneu Dunlop Aro 15 195/55r15 Sp Sport Fm800 85v V;mercadolivre;576,5;583,02;15,0;11,0;250,0;720,69;33,14
+33171;Pneu Dunlop 205/60 R15 91V SP SPORT FM800;magalu;723,03;723,03;7,0;5,0;630,49;752,77;0,0
+33171;Pneu Dunlop 205/60 R15 91V SP SPORT FM800;mercadolivre;679,83;695,02;9,0;7,0;590,96;715,94;31,26
+33194;Pneu Goodyear Aro 14 Assurance Maxlife 185/70R14 88H;magalu;571,84;570,5;5,0;3,0;523,5;659,99;22,55
+33194;Pneu Goodyear Aro 14 Assurance Maxlife 185/70R14 88H;pneustore;499,9;509,9;3,0;3,0;444,9;544,9;50,74
+33336;Pneu Westlake Aro 22.5 275/80r22.5 Cr976a 149/146m;magalu;1993,11;1993,11;2,0;2,0;1899,12;2087,1;132,92
+33336;Pneu Westlake Aro 22.5 275/80r22.5 Cr976a 149/146m;mercadolivre;1916,0;1940,0;3,0;3,0;1851,0;1957,0;56,93
+33336;Pneu Westlake Aro 22.5 275/80r22.5 Cr976a 149/146m;pneustore;1857,04;1847,4;17,0;14,0;1599,9;2949,9;133,41
+33372;Pneu Goodyear Aro 13 Assurance Maxlife 165/70R13 83T XL;magalu;437,44;437,44;4,0;2,0;405,43;465,02;10,67
+33372;Pneu Goodyear Aro 13 Assurance Maxlife 165/70R13 83T XL;pneustore;351,57;334,9;3,0;3,0;324,9;394,9;37,86
+33374;Pneu Dunlop 195/65 R15 91H SP SPORT FM800;magalu;623,82;684,91;11,0;10,0;494,1;712,34;84,14
+33374;Pneu Dunlop 195/65 R15 91H SP SPORT FM800;mercadolivre;620,76;625,58;8,0;6,0;520,38;672,17;39,31
+33378;Pneu Bridgestone Aro 17 205/55r17 Turanza T005 91v;magalu;911,99;911,99;1,0;1,0;911,99;911,99;
+33378;Pneu Bridgestone Aro 17 205/55r17 Turanza T005 91v;mercadolivre;1077,58;1071,5;70,0;58,0;90,0;1751,0;147,25
+33378;Pneu Bridgestone Aro 17 205/55r17 Turanza T005 91v;pneustore;1066,57;1009,9;3,0;3,0;999,9;1189,9;106,93
+33412;Pneu Michelin 215/50 R17 95w Xl Tl Primacy 4+;magalu;891,36;891,36;1,0;1,0;891,36;891,36;
+33621;Pneu Pirelli Scorpion HT 265/65 R17 HT Aro 17 112T;magalu;1175,01;1172,34;31,0;25,0;658,26;2434,5;184,79
+33621;Pneu Pirelli Scorpion HT 265/65 R17 HT Aro 17 112T;pneustore;1081,78;1062,4;20,0;16,0;599,9;1499,9;128,16
+33696;Pneu Pirelli Scorpion HT 265/65 R17 HT Aro 17 112T;magalu;1175,83;1173,67;32,0;24,0;658,26;2434,5;153,83
+33696;Pneu Pirelli Scorpion HT 265/65 R17 HT Aro 17 112T;pneustore;1072,23;1069,9;19,0;15,0;599,9;1499,9;152,33
+33803;Pneu Dunlop 185/65R15 88H SP SPORT FM800;magalu;637,91;657,19;8,0;6,0;536,41;741,16;47,23
+33803;Pneu Dunlop 185/65R15 88H SP SPORT FM800;mercadolivre;561,82;549,99;28,0;22,0;150,0;759,81;52,46
+34125;Pneu Ceat Aro 22.5 Winmile X3-R 295/80R22.5 154/149M 18 Lonas;magalu;2714,0;2714,0;1,0;1,0;2714,0;2714,0;
+34125;Pneu Ceat Aro 22.5 Winmile X3-R 295/80R22.5 154/149M 18 Lonas;pneustore;2252,66;2259,9;37,0;29,0;1599,9;3199,9;171,01
+34170;Pneu Goodyear Aro 17 Wrangler Fortitude HT 245/65R17 111H XL;magalu;1188,93;1180,8;7,0;5,0;729,28;1902,9;224,67
+34170;Pneu Goodyear Aro 17 Wrangler Fortitude HT 245/65R17 111H XL;mercadolivre;1320,0;1320,0;1,0;1,0;1320,0;1320,0;
+34170;Pneu Goodyear Aro 17 Wrangler Fortitude HT 245/65R17 111H XL;pneustore;1103,65;1144,9;12,0;8,0;539,9;1724,9;206,53
+34236;Pneu Goodyear Aro 16 Wrangler Fortitude Ht 235/60r16 100h;mercadolivre;1027,4;1048,0;10,0;8,0;885,4;1191,0;80,88
+34236;Pneu Goodyear Aro 16 Wrangler Fortitude Ht 235/60r16 100h;pneustore;824,9;824,9;1,0;1,0;824,9;824,9;
+34338;Pneu 235/75R17.5 Firestone FS558 132/130L - LISO/TRAÇÃO 12 LONAS;magalu;1907,46;1907,46;2,0;2,0;1745,49;2069,43;229,06
+34373;Pneu Farroad Aro 18 FRD26 235/40R18 95W;magalu;799,36;737,78;3,0;3,0;560,66;1099,63;274,71
+34373;Pneu Farroad Aro 18 FRD26 235/40R18 95W;pneustore;900,9;709,9;7,0;5,0;489,9;1649,9;373,6
+34374;Pneu Barum by Continental Aro 15 Bravuris 5HM 175/65R15 84T;magalu;399,69;399,69;1,0;1,0;399,69;399,69;
+34374;Pneu Barum by Continental Aro 15 Bravuris 5HM 175/65R15 84T;pneustore;383,47;349,9;9,0;7,0;279,9;669,9;62,96
+34388;Pneu Speedmax Prime Aro 17 Pangea All-Terrain 255/65R17 114H - Letras Brancas;magalu;1560,85;1189,47;3,0;3,0;1099,54;2393,53;722,53
+34388;Pneu Speedmax Prime Aro 17 Pangea All-Terrain 255/65R17 114H - Letras Brancas;pneustore;1422,12;1499,9;7,0;5,0;1029,9;1929,9;271,43
+34564;Pneu Goodyear Aro 14 Assurance Maxlife 165/70R14 85T XL;magalu;508,84;508,84;4,0;2,0;420,82;658,07;24,27
+34564;Pneu Goodyear Aro 14 Assurance Maxlife 165/70R14 85T XL;pneustore;409,9;409,9;1,0;1,0;409,9;409,9;
+34724;Pneu Dunlop Aro 15 185/60r15 Sp Sport Fm800 88h H;magalu;695,55;695,55;4,0;2,0;521,27;741,16;49,99
+34724;Pneu Dunlop Aro 15 185/60r15 Sp Sport Fm800 88h H;mercadolivre;574,64;569,4;23,0;20,0;529,99;759,81;46,35
+34725;Pneu Dunlop 175/70R14 88T GRANDTREK AT5 XL;magalu;693,25;719,56;8,0;7,0;541,4;719,56;53,0
+34725;Pneu Dunlop 175/70R14 88T GRANDTREK AT5 XL;mercadolivre;622,84;628,3;8,0;6,0;553,0;691,61;42,78
+34726;Pneu aro 17 225/45 r17 dunlop sp sport fm800 xl dev 94w;magalu;643,44;643,44;2,0;2,0;583,97;702,91;84,1
+34808;Pneu Dunlop Aro 17 215/60r17 Enasave Ec300 96h;magalu;763,68;763,68;1,0;1,0;763,68;763,68;
+34808;Pneu Dunlop Aro 17 215/60r17 Enasave Ec300 96h;mercadolivre;864,57;829,99;26,0;22,0;796,55;1046,0;47,9
+34820;Pneu Dunlop Aro 16 205/55r16 Sp Sport Fm800 91v V;magalu;683,22;702,76;3,0;3,0;576,73;770,16;98,18
+34820;Pneu Dunlop Aro 16 205/55r16 Sp Sport Fm800 91v V;mercadolivre;642,13;642,32;17,0;14,0;282,0;794,32;30,09
+35009;Pneu Continental Aro 16 Powercontact 2 195/55r16 87h;magalu;608,61;585,09;9,0;7,0;549,9;811,29;51,4
+35009;Pneu Continental Aro 16 Powercontact 2 195/55r16 87h;mercadolivre;683,15;704,68;49,0;39,0;140,0;1200,0;81,85
+35009;Pneu Continental Aro 16 Powercontact 2 195/55r16 87h;pneustore;569,9;569,9;2,0;2,0;569,9;569,9;0,0
+35089;Pneu Speedmax Aro 17 Controlmax CP11 215/45R17 91W XL;magalu;581,07;561,84;16,0;12,0;436,37;861,15;82,89
+35089;Pneu Speedmax Aro 17 Controlmax CP11 215/45R17 91W XL;pneustore;569,9;549,9;9,0;7,0;459,9;1139,9;78,95
+35247;Pneu Goodyear Aro 17 Efficientgrip Suv 215/60r17 96h;magalu;958,09;955,0;7,0;5,0;800,7;1117,72;47,46
+35247;Pneu Goodyear Aro 17 Efficientgrip Suv 215/60r17 96h;mercadolivre;911,96;956,45;40,0;32,0;100,0;1366,0;253,02
+35247;Pneu Goodyear Aro 17 Efficientgrip Suv 215/60r17 96h;pneustore;802,4;802,4;2,0;2,0;779,9;824,9;31,82
+35437;Pneu Michelin Aro 17 Primacy 4 215/55R17 94V;magalu;1189,75;1261,84;10,0;8,0;834,6;1486,85;139,1
+35475;Pneu Speedmax Prime Aro 16 FRD96 225/65R16C 112/110T;magalu;1016,0;1115,59;5,0;3,0;725,04;1634,02;194,01
+35475;Pneu Speedmax Prime Aro 16 FRD96 225/65R16C 112/110T;pneustore;779,28;637,4;10,0;8,0;439,9;1269,9;309,17
+35667;Pneu 205/70r15 Goodyear Wrangler Fortitude Ht 96t;magalu;768,75;768,75;1,0;1,0;768,75;768,75;
+35667;Pneu 205/70r15 Goodyear Wrangler Fortitude Ht 96t;mercadolivre;879,17;852,39;8,0;7,0;687,04;991,88;93,56
+35667;Pneu 205/70r15 Goodyear Wrangler Fortitude Ht 96t;pneustore;742,4;742,4;2,0;2,0;724,9;759,9;24,75
+35709;Pneu Aro 16 Michelin 225/65 R16 Tl 112/110r Agilis 3 Dt;magalu;1741,73;1741,73;1,0;1,0;1741,73;1741,73;
+35709;Pneu Aro 16 Michelin 225/65 R16 Tl 112/110r Agilis 3 Dt;mercadolivre;1704,0;1737,0;5,0;3,0;1619,0;1881,0;57,16
+35709;Pneu Aro 16 Michelin 225/65 R16 Tl 112/110r Agilis 3 Dt;pneustore;1269,9;1269,9;1,0;1,0;1269,9;1269,9;
+35869;Pneu Michelin Aro 18 LTX Force 225/60R18 104H XL TL;pneustore;1259,9;1259,9;1,0;1,0;1259,9;1259,9;
+35898;Pneu Goodyear Aro 18 Wrangler Fortitude HT 235/60R18 103V;magalu;1200,89;1193,39;3,0;3,0;1129,23;1280,05;75,69
+35898;Pneu Goodyear Aro 18 Wrangler Fortitude HT 235/60R18 103V;mercadolivre;1301,0;1207,0;3,0;3,0;1180,0;1516,0;186,68
+35898;Pneu Goodyear Aro 18 Wrangler Fortitude HT 235/60R18 103V;pneustore;1099,9;1099,9;2,0;2,0;1099,9;1099,9;0,0
+35931;Pneu Continental Aro 14 Powercontact 2 185/70r14 88h;magalu;530,71;513,44;9,0;7,0;470,94;760,91;71,62
+35931;Pneu Continental Aro 14 Powercontact 2 185/70r14 88h;mercadolivre;623,66;614,73;30,0;24,0;500,75;864,84;51,94
+35931;Pneu Continental Aro 14 Powercontact 2 185/70r14 88h;pneustore;474,9;474,9;1,0;1,0;474,9;474,9;
+35952;Pneu Speedmax Aro 17.5 Townmax A 215/75R17.5 135/133J 18 Lonas;pneustore;829,07;822,4;8,0;6,0;749,9;979,9;30,73
+35966;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;pneustore;779,72;779,9;15,0;11,0;519,9;1389,9;153,76
+36000;Pneu Goodyear Aro 16 Eagle Sport 2 205/55R16 91V;magalu;553,67;545,03;9,0;7,0;477,3;652,73;43,4
+36000;Pneu Goodyear Aro 16 Eagle Sport 2 205/55R16 91V;mercadolivre;542,52;579,86;11,0;9,0;190,0;919,41;129,58
+36000;Pneu Goodyear Aro 16 Eagle Sport 2 205/55R16 91V;pneustore;464,9;464,9;1,0;1,0;464,9;464,9;
+36016;Pneu Dunlop 265/70r16 112t Grandtrek At5;magalu;1380,22;1380,22;6,0;5,0;1380,22;1387,0;0,0
+36016;Pneu Dunlop 265/70r16 112t Grandtrek At5;mercadolivre;1246,4;1254,0;7,0;5,0;1154,0;1464,0;59,0
+36025;Pneu 195/55r15 Goodyear Eagle Sport 2 85h Aro 15;magalu;556,76;556,76;2,0;2,0;523,5;590,02;47,04
+36025;Pneu 195/55r15 Goodyear Eagle Sport 2 85h Aro 15;mercadolivre;693,54;694,19;33,0;26,0;190,0;789,44;32,84
+36025;Pneu 195/55r15 Goodyear Eagle Sport 2 85h Aro 15;pneustore;509,9;509,9;1,0;1,0;509,9;509,9;
+36182;Pneu Michelin Aro 15 LTX Force 205/65R15 94T;magalu;813,89;769,89;3,0;3,0;743,95;927,83;99,52
+36182;Pneu Michelin Aro 15 LTX Force 205/65R15 94T;mercadolivre;898,29;899,0;13,0;9,0;804,89;1079,0;29,02
+36182;Pneu Michelin Aro 15 LTX Force 205/65R15 94T;pneustore;749,9;749,9;1,0;1,0;749,9;749,9;
+36249;Pneu Bridgestone Aro 17 Dueler H/t 684 Iii 245/65r17 111t Xl;magalu;1662,22;1662,22;2,0;2,0;1329,43;1995,0;470,63
+36249;Pneu Bridgestone Aro 17 Dueler H/t 684 Iii 245/65r17 111t Xl;mercadolivre;1666,67;1669,5;7,0;6,0;1348,0;1932,0;260,62
+36249;Pneu Bridgestone Aro 17 Dueler H/t 684 Iii 245/65r17 111t Xl;pneustore;1069,9;1069,9;1,0;1,0;1069,9;1069,9;
+36336;Pneu Aro 17 Michelin 205/55 R17 95V XL TL PRIMACY 4+;magalu;913,82;913,82;1,0;1,0;913,82;913,82;
+36529;Pneu Barum By Continental Aro 14 Bravuris 5hm 185/60r14 82h H;magalu;373,4;373,4;2,0;2,0;369,9;376,9;4,95
+36529;Pneu Barum By Continental Aro 14 Bravuris 5hm 185/60r14 82h H;mercadolivre;444,26;444,26;2,0;2,0;444,26;444,26;0,0
+36529;Pneu Barum By Continental Aro 14 Bravuris 5hm 185/60r14 82h H;pneustore;401,57;434,9;3,0;3,0;329,9;439,9;62,12
+36536;Pneu 185/65R14 Barum Bravuris 5HM 86H by Continental Aro 14;magalu;420,76;425,0;3,0;3,0;409,74;427,53;9,62
+36536;Pneu 185/65R14 Barum Bravuris 5HM 86H by Continental Aro 14;mercadolivre;493,76;484,78;9,0;8,0;478,08;598,31;18,5
+36536;Pneu 185/65R14 Barum Bravuris 5HM 86H by Continental Aro 14;pneustore;416,57;454,9;3,0;3,0;329,9;464,9;75,22
+36587;Pneu Firestone Aro 16 Destination H/T 245/70R16 107H;magalu;1111,98;1067,06;10,0;8,0;816,46;1488,48;219,77
+36587;Pneu Firestone Aro 16 Destination H/T 245/70R16 107H;pneustore;994,9;994,9;2,0;2,0;789,9;1199,9;289,91
+36629;Pneu Continental Aro 15 Powercontact 2 195/65r15 91h H;magalu;609,88;571,99;10,0;8,0;505,53;1032,5;98,7
+36629;Pneu Continental Aro 15 Powercontact 2 195/65r15 91h H;mercadolivre;683,61;624,09;35,0;28,0;518,0;2314,0;103,71
+36629;Pneu Continental Aro 15 Powercontact 2 195/65r15 91h H;pneustore;519,9;519,9;1,0;1,0;519,9;519,9;
+36726;Pneu Barum by Continental Aro 17 Bravuris 4X4 265/65R17 112T;magalu;797,42;797,42;1,0;1,0;797,42;797,42;
+36726;Pneu Barum by Continental Aro 17 Bravuris 4X4 265/65R17 112T;pneustore;919,9;919,9;2,0;2,0;709,9;1129,9;296,98
+36981;Pneu Carro 185/65r15 88h Eagle Sport 2 Goodyear Aro 15;magalu;593,76;602,09;5,0;3,0;531,91;691,63;41,07
+36981;Pneu Carro 185/65r15 88h Eagle Sport 2 Goodyear Aro 15;mercadolivre;699,84;700,34;36,0;29,0;568,65;787,58;33,43
+36981;Pneu Carro 185/65r15 88h Eagle Sport 2 Goodyear Aro 15;pneustore;539,9;539,9;2,0;2,0;534,9;544,9;7,07
+37048;Pneu Goodyear Aro 15 Eagle Sport 2 185/60r15 88h Xl;magalu;568,26;572,96;5,0;3,0;523,5;714,83;34,25
+37048;Pneu Goodyear Aro 15 Eagle Sport 2 185/60r15 88h Xl;mercadolivre;653,11;659,48;30,0;25,0;535,93;750,72;35,28
+37048;Pneu Goodyear Aro 15 Eagle Sport 2 185/60r15 88h Xl;pneustore;509,9;509,9;1,0;1,0;509,9;509,9;
+37195;Pneu 225/50r17 Eagle Sport 2 94v Goodyear;magalu;740,0;740,0;1,0;1,0;740,0;740,0;
+37195;Pneu 225/50r17 Eagle Sport 2 94v Goodyear;mercadolivre;864,5;880,2;28,0;24,0;708,29;1001,0;65,42
+37195;Pneu 225/50r17 Eagle Sport 2 94v Goodyear;pneustore;659,9;659,9;1,0;1,0;659,9;659,9;
+37198;Pneu Carro 185/55r16 Eagle Sport 2 83v Goodyear Aro 16;magalu;675,73;675,73;2,0;2,0;636,43;715,03;55,58
+37198;Pneu Carro 185/55r16 Eagle Sport 2 83v Goodyear Aro 16;mercadolivre;776,57;799,21;19,0;17,0;90,0;851,72;61,48
+37198;Pneu Carro 185/55r16 Eagle Sport 2 83v Goodyear Aro 16;pneustore;619,9;619,9;1,0;1,0;619,9;619,9;
+37209;Pneu Pirelli Aro 18 Scorpion HT 265/60R18 110H;magalu;776,24;776,24;1,0;1,0;776,24;776,24;
+37209;Pneu Pirelli Aro 18 Scorpion HT 265/60R18 110H;pneustore;1054,45;1029,9;15,0;11,0;689,9;1699,9;126,36
+37226;Pneu Dunlop 225/45 R17 94W DZ102 XL JP EV;magalu;739,39;758,83;29,0;24,0;583,97;1493,31;59,93
+37365;Pneu Aro 15 195/65r15 Eagle Sport 2 91v Goodyear Carro;magalu;596,33;579,41;3,0;3,0;564,56;645,03;42,82
+37365;Pneu Aro 15 195/65r15 Eagle Sport 2 91v Goodyear Carro;mercadolivre;692,05;700,28;24,0;20,0;595,85;765,39;44,07
+37365;Pneu Aro 15 195/65r15 Eagle Sport 2 91v Goodyear Carro;pneustore;549,9;549,9;1,0;1,0;549,9;549,9;
+37407;Pneu 205/60r16 92h Wrangler Territory Ht Goodyear;magalu;825,15;811,89;6,0;4,0;659,9;1084,74;47,51
+37407;Pneu 205/60r16 92h Wrangler Territory Ht Goodyear;mercadolivre;918,51;933,6;25,0;19,0;736,0;1069,0;53,29
+37407;Pneu 205/60r16 92h Wrangler Territory Ht Goodyear;pneustore;709,9;709,9;1,0;1,0;709,9;709,9;
+37586;Pneu Michelin Aro 20 XLT A/S 2 265/50R20 111H XL;magalu;1561,15;1561,15;1,0;1,0;1561,15;1561,15;
+37586;Pneu Michelin Aro 20 XLT A/S 2 265/50R20 111H XL;mercadolivre;1570,0;1570,0;1,0;1,0;1570,0;1570,0;
+37586;Pneu Michelin Aro 20 XLT A/S 2 265/50R20 111H XL;pneustore;1429,9;1429,9;1,0;1,0;1429,9;1429,9;
+37632;Pneu Kumho Aro 17 Ecsta HS52 205/55R17 95V XL;magalu;622,2;622,2;2,0;2,0;543,5;700,9;111,3
+37632;Pneu Kumho Aro 17 Ecsta HS52 205/55R17 95V XL;mercadolivre;839,29;952,57;9,0;8,0;199,0;1051,0;225,77
+37632;Pneu Kumho Aro 17 Ecsta HS52 205/55R17 95V XL;pneustore;499,9;499,9;2,0;2,0;499,9;499,9;0,0
+37657;Pneu Speedmax Aro 18 W01 235/60R18 103T;magalu;1049,14;1138,31;21,0;17,0;628,24;1550,23;195,45
+37657;Pneu Speedmax Aro 18 W01 235/60R18 103T;mercadolivre;818,46;818,46;2,0;2,0;763,77;873,14;77,34
+37657;Pneu Speedmax Aro 18 W01 235/60R18 103T;pneustore;931,01;869,9;10,0;9,0;659,9;1599,9;238,14
+37661;Pneu Speedmax Aro 225/50r17 98w Spm305 Sc;magalu;598,51;609,18;44,0;34,0;446,41;1497,67;135,53
+37661;Pneu Speedmax Aro 225/50r17 98w Spm305 Sc;mercadolivre;652,78;687,24;5,0;3,0;501,07;729,59;94,96
+37661;Pneu Speedmax Aro 225/50r17 98w Spm305 Sc;pneustore;1025,53;1074,9;12,0;8,0;484,9;1579,9;290,76
+37662;Pneu 265/70r16 firestone destination atx;magalu;1399,32;1435,36;11,0;10,0;1052,23;1559,25;176,87
+37662;Pneu 265/70r16 firestone destination atx;mercadolivre;1265,75;1295,0;22,0;16,0;1100,0;1485,0;72,47
+37662;Pneu 265/70r16 firestone destination atx;pneustore;934,9;934,9;2,0;2,0;889,9;979,9;63,64
+37670;Pneu Xbri Aro 14 175/80 R14 Forza E1 A/T !;magalu;546,39;552,89;6,0;4,0;352,31;1958,23;93,24
+37670;Pneu Xbri Aro 14 175/80 R14 Forza E1 A/T !;pneustore;376,9;339,9;7,0;5,0;289,9;609,9;77,91
+37680;Pneu Michelin 185 65 R15 Energy Xm2+ 88 H Renault Sandero 20;mercadolivre;770,17;742,61;55,0;51,0;686,83;2999,0;60,43
+37680;Pneu Michelin 185 65 R15 Energy Xm2+ 88 H Renault Sandero 20;pneustore;639,9;639,9;1,0;1,0;639,9;639,9;
+37734;Pneu Continental 195/60 R15 88h Power Contact 2 H;magalu;565,13;554,4;10,0;8,0;455,2;786,97;41,14
+37734;Pneu Continental 195/60 R15 88h Power Contact 2 H;mercadolivre;664,99;664,99;4,0;2,0;629,99;699,99;7,07
+37734;Pneu Continental 195/60 R15 88h Power Contact 2 H;pneustore;454,9;454,9;4,0;2,0;369,9;519,9;77,78
+37851;Pneu Tornel Aro 13 America Selecta Plus 185/70R13 85T;magalu;456,21;456,21;4,0;2,0;352,39;487,78;27,17
+37851;Pneu Tornel Aro 13 America Selecta Plus 185/70R13 85T;pneustore;339,9;339,9;2,0;2,0;329,9;349,9;14,14
+37864;Pneu Barum by Continental Aro 16 Bravuris AT 265/70R16 112T;magalu;963,46;984,21;14,0;10,0;719,9;1550,0;112,56
+37864;Pneu Barum by Continental Aro 16 Bravuris AT 265/70R16 112T;pneustore;998,47;939,9;18,0;14,0;689,9;2499,9;234,94
+37888;Pneu Dunlop 235/75 R15 104/101S GRANDTREK AT5 DEV;magalu;1009,8;1064,91;9,0;8,0;854,1;1064,91;81,47
+37907;Pneu Dunlop 265/60 R18 110H GRANDTREK AT5 DEV;magalu;1551,16;1551,16;5,0;5,0;1551,16;1551,16;0,0
+37907;Pneu Dunlop 265/60 R18 110H GRANDTREK AT5 DEV;mercadolivre;1320,0;1320,0;2,0;2,0;1288,0;1352,0;45,25
+37925;Pneu 205 55r 17 Original Goodyear Wrangler Territory 91v V;magalu;1037,84;1037,84;2,0;2,0;830,78;1244,89;292,82
+37925;Pneu 205 55r 17 Original Goodyear Wrangler Territory 91v V;mercadolivre;1058,57;1056,5;74,0;58,0;170,0;1601,0;90,73
+37925;Pneu 205 55r 17 Original Goodyear Wrangler Territory 91v V;pneustore;799,9;799,9;1,0;1,0;799,9;799,9;
+37978;Pneu Speedmax Prime Aro 18 FRD26 225/45R18 95W;magalu;1044,45;926,7;16,0;12,0;642,79;2266,92;294,43
+37978;Pneu Speedmax Prime Aro 18 FRD26 225/45R18 95W;pneustore;1349,13;1609,9;17,0;13,0;419,9;1989,9;441,8
+38026;Pneu Dunlop 195/50 R15 82V DZ102 EV;magalu;512,36;499,41;19,0;15,0;352,37;1194,33;64,84
+38026;Pneu Dunlop 195/50 R15 82V DZ102 EV;pneustore;391,57;384,9;5,0;3,0;359,9;459,9;11,55
+38167;Pneu Continental Aro 17 ContiSportContact 3 * 205/45R17 84W Run Flat;magalu;1379,73;1379,73;2,0;2,0;1351,95;1407,51;39,29
+38167;Pneu Continental Aro 17 ContiSportContact 3 * 205/45R17 84W Run Flat;pneustore;1449,9;1449,9;1,0;1,0;1449,9;1449,9;
+38375;Pneu Speedmax Aro 20 265/50r20 Dsu02 111w Xl W;magalu;1267,69;1167,31;21,0;17,0;623,22;2364,24;312,88
+38375;Pneu Speedmax Aro 20 265/50r20 Dsu02 111w Xl W;mercadolivre;1073,2;1060,0;9,0;7,0;821,16;1208,0;79,0
+38375;Pneu Speedmax Aro 20 265/50r20 Dsu02 111w Xl W;pneustore;1254,9;1224,9;8,0;6,0;779,9;1674,9;176,95
+38611;Pneu Michelin Aro 18 Primacy 4 225/55R18 98V;magalu;1056,39;1056,39;4,0;2,0;905,41;1314,56;48,31
+38763;Pneu Aro 17 Michelin 205/50 R17 93W XL TL Primacy 4+;magalu;1042,31;1042,31;1,0;1,0;1042,31;1042,31;
+38766;Pneu Kumho Aro 19 Crugen HP71 235/50R19 99H;magalu;878,86;920,9;3,0;3,0;764,32;951,37;100,36
+38766;Pneu Kumho Aro 19 Crugen HP71 235/50R19 99H;mercadolivre;926,95;926,95;2,0;2,0;829,9;1024,0;137,25
+38766;Pneu Kumho Aro 19 Crugen HP71 235/50R19 99H;pneustore;1756,57;1999,9;5,0;3,0;999,9;2359,9;547,21
+38767;Pneu Speedmax Aro 18 Racemax 225/40R18 88W Semi Slick;magalu;945,56;846,16;17,0;13,0;555,64;1684,35;291,26
+38767;Pneu Speedmax Aro 18 Racemax 225/40R18 88W Semi Slick;pneustore;1127,4;1369,9;10,0;8,0;459,9;1649,9;429,27
+38791;Pneu 195/55r16 Goodyear Eagle Sport 2 91v Aro 16;magalu;739,76;719,93;3,0;3,0;631,29;868,05;119,62
+38791;Pneu 195/55r16 Goodyear Eagle Sport 2 91v Aro 16;mercadolivre;736,48;716,06;9,0;7,0;650,03;847,51;67,94
+38791;Pneu 195/55r16 Goodyear Eagle Sport 2 91v Aro 16;pneustore;614,9;614,9;1,0;1,0;614,9;614,9;
+38993;Pneu 185/70R14 Barum Bravuris 5HM 88H By Continental Aro 14;magalu;439,61;455,0;3,0;3,0;382,76;481,06;50,93
+38993;Pneu 185/70R14 Barum Bravuris 5HM 88H By Continental Aro 14;mercadolivre;483,64;468,78;3,0;3,0;445,38;536,75;47,46
+38993;Pneu 185/70R14 Barum Bravuris 5HM 88H By Continental Aro 14;pneustore;422,4;422,4;2,0;2,0;359,9;484,9;88,39
+39213;Pneu Michelin Aro 17 LTX Force 225/65R17 106H XL TL;magalu;960,2;960,2;2,0;2,0;789,9;1130,49;240,83
+39213;Pneu Michelin Aro 17 LTX Force 225/65R17 106H XL TL;mercadolivre;894,99;894,99;1,0;1,0;894,99;894,99;
+39213;Pneu Michelin Aro 17 LTX Force 225/65R17 106H XL TL;pneustore;827,76;839,9;9,0;7,0;559,9;1139,9;163,6
+39636;Pneu Dunlop 225 70 R17 Grandtrek At20 108 106 S S;magalu;1018,77;1018,77;5,0;4,0;782,41;1018,77;0,0
+39636;Pneu Dunlop 225 70 R17 Grandtrek At20 108 106 S S;mercadolivre;966,4;961,64;6,0;4,0;913,42;1043,0;29,56
+39860;Pneu 255/65 R17 Hankook Dynapro AT2 RF11 110T;magalu;1189,47;1189,47;1,0;1,0;1189,47;1189,47;
+39887;Pneu Kumho Aro 14 Ecowing ES31 185/70R14 88T;magalu;376,98;332,25;3,0;3,0;319,9;478,8;88,39
+39887;Pneu Kumho Aro 14 Ecowing ES31 185/70R14 88T;pneustore;329,9;329,9;1,0;1,0;329,9;329,9;
+39933;Pneu Hankook Aro 17 Dynapro At2 Rf11 265/65r17 112t Wl;magalu;1286,45;1286,45;1,0;1,0;1286,45;1286,45;
+39933;Pneu Hankook Aro 17 Dynapro At2 Rf11 265/65r17 112t Wl;mercadolivre;1506,0;1512,0;3,0;3,0;1400,0;1606,0;103,13
+39938;Pneu Michelin Aro 18 Ltx Force 265/60r18 110t;mercadolivre;1670,56;1744,0;10,0;9,0;190,0;1881,0;192,05
+39938;Pneu Michelin Aro 18 Ltx Force 265/60r18 110t;pneustore;1349,9;1349,9;1,0;1,0;1349,9;1349,9;
+39967;Pneu SpeedMax Aro 19 235/40R19 96W HU901;magalu;1150,84;1150,84;4,0;2,0;1089,07;1410,06;72,41
+39967;Pneu SpeedMax Aro 19 235/40R19 96W HU901;pneustore;1729,9;1729,9;1,0;1,0;1729,9;1729,9;
+40025;Pneu Michelin Aro 18 Ltx Force 225/60r18 104h Xl Tl;mercadolivre;1703,27;1646,0;15,0;11,0;1521,0;2020,0;153,52
+40025;Pneu Michelin Aro 18 Ltx Force 225/60r18 104h Xl Tl;pneustore;1259,9;1259,9;1,0;1,0;1259,9;1259,9;
+40059;Pneu Speedmax Prime Aro 16 FRD96 225/65R16C 112/110T;magalu;940,01;912,01;5,0;3,0;725,04;1634,02;163,39
+40059;Pneu Speedmax Prime Aro 16 FRD96 225/65R16C 112/110T;pneustore;779,28;637,4;10,0;8,0;439,9;1269,9;309,17
+40093;Pneu Michelin Aro 19 Pilot Sport 5 235/45R19 (99Y) XL;pneustore;1389,9;1389,9;2,0;2,0;1189,9;1589,9;282,84
+40176;Pneu Speedmax Aro 17.5 Townmax A 215/75R17.5 135/133J 18 Lonas;magalu;770,44;737,91;9,0;7,0;677,96;919,99;83,43
+40176;Pneu Speedmax Aro 17.5 Townmax A 215/75R17.5 135/133J 18 Lonas;pneustore;829,07;822,4;8,0;6,0;749,9;979,9;30,73
+40229;Pneu Aro 16 Michelin 205/60 R16 92V TL Primacy 4+;magalu;884,65;884,65;1,0;1,0;884,65;884,65;
+40283;Pneu Goodyear Aro 16 Wrangler Workhorse AT 235/70R16 109T;magalu;1155,25;1168,86;3,0;3,0;1077,9;1219,0;71,53
+40283;Pneu Goodyear Aro 16 Wrangler Workhorse AT 235/70R16 109T;mercadolivre;1264,38;1259,0;10,0;8,0;1126,0;4461,0;100,1
+40283;Pneu Goodyear Aro 16 Wrangler Workhorse AT 235/70R16 109T;pneustore;1009,9;1009,9;2,0;2,0;969,9;1049,9;56,57
+40532;Pneu SUMITOMO 175/65R14 82T BC20;magalu;509,92;542,85;8,0;7,0;332,41;542,85;62,3
+40532;Pneu SUMITOMO 175/65R14 82T BC20;mercadolivre;429,07;423,19;11,0;9,0;397,65;495,73;26,1
+40602;Pneu Pirelli Powergy 225/45 R17 Aro 17 91W;magalu;641,28;631,08;3,0;3,0;629,17;663,6;19,35
+40602;Pneu Pirelli Powergy 225/45 R17 Aro 17 91W;pneustore;823,23;899,9;5,0;3,0;474,9;1199,9;225,02
+40706;Pneu Michelin XLT A/S LT 265/70R16 112 T;magalu;1288,65;1288,65;1,0;1,0;1288,65;1288,65;
+40706;Pneu Michelin XLT A/S LT 265/70R16 112 T;mercadolivre;2523,44;1413,0;9,0;9,0;1239,0;5519,0;1773,7
+40706;Pneu Michelin XLT A/S LT 265/70R16 112 T;pneustore;1149,9;1149,9;1,0;1,0;1149,9;1149,9;
+40757;Pneu Hankook Aro 17 265/65 R17 XL 112T Dynapro A/T2 Xtreme RF12;magalu;1308,22;1308,22;4,0;2,0;1150,0;1520,0;30,79
+40765;Pneu Dunlop 205/55r16 91h Enasave Ec300;magalu;632,88;650,0;14,0;11,0;502,57;723,04;22,66
+40765;Pneu Dunlop 205/55r16 91h Enasave Ec300;mercadolivre;587,69;589,99;33,0;26,0;260,0;681,56;28,43
+40774;Pneu Michelin Aro 17 Primacy 4 215/60R17 96H TL;magalu;1070,11;1025,87;3,0;3,0;847,92;1336,53;247,29
+41068;Pneu Pirelli Aro 17 Scorpion Seal Inside 215/55r17 94v;magalu;813,02;813,02;1,0;1,0;813,02;813,02;
+41068;Pneu Pirelli Aro 17 Scorpion Seal Inside 215/55r17 94v;mercadolivre;909,52;883,56;16,0;12,0;742,64;1130,0;127,92
+41068;Pneu Pirelli Aro 17 Scorpion Seal Inside 215/55r17 94v;pneustore;619,9;619,9;1,0;1,0;619,9;619,9;
+41274;Pneu Toro 225/60r17 Wrangler Ht Fortitude 103h Goodyear;magalu;1225,05;1225,05;1,0;1,0;1225,05;1225,05;
+41274;Pneu Toro 225/60r17 Wrangler Ht Fortitude 103h Goodyear;mercadolivre;1400,05;1424,0;25,0;19,0;190,0;1620,0;107,93
+41274;Pneu Toro 225/60r17 Wrangler Ht Fortitude 103h Goodyear;pneustore;792,4;792,4;2,0;2,0;474,9;1109,9;449,01
+41354;Pneu Dunlop 185/60 R14 82H SP LM704 JP EV;magalu;436,56;413,79;27,0;23,0;259,62;1044,85;122,18
+41354;Pneu Dunlop 185/60 R14 82H SP LM704 JP EV;mercadolivre;435,88;435,88;4,0;4,0;421,25;450,52;16,9
+41354;Pneu Dunlop 185/60 R14 82H SP LM704 JP EV;pneustore;312,76;324,9;9,0;7,0;239,9;439,9;49,15
+41383;Pneu Aro 15” 205/65R15 Goodyear 94T Direction 2 SUV;magalu;559,9;559,9;1,0;1,0;559,9;559,9;
+41389;Pneu 205 55 R16 91V D1D1;magalu;466,65;459,9;32,0;25,0;300,02;959,8;79,44
+41389;Pneu 205 55 R16 91V D1D1;pneustore;557,21;499,9;17,0;13,0;279,9;1149,9;149,52
+41403;Pneu Speedmax Aro 14 VT Max 175/65R14 82T;magalu;360,0;360,0;1,0;1,0;360,0;360,0;
+41403;Pneu Speedmax Aro 14 VT Max 175/65R14 82T;pneustore;339,26;329,9;15,0;11,0;259,9;394,9;31,31
+41459;Pneu Goodyear Aro 18 EfficientGrip SUV 235/50R18 97V;magalu;1503,86;1531,29;6,0;4,0;563,99;3003,48;258,21
+41459;Pneu Goodyear Aro 18 EfficientGrip SUV 235/50R18 97V;pneustore;944,9;944,9;2,0;2,0;469,9;1419,9;671,75
+41465;Pneu 215 55 R18 Wrangler Territory Ht Goodyear 95v V;magalu;998,19;998,19;1,0;1,0;998,19;998,19;
+41465;Pneu 215 55 R18 Wrangler Territory Ht Goodyear 95v V;mercadolivre;1125,12;1147,0;79,0;65,0;130,0;1686,0;121,7
+41465;Pneu 215 55 R18 Wrangler Territory Ht Goodyear 95v V;pneustore;889,9;889,9;1,0;1,0;889,9;889,9;
+41483;Pneu Nexen 275/70r18 Roadian At Pro Ra8 125/122r Dodge Ram;mercadolivre;2199,5;2199,5;2,0;2,0;1600,0;2799,0;847,82
+41486;Pneu Goodyear Aro 16 Wrangler Workhorse AT 215/80R16 107S;magalu;1171,6;1171,6;2,0;2,0;1088,16;1255,05;118,01
+41486;Pneu Goodyear Aro 16 Wrangler Workhorse AT 215/80R16 107S;mercadolivre;1245,75;1247,5;6,0;4,0;1137,0;1379,0;64,53
+41486;Pneu Goodyear Aro 16 Wrangler Workhorse AT 215/80R16 107S;pneustore;1059,9;1059,9;1,0;1,0;1059,9;1059,9;
+41568;Pneu Xbri Aro 18 265/65r18 122/119r 10pr Brutus T/a;mercadolivre;1365,14;1391,0;9,0;7,0;1116,0;2282,0;92,4
+41568;Pneu Xbri Aro 18 265/65r18 122/119r 10pr Brutus T/a;pneustore;1643,23;1789,9;3,0;3,0;1039,9;2099,9;545,01
+41748;Pneu Itaro Aro 13 Comformax 175/75R13 84T;magalu;444,41;444,41;2,0;2,0;362,42;526,4;115,95
+41748;Pneu Itaro Aro 13 Comformax 175/75R13 84T;mercadolivre;438,34;446,87;11,0;11,0;364,19;488,87;49,69
+41748;Pneu Itaro Aro 13 Comformax 175/75R13 84T;pneustore;249,9;249,9;1,0;1,0;249,9;249,9;
+41872;Pneu Pirelli Aro 18 Scorpion 225/60r18 104h Xl;magalu;1664,9;1664,9;4,0;2,0;1320,15;2296,43;238,03
+41872;Pneu Pirelli Aro 18 Scorpion 225/60r18 104h Xl;mercadolivre;1643,98;1613,0;58,0;46,0;1263,0;3165,0;139,67
+41872;Pneu Pirelli Aro 18 Scorpion 225/60r18 104h Xl;pneustore;1324,9;1324,9;2,0;2,0;1199,9;1449,9;176,78
+42123;Pneu Goodyear Aro 17 EfficientGrip Performance 215/50R17 91V;mercadolivre;629,25;642,66;6,0;6,0;598,96;646,13;23,62
+42123;Pneu Goodyear Aro 17 EfficientGrip Performance 215/50R17 91V;pneustore;587,9;599,9;7,0;5,0;419,9;744,33;80,44
+42157;Pneu Speedmax Prime Aro 16 Pangea All-Terrain 205/55R16 94H XL;magalu;451,65;451,65;1,0;1,0;451,65;451,65;
+42157;Pneu Speedmax Prime Aro 16 Pangea All-Terrain 205/55R16 94H XL;mercadolivre;438,75;438,75;1,0;1,0;438,75;438,75;
+42157;Pneu Speedmax Prime Aro 16 Pangea All-Terrain 205/55R16 94H XL;pneustore;557,21;499,9;17,0;13,0;279,9;1149,9;149,52
+42165;Pneu Aro 17 205/55r17 Aptany Ra305 95w Xl;magalu;649,72;649,85;29,0;24,0;420,33;1244,89;211,03
+42165;Pneu Aro 17 205/55r17 Aptany Ra305 95w Xl;mercadolivre;650,01;639,38;13,0;9,0;581,0;709,16;25,8
+42165;Pneu Aro 17 205/55r17 Aptany Ra305 95w Xl;pneustore;604,34;649,9;12,0;9,0;359,9;1009,9;151,91
+42225;Pneu Firestone Aro 15 Destination H/T 255/75R15 110S;magalu;1319,4;1386,33;3,0;3,0;1131,55;1440,33;164,91
+42225;Pneu Firestone Aro 15 Destination H/T 255/75R15 110S;pneustore;1099,9;1099,9;4,0;2,0;969,9;1279,9;70,71
+42287;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;magalu;721,92;721,92;2,0;2,0;672,69;771,15;69,62
+42287;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;mercadolivre;712,95;723,92;9,0;7,0;645,36;2609,0;16,35
+42287;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;pneustore;505,73;467,4;16,0;12,0;299,9;869,9;86,47
+42322;Pneu Farroad Aro 18 FRD26 215/35R18 84W;magalu;503,26;536,28;5,0;3,0;409,0;766,6;64,06
+42322;Pneu Farroad Aro 18 FRD26 215/35R18 84W;mercadolivre;628,96;628,96;1,0;1,0;628,96;628,96;
+42322;Pneu Farroad Aro 18 FRD26 215/35R18 84W;pneustore;319,9;319,9;1,0;1,0;319,9;319,9;
+42426;Pneu Royal Black Royal Mile P 205/55r16 91 V;magalu;515,55;515,55;1,0;1,0;515,55;515,55;
+42426;Pneu Royal Black Royal Mile P 205/55r16 91 V;mercadolivre;393,05;345,92;3,0;3,0;344,13;489,09;83,18
+42426;Pneu Royal Black Royal Mile P 205/55r16 91 V;pneustore;590,81;499,9;15,0;11,0;279,9;1239,9;229,98
+42462;Pneu Xbri Aro 13 175/75r13 84t Forza A/t 2;magalu;356,76;356,76;1,0;1,0;356,76;356,76;
+42462;Pneu Xbri Aro 13 175/75r13 84t Forza A/t 2;mercadolivre;460,58;452,11;7,0;6,0;426,74;487,71;21,54
+42462;Pneu Xbri Aro 13 175/75r13 84t Forza A/t 2;pneustore;249,9;249,9;1,0;1,0;249,9;249,9;
+42508;Pneu Aro 14 175/80 R14 88t Dewostone Wr9001 At;magalu;552,89;552,89;1,0;1,0;552,89;552,89;
+42508;Pneu Aro 14 175/80 R14 88t Dewostone Wr9001 At;mercadolivre;612,84;612,84;2,0;2,0;596,7;628,98;22,83
+42508;Pneu Aro 14 175/80 R14 88t Dewostone Wr9001 At;pneustore;376,9;339,9;7,0;5,0;289,9;609,9;77,91
+42577;Pneu Michelin Aro 16 Primacy 4 195/55R16 87V TL;magalu;820,91;803,98;3,0;3,0;767,32;891,44;63,77
+42652;Pneu Lanvigator Aro 16 235/60r16 Comfort Ii 100h H;magalu;668,83;709,6;13,0;9,0;390,56;885,83;100,13
+42652;Pneu Lanvigator Aro 16 235/60r16 Comfort Ii 100h H;mercadolivre;702,78;702,78;2,0;2,0;643,43;762,12;83,93
+42652;Pneu Lanvigator Aro 16 235/60r16 Comfort Ii 100h H;pneustore;714,9;729,9;6,0;4,0;429,9;884,9;106,38
+42656;Pneu dunlop 265/70r16 112q grandtrek mt2;magalu;1754,44;1754,44;6,0;5,0;1377,34;1754,44;0,0
+42990;Pneu 175/70r14 Goodyear Kelly Edge Touring 2 88t;magalu;485,02;485,02;1,0;1,0;485,02;485,02;
+42990;Pneu 175/70r14 Goodyear Kelly Edge Touring 2 88t;mercadolivre;566,47;551,79;19,0;15,0;489,89;681,8;52,9
+43054;Pneu Compasal aro 16 205/60r16 Blazer HP 92V;magalu;563,9;565,92;5,0;3,0;512,73;724,22;45,21
+43054;Pneu Compasal aro 16 205/60r16 Blazer HP 92V;mercadolivre;577,49;577,49;2,0;2,0;550,96;604,02;37,52
+43054;Pneu Compasal aro 16 205/60r16 Blazer HP 92V;pneustore;630,26;634,9;18,0;14,0;339,9;899,9;111,29
+43067;Pneu Dunlop 205/60R16 92H AT5;magalu;916,04;939,01;7,0;6,0;794,33;939,01;56,28
+43336;Pneu Levorin 100/80-17 M/c 58s Matrix Sport Ii Tl + Válvula;magalu;454,58;454,58;1,0;1,0;454,58;454,58;
+43336;Pneu Levorin 100/80-17 M/c 58s Matrix Sport Ii Tl + Válvula;mercadolivre;392,28;392,28;4,0;2,0;379,05;402,98;13,27
+43336;Pneu Levorin 100/80-17 M/c 58s Matrix Sport Ii Tl + Válvula;pneustore;475,9;499,9;7,0;5,0;219,9;1479,9;111,49
+43353;Pneu Kelly By Goodyear 165/70r13 83t Edge Touring 2 Xl T;magalu;363,74;395,02;3,0;3,0;289,9;406,31;64,2
+43353;Pneu Kelly By Goodyear 165/70r13 83t Edge Touring 2 Xl T;mercadolivre;433,54;443,29;13,0;9,0;362,88;492,55;30,06
+43353;Pneu Kelly By Goodyear 165/70r13 83t Edge Touring 2 Xl T;pneustore;324,9;324,9;1,0;1,0;324,9;324,9;
+43354;Pneu Goodyear Kelly Edge Touring 2 P 175/70R13 82 T;magalu;362,78;362,78;4,0;2,0;269,9;443,82;17,3
+43354;Pneu Goodyear Kelly Edge Touring 2 P 175/70R13 82 T;mercadolivre;444,84;451,23;18,0;15,0;375,25;577,2;32,58
+43429;Pneu Iris Aro 16 Sefar 215/55R16 97V;magalu;709,48;727,28;6,0;4,0;542,33;1163,63;53,87
+43429;Pneu Iris Aro 16 Sefar 215/55R16 97V;pneustore;423,23;409,9;3,0;3,0;399,9;459,9;32,15
+43455;Pneu Kelly Edge Touring 2 Goodyear Carro 185/65r14 86 H;magalu;485,02;485,02;1,0;1,0;485,02;485,02;
+43455;Pneu Kelly Edge Touring 2 Goodyear Carro 185/65r14 86 H;mercadolivre;587,13;578,25;17,0;14,0;439,95;664,04;29,24
+43503;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;magalu;723,69;723,69;1,0;1,0;723,69;723,69;
+43503;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;mercadolivre;503,16;503,16;2,0;2,0;485,19;521,13;25,41
+43503;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;pneustore;779,72;779,9;15,0;11,0;519,9;1389,9;153,76
+43532;Pneu Pirelli Aro 16 Scorpion 205/60R16 92H;magalu;658,92;670,89;34,0;27,0;363,79;1203,25;124,77
+43532;Pneu Pirelli Aro 16 Scorpion 205/60R16 92H;pneustore;671,96;639,9;20,0;17,0;339,9;989,9;138,21
+43536;Pneu General Tire by Continental Aro 16 Grabber AT3 215/65R16 98T;mercadolivre;705,55;705,55;1,0;1,0;705,55;705,55;
+43536;Pneu General Tire by Continental Aro 16 Grabber AT3 215/65R16 98T;pneustore;713,23;709,9;13,0;9,0;529,9;1249,9;91,24
+43590;Pneu Pirelli Aro 17 Powergy 215/45R17 91V XL;pneustore;564,9;564,9;2,0;2,0;539,9;589,9;35,36
+43695;Pneu Itaro Aro 15 MH01 185/60R15 88H XL;magalu;494,78;471,55;29,0;23,0;277,4;1106,74;93,72
+43695;Pneu Itaro Aro 15 MH01 185/60R15 88H XL;pneustore;422,01;469,9;11,0;9,0;259,9;559,9;94,93
+43699;Pneu Speedmax Aro 16 H12 185/55R16 83V;magalu;392,24;392,24;1,0;1,0;392,24;392,24;
+43699;Pneu Speedmax Aro 16 H12 185/55R16 83V;mercadolivre;454,03;454,03;1,0;1,0;454,03;454,03;
+43699;Pneu Speedmax Aro 16 H12 185/55R16 83V;pneustore;552,4;579,9;6,0;4,0;364,9;699,9;69,46
+43708;Pneu Farroad Aro 14 FRD16 195/70R14 91H;magalu;608,95;628,66;7,0;5,0;353,97;663,58;52,25
+43708;Pneu Farroad Aro 14 FRD16 195/70R14 91H;pneustore;299,9;299,9;1,0;1,0;299,9;299,9;
+43736;Pneu Speedmax Aro 19 DSU02 225/45R19 96W;magalu;678,77;678,77;1,0;1,0;678,77;678,77;
+43736;Pneu Speedmax Aro 19 DSU02 225/45R19 96W;pneustore;2053,23;2134,9;8,0;6,0;679,9;2879,9;620,05
+43749;Pneu Aro 17 - Michelin Ltx Force 225/65 R17 106 H;magalu;1229,78;1229,78;1,0;1,0;1229,78;1229,78;
+43749;Pneu Aro 17 - Michelin Ltx Force 225/65 R17 106 H;mercadolivre;1343,33;1361,0;12,0;9,0;1199,0;1463,0;51,32
+43749;Pneu Aro 17 - Michelin Ltx Force 225/65 R17 106 H;pneustore;1139,9;1139,9;1,0;1,0;1139,9;1139,9;
+43758;Pneu Aro 17 Michelin 225/50 R17 98Y Xl Tl Primacy 4+ DT;magalu;991,17;991,17;1,0;1,0;991,17;991,17;
+43759;Pneu Michelin 265/60 R18 114h Ltx Trail St Mi On 50/50 Off H;mercadolivre;1495,17;1530,5;7,0;6,0;1380,0;1670,0;95,45
+43759;Pneu Michelin 265/60 R18 114h Ltx Trail St Mi On 50/50 Off H;pneustore;1219,9;1159,9;3,0;3,0;1149,9;1349,9;112,69
+43808;Pneu Kumho Aro 19 Crugen HP91 235/45R19 95W;pneustore;1374,47;1221,9;9,0;7,0;679,9;2099,9;299,65
+43810;Pneu Michelin Aro 19 Pilot Sport 5 235/45R19 (99Y) XL;magalu;1271,74;1271,74;1,0;1,0;1271,74;1271,74;
+43810;Pneu Michelin Aro 19 Pilot Sport 5 235/45R19 (99Y) XL;pneustore;1389,9;1389,9;2,0;2,0;1189,9;1589,9;282,84
+43859;Pneu Dunlop 205/45 R17 88W DZ102 XL JP EV;magalu;803,87;807,34;19,0;15,0;466,06;1515,08;216,08
+43859;Pneu Dunlop 205/45 R17 88W DZ102 XL JP EV;pneustore;829,34;799,9;11,0;9,0;329,9;2099,9;408,58
+43982;Pneu Speedmax Aro 17 W01 225/60R17 99T;magalu;1177,6;1304,98;9,0;7,0;562,41;1988,54;266,02
+43982;Pneu Speedmax Aro 17 W01 225/60R17 99T;pneustore;867,9;954,9;11,0;10,0;474,9;1889,9;318,42
+43998;Pneu Carro Goodyear Kelly Edge Suv 2 215/80r16 107s;mercadolivre;1221,88;1225,0;12,0;8,0;1058,0;1329,0;53,77
+44043;Pneu Goodyear 175/65 R14 Kelly Edge Touring 2 86h Ht;magalu;425,0;398,99;3,0;3,0;390,02;485,98;53,0
+44043;Pneu Goodyear 175/65 R14 Kelly Edge Touring 2 86h Ht;mercadolivre;455,07;456,24;23,0;18,0;388,33;518,85;32,93
+44072;Pneu Aro 18 Michelin 235/55 R18 104v Xl Primacy 4+;magalu;1423,69;1423,69;1,0;1,0;1423,69;1423,69;
+44138;Pneu Speedmax Aro 14 ST Max 185/65R14 85T;pneustore;359,9;344,9;12,0;8,0;289,9;499,9;47,58
+44183;Pneu Pirelli Aro 16 Carrier 215/65R16C 109T;magalu;813,77;834,7;20,0;16,0;565,93;1399,68;134,28
+44183;Pneu Pirelli Aro 16 Carrier 215/65R16C 109T;pneustore;661,82;709,9;16,0;13,0;489,9;1159,9;121,13
+44238;Pneu SUMITOMO 185/65R14 86T BC20;magalu;539,38;539,38;6,0;5,0;386,52;539,38;0,0
+44269;Pneu Continental Aro 14 VancoContact 2 175/70R14C 95/93T 6 Lonas;magalu;639,9;639,9;1,0;1,0;639,9;639,9;
+44269;Pneu Continental Aro 14 VancoContact 2 175/70R14C 95/93T 6 Lonas;pneustore;422,4;432,4;6,0;4,0;309,9;669,9;48,05
+44329;Pneu Goodyear Aro 14 185/65r14 Assurance Maxlife 86h;magalu;613,04;594,01;5,0;3,0;513,22;787,88;60,73
+44329;Pneu Goodyear Aro 14 185/65r14 Assurance Maxlife 86h;mercadolivre;682,46;666,21;20,0;16,0;518,83;998,08;100,91
+44329;Pneu Goodyear Aro 14 185/65r14 Assurance Maxlife 86h;pneustore;499,9;499,9;1,0;1,0;499,9;499,9;
+44562;Pneu 195 60 R15 88h Bc20 Sumitomo Gol Marea Punto Parati Corolla Vectra 415126;magalu;459,91;459,91;1,0;1,0;459,91;459,91;
+44605;Pneu Delinte Aro 18 225/45R18 DS7 Sport 95Y;magalu;1065,26;928,25;29,0;23,0;566,61;2504,9;303,04
+44605;Pneu Delinte Aro 18 225/45R18 DS7 Sport 95Y;pneustore;1542,76;1614,9;18,0;14,0;419,9;2049,9;282,64
+44629;Pneu Pirelli Aro 16 Cinturato P7 Seal Inside 195/55R16 91V XL;magalu;627,13;619,94;22,0;16,0;358,35;816,9;74,86
+44629;Pneu Pirelli Aro 16 Cinturato P7 Seal Inside 195/55R16 91V XL;pneustore;739,9;689,9;11,0;9,0;399,9;1099,9;165,13
+44683;Pneu Speedmax Aro 14 MH01 185/70R14 88H;magalu;435,33;448,16;26,0;20,0;277,2;602,2;63,34
+44683;Pneu Speedmax Aro 14 MH01 185/70R14 88H;pneustore;411,78;419,9;10,0;8,0;289,9;544,9;75,92
+44684;Pneu doublestar 215/75r17,5 16pr 126/124l tl dsrs01;magalu;1000,49;1005,42;5,0;3,0;945,35;1298,9;25,4
+44684;Pneu doublestar 215/75r17,5 16pr 126/124l tl dsrs01;mercadolivre;1000,85;1000,85;2,0;2,0;968,7;1033,0;45,47
+44684;Pneu doublestar 215/75r17,5 16pr 126/124l tl dsrs01;pneustore;829,07;822,4;8,0;6,0;749,9;979,9;30,73
+44817;Pneu Advance Aro 17.5 GL283A 235/75R17.5 143/141L TL 16 Lonas;pneustore;967,4;999,9;8,0;6,0;789,9;1059,9;79,61
+44822;Pneu Roadcruza Aro 18 235/60r18 Ra1100 103t T;magalu;899,36;899,36;1,0;1,0;899,36;899,36;
+44822;Pneu Roadcruza Aro 18 235/60r18 Ra1100 103t T;mercadolivre;1279,67;1299,0;3,0;3,0;1165,0;1375,0;106,33
+44822;Pneu Roadcruza Aro 18 235/60r18 Ra1100 103t T;pneustore;1022,12;1089,9;13,0;9,0;659,9;1619,9;168,21
+44854;Pneu Dunlop 215/60 R17 100H GRANDTREK AT5;magalu;978,62;1040,65;8,0;7,0;763,68;1040,65;106,11
+44925;Pneu Pirelli Scorpion HT 265/65 R17 HT Aro 17 112T;magalu;1173,08;1162,62;32,0;24,0;658,26;2434,5;153,96
+44925;Pneu Pirelli Scorpion HT 265/65 R17 HT Aro 17 112T;pneustore;1081,78;1062,4;20,0;16,0;599,9;1499,9;128,16
+44930;Pneu Itaro Aro 17 Altermax A/T 265/65R17 112T - Letras Brancas;magalu;1099,9;1099,9;1,0;1,0;1099,9;1099,9;
+44930;Pneu Itaro Aro 17 Altermax A/T 265/65R17 112T - Letras Brancas;pneustore;1073,08;1049,9;15,0;11,0;739,9;1989,9;232,81
+45003;Pneu Falken 205/70 R15 8PR 106R R51;magalu;729,02;721,91;32,0;27,0;443,69;929,7;139,25
+45003;Pneu Falken 205/70 R15 8PR 106R R51;pneustore;534,28;472,4;19,0;16,0;369,9;889,9;140,91
+45005;Pneu Dunlop 195/50 R15 82V DZ102 EV;magalu;511,97;499,41;17,0;13,0;352,37;1194,33;72,31
+45005;Pneu Dunlop 195/50 R15 82V DZ102 EV;pneustore;391,57;384,9;5,0;3,0;359,9;459,9;11,55
+45018;Pneu Speedmax Aro 16 Drivemax Van V10 215/75R16C 113/111S 8 Lonas;magalu;633,15;625,14;5,0;3,0;556,57;950,05;29,79
+45018;Pneu Speedmax Aro 16 Drivemax Van V10 215/75R16C 113/111S 8 Lonas;pneustore;699,9;699,9;4,0;2,0;624,9;1155,6;91,92
+45019;Pneu Michelin Aro 17 X LT A/S 265/70R17 121/118R TL 10 Lonas - Letra Branca;magalu;804,65;804,65;1,0;1,0;804,65;804,65;
+45019;Pneu Michelin Aro 17 X LT A/S 265/70R17 121/118R TL 10 Lonas - Letra Branca;mercadolivre;1079,6;919,9;3,0;3,0;919,9;1399,0;276,61
+45019;Pneu Michelin Aro 17 X LT A/S 265/70R17 121/118R TL 10 Lonas - Letra Branca;pneustore;1919,9;2089,9;6,0;4,0;799,9;2689,9;721,99
+45073;Pneu Michelin Aro 16 Ltx Force 215/65r16 102h Xl;magalu;1076,7;1076,7;1,0;1,0;1076,7;1076,7;
+45073;Pneu Michelin Aro 16 Ltx Force 215/65r16 102h Xl;mercadolivre;1248,33;1251,0;55,0;44,0;700,0;1868,0;129,69
+45073;Pneu Michelin Aro 16 Ltx Force 215/65r16 102h Xl;pneustore;789,9;789,9;1,0;1,0;789,9;789,9;
+45190;Pneu Bridgestone Aro 18 Dueler H/T 684 II Ecopia 265/60R18 110T;magalu;1132,88;1132,88;1,0;1,0;1132,88;1132,88;
+45190;Pneu Bridgestone Aro 18 Dueler H/T 684 II Ecopia 265/60R18 110T;pneustore;1014,48;989,9;16,0;12,0;619,9;1699,9;136,67
+45201;Pneu Speedmax Aro 16 H12 185/55R16 83V;magalu;528,24;528,24;2,0;2,0;491,35;565,12;52,16
+45201;Pneu Speedmax Aro 16 H12 185/55R16 83V;mercadolivre;497,18;497,18;2,0;2,0;333,72;660,63;231,16
+45201;Pneu Speedmax Aro 16 H12 185/55R16 83V;pneustore;565,9;589,9;7,0;5,0;364,9;699,9;67,31
+45208;Pneu Speedmax Aro 18 DSU02 215/40R18 89Y;magalu;773,44;773,44;1,0;1,0;773,44;773,44;
+45208;Pneu Speedmax Aro 18 DSU02 215/40R18 89Y;pneustore;1208,23;1439,9;5,0;3,0;409,9;1774,9;569,04
+45389;Pneu Speedmax Prime Aro 15 FRD16 185/65R15 88H;magalu;491,62;491,62;2,0;2,0;440,68;542,57;72,05
+45389;Pneu Speedmax Prime Aro 15 FRD16 185/65R15 88H;pneustore;464,9;504,9;14,0;10,0;289,9;639,9;76,92
+45390;Pneu Pirelli Aro 16 Powergy 195/55R16 87V;magalu;534,65;534,65;1,0;1,0;534,65;534,65;
+45390;Pneu Pirelli Aro 16 Powergy 195/55R16 87V;pneustore;644,9;619,9;13,0;9,0;299,9;1099,9;73,57
+45477;Pneu Dunlop Aro 16 185/55r16 Sp Sport Fm800 83v;magalu;731,11;731,11;4,0;2,0;576,8;775,11;0,0
+45477;Pneu Dunlop Aro 16 185/55r16 Sp Sport Fm800 83v;mercadolivre;666,62;679,99;22,0;18,0;190,0;745,49;18,62
+45478;Pneu Dunlop Aro 17 205/55r17 Sp Sport Fm800 91v V;magalu;1098,74;1098,74;1,0;1,0;1098,74;1098,74;
+45478;Pneu Dunlop Aro 17 205/55r17 Sp Sport Fm800 91v V;mercadolivre;1057,2;1048,0;7,0;5,0;917,21;1233,0;50,48
+45516;Pneu 205/65r16 Firestone Destination Le3 95h Aro 16;magalu;727,45;735,35;5,0;3,0;676,16;1000,29;16,02
+45516;Pneu 205/65r16 Firestone Destination Le3 95h Aro 16;mercadolivre;800,0;788,07;12,0;8,0;700,43;954,21;55,13
+45516;Pneu 205/65r16 Firestone Destination Le3 95h Aro 16;pneustore;569,9;569,9;1,0;1,0;569,9;569,9;
+45529;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;magalu;477,12;383,0;30,0;24,0;294,08;1208,85;153,94
+45529;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;pneustore;505,73;467,4;16,0;12,0;299,9;869,9;86,47
+45533;Pneu Speedmax Aro 17 Controlmax CP11 215/45R17 91W XL;magalu;573,15;561,84;18,0;14,0;436,37;861,15;83,02
+45533;Pneu Speedmax Aro 17 Controlmax CP11 215/45R17 91W XL;pneustore;569,9;549,9;9,0;7,0;459,9;1139,9;78,95
+45534;Pneu Speedmax Prime Aro 16 Pangea All-Terrain 205/55R16 94H XL;pneustore;527,21;499,9;17,0;13,0;279,9;1149,9;88,78
+45783;Pneu Dunlop 225/45 R17 94W DZ102 XL JP EV;magalu;649,05;630,12;48,0;38,0;391,96;1779,53;120,65
+45783;Pneu Dunlop 225/45 R17 94W DZ102 XL JP EV;pneustore;684,28;569,9;20,0;16,0;309,9;1269,9;271,34
+45831;Pneu 225/60r18 Goodyear Wrangler Fortitude Ht 104h H;magalu;989,25;989,25;1,0;1,0;989,25;989,25;
+45831;Pneu 225/60r18 Goodyear Wrangler Fortitude Ht 104h H;mercadolivre;1105,83;1079,5;8,0;6,0;962,95;1273,0;75,53
+45831;Pneu 225/60r18 Goodyear Wrangler Fortitude Ht 104h H;pneustore;939,9;939,9;1,0;1,0;939,9;939,9;
+45839;Pneu Wrangler Territory Ht Goodyear Carro 225/50r18 95 V;magalu;1010,24;1010,24;1,0;1,0;1010,24;1010,24;
+45839;Pneu Wrangler Territory Ht Goodyear Carro 225/50r18 95 V;mercadolivre;1206,3;1193,0;13,0;10,0;1046,0;1351,0;41,45
+45839;Pneu Wrangler Territory Ht Goodyear Carro 225/50r18 95 V;pneustore;869,9;869,9;1,0;1,0;869,9;869,9;
+45843;Pneu Michelin Aro 16 LTX Force 265/70R16 112T;magalu;1063,46;1063,46;1,0;1,0;1063,46;1063,46;
+45843;Pneu Michelin Aro 16 LTX Force 265/70R16 112T;pneustore;1074,57;1079,9;19,0;15,0;679,9;2499,9;187,34
+45848;Pneu Pirelli Aro 17 Scorpion ATR (KS) 265/65R17 112S;magalu;1099,9;1099,9;1,0;1,0;1099,9;1099,9;
+45848;Pneu Pirelli Aro 17 Scorpion ATR (KS) 265/65R17 112S;pneustore;1094,54;1099,9;18,0;14,0;599,9;1499,9;130,18
+45879;Pneu Kumho Aro 19 Crugen HP91 235/45R19 95W;magalu;1683,17;1751,26;7,0;6,0;1181,69;1985,95;312,67
+45879;Pneu Kumho Aro 19 Crugen HP91 235/45R19 95W;pneustore;1374,47;1221,9;9,0;7,0;679,9;2099,9;299,65
+46033;Pneu Dunlop Aro 18 255/60R18 Grandtrek AT-25 112T;magalu;1438,32;1438,32;2,0;2,0;1291,15;1585,48;208,12
+46043;Pneu Pirelli Aro 18 Scorpion HT 225/60R18 104H XL;mercadolivre;805,3;805,3;1,0;1,0;805,3;805,3;
+46043;Pneu Pirelli Aro 18 Scorpion HT 225/60R18 104H XL;pneustore;1094,34;1199,9;13,0;9,0;539,9;1774,9;312,29
+46045;Pneu 265/70r16 Bf Roadcruza 111t Ra1100 Novo Com Garantia;magalu;1358,4;1251,3;3,0;3,0;1202,52;1621,38;229,05
+46045;Pneu 265/70r16 Bf Roadcruza 111t Ra1100 Novo Com Garantia;mercadolivre;1308,0;1312,5;8,0;6,0;975,5;1618,0;232,01
+46045;Pneu 265/70r16 Bf Roadcruza 111t Ra1100 Novo Com Garantia;pneustore;1074,57;1079,9;19,0;15,0;679,9;2499,9;187,34
+46047;Pneu Aro 14 Roadcruza 175/70 R14 Tl 98/96s Ra1100;magalu;574,66;574,66;4,0;2,0;489,17;724,78;52,3
+46047;Pneu Aro 14 Roadcruza 175/70 R14 Tl 98/96s Ra1100;mercadolivre;614,95;620,32;11,0;9,0;529,13;834,65;48,01
+46047;Pneu Aro 14 Roadcruza 175/70 R14 Tl 98/96s Ra1100;pneustore;393,47;379,9;18,0;14,0;269,9;749,9;66,26
+46086;Pneu Speedmax Prime Aro 16 Pangea All-Terrain 285/75R16 126/123R 10 Lonas - Letras Brancas;pneustore;1644,28;1484,9;10,0;8,0;999,9;2999,9;571,72
+46091;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;pneustore;749,72;739,9;15,0;11,0;519,9;1389,9;115,29
+46092;Pneu Falken 205/70 R15 8PR 106R R51;magalu;716,4;713,27;30,0;26,0;443,69;929,7;148,46
+46092;Pneu Falken 205/70 R15 8PR 106R R51;mercadolivre;836,74;836,74;1,0;1,0;836,74;836,74;
+46092;Pneu Falken 205/70 R15 8PR 106R R51;pneustore;545,18;492,4;21,0;18,0;369,9;889,9;142,88
+46126;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;magalu;567,85;567,85;2,0;2,0;399,95;735,75;237,45
+46126;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;mercadolivre;686,24;686,24;2,0;2,0;671,59;700,89;20,72
+46126;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;pneustore;509,5;469,9;23,0;17,0;299,9;869,9;91,29
+46127;Pneu 235/75r15 Roadcruza Ra1100 105t Roadcruza 30154;magalu;1280,93;1280,93;1,0;1,0;1280,93;1280,93;
+46127;Pneu 235/75r15 Roadcruza Ra1100 105t Roadcruza 30154;mercadolivre;1067,48;1120,0;9,0;7,0;710,43;1289,0;136,0
+46127;Pneu 235/75r15 Roadcruza Ra1100 105t Roadcruza 30154;pneustore;783,79;774,9;11,0;9,0;499,9;1274,9;96,4
+46128;Pneu Aro 15 Roadcruza 205/70 R15 96t Ra1100;magalu;727,95;727,95;2,0;2,0;582,9;873,0;205,13
+46128;Pneu Aro 15 Roadcruza 205/70 R15 96t Ra1100;mercadolivre;618,95;623,72;3,0;3,0;598,62;634,52;18,42
+46128;Pneu Aro 15 Roadcruza 205/70 R15 96t Ra1100;pneustore;545,18;492,4;21,0;18,0;369,9;889,9;142,88
+46209;Pneu Pirelli Aro 16 Carrier 215/65R16C 109T;magalu;823,89;839,9;23,0;17,0;565,93;1399,68;104,89
+46209;Pneu Pirelli Aro 16 Carrier 215/65R16C 109T;mercadolivre;971,02;979,51;6,0;5,0;821,24;1017,0;50,9
+46209;Pneu Pirelli Aro 16 Carrier 215/65R16C 109T;pneustore;661,82;709,9;16,0;13,0;489,9;1159,9;121,13
+46224;Pneu Aro 14 185/70r14 Kelly By Edge Touring 2 88h Ht H;mercadolivre;594,09;599,0;22,0;16,0;458,0;666,97;24,35
+46226;Pneu Westlake Aro 22.5 CR976A 295/80R22.5 152/149M 18 Lonas;magalu;2450,53;2450,53;2,0;2,0;2141,68;2759,38;436,78
+46226;Pneu Westlake Aro 22.5 CR976A 295/80R22.5 152/149M 18 Lonas;pneustore;2234,71;2254,9;34,0;26,0;1599,9;3199,9;191,82
+46238;Pneu Speedmax Aro 22.5 S3 275/80R22.5 147/144M 16 Lonas;pneustore;1857,04;1847,4;17,0;14,0;1599,9;2949,9;133,41
+46262;Pneu Speedmax Aro 14 ST Max 185/65R14 85T;magalu;442,13;442,13;2,0;2,0;414,92;469,34;38,48
+46262;Pneu Speedmax Aro 14 ST Max 185/65R14 85T;pneustore;367,68;349,9;13,0;9,0;289,9;499,9;50,26
+46263;Pneu Farroad Aro 18 FRD26 215/35R18 84W;magalu;540,17;540,17;4,0;2,0;429,42;766,6;5,51
+46263;Pneu Farroad Aro 18 FRD26 215/35R18 84W;pneustore;319,9;319,9;1,0;1,0;319,9;319,9;
+46284;Pneu Aptany Aro 16 265/70r16 Ru025 112t;magalu;1048,75;1048,75;2,0;2,0;1008,13;1089,37;57,45
+46284;Pneu Aptany Aro 16 265/70r16 Ru025 112t;mercadolivre;938,02;940,73;13,0;9,0;822,25;1017,0;38,19
+46284;Pneu Aptany Aro 16 265/70r16 Ru025 112t;pneustore;1080,57;1079,9;19,0;15,0;679,9;2499,9;179,54
+46286;Pneu Aptany Aro 17 225/50r17 Ra301 98w W;magalu;566,53;473,01;25,0;21,0;446,41;1393,57;126,7
+46286;Pneu Aptany Aro 17 225/50r17 Ra301 98w W;mercadolivre;694,34;696,49;8,0;6,0;612,54;764,99;49,17
+46286;Pneu Aptany Aro 17 225/50r17 Ra301 98w W;pneustore;843,65;687,4;20,0;16,0;369,9;1579,9;335,81
+46291;Pneu Speedmax Aro 15 Hh301 195/55r15 85v;mercadolivre;387,69;387,69;4,0;3,0;326,71;387,69;0,0
+46291;Pneu Speedmax Aro 15 Hh301 195/55r15 85v;pneustore;369,9;359,9;8,0;6,0;269,9;464,9;45,61
+46348;Pneu Bridgestone Aro 17 Dueler H/P Sport AO 235/55R17 99V;magalu;432,28;432,28;1,0;1,0;432,28;432,28;
+46348;Pneu Bridgestone Aro 17 Dueler H/P Sport AO 235/55R17 99V;pneustore;936,9;1039,9;7,0;5,0;519,9;1549,9;387,2
+46467;Pneu Michelin Aro 15 Energy XM2+ 205/60R15 91V;magalu;896,5;896,5;2,0;2,0;893,1;899,9;4,81
+46467;Pneu Michelin Aro 15 Energy XM2+ 205/60R15 91V;mercadolivre;1148,17;1153,0;16,0;12,0;933,7;1301,0;69,26
+46467;Pneu Michelin Aro 15 Energy XM2+ 205/60R15 91V;pneustore;869,9;869,9;1,0;1,0;869,9;869,9;
+46476;Pneu Speedmax Prime Aro 18 FRD26 225/45R18 95W;pneustore;1257,59;1299,9;17,0;13,0;419,9;1989,9;454,74
+46479;Pneu Pirelli Aro 16 Scorpion HT 245/70R16 113T;magalu;758,2;758,2;2,0;2,0;697,63;818,77;85,66
+46479;Pneu Pirelli Aro 16 Scorpion HT 245/70R16 113T;mercadolivre;763,2;763,2;1,0;1,0;763,2;763,2;
+46479;Pneu Pirelli Aro 16 Scorpion HT 245/70R16 113T;pneustore;853,9;824,9;14,0;10,0;549,9;1199,9;158,08
+46482;Pneu Firemax Aro 18 235/50R18 101W XL FM601;magalu;1306,61;1393,71;15,0;11,0;563,99;3003,48;444,74
+46482;Pneu Firemax Aro 18 235/50R18 101W XL FM601;pneustore;1126,57;1209,9;5,0;3,0;469,9;1529,9;342,69
+46483;Pneu Speedmax Prime Aro 16 Pangea All-Terrain 265/75R16 123/120S 10 Lonas - Letras Brancas;pneustore;1491,01;1599,9;13,0;9,0;719,9;2849,9;326,4
+46485;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;magalu;446,14;446,14;1,0;1,0;446,14;446,14;
+46485;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;mercadolivre;577,49;577,49;1,0;1,0;577,49;577,49;
+46485;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;pneustore;798,9;759,9;16,0;12,0;519,9;1499,9;179,8
+46490;Pneu Speedmax Aro 18 W01 215/55R18 95T;magalu;881,57;743,84;11,0;9,0;436,92;1512,9;332,24
+46490;Pneu Speedmax Aro 18 W01 215/55R18 95T;mercadolivre;693,69;674,59;3,0;3,0;656,0;750,47;50,05
+46490;Pneu Speedmax Aro 18 W01 215/55R18 95T;pneustore;799,9;824,9;8,0;6,0;589,9;1019,9;129,34
+46492;Pneu Aro 17 Pirelli Scorpion ATR 225/65 R17 106H XL;magalu;1102,68;1133,36;31,0;26,0;539,84;1736,65;330,2
+46492;Pneu Aro 17 Pirelli Scorpion ATR 225/65 R17 106H XL;mercadolivre;705,8;705,8;1,0;1,0;705,8;705,8;
+46492;Pneu Aro 17 Pirelli Scorpion ATR 225/65 R17 106H XL;pneustore;827,76;839,9;9,0;7,0;559,9;1139,9;163,6
+46494;Pneu Dunlop 235/75 R15 104/101S GRANDTREK AT5 DEV;magalu;902,3;847,52;34,0;26,0;545,71;1377,36;148,96
+46494;Pneu Dunlop 235/75 R15 104/101S GRANDTREK AT5 DEV;mercadolivre;865,91;865,91;2,0;2,0;708,82;1023,0;222,16
+46494;Pneu Dunlop 235/75 R15 104/101S GRANDTREK AT5 DEV;pneustore;783,79;774,9;11,0;9,0;499,9;1274,9;96,4
+46526;Pneu Goodyear Aro 18 Wrangler Fortitude HT 235/60R18 103V;magalu;1122,76;1184,77;19,0;15,0;628,24;1550,23;143,11
+46526;Pneu Goodyear Aro 18 Wrangler Fortitude HT 235/60R18 103V;pneustore;944,9;984,9;12,0;8,0;659,9;1179,9;181,03
+46528;Pneu Delmax Aro 16 215/55r16 Ultimapro Up1 97w Xl W;magalu;640,1;640,1;2,0;2,0;624,03;656,17;22,73
+46528;Pneu Delmax Aro 16 215/55r16 Ultimapro Up1 97w Xl W;mercadolivre;618,67;586,92;7,0;5,0;551,5;707,13;47,25
+46528;Pneu Delmax Aro 16 215/55r16 Ultimapro Up1 97w Xl W;pneustore;423,23;409,9;3,0;3,0;399,9;459,9;32,15
+46529;Pneu Goodyear Aro 17 Wrangler Fortitude HT 225/65R17 106H XL;magalu;1151,97;1089,0;3,0;3,0;998,09;1368,83;193,23
+46529;Pneu Goodyear Aro 17 Wrangler Fortitude HT 225/65R17 106H XL;mercadolivre;1191,4;1208,0;7,0;5,0;987,36;1309,0;70,34
+46529;Pneu Goodyear Aro 17 Wrangler Fortitude HT 225/65R17 106H XL;pneustore;919,9;919,9;1,0;1,0;919,9;919,9;
+46534;Pneu 265/75r16 Goodyear Wrangler Rt/s 123/120r R;magalu;1733,32;1733,32;2,0;2,0;1586,57;1880,08;207,54
+46534;Pneu 265/75r16 Goodyear Wrangler Rt/s 123/120r R;mercadolivre;1870,43;1864,0;8,0;7,0;1717,0;2173,0;157,87
+46534;Pneu 265/75r16 Goodyear Wrangler Rt/s 123/120r R;pneustore;1599,9;1599,9;1,0;1,0;1599,9;1599,9;
+46538;Pneu Xbri Aro 13 175/75 R13 84T Fastway F2;magalu;371,35;353,14;14,0;10,0;293,55;628,19;47,84
+46538;Pneu Xbri Aro 13 175/75 R13 84T Fastway F2;pneustore;249,9;249,9;1,0;1,0;249,9;249,9;
+46541;Pneu Itaro Aro 15 Comformax 195/65R15 91V;magalu;366,8;324,06;28,0;23,0;289,9;559,9;68,88
+46541;Pneu Itaro Aro 15 Comformax 195/65R15 91V;mercadolivre;557,05;573,61;5,0;5,0;532,21;573,61;22,68
+46541;Pneu Itaro Aro 15 Comformax 195/65R15 91V;pneustore;507,4;524,9;12,0;8,0;289,9;609,9;73,97
+46551;Pneu Dunlop 265/70 R16 112T GRANDTREK AT5 DEV;magalu;1129,95;1133,39;38,0;32,0;711,2;1550,0;171,5
+46551;Pneu Dunlop 265/70 R16 112T GRANDTREK AT5 DEV;mercadolivre;1035,0;1035,0;1,0;1,0;1035,0;1035,0;
+46551;Pneu Dunlop 265/70 R16 112T GRANDTREK AT5 DEV;pneustore;1074,57;1079,9;19,0;15,0;679,9;2499,9;187,34
+46652;Pneu Pirelli Aro 16 Scorpion KS 205/65R16 95H;magalu;646,9;646,9;4,0;2,0;639,4;707,31;2,83
+46652;Pneu Pirelli Aro 16 Scorpion KS 205/65R16 95H;mercadolivre;739,21;751,94;9,0;7,0;659,37;829,9;28,33
+46652;Pneu Pirelli Aro 16 Scorpion KS 205/65R16 95H;pneustore;579,9;579,9;1,0;1,0;579,9;579,9;
+46717;Pneu Speedmax Aro 14 VT Max 175/65R14 82T;magalu;349,99;349,99;1,0;1,0;349,99;349,99;
+46717;Pneu Speedmax Aro 14 VT Max 175/65R14 82T;mercadolivre;439,12;439,12;1,0;1,0;439,12;439,12;
+46717;Pneu Speedmax Aro 14 VT Max 175/65R14 82T;pneustore;339,26;329,9;15,0;11,0;259,9;394,9;31,31
+46718;Pneu Speedmax Aro 16 H12 185/55R16 83V;magalu;543,59;520,82;16,0;12,0;200,61;1001,68;102,19
+46718;Pneu Speedmax Aro 16 H12 185/55R16 83V;pneustore;565,9;589,9;7,0;5,0;364,9;699,9;67,31
+46720;Pneu Speedmax Prime Aro 15 FRD16 195/65R15 91V;magalu;392,76;392,76;2,0;2,0;300,87;484,65;129,95
+46720;Pneu Speedmax Prime Aro 15 FRD16 195/65R15 91V;mercadolivre;498,0;498,0;1,0;1,0;498,0;498,0;
+46720;Pneu Speedmax Prime Aro 15 FRD16 195/65R15 91V;pneustore;515,46;529,9;13,0;9,0;289,9;609,9;73,29
+46784;Pneu Delmax Aro 18 215/55r18 Furious S1 99v Xl V;mercadolivre;918,5;918,5;4,0;2,0;535,41;1618,0;49,96
+46784;Pneu Delmax Aro 18 215/55r18 Furious S1 99v Xl V;pneustore;799,9;824,9;8,0;6,0;589,9;1019,9;129,34
+46787;Pneu Goodyear Aro 17 Wrangler Territory HT 205/55R17 91V;magalu;612,55;526,24;29,0;23,0;420,33;1244,89;201,75
+46787;Pneu Goodyear Aro 17 Wrangler Territory HT 205/55R17 91V;pneustore;604,34;649,9;12,0;9,0;359,9;1009,9;151,91
+46799;Pneu Farroad Aro 14 FRD18 175/75R14C 99/98S;magalu;503,94;503,94;1,0;1,0;503,94;503,94;
+46799;Pneu Farroad Aro 14 FRD18 175/75R14C 99/98S;mercadolivre;456,65;466,31;5,0;5,0;442,16;466,31;13,23
+46799;Pneu Farroad Aro 14 FRD18 175/75R14C 99/98S;pneustore;279,9;279,9;1,0;1,0;279,9;279,9;
+46801;Pneu Goodyear Aro 15 EfficientGrip Performance 195/60R15 88V;magalu;652,29;664,88;3,0;3,0;626,96;665,03;21,94
+46801;Pneu Goodyear Aro 15 EfficientGrip Performance 195/60R15 88V;mercadolivre;703,14;709,0;12,0;8,0;611,69;860,69;38,09
+46801;Pneu Goodyear Aro 15 EfficientGrip Performance 195/60R15 88V;pneustore;569,9;569,9;1,0;1,0;569,9;569,9;
+46858;Pneu Goodyear Aro 17 Wrangler Territory HT 205/55R17 91V;magalu;609,93;609,93;1,0;1,0;609,93;609,93;
+46858;Pneu Goodyear Aro 17 Wrangler Territory HT 205/55R17 91V;mercadolivre;519,11;519,11;1,0;1,0;519,11;519,11;
+46858;Pneu Goodyear Aro 17 Wrangler Territory HT 205/55R17 91V;pneustore;604,34;649,9;12,0;9,0;359,9;1009,9;151,91
+46900;Pneu Xbri Aro 13 175/75 R13 84T Fastway F2;magalu;362,05;347,96;14,0;10,0;293,55;628,19;47,46
+46900;Pneu Xbri Aro 13 175/75 R13 84T Fastway F2;pneustore;249,9;249,9;1,0;1,0;249,9;249,9;
+46905;Pneu Nexen Aro 17 225/65R17 Roadian HTX RH5 102H;magalu;1208,58;1208,58;1,0;1,0;1208,58;1208,58;
+46906;Pneu Pirelli Aro 15 P400 Evo 185/60 R15 84h;magalu;532,5;550,11;8,0;6,0;411,06;742,28;57,31
+46906;Pneu Pirelli Aro 15 P400 Evo 185/60 R15 84h;mercadolivre;601,84;605,11;21,0;17,0;492,9;1589,0;66,66
+46906;Pneu Pirelli Aro 15 P400 Evo 185/60 R15 84h;pneustore;469,9;469,9;1,0;1,0;469,9;469,9;
+47046;Pneu Goodyear Carro 265/70r16 112h Kelly Edge Suv 2;magalu;1199,0;1199,0;1,0;1,0;1199,0;1199,0;
+47046;Pneu Goodyear Carro 265/70r16 112h Kelly Edge Suv 2;mercadolivre;1292,29;1313,0;17,0;14,0;1051,0;1407,0;97,29
+47080;Pneu Aro 15” 185/65R15 Goodyear 88H;magalu;422,76;408,52;32,0;24,0;233,61;632,18;61,82
+47080;Pneu Aro 15” 185/65R15 Goodyear 88H;pneustore;404,34;374,9;10,0;9,0;289,9;559,9;92,31
+47082;Pneu Dunlop 265/65R17 112S GRANDTREK AT5;magalu;1569,64;1569,64;6,0;5,0;1199,2;1569,64;0,0
+47129;Pneu Pirelli Aro 16 Carrier 215/65R16C 109T;pneustore;650,73;659,9;15,0;12,0;489,9;1159,9;120,41
+47172;Pneu aro 17 195/40 r17 aptany ra301 81w;magalu;531,85;531,85;1,0;1,0;531,85;531,85;
+47173;Pneu Goodyear Aro 16 Wrangler Fortitude HT 215/60R16 95V;magalu;639,17;639,17;1,0;1,0;639,17;639,17;
+47173;Pneu Goodyear Aro 16 Wrangler Fortitude HT 215/60R16 95V;pneustore;749,9;749,9;4,0;2,0;639,9;839,9;106,07
+47176;Pneu Speedmax Prime Aro 18 FRD26 245/45R18 100W;magalu;796,61;796,61;1,0;1,0;796,61;796,61;
+47176;Pneu Speedmax Prime Aro 18 FRD26 245/45R18 100W;pneustore;986,57;999,9;13,0;9,0;599,9;2179,9;204,63
+47182;Pneu Falken 205/70 R15 8PR 106R R51;magalu;716,61;713,27;28,0;24,0;443,69;929,7;154,75
+47182;Pneu Falken 205/70 R15 8PR 106R R51;pneustore;524,23;469,9;18,0;15,0;369,9;889,9;138,46
+47191;Pneu Dunlop Aro 16 205/60r16 92h Enasave Ec350+ H;magalu;801,16;801,16;1,0;1,0;801,16;801,16;
+47191;Pneu Dunlop Aro 16 205/60r16 92h Enasave Ec350+ H;mercadolivre;764,58;762,63;10,0;8,0;698,77;838,0;26,18
+47242;Pneu Speedmax Aro 14 175/65r14 Street-h Mh01 86t T;magalu;419,63;443,0;3,0;3,0;327,21;488,69;83,24
+47242;Pneu Speedmax Aro 14 175/65r14 Street-h Mh01 86t T;mercadolivre;411,58;389,63;10,0;9,0;342,08;493,78;56,37
+47242;Pneu Speedmax Aro 14 175/65r14 Street-h Mh01 86t T;pneustore;332,68;329,9;13,0;9,0;259,9;394,9;27,05
+47244;Pneu Speedmax Aro 18 Controlmax CP11 215/45R18 93W XL;magalu;853,51;932,89;9,0;7,0;466,76;1041,37;168,59
+47244;Pneu Speedmax Aro 18 Controlmax CP11 215/45R18 93W XL;pneustore;883,9;1009,9;6,0;5,0;519,9;1009,9;180,5
+47245;Pneu Dunlop 225/45 R17 94W DZ102 XL JP EV;magalu;639,15;629,17;45,0;35,0;420,2;1779,53;110,62
+47245;Pneu Dunlop 225/45 R17 94W DZ102 XL JP EV;pneustore;718,29;569,9;18,0;14,0;309,9;1269,9;293,86
+47254;Pneu Speedmax Prime Aro 17 FRD26 205/45R17 88W;pneustore;874,9;884,9;12,0;8,0;329,9;2099,9;360,27
+47255;Pneu Speedmax Aro 17 Drivemax C10 205/40R17 84W XL;magalu;490,4;493,24;6,0;4,0;403,06;617,71;47,0
+47255;Pneu Speedmax Aro 17 Drivemax C10 205/40R17 84W XL;pneustore;381,57;399,9;5,0;3,0;309,9;449,9;54,85
+47305;Pneu 255/75R15 Goodyear Kelly Edge SUV 2 109S Aro 15;magalu;1355,06;1355,06;1,0;1,0;1355,06;1355,06;
+47305;Pneu 255/75R15 Goodyear Kelly Edge SUV 2 109S Aro 15;mercadolivre;1432,0;1387,0;14,0;11,0;1351,0;1550,0;52,27
+47305;Pneu 255/75R15 Goodyear Kelly Edge SUV 2 109S Aro 15;pneustore;1149,9;1149,9;1,0;1,0;1149,9;1149,9;
+47342;Pneu Continental Aro 15 PowerContact 2 195/65R15 91H;magalu;376,56;330,92;30,0;25,0;289,9;641,92;74,65
+47342;Pneu Continental Aro 15 PowerContact 2 195/65R15 91H;pneustore;515,46;529,9;13,0;9,0;289,9;609,9;73,29
+47529;Pneu Speedmax Prime Aro 17 FRD26 205/50R17 93W;magalu;768,37;830,44;21,0;17,0;420,45;1310,98;198,64
+47529;Pneu Speedmax Prime Aro 17 FRD26 205/50R17 93W;pneustore;661,57;709,9;8,0;6,0;389,9;1549,9;158,8
+47542;Pneu Pirelli Aro 15 Scorpion ATR 255/75R15 109/105S;magalu;1413,33;1413,33;2,0;2,0;1386,33;1440,33;38,18
+47542;Pneu Pirelli Aro 15 Scorpion ATR 255/75R15 109/105S;pneustore;1099,9;1099,9;4,0;2,0;969,9;1279,9;70,71
+47548;Pneu Speedmax Aro 18 Controlmax CP11 215/45R18 93W XL;magalu;713,12;713,12;1,0;1,0;713,12;713,12;
+47548;Pneu Speedmax Aro 18 Controlmax CP11 215/45R18 93W XL;pneustore;869,9;904,9;7,0;6,0;519,9;1009,9;165,05
+47549;Pneu Ceat Aro 14 Ecodrive 165/70R14 81T TL;magalu;405,79;393,94;14,0;10,0;302,03;532,49;49,45
+47549;Pneu Ceat Aro 14 Ecodrive 165/70R14 81T TL;pneustore;336,57;312,4;8,0;6,0;274,9;409,9;50,17
+47552;Pneu Speedmax Prime Aro 15 FRD16 195/65R15 91V;magalu;469,84;504,9;6,0;5,0;327,75;505,58;56,73
+47552;Pneu Speedmax Prime Aro 15 FRD16 195/65R15 91V;pneustore;492,68;519,9;11,0;9,0;289,9;599,9;82,09
+47554;Pneu Goodyear Aro 16 Wrangler Fortitude HT 235/60R16 100H;magalu;859,46;846,9;5,0;3,0;816,55;950,04;38,32
+47554;Pneu Goodyear Aro 16 Wrangler Fortitude HT 235/60R16 100H;pneustore;762,4;762,4;2,0;2,0;699,9;824,9;88,39
+47555;Pneu Goodyear Aro 18 Wrangler All Terrain Adventure 265/60R18 110T - Letra Branca;magalu;1293,55;1282,22;15,0;11,0;889,9;1913,22;160,85
+47555;Pneu Goodyear Aro 18 Wrangler All Terrain Adventure 265/60R18 110T - Letra Branca;pneustore;1199,9;1199,9;4,0;2,0;1139,9;1639,9;42,43
+47609;Pneu Durable Aro 15 175/65r15 City Dc01 84h H;magalu;452,68;484,29;3,0;3,0;388,05;485,71;55,98
+47609;Pneu Durable Aro 15 175/65r15 City Dc01 84h H;mercadolivre;461,26;456,41;6,0;5,0;420,67;533,64;43,11
+47609;Pneu Durable Aro 15 175/65r15 City Dc01 84h H;pneustore;383,47;349,9;9,0;7,0;279,9;669,9;62,96
+47627;Pneu Bridgestone Aro 17 Dueler H/P Sport * 225/50R17 94H Run Flat;mercadolivre;632,64;632,64;2,0;2,0;586,23;679,05;65,63
+47627;Pneu Bridgestone Aro 17 Dueler H/P Sport * 225/50R17 94H Run Flat;pneustore;937,25;899,9;21,0;17,0;369,9;1579,9;369,82
+47629;Pneu Speedmax Prime Aro 15 FRD16 195/55R15 85V;magalu;420,76;380,0;47,0;37,0;227,91;623,38;82,76
+47629;Pneu Speedmax Prime Aro 15 FRD16 195/55R15 85V;mercadolivre;170,0;170,0;1,0;1,0;170,0;170,0;
+47629;Pneu Speedmax Prime Aro 15 FRD16 195/55R15 85V;pneustore;384,9;369,9;15,0;12,0;269,9;559,9;51,12
+47636;Pneu Goodyear Aro 18 Eagle F1 Asymmetric 6 215/45R18 93V XL;magalu;1002,83;984,43;3,0;3,0;821,23;1202,84;191,47
+47636;Pneu Goodyear Aro 18 Eagle F1 Asymmetric 6 215/45R18 93V XL;pneustore;799,9;799,9;1,0;1,0;799,9;799,9;
+47640;Pneu Speedmax Prime Aro 16 FRD96 225/65R16C 112/110T;magalu;840,82;825,37;9,0;7,0;553,81;1634,02;148,05
+47640;Pneu Speedmax Prime Aro 16 FRD96 225/65R16C 112/110T;mercadolivre;810,0;810,0;1,0;1,0;810,0;810,0;
+47640;Pneu Speedmax Prime Aro 16 FRD96 225/65R16C 112/110T;pneustore;685,73;602,4;8,0;6,0;439,9;1269,9;289,8
+47641;Pneu Speedmax Aro 17 185/35R17 74V SPM301;magalu;542,08;556,2;7,0;5,0;486,59;598,28;33,98
+47641;Pneu Speedmax Aro 17 185/35R17 74V SPM301;mercadolivre;699,0;699,0;1,0;1,0;699,0;699,0;
+47641;Pneu Speedmax Aro 17 185/35R17 74V SPM301;pneustore;369,9;369,9;1,0;1,0;369,9;369,9;
+47643;Pneu Itaro Aro 17.5 ITR02P 215/75R17.5 135/133J 18 Lonas - Direcional / Liso;magalu;727,18;727,18;4,0;2,0;696,82;807,6;25,1
+47643;Pneu Itaro Aro 17.5 ITR02P 215/75R17.5 135/133J 18 Lonas - Direcional / Liso;pneustore;721,57;714,9;7,0;6,0;619,9;979,9;97,86
+47740;Pneu Speedmax Prime Aro 15 FRD96 205/70R15C 106/104S;pneustore;528,52;467,4;100,0;80,0;278,9;1774,9;185,18
+47741;Pneu Roadking Aro 14 175/75 R14 87T Radial-109 !;magalu;416,2;414,12;14,0;10,0;309,11;697,02;67,83
+47741;Pneu Roadking Aro 14 175/75 R14 87T Radial-109 !;mercadolivre;435,0;435,0;1,0;1,0;435,0;435,0;
+47741;Pneu Roadking Aro 14 175/75 R14 87T Radial-109 !;pneustore;279,9;279,9;1,0;1,0;279,9;279,9;
+47814;Pneu Speedmax Aro 18 W01 215/55R18 95T;pneustore;799,9;824,9;8,0;6,0;589,9;1019,9;129,34
+47865;Pneu Speedmax Aro 14 175/70r14 84T MH01;magalu;410,44;408,49;35,0;27,0;334,14;779,9;60,03
+47865;Pneu Speedmax Aro 14 175/70r14 84T MH01;pneustore;398,54;409,9;15,0;11,0;269,9;749,9;64,5
+47891;Pneu 225/50r18 Tl Aplus A610-27 Xl Aro 18;magalu;1378,34;1201,77;19,0;15,0;766,81;2617,16;365,37
+47891;Pneu 225/50r18 Tl Aplus A610-27 Xl Aro 18;mercadolivre;666,07;666,07;2,0;2,0;646,71;685,43;27,38
+47891;Pneu 225/50r18 Tl Aplus A610-27 Xl Aro 18;pneustore;1504,19;1619,9;9,0;7,0;569,9;2109,9;451,36
+47898;Pneu Continental Aro 18 ContiCrossContact LX2 225/55R18 98V;magalu;765,77;812,2;32,0;24,0;436,97;1304,59;200,42
+47898;Pneu Continental Aro 18 ContiCrossContact LX2 225/55R18 98V;pneustore;778,65;769,9;12,0;8,0;569,9;1399,9;109,6
+47930;Pneu Speedmax Prime Aro 17 Pangea All-Terrain 265/65R17 120/117S - Letras Brancas;magalu;1004,2;1005,53;36,0;28,0;652,23;1610,66;158,6
+47930;Pneu Speedmax Prime Aro 17 Pangea All-Terrain 265/65R17 120/117S - Letras Brancas;pneustore;1091,9;1069,9;19,0;15,0;599,9;1499,9;125,87
+47965;Pneu Wanli 205/60 R16 92H Su009 At;magalu;481,89;481,89;2,0;2,0;363,79;599,99;167,02
+47965;Pneu Wanli 205/60 R16 92H Su009 At;pneustore;686,9;639,9;14,0;10,0;339,9;999,9;123,47
+47966;Pneu Milever Aro 15 185/65r15 Mp270 88h H;magalu;469,34;469,34;1,0;1,0;469,34;469,34;
+47966;Pneu Milever Aro 15 185/65r15 Mp270 88h H;mercadolivre;539,97;539,97;2,0;2,0;519,2;560,74;29,37
+47966;Pneu Milever Aro 15 185/65r15 Mp270 88h H;pneustore;447,4;474,9;14,0;10,0;289,9;639,9;76,6
+47967;Pneu Zmax 195/55r15 85v Landgema;magalu;415,85;404,59;3,0;3,0;400,7;442,26;22,95
+47967;Pneu Zmax 195/55r15 85v Landgema;mercadolivre;483,17;442,8;12,0;8,0;399,9;909,9;115,83
+47967;Pneu Zmax 195/55r15 85v Landgema;pneustore;391,9;379,9;13,0;10,0;269,9;559,9;53,76
+47968;Pneu Pirelli Aro 16 Scorpion HT 245/70R16 113T;pneustore;858,99;859,9;15,0;11,0;549,9;1199,9;150,91
+47970;Pneu Pirelli Aro 15 P400 Evo 185/60 R15 84h;magalu;532,5;550,11;8,0;6,0;411,06;742,28;57,31
+47970;Pneu Pirelli Aro 15 P400 Evo 185/60 R15 84h;mercadolivre;601,84;605,11;21,0;17,0;492,9;1589,0;66,66
+47970;Pneu Pirelli Aro 15 P400 Evo 185/60 R15 84h;pneustore;469,9;469,9;1,0;1,0;469,9;469,9;
+47971;Pneu Pirelli Aro 16 Scorpion Verde All Season 235/60R16 100H;pneustore;719,9;759,9;5,0;3,0;429,9;884,9;129,71
+47981;Pneu Speedmax Aro 18 W01 215/55R18 95T;magalu;825,58;724,2;11,0;9,0;436,92;1394,42;282,51
+47981;Pneu Speedmax Aro 18 W01 215/55R18 95T;mercadolivre;751,6;751,6;2,0;2,0;680,83;822,37;100,08
+47981;Pneu Speedmax Aro 18 W01 215/55R18 95T;pneustore;799,9;824,9;8,0;6,0;589,9;1019,9;129,34
+48023;Pneu Dunlop 215/60 R17 100H GRANDTREK AT5;magalu;831,89;811,54;32,0;24,0;416,41;1668,87;152,13
+48023;Pneu Dunlop 215/60 R17 100H GRANDTREK AT5;mercadolivre;660,47;646,61;3,0;3,0;639,9;694,9;30,01
+48023;Pneu Dunlop 215/60 R17 100H GRANDTREK AT5;pneustore;779,72;779,9;15,0;11,0;519,9;1389,9;153,76
+48024;Pneu Pirelli Aro 18 Scorpion HT 265/60R18 110H;magalu;1132,88;1132,88;1,0;1,0;1132,88;1132,88;
+48024;Pneu Pirelli Aro 18 Scorpion HT 265/60R18 110H;pneustore;1029,9;1044,9;14,0;10,0;619,9;1349,9;137,76
+48025;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;magalu;407,98;407,98;2,0;2,0;294,08;521,89;161,09
+48025;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;mercadolivre;472,92;472,92;2,0;2,0;364,5;581,35;153,34
+48025;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;pneustore;501,91;464,9;18,0;14,0;299,9;869,9;86,44
+48030;Pneu Aro 16 195/55 R16 Comforser Cf510;magalu;468,4;458,96;5,0;3,0;451,09;497,88;19,46
+48030;Pneu Aro 16 195/55 R16 Comforser Cf510;mercadolivre;591,53;544,9;12,0;8,0;442,67;1029,0;134,01
+48030;Pneu Aro 16 195/55 R16 Comforser Cf510;pneustore;644,9;619,9;13,0;9,0;299,9;1099,9;73,57
+48045;Pneu Kumho Aro 19 Crugen HP71 235/50R19 99H;magalu;1652,93;1562,87;19,0;15,0;636,33;3065,02;614,78
+48045;Pneu Kumho Aro 19 Crugen HP71 235/50R19 99H;pneustore;1756,57;1999,9;5,0;3,0;999,9;2359,9;547,21
+48047;Pneu Aplus Aro 15 225/70r15 A609 100h;magalu;791,27;770,86;5,0;3,0;515,08;1147,41;263,12
+48047;Pneu Aplus Aro 15 225/70r15 A609 100h;mercadolivre;693,32;693,32;4,0;2,0;582,47;739,33;21,14
+48047;Pneu Aplus Aro 15 225/70r15 A609 100h;pneustore;800,73;787,4;11,0;9,0;449,9;1159,9;219,87
+48081;Pneu Goodyear Aro 18 Wrangler Fortitude HT 235/60R18 103V;magalu;636,64;636,64;2,0;2,0;579,49;693,8;80,83
+48081;Pneu Goodyear Aro 18 Wrangler Fortitude HT 235/60R18 103V;mercadolivre;920,6;920,6;1,0;1,0;920,6;920,6;
+48081;Pneu Goodyear Aro 18 Wrangler Fortitude HT 235/60R18 103V;pneustore;1005,46;1089,9;11,0;9,0;659,9;1179,9;174,58
+48089;Pneu Delinte Aro 16 185/55R16 97V XL DS2;magalu;551,03;550,49;3,0;3,0;546,77;555,84;4,56
+48089;Pneu Delinte Aro 16 185/55R16 97V XL DS2;mercadolivre;478,2;478,2;1,0;1,0;478,2;478,2;
+48089;Pneu Delinte Aro 16 185/55R16 97V XL DS2;pneustore;538,23;579,9;8,0;6,0;364,9;699,9;90,65
+48093;Pneu Continental Aro 14 Powercontact 2 175/65R14 82T;magalu;335,96;322,17;37,0;29,0;237,49;515,9;27,1
+48093;Pneu Continental Aro 14 Powercontact 2 175/65R14 82T;pneustore;345,2;339,9;14,0;10,0;259,9;394,9;25,66
+48094;Pneu Pirelli Aro 16 Scorpion HT 245/70R16 113T;magalu;575,66;575,66;1,0;1,0;575,66;575,66;
+48094;Pneu Pirelli Aro 16 Scorpion HT 245/70R16 113T;mercadolivre;746,44;746,44;1,0;1,0;746,44;746,44;
+48094;Pneu Pirelli Aro 16 Scorpion HT 245/70R16 113T;pneustore;879,9;859,9;15,0;11,0;549,9;1649,9;172,99
+48095;Pneu Speedmax Aro 14 VT Max 185/70R14 88T;magalu;370,88;370,88;1,0;1,0;370,88;370,88;
+48095;Pneu Speedmax Aro 14 VT Max 185/70R14 88T;pneustore;406,01;409,9;11,0;9,0;289,9;544,9;73,09
+48096;Pneu Speedmax Prime Aro 14 Pangea All-Terrain 185/70R14 88T - Letras Brancas;pneustore;420,73;409,9;8,0;6,0;289,9;599,9;103,22
+48148;Pneu Ceat Aro 17 SecuraDrive 215/60R17 96H TL;pneustore;745,7;759,9;14,0;10,0;519,9;1389,9;110,12
+48149;Pneu Speedmax Prime Aro 16 FRD96 205/75R16C 110/108R 8 Lonas;magalu;623,08;623,08;4,0;2,0;491,26;717,09;132,43
+48149;Pneu Speedmax Prime Aro 16 FRD96 205/75R16C 110/108R 8 Lonas;pneustore;844,9;919,9;8,0;7,0;399,9;999,9;203,0
+48150;Pneu Falken 205/70 R15 8PR 106R R51;magalu;716,61;713,27;28,0;24,0;443,69;929,7;154,75
+48150;Pneu Falken 205/70 R15 8PR 106R R51;pneustore;524,23;469,9;18,0;15,0;369,9;889,9;138,46
+48152;Pneu Bridgestone Aro 18 Turanza T005 * 225/50R18 99W Run Flat XL;magalu;1017,28;1017,28;1,0;1,0;1017,28;1017,28;
+48152;Pneu Bridgestone Aro 18 Turanza T005 * 225/50R18 99W Run Flat XL;pneustore;1769,9;1769,9;2,0;2,0;1749,9;1789,9;28,28
+48153;Pneu Pirelli Aro 16 Powergy 195/55R16 87V;magalu;623,96;599,9;17,0;13,0;358,35;816,9;92,85
+48153;Pneu Pirelli Aro 16 Powergy 195/55R16 87V;pneustore;644,9;619,9;13,0;9,0;299,9;1099,9;73,57
+48154;Pneu Zmax 205/55 R17 95w Zmax Zealion;magalu;618,59;561,76;28,0;22,0;420,33;1244,89;204,36
+48154;Pneu Zmax 205/55 R17 95w Zmax Zealion;mercadolivre;549,99;549,99;2,0;2,0;549,99;549,99;0,0
+48154;Pneu Zmax 205/55 R17 95w Zmax Zealion;pneustore;604,34;649,9;12,0;9,0;359,9;1009,9;151,91
+48155;Pneu Speedmax Aro 16 Drivemax Van V10 205/65R16C 107/105T 8 Lonas;magalu;722,97;594,98;3,0;3,0;462,87;1111,06;342,53
+48155;Pneu Speedmax Aro 16 Drivemax Van V10 205/65R16C 107/105T 8 Lonas;pneustore;559,9;574,9;8,0;6,0;379,9;889,9;65,12
+48160;Pneu Speedmax Aro 13 MH01 175/70R13 82T;magalu;346,49;348,0;3,0;3,0;290,46;401,0;55,29
+48160;Pneu Speedmax Aro 13 MH01 175/70R13 82T;mercadolivre;331,5;326,16;3,0;3,0;309,0;359,35;25,6
+48160;Pneu Speedmax Aro 13 MH01 175/70R13 82T;pneustore;305,61;299,9;9,0;7,0;249,9;399,9;41,07
+48162;Pneu Pirelli Aro 17 Scorpion ATR (KS) 265/65R17 112S;magalu;1241,74;1209,13;3,0;3,0;1152,9;1363,2;108,88
+48162;Pneu Pirelli Aro 17 Scorpion ATR (KS) 265/65R17 112S;pneustore;1081,78;1062,4;20,0;16,0;599,9;1499,9;128,16
+48167;Pneu Pirelli Aro 14 Chrono 175/70R14C 88T XL;mercadolivre;516,69;519,99;8,0;7,0;396,37;573,99;49,93
+48167;Pneu Pirelli Aro 14 Chrono 175/70R14C 88T XL;pneustore;387,4;374,9;18,0;14,0;269,9;749,9;61,54
+48250;Pneu Bridgestone Aro 18 Dueler H/P Sport AO 235/50R18 97V;magalu;1339,3;1393,71;9,0;7,0;563,99;3003,48;404,61
+48250;Pneu Bridgestone Aro 18 Dueler H/P Sport AO 235/50R18 97V;pneustore;1169,9;1254,9;6,0;4,0;469,9;1529,9;292,92
+48257;Pneu 225/70r16 Aplus A919 107h Xl Tl Aro 16;magalu;746,22;704,83;3,0;3,0;666,16;867,68;106,95
+48257;Pneu 225/70r16 Aplus A919 107h Xl Tl Aro 16;mercadolivre;666,07;666,07;2,0;2,0;646,71;685,43;27,38
+48257;Pneu 225/70r16 Aplus A919 107h Xl Tl Aro 16;pneustore;1020,61;1089,9;9,0;7,0;499,9;1499,9;330,43
+48263;Pneu Speedmax Aro 15 Racemax 195/50R15 82W Semi Slick;magalu;389,68;389,68;2,0;2,0;362,84;416,52;37,96
+48263;Pneu Speedmax Aro 15 Racemax 195/50R15 82W Semi Slick;pneustore;391,57;384,9;5,0;3,0;359,9;459,9;11,55
+48267;Pneu Kumho Aro 13 Ecowing ES31 165/70R13 79T;magalu;333,77;329,9;18,0;15,0;261,75;487,07;48,44
+48267;Pneu Kumho Aro 13 Ecowing ES31 165/70R13 79T;pneustore;283,02;277,4;9,0;8,0;249,9;394,9;39,0
+48269;Pneu Dunlop 235/75 R15 104/101S GRANDTREK AT5 DEV;magalu;931,07;881,65;31,0;25,0;605,02;1377,36;155,89
+48269;Pneu Dunlop 235/75 R15 104/101S GRANDTREK AT5 DEV;mercadolivre;783,15;783,15;1,0;1,0;783,15;783,15;
+48269;Pneu Dunlop 235/75 R15 104/101S GRANDTREK AT5 DEV;pneustore;783,79;774,9;11,0;9,0;499,9;1274,9;96,4
+48271;Pneu Speedmax Prime Aro 18 Pangea All-Terrain 265/65R18 122/119S - Letras Brancas;magalu;1320,15;1325,36;6,0;4,0;1064,31;2207,23;188,06
+48271;Pneu Speedmax Prime Aro 18 Pangea All-Terrain 265/65R18 122/119S - Letras Brancas;mercadolivre;1256,5;1256,5;2,0;2,0;1207,0;1306,0;70,0
+48271;Pneu Speedmax Prime Aro 18 Pangea All-Terrain 265/65R18 122/119S - Letras Brancas;pneustore;1449,9;1449,9;2,0;2,0;1109,9;1789,9;480,83
+48273;Pneu Speedmax Prime Aro 16 Pangea All-Terrain 245/70R16 113/110S - Letras Brancas;magalu;951,5;951,5;2,0;2,0;866,01;1037,0;120,91
+48273;Pneu Speedmax Prime Aro 16 Pangea All-Terrain 245/70R16 113/110S - Letras Brancas;pneustore;928,08;899,9;15,0;11,0;522,4;1649,9;147,5
+48274;Pneu General Tire by Continental Aro 15 Grabber A/TX 235/75R15 104/101S 6 Lonas - Letra Branca;pneustore;777,04;809,9;9,0;7,0;639,9;989,9;92,01
+48277;Pneu Speedmax Prime Aro 18 Pangea All-Terrain 235/60R18 108/104S - Letras Brancas;pneustore;901,9;839,9;11,0;10,0;659,9;1599,9;218,83
+48278;Pneu Speedmax Prime Aro 18 Pangea All-Terrain 265/60R18 114/110S - Letras Brancas;magalu;871,94;847,97;17,0;14,0;550,97;1230,05;194,1
+48278;Pneu Speedmax Prime Aro 18 Pangea All-Terrain 265/60R18 114/110S - Letras Brancas;mercadolivre;1516,0;1516,0;1,0;1,0;1516,0;1516,0;
+48278;Pneu Speedmax Prime Aro 18 Pangea All-Terrain 265/60R18 114/110S - Letras Brancas;pneustore;1028,4;989,9;14,0;10,0;619,9;1699,9;191,31
+48316;Pneu Aptany Aro 17 235/55r17 Ra301 103v Xl V;magalu;902,17;796,21;12,0;8,0;432,28;1426,06;212,57
+48316;Pneu Aptany Aro 17 235/55r17 Ra301 103v Xl V;mercadolivre;637,61;641,81;3,0;3,0;591,47;679,56;44,19
+48316;Pneu Aptany Aro 17 235/55r17 Ra301 103v Xl V;pneustore;929,07;964,9;8,0;6,0;519,9;1549,9;346,85
+48317;Pneu 235/55r19 101w Ra301 Sport Aptany;magalu;1287,25;1247,95;16,0;12,0;682,26;2397,71;396,28
+48317;Pneu 235/55r19 101w Ra301 Sport Aptany;mercadolivre;906,15;900,72;15,0;11,0;786,57;1065,0;65,13
+48317;Pneu 235/55r19 101w Ra301 Sport Aptany;pneustore;1429,9;1489,9;14,0;11,0;689,9;2159,9;270,82
+48318;Pneu Kumho Aro 19 Crugen HP91 235/45R19 95W;magalu;1461,77;1352,87;7,0;5,0;939,88;1985,95;279,21
+48318;Pneu Kumho Aro 19 Crugen HP91 235/45R19 95W;pneustore;1295,23;1210,9;8,0;6,0;679,9;1849,9;234,54
+48319;Pneu Speedmax Aro 16 MH01 195/60R16 89V;magalu;552,98;552,98;1,0;1,0;552,98;552,98;
+48319;Pneu Speedmax Aro 16 MH01 195/60R16 89V;pneustore;512,4;504,9;6,0;4,0;329,9;709,9;179,14
+48321;Pneu Dunlop 215/55 R17 94W SP SPORT FM800;magalu;840,69;873,52;19,0;17,0;494,97;1018,71;170,92
+48321;Pneu Dunlop 215/55 R17 94W SP SPORT FM800;mercadolivre;716,44;737,8;5,0;5,0;684,4;737,8;29,25
+48321;Pneu Dunlop 215/55 R17 94W SP SPORT FM800;pneustore;699,9;699,9;1,0;1,0;699,9;699,9;
+48323;Pneu Dunlop 235/55 R18 100H DUNLOP GRANDTREK ST30;magalu;1499,15;1510,51;19,0;15,0;679,41;2602,11;309,67
+48323;Pneu Dunlop 235/55 R18 100H DUNLOP GRANDTREK ST30;mercadolivre;870,52;870,52;2,0;2,0;849,48;891,56;29,76
+48323;Pneu Dunlop 235/55 R18 100H DUNLOP GRANDTREK ST30;pneustore;1178,79;1269,9;11,0;9,0;529,9;1689,9;335,43
+48324;Pneu Speedmax Aro 17 225/60r17 99H HH301 SC;magalu;1014,93;907,38;15,0;11,0;562,41;1988,54;285,26
+48324;Pneu Speedmax Aro 17 225/60r17 99H HH301 SC;pneustore;843,23;709,9;3,0;3,0;589,9;1229,9;340,2
+48325;Pneu Pirelli Aro 16 Scorpion All Terrain Plus 265/70R16 112T;magalu;2006,25;2006,25;1,0;1,0;2006,25;2006,25;
+48325;Pneu Pirelli Aro 16 Scorpion All Terrain Plus 265/70R16 112T;mercadolivre;1399,0;1399,0;1,0;1,0;1399,0;1399,0;
+48325;Pneu Pirelli Aro 16 Scorpion All Terrain Plus 265/70R16 112T;pneustore;962,84;979,9;23,0;17,0;679,9;2499,9;159,29
+48326;Pneu Bf Goodrich Aro 17 - 265/70 R17 Trail-terrain T/a;magalu;2539,43;2537,26;12,0;8,0;829,91;3663,22;585,51
+48326;Pneu Bf Goodrich Aro 17 - 265/70 R17 Trail-terrain T/a;mercadolivre;2010,5;2010,5;2,0;2,0;1958,0;2063,0;74,25
+48326;Pneu Bf Goodrich Aro 17 - 265/70 R17 Trail-terrain T/a;pneustore;2027,04;2199,9;9,0;7,0;1099,9;2689,9;568,12
+48328;Pneu Aro 17 Pirelli Scorpion ATR 225/65 R17 106H XL;magalu;1091,2;1092,38;34,0;28,0;563,88;1736,65;316,18
+48328;Pneu Aro 17 Pirelli Scorpion ATR 225/65 R17 106H XL;mercadolivre;863,54;852,63;7,0;6,0;843,47;935,83;25,02
+48328;Pneu Aro 17 Pirelli Scorpion ATR 225/65 R17 106H XL;pneustore;764,9;819,9;7,0;5,0;559,9;1049,9;144,05
+48329;Pneu Speedmax Aro 17 Controlmax CP11 215/45R17 91W XL;magalu;586,12;561,84;14,0;10,0;436,37;861,15;78,69
+48329;Pneu Speedmax Aro 17 Controlmax CP11 215/45R17 91W XL;pneustore;569,9;549,9;9,0;7,0;459,9;1139,9;78,95
+48399;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;magalu;481,94;386,01;31,0;25,0;294,08;1208,85;152,62
+48399;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;mercadolivre;684,02;699,0;5,0;3,0;593,89;736,92;49,04
+48399;Pneu Kumho Aro 15 Road Venture AT51 205/60R15 91T;pneustore;505,73;467,4;16,0;12,0;299,9;869,9;86,47
+48400;Pneu Falken 205/70 R15 8PR 106R R51;magalu;711,92;714,82;31,0;27,0;443,69;929,7;150,69
+48400;Pneu Falken 205/70 R15 8PR 106R R51;mercadolivre;745,62;749,78;7,0;5,0;648,41;816,34;39,01
+48400;Pneu Falken 205/70 R15 8PR 106R R51;pneustore;534,28;472,4;19,0;16,0;369,9;889,9;140,91
+48401;Pneu Aro 16 205/60r16 Comforser Cf1100 At 92t Owl;magalu;657,55;657,55;1,0;1,0;657,55;657,55;
+48401;Pneu Aro 16 205/60r16 Comforser Cf1100 At 92t Owl;mercadolivre;757,86;777,86;6,0;4,0;640,32;899,0;70,12
+48401;Pneu Aro 16 205/60r16 Comforser Cf1100 At 92t Owl;pneustore;663,96;639,9;19,0;16,0;339,9;999,9;138,63
+48408;Pneu Itaro Aro 15 MH01 185/60R15 88H XL;magalu;478,89;468,57;22,0;16,0;277,4;1106,74;91,2
+48408;Pneu Itaro Aro 15 MH01 185/60R15 88H XL;pneustore;422,01;469,9;11,0;9,0;259,9;559,9;94,93
+48412;Pneu Speedmax Prime Aro 20 Pangea All-Terrain 255/55R20 117/114S 10 Lonas - Letras Brancas;pneustore;2252,4;2252,4;4,0;2,0;1169,9;3149,9;1163,19
