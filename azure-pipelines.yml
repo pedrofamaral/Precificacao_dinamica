@@ -1,6 +1,6 @@
 schedules:
-- cron: '0 12 * * Mon-Fri'
-  displayName: 'Diário útil 09:00 BRT'
+- cron: '30 3 * * *'
+  displayName: 'Execução diária 00:30 BRT'
   branches:
     include:
     - azure-pipelines
@@ -9,58 +9,62 @@ schedules:
 trigger:
   branches:
     include:
-      - azure-pipelines
+    - azure-pipelines
 
 pr:
   branches:
     include:
-      - dev
+    - dev
 
 pool:
   name: Agente_Azure-pipelines
 
-# Necessário para poder fazer git push de dentro do job
+variables:
+- group: Segredos_PATS 
+
 steps:
 - checkout: self
-  persistCredentials: true   # injeta o token OAuth do GitHub no clone
+  persistCredentials: true
 
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.9'
-  displayName: 'Setup Python 3.9'
+- script: python --version
+  displayName: 'Verificar versão do Python'
 
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
-  displayName: 'Install dependencies'
+  displayName: 'Instalar dependências'
 
 - script: python Extracao_e_Insercao/gerar_lote_e_rodar.py
-  displayName: 'Run script: gerar_lote_e_rodar.py'
+  displayName: 'Executar: gerar_lote_e_rodar.py'
 
 - script: python ETL/etl_ingest.py
-  displayName: 'Run script: etl_ingest.py'
+  displayName: 'Executar: etl_ingest.py'
 
 - script: python ETL/pricing.py
-  displayName: 'Run script: pricing.py'
+  displayName: 'Executar: pricing.py'
 
 - powershell: |
-    git config --global user.name  "pipeline-bot"
-    git config --global user.email "pipeline-bot@example.com"
+    # Configura o nome e e-mail do autor do commit
+    git config user.name "pipeline-bot"
+    git config user.email "pipeline-bot@example.com"
 
-    # evitar erro do Git 2.35+ sobre "dubious ownership"
+    # Adiciona o diretório de fontes como um diretório seguro para o Git
     git config --global --add safe.directory "$(Build.SourcesDirectory)"
-
-    # garantir que estamos numa branch local rastreando a remota
+    
+    git remote set-url origin https://x-access-token:$(GITHUB_PAT)@github.com/pedrofamaral/Precificacao_dinamica.git
+    
     git fetch origin $(Build.SourceBranchName)
     git checkout -B $(Build.SourceBranchName) origin/$(Build.SourceBranchName)
-
-    # detectar mudanças
+    
     if (git status --porcelain) {
       git add -A
       git commit -m "Auto: atualizações $(Build.BuildNumber) [skip ci]"
       git push origin HEAD:$(Build.SourceBranchName)
-      Write-Host "Alterações commitadas e enviadas."
+      Write-Host "Alterações commitadas e enviadas com sucesso."
     } else {
-      Write-Host "Sem alterações para commit."
+      Write-Host "Nenhuma alteração para commitar."
     }
-  displayName: 'Commit & push na mesma branch (GitHub)'
+  displayName: 'Commit e Push de alterações (GitHub)'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) # Não executa em Pull Requests
+  env:
+    GITHUB_PAT: $(GITHUB_PAT)
