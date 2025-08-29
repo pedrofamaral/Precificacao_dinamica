@@ -1,16 +1,14 @@
+# etl_ingest.py
 """
 ETL ÚNICO (3 em 1) + LIMPEZA:
-- Lê JSON, CSV (em --raw_dir).
+- Lê o arquivo CSV de entrada.
 - SEM CACHE: Reprocessa todos os arquivos a cada execução.
 - Consome 'marketplace' diretamente do CSV e o salva no Parquet.
-- Gera o banco de dados 'warehouse.db' por padrão.
-- Concatena e normaliza os registros, priorizando o 'cod_prod'.
-- Utiliza o campo 'price' como principal.
-- Grava e lê da tabela BRUTA: market_items (SQLite).
-- Gera tabelas finais no SQLite e como arquivos Parquet/CSV.
+- Gera um banco de dados e outros artefatos em um diretório de saída especificado.
+- Gera um arquivo de saída principal para o próximo passo do pipeline.
 
-Execução típica:
-    python -m ETL.etl_ingest --raw_dir "C:\\Caminho\\Para\\Seus\\Dados"
+Execução no pipeline:
+    python -m ETL.etl_ingest --arquivo-entrada "caminho/para/dados_brutos.csv" --diretorio-saida "caminho/saida" --arquivo-saida "caminho/saida/unifier_input.parquet"
 """
 from __future__ import annotations
 
@@ -25,34 +23,27 @@ from urllib.parse import urlparse, unquote, parse_qs
 import numpy as np
 import pandas as pd
 
+# O bloco de import relativo deve funcionar bem no pipeline se a estrutura estiver correta
 try:
     from .common import (
-        SETTINGS, logger, ensure_dirs, iter_files, load_json_lines, norm_sku,
-        to_sql, read_sql, exec_sql, file_fingerprint
+        SETTINGS, logger, ensure_dirs, to_sql, read_sql
     )
 except ImportError:
     import sys, os
     sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     from ETL.common import (
-        SETTINGS, logger, ensure_dirs, iter_files, load_json_lines, norm_sku,
-        to_sql, read_sql, exec_sql, file_fingerprint
+        SETTINGS, logger, ensure_dirs, to_sql, read_sql
     )
 
 # ============================================================
-# Helpers e Configurações
+# Helpers e Configurações (sem alterações)
 # ============================================================
-
 def to_float(x):
-    if x is None or (isinstance(x, float) and pd.isna(x)):
-        return None
-    if isinstance(x, (int, float)):
-        return float(x)
-    s = str(x).strip().replace("R$", "").replace("$", "").strip()
-    s = s.replace(".", "").replace(",", ".")
-    try:
-        return float(s)
-    except ValueError:
-        return None
+    if x is None or (isinstance(x, float) and pd.isna(x)): return None
+    if isinstance(x, (int, float)): return float(x)
+    s = str(x).strip().replace("R$", "").replace("$", "").strip().replace(".", "").replace(",", ".")
+    try: return float(s)
+    except ValueError: return None
 
 def _save_parquet_with_fallback(df: pd.DataFrame, out_path: Path, csv_name: str):
     try:
@@ -64,101 +55,76 @@ def _save_parquet_with_fallback(df: pd.DataFrame, out_path: Path, csv_name: str)
         logger.warning("⚠️ Sem engine parquet (pyarrow/fastparquet). Salvei CSV em %s. Erro: %s", backup, e)
 
 def unwrap_ml_click(url: str) -> str:
-    if not isinstance(url, str):
-        return url
+    if not isinstance(url, str): return url
     try:
         p = urlparse(url)
         if "mercadolivre.com" in p.netloc and "click" in p.netloc:
             q = parse_qs(p.query)
             for key in ("url", "u", "redirect"):
-                if key in q and q[key]:
-                    return unquote(q[key][0])
+                if key in q and q[key]: return unquote(q[key][0])
         return url
-    except Exception:
-        return url
+    except Exception: return url
 
 def infer_marketplace_from_url(url_unwrapped: str | None) -> str | None:
-    if not url_unwrapped or not isinstance(url_unwrapped, str):
-        return None
-    try:
-        host = urlparse(url_unwrapped).netloc.lower()
-    except Exception:
-        return None
-    if "mercadolivre.com" in host:
-        return "mercadolivre"
-    if "magazineluiza.com.br" in host or "magalu.com" in host:
-        return "magalu"
-    if "pneustore.com.br" in host:
-        return "pneustore"
+    if not url_unwrapped or not isinstance(url_unwrapped, str): return None
+    try: host = urlparse(url_unwrapped).netloc.lower()
+    except Exception: return None
+    if "mercadolivre.com" in host: return "mercadolivre"
+    if "magazineluiza.com.br" in host or "magalu.com" in host: return "magalu"
+    if "pneustore.com.br" in host: return "pneustore"
     return host.split(":")[0] if host else None
 
 # ============================================================
 # Normalização e Ingestão
 # ============================================================
-
 def normalize_record(raw: Dict[str, Any], meta: Dict[str, Any]) -> Dict[str, Any]:
-    """Função centralizada para normalizar um registro de qualquer fonte."""
     def pick(*keys):
         for k in keys:
-            if k in raw and raw[k] not in (None, "", [], {}):
-                return raw[k]
+            if k in raw and raw[k] not in (None, "", [], {}): return raw[k]
         return None
-
-    marketplace = pick("marketplace", "source", "site")
-
-    cod_prod = pick("cod_prod", "internal_code")
-    title = pick("title", "name", "nome")
-    price = pick("price", "preco", "valor")
-    url = pick("url", "link")
-    sku = pick("listing_id", "sku", "id")
-    
+    marketplace, cod_prod, title, price, url, sku = (
+        pick("marketplace", "source", "site"), pick("cod_prod", "internal_code"),
+        pick("title", "name", "nome"), pick("price", "preco", "valor"),
+        pick("url", "link"), pick("listing_id", "sku", "id")
+    )
     return {
         "cod_prod": int(cod_prod) if cod_prod is not None and str(cod_prod).isdigit() else None,
-        "marketplace": marketplace, 
-        "query": meta.get("query"),
-        "title": title,
-        "sku_text": sku,
-        "price": to_float(price),
-        "url": url,
+        "marketplace": marketplace, "query": meta.get("query"), "title": title,
+        "sku_text": sku, "price": to_float(price), "url": url,
         "captured_at": pick("observed_at", "captured_at") or meta.get("captured_at"),
     }
 
-def ingest_files(directory: Path) -> List[Dict[str, Any]]:
+# MODIFICADO: para aceitar um único arquivo de entrada, que é o esperado no pipeline
+def ingest_file(input_path: Path) -> List[Dict[str, Any]]:
     rows = []
-    if not directory.exists():
-        logger.warning(f"⚠️  Diretório de entrada não encontrado: {directory}")
+    if not input_path.exists():
+        logger.warning(f"⚠️  Arquivo de entrada não encontrado: {input_path}")
         return rows
     
-    files_to_process = [directory] if directory.is_file() else list(directory.rglob("*"))
+    if not input_path.is_file() or input_path.suffix.lower() not in {".csv", ".json", ".jsonl"}:
+        logger.warning(f"⚠️  Caminho de entrada não é um arquivo suportado: {input_path}")
+        return rows
 
-    for p in files_to_process:
-        if not p.is_file() or p.suffix.lower() not in {".csv", ".json", ".jsonl"}:
-            continue
-
-        logger.info("Lendo arquivo: %s", p)
-        meta = {"query": p.name}
-        try:
-            if p.suffix.lower() == ".csv":
-                try:
-                    df = pd.read_csv(p, sep=';', decimal=',')
-                except Exception:
-                    df = pd.read_csv(p)
-                df.columns = df.columns.str.lower()
-                for rec in df.to_dict(orient="records"):
-                    rows.append(normalize_record(rec, meta))
-            
-            # Adicione lógica para JSON se necessário
-            # elif p.suffix.lower() in {".json", ".jsonl"}: ...
-
-        except Exception as e:
-            logger.warning("⚠️  Falha ao ler %s: %s", p, e)
+    logger.info("Lendo arquivo: %s", input_path)
+    meta = {"query": input_path.name}
+    try:
+        if input_path.suffix.lower() == ".csv":
+            try: df = pd.read_csv(input_path, sep=';', decimal=',')
+            except Exception: df = pd.read_csv(input_path)
+            df.columns = df.columns.str.lower()
+            for rec in df.to_dict(orient="records"):
+                rows.append(normalize_record(rec, meta))
+        # Adicione lógica para JSON/JSONL se necessário
+        # elif input_path.suffix.lower() in {".json", ".jsonl"}: ...
+    except Exception as e:
+        logger.warning("⚠️  Falha ao ler %s: %s", input_path, e)
     return rows
 
 # ============================================================
 # Limpeza / Padronização / Geração de Tabelas
 # ============================================================
-
-def clean_and_snapshot(all_rows_df: pd.DataFrame, out_db_path: Path):
+# MODIFICADO: para receber os caminhos de saída como argumentos
+def clean_and_snapshot(all_rows_df: pd.DataFrame, out_db_path: Path, output_dir: Path, main_output_file: Path):
     if all_rows_df.empty:
         logger.warning("⚠️  Nenhum dado encontrado nos arquivos de entrada. Nada a fazer.")
         return
@@ -167,22 +133,16 @@ def clean_and_snapshot(all_rows_df: pd.DataFrame, out_db_path: Path):
     full = read_sql("SELECT * FROM market_items")
 
     full["url_unwrapped"] = full["url"].str.lower().apply(lambda u: unwrap_ml_click(u) if isinstance(u, str) else u)
-    
     inferred_mp = full['url_unwrapped'].apply(infer_marketplace_from_url)
     mask_to_fill = full['marketplace'].isna() | (full['marketplace'].str.lower() == 'unknown')
     full.loc[mask_to_fill, 'marketplace'] = inferred_mp[mask_to_fill]
     full['marketplace'].fillna('unknown', inplace=True)
-
     full["price"] = pd.to_numeric(full["price"], errors='coerce')
     full["captured_at"] = pd.to_datetime(full["captured_at"], errors="coerce", utc=True)
 
-    mask_ess = (
-        full["cod_prod"].notna() &
-        full["price"].notna() & (full["price"] > 0) &
-        full["url_unwrapped"].notna() & (full["url_unwrapped"] != '')
-    )
+    mask_ess = (full["cod_prod"].notna() & full["price"].notna() & (full["price"] > 0) & 
+                full["url_unwrapped"].notna() & (full["url_unwrapped"] != ''))
     clean = full.loc[mask_ess].copy()
-
     clean.sort_values(["cod_prod", "url", "captured_at"], ascending=False, inplace=True)
     clean.drop_duplicates(subset=["cod_prod", "url"], keep="first", inplace=True)
     
@@ -194,12 +154,12 @@ def clean_and_snapshot(all_rows_df: pd.DataFrame, out_db_path: Path):
     canon = snap.groupby("cod_prod")["title"].agg(lambda s: s.value_counts().index[0]).rename("product_name").reset_index()
     to_sql(canon, "products_dim", if_exists="replace", index=False)
 
-    ensure_dirs()
-    _save_parquet_with_fallback(clean, SETTINGS.processed_dir / "market_items_clean.parquet", "market_items_clean.csv")
-    _save_parquet_with_fallback(snap,  SETTINGS.processed_dir / "unifier_input.parquet",     "unifier_input.csv")
+    # MODIFICADO: usa os diretórios passados como argumento
+    output_dir.mkdir(parents=True, exist_ok=True)
+    _save_parquet_with_fallback(clean, output_dir / "market_items_clean.parquet", "market_items_clean.csv")
+    _save_parquet_with_fallback(snap, main_output_file, "unifier_input.csv") # Salva o arquivo principal no caminho exato
     
     export_sqlite_outputs(clean, snap, canon, out_db_path)
-
     log_discarded_rows(full, mask_ess)
     logger.info("✅ Limpeza concluída → market_items_clean: %d", len(clean))
 
@@ -216,39 +176,42 @@ def log_discarded_rows(df: pd.DataFrame, valid_mask: pd.Series):
     if miss.empty:
         logger.info("📊 Nenhuma linha descartada. Todos os registros eram válidos.")
         return
-        
     miss["miss_reason"] = np.select(
-        [
-            miss["cod_prod"].isna(),
-            miss["price"].isna() | (miss["price"] <= 0),
-            miss["url_unwrapped"].isna() | (miss["url_unwrapped"] == ''),
-        ],
-        ["missing_cod_prod", "bad_price", "missing_url"],
-        default="other"
+        [miss["cod_prod"].isna(), miss["price"].isna() | (miss["price"] <= 0), miss["url_unwrapped"].isna() | (miss["url_unwrapped"] == '')],
+        ["missing_cod_prod", "bad_price", "missing_url"], default="other"
     )
-    logger.info("📊 Diagnóstico de descarte (Top motivos):\n%s", 
-                miss["miss_reason"].value_counts().head().to_string())
+    logger.info("📊 Diagnóstico de descarte (Top motivos):\n%s", miss["miss_reason"].value_counts().head().to_string())
 
 # ============================================================
 # Orquestração Principal
 # ============================================================
-
 def main():
     """Função principal que orquestra todo o processo de ETL."""
+    # MODIFICADO: argumentos de entrada e saída para uso no pipeline
     parser = argparse.ArgumentParser(description="ETL de Ingestão e Limpeza de Dados de Marketplace.")
-    parser.add_argument("--raw_dir", type=Path, required=True, help="Pasta ou arquivo de entrada para JSON/CSV.")
-    parser.add_argument("--out_db", type=Path, help="Caminho para salvar o SQLite de saída. Padrão: data/processed/warehouse.db")
+    parser.add_argument("--arquivo-entrada", type=Path, required=True, help="Arquivo CSV de entrada com os dados brutos.")
+    parser.add_argument("--diretorio-saida", type=Path, required=True, help="Pasta para salvar todos os artefatos (DB, Parquets, etc).")
+    parser.add_argument("--arquivo-saida", type=Path, required=True, help="Caminho do arquivo de saída principal para o próximo passo (ex: unifier_input.parquet).")
     args = parser.parse_args()
 
-    ensure_dirs()
-    SETTINGS.db_path = SETTINGS.processed_dir / "internal_data.db"
-    out_db_path = args.out_db or SETTINGS.processed_dir / "warehouse.db"
+    # MODIFICADO: caminhos são definidos pelos argumentos
+    output_dir = args.diretorio_saida
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # O DB interno e o warehouse.db serão salvos dentro do diretório de saída
+    SETTINGS.db_path = output_dir / "internal_data.db"
+    out_db_path = output_dir / "warehouse.db"
     
     logger.info("🚀 Iniciando ETL de ingestão...")
     
-    all_rows = ingest_files(args.raw_dir)
+    all_rows = ingest_file(args.arquivo_entrada)
     
-    clean_and_snapshot(pd.DataFrame(all_rows), out_db_path)
+    clean_and_snapshot(
+        all_rows_df=pd.DataFrame(all_rows), 
+        out_db_path=out_db_path,
+        output_dir=output_dir,
+        main_output_file=args.arquivo_saida
+    )
 
 if __name__ == "__main__":
     main()
