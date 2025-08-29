@@ -1,15 +1,10 @@
+# pricing.py
 import pandas as pd
 import numpy as np
 from pathlib import Path
 import argparse
 
-# --- Configurações ---
-BASE_DIR = Path(__file__).resolve().parent
-DEFAULT_INPUT_FILE = BASE_DIR / "data" / "processed" / "market_items_clean.parquet"
-DEFAULT_OUTPUT_PER_MARKETPLACE = BASE_DIR / "data" / "processed" / "precos_referencia_por_marketplace.csv"
-DEFAULT_OUTPUT_FINAL = BASE_DIR / "data" / "processed" / "precos_referencia_final.csv"
-
-# --- Lógica de Cálculo de Preço ---
+# --- Lógica de Cálculo de Preço (sem alterações) ---
 
 def calculate_reference_price(prices: pd.Series) -> pd.Series:
     """
@@ -55,13 +50,13 @@ def calculate_stats_from_group(group):
 
 # --- Função Principal ---
 
-def main(input_path: Path, output_per_marketplace_path: Path, output_final_path: Path):
+# MODIFICADO: a função principal agora aceita apenas entrada e saída principal
+def main(input_path: Path, output_final_path: Path):
     """Orquestra o processo de cálculo de preços de referência em duas etapas."""
     print("🚀 Iniciando processo de precificação...")
     
     if not input_path.exists():
         print(f"❌ ERRO: Arquivo de entrada não encontrado em '{input_path}'")
-        print("➡️  Execute o script 'etl_ingest.py' primeiro.")
         return
 
     print(f"📄 Lendo dados de '{input_path}'...")
@@ -79,7 +74,6 @@ def main(input_path: Path, output_per_marketplace_path: Path, output_final_path:
     product_titles = df_valid.groupby('cod_prod')['title'].agg(lambda x: x.value_counts().index[0]).rename('product_title')
 
     print("\n📊 Etapa 1: Agrupando por 'cod_prod' e 'marketplace'...")
-    # --- CORREÇÃO: Alterada a forma de aplicar a função para maior robustez ---
     pricing_per_marketplace = df_valid.groupby(['cod_prod', 'marketplace']).apply(calculate_stats_from_group).reset_index()
     
     pricing_per_marketplace = pricing_per_marketplace.merge(product_titles, on='cod_prod', how='left')
@@ -92,11 +86,12 @@ def main(input_path: Path, output_per_marketplace_path: Path, output_final_path:
     cols_order = ['cod_prod', 'product_title', 'marketplace'] + [c for c in pricing_per_marketplace.columns if c not in ['cod_prod', 'product_title', 'marketplace']]
     pricing_per_marketplace = pricing_per_marketplace[cols_order]
 
-    print(f"✅ Cálculo por marketplace finalizado: {len(pricing_per_marketplace)} registros.")
-    output_per_marketplace_path.parent.mkdir(parents=True, exist_ok=True)
+    # MODIFICADO: O arquivo secundário é salvo ao lado do arquivo principal
+    output_dir = output_final_path.parent
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_per_marketplace_path = output_dir / "precos_referencia_por_marketplace.csv"
     pricing_per_marketplace.to_csv(output_per_marketplace_path, index=False, sep=';', decimal=',')
-    print(f"💾 Resultados salvos em '{output_per_marketplace_path}'")
-    print("\n📋 Amostra (por marketplace):\n", pricing_per_marketplace.head().to_string())
+    print(f"💾 Resultados por marketplace salvos em '{output_per_marketplace_path}'")
 
     if pricing_per_marketplace.empty:
         print("\n ALERTA: Nenhum dado válido para a Etapa 2. O cálculo final não será executado.")
@@ -116,17 +111,16 @@ def main(input_path: Path, output_per_marketplace_path: Path, output_final_path:
     final_pricing = final_pricing[cols_order_final]
 
     print(f"✅ Cálculo finalizado: {len(final_pricing)} produtos.")
-    output_final_path.parent.mkdir(parents=True, exist_ok=True)
     final_pricing.to_csv(output_final_path, index=False, sep=';', decimal=',')
     print(f"💾 Resultados finais salvos em '{output_final_path}'")
     print("\n📋 Amostra (final):\n", final_pricing.head().to_string())
 
 
 if __name__ == "__main__":
+    # MODIFICADO: argumentos simplificados para o pipeline
     parser = argparse.ArgumentParser(description="Calcula preços de referência a partir de dados de mercado limpos.")
-    parser.add_argument("--input", type=Path, default=DEFAULT_INPUT_FILE)
-    parser.add_argument("--output_market", type=Path, default=DEFAULT_OUTPUT_PER_MARKETPLACE)
-    parser.add_argument("--output_final", type=Path, default=DEFAULT_OUTPUT_FINAL)
+    parser.add_argument("--arquivo-entrada", type=Path, required=True, help="Caminho para o arquivo de entrada (gerado pelo ETL).")
+    parser.add_argument("--arquivo-saida", type=Path, required=True, help="Caminho para salvar o arquivo CSV com os preços finais.")
     args = parser.parse_args()
     
-    main(args.input, args.output_market, args.output_final)
+    main(args.arquivo_entrada, args.arquivo_saida)
