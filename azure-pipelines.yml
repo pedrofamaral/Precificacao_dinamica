@@ -1,19 +1,33 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+schedules:
+- cron: '0 12 * * Mon-Fri'
+  displayName: 'Diário útil 09:00 BRT'
+  branches:
+    include:
+    - azure-pipelines
+  always: true
 
 trigger:
-- dev
+  branches:
+    include:
+      - azure-pipelines
+
+pr:
+  branches:
+    include:
+      - dev
 
 pool:
-  vmImage: ubuntu-latest
+  name: Agente_Azure-pipelines
 
+# Necessário para poder fazer git push de dentro do job
 steps:
+- checkout: self
+  persistCredentials: true   # injeta o token OAuth do GitHub no clone
+
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '3.11' 
-  displayName: 'Setup Python version'
+    versionSpec: '3.9'
+  displayName: 'Setup Python 3.9'
 
 - script: |
     python -m pip install --upgrade pip
@@ -29,3 +43,24 @@ steps:
 - script: python ETL/pricing.py
   displayName: 'Run script: pricing.py'
 
+- powershell: |
+    git config --global user.name  "pipeline-bot"
+    git config --global user.email "pipeline-bot@example.com"
+
+    # evitar erro do Git 2.35+ sobre "dubious ownership"
+    git config --global --add safe.directory "$(Build.SourcesDirectory)"
+
+    # garantir que estamos numa branch local rastreando a remota
+    git fetch origin $(Build.SourceBranchName)
+    git checkout -B $(Build.SourceBranchName) origin/$(Build.SourceBranchName)
+
+    # detectar mudanças
+    if (git status --porcelain) {
+      git add -A
+      git commit -m "Auto: atualizações $(Build.BuildNumber) [skip ci]"
+      git push origin HEAD:$(Build.SourceBranchName)
+      Write-Host "Alterações commitadas e enviadas."
+    } else {
+      Write-Host "Sem alterações para commit."
+    }
+  displayName: 'Commit & push na mesma branch (GitHub)'
