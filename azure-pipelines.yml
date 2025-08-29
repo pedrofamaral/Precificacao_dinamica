@@ -1,11 +1,6 @@
-schedules:
-- cron: '30 3 * * *'
-  displayName: 'Execução diária 00:30 BRT'
-  branches:
-    include:
-    - azure-pipelines
-  always: true
-
+# =================================================================
+# Gatilhos de Execução
+# =================================================================
 trigger:
   branches:
     include:
@@ -16,39 +11,96 @@ pr:
     include:
     - dev
 
+schedules:
+- cron: '30 3 * * *'
+  displayName: 'Execução diária 00:30 BRT'
+  branches:
+    include:
+    - azure-pipelines
+  always: true
+
+# =================================================================
+# Configuração do Agente e Variáveis
+# =================================================================
 pool:
   name: Agente_Azure-pipelines
 
 variables:
-- group: Segredos_PATS 
+  - group: Segredos_PAT
 
+  - name: PYTHON_VERSION
+    value: '3.11'
+  - name: ARTIFACTS_DIR
+    value: $(Build.ArtifactStagingDirectory)
+  - name: ARQUIVO_BRUTO
+    value: $(ARTIFACTS_DIR)/dados_brutos_consolidados.csv
+  - name: ARQUIVO_TRATADO
+    value: $(ARTIFACTS_DIR)/dados_tratados_unificados.parquet
+  - name: ARQUIVO_PRECIFICADO
+    value: $(ARTIFACTS_DIR)/precos_referencia_final.csv
+
+# =================================================================
+# Passos da Execução (Pipeline)
+# =================================================================
 steps:
+# -----------------------------------------------------------------
+# ETAPA 1: PREPARAÇÃO DO AMBIENTE
+# -----------------------------------------------------------------
 - checkout: self
   persistCredentials: true
+  displayName: '1.1. Checkout do Repositório'
 
-- script: python --version
-  displayName: 'Verificar versão do Python'
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: $(PYTHON_VERSION)
+  displayName: '1.2. Configurar Python $(PYTHON_VERSION)'
+
+- powershell: |
+    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -Force
+  displayName: '1.3. Habilitar Suporte a Caminhos Longos (Windows)'
 
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
-  displayName: 'Instalar dependências'
+  displayName: '1.4. Instalar Dependências'
 
-- script: python Extracao_e_Insercao/gerar_lote_e_rodar.py
-  displayName: 'Executar: gerar_lote_e_rodar.py'
+# -----------------------------------------------------------------
+# ETAPA 2: ESTEIRA DE DADOS (EXECUÇÃO DOS SCRIPTS)
+# -----------------------------------------------------------------
+- script: |
+    python Extracao_e_Insercao/gerar_lote_e_rodar.py `
+      --rodar `
+      --data-dir "$(ARTIFACTS_DIR)/raw_data" `
+      --arquivo-saida "$(ARQUIVO_BRUTO)" `
+      --cmd-meli "scraper_em_geral/mercadolivre_scraper.py" `
+      --cmd-magalu "scraper_em_geral/magalu_scraper.py" `
+      --cmd-pstore "scraper_em_geral/pneustore_scraper.py"
+  displayName: '2.1. Geração de Dados Brutos'
+  env:
+    MSSQL_SERVER: $(MSSQL_SERVER)
+    MSSQL_DB: $(MSSQL_DB)
+    MSSQL_USER: $(MSSQL_USER)
+    MSSQL_PWD: $(MSSQL_PWD)
 
-- script: python ETL/etl_ingest.py
-  displayName: 'Executar: etl_ingest.py'
+- script: |
+    python ETL/etl_ingest.py `
+      --arquivo-entrada "$(ARQUIVO_BRUTO)" `
+      --diretorio-saida "$(ARTIFACTS_DIR)/etl_outputs" `
+      --arquivo-saida "$(ARQUIVO_TRATADO)"
+  displayName: '2.2. Processo de ETL e Limpeza'
 
-- script: python ETL/pricing.py
-  displayName: 'Executar: pricing.py'
+- script: |
+    python ETL/pricing.py `
+      --arquivo-entrada "$(ARQUIVO_TRATADO)" `
+      --arquivo-saida "$(ARQUIVO_PRECIFICADO)"
+  displayName: '2.3. Precificação dos Dados'
 
+# -----------------------------------------------------------------
+# ETAPA 3: SALVANDO OS RESULTADOS
+# -----------------------------------------------------------------
 - powershell: |
-    # Configura o nome e e-mail do autor do commit
     git config user.name "pipeline-bot"
     git config user.email "pipeline-bot@example.com"
-
-    # Adiciona o diretório de fontes como um diretório seguro para o Git
     git config --global --add safe.directory "$(Build.SourcesDirectory)"
     
     git remote set-url origin https://x-access-token:$(GITHUB_PAT)@github.com/pedrofamaral/Precificacao_dinamica.git
@@ -58,13 +110,19 @@ steps:
     
     if (git status --porcelain) {
       git add -A
-      git commit -m "Auto: atualizações $(Build.BuildNumber) [skip ci]"
+      git commit -m "Auto: atualizações de dados $(Build.BuildNumber) [skip ci]"
       git push origin HEAD:$(Build.SourceBranchName)
       Write-Host "Alterações commitadas e enviadas com sucesso."
     } else {
       Write-Host "Nenhuma alteração para commitar."
     }
-  displayName: 'Commit e Push de alterações (GitHub)'
-  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) # Não executa em Pull Requests
+  displayName: '3.1. Commit & Push de Resultados (se houver)'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
   env:
-    GITHUB_PAT: $(GITHUB_PAT)
+    GITHUB_PAT: $(GITHUB_PAT) 
+
+- task: PublishBuildArtifacts@1
+  displayName: '3.2. Publicar Artefato de Precificação'
+  inputs:
+    PathtoPublish: '$(ARQUIVO_PRECIFICADO)'
+    ArtifactName: 'ResultadoPrecificacao'
