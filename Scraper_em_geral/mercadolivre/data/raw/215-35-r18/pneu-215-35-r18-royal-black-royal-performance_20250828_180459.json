@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Royal Black Royal Performance P 215/35R18 84 W",
+    "link": "https://www.mercadolivre.com.br/pneu-royal-black-royal-performance-p-21535r18-84-w/p/MLB15949842",
+    "preco": 628.96,
+    "brand": "royal black",
+    "model": "royal performance",
+    "size": "",
+    "speed_index": "",
+    "query_strict": "pneu 215 35 r18 Royal Black Royal Performance",
+    "size_norm": "215-35-r18",
+    "brand_expected": "royal black",
+    "line_expected": "royal performance",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "royal black",
+    "data_coleta": "2025-08-28 21:02:47",
+    "preco_original": null,
+    "preco_desconto": 628.96,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

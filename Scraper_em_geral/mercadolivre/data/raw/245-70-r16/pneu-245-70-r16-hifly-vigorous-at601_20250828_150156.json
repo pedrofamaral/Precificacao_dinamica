@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Hifly 245/70r16 107t Vigorous At601",
+    "link": "https://www.mercadolivre.com.br/pneu-hifly-24570r16-107t-vigorous-at601/p/MLB49206054",
+    "preco": 829.68,
+    "brand": "hifly",
+    "model": "vigorous at601",
+    "size": "",
+    "speed_index": "107T",
+    "query_strict": "pneu 245 70 r16 Hifly Vigorous At601",
+    "size_norm": "245-70-r16",
+    "brand_expected": "hifly",
+    "line_expected": "vigorous at601",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "hifly",
+    "data_coleta": "2025-08-28 18:01:43",
+    "preco_original": null,
+    "preco_desconto": 829.68,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

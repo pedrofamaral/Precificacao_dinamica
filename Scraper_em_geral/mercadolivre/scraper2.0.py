@@ -94,7 +94,7 @@ SPEED_IDX_RE = re.compile(r"\b\d{2,3}[A-Z]{1,2}\b", re.I)
 
 CONFIG_NORM: Dict[str, Dict | List] = {
     "known_brands": DEFAULT_KNOWN_BRANDS.copy(),
-    "brand_aliases": { "kelly": "goodyear" },  # exemplo
+    "brand_aliases": { "kelly": "goodyear" }, 
     "known_model_phrases": DEFAULT_MODEL_PHRASES.copy(),
     "model_aliases": {
         "power contact": "powercontact",
@@ -102,6 +102,8 @@ CONFIG_NORM: Dict[str, Dict | List] = {
         "cint p7": "cinturato p7",
         "scporion": "scorpion",
         "scporion ks": "scorpion",
+        "assurance max life": "assurance maxlife",
+        "assurance max-life": "assurance maxlife"
     },
 }
 
@@ -121,7 +123,7 @@ def _bootstrap_norm_from_lote(lote: list[dict]):
     for it in lote:
         b = _norm_text(it.get("brand", ""))
         m = _norm_text(it.get("line_model", ""))
-        if b and not SPEED_IDX_RE.fullmatch(b.replace(" ", "")):  # evita '79t' virar marca
+        if b and not SPEED_IDX_RE.fullmatch(b.replace(" ", "")):  
             brands.add(b)
         if m:
             m = re.sub(r"\(\s*(?:\d{1,3}[a-z]{1,2}|[a-z])\s*\)", "", m, flags=re.I).strip()
@@ -150,11 +152,11 @@ def _strict_match(title: str, brand_expected: str, model_expected: str, size_nor
     if be and not any(re.search(rf"\b{re.escape(x)}\b", t) for x in allowed):
         return False
 
-    for b in CONFIG_NORM.get("known_brands", []):
+    """for b in CONFIG_NORM.get("known_brands", []):
         if b in allowed:
             continue
         if re.search(rf"\b{re.escape(b)}\b", t):
-            return False
+            return False"""#Filtro para caso apareça outras marcas nao pegue
 
     parts = _tokens_from_model(model_expected)
     if parts and not all(re.search(rf"\b{re.escape(p)}\b", t) for p in parts):
@@ -636,6 +638,7 @@ class ScraperMercadoLivre(ScraperBase):
         cards, sel_usado = self._find_cards()
         htmls = []
         stale = 0
+        
         for idx, el in enumerate(cards):
             try:
                 html = el.get_attribute("outerHTML")
@@ -652,6 +655,7 @@ class ScraperMercadoLivre(ScraperBase):
                     pass
             except Exception:
                 pass
+        
         anchors = sum(1 for h in htmls if "href=" in h)
         self.logger.info("snapshot page=%s cards=%s stale=%s est=%s anchors=%s sel=%s", self._pagina_atual, len(cards), stale, est, anchors, sel_usado)
         return htmls, anchors, sel_usado
@@ -675,6 +679,7 @@ class ScraperMercadoLivre(ScraperBase):
         if soup.select_one("div.poly-price__current"):
             orig_frac = soup.select_one("div.poly-price__original .andes-money-amount__fraction")
             orig_cents = soup.select_one("div.poly-price__original .andes-money-amount__cents")
+            
             if orig_frac:
                 i = re.sub(r"\D", "", orig_frac.get_text(strip=True))
                 c = re.sub(r"\D", "", orig_cents.get_text(strip=True)) if orig_cents else "00"
@@ -682,6 +687,7 @@ class ScraperMercadoLivre(ScraperBase):
 
             curr_frac = soup.select_one("div.poly-price__current .andes-money-amount__fraction")
             curr_cents = soup.select_one("div.poly-price__current .andes-money-amount__cents")
+            
             if curr_frac:
                 i = re.sub(r"\D", "", curr_frac.get_text(strip=True))
                 c = re.sub(r"\D", "", curr_cents.get_text(strip=True)) if curr_cents else "00"
@@ -744,6 +750,7 @@ class ScraperMercadoLivre(ScraperBase):
             ".andes-money-amount--cents-superscript.andes-money-amount--compact"
         )
         elems = soup.select(promo_css)
+        
         if elems:
             el = elems[1] if len(elems) > 1 else elems[0]
             v = _parse_valor(el.get_text(" ", strip=True))
@@ -786,13 +793,17 @@ class ScraperMercadoLivre(ScraperBase):
 
     def _soup_el_is_old(self, el) -> bool:
         classes = " ".join(el.get("class", [])).lower()
+        
         for c in self.PRECO_CLASSES_ANTIGOS:
             if c in classes:
                 return True
+        
         if el.name == "s":
             return True
+        
         if el.find_parent("s"):
             return True
+        
         for c in self.PRECO_CLASSES_ANTIGOS:
             if el.find_parent(class_=lambda x: x and c in x):
                 return True
@@ -801,6 +812,7 @@ class ScraperMercadoLivre(ScraperBase):
     def _soup_bloco_money(self, bloco) -> float | None:
         frac = bloco.select_one(".andes-money-amount__fraction, .price-tag-fraction")
         cents = bloco.select_one(".andes-money-amount__cents, .price-tag-cents")
+        
         if frac:
             ftxt = re.sub(r"\D", "", frac.get_text(strip=True))
             ctxt = re.sub(r"\D", "", cents.get_text(strip=True)) if cents else "00"
@@ -908,33 +920,48 @@ class ScraperMercadoLivre(ScraperBase):
     def _filtrar_produto(self, prod: Product) -> tuple[Optional[Product], str]:
         if not prod:
             return None, "parse_fail"
+        
         titulo = prod.titulo or ""
+        modo = (self._query_meta.get("query_strict","") or "full").lower
+        
         if self._dim_pattern and not self._dim_pattern.search(titulo):
             return None, "sem_dim"
+        
         if eh_kit_ou_multiplos_pneus(titulo):
             return None, "kit"
 
         marca_desejada = _canon_brand(self._query_meta.get("brand",""))
         marca_prod = _brand_from_title(titulo, expected=marca_desejada)
-        if marca_desejada and marca_prod != marca_desejada:
-            self.logger.warning(
-            f"REJEIÇÃO DE MARCA: Esperado='{marca_desejada}', "
-            f"Encontrado='{marca_prod}', Título='{titulo[:80]}...'"
-        )
-
-        if marca_desejada and (not marca_prod or marca_prod != marca_desejada):
+        
+        exige_marca = modo in ("full", "brand_size")
+        if exige_marca:
+            if marca_desejada and marca_prod != marca_desejada:
+                self.logger.warning(
+                f"REJEIÇÃO DE MARCA: Esperado='{marca_desejada}', "
+                f"Encontrado='{marca_prod}', Título='{titulo[:80]}...'",
+                marca_desejada, marca_prod, titulo[:120]
+            )
             return None, "marca_diff"
 
         prod.marca = marca_prod or marca_desejada or ""
 
-        if not _strict_match(
-            title=titulo,
-            brand_expected=self._query_meta.get("brand",""),
-            model_expected=self._query_meta.get("line_model",""),
-            size_norm=self._query_meta.get("size_norm","") or prod.size_norm
-        ):
-            return None, "not_strict"
+        if modo == "full":
+            if not _strict_match(title=titulo, brand_expected=self._query_meta.get("brand",""),
+                model_expected=self._query_meta.get("line_model",""), size_norm=self._query_meta.get("size_norm","") or prod.size_norm):
+                return None, "not_strict"
 
+        elif modo == "brand_size":
+            pass
+
+        elif modo == "size":
+            pass
+
+        elif modo == "none":
+            pass
+
+        else:
+            pass
+        
         prod.frete_gratis = prod.free_ship and (prod.frete in (None, 0.0))
         return prod, "ok"
 
@@ -1289,7 +1316,7 @@ def main():
                 meta = {
                     "brand": item.get("brand", ""),
                     "line_model": item.get("line_model", ""),
-                    "size_norm": f"{item.get('width','')}-{item.get('aspect','')}-r{item.get('rim','')}",
+                    "size_norm": f"{item.get('width','')}/{item.get('aspect','')}r{item.get('rim','')}",
                     "query_strict": item.get("query_strict", ""),
                 }
 
@@ -1335,6 +1362,7 @@ def main():
                 "size_norm": _size_canonical(args.termo),
                 "query_strict": "",
             }
+            
             if meta["brand"]:
                 meta["line_model"] = _model_from_title(args.termo, brand=meta["brand"])
 

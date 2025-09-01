@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Tbb Tires Aro 13 165/70r13 Tp-16 79t T",
+    "link": "https://www.mercadolivre.com.br/pneu-tbb-tires-aro-13-16570r13-tp16-79t/up/MLBU3147828922",
+    "preco": 378.45,
+    "brand": "tbb tires",
+    "model": "tp 16",
+    "size": "",
+    "speed_index": "79T",
+    "query_strict": "pneu 165 70 r13 Tbb Tires Tp-16",
+    "size_norm": "165-70-r13",
+    "brand_expected": "tbb tires",
+    "line_expected": "tp-16",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "tbb tires",
+    "data_coleta": "2025-08-28 22:10:18",
+    "preco_original": null,
+    "preco_desconto": 378.45,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Sunny 215/60r17 96v Nu025 H/t",
+    "link": "https://www.mercadolivre.com.br/pneu-sunny-21560r17-96v-nu025-ht/p/MLB47834431",
+    "preco": 538.62,
+    "brand": "sunny",
+    "model": "nu025 h t",
+    "size": "",
+    "speed_index": "96V",
+    "query_strict": "pneu 215 60 r17 Sunny Nu025 H/T",
+    "size_norm": "215-60-r17",
+    "brand_expected": "sunny",
+    "line_expected": "nu025 h/t",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "sunny",
+    "data_coleta": "2025-08-28 21:54:32",
+    "preco_original": null,
+    "preco_desconto": 538.62,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]
