@@ -19,6 +19,25 @@
     "ean_gtin": "23142"
   },
   {
+    "cod_prod": "29394",
+    "brand": "Aderenza",
+    "line_model": "Speedline E1",
+    "width": "185",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "185 65 r15",
+    "original_label": "",
+    "query_strict": "pneu 185 65 r15 Aderenza Speedline E1",
+    "keywords": [
+      "185/65R15",
+      "185 65 R15",
+      "Aderenza",
+      "Speedline E1"
+    ],
+    "size_regex": "\\b185[/\\s-]?65\\s*R?\\s*15\\b",
+    "ean_gtin": "29394"
+  },
+  {
     "cod_prod": "32522",
     "brand": "Anteo",
     "line_model": "At59",
@@ -36,25 +55,6 @@
     ],
     "size_regex": "\\b900[/\\s-]?20\\s*R?\\s*14\\b",
     "ean_gtin": "32522"
-  },
-  {
-    "cod_prod": "34125",
-    "brand": "Anteo",
-    "line_model": "Pro-S",
-    "width": "295",
-    "aspect": "80",
-    "rim": "22",
-    "size_norm": "295 80 r22",
-    "original_label": "",
-    "query_strict": "pneu 295 80 r22 Anteo Pro-S",
-    "keywords": [
-      "295/80R22",
-      "295 80 R22",
-      "Anteo",
-      "Pro-S"
-    ],
-    "size_regex": "\\b295[/\\s-]?80\\s*R?\\s*22\\b",
-    "ean_gtin": "34125"
   },
   {
     "cod_prod": "31104",
@@ -340,44 +340,6 @@
     ],
     "size_regex": "\\b215[/\\s-]?45\\s*R?\\s*18\\b",
     "ean_gtin": "47548"
-  },
-  {
-    "cod_prod": "47981",
-    "brand": "Aptany",
-    "line_model": "Ra301",
-    "width": "215",
-    "aspect": "55",
-    "rim": "18",
-    "size_norm": "215 55 r18",
-    "original_label": "",
-    "query_strict": "pneu 215 55 r18 Aptany Ra301",
-    "keywords": [
-      "215/55R18",
-      "215 55 R18",
-      "Aptany",
-      "Ra301"
-    ],
-    "size_regex": "\\b215[/\\s-]?55\\s*R?\\s*18\\b",
-    "ean_gtin": "47981"
-  },
-  {
-    "cod_prod": "37978",
-    "brand": "Aptany",
-    "line_model": "Ra301",
-    "width": "225",
-    "aspect": "45",
-    "rim": "18",
-    "size_norm": "225 45 r18",
-    "original_label": "",
-    "query_strict": "pneu 225 45 r18 Aptany Ra301",
-    "keywords": [
-      "225/45R18",
-      "225 45 R18",
-      "Aptany",
-      "Ra301"
-    ],
-    "size_regex": "\\b225[/\\s-]?45\\s*R?\\s*18\\b",
-    "ean_gtin": "37978"
   },
   {
     "cod_prod": "46286",
@@ -969,6 +931,25 @@
     "ean_gtin": "36249"
   },
   {
+    "cod_prod": "42585",
+    "brand": "Bridgestone",
+    "line_model": "Dueler H/T 684 Iii Ecopia",
+    "width": "245",
+    "aspect": "70",
+    "rim": "16",
+    "size_norm": "245 70 r16",
+    "original_label": "",
+    "query_strict": "pneu 245 70 r16 Bridgestone Dueler H/T 684 Iii Ecopia",
+    "keywords": [
+      "245/70R16",
+      "245 70 R16",
+      "Bridgestone",
+      "Dueler H/T 684 Iii Ecopia"
+    ],
+    "size_regex": "\\b245[/\\s-]?70\\s*R?\\s*16\\b",
+    "ean_gtin": "42585"
+  },
+  {
     "cod_prod": "23957",
     "brand": "Bridgestone",
     "line_model": "Ecopia Ep150",
@@ -1100,6 +1081,25 @@
     ],
     "size_regex": "\\b185[/\\s-]?70\\s*R?\\s*14\\b",
     "ean_gtin": "44683"
+  },
+  {
+    "cod_prod": "44480",
+    "brand": "Chituma",
+    "line_model": "Cp-16",
+    "width": "165",
+    "aspect": "70",
+    "rim": "13",
+    "size_norm": "165 70 r13",
+    "original_label": "",
+    "query_strict": "pneu 165 70 r13 Chituma Cp-16",
+    "keywords": [
+      "165/70R13",
+      "165 70 R13",
+      "Chituma",
+      "Cp-16"
+    ],
+    "size_regex": "\\b165[/\\s-]?70\\s*R?\\s*13\\b",
+    "ean_gtin": "44480"
   },
   {
     "cod_prod": "48399",
@@ -1273,25 +1273,6 @@
     "ean_gtin": "48030"
   },
   {
-    "cod_prod": "32422",
-    "brand": "Comforser",
-    "line_model": "Cf510",
-    "width": "195",
-    "aspect": "60",
-    "rim": "15",
-    "size_norm": "195 60 r15",
-    "original_label": "",
-    "query_strict": "pneu 195 60 r15 Comforser Cf510",
-    "keywords": [
-      "195/60R15",
-      "195 60 R15",
-      "Comforser",
-      "Cf510"
-    ],
-    "size_regex": "\\b195[/\\s-]?60\\s*R?\\s*15\\b",
-    "ean_gtin": "32422"
-  },
-  {
     "cod_prod": "43054",
     "brand": "Compasal",
     "line_model": "Blazer Hp",
@@ -1347,6 +1328,25 @@
     ],
     "size_regex": "\\b225[/\\s-]?45\\s*R?\\s*18\\b",
     "ean_gtin": "46476"
+  },
+  {
+    "cod_prod": "33762",
+    "brand": "Compasal",
+    "line_model": "Smacher",
+    "width": "205",
+    "aspect": "50",
+    "rim": "17",
+    "size_norm": "205 50 r17",
+    "original_label": "",
+    "query_strict": "pneu 205 50 r17 Compasal Smacher",
+    "keywords": [
+      "205/50R17",
+      "205 50 R17",
+      "Compasal",
+      "Smacher"
+    ],
+    "size_regex": "\\b205[/\\s-]?50\\s*R?\\s*17\\b",
+    "ean_gtin": "33762"
   },
   {
     "cod_prod": "35475",
@@ -1558,25 +1558,6 @@
     "ean_gtin": "35931"
   },
   {
-    "cod_prod": "35009",
-    "brand": "Continental",
-    "line_model": "Powercontact 2",
-    "width": "195",
-    "aspect": "55",
-    "rim": "16",
-    "size_norm": "195 55 r16",
-    "original_label": "",
-    "query_strict": "pneu 195 55 r16 Continental Powercontact 2",
-    "keywords": [
-      "195/55R16",
-      "195 55 R16",
-      "Continental",
-      "Powercontact 2"
-    ],
-    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*16\\b",
-    "ean_gtin": "35009"
-  },
-  {
     "cod_prod": "36629",
     "brand": "Continental",
     "line_model": "Powercontact 2",
@@ -1670,6 +1651,25 @@
     ],
     "size_regex": "\\b295[/\\s-]?80\\s*R?\\s*22\\b",
     "ean_gtin": "26085"
+  },
+  {
+    "cod_prod": "43623",
+    "brand": "Delmax",
+    "line_model": "Expresspro",
+    "width": "205",
+    "aspect": "75",
+    "rim": "16",
+    "size_norm": "205 75 r16",
+    "original_label": "",
+    "query_strict": "pneu 205 75 r16 Delmax Expresspro",
+    "keywords": [
+      "205/75R16",
+      "205 75 R16",
+      "Delmax",
+      "Expresspro"
+    ],
+    "size_regex": "\\b205[/\\s-]?75\\s*R?\\s*16\\b",
+    "ean_gtin": "43623"
   },
   {
     "cod_prod": "46784",
@@ -1824,6 +1824,25 @@
     "ean_gtin": "35089"
   },
   {
+    "cod_prod": "48147",
+    "brand": "Double King",
+    "line_model": "Dk728",
+    "width": "235",
+    "aspect": "60",
+    "rim": "16",
+    "size_norm": "235 60 r16",
+    "original_label": "",
+    "query_strict": "pneu 235 60 r16 Double King Dk728",
+    "keywords": [
+      "235/60R16",
+      "235 60 R16",
+      "Double King",
+      "Dk728"
+    ],
+    "size_regex": "\\b235[/\\s-]?60\\s*R?\\s*16\\b",
+    "ean_gtin": "48147"
+  },
+  {
     "cod_prod": "45533",
     "brand": "Double King",
     "line_model": "Dk798",
@@ -1917,6 +1936,25 @@
     ],
     "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*16\\b",
     "ean_gtin": "45390"
+  },
+  {
+    "cod_prod": "45659",
+    "brand": "Doublestar",
+    "line_model": "Dh03",
+    "width": "215",
+    "aspect": "60",
+    "rim": "16",
+    "size_norm": "215 60 r16",
+    "original_label": "",
+    "query_strict": "pneu 215 60 r16 Doublestar Dh03",
+    "keywords": [
+      "215/60R16",
+      "215 60 R16",
+      "Doublestar",
+      "Dh03"
+    ],
+    "size_regex": "\\b215[/\\s-]?60\\s*R?\\s*16\\b",
+    "ean_gtin": "45659"
   },
   {
     "cod_prod": "44684",
@@ -2126,6 +2164,25 @@
     ],
     "size_regex": "\\b225[/\\s-]?70\\s*R?\\s*17\\b",
     "ean_gtin": "39636"
+  },
+  {
+    "cod_prod": "38995",
+    "brand": "Dunlop",
+    "line_model": "Grandtrek At25",
+    "width": "245",
+    "aspect": "70",
+    "rim": "16",
+    "size_norm": "245 70 r16",
+    "original_label": "",
+    "query_strict": "pneu 245 70 r16 Dunlop Grandtrek At25",
+    "keywords": [
+      "245/70R16",
+      "245 70 R16",
+      "Dunlop",
+      "Grandtrek At25"
+    ],
+    "size_regex": "\\b245[/\\s-]?70\\s*R?\\s*16\\b",
+    "ean_gtin": "38995"
   },
   {
     "cod_prod": "46033",
@@ -2546,25 +2603,6 @@
     "ean_gtin": "28008"
   },
   {
-    "cod_prod": "26686",
-    "brand": "Dunlop",
-    "line_model": "Sp Touring R1",
-    "width": "175",
-    "aspect": "65",
-    "rim": "14",
-    "size_norm": "175 65 r14",
-    "original_label": "",
-    "query_strict": "pneu 175 65 r14 Dunlop Sp Touring R1",
-    "keywords": [
-      "175/65R14",
-      "175 65 R14",
-      "Dunlop",
-      "Sp Touring R1"
-    ],
-    "size_regex": "\\b175[/\\s-]?65\\s*R?\\s*14\\b",
-    "ean_gtin": "26686"
-  },
-  {
     "cod_prod": "28007",
     "brand": "Dunlop",
     "line_model": "Sp Touring R1",
@@ -2679,25 +2717,6 @@
     "ean_gtin": "28684"
   },
   {
-    "cod_prod": "37226",
-    "brand": "Dunlop",
-    "line_model": "Sport Max050",
-    "width": "225",
-    "aspect": "45",
-    "rim": "17",
-    "size_norm": "225 45 r17",
-    "original_label": "",
-    "query_strict": "pneu 225 45 r17 Dunlop Sport Max050",
-    "keywords": [
-      "225/45R17",
-      "225 45 R17",
-      "Dunlop",
-      "Sport Max050"
-    ],
-    "size_regex": "\\b225[/\\s-]?45\\s*R?\\s*17\\b",
-    "ean_gtin": "37226"
-  },
-  {
     "cod_prod": "27454",
     "brand": "Dunlop",
     "line_model": "Touring R1",
@@ -2736,6 +2755,25 @@
     "ean_gtin": "47609"
   },
   {
+    "cod_prod": "39544",
+    "brand": "Durable",
+    "line_model": "Dr755",
+    "width": "295",
+    "aspect": "80",
+    "rim": "22",
+    "size_norm": "295 80 r22",
+    "original_label": "",
+    "query_strict": "pneu 295 80 r22 Durable Dr755",
+    "keywords": [
+      "295/80R22",
+      "295 80 R22",
+      "Durable",
+      "Dr755"
+    ],
+    "size_regex": "\\b295[/\\s-]?80\\s*R?\\s*22\\b",
+    "ean_gtin": "39544"
+  },
+  {
     "cod_prod": "26061",
     "brand": "Dyna",
     "line_model": "S526",
@@ -2755,42 +2793,23 @@
     "ean_gtin": "7891100352600"
   },
   {
-    "cod_prod": "47080",
+    "cod_prod": "46418",
     "brand": "Dynamo",
-    "line_model": "Street-H Mh01 92H",
-    "width": "185",
-    "aspect": "65",
-    "rim": "15",
-    "size_norm": "185 65 r15",
-    "original_label": "",
-    "query_strict": "pneu 185 65 r15 Dynamo Street-H Mh01 92H",
-    "keywords": [
-      "185/65R15",
-      "185 65 R15",
-      "Dynamo",
-      "Street-H Mh01 92H"
-    ],
-    "size_regex": "\\b185[/\\s-]?65\\s*R?\\s*15\\b",
-    "ean_gtin": "47080"
-  },
-  {
-    "cod_prod": "47342",
-    "brand": "Dynamo Street-H",
     "line_model": "Mh01",
-    "width": "195",
-    "aspect": "65",
-    "rim": "15",
-    "size_norm": "195 65 r15",
+    "width": "205",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "205 55 r16",
     "original_label": "",
-    "query_strict": "pneu 195 65 r15 Dynamo Street-H Mh01",
+    "query_strict": "pneu 205 55 r16 Dynamo Mh01",
     "keywords": [
-      "195/65R15",
-      "195 65 R15",
-      "Dynamo Street-H",
+      "205/55R16",
+      "205 55 R16",
+      "Dynamo",
       "Mh01"
     ],
-    "size_regex": "\\b195[/\\s-]?65\\s*R?\\s*15\\b",
-    "ean_gtin": "47342"
+    "size_regex": "\\b205[/\\s-]?55\\s*R?\\s*16\\b",
+    "ean_gtin": "46418"
   },
   {
     "cod_prod": "35966",
@@ -3097,6 +3116,25 @@
     "ean_gtin": "21310"
   },
   {
+    "cod_prod": "22005",
+    "brand": "Firestone",
+    "line_model": "F700",
+    "width": "175",
+    "aspect": "70",
+    "rim": "14",
+    "size_norm": "175 70 r14",
+    "original_label": "",
+    "query_strict": "pneu 175 70 r14 Firestone F700",
+    "keywords": [
+      "175/70R14",
+      "175 70 R14",
+      "Firestone",
+      "F700"
+    ],
+    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*14\\b",
+    "ean_gtin": "22005"
+  },
+  {
     "cod_prod": "33333",
     "brand": "Firestone",
     "line_model": "F700",
@@ -3247,6 +3285,25 @@
     ],
     "size_regex": "\\b215[/\\s-]?60\\s*R?\\s*17\\b",
     "ean_gtin": "43503"
+  },
+  {
+    "cod_prod": "20198",
+    "brand": "Formula",
+    "line_model": "Energy",
+    "width": "175",
+    "aspect": "70",
+    "rim": "13",
+    "size_norm": "175 70 r13",
+    "original_label": "",
+    "query_strict": "pneu 175 70 r13 Formula Energy",
+    "keywords": [
+      "175/70R13",
+      "175 70 R13",
+      "Formula",
+      "Energy"
+    ],
+    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*13\\b",
+    "ean_gtin": "20198"
   },
   {
     "cod_prod": "30616",
@@ -3513,25 +3570,6 @@
     ],
     "size_regex": "\\b175[/\\s-]?65\\s*R?\\s*14\\b",
     "ean_gtin": "24119"
-  },
-  {
-    "cod_prod": "47636",
-    "brand": "Goodyear",
-    "line_model": "Eagle F1",
-    "width": "215",
-    "aspect": "45",
-    "rim": "18",
-    "size_norm": "215 45 r18",
-    "original_label": "",
-    "query_strict": "pneu 215 45 r18 Goodyear Eagle F1",
-    "keywords": [
-      "215/45R18",
-      "215 45 R18",
-      "Goodyear",
-      "Eagle F1"
-    ],
-    "size_regex": "\\b215[/\\s-]?45\\s*R?\\s*18\\b",
-    "ean_gtin": "47636"
   },
   {
     "cod_prod": "37198",
@@ -4237,6 +4275,25 @@
     "ean_gtin": "27232"
   },
   {
+    "cod_prod": "3264",
+    "brand": "Goodyear",
+    "line_model": "Steel Ags",
+    "width": "215",
+    "aspect": "75",
+    "rim": "17",
+    "size_norm": "215 75 r17",
+    "original_label": "",
+    "query_strict": "pneu 215 75 r17 Goodyear Steel Ags",
+    "keywords": [
+      "215/75R17",
+      "215 75 R17",
+      "Goodyear",
+      "Steel Ags"
+    ],
+    "size_regex": "\\b215[/\\s-]?75\\s*R?\\s*17\\b",
+    "ean_gtin": "3264"
+  },
+  {
     "cod_prod": "7195",
     "brand": "Goodyear",
     "line_model": "Steel Ags",
@@ -4465,25 +4522,6 @@
     "ean_gtin": "37407"
   },
   {
-    "cod_prod": "41465",
-    "brand": "Goodyear",
-    "line_model": "Wrangler Territory Ht",
-    "width": "215",
-    "aspect": "55",
-    "rim": "18",
-    "size_norm": "215 55 r18",
-    "original_label": "",
-    "query_strict": "pneu 215 55 r18 Goodyear Wrangler Territory Ht",
-    "keywords": [
-      "215/55R18",
-      "215 55 R18",
-      "Goodyear",
-      "Wrangler Territory Ht"
-    ],
-    "size_regex": "\\b215[/\\s-]?55\\s*R?\\s*18\\b",
-    "ean_gtin": "41465"
-  },
-  {
     "cod_prod": "41486",
     "brand": "Goodyear",
     "line_model": "Wrangler Workhorse At",
@@ -4560,25 +4598,6 @@
     "ean_gtin": "39860"
   },
   {
-    "cod_prod": "39933",
-    "brand": "Hankook",
-    "line_model": "Dynapro At2",
-    "width": "265",
-    "aspect": "65",
-    "rim": "17",
-    "size_norm": "265 65 r17",
-    "original_label": "",
-    "query_strict": "pneu 265 65 r17 Hankook Dynapro At2",
-    "keywords": [
-      "265/65R17",
-      "265 65 R17",
-      "Hankook",
-      "Dynapro At2"
-    ],
-    "size_regex": "\\b265[/\\s-]?65\\s*R?\\s*17\\b",
-    "ean_gtin": "39933"
-  },
-  {
     "cod_prod": "40757",
     "brand": "Hankook",
     "line_model": "Dynapro Mt2",
@@ -4617,6 +4636,25 @@
     "ean_gtin": "40866"
   },
   {
+    "cod_prod": "39571",
+    "brand": "Hankook",
+    "line_model": "Ventus V12 Evo2",
+    "width": "205",
+    "aspect": "50",
+    "rim": "17",
+    "size_norm": "205 50 r17",
+    "original_label": "",
+    "query_strict": "pneu 205 50 r17 Hankook Ventus V12 Evo2",
+    "keywords": [
+      "205/50R17",
+      "205 50 R17",
+      "Hankook",
+      "Ventus V12 Evo2"
+    ],
+    "size_regex": "\\b205[/\\s-]?50\\s*R?\\s*17\\b",
+    "ean_gtin": "112517001"
+  },
+  {
     "cod_prod": "46494",
     "brand": "Hifly",
     "line_model": "At601",
@@ -4634,6 +4672,44 @@
     ],
     "size_regex": "\\b235[/\\s-]?75\\s*R?\\s*15\\b",
     "ean_gtin": "46494"
+  },
+  {
+    "cod_prod": "48493",
+    "brand": "Hifly",
+    "line_model": "Hf261",
+    "width": "175",
+    "aspect": "65",
+    "rim": "14",
+    "size_norm": "175 65 r14",
+    "original_label": "",
+    "query_strict": "pneu 175 65 r14 Hifly Hf261",
+    "keywords": [
+      "175/65R14",
+      "175 65 R14",
+      "Hifly",
+      "Hf261"
+    ],
+    "size_regex": "\\b175[/\\s-]?65\\s*R?\\s*14\\b",
+    "ean_gtin": "48493"
+  },
+  {
+    "cod_prod": "43076",
+    "brand": "Hifly",
+    "line_model": "Hf261",
+    "width": "185",
+    "aspect": "60",
+    "rim": "14",
+    "size_norm": "185 60 r14",
+    "original_label": "",
+    "query_strict": "pneu 185 60 r14 Hifly Hf261",
+    "keywords": [
+      "185/60R14",
+      "185 60 R14",
+      "Hifly",
+      "Hf261"
+    ],
+    "size_regex": "\\b185[/\\s-]?60\\s*R?\\s*14\\b",
+    "ean_gtin": "43076"
   },
   {
     "cod_prod": "48095",
@@ -4712,6 +4788,25 @@
     "ean_gtin": "20751"
   },
   {
+    "cod_prod": "46241",
+    "brand": "Hifly",
+    "line_model": "Super 2000",
+    "width": "205",
+    "aspect": "75",
+    "rim": "16",
+    "size_norm": "205 75 r16",
+    "original_label": "",
+    "query_strict": "pneu 205 75 r16 Hifly Super 2000",
+    "keywords": [
+      "205/75R16",
+      "205 75 R16",
+      "Hifly",
+      "Super 2000"
+    ],
+    "size_regex": "\\b205[/\\s-]?75\\s*R?\\s*16\\b",
+    "ean_gtin": "46241"
+  },
+  {
     "cod_prod": "48094",
     "brand": "Hifly",
     "line_model": "Vigorous At601",
@@ -4729,6 +4824,25 @@
     ],
     "size_regex": "\\b245[/\\s-]?70\\s*R?\\s*16\\b",
     "ean_gtin": "48094"
+  },
+  {
+    "cod_prod": "46496",
+    "brand": "Hifly",
+    "line_model": "Vigorous At601",
+    "width": "265",
+    "aspect": "75",
+    "rim": "16",
+    "size_norm": "265 75 r16",
+    "original_label": "",
+    "query_strict": "pneu 265 75 r16 Hifly Vigorous At601",
+    "keywords": [
+      "265/75R16",
+      "265 75 R16",
+      "Hifly",
+      "Vigorous At601"
+    ],
+    "size_regex": "\\b265[/\\s-]?75\\s*R?\\s*16\\b",
+    "ean_gtin": "46496"
   },
   {
     "cod_prod": "17319",
@@ -4767,6 +4881,25 @@
     ],
     "size_regex": "\\b255[/\\s-]?75\\s*R?\\s*15\\b",
     "ean_gtin": "47542"
+  },
+  {
+    "cod_prod": "47544",
+    "brand": "Hilfy",
+    "line_model": "Hf261",
+    "width": "175",
+    "aspect": "70",
+    "rim": "14",
+    "size_norm": "175 70 r14",
+    "original_label": "",
+    "query_strict": "pneu 175 70 r14 Hilfy Hf261",
+    "keywords": [
+      "175/70R14",
+      "175 70 R14",
+      "Hilfy",
+      "Hf261"
+    ],
+    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*14\\b",
+    "ean_gtin": "47544"
   },
   {
     "cod_prod": "19500",
@@ -4902,25 +5035,6 @@
     "ean_gtin": "8101"
   },
   {
-    "cod_prod": "46479",
-    "brand": "Kpatos",
-    "line_model": "Fm518",
-    "width": "245",
-    "aspect": "70",
-    "rim": "16",
-    "size_norm": "245 70 r16",
-    "original_label": "",
-    "query_strict": "pneu 245 70 r16 Kpatos Fm518",
-    "keywords": [
-      "245/70R16",
-      "245 70 R16",
-      "Kpatos",
-      "Fm518"
-    ],
-    "size_regex": "\\b245[/\\s-]?70\\s*R?\\s*16\\b",
-    "ean_gtin": "46479"
-  },
-  {
     "cod_prod": "43699",
     "brand": "Kpatos",
     "line_model": "Fm601",
@@ -4938,6 +5052,25 @@
     ],
     "size_regex": "\\b185[/\\s-]?55\\s*R?\\s*16\\b",
     "ean_gtin": "43699"
+  },
+  {
+    "cod_prod": "45115",
+    "brand": "Kpatos",
+    "line_model": "Fm601",
+    "width": "205",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "205 55 r16",
+    "original_label": "",
+    "query_strict": "pneu 205 55 r16 Kpatos Fm601",
+    "keywords": [
+      "205/55R16",
+      "205 55 R16",
+      "Kpatos",
+      "Fm601"
+    ],
+    "size_regex": "\\b205[/\\s-]?55\\s*R?\\s*16\\b",
+    "ean_gtin": "45115"
   },
   {
     "cod_prod": "46482",
@@ -5033,25 +5166,6 @@
     ],
     "size_regex": "\\b175[/\\s-]?65\\s*R?\\s*14\\b",
     "ean_gtin": "46717"
-  },
-  {
-    "cod_prod": "42123",
-    "brand": "Lanvigator",
-    "line_model": "Catchpower",
-    "width": "215",
-    "aspect": "50",
-    "rim": "17",
-    "size_norm": "215 50 r17",
-    "original_label": "",
-    "query_strict": "pneu 215 50 r17 Lanvigator Catchpower",
-    "keywords": [
-      "215/50R17",
-      "215 50 R17",
-      "Lanvigator",
-      "Catchpower"
-    ],
-    "size_regex": "\\b215[/\\s-]?50\\s*R?\\s*17\\b",
-    "ean_gtin": "42123"
   },
   {
     "cod_prod": "47255",
@@ -5168,44 +5282,6 @@
     "ean_gtin": "45389"
   },
   {
-    "cod_prod": "41354",
-    "brand": "Lanvigator",
-    "line_model": "Comfort Ii",
-    "width": "185",
-    "aspect": "60",
-    "rim": "14",
-    "size_norm": "185 60 r14",
-    "original_label": "",
-    "query_strict": "pneu 185 60 r14 Lanvigator Comfort Ii",
-    "keywords": [
-      "185/60R14",
-      "185 60 R14",
-      "Lanvigator",
-      "Comfort Ii"
-    ],
-    "size_regex": "\\b185[/\\s-]?60\\s*R?\\s*14\\b",
-    "ean_gtin": "41354"
-  },
-  {
-    "cod_prod": "42652",
-    "brand": "Lanvigator",
-    "line_model": "Comfort Ii",
-    "width": "235",
-    "aspect": "60",
-    "rim": "16",
-    "size_norm": "235 60 r16",
-    "original_label": "",
-    "query_strict": "pneu 235 60 r16 Lanvigator Comfort Ii",
-    "keywords": [
-      "235/60R16",
-      "235 60 R16",
-      "Lanvigator",
-      "Comfort Ii"
-    ],
-    "size_regex": "\\b235[/\\s-]?60\\s*R?\\s*16\\b",
-    "ean_gtin": "42652"
-  },
-  {
     "cod_prod": "48089",
     "brand": "Lanvigator",
     "line_model": "Comfort Ii Xl",
@@ -5261,25 +5337,6 @@
     ],
     "size_regex": "\\b215[/\\s-]?60\\s*R?\\s*17\\b",
     "ean_gtin": "46091"
-  },
-  {
-    "cod_prod": "39213",
-    "brand": "Lanvigator",
-    "line_model": "Performax Ht",
-    "width": "225",
-    "aspect": "65",
-    "rim": "17",
-    "size_norm": "225 65 r17",
-    "original_label": "",
-    "query_strict": "pneu 225 65 r17 Lanvigator Performax Ht",
-    "keywords": [
-      "225/65R17",
-      "225 65 R17",
-      "Lanvigator",
-      "Performax Ht"
-    ],
-    "size_regex": "\\b225[/\\s-]?65\\s*R?\\s*17\\b",
-    "ean_gtin": "39213"
   },
   {
     "cod_prod": "47129",
@@ -5795,6 +5852,25 @@
     "ean_gtin": "39938"
   },
   {
+    "cod_prod": "16112",
+    "brand": "Michelin",
+    "line_model": "Ltx Force",
+    "width": "265",
+    "aspect": "70",
+    "rim": "16",
+    "size_norm": "265 70 r16",
+    "original_label": "",
+    "query_strict": "pneu 265 70 r16 Michelin Ltx Force",
+    "keywords": [
+      "265/70R16",
+      "265 70 R16",
+      "Michelin",
+      "Ltx Force"
+    ],
+    "size_regex": "\\b265[/\\s-]?70\\s*R?\\s*16\\b",
+    "ean_gtin": "16112"
+  },
+  {
     "cod_prod": "43810",
     "brand": "Michelin",
     "line_model": "Ltx Trail",
@@ -5850,25 +5926,6 @@
     ],
     "size_regex": "\\b225[/\\s-]?60\\s*R?\\s*18\\b",
     "ean_gtin": "35869"
-  },
-  {
-    "cod_prod": "40093",
-    "brand": "Michelin",
-    "line_model": "Pilot Sport 5",
-    "width": "235",
-    "aspect": "45",
-    "rim": "19",
-    "size_norm": "235 45 r19",
-    "original_label": "",
-    "query_strict": "pneu 235 45 r19 Michelin Pilot Sport 5",
-    "keywords": [
-      "235/45R19",
-      "235 45 R19",
-      "Michelin",
-      "Pilot Sport 5"
-    ],
-    "size_regex": "\\b235[/\\s-]?45\\s*R?\\s*19\\b",
-    "ean_gtin": "40093"
   },
   {
     "cod_prod": "42577",
@@ -6061,6 +6118,25 @@
     "ean_gtin": "28049"
   },
   {
+    "cod_prod": "27441",
+    "brand": "Michelin",
+    "line_model": "Primacy 4",
+    "width": "225",
+    "aspect": "50",
+    "rim": "17",
+    "size_norm": "225 50 r17",
+    "original_label": "",
+    "query_strict": "pneu 225 50 r17 Michelin Primacy 4",
+    "keywords": [
+      "225/50R17",
+      "225 50 R17",
+      "Michelin",
+      "Primacy 4"
+    ],
+    "size_regex": "\\b225[/\\s-]?50\\s*R?\\s*17\\b",
+    "ean_gtin": "27441"
+  },
+  {
     "cod_prod": "43758",
     "brand": "Michelin",
     "line_model": "Primacy 4",
@@ -6078,25 +6154,6 @@
     ],
     "size_regex": "\\b225[/\\s-]?50\\s*R?\\s*17\\b",
     "ean_gtin": "43758"
-  },
-  {
-    "cod_prod": "38611",
-    "brand": "Michelin",
-    "line_model": "Primacy 4",
-    "width": "225",
-    "aspect": "55",
-    "rim": "18",
-    "size_norm": "225 55 r18",
-    "original_label": "",
-    "query_strict": "pneu 225 55 r18 Michelin Primacy 4",
-    "keywords": [
-      "225/55R18",
-      "225 55 R18",
-      "Michelin",
-      "Primacy 4"
-    ],
-    "size_regex": "\\b225[/\\s-]?55\\s*R?\\s*18\\b",
-    "ean_gtin": "38611"
   },
   {
     "cod_prod": "24580",
@@ -6213,23 +6270,42 @@
     "ean_gtin": "37586"
   },
   {
-    "cod_prod": "46092",
+    "cod_prod": "48492",
     "brand": "Milever",
-    "line_model": "Ml150",
-    "width": "205",
-    "aspect": "70",
-    "rim": "15",
-    "size_norm": "205 70 r15",
+    "line_model": "Ma349",
+    "width": "215",
+    "aspect": "50",
+    "rim": "17",
+    "size_norm": "215 50 r17",
     "original_label": "",
-    "query_strict": "pneu 205 70 r15 Milever Ml150",
+    "query_strict": "pneu 215 50 r17 Milever Ma349",
     "keywords": [
-      "205/70R15",
-      "205 70 R15",
+      "215/50R17",
+      "215 50 R17",
       "Milever",
-      "Ml150"
+      "Ma349"
     ],
-    "size_regex": "\\b205[/\\s-]?70\\s*R?\\s*15\\b",
-    "ean_gtin": "46092"
+    "size_regex": "\\b215[/\\s-]?50\\s*R?\\s*17\\b",
+    "ean_gtin": "48492"
+  },
+  {
+    "cod_prod": "48494",
+    "brand": "Milever",
+    "line_model": "Mp270",
+    "width": "185",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "185 60 r15",
+    "original_label": "",
+    "query_strict": "pneu 185 60 r15 Milever Mp270",
+    "keywords": [
+      "185/60R15",
+      "185 60 R15",
+      "Milever",
+      "Mp270"
+    ],
+    "size_regex": "\\b185[/\\s-]?60\\s*R?\\s*15\\b",
+    "ean_gtin": "48494"
   },
   {
     "cod_prod": "47966",
@@ -6344,6 +6420,25 @@
     ],
     "size_regex": "\\b225[/\\s-]?65\\s*R?\\s*17\\b",
     "ean_gtin": "46905"
+  },
+  {
+    "cod_prod": "35880",
+    "brand": "Onyx",
+    "line_model": "Ny-20",
+    "width": "225",
+    "aspect": "70",
+    "rim": "15",
+    "size_norm": "225 70 r15",
+    "original_label": "",
+    "query_strict": "pneu 225 70 r15 Onyx Ny-20",
+    "keywords": [
+      "225/70R15",
+      "225 70 R15",
+      "Onyx",
+      "Ny-20"
+    ],
+    "size_regex": "\\b225[/\\s-]?70\\s*R?\\s*15\\b",
+    "ean_gtin": "35880"
   },
   {
     "cod_prod": "48093",
@@ -6498,6 +6593,25 @@
     "ean_gtin": "28822"
   },
   {
+    "cod_prod": "25678",
+    "brand": "Pirelli",
+    "line_model": "P400 Evo",
+    "width": "195",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "195 65 r15",
+    "original_label": "",
+    "query_strict": "pneu 195 65 r15 Pirelli P400 Evo",
+    "keywords": [
+      "195/65R15",
+      "195 65 R15",
+      "Pirelli",
+      "P400 Evo"
+    ],
+    "size_regex": "\\b195[/\\s-]?65\\s*R?\\s*15\\b",
+    "ean_gtin": "25678"
+  },
+  {
     "cod_prod": "28242",
     "brand": "Pirelli",
     "line_model": "P400 Evo",
@@ -6612,6 +6726,25 @@
     "ean_gtin": "22852"
   },
   {
+    "cod_prod": "44649",
+    "brand": "Pirelli",
+    "line_model": "Scorpion Ks",
+    "width": "205",
+    "aspect": "60",
+    "rim": "16",
+    "size_norm": "205 60 r16",
+    "original_label": "",
+    "query_strict": "pneu 205 60 r16 Pirelli Scorpion Ks",
+    "keywords": [
+      "205/60R16",
+      "205 60 R16",
+      "Pirelli",
+      "Scorpion Ks"
+    ],
+    "size_regex": "\\b205[/\\s-]?60\\s*R?\\s*16\\b",
+    "ean_gtin": "44649"
+  },
+  {
     "cod_prod": "46652",
     "brand": "Pirelli",
     "line_model": "Scorpion Ks",
@@ -6688,25 +6821,6 @@
     "ean_gtin": "42287"
   },
   {
-    "cod_prod": "46128",
-    "brand": "Roadcruza",
-    "line_model": "Ra1100",
-    "width": "205",
-    "aspect": "70",
-    "rim": "15",
-    "size_norm": "205 70 r15",
-    "original_label": "",
-    "query_strict": "pneu 205 70 r15 Roadcruza Ra1100",
-    "keywords": [
-      "205/70R15",
-      "205 70 R15",
-      "Roadcruza",
-      "Ra1100"
-    ],
-    "size_regex": "\\b205[/\\s-]?70\\s*R?\\s*15\\b",
-    "ean_gtin": "46128"
-  },
-  {
     "cod_prod": "46209",
     "brand": "Roadcruza",
     "line_model": "Ra1100",
@@ -6781,25 +6895,6 @@
     ],
     "size_regex": "\\b235[/\\s-]?75\\s*R?\\s*15\\b",
     "ean_gtin": "46127"
-  },
-  {
-    "cod_prod": "46045",
-    "brand": "Roadcruza",
-    "line_model": "Ra1100",
-    "width": "265",
-    "aspect": "70",
-    "rim": "16",
-    "size_norm": "265 70 r16",
-    "original_label": "",
-    "query_strict": "pneu 265 70 r16 Roadcruza Ra1100",
-    "keywords": [
-      "265/70R16",
-      "265 70 R16",
-      "Roadcruza",
-      "Ra1100"
-    ],
-    "size_regex": "\\b265[/\\s-]?70\\s*R?\\s*16\\b",
-    "ean_gtin": "46045"
   },
   {
     "cod_prod": "48162",
@@ -6916,6 +7011,25 @@
     "ean_gtin": "43429"
   },
   {
+    "cod_prod": "42321",
+    "brand": "Royal Black",
+    "line_model": "Royal Mile",
+    "width": "185",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "185 60 r15",
+    "original_label": "",
+    "query_strict": "pneu 185 60 r15 Royal Black Royal Mile",
+    "keywords": [
+      "185/60R15",
+      "185 60 R15",
+      "Royal Black",
+      "Royal Mile"
+    ],
+    "size_regex": "\\b185[/\\s-]?60\\s*R?\\s*15\\b",
+    "ean_gtin": "42321"
+  },
+  {
     "cod_prod": "42426",
     "brand": "Royal Black",
     "line_model": "Royal Mile",
@@ -6933,6 +7047,25 @@
     ],
     "size_regex": "\\b205[/\\s-]?55\\s*R?\\s*16\\b",
     "ean_gtin": "42426"
+  },
+  {
+    "cod_prod": "48496",
+    "brand": "Royal Black",
+    "line_model": "Royal Mile Xl",
+    "width": "185",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "185 55 r16",
+    "original_label": "",
+    "query_strict": "pneu 185 55 r16 Royal Black Royal Mile Xl",
+    "keywords": [
+      "185/55R16",
+      "185 55 R16",
+      "Royal Black",
+      "Royal Mile Xl"
+    ],
+    "size_regex": "\\b185[/\\s-]?55\\s*R?\\s*16\\b",
+    "ean_gtin": "48496"
   },
   {
     "cod_prod": "42322",
@@ -6990,25 +7123,6 @@
     ],
     "size_regex": "\\b265[/\\s-]?70\\s*R?\\s*16\\b",
     "ean_gtin": "37864"
-  },
-  {
-    "cod_prod": "47865",
-    "brand": "Speed Max",
-    "line_model": "Mh01",
-    "width": "175",
-    "aspect": "70",
-    "rim": "14",
-    "size_norm": "175 70 r14",
-    "original_label": "",
-    "query_strict": "pneu 175 70 r14 Speed Max Mh01",
-    "keywords": [
-      "175/70R14",
-      "175 70 R14",
-      "Speed Max",
-      "Mh01"
-    ],
-    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*14\\b",
-    "ean_gtin": "47865"
   },
   {
     "cod_prod": "47641",
@@ -7182,23 +7296,23 @@
     "ean_gtin": "48273"
   },
   {
-    "cod_prod": "48271",
+    "cod_prod": "48272",
     "brand": "Speedmax",
     "line_model": "Pangea All Terrain",
     "width": "265",
-    "aspect": "65",
-    "rim": "18",
-    "size_norm": "265 65 r18",
+    "aspect": "50",
+    "rim": "20",
+    "size_norm": "265 50 r20",
     "original_label": "",
-    "query_strict": "pneu 265 65 r18 Speedmax Pangea All Terrain",
+    "query_strict": "pneu 265 50 r20 Speedmax Pangea All Terrain",
     "keywords": [
-      "265/65R18",
-      "265 65 R18",
+      "265/50R20",
+      "265 50 R20",
       "Speedmax",
       "Pangea All Terrain"
     ],
-    "size_regex": "\\b265[/\\s-]?65\\s*R?\\s*18\\b",
-    "ean_gtin": "48271"
+    "size_regex": "\\b265[/\\s-]?50\\s*R?\\s*20\\b",
+    "ean_gtin": "48272"
   },
   {
     "cod_prod": "48277",
@@ -7237,25 +7351,6 @@
     ],
     "size_regex": "\\b235[/\\s-]?75\\s*R?\\s*15\\b",
     "ean_gtin": "48274"
-  },
-  {
-    "cod_prod": "48278",
-    "brand": "Speedmax",
-    "line_model": "Pangea At",
-    "width": "265",
-    "aspect": "60",
-    "rim": "18",
-    "size_norm": "265 60 r18",
-    "original_label": "",
-    "query_strict": "pneu 265 60 r18 Speedmax Pangea At",
-    "keywords": [
-      "265/60R18",
-      "265 60 R18",
-      "Speedmax",
-      "Pangea At"
-    ],
-    "size_regex": "\\b265[/\\s-]?60\\s*R?\\s*18\\b",
-    "ean_gtin": "48278"
   },
   {
     "cod_prod": "37661",
@@ -7505,6 +7600,25 @@
     "ean_gtin": "43859"
   },
   {
+    "cod_prod": "46489",
+    "brand": "Sunny",
+    "line_model": "Na305",
+    "width": "205",
+    "aspect": "50",
+    "rim": "17",
+    "size_norm": "205 50 r17",
+    "original_label": "",
+    "query_strict": "pneu 205 50 r17 Sunny Na305",
+    "keywords": [
+      "205/50R17",
+      "205 50 R17",
+      "Sunny",
+      "Na305"
+    ],
+    "size_regex": "\\b205[/\\s-]?50\\s*R?\\s*17\\b",
+    "ean_gtin": "46489"
+  },
+  {
     "cod_prod": "46490",
     "brand": "Sunny",
     "line_model": "Na305",
@@ -7579,6 +7693,25 @@
     ],
     "size_regex": "\\b215[/\\s-]?60\\s*R?\\s*17\\b",
     "ean_gtin": "46485"
+  },
+  {
+    "cod_prod": "46493",
+    "brand": "Sunny",
+    "line_model": "Nu025 H/T",
+    "width": "225",
+    "aspect": "60",
+    "rim": "18",
+    "size_norm": "225 60 r18",
+    "original_label": "",
+    "query_strict": "pneu 225 60 r18 Sunny Nu025 H/T",
+    "keywords": [
+      "225/60R18",
+      "225 60 R18",
+      "Sunny",
+      "Nu025 H/T"
+    ],
+    "size_regex": "\\b225[/\\s-]?60\\s*R?\\s*18\\b",
+    "ean_gtin": "46493"
   },
   {
     "cod_prod": "43536",
@@ -7657,6 +7790,25 @@
     "ean_gtin": "48149"
   },
   {
+    "cod_prod": "40060",
+    "brand": "Sunset Tires",
+    "line_model": "All Terrain T/A",
+    "width": "225",
+    "aspect": "60",
+    "rim": "18",
+    "size_norm": "225 60 r18",
+    "original_label": "",
+    "query_strict": "pneu 225 60 r18 Sunset Tires All Terrain T/A",
+    "keywords": [
+      "225/60R18",
+      "225 60 R18",
+      "Sunset Tires",
+      "All Terrain T/A"
+    ],
+    "size_regex": "\\b225[/\\s-]?60\\s*R?\\s*18\\b",
+    "ean_gtin": "40060"
+  },
+  {
     "cod_prod": "45201",
     "brand": "Sunwide",
     "line_model": "Rs Zero",
@@ -7676,6 +7828,25 @@
     "ean_gtin": "45201"
   },
   {
+    "cod_prod": "38322",
+    "brand": "Sunwide",
+    "line_model": "Rs-One",
+    "width": "205",
+    "aspect": "60",
+    "rim": "16",
+    "size_norm": "205 60 r16",
+    "original_label": "",
+    "query_strict": "pneu 205 60 r16 Sunwide Rs-One",
+    "keywords": [
+      "205/60R16",
+      "205 60 R16",
+      "Sunwide",
+      "Rs-One"
+    ],
+    "size_regex": "\\b205[/\\s-]?60\\s*R?\\s*16\\b",
+    "ean_gtin": "38322"
+  },
+  {
     "cod_prod": "48250",
     "brand": "Sunwide",
     "line_model": "Rs-One",
@@ -7693,6 +7864,44 @@
     ],
     "size_regex": "\\b235[/\\s-]?50\\s*R?\\s*18\\b",
     "ean_gtin": "48250"
+  },
+  {
+    "cod_prod": "36753",
+    "brand": "Sunwide",
+    "line_model": "Rs-One",
+    "width": "235",
+    "aspect": "55",
+    "rim": "17",
+    "size_norm": "235 55 r17",
+    "original_label": "",
+    "query_strict": "pneu 235 55 r17 Sunwide Rs-One",
+    "keywords": [
+      "235/55R17",
+      "235 55 R17",
+      "Sunwide",
+      "Rs-One"
+    ],
+    "size_regex": "\\b235[/\\s-]?55\\s*R?\\s*17\\b",
+    "ean_gtin": "36753"
+  },
+  {
+    "cod_prod": "48501",
+    "brand": "Tbb Tires",
+    "line_model": "Tp-16",
+    "width": "165",
+    "aspect": "70",
+    "rim": "13",
+    "size_norm": "165 70 r13",
+    "original_label": "",
+    "query_strict": "pneu 165 70 r13 Tbb Tires Tp-16",
+    "keywords": [
+      "165/70R13",
+      "165 70 R13",
+      "Tbb Tires",
+      "Tp-16"
+    ],
+    "size_regex": "\\b165[/\\s-]?70\\s*R?\\s*13\\b",
+    "ean_gtin": "48501"
   },
   {
     "cod_prod": "46238",
@@ -7750,6 +7959,25 @@
     ],
     "size_regex": "\\b295[/\\s-]?80\\s*R?\\s*22\\b",
     "ean_gtin": "46226"
+  },
+  {
+    "cod_prod": "47134",
+    "brand": "Trazano",
+    "line_model": "H188",
+    "width": "225",
+    "aspect": "75",
+    "rim": "16",
+    "size_norm": "225 75 r16",
+    "original_label": "",
+    "query_strict": "pneu 225 75 r16 Trazano H188",
+    "keywords": [
+      "225/75R16",
+      "225 75 R16",
+      "Trazano",
+      "H188"
+    ],
+    "size_regex": "\\b225[/\\s-]?75\\s*R?\\s*16\\b",
+    "ean_gtin": "47134"
   },
   {
     "cod_prod": "46787",
@@ -7885,6 +8113,25 @@
     "ean_gtin": "26009"
   },
   {
+    "cod_prod": "27771",
+    "brand": "Wanli",
+    "line_model": "Sa302",
+    "width": "205",
+    "aspect": "50",
+    "rim": "17",
+    "size_norm": "205 50 r17",
+    "original_label": "",
+    "query_strict": "pneu 205 50 r17 Wanli Sa302",
+    "keywords": [
+      "205/50R17",
+      "205 50 R17",
+      "Wanli",
+      "Sa302"
+    ],
+    "size_regex": "\\b205[/\\s-]?50\\s*R?\\s*17\\b",
+    "ean_gtin": "27771"
+  },
+  {
     "cod_prod": "26627",
     "brand": "Wanli",
     "line_model": "Sa302",
@@ -7980,6 +8227,25 @@
     "ean_gtin": "45003"
   },
   {
+    "cod_prod": "29213",
+    "brand": "Wanli",
+    "line_model": "Sp026",
+    "width": "215",
+    "aspect": "65",
+    "rim": "16",
+    "size_norm": "215 65 r16",
+    "original_label": "",
+    "query_strict": "pneu 215 65 r16 Wanli Sp026",
+    "keywords": [
+      "215/65R16",
+      "215 65 R16",
+      "Wanli",
+      "Sp026"
+    ],
+    "size_regex": "\\b215[/\\s-]?65\\s*R?\\s*16\\b",
+    "ean_gtin": "29213"
+  },
+  {
     "cod_prod": "47965",
     "brand": "Wanli",
     "line_model": "Su009 A/T",
@@ -7997,6 +8263,63 @@
     ],
     "size_regex": "\\b205[/\\s-]?60\\s*R?\\s*16\\b",
     "ean_gtin": "47965"
+  },
+  {
+    "cod_prod": "37849",
+    "brand": "Wanli",
+    "line_model": "Su025",
+    "width": "235",
+    "aspect": "60",
+    "rim": "16",
+    "size_norm": "235 60 r16",
+    "original_label": "",
+    "query_strict": "pneu 235 60 r16 Wanli Su025",
+    "keywords": [
+      "235/60R16",
+      "235 60 R16",
+      "Wanli",
+      "Su025"
+    ],
+    "size_regex": "\\b235[/\\s-]?60\\s*R?\\s*16\\b",
+    "ean_gtin": "37849"
+  },
+  {
+    "cod_prod": "24358",
+    "brand": "Wanli",
+    "line_model": "Su025",
+    "width": "235",
+    "aspect": "75",
+    "rim": "15",
+    "size_norm": "235 75 r15",
+    "original_label": "",
+    "query_strict": "pneu 235 75 r15 Wanli Su025",
+    "keywords": [
+      "235/75R15",
+      "235 75 R15",
+      "Wanli",
+      "Su025"
+    ],
+    "size_regex": "\\b235[/\\s-]?75\\s*R?\\s*15\\b",
+    "ean_gtin": "6950306361609"
+  },
+  {
+    "cod_prod": "38538",
+    "brand": "Wanli",
+    "line_model": "Su025 Rangetour Plus",
+    "width": "225",
+    "aspect": "65",
+    "rim": "17",
+    "size_norm": "225 65 r17",
+    "original_label": "",
+    "query_strict": "pneu 225 65 r17 Wanli Su025 Rangetour Plus",
+    "keywords": [
+      "225/65R17",
+      "225 65 R17",
+      "Wanli",
+      "Su025 Rangetour Plus"
+    ],
+    "size_regex": "\\b225[/\\s-]?65\\s*R?\\s*17\\b",
+    "ean_gtin": "38538"
   },
   {
     "cod_prod": "33336",
@@ -8113,6 +8436,120 @@
     "ean_gtin": "45190"
   },
   {
+    "cod_prod": "42360",
+    "brand": "Winrun",
+    "line_model": "R330",
+    "width": "195",
+    "aspect": "55",
+    "rim": "16",
+    "size_norm": "195 55 r16",
+    "original_label": "",
+    "query_strict": "pneu 195 55 r16 Winrun R330",
+    "keywords": [
+      "195/55R16",
+      "195 55 R16",
+      "Winrun",
+      "R330"
+    ],
+    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*16\\b",
+    "ean_gtin": "42360"
+  },
+  {
+    "cod_prod": "19464",
+    "brand": "Winrun",
+    "line_model": "R330",
+    "width": "205",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "205 65 r15",
+    "original_label": "",
+    "query_strict": "pneu 205 65 r15 Winrun R330",
+    "keywords": [
+      "205/65R15",
+      "205 65 R15",
+      "Winrun",
+      "R330"
+    ],
+    "size_regex": "\\b205[/\\s-]?65\\s*R?\\s*15\\b",
+    "ean_gtin": "6970146110212"
+  },
+  {
+    "cod_prod": "48495",
+    "brand": "Winrun",
+    "line_model": "R380",
+    "width": "175",
+    "aspect": "65",
+    "rim": "15",
+    "size_norm": "175 65 r15",
+    "original_label": "",
+    "query_strict": "pneu 175 65 r15 Winrun R380",
+    "keywords": [
+      "175/65R15",
+      "175 65 R15",
+      "Winrun",
+      "R380"
+    ],
+    "size_regex": "\\b175[/\\s-]?65\\s*R?\\s*15\\b",
+    "ean_gtin": "48495"
+  },
+  {
+    "cod_prod": "31843",
+    "brand": "Xbri",
+    "line_model": "Brutus All Terrain",
+    "width": "265",
+    "aspect": "60",
+    "rim": "18",
+    "size_norm": "265 60 r18",
+    "original_label": "",
+    "query_strict": "pneu 265 60 r18 Xbri Brutus All Terrain",
+    "keywords": [
+      "265/60R18",
+      "265 60 R18",
+      "Xbri",
+      "Brutus All Terrain"
+    ],
+    "size_regex": "\\b265[/\\s-]?60\\s*R?\\s*18\\b",
+    "ean_gtin": "31843"
+  },
+  {
+    "cod_prod": "41787",
+    "brand": "Xbri",
+    "line_model": "Brutus T/A",
+    "width": "215",
+    "aspect": "65",
+    "rim": "16",
+    "size_norm": "215 65 r16",
+    "original_label": "",
+    "query_strict": "pneu 215 65 r16 Xbri Brutus T/A",
+    "keywords": [
+      "215/65R16",
+      "215 65 R16",
+      "Xbri",
+      "Brutus T/A"
+    ],
+    "size_regex": "\\b215[/\\s-]?65\\s*R?\\s*16\\b",
+    "ean_gtin": "41787"
+  },
+  {
+    "cod_prod": "41786",
+    "brand": "Xbri",
+    "line_model": "Brutus T/A",
+    "width": "225",
+    "aspect": "65",
+    "rim": "17",
+    "size_norm": "225 65 r17",
+    "original_label": "",
+    "query_strict": "pneu 225 65 r17 Xbri Brutus T/A",
+    "keywords": [
+      "225/65R17",
+      "225 65 R17",
+      "Xbri",
+      "Brutus T/A"
+    ],
+    "size_regex": "\\b225[/\\s-]?65\\s*R?\\s*17\\b",
+    "ean_gtin": "41786"
+  },
+  {
     "cod_prod": "41568",
     "brand": "Xbri",
     "line_model": "Brutus T/A",
@@ -8130,6 +8567,25 @@
     ],
     "size_regex": "\\b265[/\\s-]?65\\s*R?\\s*18\\b",
     "ean_gtin": "41568"
+  },
+  {
+    "cod_prod": "30537",
+    "brand": "Xbri",
+    "line_model": "Ecology",
+    "width": "195",
+    "aspect": "60",
+    "rim": "15",
+    "size_norm": "195 60 r15",
+    "original_label": "",
+    "query_strict": "pneu 195 60 r15 Xbri Ecology",
+    "keywords": [
+      "195/60R15",
+      "195 60 R15",
+      "Xbri",
+      "Ecology"
+    ],
+    "size_regex": "\\b195[/\\s-]?60\\s*R?\\s*15\\b",
+    "ean_gtin": "30537"
   },
   {
     "cod_prod": "31117",
@@ -8168,25 +8624,6 @@
     ],
     "size_regex": "\\b225[/\\s-]?50\\s*R?\\s*17\\b",
     "ean_gtin": "47627"
-  },
-  {
-    "cod_prod": "48160",
-    "brand": "Xbri",
-    "line_model": "Fastway B2",
-    "width": "175",
-    "aspect": "70",
-    "rim": "13",
-    "size_norm": "175 70 r13",
-    "original_label": "",
-    "query_strict": "pneu 175 70 r13 Xbri Fastway B2",
-    "keywords": [
-      "175/70R13",
-      "175 70 R13",
-      "Xbri",
-      "Fastway B2"
-    ],
-    "size_regex": "\\b175[/\\s-]?70\\s*R?\\s*13\\b",
-    "ean_gtin": "48160"
   },
   {
     "cod_prod": "48167",
@@ -8284,6 +8721,25 @@
     "ean_gtin": "48081"
   },
   {
+    "cod_prod": "41909",
+    "brand": "Xbri",
+    "line_model": "Premium F1",
+    "width": "165",
+    "aspect": "70",
+    "rim": "13",
+    "size_norm": "165 70 r13",
+    "original_label": "",
+    "query_strict": "pneu 165 70 r13 Xbri Premium F1",
+    "keywords": [
+      "165/70R13",
+      "165 70 R13",
+      "Xbri",
+      "Premium F1"
+    ],
+    "size_regex": "\\b165[/\\s-]?70\\s*R?\\s*13\\b",
+    "ean_gtin": "41909"
+  },
+  {
     "cod_prod": "30535",
     "brand": "Xbri",
     "line_model": "Premium F1",
@@ -8301,6 +8757,25 @@
     ],
     "size_regex": "\\b185[/\\s-]?70\\s*R?\\s*14\\b",
     "ean_gtin": "30535"
+  },
+  {
+    "cod_prod": "43751",
+    "brand": "Xbri",
+    "line_model": "Robusto",
+    "width": "295",
+    "aspect": "80",
+    "rim": "22",
+    "size_norm": "295 80 r22",
+    "original_label": "",
+    "query_strict": "pneu 295 80 r22 Xbri Robusto",
+    "keywords": [
+      "295/80R22",
+      "295 80 R22",
+      "Xbri",
+      "Robusto"
+    ],
+    "size_regex": "\\b295[/\\s-]?80\\s*R?\\s*22\\b",
+    "ean_gtin": "43751"
   },
   {
     "cod_prod": "43736",
@@ -8434,25 +8909,6 @@
     ],
     "size_regex": "\\b235[/\\s-]?60\\s*R?\\s*16\\b",
     "ean_gtin": "47971"
-  },
-  {
-    "cod_prod": "47967",
-    "brand": "Zmax",
-    "line_model": "Landgema",
-    "width": "195",
-    "aspect": "55",
-    "rim": "15",
-    "size_norm": "195 55 r15",
-    "original_label": "",
-    "query_strict": "pneu 195 55 r15 Zmax Landgema",
-    "keywords": [
-      "195/55R15",
-      "195 55 R15",
-      "Zmax",
-      "Landgema"
-    ],
-    "size_regex": "\\b195[/\\s-]?55\\s*R?\\s*15\\b",
-    "ean_gtin": "47967"
   },
   {
     "cod_prod": "48153",

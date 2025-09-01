@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Michelin Agilis 3 C 205/70R15 Run Flat 106/104 R",
+    "link": "https://www.mercadolivre.com.br/pneu-michelin-agilis-3-c-20570r15-run-flat-106104-r/p/MLB21813721",
+    "preco": 957.0,
+    "brand": "michelin",
+    "model": "agilis 3",
+    "size": "",
+    "speed_index": "",
+    "query_strict": "pneu 205 70 r15 Michelin Agilis 3",
+    "size_norm": "205-70-r15",
+    "brand_expected": "michelin",
+    "line_expected": "agilis 3",
+    "size_ok": true,
+    "free_ship": false,
+    "frete": null,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": false,
+    "marketplace": "mercadolivre",
+    "marca": "michelin",
+    "data_coleta": "2025-08-28 18:58:18",
+    "preco_original": null,
+    "preco_desconto": 957.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

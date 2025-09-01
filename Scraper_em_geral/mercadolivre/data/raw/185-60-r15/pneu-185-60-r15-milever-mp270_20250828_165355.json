@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Milever Mp270 185/60r15 Aro 15 88v V",
+    "link": "https://www.mercadolivre.com.br/pneu-milever-mp270-18560r15-aro-15-88v/up/MLBU3388130618",
+    "preco": 281.6,
+    "brand": "milever",
+    "model": "mp270",
+    "size": "",
+    "speed_index": "88V",
+    "query_strict": "pneu 185 60 r15 Milever Mp270",
+    "size_norm": "185-60-r15",
+    "brand_expected": "milever",
+    "line_expected": "mp270",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "milever",
+    "data_coleta": "2025-08-28 19:53:39",
+    "preco_original": null,
+    "preco_desconto": 281.6,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

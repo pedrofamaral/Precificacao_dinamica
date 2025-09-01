@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Aro 17 245/65/17 Goform Classic Gs03 105h Semi Novo H",
+    "link": "https://www.mercadolivre.com.br/pneu-aro-17-2456517-goform-classic-gs03-105h-semi-novo/up/MLBU3275851629",
+    "preco": 750.0,
+    "brand": "goform",
+    "model": "gs03",
+    "size": "",
+    "speed_index": "105H",
+    "query_strict": "pneu 245 65 r17 Goform Gs03",
+    "size_norm": "245-65-r17",
+    "brand_expected": "goform",
+    "line_expected": "gs03",
+    "size_ok": true,
+    "free_ship": false,
+    "frete": null,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": false,
+    "marketplace": "mercadolivre",
+    "marca": "goform",
+    "data_coleta": "2025-08-28 15:52:49",
+    "preco_original": null,
+    "preco_desconto": 750.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

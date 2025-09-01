@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Aro 14 175/75r14 Ecoblue 86t Routeway Ry26 Índice De Velocidade T",
+    "link": "https://www.mercadolivre.com.br/pneu-aro-14-17575r14-ecoblue-86t-routeway-ry26-indice-de-velocidade-t/p/MLB45456549",
+    "preco": 435.0,
+    "brand": "routeway",
+    "model": "ecoblue ry26",
+    "size": "",
+    "speed_index": "86T",
+    "query_strict": "pneu 175 75 r14 Routeway Ecoblue Ry26",
+    "size_norm": "175-75-r14",
+    "brand_expected": "routeway",
+    "line_expected": "ecoblue ry26",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "routeway",
+    "data_coleta": "2025-08-28 20:50:49",
+    "preco_original": null,
+    "preco_desconto": 435.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -24,7 +24,7 @@ from typing import Dict, Any, List, Optional
 from urllib.parse import urlparse, unquote, parse_qs
 import numpy as np
 import pandas as pd
-
+from ETL.tire_size import extract_tire_size_from_title
 try:
     from .common import (
         SETTINGS, logger, ensure_dirs, iter_files, load_json_lines, norm_sku,
@@ -45,10 +45,12 @@ except ImportError:
 def to_float(x):
     if x is None or (isinstance(x, float) and pd.isna(x)):
         return None
+    
     if isinstance(x, (int, float)):
         return float(x)
     s = str(x).strip().replace("R$", "").replace("$", "").strip()
     s = s.replace(".", "").replace(",", ".")
+    
     try:
         return float(s)
     except ValueError:
@@ -66,6 +68,7 @@ def _save_parquet_with_fallback(df: pd.DataFrame, out_path: Path, csv_name: str)
 def unwrap_ml_click(url: str) -> str:
     if not isinstance(url, str):
         return url
+    
     try:
         p = urlparse(url)
         if "mercadolivre.com" in p.netloc and "click" in p.netloc:
@@ -97,7 +100,6 @@ def infer_marketplace_from_url(url_unwrapped: str | None) -> str | None:
 # ============================================================
 
 def normalize_record(raw: Dict[str, Any], meta: Dict[str, Any]) -> Dict[str, Any]:
-    """Função centralizada para normalizar um registro de qualquer fonte."""
     def pick(*keys):
         for k in keys:
             if k in raw and raw[k] not in (None, "", [], {}):
@@ -105,26 +107,28 @@ def normalize_record(raw: Dict[str, Any], meta: Dict[str, Any]) -> Dict[str, Any
         return None
 
     marketplace = pick("marketplace", "source", "site")
-
     cod_prod = pick("cod_prod", "internal_code")
     title = pick("title", "name", "nome")
     price = pick("price", "preco", "valor")
     url = pick("url", "link")
     sku = pick("listing_id", "sku", "id")
-    
+    size_norm = pick("size_norm")
+
     return {
         "cod_prod": int(cod_prod) if cod_prod is not None and str(cod_prod).isdigit() else None,
-        "marketplace": marketplace, 
+        "marketplace": marketplace,
         "query": meta.get("query"),
         "title": title,
         "sku_text": sku,
         "price": to_float(price),
         "url": url,
+        "size_norm": size_norm,
         "captured_at": pick("observed_at", "captured_at") or meta.get("captured_at"),
     }
 
 def ingest_files(directory: Path) -> List[Dict[str, Any]]:
     rows = []
+    
     if not directory.exists():
         logger.warning(f"⚠️  Diretório de entrada não encontrado: {directory}")
         return rows
@@ -185,7 +189,41 @@ def clean_and_snapshot(all_rows_df: pd.DataFrame, out_db_path: Path):
 
     clean.sort_values(["cod_prod", "url", "captured_at"], ascending=False, inplace=True)
     clean.drop_duplicates(subset=["cod_prod", "url"], keep="first", inplace=True)
+
+    for col, dtype in [
+        ("size_norm", "string"),
+        ("width_mm", "Int64"),
+        ("aspect_pct", "Int64"),
+        ("rim_in", "Int64"),
+        ("load_index", "Int64"),
+        ("speed_symbol", "string"),
+        ("construction", "string"),
+        ("lt_flag", "boolean"),
+        ("xl_flag", "boolean"),
+        ("raw_pattern", "string"),
+    ]:
+        if col not in clean.columns:
+            clean[col] = pd.Series([pd.NA] * len(clean), dtype=dtype)
+
+    mask_missing = clean["size_norm"].isna() | (clean["size_norm"].astype("string").str.len() < 5)
+
+    if mask_missing.any():
+        parsed = clean.loc[mask_missing, "title"].apply(extract_tire_size_from_title)
+        parsed_df = pd.DataFrame(list(parsed))
+
+        for col in ["size_norm", "width_mm", "aspect_pct", "rim_in", "load_index",
+                    "speed_symbol", "construction", "lt_flag", "xl_flag", "raw_pattern"]:
+            clean.loc[mask_missing, col] = clean.loc[mask_missing, col].fillna(parsed_df[col])
+
+        filled = int((clean.loc[mask_missing, "size_norm"].notna()).sum())
+        total_miss = int(mask_missing.sum())
+        logger.info("🛞 size_norm preenchido via título em %d/%d registros (fallback).", filled, total_miss)
+
+    still_missing = int(clean["size_norm"].isna().sum())
     
+    if still_missing:
+        logger.info("🧩 Registros ainda sem size_norm após fallback: %d", still_missing)
+
     to_sql(clean, "market_items_clean", if_exists="replace", index=False)
     
     snap = clean.loc[clean.groupby(["cod_prod", "marketplace"])["captured_at"].idxmax()]
@@ -205,6 +243,7 @@ def clean_and_snapshot(all_rows_df: pd.DataFrame, out_db_path: Path):
 
 def export_sqlite_outputs(clean: pd.DataFrame, snap: pd.DataFrame, canon: pd.DataFrame, out_db: Path):
     out_db.parent.mkdir(parents=True, exist_ok=True)
+    
     with sqlite3.connect(out_db) as conn:
         clean.to_sql("market_items_clean", conn, if_exists="replace", index=False)
         snap.to_sql("unifier_input", conn, if_exists="replace", index=False)
@@ -213,6 +252,7 @@ def export_sqlite_outputs(clean: pd.DataFrame, snap: pd.DataFrame, canon: pd.Dat
 
 def log_discarded_rows(df: pd.DataFrame, valid_mask: pd.Series):
     miss = df.loc[~valid_mask].copy()
+    
     if miss.empty:
         logger.info("📊 Nenhuma linha descartada. Todos os registros eram válidos.")
         return
@@ -234,7 +274,6 @@ def log_discarded_rows(df: pd.DataFrame, valid_mask: pd.Series):
 # ============================================================
 
 def main():
-    """Função principal que orquestra todo o processo de ETL."""
     parser = argparse.ArgumentParser(description="ETL de Ingestão e Limpeza de Dados de Marketplace.")
     parser.add_argument("--raw_dir", type=Path, required=True, help="Pasta ou arquivo de entrada para JSON/CSV.")
     parser.add_argument("--out_db", type=Path, help="Caminho para salvar o SQLite de saída. Padrão: data/processed/warehouse.db")

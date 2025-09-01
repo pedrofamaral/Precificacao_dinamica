@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Aro 17 245/65 R17 107h Comforser Cf2000 - Amarok",
+    "link": "https://www.mercadolivre.com.br/pneu-aro-17-24565-r17-107h-comforser-cf2000--amarok/up/MLBU1143930127",
+    "preco": 1320.0,
+    "brand": "comforser",
+    "model": "cf2000",
+    "size": "",
+    "speed_index": "107H",
+    "query_strict": "pneu 245 65 r17 Comforser Cf2000",
+    "size_norm": "245-65-r17",
+    "brand_expected": "comforser",
+    "line_expected": "cf2000",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "comforser",
+    "data_coleta": "2025-08-28 12:59:53",
+    "preco_original": null,
+    "preco_desconto": 1320.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

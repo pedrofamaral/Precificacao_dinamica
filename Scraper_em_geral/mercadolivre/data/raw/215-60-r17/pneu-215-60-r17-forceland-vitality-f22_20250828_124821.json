@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Forceland 215/60 R17 96v Vitality F22",
+    "link": "https://www.mercadolivre.com.br/pneu-forceland-21560-r17-96v-vitality-f22/p/MLB45670842",
+    "preco": 768.0,
+    "brand": "forceland",
+    "model": "vitality f22",
+    "size": "",
+    "speed_index": "96V",
+    "query_strict": "pneu 215 60 r17 Forceland Vitality F22",
+    "size_norm": "215-60-r17",
+    "brand_expected": "forceland",
+    "line_expected": "vitality f22",
+    "size_ok": true,
+    "free_ship": false,
+    "frete": null,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": false,
+    "marketplace": "mercadolivre",
+    "marca": "forceland",
+    "data_coleta": "2025-08-28 15:48:04",
+    "preco_original": null,
+    "preco_desconto": 768.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

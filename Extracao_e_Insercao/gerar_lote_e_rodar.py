@@ -215,7 +215,7 @@ def converter_jsonl_para_csv(lista_arquivos_jsonl: List[str], caminho_saida_csv:
 
 def ensure_data_dirs():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    for sub in ("mercadolivre", "magalu", "pneustore", "manifest"):
+    for sub in ("mercadolivre", "magalu", "pneustore", "manifest","query"):
         (DATA_DIR / sub).mkdir(parents=True, exist_ok=True)
 
 def run_scrapers(json_path, cmd_magalu, cmd_meli, cmd_pstore, debug=False, formatos=None,
@@ -226,10 +226,6 @@ def run_scrapers(json_path, cmd_magalu, cmd_meli, cmd_pstore, debug=False, forma
     arquivos_de_saida = []
 
     env = os.environ.copy()
-    # habilitar imports compartilhados, adicionar o Scraper_em_geral ao PYTHONPATH:
-    # common_root = (CURRENT_DIR.parent / "Scraper_em_geral").resolve()
-    # env["PYTHONPATH"] = str(common_root) + os.pathsep + env.get("PYTHONPATH", "")
-    # Mantendo sua ideia (não atrapalha, mas não resolve imports por si só):
     env["PYTHONPATH"] = str(DATA_DIR) + os.pathsep + env.get("PYTHONPATH", "")
 
     if cmd_meli:
@@ -287,7 +283,7 @@ def run_scrapers(json_path, cmd_magalu, cmd_meli, cmd_pstore, debug=False, forma
         print("[RUN]", " ".join(pstore_cmd))
         os.makedirs(Path(pstore_out).parent, exist_ok=True)
         subprocess.run(pstore_cmd, check=False, env=env)
-        return arquivos_de_saida
+    return arquivos_de_saida
 
 def main():
     ap = argparse.ArgumentParser()
@@ -297,8 +293,8 @@ def main():
     ap.add_argument("--year", type=int, default=2025)
     ap.add_argument("--page-size", type=int, default=5000)
     ap.add_argument("--max-pages", type=int, default=200)
-    ap.add_argument("--out-json", default="query_products.json")  # será forçado para DATA_DIR/<nome>
-    ap.add_argument("--out-csv", default="query_products.csv")    # idem
+    ap.add_argument("--out-json", default="query_products.json")  
+    ap.add_argument("--out-csv", default="query_products.csv")   
     ap.add_argument("--rodar", action="store_true")
     ap.add_argument("--cmd-magalu", default=r"C:\Users\user\Desktop\Precificação_AI\Scraper_em_geral\MagazineLuiza\scraper.py")
     ap.add_argument("--cmd-meli",   default=r"C:\Users\user\Desktop\Precificação_AI\Scraper_em_geral\mercadolivre\scraper2.0.py")
@@ -310,8 +306,8 @@ def main():
     args = ap.parse_args()
     
     ensure_data_dirs()
-    out_json_path = DATA_DIR / Path(args.out_json).name
-    out_csv_path  = DATA_DIR / Path(args.out_csv).name 
+    out_json_path = DATA_DIR / "query" / f"{Path(args.out_json).stem}_{ts}.json"
+    out_csv_path  = DATA_DIR / "query" / f"{Path(args.out_csv).stem}_{ts}.csv"
 
     print("Conectando ao banco de dados para gerar o lote...")
     engine = build_engine()

@@ -68,11 +68,6 @@ def read_sql(query: str) -> pd.DataFrame:
     with get_conn() as conn:
         return pd.read_sql_query(query, conn)
 
-def exec_sql(sql: str):
-    with get_conn() as conn:
-        conn.execute(sql)
-        conn.commit()
-
 def _init_state_table():
     with get_conn() as conn:
         conn.execute("""

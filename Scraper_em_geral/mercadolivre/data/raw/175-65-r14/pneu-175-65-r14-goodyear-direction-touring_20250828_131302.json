@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Aro 14 Goodyear Direction Touring 2 175/65r14 86h - 2un H",
+    "link": "https://www.mercadolivre.com.br/pneu-aro-14-goodyear-direction-touring-2-17565r14-86h--2un/up/MLBU2226448049",
+    "preco": 714.9,
+    "brand": "goodyear",
+    "model": "direction touring",
+    "size": "",
+    "speed_index": "86H",
+    "query_strict": "pneu 175 65 r14 Goodyear Direction Touring",
+    "size_norm": "175-65-r14",
+    "brand_expected": "goodyear",
+    "line_expected": "direction touring",
+    "size_ok": true,
+    "free_ship": false,
+    "frete": null,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": false,
+    "marketplace": "mercadolivre",
+    "marca": "goodyear",
+    "data_coleta": "2025-08-28 16:12:24",
+    "preco_original": null,
+    "preco_desconto": 714.9,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]
