@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Wanli 265/65 R17 112t As028",
+    "link": "https://www.mercadolivre.com.br/pneu-wanli-26565-r17-112t-as028/p/MLB29137339",
+    "preco": 1138.0,
+    "brand": "wanli",
+    "model": "",
+    "size": "265/65R17",
+    "speed_index": "112T",
+    "query_strict": "pneu 265 65 r17 Royal Black Royal A/T",
+    "size_norm": "265/65r17",
+    "brand_expected": "royal black",
+    "line_expected": "royal a/t",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "wanli",
+    "data_coleta": "2025-09-02 05:03:54",
+    "preco_original": null,
+    "preco_desconto": 1138.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

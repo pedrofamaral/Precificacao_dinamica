@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Ziex 195/55r16 87v Conserto Lateral",
+    "link": "https://produto.mercadolivre.com.br/MLB-2988676275-pneu-ziex-19555r16-87v-conserto-lateral-_JM?searchVariation=179668536371",
+    "preco": 99.0,
+    "brand": "",
+    "model": "",
+    "size": "195/55R16",
+    "speed_index": "87V",
+    "query_strict": "pneu 195 55 r16 Falken Ziex Ze914",
+    "size_norm": "195/55r16",
+    "brand_expected": "falken",
+    "line_expected": "ziex ze914",
+    "size_ok": true,
+    "free_ship": false,
+    "frete": null,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": false,
+    "marketplace": "mercadolivre",
+    "marca": "falken",
+    "data_coleta": "2025-09-01 21:04:17",
+    "preco_original": null,
+    "preco_desconto": 99.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

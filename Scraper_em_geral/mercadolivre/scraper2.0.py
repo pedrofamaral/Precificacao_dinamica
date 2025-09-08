@@ -94,7 +94,11 @@ SPEED_IDX_RE = re.compile(r"\b\d{2,3}[A-Z]{1,2}\b", re.I)
 
 CONFIG_NORM: Dict[str, Dict | List] = {
     "known_brands": DEFAULT_KNOWN_BRANDS.copy(),
-    "brand_aliases": { "kelly": "goodyear" }, 
+    "brand_aliases": { "a plus": "aplus",
+                       "a-plus": "aplus",
+                       "bf goodrich": "bfgoodrich",
+                       "b f goodrich": "bfgoodrich"
+                     }, 
     "known_model_phrases": DEFAULT_MODEL_PHRASES.copy(),
     "model_aliases": {
         "power contact": "powercontact",
@@ -103,7 +107,9 @@ CONFIG_NORM: Dict[str, Dict | List] = {
         "scporion": "scorpion",
         "scporion ks": "scorpion",
         "assurance max life": "assurance maxlife",
-        "assurance max-life": "assurance maxlife"
+        "assurance max-life": "assurance maxlife",
+        "xsport": "xport",
+        "xport": "xport"
     },
 }
 
@@ -376,7 +382,7 @@ class ScraperBase:
 
     @staticmethod
     def _criar_driver(headless: bool = True, proxy: str | None = None):
-        _UAS = [
+        User_agents = [
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
             "AppleWebKit/537.36 (KHTML, like Gecko) "
             "Chrome/126.0.0.0 Safari/537.36",
@@ -392,7 +398,7 @@ class ScraperBase:
         opt.add_argument("--disable-blink-features=AutomationControlled")
         opt.add_argument("--lang=pt-BR")
         opt.add_argument("--window-size=1920,1080")
-        opt.add_argument("--user-agent=" + random.choice(_UAS))
+        opt.add_argument("--user-agent=" + random.choice(User_agents))
         opt.add_experimental_option("excludeSwitches", ["enable-automation"])
         opt.add_experimental_option("useAutomationExtension", False)
         if proxy:
@@ -410,7 +416,7 @@ class ScraperBase:
         except Exception:
             pass
 
-    def _delay_aleatorio(self, a: float = 0.5, b: float = 1.5) -> float:
+    def _delay_aleatorio(self, a: float = 0.3, b: float = 30) -> float:
         return random.uniform(a, b)
 
 class ScraperMercadoLivre(ScraperBase):
@@ -509,12 +515,18 @@ class ScraperMercadoLivre(ScraperBase):
                  min_delay: float = 1.0, max_delay: float = 2.0, page_delay_min: float = 5.0, page_delay_max: float = 10.0,
                  pages_before_cooldown: int = 5, cooldown_delay: float = 60.0, **kwargs):
         super().__init__(headless=headless, delay_scroll=delay_scroll, logger=logger)
+
+        self._query_meta: Dict = dict(kwargs.get("query_meta", {}))
+
+        self._refresh_norms()
+        self._compile_dim()
+
         self.modo = modo
         self.dump_html = dump_html
         self._slug_termo = ""
         self._pagina_atual = 0
         self._cookies_ok = False
-        self._dim_pattern = None
+        self._dim_pattern = self._dim_pattern
         self.min_delay = min_delay
         self.max_delay = max_delay
         self.page_delay_min = page_delay_min
@@ -522,9 +534,27 @@ class ScraperMercadoLivre(ScraperBase):
         self.pages_before_cooldown = pages_before_cooldown
         self.cooldown_delay = cooldown_delay
         self.pages_scraped = 0
-        self._query_meta: Dict = {}
 
-    # ---------- navegação / util ----------
+    def _refresh_norms(self) -> None:
+        self._brand_norm = _norm_text(self._query_meta.get("brand",""))
+        self._model_norm = _norm_text(self._query_meta.get("line_model",""))
+        self._size_norm  = _norm_text(self._query_meta.get("size_norm",""))
+
+    def _compile_dim(self) -> None:
+        rx = self._query_meta.get("size_regex")
+        if not rx:
+            w = str(self._query_meta.get("width") or "").strip()
+            a = str(self._query_meta.get("aspect") or "").strip()
+            r = str(self._query_meta.get("rim") or "").strip()
+            if w and a and r:
+                rx = rf"\b{re.escape(w)}[/\s-]?{re.escape(a)}\s*R?\s*{re.escape(r)}\b"
+        self._dim_pattern = re.compile(rx, re.I) if rx else None
+
+    def set_query_meta(self, qm: Dict) -> None:
+        self._query_meta = dict(qm or {})
+        self._refresh_norms()
+        self._compile_dim()
+
     def _construir_url_busca(self, termo: str, pagina: int = 1, ordenacao: str | None = None, usar_offset: bool = True, page_size: int = 48, filtros: dict | None = None) -> str:
         slug = slugify(termo)
         path = slug
@@ -920,48 +950,86 @@ class ScraperMercadoLivre(ScraperBase):
     def _filtrar_produto(self, prod: Product) -> tuple[Optional[Product], str]:
         if not prod:
             return None, "parse_fail"
+
+        titulo_original = prod.titulo or ""
+        titulo_norm = _norm_text(titulo_original) 
+
+        UNWANTED_RE = re.compile(
+            r"\b("
+            r"remold(e|ado|agem)?|"          
+            r"recapad[oa]|"                  
+            r"recauchutad[oa]|"              
+            r"reformad[oa]|"                 
+            r"semi[-\s]?novo|seminovo|"      
+            r"usad[oa]|"                     
+            r"recondicionad[oa]|"            
+            r"ecologic[oa]"                  
+            r")\b"
+        )
+        if UNWANTED_RE.search(titulo_norm):
+            self.logger.warning("REJEIÇÃO DE TERMO INDESEJADO: Título='%s'", titulo_original[:80])
+            return None, "unwanted_keyword"
+
+        query_strict_setting = self._query_meta.get("query_strict")
+        ativar_modo_rigoroso = False
         
-        titulo = prod.titulo or ""
-        modo = (self._query_meta.get("query_strict","") or "full").lower
-        
-        if self._dim_pattern and not self._dim_pattern.search(titulo):
+        if not query_strict_setting:
+            ativar_modo_rigoroso = True
+        elif isinstance(query_strict_setting, str) and len(query_strict_setting.split()) > 2:
+            ativar_modo_rigoroso = True
+
+        if self._dim_pattern and not self._dim_pattern.search(titulo_original):
+            self.logger.warning("REJEIÇÃO DE DIMENSÃO: Título='%s', Padrão='%s'", titulo_original[:80], self._dim_pattern.pattern)
             return None, "sem_dim"
-        
-        if eh_kit_ou_multiplos_pneus(titulo):
+
+        if eh_kit_ou_multiplos_pneus(titulo_original):
+            self.logger.warning("REJEIÇÃO DE KIT/MULTIPLOS: Título='%s'", titulo_original[:80])
             return None, "kit"
 
-        marca_desejada = _canon_brand(self._query_meta.get("brand",""))
-        marca_prod = _brand_from_title(titulo, expected=marca_desejada)
-        
-        exige_marca = modo in ("full", "brand_size")
-        if exige_marca:
-            if marca_desejada and marca_prod != marca_desejada:
-                self.logger.warning(
-                f"REJEIÇÃO DE MARCA: Esperado='{marca_desejada}', "
-                f"Encontrado='{marca_prod}', Título='{titulo[:80]}...'",
-                marca_desejada, marca_prod, titulo[:120]
-            )
-            return None, "marca_diff"
+        def _token_present(text_norm: str, token_norm: str) -> bool:
+            if not token_norm:
+                return False
+            return re.search(rf"(?<![a-z0-9]){re.escape(token_norm)}(?![a-z0-9])", text_norm) is not None
+
+        def _token_present_any(text_norm: str, raw: str) -> bool:
+            base = _norm_text(raw)
+            if not base:
+                return False
+            cands = {base, base.replace(" ", ""), base.replace("-", ""), base.replace("/", "")}
+            return any(_token_present(text_norm, c) for c in cands)
+
+        marca_desejada = self._brand_norm
+        marca_prod = _brand_from_title(titulo_original, expected=marca_desejada)
+
+        if marca_desejada:
+            if not marca_prod:
+                if not _token_present(titulo_norm, marca_desejada):
+                    self.logger.warning("REJEIÇÃO DE MARCA (fallback): Esperado='%s', Título='%s...'", marca_desejada, titulo_original[:80])
+                    return None, "marca_diff"
+                marca_prod = marca_desejada
+            elif _norm_text(marca_prod) != marca_desejada:
+                self.logger.warning("REJEIÇÃO DE MARCA: Esperado='%s', Encontrado='%s', Título='%s...'", marca_desejada, marca_prod, titulo_original[:80])
+                return None, "marca_diff"
 
         prod.marca = marca_prod or marca_desejada or ""
 
-        if modo == "full":
-            if not _strict_match(title=titulo, brand_expected=self._query_meta.get("brand",""),
-                model_expected=self._query_meta.get("line_model",""), size_norm=self._query_meta.get("size_norm","") or prod.size_norm):
+        modelo_desejado = getattr(self, "_model_norm", _norm_text(self._query_meta.get("line_model","")))
+
+        if ativar_modo_rigoroso and modelo_desejado:
+            if not _token_present_any(titulo_norm, modelo_desejado):
+                self.logger.warning("REJEIÇÃO DE MODELO: Esperado='%s', Título='%s...'", modelo_desejado, titulo_original[:80])
+                return None, "model_diff"
+
+        if ativar_modo_rigoroso:
+            if not _strict_match(
+                title=titulo_original,
+                brand_expected=self._query_meta.get("brand", ""),
+                model_expected=self._query_meta.get("line_model", ""),
+                size_norm=self._query_meta.get("size_norm", "") or prod.size_norm
+            ):
+                self.logger.warning("REJEIÇÃO DE STRICT MATCH: Título='%s'", titulo_original[:80])
                 return None, "not_strict"
 
-        elif modo == "brand_size":
-            pass
-
-        elif modo == "size":
-            pass
-
-        elif modo == "none":
-            pass
-
-        else:
-            pass
-        
         prod.frete_gratis = prod.free_ship and (prod.frete in (None, 0.0))
         return prod, "ok"
 
@@ -1016,7 +1084,7 @@ class ScraperMercadoLivre(ScraperBase):
         self._pagina_atual = 1
         self._slug_termo = slugify(termo)
 
-        self._query_meta = query_meta or {}
+        self.set_query_meta(query_meta)
 
         if size_regex_override:
             try:
@@ -1272,23 +1340,9 @@ def main():
             with open(DEFAULT_LOTE_PATH, "r", encoding="utf-8") as f:
                 lote_default = json.load(f)
             _bootstrap_norm_from_lote(lote_default)
-            logger.info("norm_bootstrap: brands=%s modelos=%s",len(CONFIG_NORM["known_brands"]), len(CONFIG_NORM["known_model_phrases"]))
+            logger.info("norm_bootstrap: brands=%s modelos=%s", len(CONFIG_NORM["known_brands"]), len(CONFIG_NORM["known_model_phrases"]))
     except Exception:
         pass
-
-    scraper = ScraperMercadoLivre(
-        modo=args.modo,
-        headless=args.headless,
-        dump_html=args.dump_html,
-        logger=logger,
-        min_delay=args.min_delay,
-        max_delay=args.max_delay,
-        page_delay_min=args.page_delay_min,
-        page_delay_max=args.page_delay_max,
-        pages_before_cooldown=args.pages_before_cooldown,
-        cooldown_delay=args.cooldown_delay,
-        delay_scroll=args.delay_scroll,
-    )
 
     try:
         if args.lote_json:
@@ -1300,7 +1354,7 @@ def main():
                 lote = json.load(f)
 
             _bootstrap_norm_from_lote(lote)
-            logger.info("norm_bootstrap: brands=%s modelos=%s",len(CONFIG_NORM["known_brands"]), len(CONFIG_NORM["known_model_phrases"]))
+            logger.info("norm_bootstrap: brands=%s modelos=%s", len(CONFIG_NORM["known_brands"]), len(CONFIG_NORM["known_model_phrases"]))
 
             i0 = max(0, int(args.idx_from or 0))
             i1 = int(args.idx_to) if args.idx_to is not None else len(lote)
@@ -1311,41 +1365,52 @@ def main():
 
             for k, item in enumerate(subset, start=i0):
                 termo = montar_query_flex(item)
-                logger.info("(%s) Buscando: %s", k, termo)
+                logger.info("(%s/%s) Iniciando busca para: %s", k, len(lote) - 1, termo)
 
-                meta = {
-                    "brand": item.get("brand", ""),
-                    "line_model": item.get("line_model", ""),
-                    "size_norm": f"{item.get('width','')}/{item.get('aspect','')}r{item.get('rim','')}",
-                    "query_strict": item.get("query_strict", ""),
-                }
-
-                produtos = scraper.buscar_produtos(
-                    termo=termo,
-                    max_resultados=args.max,
-                    ordenacao=args.ordenacao,
-                    ceps=ceps,
-                    enriquecer=args.detalhes,
-                    query_meta=meta,
+                scraper = ScraperMercadoLivre(
+                    modo=args.modo, headless=args.headless, dump_html=args.dump_html,
+                    logger=logger, min_delay=args.min_delay, max_delay=args.max_delay,
+                    page_delay_min=args.page_delay_min, page_delay_max=args.page_delay_max,
+                    pages_before_cooldown=args.pages_before_cooldown,
+                    cooldown_delay=args.cooldown_delay, delay_scroll=args.delay_scroll,
                 )
+                try:
+                    meta = {
+                        "brand": item.get("brand", ""), "line_model": item.get("line_model", ""),
+                        "size_norm": f"{item.get('width','')}/{item.get('aspect','')}r{item.get('rim','')}",
+                        "query_strict": item.get("query_strict", ""),
+                    }
 
-                imprimir_produtos(produtos)
-                tops = sorted([p for p in produtos if p.preco is not None], key=lambda p: p.preco)[:10]
-                if tops:
-                    media = sum(p.preco for p in tops) / len(tops)
-                    print(f"Média dos {len(tops)} mais baratos: R$ {media:.2f}")
+                    produtos = scraper.buscar_produtos(
+                        termo=termo, max_resultados=args.max, ordenacao=args.ordenacao,
+                        ceps=ceps, enriquecer=args.detalhes, query_meta=meta,
+                    )
 
-                salvar_resultados(produtos=produtos, termo=termo, em_csv=args.csv, ceps=ceps)
+                    imprimir_produtos(produtos)
+                    tops = sorted([p for p in produtos if p.preco is not None], key=lambda p: p.preco)[:10]
+                    if tops:
+                        media = sum(p.preco for p in tops) / len(tops)
+                        print(f"Média dos {len(tops)} mais baratos: R$ {media:.2f}")
 
-                for p in produtos:
-                    raw = _product_to_raw(p)  
-                    doc = to_canonical(raw, "mercadolivre", item.get("cod_prod", "") or "", run_id)
-                    ok, msg = validate_or_warn(doc)
-                    if not ok and args.debug:
-                        print("[WARN]", msg, doc.get("url"))
-                    batch_docs.append(doc)
+                    salvar_resultados(produtos=produtos, termo=termo, em_csv=args.csv, ceps=ceps)
 
-                total_itens += len(produtos)
+                    for p in produtos:
+                        raw = _product_to_raw(p)
+                        doc = to_canonical(raw, "mercadolivre", item.get("cod_prod", "") or "", run_id)
+                        ok, msg = validate_or_warn(doc)
+                        if not ok and args.debug:
+                            print("[WARN]", msg, doc.get("url"))
+                        batch_docs.append(doc)
+
+                    total_itens += len(produtos)
+
+                except Exception as e:
+                    logger.error("Erro CRÍTICO no item %s (%s): %s", k, termo, e, exc_info=True)
+                finally:
+                    scraper.fechar()
+                    delay_aleatorio = random.uniform(10, 30)
+                    logger.info(f"Delay de {delay_aleatorio:.2f}s antes da próxima busca do lote.")
+                    time.sleep(delay_aleatorio)
 
             print(f"\nTotal coletado no lote: {total_itens} itens")
 
@@ -1353,43 +1418,45 @@ def main():
                 write_jsonl(out_jsonl, batch_docs)
                 print("[OUT_JSONL]", out_jsonl, "itens:", len(batch_docs))
 
-        else:
-            logger.info("Executando busca por termo único: %s", args.termo)
-            
-            meta = {
-                "brand": _brand_from_title(args.termo),
-                "line_model": "", 
-                "size_norm": _size_canonical(args.termo),
-                "query_strict": "",
-            }
-            
-            if meta["brand"]:
-                meta["line_model"] = _model_from_title(args.termo, brand=meta["brand"])
-
-            logger.info("Meta-dados extraídos do termo: %s", meta)
-            produtos = scraper.buscar_produtos(
-                termo=args.termo,
-                max_resultados=args.max,
-                ordenacao=args.ordenacao,
-                ceps=ceps,
-                enriquecer=args.detalhes,
-                query_meta=meta,
+        else: 
+            scraper = ScraperMercadoLivre(
+                modo=args.modo, headless=args.headless, dump_html=args.dump_html,
+                logger=logger, min_delay=args.min_delay, max_delay=args.max_delay,
+                page_delay_min=args.page_delay_min, page_delay_max=args.page_delay_max,
+                pages_before_cooldown=args.pages_before_cooldown,
+                cooldown_delay=args.cooldown_delay, delay_scroll=args.delay_scroll,
             )
+            try:
+                logger.info("Executando busca por termo único: %s", args.termo)
+                
+                meta = {
+                    "brand": _brand_from_title(args.termo), "line_model": "",
+                    "size_norm": _size_canonical(args.termo), "query_strict": "",
+                }
+                
+                if meta["brand"]:
+                    meta["line_model"] = _model_from_title(args.termo, brand=meta["brand"])
 
-            imprimir_produtos(produtos)
-            tops = sorted([p for p in produtos if p.preco is not None], key=lambda p: p.preco)[:10]
-            if tops:
-                media = sum(p.preco for p in tops) / len(tops)
-                print(f"Média dos {len(tops)} mais baratos: R$ {media:.2f}")
-            salvar_resultados(produtos=produtos, termo=args.termo, em_csv=args.csv, ceps=ceps)
+                logger.info("Meta-dados extraídos do termo: %s", meta)
+                produtos = scraper.buscar_produtos(
+                    termo=args.termo, max_resultados=args.max, ordenacao=args.ordenacao,
+                    ceps=ceps, enriquecer=args.detalhes, query_meta=meta,
+                )
+
+                imprimir_produtos(produtos)
+                tops = sorted([p for p in produtos if p.preco is not None], key=lambda p: p.preco)[:10]
+                if tops:
+                    media = sum(p.preco for p in tops) / len(tops)
+                    print(f"Média dos {len(tops)} mais baratos: R$ {media:.2f}")
+                salvar_resultados(produtos=produtos, termo=args.termo, em_csv=args.csv, ceps=ceps)
+            finally:
+                scraper.fechar()
 
     except KeyboardInterrupt:
         print("Interrompido pelo usuário.")
     except Exception as e:
-        logger.error("Erro ao executar scraper: %s", e, exc_info=True)
+        logger.error("Erro geral ao executar scraper: %s", e, exc_info=True)
         print(f"Erro: {e}")
-    finally:
-        scraper.fechar()
 
 
 if __name__ == "__main__":

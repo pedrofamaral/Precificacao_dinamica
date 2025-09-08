@@ -286,6 +286,7 @@ def run_scrapers(json_path, cmd_magalu, cmd_meli, cmd_pstore, debug=False, forma
     return arquivos_de_saida
 
 def main():
+    project_base_dir = Path(__file__).resolve().parent
     ap = argparse.ArgumentParser()
     ap.add_argument("--filial", type=int, default=4)
     ap.add_argument("--nome-prefix", default="P")
@@ -293,19 +294,23 @@ def main():
     ap.add_argument("--year", type=int, default=2025)
     ap.add_argument("--page-size", type=int, default=5000)
     ap.add_argument("--max-pages", type=int, default=200)
-    ap.add_argument("--out-json", default="query_products.json")  
-    ap.add_argument("--out-csv", default="query_products.csv")   
-    ap.add_argument("--rodar", action="store_true")
-    ap.add_argument("--cmd-magalu", default=r"C:\Users\user\Desktop\Precificação_AI\Scraper_em_geral\MagazineLuiza\scraper.py")
-    ap.add_argument("--cmd-meli",   default=r"C:\Users\user\Desktop\Precificação_AI\Scraper_em_geral\mercadolivre\scraper2.0.py")
-    ap.add_argument("--cmd-pstore", default=r"C:\Users\user\Desktop\Precificação_AI\Scraper_em_geral\pneustore\scraperps.py")
+    ap.add_argument("--out-json", default="query_products.json")
+    ap.add_argument("--out-csv", default="query_products.csv")
+    ap.add_argument("--rodar", action="store_true")    
+    ap.add_argument("--cmd-magalu", default=str(project_base_dir / "MagazineLuiza" / "scraper.py"))
+    ap.add_argument("--cmd-meli",   default=str(project_base_dir / "mercadolivre" / "scraper2.0.py"))
+    ap.add_argument("--cmd-pstore", default=str(project_base_dir / "pneustore" / "scraperps.py"))
     ap.add_argument("--formatos", nargs="+", default=["json","csv"])
     ap.add_argument("--debug", action="store_true")
     ap.add_argument("--idx-from", type=int, default=0, help="Índice inicial (inclusive) no JSON do lote")
     ap.add_argument("--idx-to", type=int, default=None, help="Índice final (exclusivo) no JSON do lote")
+    
     args = ap.parse_args()
     
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
     ensure_data_dirs()
+
     out_json_path = DATA_DIR / "query" / f"{Path(args.out_json).stem}_{ts}.json"
     out_csv_path  = DATA_DIR / "query" / f"{Path(args.out_csv).stem}_{ts}.csv"
 
@@ -313,12 +318,8 @@ def main():
     engine = build_engine()
     items = fetch_all(engine, args.filial, args.nome_prefix, args.min_estoque, args.year, args.page_size, args.max_pages)
 
-    start = max(0, args.idx_from or 0)
-    end = len(items) if args.idx_to is None else min(len(items), args.idx_to)
-    print(f"[INFO] Slice aplicado: {start}:{end} -> {end - start} itens")
-
     if not items:
-        print("Nenhum item encontrado.")
+        print("Nenhum item encontrado no banco de dados. Encerrando.")
         return
 
     with open(out_json_path, "w", encoding="utf-8") as f:
@@ -326,41 +327,36 @@ def main():
         print(f"JSON salvo em: {out_json_path.resolve()} (itens: {len(items)})")
 
     if out_csv_path:
-        with open(out_csv_path, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=list(items[0].keys()))
-            writer.writeheader()
-            writer.writerows(items)
+        df = pd.DataFrame(items)
+        df.to_csv(out_csv_path, index=False, sep=';', encoding='utf-8-sig')
         print(f"CSV salvo em: {out_csv_path.resolve()}")
 
     if args.rodar:
-        while True:
-            try:
-                print("\nIniciando a execução dos scrapers...")
-                lista_jsonl_gerados = run_scrapers(
-                    json_path=str(out_json_path.resolve()),
-                    cmd_magalu=args.cmd_magalu,
-                    cmd_meli=args.cmd_meli,
-                    cmd_pstore=args.cmd_pstore,
-                    debug=args.debug,
-                    formatos=args.formatos,
-                    idx_from=start, idx_to=end
-                )
+        start = max(0, args.idx_from or 0)
+        end = len(items) if args.idx_to is None else min(len(items), args.idx_to)
+        print(f"[INFO] Slice a ser executado pelos scrapers: {start}:{end} -> {end - start} itens")
+        
+        try:
+            print("\nIniciando a execução dos scrapers...")
+            lista_jsonl_gerados = run_scrapers(
+                json_path=str(out_json_path.resolve()),
+                cmd_magalu=args.cmd_magalu,
+                cmd_meli=args.cmd_meli,
+                cmd_pstore=args.cmd_pstore,
+                debug=args.debug,
+                formatos=args.formatos,
+                idx_from=start, idx_to=end
+            )
 
-                if lista_jsonl_gerados:
-                    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-                    caminho_csv_final = DATA_DIR / f"dados_consolidados_{ts}.csv"
-                    converter_jsonl_para_csv(lista_jsonl_gerados, str(caminho_csv_final.resolve()))
-            except KeyboardInterrupt:
-                print("\n\n[AVISO] Interrupção detectada no orquestrador!")
-                resposta = input("Deseja realmente parar todo o processo? (s/n): ").lower().strip()
-                if resposta == 's':
-                    print("Processo finalizado pelo usuário.")
-                    break
-                elif resposta == 'n':
-                    print("\n[AVISO] Reiniciando o processo de scraping. Pressione Ctrl+C novamente para sair.")
-                    continue
-                else:
-                    print("\n[AVISO] Resposta não reconhecida. Pressione Ctrl+C novamente para sair.")
+            if lista_jsonl_gerados:
+                caminho_csv_final = DATA_DIR / f"dados_consolidados_{ts}.csv"
+                converter_jsonl_para_csv(lista_jsonl_gerados, str(caminho_csv_final.resolve()))
+        
+        except KeyboardInterrupt:
+            print("\n\n[AVISO] Processo finalizado pelo usuário.")
+        
+        except Exception as e:
+            print(f"\n\n[ERRO FATAL] Ocorreu um erro durante a execução dos scrapers: {e}")
 
     print("\n[INFO] Script orquestrador finalizado.")
 

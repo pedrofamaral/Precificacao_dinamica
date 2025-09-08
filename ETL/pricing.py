@@ -1,21 +1,19 @@
 import pandas as pd
 import numpy as np
-from pathlib import Path
 import argparse
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+from ETL.common import SETTINGS, get_conn
 
 # --- Configurações ---
 BASE_DIR = Path(__file__).resolve().parent
 DEFAULT_INPUT_FILE = BASE_DIR / "data" / "processed" / "market_items_clean.parquet"
+DEFAULT_DB_PATH = SETTINGS.db_url
 DEFAULT_OUTPUT_PER_MARKETPLACE = BASE_DIR / "data" / "processed" / "precos_referencia_por_marketplace.csv"
 DEFAULT_OUTPUT_FINAL = BASE_DIR / "data" / "processed" / "precos_referencia_final.csv"
 
-# --- Lógica de Cálculo de Preço ---
-
 def calculate_reference_price(prices: pd.Series) -> pd.Series:
-    """
-    Calcula o preço de referência para uma série de preços,
-    removendo outliers com base em percentis (média aparada).
-    """
     prices = prices.dropna()
     count_original = len(prices)
     
@@ -50,13 +48,11 @@ def calculate_reference_price(prices: pd.Series) -> pd.Series:
     })
 
 def calculate_stats_from_group(group):
-    """Função auxiliar para aplicar o cálculo de preço a um grupo de DataFrame."""
     return calculate_reference_price(group['price'])
 
 # --- Função Principal ---
 
 def main(input_path: Path, output_per_marketplace_path: Path, output_final_path: Path):
-    """Orquestra o processo de cálculo de preços de referência em duas etapas."""
     print("🚀 Iniciando processo de precificação...")
     
     if not input_path.exists():
@@ -75,11 +71,10 @@ def main(input_path: Path, output_per_marketplace_path: Path, output_final_path:
     df['price'] = pd.to_numeric(df['price'], errors='coerce')
     df_valid = df.dropna(subset=['price', 'cod_prod', 'marketplace', 'title'])
     
-    print("\n🏷️  Identificando o título principal de cada produto...")
+    print("\n Identificando o título principal de cada produto...")
     product_titles = df_valid.groupby('cod_prod')['title'].agg(lambda x: x.value_counts().index[0]).rename('product_title')
 
     print("\n📊 Etapa 1: Agrupando por 'cod_prod' e 'marketplace'...")
-    # --- CORREÇÃO: Alterada a forma de aplicar a função para maior robustez ---
     pricing_per_marketplace = df_valid.groupby(['cod_prod', 'marketplace']).apply(calculate_stats_from_group).reset_index()
     
     pricing_per_marketplace = pricing_per_marketplace.merge(product_titles, on='cod_prod', how='left')
@@ -96,8 +91,19 @@ def main(input_path: Path, output_per_marketplace_path: Path, output_final_path:
     output_per_marketplace_path.parent.mkdir(parents=True, exist_ok=True)
     pricing_per_marketplace.to_csv(output_per_marketplace_path, index=False, sep=';', decimal=',')
     print(f"💾 Resultados salvos em '{output_per_marketplace_path}'")
+    print("🏦 Salvando resultados por marketplace no banco de dados...")
+    try:
+        with get_conn() as conn:
+            pricing_per_marketplace.to_sql(
+                'prices_by_marketplace',  
+                con=conn,
+                if_exists='replace',      
+                index=False
+            )
+        print("✅ Salvo com sucesso na tabela 'prices_by_marketplace'.")
+    except Exception as e:
+        print(f"❌ Falha ao salvar no banco de dados: {e}")
     print("\n📋 Amostra (por marketplace):\n", pricing_per_marketplace.head().to_string())
-
     if pricing_per_marketplace.empty:
         print("\n ALERTA: Nenhum dado válido para a Etapa 2. O cálculo final não será executado.")
         return
@@ -119,6 +125,19 @@ def main(input_path: Path, output_per_marketplace_path: Path, output_final_path:
     output_final_path.parent.mkdir(parents=True, exist_ok=True)
     final_pricing.to_csv(output_final_path, index=False, sep=';', decimal=',')
     print(f"💾 Resultados finais salvos em '{output_final_path}'")
+    print("🏦 Salvando resultados finais no banco de dados...")
+    try:
+        with get_conn() as conn:
+            final_pricing.to_sql(
+                'products_final_reference_price', 
+                con=conn,
+                if_exists='replace',
+                index=False
+            )
+        print("✅ Salvo com sucesso na tabela 'products_final_reference_price'.")
+    except Exception as e:
+        print(f"❌ Falha ao salvar no banco de dados: {e}")
+
     print("\n📋 Amostra (final):\n", final_pricing.head().to_string())
 
 

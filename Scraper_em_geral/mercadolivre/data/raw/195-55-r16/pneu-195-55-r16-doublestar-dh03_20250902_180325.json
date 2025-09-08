@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Doublestar Aro 16 195/55r16 Maximum Dh03 91v",
+    "link": "https://produto.mercadolivre.com.br/MLB-5093339654-pneu-doublestar-aro-16-19555r16-maximum-dh03-91v-_JM?searchVariation=181816147660",
+    "preco": 520.99,
+    "brand": "doublestar",
+    "model": "dh03",
+    "size": "195/55R16",
+    "speed_index": "91V",
+    "query_strict": "pneu 195 55 r16 Doublestar Dh03",
+    "size_norm": "195/55r16",
+    "brand_expected": "doublestar",
+    "line_expected": "dh03",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "doublestar",
+    "data_coleta": "2025-09-02 21:03:04",
+    "preco_original": null,
+    "preco_desconto": 520.99,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 235/75 R15 Aro 15 Atr  Alta Tração E Durabilidade",
+    "link": "https://produto.mercadolivre.com.br/MLB-4145620569-pneu-23575-r15-aro-15-atr-alta-traco-e-durabilidade-_JM",
+    "preco": 740.9,
+    "brand": "",
+    "model": "",
+    "size": "235/75R15",
+    "speed_index": "",
+    "query_strict": "pneu 235 75 r15 Falken Wildpeak A/T",
+    "size_norm": "235/75r15",
+    "brand_expected": "falken",
+    "line_expected": "wildpeak a/t",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "falken",
+    "data_coleta": "2025-09-01 21:02:56",
+    "preco_original": null,
+    "preco_desconto": 740.9,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

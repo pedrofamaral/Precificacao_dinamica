@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 225/50r18 Tl Aplus A610-27 Xl Aro 18",
+    "link": "https://www.mercadolivre.com.br/pneu-22550r18-tl-aplus-a610-27-xl-aro-18/p/MLB48419079",
+    "preco": 646.71,
+    "brand": "aplus",
+    "model": "a610",
+    "size": "225/50R18",
+    "speed_index": "",
+    "query_strict": "pneu 225 50 r18 Aplus A610",
+    "size_norm": "225/50r18",
+    "brand_expected": "aplus",
+    "line_expected": "a610",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "aplus",
+    "data_coleta": "2025-09-02 17:49:04",
+    "preco_original": null,
+    "preco_desconto": 646.71,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

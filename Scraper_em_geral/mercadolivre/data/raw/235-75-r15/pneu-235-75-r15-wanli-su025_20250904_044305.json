@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Wanli Su025 235/75 R15 Ht Aro 15 105t T",
+    "link": "https://www.mercadolivre.com.br/pneu-wanli-su025-23575-r15-ht-aro-15-105t-t/p/MLB54456787",
+    "preco": 855.78,
+    "brand": "wanli",
+    "model": "su025",
+    "size": "235/75R15",
+    "speed_index": "105T",
+    "query_strict": "pneu 235 75 r15 Wanli Su025",
+    "size_norm": "235/75r15",
+    "brand_expected": "wanli",
+    "line_expected": "su025",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "wanli",
+    "data_coleta": "2025-09-04 07:41:55",
+    "preco_original": null,
+    "preco_desconto": 855.78,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

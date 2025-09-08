@@ -1,8 +1,6 @@
 import re
 from typing import Optional, Dict
-
-from ETL.etl_prod import SPEED_RE, _norm, clean_speed_tokens
-
+from ETL.common import SPEED_RE, _norm, clean_speed_tokens
 
 _RE_METRIC = re.compile(
     r"""
@@ -60,6 +58,64 @@ def _pick_first_group(m, *names):
         v = m.groupdict().get(n)
         if v: return v
     return None
+
+import re
+import pandas as pd
+from typing import Optional, Dict
+
+try:
+    from ETL.common import SPEED_RE, _norm, clean_speed_tokens
+except ImportError:
+    from .common import SPEED_RE, _norm, clean_speed_tokens
+
+
+def enrich_with_parsed_fields(df: pd.DataFrame) -> pd.DataFrame:
+    out = df.copy()
+
+    def _parse_size(title: Optional[str]) -> Dict[str, object]:
+        d = extract_tire_size_from_title(title or "")
+        return {
+            "width": d.get("width"),
+            "aspect": d.get("aspect"),
+            "rim": d.get("rim"),
+            "construction": d.get("construction"),
+            "size_norm": d.get("size_norm"),
+            "xl_flag": bool(d.get("xl_flag", False)),
+        }
+
+    sizes = out["title"].fillna("").map(_parse_size).apply(pd.Series)
+    out = pd.concat([out, sizes], axis=1)
+
+    def _parse_speed(title: Optional[str]):
+        s = title or ""
+        m = SPEED_RE.search(s)
+        if not m:
+            return pd.Series({"load_index": pd.NA, "speed_index": pd.NA, "title_wo_speed": s})
+        token = m.group(0).upper()
+        m2 = re.match(r"(?P<load>\d{2,3})(?P<speed>[A-Z]{1,2})", token)
+        load = int(m2.group("load")) if m2 else pd.NA
+        speed = m2.group("speed") if m2 else token
+        return pd.Series({"load_index": load, "speed_index": speed, "title_wo_speed": clean_speed_tokens(s)})
+
+    sp = out["title"].fillna("").map(_parse_speed).apply(pd.Series)
+    out = pd.concat([out, sp], axis=1)
+
+    for col in ["width", "aspect", "rim", "load_index"]:
+        out[col] = pd.to_numeric(out[col], errors="coerce").astype("Int64")
+
+    mask = (
+        out["size_norm"].isna()
+        & out["width"].notna()
+        & out["aspect"].notna()
+        & out["rim"].notna()
+    )
+    out.loc[mask, "size_norm"] = out.loc[mask].apply(
+        lambda r: f"{int(r['width']):03d}/{int(r['aspect']):02d}R{int(r['rim']):02d}",
+        axis=1,
+    )
+
+    return out
+
 
 def extract_brand(text: str, known_brands: set[str], brand_aliases: dict[str,str] | None = None) -> str:
     brand_aliases = brand_aliases or {}

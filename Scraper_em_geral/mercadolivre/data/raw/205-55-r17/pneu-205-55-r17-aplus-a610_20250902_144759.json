@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 205/55r17 Tl Aplus 95w A610-1 Xl Aro 17 W",
+    "link": "https://www.mercadolivre.com.br/pneu-20555r17-tl-aplus-95w-a6101-xl-aro-17/up/MLBU3352817061",
+    "preco": 519.11,
+    "brand": "aplus",
+    "model": "a610",
+    "size": "205/55R17",
+    "speed_index": "95W",
+    "query_strict": "pneu 205 55 r17 Aplus A610",
+    "size_norm": "205/55r17",
+    "brand_expected": "aplus",
+    "line_expected": "a610",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "aplus",
+    "data_coleta": "2025-09-02 17:46:56",
+    "preco_original": null,
+    "preco_desconto": 519.11,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

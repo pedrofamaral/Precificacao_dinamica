@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 175/80r14 Goodyear Kelly Edge Suv 2 88t Aro 14",
+    "link": "https://produto.mercadolivre.com.br/MLB-4754544648-pneu-17580r14-goodyear-kelly-edge-suv-2-88t-aro-14-_JM?searchVariation=183049403699",
+    "preco": 790.45,
+    "brand": "goodyear",
+    "model": "kelly edge suv 2",
+    "size": "175/80R14",
+    "speed_index": "88T",
+    "query_strict": "pneu 175 80 r14 Goodyear Kelly Edge Suv 2",
+    "size_norm": "175/80r14",
+    "brand_expected": "goodyear",
+    "line_expected": "kelly edge suv 2",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "goodyear",
+    "data_coleta": "2025-09-03 00:59:48",
+    "preco_original": null,
+    "preco_desconto": 790.45,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

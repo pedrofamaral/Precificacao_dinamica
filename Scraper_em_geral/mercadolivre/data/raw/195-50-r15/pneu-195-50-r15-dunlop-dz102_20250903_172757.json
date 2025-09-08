@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 195/50 R15 Dunlop Dz102 82v V",
+    "link": "https://www.mercadolivre.com.br/pneu-19550-r15-dunlop-dz102-82v/up/MLBU3296498890",
+    "preco": 581.4,
+    "brand": "dunlop",
+    "model": "dz102",
+    "size": "195/50R15",
+    "speed_index": "82V",
+    "query_strict": "pneu 195 50 r15 Dunlop Dz102",
+    "size_norm": "195/50r15",
+    "brand_expected": "dunlop",
+    "line_expected": "dz102",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "dunlop",
+    "data_coleta": "2025-09-03 20:26:44",
+    "preco_original": null,
+    "preco_desconto": 581.4,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Michelin 225/50 R17 94w Primacy 3 Runflat",
+    "link": "https://www.mercadolivre.com.br/pneu-michelin-22550-r17-94w-primacy-3-runflat/p/MLB28641430",
+    "preco": 1650.0,
+    "brand": "michelin",
+    "model": "",
+    "size": "225/50R17",
+    "speed_index": "94W",
+    "query_strict": "pneu 225 50 r17 Michelin Primacy 4",
+    "size_norm": "225/50r17",
+    "brand_expected": "michelin",
+    "line_expected": "primacy 4",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "michelin",
+    "data_coleta": "2025-09-02 03:29:32",
+    "preco_original": null,
+    "preco_desconto": 1650.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

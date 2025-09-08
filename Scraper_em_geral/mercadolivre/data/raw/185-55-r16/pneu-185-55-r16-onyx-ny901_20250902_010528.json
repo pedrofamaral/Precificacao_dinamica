@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Speedmax H12 185/55r16 Rxmotion 83v - Onix Hb20 Punto",
+    "link": "https://produto.mercadolivre.com.br/MLB-4083391739-pneu-speedmax-h12-18555r16-rxmotion-83v-onix-hb20-punto-_JM?searchVariation=188222588719",
+    "preco": 534.0,
+    "brand": "speedmax",
+    "model": "",
+    "size": "185/55R16",
+    "speed_index": "83V",
+    "query_strict": "pneu 185 55 r16 Onyx Ny901",
+    "size_norm": "185/55r16",
+    "brand_expected": "onyx",
+    "line_expected": "ny901",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "speedmax",
+    "data_coleta": "2025-09-02 04:05:14",
+    "preco_original": null,
+    "preco_desconto": 534.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

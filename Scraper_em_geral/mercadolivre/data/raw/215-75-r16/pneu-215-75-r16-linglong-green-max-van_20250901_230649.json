@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 215/75 R16 116/114r Roadian Ct8 Nexen",
+    "link": "https://www.mercadolivre.com.br/pneu-21575-r16-116114r-roadian-ct8-nexen/p/MLB20963733",
+    "preco": 1169.0,
+    "brand": "nexen",
+    "model": "",
+    "size": "215/75R16",
+    "speed_index": "114R",
+    "query_strict": "pneu 215 75 r16 Linglong Green-Max Van",
+    "size_norm": "215/75r16",
+    "brand_expected": "linglong",
+    "line_expected": "green-max van",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "nexen",
+    "data_coleta": "2025-09-02 02:06:05",
+    "preco_original": null,
+    "preco_desconto": 1169.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]
