@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 185/55r16 87v Fm601 Kpatos",
+    "link": "https://www.mercadolivre.com.br/pneu-18555r16-87v-fm601-kpatos/up/MLBU2762011508",
+    "preco": 454.03,
+    "brand": "kpatos",
+    "model": "fm601",
+    "size": "185/55R16",
+    "speed_index": "87V",
+    "query_strict": "pneu 185 55 r16 Kpatos Fm601",
+    "size_norm": "185/55r16",
+    "brand_expected": "kpatos",
+    "line_expected": "fm601",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "kpatos",
+    "data_coleta": "2025-09-03 02:44:49",
+    "preco_original": null,
+    "preco_desconto": 454.03,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Bridgestone 245/70r16 111t Dueler H/t 684 Iii Ecopia Xl",
+    "link": "https://www.mercadolivre.com.br/pneu-bridgestone-24570r16-111t-dueler-ht-684-iii-ecopia-xl/up/MLBU2723906354",
+    "preco": 1073.0,
+    "brand": "bridgestone",
+    "model": "dueler h t 684 iii ecopia",
+    "size": "245/70R16",
+    "speed_index": "111T",
+    "query_strict": "pneu 245 70 r16 Bridgestone Dueler H/T 684 Iii Ecopia",
+    "size_norm": "245/70r16",
+    "brand_expected": "bridgestone",
+    "line_expected": "dueler h/t 684 iii ecopia",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "bridgestone",
+    "data_coleta": "2025-09-03 18:33:12",
+    "preco_original": null,
+    "preco_desconto": 1073.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

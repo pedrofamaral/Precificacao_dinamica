@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 215/35r18 Aptany Ra301 Aptany 28788",
+    "link": "https://produto.mercadolivre.com.br/MLB-5337778986-pneu-21535r18-aptany-ra301-aptany-28788-_JM?searchVariation=187400547161",
+    "preco": 481.33,
+    "brand": "aptany",
+    "model": "",
+    "size": "215/35R18",
+    "speed_index": "",
+    "query_strict": "pneu 215 35 r18 Aptany Sportmacro Ra301",
+    "size_norm": "215/35r18",
+    "brand_expected": "aptany",
+    "line_expected": "sportmacro ra301",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "aptany",
+    "data_coleta": "2025-09-01 16:12:29",
+    "preco_original": null,
+    "preco_desconto": 481.33,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

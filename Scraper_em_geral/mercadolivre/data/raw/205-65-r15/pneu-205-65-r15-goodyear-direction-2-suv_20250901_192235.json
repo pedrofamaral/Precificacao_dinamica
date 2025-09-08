@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 205/65r15 Goodyear Wrangler Fortitude Ht 94h Aro 15",
+    "link": "https://produto.mercadolivre.com.br/MLB-4334093216-pneu-20565r15-goodyear-wrangler-fortitude-ht-94h-aro-15-_JM?searchVariation=179580619810",
+    "preco": 938.09,
+    "brand": "goodyear",
+    "model": "",
+    "size": "205/65R15",
+    "speed_index": "94H",
+    "query_strict": "pneu 205 65 r15 Goodyear Direction 2 Suv",
+    "size_norm": "205/65r15",
+    "brand_expected": "goodyear",
+    "line_expected": "direction 2 suv",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "goodyear",
+    "data_coleta": "2025-09-01 22:22:18",
+    "preco_original": null,
+    "preco_desconto": 938.09,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 225/75r16 Lt 10 Lonas 115/112s Rl101 Expedite Aptany",
+    "link": "https://www.mercadolivre.com.br/pneu-22575r16-lt-10-lonas-115112s-rl101-expedite-aptany/up/MLBU2649243393",
+    "preco": 682.58,
+    "brand": "aptany",
+    "model": "rl101",
+    "size": "225/75R16",
+    "speed_index": "112S",
+    "query_strict": "pneu 225 75 r16 Aptany Rl101",
+    "size_norm": "225/75r16",
+    "brand_expected": "aptany",
+    "line_expected": "rl101",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "aptany",
+    "data_coleta": "2025-09-02 18:19:12",
+    "preco_original": null,
+    "preco_desconto": 682.58,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

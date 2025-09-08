@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Aro 17 Compasal 205/50r17 93w Xl Blazer Uhp Ii W",
+    "link": "https://www.mercadolivre.com.br/pneu-aro-17-compasal-20550r17-93w-xl-blazer-uhp-ii/up/MLBU3357272841",
+    "preco": 633.08,
+    "brand": "compasal",
+    "model": "",
+    "size": "205/50R17",
+    "speed_index": "93W",
+    "query_strict": "pneu 205 50 r17 Compasal Smacher",
+    "size_norm": "205/50r17",
+    "brand_expected": "compasal",
+    "line_expected": "smacher",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "compasal",
+    "data_coleta": "2025-09-01 17:48:01",
+    "preco_original": null,
+    "preco_desconto": 633.08,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

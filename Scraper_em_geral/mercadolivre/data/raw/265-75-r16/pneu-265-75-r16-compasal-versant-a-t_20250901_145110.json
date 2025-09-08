@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Aro 16 Compasal 265/75r16 123/120s Versant A/t",
+    "link": "https://www.mercadolivre.com.br/pneu-aro-16-compasal-26575r16-123120s-versant-at/p/MLB42521419",
+    "preco": 1381.0,
+    "brand": "compasal",
+    "model": "versant a t",
+    "size": "265/75R16",
+    "speed_index": "120S",
+    "query_strict": "pneu 265 75 r16 Compasal Versant A/T",
+    "size_norm": "265/75r16",
+    "brand_expected": "compasal",
+    "line_expected": "versant a/t",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "compasal",
+    "data_coleta": "2025-09-01 17:50:57",
+    "preco_original": null,
+    "preco_desconto": 1381.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

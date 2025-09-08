@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Wanli Sp026 215/65 R16 Aro 16 98v V",
+    "link": "https://www.mercadolivre.com.br/pneu-wanli-sp026-21565-r16-aro-16-98v/up/MLBU3326599569",
+    "preco": 440.0,
+    "brand": "wanli",
+    "model": "sp026",
+    "size": "215/65R16",
+    "speed_index": "98V",
+    "query_strict": "pneu 215 65 r16 Wanli Sp026",
+    "size_norm": "215/65r16",
+    "brand_expected": "wanli",
+    "line_expected": "sp026",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "wanli",
+    "data_coleta": "2025-09-02 07:29:56",
+    "preco_original": null,
+    "preco_desconto": 440.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

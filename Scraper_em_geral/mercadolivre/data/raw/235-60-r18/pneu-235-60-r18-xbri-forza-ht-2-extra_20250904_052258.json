@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Xbri Aro 18 235/60r18 107h Forza Ht 2 Extra Load",
+    "link": "https://www.mercadolivre.com.br/pneu-xbri-aro-18-23560r18-107h-forza-ht-2-extra-load/p/MLB50519674",
+    "preco": 752.32,
+    "brand": "xbri",
+    "model": "forza ht 2 extra",
+    "size": "235/60R18",
+    "speed_index": "107H",
+    "query_strict": "pneu 235 60 r18 Xbri Forza Ht 2 Extra",
+    "size_norm": "235/60r18",
+    "brand_expected": "xbri",
+    "line_expected": "forza ht 2 extra",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "xbri",
+    "data_coleta": "2025-09-04 08:22:06",
+    "preco_original": null,
+    "preco_desconto": 752.32,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

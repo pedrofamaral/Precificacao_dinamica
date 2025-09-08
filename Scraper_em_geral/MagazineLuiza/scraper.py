@@ -26,34 +26,70 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import (
     TimeoutException,
-    StaleElementReferenceException
+    StaleElementReferenceException,
+    NoSuchElementException
 )
+
 
 # =========================
 # Configs e listas
 # =========================
 
 MARCAS = [
-    "goodyear", "pirelli", "michelin", "dunlop", "bridgestone", "continental",
-    "hankook", "bfgoodrich", "firestone", "kumho", "maxxis", "formula",
-    "yokohama", "toyo", "nitto", "general", "cooper", "falken", "nexen", "sumitomo", "kelly"
+    'aderenza', 'anlas', 'anteo', 'aplus', 'aptany', 'atlander', 'austone', 'barum', 'bf goodrich', 'bfgoodrich', 
+    'blacklion', 'bkt', 'borilli', 'bridgestone', 'carlisle', 'ceat', 'chengshan', 'chituma', 'comforser', 'compasal', 
+    'continental', 'cooper', 'davanti', 'dayton', 'delmax', 'dewostone', 'double king', 'doubleking', 'doublestar', 'dunlop', 
+    'durable', 'dyna', 'dynamo', 'ecovision', 'falken', 'farroad', 'fate', 'federal', 'firemax', 'firestone', 'forceland', 
+    'formula', 'general', 'goform', 'goodride', 'goodyear', 'gt radial', 'habilead', 'hankook', 'hifly', 'hilfy', 'horizon', 
+    'infinity', 'invovic', 'ironman', 'itaro', 'jk tyre', 'jktyre', 'kenda', 'kingtyre', 'kpatos', 'kumho', 'kumho tire', 
+    'landspider', 'lanvigator', 'lavigator', 'levorin', 'linglong', 'luistone', 'magnum', 'maxxis', 'mazzini', 'michelin', 
+    'milever', 'minerva', 'nankang', 'nexen', 'nitto', 'nokian', 'onyx', 'otani', 'petlas', 'pirelli', 'power trac', 'primewell', 
+    'radar', 'roadcruza', 'roadstone', 'routeway', 'royal black', 'sailun', 'sava', 'semperit', 'speedmax', 'sumitomo', 
+    'sumitomo tire', 'sumitomo tires', 'sunfull', 'sunny', 'sunset', 'sunset tires', 'sunwide', 'tbb tires', 'toyo', 'towin', 
+    'tracmax', 'trazano', 'triangle', 'valeo', 'vee rubber', 'ventus', 'versatyre', 'viemar', 'viking', 'vitour', 'wanli', 
+    'westlake', 'windforce', 'winrun', 'xbri', 'yokohama', 'zmax', 'zptire'
 ]
 
 MODELOS = [
-    # Goodyear / Kelly
-    "assurance maxlife", "assurance", "wrangler", "eagle", "efficientgrip",
-    "kelly edge", "eagle sport",
-    # Michelin
-    "energy xm2", "primacy 4", "ltx force",
-    # Pirelli
-    "cinturato p7", "p400", "p400 evo", "formula evo",
-    # Continental
-    "powercontact",
-    # Dunlop
-    "sp touring", "sp sport", "fm800", "lm704", "enasave ec300",
-    # Outras recorrentes
-    "direction", "f700", "bc20"
+    '503112', 'a/t csr34', 'a607', 'a609', 'a609 (100h)', 'a610', 'a610 (103y)', 'a919', 'agilis', 'agilis 3', 'alenza001', 
+    'all terrain', 'all terrain t/a', 'all terrain ta', 'assur. maxlife', 'assurance', 'assurance maxlife', 'at59', 'at78', 
+    'athena sp302', 'atrezzo', 'barum bravuris 4x4', 'barum bravuris 5hm', 'bc100', 'bc20', 'blazer hp', 'blazer uhp', 
+    'blazer uhp 2', 'brutus all terrain', 'brutus t/a', 'cargo marathon 2', 'catchfors t/a', 'catchpower plus', 'cf1100', 
+    'cf2000', 'cf500', 'cf510', 'cint p1 plus', 'cint p7', 'city dc01', 'citytraxx', 'comfort 2', 'comfort ii', 'comfort ii xl', 
+    'confort ii', 'conticrosscontact lx2', 'contisport contact', 'controlmax', 'cp-16', 'cp16', 'cr976a', 'crosswind a/t', 'd300', 
+    'destination a/t', 'destination atx', 'destination h/t', 'destination le3', 'dh02', 'dh03', 'direction 2 suv', 
+    'direction touring', 'direzza dz102', 'dk365 ht', 'dk365 tl', 'dk558', 'dk728', 'dk798', 'dr755', 'dsrs01', 'dsu02', 
+    'dueler a/t revo 2', 'dueler at693', 'dueler h/t 684 ii', 'dueler h/t 684 iii', 'dueler h/t 684 iii ecopia', 'dynapro at2', 
+    'dynapro mt2', 'dz102', 'eagle', 'eagle sport', 'eagle sport 2', 'eco307', 'eco603', 'eco603 xl', 'ecoblue ry26', 'ecoblue ry6', 
+    'ecodrive', 'ecology', 'ecopia ep150', 'ecosaver ht', 'edge suv 2', 'edge suv 2 sl', 'efficientgrip', 'efficientgrip suv', 
+    'el601', 'enasave ec300', 'enasave ec300+', 'enasave ec350+', 'energy', 'energy xm2', 'enzo b2', 'ep150', 'es31', 'evo', 
+    'expresspro', 'f-600', 'f700', 'fastdrive', 'fastway a5', 'fm601', 'fm800', 'fortitude ht', 'forza 2 a/t', 'forza a/t 2', 
+    'forza a/t f2', 'forza ht 2 extra', 'frd26', 'frd66', 'frd96', 'fs558', 'furious s1', 'g32 cargo', 'gallopro ht', 
+    'generaltire altimax one', 'giornata', 'grandt at5', 'grandtrek at20', 'grandtrek at25', 'grandtrek at5', 'grandtrek mt2', 
+    'grantek at5', 'grantrek at5', 'green-max van', 'grip master c/s', 'gs03', 'h188', 'h220', 'hf261', 'hh102', 'hh301', 'hr805', 
+    'ht wrgl territory', 'ht782', 'hu901', 'it101', 'it203', 'it01', 'itr01t', 'kelly edge', 'kelly edge sport', 'kelly edge sport 2',
+    'kelly edge touring 2', 'kinergy gt', 'kl33', 'landgema', 'linam r51', 'llf86', 'lm 704', 'ltx force', 'ltx trail', 
+    'ltx trail st', 'ma349', 'marathon 2', 'matrix sport ii', 'maximum dh03', 'mh01', 'mp270', 'mu069', 'n92018', 'na305', 
+    'new sense', 'nu025', 'nu025 h/t', 'ny-20', 'ny805', 'ny901', 'opteco s1', 'ottima plus', 'over cargo b3 8pr', 'p400', 
+    'p400 evo', 'pangea all terrain', 'pangea at', 'perform', 'performax ht', 'pilot sport 4 suv', 'power contact 2', 
+    'powercontact 2', 'powergy', 'powermax', 'premium f1', 'primacy 4', 'primacy 4+', 'protoura sport', 'r330', 'r380', 'ra1100', 
+    'ra1100 at', 'ra301', 'ra305', 'ra7000', 'reinforced bc100', 'rl101', 'roadian at pro', 'roadian gtx', 'robusto', 'royal a/t', 
+    'royal comfort', 'royal mile', 'royal mile xl', 'royal performance', 'rp18', 'rp203', 'rs zero', 'rs-one', 'rs21', 'ru025', 
+    'ru025 ht', 'ru025y', 'ru101', 'ru101 expedite', 's526', 'sa302', 'sa37', 'scorpion', 'scorpion atr xl', 'scorpion ks', 
+    'scorpion seal inside', 'scorpion str', 'sentiva ar360', 'sf600', 'sf688', 'sl106', 'sl106 (ec)', 'smacher', 'sp fm800', 
+    'sp sport', 'sp touring', 'sp touring r1', 'sp026', 'sp320', 'sp801', 'sp835', 'speedline e1', 'spm305', 'sport 2 direction', 
+    'sport direction', 'sportcat csc302 a/t', 'sportmacro ra301', 'steel ags', 'su009 a/t', 'su025', 'su025 rangetour plus', 
+    'super 2000', 't005', 'te301', 'te307', 'touring direction', 'touring r1', 'tp-16', 'trail life a/t', 'trail terrain', 
+    'turanza t005', 'ultima royal', 'ultimaplus', 'ultimapro up1', 'ultimato pro up1', 'ultimato up1', 'vancontact ap', 'vanmax', 
+    'varenna s01', 'vectra', 'ventus v12 evo2', 'versant a/t', 'vf26', 'vi386 hp', 'vigorous at601', 'vigorous ht601', 'vitality f22', 
+    'wdl0', 'wildpeak a/t', 'wildwolf w01', 'wr9001 at', 'wr9086a ht', 'wr9096', 'wrangler', 'wrangler fortitude h/t', 
+    'wrangler fortitude ht', 'wrangler rt/s', 'wrangler territory', 'wrangler territory ht', 'wrangler workhorse at', 'xforza', 
+    'xl tl primacy 4 mi', 'xlt a/s', 'xlt a/s 2', 'xport-66', 'xprivilo ht', 'xsport66', 'yda266', 'yda286 at', 'z-108', 'z108', 
+    'zealion', 'ziex ze914', 'zupereco z108'
 ]
+
+MARCAS_REGEX = re.compile(r'\b(' + '|'.join(map(re.escape, sorted(MARCAS, key=len, reverse=True))) + r')\b', re.IGNORECASE)
+MODELOS_REGEX = re.compile(r'\b(' + '|'.join(map(re.escape, sorted(MODELOS, key=len, reverse=True))) + r')\b', re.IGNORECASE)
 
 VENDEDORES_PALAVRAS_INVALIDAS = [
     "imperador", "imperatriz", "carli", "imperiodospneuspecas"
@@ -136,36 +172,48 @@ def normalizar_str(s):
     s = ''.join(c for c in s if unicodedata.category(c) != 'Mn')
     return s.lower()
 
+def _norm_soft(s: Optional[str]) -> str:
+    s = normalizar_str(s or "")
+    return re.sub(r"[\W_]+", "", s)  
+
+def _contains_token(hay: str, needle: str) -> bool:
+    hay_n = normalizar_str(hay or "")
+    needle_n = normalizar_str(needle or "")
+    return re.search(rf"\b{re.escape(needle_n)}\b", hay_n) is not None
+
+
 def _extrair_marca_titulo(titulo: str) -> str:
-    if not titulo:
+    if not titulo: 
         return ""
     t = normalizar_str(titulo)
-    for marca in MARCAS:
-        if marca in t:
-            return marca
-    return ""
+    match = MARCAS_REGEX.search(t)
+    return match.group(1) if match else ""
+
 
 def extrair_modelo_titulo(titulo: str) -> str:
+    if not titulo: 
+        return ""
     t = normalizar_str(titulo)
-    for m in MODELOS:
-        if m in t:
-            return m
-    return ""
+    match = MODELOS_REGEX.search(t)
+    return match.group(1) if match else ""
 
 def extrair_filtros_busca(termo: str):
     termo_low = normalizar_str(termo or "")
     medida = normalizar_medida_valor(termo_low)
-    tokens = re.findall(r'\w+', termo_low)
+
     marca = None
     for m in MARCAS:
-        if m in tokens:
-            marca = m
+        m_norm = normalizar_str(m)
+        if re.search(rf"\b{re.escape(m_norm)}\b", termo_low):
+            marca = m  
             break
+
     modelo = None
     for mod in MODELOS:
-        if mod in termo_low:
+        if normalizar_str(mod) in termo_low:
             modelo = mod
             break
+
     return medida, marca, modelo
 
 def eh_kit_ou_multiplos_pneus(texto: str) -> bool:
@@ -408,99 +456,180 @@ class ScraperMagalu:
             if i > 0 and new_height == getattr(self, '_last_height', 0):
                 break
             self._last_height = new_height
+    
+    def _find_in(el, css):
+        return el.find_element(By.CSS_SELECTOR, css)
+
 
     def extrair_produto_detalhado(self, card) -> Optional[ProdutoMagalu]:
         try:
-            # --- VALIDAÇÃO PRÉVIA (AQUI ESTÁ A MUDANÇA PRINCIPAL) ---
-            
-            # 1. Pega o título diretamente do card, sem abrir nova aba ainda.
-            titulo_element = card.find_element(By.CSS_SELECTOR, "h2[data-testid='product-title']")
-            titulo = titulo_element.text.strip() if titulo_element else ""
+            try:
+                titulo_el = WebDriverWait(self.driver, 6).until(
+                    lambda d: card.find_element(
+                        By.CSS_SELECTOR,
+                        "h1[data-testid='product-title'], "
+                        "h2[data-testid='product-title'], "
+                        "h3[data-testid='product-title'], "
+                        "[aria-label]"
+                    )
+                )
+                titulo = (titulo_el.get_attribute("innerText")
+                        or titulo_el.get_attribute("textContent")
+                        or "").strip()
+                if not titulo and card.tag_name.lower() == "a":
+                    titulo = (card.get_attribute("aria-label") or "").strip()
+            except TimeoutException:
+                self.logger.error("Timeout no TÍTULO do card; ignorando produto.")
+                return None
 
             if not titulo:
-                return None # Ignora cards sem título
+                self.logger.warning("Título vazio; ignorando produto.")
+                return None
 
-            # 2. Primeira barreira: é um kit ou múltiplos?
             if eh_kit_ou_multiplos_pneus(titulo):
                 self.logger.info(f"Produto ignorado (kit/múltiplos): {titulo}")
                 return None
 
-            # 3. Segunda barreira: a medida bate com a busca?
+            q_norm = normalizar_str(self.termo_busca or "")
+            titulo_normalizado = normalizar_str(titulo)
+
             if self.filtro_medida:
-                medida_encontrada = normalizar_medida_valor(titulo)
-                if self.filtro_medida != medida_encontrada:
-                    self.logger.info(f"Produto ignorado (medida não bate: esperado '{self.filtro_medida}', encontrado '{medida_encontrada}'): {titulo}")
-                    return None
+                q_norm = q_norm.replace(normalizar_str(self.filtro_medida), " ")
 
-            # 4. Terceira barreira: a marca bate com a busca?
-            if self.filtro_marca:
-                marca_encontrada = _extrair_marca_titulo(titulo)
-                if self.filtro_marca.lower() != marca_encontrada.lower():
-                    self.logger.info(f"Produto ignorado (marca não bate: esperado '{self.filtro_marca}', encontrado '{marca_encontrada}'): {titulo}")
-                    return None
-            
-            # 5. Quarta barreira: o modelo bate com a busca?
-            if self.filtro_modelo:
-                if self.filtro_modelo.lower() not in titulo.lower():
-                    self.logger.info(f"Produto ignorado (modelo não bate): {titulo}")
-                    return None
-            
-            # SE PASSOU EM TUDO, O PRODUTO É RELEVANTE. AGORA SIM, PEGAMOS OS DETALHES.
+            q_tokens = re.findall(r"[a-z0-9]+(?:\+[a-z0-9]+)?", q_norm)
+            palavras_chave_obrigatorias = [
+                tok for tok in q_tokens
+                if tok not in {"pneu", "r"} and not tok.isdigit() and len(tok) > 1
+            ]
 
-            link = card.get_attribute('href')
-            
-            # Extrai o preço do card
-            preco_element = card.find_element(By.CSS_SELECTOR, "p[data-testid='price-value']")
-            preco = parse_preco(preco_element.text) if preco_element else None
-            
+            if not all(tok in titulo_normalizado for tok in palavras_chave_obrigatorias):
+                self.logger.info(f"Produto ignorado (não corresponde à busca '{self.termo_busca}'): {titulo}")
+                return None
+
+            try:
+                preco_el = WebDriverWait(self.driver, 6).until(
+                    lambda d: card.find_element(
+                        By.CSS_SELECTOR,
+                        "p[data-testid='price-value'], "
+                        "span[data-testid='price-value'], "
+                        "[data-testid='price-value']"
+                    )
+                )
+                preco = parse_preco(preco_el.text) if preco_el else None
+            except TimeoutException:
+                self.logger.error(f"Timeout no PREÇO do card: {titulo}")
+                return None
+
             if not preco or preco < 100:
                 self.logger.warning(f"Preço inválido ou baixo demais (R$ {preco}) para o produto: {titulo}")
                 return None
-                
-            # Abre a nova aba APENAS para pegar o vendedor (muito mais rápido)
-            vendedor = f"{self.marketplace}" # Vendedor padrão
+
+            link_temporario = card.get_attribute('href')
+            if not link_temporario:
+                try:
+                    link_temporario = card.find_element(By.CSS_SELECTOR, "a").get_attribute("href")
+                except Exception:
+                    pass
+            if not link_temporario:
+                self.logger.warning(f"Sem link no card; ignorando: {titulo}")
+                return None
+
+            vendedor = self.marketplace
+            link_corrigido = link_temporario
             aba_atual = self.driver.current_window_handle
-            self.driver.execute_script("window.open(arguments[0], '_blank');", link)
+
+            self.driver.execute_script("window.open(arguments[0], '_blank');", link_temporario)
             self.driver.switch_to.window(self.driver.window_handles[-1])
+
             try:
-                # Espera o elemento do vendedor carregar
-                vendedor_element = WebDriverWait(self.driver, 10).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, "p[data-testid='seller-name'] button, p[data-testid='seller-name'] span"))
-                )
-                vendedor = vendedor_element.text.strip()
-            except TimeoutException:
-                self.logger.warning(f"Não foi possível encontrar o vendedor para o produto: {titulo}. Usando '{self.marketplace}'.")
+                try:
+                    canonical_el = WebDriverWait(self.driver, 5).until(
+                        EC.presence_of_element_located((By.CSS_SELECTOR, "link[rel='canonical']"))
+                    )
+                    link_corrigido = canonical_el.get_attribute("href") or self.driver.current_url
+                except TimeoutException:
+                    self.logger.info("Canonical não encontrado rápido; usando URL atual como fallback.")
+                    link_corrigido = self.driver.current_url
+
+                try:
+                    vendedor_el = WebDriverWait(self.driver, 6).until(
+                        EC.presence_of_element_located((
+                            By.CSS_SELECTOR,
+                            "[data-testid='seller-name'], "
+                            "a[data-testid='seller-name'], "
+                            "p[data-testid='label'] [data-testid='link'], "
+                            "a[href*='lojista'], "
+                            "[data-testid='seller']"
+                        ))
+                    )
+                    vendedor_txt = (vendedor_el.text or vendedor_el.get_attribute("innerText")
+                                    or vendedor_el.get_attribute("textContent") or "").strip()
+                    if vendedor_txt:
+                        vendedor = vendedor_txt
+                except TimeoutException:
+                    self.logger.info(f"Vendedor não visível rapidamente; mantendo '{vendedor}'")
+
+                try:
+                    vend_low = normalizar_str(vendedor)
+                    if any(bad in vend_low for bad in VENDEDORES_PALAVRAS_INVALIDAS):
+                        self.logger.info(f"Produto ignorado (vendedor banido: {vendedor}) - {titulo}")
+                        return None
+                except Exception:
+                    pass
+
             finally:
-                self.driver.close()
-                self.driver.switch_to.window(aba_atual)
-            
-            # Extrai outros detalhes do card
-            imagem = ""
-            try:
-                img_element = card.find_element(By.CSS_SELECTOR, "img[data-testid='image-product']")
-                imagem = img_element.get_attribute("src")
-            except Exception: pass
-            
+                try:
+                    self.driver.close()
+                finally:
+                    self.driver.switch_to.window(aba_atual)
+
+            medida_final = normalizar_medida_valor(titulo)
+            marca_final = _extrair_marca_titulo(titulo)
+            modelo_final = extrair_modelo_titulo(titulo)
+
+            if self.filtro_medida and medida_final != self.filtro_medida:
+                self.logger.info(f"Produto ignorado (medida incorreta): {titulo}")
+                return None
+
+            if self.filtro_marca and _norm_soft(marca_final) != _norm_soft(self.filtro_marca):
+                self.logger.info(f"Produto ignorado (marca incorreta): {titulo}")
+                return None
+
+            if self.filtro_modelo:
+                if not (_contains_token(titulo, self.filtro_modelo) or
+                        _norm_soft(modelo_final).startswith(_norm_soft(self.filtro_modelo)) or
+                        _norm_soft(self.filtro_modelo).startswith(_norm_soft(modelo_final))):
+                    self.logger.info(f"Produto ignorado (modelo não bate): {titulo}")
+                    return None
+
             produto = ProdutoMagalu(
                 titulo=titulo,
                 preco=preco,
-                link=link,
+                link=link_corrigido,
                 data_coleta=datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"),
                 vendedor=vendedor,
-                imagem=imagem,
-                medida=self.filtro_medida or "",
-                marca=self.filtro_marca or "",
-                modelo=self.filtro_modelo or ""
+                medida=medida_final,
+                marca=marca_final,
+                modelo=modelo_final
             )
 
-            return produto if produto.is_valid() else None
+            if produto.is_valid():
+                self.logger.info(f"Produto VÁLIDO encontrado: {titulo}")
+                return produto
 
-        except Exception as e:
-            self.logger.error(f"Erro inesperado ao extrair produto: {e}")
+            self.logger.info(f"Produto inválido após validação do dataclass: {titulo}")
             return None
 
-    def buscar_produtos(self, termo: str, pagina: int = 1,
-                        max_resultados: int = 20, filtros: Optional[Dict] = None,
+        except TimeoutException:
+            self.logger.error("Timeout ao extrair detalhes do card; ignorando produto.")
+            return None
+        except Exception as e:
+            self.logger.error(f"Erro inesperado ao processar card: {e}")
+            return None
+
+
+
+    def buscar_produtos(self, termo: str, pagina: int = 1, max_resultados: int = 20, filtros: Optional[Dict] = None,
                         scroll_pages: bool = True) -> List[ProdutoMagalu]:
         produtos = []
         for tentativa in range(CONFIG['RETRY_ATTEMPTS']):
@@ -527,6 +656,7 @@ class ScraperMagalu:
                 for i, card in enumerate(cards):
                     if len(produtos) >= max_resultados:
                         break
+                    
                     try:
                         prod = self.extrair_produto_detalhado(card)
                         if prod:
@@ -692,7 +822,6 @@ class ScraperMagalu:
 # =========================
 # CLI
 # =========================
-
 def main():
     parser = argparse.ArgumentParser(
         description="Scraper Completo do Magazine Luiza",
@@ -709,19 +838,19 @@ def main():
     parser.add_argument("--output", default="data", help="Diretório de saída (padrão: data)")
     parser.add_argument("--delay", type=float, default=1.0, help="Delay de scroll em segundos (padrão: 1.0)")
     parser.add_argument("--verbose", action='store_true', help="Modo verbose (mais logs)")
-    parser.add_argument("--lote-json", type=str, help="Arquivo JSON com termos de busca em lote (opcional)")
+    parser.add_argument("--lote-json", type=str, default="None", help="Arquivo JSON com termos de busca em lote (opcional)")
     parser.add_argument("--idx-from", type=int, default=0, help="Índice inicial no lote (padrão: 0)")
     parser.add_argument("--idx-to", type=int, help="Índice final no lote (padrão: até o fim)")
 
     args = parser.parse_args()
 
-    if args.lote_json and not os.path.isfile(args.lote_json):
-        root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        alt_path = os.path.join(root_path, args.lote_json)
-        if os.path.isfile(alt_path):
-            args.lote_json = alt_path
-
-    if args.lote_json:
+    if args.lote_json is not None:
+        if not os.path.isfile(args.lote_json):
+            root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            alt_path = os.path.join(root_path, args.lote_json)
+            if os.path.isfile(alt_path):
+                args.lote_json = alt_path
+        
         with open(args.lote_json, "r", encoding="utf-8") as f:
             queries = json.load(f)
 
@@ -730,12 +859,17 @@ def main():
         batch_docs = []
 
         idx_to = args.idx_to if args.idx_to is not None else len(queries)
+        subset = queries[args.idx_from:idx_to]
 
-        for idx, item in enumerate(queries[args.idx_from:idx_to], start=args.idx_from):
-            print(f"\n==== Buscando produto {idx}: {item.get('brand')} {item.get('line_model')} {item.get('width')}/{item.get('aspect')}R{item.get('rim')} ====")
+        print(f"--- Iniciando busca em lote para {len(subset)} itens ---")
+
+        for idx, item in enumerate(subset, start=args.idx_from):
             termo = item.get("query_flex") or item.get("query_strict")
+            
+            print(f"\n[{idx+1}/{len(queries)}] Buscando: {termo}")
+            
             if not termo:
-                print(f"Termo de busca não encontrado. PULANDO {idx}")
+                print(f"Termo de busca não encontrado no item {idx}. PULANDO.")
                 continue
 
             scraper = ScraperMagalu(
@@ -744,6 +878,7 @@ def main():
                 output_dir=args.output,
                 termo_busca=termo
             )
+            
             try:
                 relatorio = scraper.executar_busca_completa(
                     termo=termo,
@@ -752,74 +887,34 @@ def main():
                     formatos=args.formatos
                 )
 
-                for prod in relatorio.get("produtos", []):
-                    raw = _magalu_to_raw(prod)
+                produtos_encontrados = relatorio.get("produtos", [])
+                if not produtos_encontrados:
+                    print(f"Nenhum produto encontrado para o termo: {termo}")
+                    continue
+
+                for prod_dict in produtos_encontrados:
+                    raw = _magalu_to_raw(prod_dict)
                     doc = to_canonical(raw, "magalu", item.get("cod_prod", "") or "", run_id)
                     ok, msg = validate_or_warn(doc)
                     if not ok and args.verbose:
-                        print("[WARN]", msg, doc.get("url"))
+                        print(f"[WARN] Validação falhou: {msg} para a URL {doc.get('url')}")
                     batch_docs.append(doc)
-
-                medida = f"{item.get('width', '')}_{item.get('aspect', '')}_r{item.get('rim', '')}"
-                marca = (item.get('brand', '') or '').replace(" ", "_")
-                modelo = (item.get('line_model', '') or '').replace(" ", "_")
-                nome_produto = f"{marca}_{modelo}".strip("_")
-                timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
-                output_dir = os.path.join(args.output, "raw", medida)
-                os.makedirs(output_dir, exist_ok=True)
-
-                for formato in args.formatos:
-                    nome_arquivo = f"{timestamp}_{medida}_{nome_produto}.{formato}"
-                    caminho_arquivo = os.path.join(output_dir, nome_arquivo)
-
-                    if formato == "json":
-                        produtos = relatorio.get("produtos", [])
-                        caminho_prod = caminho_arquivo.replace(".json", "_produtos.json")
-                        with open(caminho_prod, "w", encoding="utf-8") as fjsonp:
-                            json.dump(produtos, fjsonp, ensure_ascii=False, indent=2)
-
-                        caminho_rel = caminho_arquivo.replace(".json", "_relatorio.json")
-                        with open(caminho_rel, "w", encoding="utf-8") as fjsonr:
-                            json.dump(relatorio, fjsonr, ensure_ascii=False, indent=2)
-
-                        print(f"Arquivo salvo (produtos): {caminho_prod}")
-                        print(f"Arquivo salvo (relatório): {caminho_rel}")
-
-                    elif formato == "csv":
-                        produtos = relatorio.get("produtos", [])
-                        if produtos:
-                            with open(caminho_arquivo, "w", encoding="utf-8", newline="") as fcsv:
-                                writer = csv.DictWriter(fcsv, fieldnames=produtos[0].keys())
-                                writer.writeheader()
-                                writer.writerows(produtos)
-
-                    elif formato == "sqlite":
-                        produtos = relatorio.get("produtos", [])
-                        if produtos:
-                            conn = sqlite3.connect(caminho_arquivo)
-                            cur = conn.cursor()
-                            keys = list(produtos[0].keys())
-                            columns = ', '.join([f"{k} TEXT" for k in keys])
-                            cur.execute(f"CREATE TABLE IF NOT EXISTS produtos ({columns})")
-                            placeholders = ', '.join('?' for _ in keys)
-                            for prod in produtos:
-                                values = tuple(str(prod.get(k, "")) for k in keys)
-                                cur.execute(f"INSERT INTO produtos VALUES ({placeholders})", values)
-                            conn.commit()
-                            conn.close()
-
-                    print(f"Arquivo salvo: {caminho_arquivo}")
+                
+                print(f"Sucesso! {len(produtos_encontrados)} produtos encontrados para o termo '{termo}'.")
 
             except Exception as e:
-                print(f"Erro no produto {idx}: {e}")
+                print(f"!!!!!!!! ERRO AO PROCESSAR O ITEM {idx} ({termo}): {e} !!!!!!!!")
+                logging.exception(f"Erro detalhado para o item {idx}:")
+            
             finally:
                 scraper.fechar()
+                delay = delay_humano(10, 20)
+                print(f"--- Delay de {delay:.2f}s antes do próximo item ---")
 
         if batch_docs:
             write_jsonl(out_jsonl, batch_docs)
-            print("[OUT_JSONL]", out_jsonl, "itens:", len(batch_docs))
+            print(f"\n[FINALIZADO] Arquivo JSONL salvo em: {out_jsonl} com {len(batch_docs)} itens.")
         return
-
 
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
@@ -848,7 +943,8 @@ def main():
         print(f"Tempo de execução: {relatorio['tempo_execucao']:.2f}s")
         print("\nArquivos gerados:")
         for formato, arquivo in relatorio['arquivos'].items():
-            print(f"  {formato.upper()}: {arquivo}")
+            if arquivo:
+                print(f"  {formato.upper()}: {arquivo}")
         print("="*60)
 
     except KeyboardInterrupt:
@@ -858,6 +954,7 @@ def main():
         logging.exception("Erro detalhado:")
     finally:
         scraper.fechar()
+
 
 if __name__ == "__main__":
     main()

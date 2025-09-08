@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 255/65 R17 Hankook At2 Rf11 - 110t",
+    "link": "https://produto.mercadolivre.com.br/MLB-2998047304-pneu-25565-r17-hankook-at2-rf11-110t-_JM",
+    "preco": 1385.0,
+    "brand": "hankook",
+    "model": "",
+    "size": "255/65R17",
+    "speed_index": "110T",
+    "query_strict": "pneu 255 65 r17 Hankook Dynapro At2",
+    "size_norm": "255/65r17",
+    "brand_expected": "hankook",
+    "line_expected": "dynapro at2",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "hankook",
+    "data_coleta": "2025-09-02 00:45:25",
+    "preco_original": null,
+    "preco_desconto": 1385.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]
