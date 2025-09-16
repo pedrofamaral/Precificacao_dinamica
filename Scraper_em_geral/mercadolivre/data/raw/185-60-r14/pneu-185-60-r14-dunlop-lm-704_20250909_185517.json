@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 185/60 R14 Dunlop Lm 704 Sport 82h Envio Imediato",
+    "link": "https://produto.mercadolivre.com.br/MLB-2087385478-pneu-18560-r14-dunlop-lm-704-sport-82h-envio-imediato-_JM?searchVariation=173914215757",
+    "preco": 675.97,
+    "brand": "dunlop",
+    "model": "lm 704",
+    "size": "185/60R14",
+    "speed_index": "82H",
+    "query_strict": "pneu 185 60 r14 Dunlop Lm 704",
+    "size_norm": "185/60r14",
+    "brand_expected": "dunlop",
+    "line_expected": "lm 704",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "dunlop",
+    "data_coleta": "2025-09-09 21:55:05",
+    "preco_original": null,
+    "preco_desconto": 675.97,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

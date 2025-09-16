@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 205/55r16 Fastway W2 91v Xbri Polo Sandero Civic Focus",
+    "link": "https://www.mercadolivre.com.br/pneu-20555r16-fastway-w2-91v-xbri-polo-sandero-civic-focus/up/MLBU3342742079",
+    "preco": 514.89,
+    "brand": "xbri",
+    "model": "fastway w2",
+    "size": "205/55R16",
+    "speed_index": "91V",
+    "query_strict": "pneu 205 55 r16 Xbri Fastway W2",
+    "size_norm": "205/55r16",
+    "brand_expected": "xbri",
+    "line_expected": "fastway w2",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "xbri",
+    "data_coleta": "2025-09-11 03:54:47",
+    "preco_original": null,
+    "preco_desconto": 514.89,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

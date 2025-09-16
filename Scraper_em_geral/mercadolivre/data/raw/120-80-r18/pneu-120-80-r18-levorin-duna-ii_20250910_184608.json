@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Traseiro Xre 300 120-80-18 Duna Ii Levorin",
+    "link": "https://www.mercadolivre.com.br/pneu-traseiro-xre-300-1208018-duna-ii-levorin/up/MLBU2373283734",
+    "preco": 595.8,
+    "brand": "levorin",
+    "model": "duna ii",
+    "size": "120/80R18",
+    "speed_index": "",
+    "query_strict": "pneu 120 80 r18 Levorin Duna Ii",
+    "size_norm": "120/80r18",
+    "brand_expected": "levorin",
+    "line_expected": "duna ii",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "levorin",
+    "data_coleta": "2025-09-10 21:45:30",
+    "preco_original": null,
+    "preco_desconto": 595.8,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -327,9 +327,6 @@ def _setup_logger(debug: bool = False) -> logging.Logger:
     logger.addHandler(sh)
     return logger
 
-# =========================
-# Dados
-# =========================
 @dataclass
 class Product:
     titulo: str
@@ -370,9 +367,6 @@ class Product:
         return asdict(self)
 
 
-# =========================
-# Scraper
-# =========================
 class ScraperBase:
     def __init__(self, headless: bool = True, delay_scroll: float = 1.0, logger: Optional[logging.Logger] = None):
         self.headless = headless
@@ -614,7 +608,6 @@ class ScraperMercadoLivre(ScraperBase):
         except MoveTargetOutOfBoundsException:
             pass
 
-    # ---------- coleta ----------
     def _find_cards(self):
         for sel in self.CARD_SEL_CANDIDATOS:
             try:
@@ -1225,9 +1218,6 @@ class ScraperMercadoLivre(ScraperBase):
         # (pode ser implementado no futuro: abrir modal, etc.)
         return None  
 
-# =========================
-# I/O
-# =========================
 def _parse_lista_ceps(arg: Optional[str]) -> List[str]:
     if not arg:
         return []
@@ -1285,9 +1275,7 @@ def salvar_resultados(produtos: List[Product], termo: str, em_csv: bool, ceps: L
                 w.writerow(row)
         print(f"CSV:  {csv_path}")
 
-# =========================
-# CLI
-# =========================
+
 def criar_parser():
     parser = argparse.ArgumentParser(description="Scraper MercadoLivre v2.0 (com normalização brand/model/size)")
 
@@ -1461,3 +1449,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#Retirar o modo rigoroso para teste em lote, tentar pegar o cod_prod 30451(pneu 175 70 r13 goodyear assurance)

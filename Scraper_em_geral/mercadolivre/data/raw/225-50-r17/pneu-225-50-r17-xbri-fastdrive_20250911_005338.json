@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Xbri Fastdrive Aro 17 225/50r17 98w W",
+    "link": "https://www.mercadolivre.com.br/pneu-xbri-fastdrive-aro-17-22550r17-98w/up/MLBU3177561829",
+    "preco": 679.05,
+    "brand": "xbri",
+    "model": "fastdrive",
+    "size": "225/50R17",
+    "speed_index": "98W",
+    "query_strict": "pneu 225 50 r17 Xbri Fastdrive",
+    "size_norm": "225/50r17",
+    "brand_expected": "xbri",
+    "line_expected": "fastdrive",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "xbri",
+    "data_coleta": "2025-09-11 03:53:23",
+    "preco_original": null,
+    "preco_desconto": 679.05,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

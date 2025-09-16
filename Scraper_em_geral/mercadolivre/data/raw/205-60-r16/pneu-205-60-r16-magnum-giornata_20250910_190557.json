@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Magnum 205/60r16 96v Giornata M3 Xl",
+    "link": "https://www.mercadolivre.com.br/pneu-magnum-20560r16-96v-giornata-m3-xl/up/MLBU1795679434",
+    "preco": 698.99,
+    "brand": "magnum",
+    "model": "giornata",
+    "size": "205/60R16",
+    "speed_index": "96V",
+    "query_strict": "pneu 205 60 r16 Magnum Giornata",
+    "size_norm": "205/60r16",
+    "brand_expected": "magnum",
+    "line_expected": "giornata",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "magnum",
+    "data_coleta": "2025-09-10 22:02:22",
+    "preco_original": null,
+    "preco_desconto": 698.99,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]
