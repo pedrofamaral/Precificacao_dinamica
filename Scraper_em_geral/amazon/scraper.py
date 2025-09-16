@@ -1,14 +1,3 @@
-#!/usr/bin/env python3
-"""Amazon scraper — versão 2025-07 MELHORADA
-Inclui:
-• logging + RotatingFileHandler
-• seletores corrigidos baseados no HTML real
-• delays aumentados e mais variáveis
-• dump de HTML/screenshot em modo DEBUG
-• detecção de CAPTCHA (validateCaptcha)
-• melhor extração de dados dos produtos
-"""
-
 from pathlib import Path
 import argparse, json, re, sys, time, random, logging
 from logging.handlers import RotatingFileHandler

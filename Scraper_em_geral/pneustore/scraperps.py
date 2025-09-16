@@ -23,37 +23,78 @@ from Scraper_em_geral._common.validate import validate_or_warn
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, WebDriverException
+
+
+USER_AGENTS = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+    "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0",
+]
 
 DEFAULT_KNOWN_BRANDS = [
-    "goodyear","kelly","pirelli","continental","michelin",
-    "bridgestone","firestone","dunlop","maxxis","kumho",
-    "yokohama","hankook","bfgoodrich","toyo","cooper","falken",
-    "nexen","sumitomo","formula","general"
+    'aderenza', 'anlas', 'anteo', 'aplus', 'aptany', 'atlander', 'austone', 'barum','advance','agriking','alliance', 'amazon','ascenso', 'bf goodrich', 'bfgoodrich', 
+    'blacklion', 'bkt', 'borilli', 'bridgestone','bkt', 'carlisle', 'ceat', 'chengshan', 'chituma', 'comforser', 'compasal', 
+    'continental', 'cooper', 'davanti', 'dayton', 'delmax', 'dewostone', 'double king', 'doubleking', 'doublestar', 'dunlop', 
+    'durable', 'dyna', 'dynamo', 'ecovision', 'falken', 'farroad', 'fate', 'federal', 'firemax', 'firestone', 'forceland', 
+    'formula','forerunner' 'general', 'goform', 'goodride', 'goodyear', 'gt radial', 'gripmaster', 'habilead', 'hankook', 'hifly', 'hilfy', 'horizon', 
+    'infinity', 'invovic', 'ironman', 'itaro', 'jk tyre', 'jktyre', 'kenda', 'kingtyre', 'kpatos', 'kumho', 'kumho tire', 
+    'landspider', 'lanvigator', 'lavigator', 'levorin', 'linglong', 'luistone', 'magnum', 'maxxis', 'mazzini', 'michelin', 
+    'milever', 'minerva', 'nankang', 'nexen', 'nitto', 'nokian', 'onyx', 'otani', 'petlas', 'pirelli', 'power trac', 'primewell', 
+    'radar', 'roadcruza', 'roadstone', 'routeway', 'royal black', 'sailun', 'sava', 'semperit', 'speedmax', 'sumitomo', 
+    'sumitomo tire', 'sumitomo tires', 'sunfull', 'sunny', 'sunset', 'sunset tires', 'sunwide', 'tbb tires', 'toyo', 'towin', 
+    'tracmax', 'trazano', 'triangle', 'valeo', 'vee rubber', 'ventus', 'versatyre', 'viemar', 'viking', 'vitour', 'wanli', 
+    'westlake', 'windforce', 'winrun', 'xbri', 'yokohama', 'zmax', 'zptire'
 ]
 
 DEFAULT_MODEL_PHRASES = [
-    # Goodyear / Kelly
-    "assurance maxlife","assurance","wrangler","eagle","eagle sport","efficientgrip","kelly edge",
-    # Michelin
-    "energy xm2","primacy 4","ltx force",
-    # Pirelli
-    "cinturato p7","p400","p400 evo","formula evo","scorpion",
-    # Continental
-    "powercontact",
-    # Dunlop
-    "sp touring","sp sport","fm800","lm704","enasave ec300",
-    # Outras recorrentes
-    "direction","f700","bc20"
+    '503112', 'a/t csr34', 'a607', 'a609', 'a609 (100h)', 'a610', 'a610 (103y)', 'a919', 'agilis', 'agilis 3', 'alenza001', 
+    'all terrain', 'all terrain t/a', 'all terrain ta', 'assur. maxlife', 'assurance', 'assurance maxlife', 'at59', 'at78', 
+    'athena sp302', 'atrezzo', 'barum bravuris 4x4', 'barum bravuris 5hm', 'bc100', 'bc20', 'blazer hp', 'blazer uhp', 
+    'blazer uhp 2', 'brutus all terrain', 'brutus t/a', 'cargo marathon 2', 'catchfors t/a', 'catchpower plus', 'cf1100', 
+    'cf2000', 'cf500', 'cf510', 'cint p1 plus', 'cint p7', 'city dc01', 'citytraxx', 'comfort 2', 'comfort ii', 'comfort ii xl', 
+    'confort ii', 'conticrosscontact lx2', 'contisport contact', 'controlmax', 'cp-16', 'cp16', 'cr976a', 'crosswind a/t', 'd300', 
+    'destination a/t', 'destination atx', 'destination h/t', 'destination le3', 'dh02', 'dh03', 'direction 2 suv', 
+    'direction touring', 'direzza dz102', 'dk365 ht', 'dk365 tl', 'dk558', 'dk728', 'dk798', 'dr755', 'dsrs01', 'dsu02', 
+    'dueler a/t revo 2', 'dueler at693', 'dueler h/t 684 ii', 'dueler h/t 684 iii', 'dueler h/t 684 iii ecopia', 'dynapro at2', 
+    'dynapro mt2', 'dz102', 'eagle', 'eagle sport', 'eagle sport 2', 'eco307', 'eco603', 'eco603 xl', 'ecoblue ry26', 'ecoblue ry6', 
+    'ecodrive', 'ecology', 'ecopia ep150', 'ecosaver ht', 'edge suv 2', 'edge suv 2 sl', 'efficientgrip', 'efficientgrip suv', 
+    'el601', 'enasave ec300', 'enasave ec300+', 'enasave ec350+', 'energy', 'energy xm2', 'enzo b2', 'ep150', 'es31', 'evo', 
+    'expresspro', 'f-600', 'f700', 'fastdrive', 'fastway a5', 'fm601', 'fm800', 'fortitude ht', 'forza 2 a/t', 'forza a/t 2', 
+    'forza a/t f2', 'forza ht 2 extra', 'frd26', 'frd66', 'frd96', 'fs558', 'furious s1', 'g32 cargo', 'gallopro ht', 
+    'generaltire altimax one', 'giornata', 'grandt at5', 'grandtrek at20', 'grandtrek at25', 'grandtrek at5', 'grandtrek mt2', 
+    'grantek at5', 'grantrek at5', 'green-max van', 'grip master c/s', 'gs03', 'h188', 'h220', 'hf261', 'hh102', 'hh301', 'hr805', 
+    'ht wrgl territory', 'ht782', 'hu901', 'it101', 'it203', 'it01', 'itr01t', 'kelly edge', 'kelly edge sport', 'kelly edge sport 2',
+    'kelly edge touring 2', 'kinergy gt', 'kl33', 'landgema', 'linam r51', 'llf86', 'lm 704', 'ltx force', 'ltx trail', 
+    'ltx trail st', 'ma349', 'marathon 2', 'matrix sport ii', 'maximum dh03', 'mh01', 'mp270', 'mu069', 'n92018', 'na305', 
+    'new sense', 'nu025', 'nu025 h/t', 'ny-20', 'ny805', 'ny901', 'opteco s1', 'ottima plus', 'over cargo b3 8pr', 'p400', 
+    'p400 evo', 'pangea all terrain', 'pangea at', 'perform', 'performax ht', 'pilot sport 4 suv', 'power contact 2', 
+    'powercontact 2', 'powergy', 'powermax', 'premium f1', 'primacy 4', 'primacy 4+', 'protoura sport', 'r330', 'r380', 'ra1100', 
+    'ra1100 at', 'ra301', 'ra305', 'ra7000', 'reinforced bc100', 'rl101', 'roadian at pro', 'roadian gtx', 'robusto', 'royal a/t', 
+    'royal comfort', 'royal mile', 'royal mile xl', 'royal performance', 'rp18', 'rp203', 'rs zero', 'rs-one', 'rs21', 'ru025', 
+    'ru025 ht', 'ru025y', 'ru101', 'ru101 expedite', 's526', 'sa302', 'sa37', 'scorpion', 'scorpion atr xl', 'scorpion ks', 
+    'scorpion seal inside', 'scorpion str', 'sentiva ar360', 'sf600', 'sf688', 'sl106', 'sl106 (ec)', 'smacher', 'sp fm800', 
+    'sp sport', 'sp touring', 'sp touring r1', 'sp026', 'sp320', 'sp801', 'sp835', 'speedline e1', 'spm305', 'sport 2 direction', 
+    'sport direction', 'sportcat csc302 a/t', 'sportmacro ra301', 'steel ags', 'su009 a/t', 'su025', 'su025 rangetour plus', 
+    'super 2000', 't005', 'te301', 'te307', 'touring direction', 'touring r1', 'tp-16', 'trail life a/t', 'trail terrain', 
+    'turanza t005', 'ultima royal', 'ultimaplus', 'ultimapro up1', 'ultimato pro up1', 'ultimato up1', 'vancontact ap', 'vanmax', 
+    'varenna s01', 'vectra', 'ventus v12 evo2', 'versant a/t', 'vf26', 'vi386 hp', 'vigorous at601', 'vigorous ht601', 'vitality f22', 
+    'wdl0', 'wildpeak a/t', 'wildwolf w01', 'wr9001 at', 'wr9086a ht', 'wr9096', 'wrangler', 'wrangler fortitude h/t', 
+    'wrangler fortitude ht', 'wrangler rt/s', 'wrangler territory', 'wrangler territory ht', 'wrangler workhorse at', 'xforza', 
+    'xl tl primacy 4 mi', 'xlt a/s', 'xlt a/s 2', 'xport-66', 'xprivilo ht', 'xsport66', 'yda266', 'yda286 at', 'z-108', 'z108', 
+    'zealion', 'ziex ze914', 'zupereco z108'
 ]
 
 CONFIG_NORM: Dict[str, Dict | List] = {
     "known_brands": DEFAULT_KNOWN_BRANDS.copy(),
-    "brand_aliases": { "kelly": "goodyear" },   # exemplo
+    "brand_aliases": { "kelly": "goodyear" },   
     "known_model_phrases": DEFAULT_MODEL_PHRASES.copy(),
     "model_aliases": {
         "power contact": "powercontact",
@@ -289,10 +330,6 @@ def _product_to_raw(p: Product) -> dict:
         "extra_text": p.titulo,
     }
 
-# =========================
-# Base Scraper
-# =========================
-
 class ScraperBase(abc.ABC):
     marketplace: str = "base"
 
@@ -323,22 +360,72 @@ class ScraperBase(abc.ABC):
             logger.addHandler(h)
         return logger
 
-    def _configurar_driver(self):
-        options = Options()
-        if self.headless:
-            options.add_argument("--headless=new")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--disable-blink-features=AutomationControlled")
-        options.add_experimental_option("excludeSwitches", ["enable-automation"])
-        options.add_experimental_option("useAutomationExtension", False)
-        options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        )
-        service = Service(ChromeDriverManager().install())
-        self.driver = webdriver.Chrome(service=service, options=options)
-        self.driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-        return self.driver
+    def _configurar_driver(self, navegador: str = "chrome", headless: bool = True, user_agent: str | None = None):
+        if not user_agent:
+            user_agent = random.choice(USER_AGENTS)
+
+        if navegador.lower() == "chrome":
+            options = ChromeOptions()
+            if headless:
+                options.add_argument("--headless=new")
+            options.add_argument("--no-sandbox")
+            options.add_argument("--disable-dev-shm-usage")
+            options.add_argument("--disable-blink-features=AutomationControlled")
+            options.add_experimental_option("excludeSwitches", ["enable-automation"])
+            options.add_experimental_option("useAutomationExtension", False)
+            options.add_argument("--incognito")
+            options.add_argument("--window-size=1366,768")
+            if user_agent:
+                options.add_argument(f"--user-agent={user_agent}")
+
+            options.page_load_strategy = "eager"
+
+            service = ChromeService(ChromeDriverManager().install())
+            self.driver = webdriver.Chrome(service=service, options=options)
+
+            try:
+                self.driver.execute_cdp_cmd(
+                    "Page.addScriptToEvaluateOnNewDocument",
+                    {"source": "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"},
+                )
+            except Exception:
+                pass
+
+            try:
+                self.driver.set_page_load_timeout(25)
+                self.driver.implicitly_wait(3)
+            except Exception:
+                pass
+
+            return self.driver
+
+        elif navegador.lower() == "firefox":
+            options = FirefoxOptions()
+            if headless:
+                options.add_argument("-headless")
+
+            options.set_preference("intl.accept_languages", "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7")
+            options.set_preference("dom.webdriver.enabled", False)
+            options.set_preference("dom.webnotifications.enabled", False)
+            if user_agent:
+                options.set_preference("general.useragent.override", user_agent)
+
+            options.set_preference("browser.tabs.remote.autostart", True)
+
+            service = FirefoxService(GeckoDriverManager().install())
+            self.driver = webdriver.Firefox(service=service, options=options)
+
+            try:
+                self.driver.set_window_size(1366, 768)
+                self.driver.set_page_load_timeout(25)
+                self.driver.implicitly_wait(3)
+            except Exception:
+                pass
+
+            return self.driver
+
+        else:
+            raise ValueError(f"Navegador '{navegador}' não suportado")
 
     def _delay_aleatorio(self, min_delay: float = 0.5, max_delay: float = 2.0) -> float:
         return random.uniform(min_delay, max_delay)
@@ -351,79 +438,218 @@ class ScraperBase(abc.ABC):
             pos += step
             self.driver.execute_script("window.scrollTo(0, arguments[0]);", pos)
             time.sleep(self._delay_aleatorio())
+    
+    def _should_retry_exception(self, e: Exception) -> bool:
+        msg = (str(e) or "").lower()
+        rede = (
+            "connectionrefusederror",
+            "failed to establish a new connection",
+            "max retries exceeded",
+            "timed out while",
+            "proxy",
+            "certificate verify failed",
+        )
+        if any(k in msg for k in rede):
+            return False
+
+        return isinstance(e, TimeoutException)
+
+
+    def _pagina_parece_quebrada(self) -> bool:
+        try:
+            html = (self.driver.page_source or "").lower()
+        except Exception:
+            return True
+
+        if not html.strip():
+            return True
+
+        ignorar_ruido = (
+            "registration response error message:",
+            "deprecated_endpoint",
+            "phone_registration_error",
+        )
+        for r in ignorar_ruido:
+            html = html.replace(r, "")
+
+        sinais = (
+            "access denied", "forbidden", "captcha",
+            "temporarily unavailable", "too many requests",
+            "verifique que você é humano", "are you a robot", "blocked"
+        )
+        acertos = [s for s in sinais if s in html]
+
+        if "captcha" in acertos:
+            return True
+        return len(acertos) >= 2
 
     def buscar(self, termo: str, *, max_resultados: int = 100, max_paginas: int = 10,
-               sort: str = "relevance") -> List[Product]:
-        self.logger.info("🔍 Buscando '%s' em %s", termo, self.marketplace)
+           sort: str = "relevance", expected_brand: Optional[str] = None,
+           expected_model: Optional[str] = None, strict_brand: bool = True,
+           retry_tries: int = 2) -> List[Product]:
+        medida, brand_q, model_q = extrair_filtros_busca(termo)
+        if expected_brand:
+            brand_q = expected_brand
+        if expected_model:
+            model_q = expected_model
+
+        self.filtro_medida = medida or None
+        self.filtro_marca  = brand_q or None
+        self.filtro_modelo = model_q or None
+
+        strict_brand = bool(self.filtro_marca)
+
+        self.logger.info("🔍 Buscando '%s' em %s | Filtros: medida=%s | marca=%s | modelo=%s",
+                        termo, self.marketplace, self.filtro_medida, self.filtro_marca, self.filtro_modelo)
         self.termo_busca_atual = termo
-        self.filtro_medida, self.filtro_marca, self.filtro_modelo = extrair_filtros_busca(termo)
-        self.logger.info("Filtros: medida=%s | marca=%s | modelo=%s",
-                         self.filtro_medida, self.filtro_marca, self.filtro_modelo)
 
-        produtos: List[Product] = []
+        produtos_final: List[Product] = []
         vistos: Set[str] = set()
+        navegadores = ["chrome"]
+        navegador = "chrome"
+        user_agent = random.choice(USER_AGENTS)
+        self.logger.info("🌐 Primeira tentativa → %s | UA: %s", navegador, user_agent)
 
-        try:
-            self._configurar_driver()
-            url_atual = self._construir_busca_url(termo, page=1, sort=sort)
-            self.driver.get(url_atual)
-            self._aceitar_cookies()
+        max_tentativas = max(1, retry_tries)
+        tentativa = 1
 
-            sem_novos_seguidos = 0
+        while tentativa <= max_tentativas:
+            produtos: List[Product] = []
+            trocou_por_falha = False
+            try:
+                self.logger.info("🌐 Tentativa %d → %s | UA: %s", tentativa, navegador, user_agent)
+                self._configurar_driver(navegador=navegador, headless=self.headless, user_agent=user_agent)
 
-            for pagina in range(1, max_paginas + 1):
-                self._rolar_pagina()
-                novos = self._coletar_produtos_pagina(vistos)
-                if novos:
-                    produtos.extend(novos)
-                    sem_novos_seguidos = 0
-                else:
-                    sem_novos_seguidos += 1
+                try:
+                    w = random.choice([1280, 1366, 1440, 1536])
+                    h = random.choice([720, 768, 800, 864])
+                    self.driver.set_window_size(w, h)
+                except Exception:
+                    pass
 
-                if len(produtos) >= max_resultados:
-                    break
-                if sem_novos_seguidos >= 2:
-                    self.logger.info("Sem novos produtos em duas páginas consecutivas. Encerrando.")
-                    break
-                if pagina >= max_paginas:
-                    break
-
-                proxima_url = self._construir_busca_url(termo, page=pagina+1, sort=sort)
-                if proxima_url == url_atual:
-                    self.logger.info("URL próxima igual à atual. Parando.")
-                    break
-                url_atual = proxima_url
+                url_atual = self._construir_busca_url(termo, page=1, sort=sort)
                 self.driver.get(url_atual)
-                time.sleep(self._delay_aleatorio())
+                self._aceitar_cookies()
 
-            for prod in produtos[:max_resultados]:
-                self._coletar_detalhes_produto(prod)
+                if self._pagina_parece_quebrada():
+                    self.logger.warning("Heurística suspeitou de bloqueio; tentando coletar mesmo assim (sem trocar driver/UA).")
 
-            if self.filtro_modelo:
-                fm = _canon_model(self.filtro_modelo)
-                produtos = [p for p in produtos if (p.model and fm in p.model) or (fm in _norm_text(p.titulo))]
-            if self.filtro_marca:
-                fb = _canon_brand(self.filtro_marca)
-                produtos = [p for p in produtos if (p.brand and p.brand == fb)]
 
-            if self.filtro_medida:
-                produtos = [p for p in produtos if p.medida == self.filtro_medida or p.size.replace("/", "-").lower() == self.filtro_medida]
+                sem_novos_seguidos = 0
+                for pagina in range(1, max_paginas + 1):
+                    self._rolar_pagina()
+                    novos = self._coletar_produtos_pagina(vistos)
+                    if novos:
+                        produtos.extend(novos)
+                        sem_novos_seguidos = 0
+                    else:
+                        sem_novos_seguidos += 1
 
-            return produtos[:max_resultados]
+                    if len(produtos) >= max_resultados:
+                        break
+                    if sem_novos_seguidos >= 2:
+                        self.logger.info("Sem novos produtos em duas páginas consecutivas. Encerrando paginação.")
+                        break
+                    if pagina >= max_paginas:
+                        break
 
-        except Exception as e:
-            self.logger.error(f"Erro inesperado durante a busca: {e}", exc_info=True)
-            return []
-        finally:
-            if self.driver:
-                self.driver.quit()
+                    proxima_url = self._construir_busca_url(termo, page=pagina + 1, sort=sort)
+                    if proxima_url == url_atual:
+                        self.logger.info("URL próxima igual à atual. Parando.")
+                        break
+
+                    url_atual = proxima_url
+                    self.driver.get(url_atual)
+                    time.sleep(self._delay_aleatorio())
+
+                for prod in produtos[:max_resultados]:
+                    self._coletar_detalhes_produto(prod)
+
+                filtrados = produtos
+
+                if self.filtro_modelo:
+                    fm = _canon_model(self.filtro_modelo)
+                    filtrados = [p for p in filtrados if (p.model and fm in p.model) or (fm in _norm_text(p.titulo))]
+
+                if self.filtro_medida:
+                    alvo = self.filtro_medida.lower()
+                    filtrados = [p for p in filtrados if (
+                        (p.medida and p.medida.lower() == alvo) or
+                        (p.size and p.size.replace("/", "-").lower() == alvo)
+                    )]
+
+                if self.filtro_marca:
+                    fb = _canon_brand(self.filtro_marca)
+                    if strict_brand:
+                        filtrados = [p for p in filtrados if (p.brand and _canon_brand(p.brand) == fb)]
+                    else:
+                        prefer = [p for p in filtrados if (p.brand and _canon_brand(p.brand) == fb)]
+                        outros  = [p for p in filtrados if p not in prefer]
+                        filtrados = prefer + outros
+                else:
+                    try:
+                        default_brands = getattr(self, "default_brands", None) or []
+                    except Exception:
+                        default_brands = []
+                    if default_brands:
+                        alvo = {_canon_brand(b) for b in default_brands}
+                        prefer = [p for p in filtrados if p.brand and _canon_brand(p.brand) in alvo]
+                        outros  = [p for p in filtrados if p not in prefer]
+                        filtrados = prefer + outros
+
+                produtos_final = filtrados[:max_resultados]
+
+                if produtos_final:
+                    return produtos_final
+                else:
+                    if strict_brand and self.filtro_marca:
+                        self.logger.warning("Sem itens com marca estrita. Relaxando marca (mantém medida/modelo).")
+                        fb = _canon_brand(self.filtro_marca)
+                        base = produtos
+                        if self.filtro_modelo:
+                            fm = _canon_model(self.filtro_modelo)
+                            base = [p for p in base if (p.model and fm in p.model) or (fm in _norm_text(p.titulo))]
+                        if self.filtro_medida:
+                            alvo = self.filtro_medida.lower()
+                            base = [p for p in base if (
+                                (p.medida and p.medida.lower() == alvo) or
+                                (p.size and p.size.replace("/", "-").lower() == alvo)
+                            )]
+                        prefer = [p for p in base if (p.brand and _canon_brand(p.brand) == fb)]
+                        outros  = [p for p in base if p not in prefer]
+                        produtos_final = (prefer + outros)[:max_resultados]
+                        if produtos_final:
+                            return produtos_final
+
+                    self.logger.info("Tentativa não retornou itens. Não haverá retry por UA/driver.")
+                    return produtos_final
+
+            except Exception as e:
+                if self._should_retry_exception(e):
+                    self.logger.warning(f"Falha técnica na tentativa {tentativa}: {e}. Trocando driver/UA…")
+                    trocou_por_falha = True
+                else:
+                    self.logger.error(f"Erro na tentativa {tentativa}: {e}", exc_info=True)
+                    return produtos_final
+            finally:
+                try:
+                    if self.driver:
+                        self.driver.quit()
+                except Exception:
+                    pass
+            
+            if trocou_por_falha:
+                tentativa += 1
+                navegador = random.choice(navegadores)
+                user_agent = random.choice(USER_AGENTS)
+                time.sleep(0.8 + random.random() * 0.8)
+            else:
+                break
+
+        return produtos_final
 
     def _aceitar_cookies(self) -> None:
         pass
-
-# =========================
-# Scraper PneuStore
-# =========================
 
 class ScraperPneuStore(ScraperBase):
     marketplace = "pneustore"
@@ -473,8 +699,7 @@ class ScraperPneuStore(ScraperBase):
         except Exception:
             pass
 
-    def _encontrar_elemento_com_fallback(self, parent, selectors: List[str],
-                                         required: bool = True) -> Optional[Any]:
+    def _encontrar_elemento_com_fallback(self, parent, selectors: List[str], required: bool = True) -> Optional[Any]:
         for selector in selectors:
             try:
                 element = parent.find_element(By.CSS_SELECTOR, selector)
@@ -519,28 +744,55 @@ class ScraperPneuStore(ScraperBase):
 
         for i, card in enumerate(cards):
             try:
-                time.sleep(self._delay_aleatorio(0.8, 1.2))
+                time.sleep(self._delay_aleatorio(0.2, 0.5))
 
                 link_el = self._encontrar_elemento_com_fallback(card, self.link_selectors)
-                if not link_el: continue
+                if not link_el:
+                    continue
                 link = link_el.get_attribute("href")
-                if not link or link in links_vistos: continue
+                if not link or link in links_vistos:
+                    continue
 
                 title_el = self._encontrar_elemento_com_fallback(card, self.title_selectors)
-                if not title_el: continue
+                if not title_el:
+                    continue
                 titulo = (title_el.text or "").strip()
-                if not titulo: continue
+                if not titulo:
+                    continue
 
-                if eh_kit_ou_multiplos_pneus(titulo): continue
+                if eh_kit_ou_multiplos_pneus(titulo):
+                    continue
+                
                 if card.find_elements(By.CSS_SELECTOR, ".out-of-stock,.soldout,.esgotado,[data-stock='0']"):
                     continue
 
                 size_canon = _size_canonical(titulo) or ""
                 medida_path = _extrair_medida_path(titulo) or ""
-                brand = _brand_from_title(titulo)
-                model = _model_from_title(titulo, brand=brand)
 
-                if self.filtro_marca and brand != _canon_brand(self.filtro_marca):
+                brand_dom = None
+                try:
+                    el_brand = self._encontrar_elemento_com_fallback(card, self.brand_selectors, required=False)
+                    if el_brand:
+                        brand_dom = (el_brand.text or "").strip()
+                        if not brand_dom:
+                            brand_dom = el_brand.get_attribute("innerText") or ""
+                except Exception:
+                    pass
+
+                model_dom = None
+                try:
+                    el_line = self._encontrar_elemento_com_fallback(card, self.line_selectors, required=False)
+                    if el_line:
+                        model_dom = (el_line.text or "").strip()
+                        if not model_dom:
+                            model_dom = el_line.get_attribute("innerText") or ""
+                except Exception:
+                    pass
+
+                brand = _canon_brand(brand_dom or _brand_from_title(titulo))  # [NOVO] prioriza DOM
+                model = _canon_model(model_dom or _model_from_title(titulo, brand=brand))
+
+                if self.filtro_marca and _canon_brand(brand) != _canon_brand(self.filtro_marca):  # [AJUSTE]
                     self.logger.debug("descartado: marca '%s' != filtro '%s' (titulo: %s)", brand, self.filtro_marca, titulo)
                     continue
                 if self.filtro_modelo:
@@ -703,9 +955,6 @@ def salvar_produtos_multiformato(produtos: List[Product], termo: str, output_dir
         if p: caminhos["sqlite"] = str(p)
     return caminhos
 
-# =========================
-# CLI
-# =========================
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Scraper PneuStore com normalização brand/model/size")
@@ -724,6 +973,7 @@ if __name__ == "__main__":
     parser.add_argument("--out-jsonl", required=False, default=None)
     parser.add_argument("--idx-from", type=int, default=0)
     parser.add_argument("--idx-to", type=int, default=None)
+    parser.add_argument("--retry-tries", type=int, default=2, help="Número de tentativas em falhas técnicas (troca driver/UA apenas se cair/bloquear).")
 
     args = parser.parse_args()
     _load_config_norm(args.config)
@@ -753,9 +1003,17 @@ if __name__ == "__main__":
                 or item.get("termo")
                 or f"pneu {item.get('width')}/{item.get('aspect')}R{item.get('rim')} {item.get('brand')} {item.get('line_model')}"
             )
+
             print(f"\n=== {pos}/{len(subset)}: {termo} ===")
 
-            produtos = scraper.buscar(termo, max_resultados=args.max, sort=args.sort)
+            produtos = scraper.buscar(
+                termo,
+                max_resultados=args.max,
+                sort=args.sort,
+                expected_brand=item.get("brand"),
+                expected_model=item.get("line_model"),
+                retry_tries=args.retry_tries,
+            )
             caminhos = salvar_produtos_multiformato(produtos, termo, args.output_dir, args.formatos)
             if not caminhos:
                 print("⚠️ Nenhum produto encontrado, nada salvo.")
@@ -784,7 +1042,7 @@ if __name__ == "__main__":
         exit(1)
 
     scraper = ScraperPneuStore(headless=not args.window)
-    produtos = scraper.buscar(args.termo, max_resultados=args.max, sort=args.sort)
+    produtos = scraper.buscar(args.termo, max_resultados=args.max, sort=args.sort, retry_tries=args.retry_tries)
     caminhos = salvar_produtos_multiformato(produtos, args.termo, args.output_dir, args.formatos)
     if not caminhos:
         print("⚠️ Nenhum produto encontrado, nada salvo.")

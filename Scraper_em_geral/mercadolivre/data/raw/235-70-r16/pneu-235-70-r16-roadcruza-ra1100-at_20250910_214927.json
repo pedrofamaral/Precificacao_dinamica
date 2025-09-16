@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Aro 16 235/70 R16 104s Roadcruza Ra1100 At Blazer, S10",
+    "link": "https://www.mercadolivre.com.br/pneu-aro-16-23570-r16-104s-roadcruza-ra1100-at-blazer-s10/up/MLBU3083348730",
+    "preco": 946.96,
+    "brand": "roadcruza",
+    "model": "ra1100 at",
+    "size": "235/70R16",
+    "speed_index": "104S",
+    "query_strict": "pneu 235 70 r16 Roadcruza Ra1100 At",
+    "size_norm": "235/70r16",
+    "brand_expected": "roadcruza",
+    "line_expected": "ra1100 at",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "roadcruza",
+    "data_coleta": "2025-09-11 00:48:30",
+    "preco_original": null,
+    "preco_desconto": 946.96,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

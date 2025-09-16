@@ -18,7 +18,6 @@ import logging
 import warnings
 from contextlib import contextmanager
 
-# Suppress pandas warnings for cleaner logs
 warnings.filterwarnings('ignore', category=pd.errors.DtypeWarning)
 warnings.filterwarnings('ignore', category=FutureWarning)
 
@@ -67,14 +66,6 @@ except ImportError:
 # Constants
 GENERIC_TOKENS = {"p", "produto", "products", "product", "click", "clicks", "count", "item"}
 
-SCRAPER_ROOT = Path(__file__).resolve().parents[2] / "Scraper_em_geral"
-MARKET_PATHS = {
-    "mercadolivre": [SCRAPER_ROOT / "mercadolivre" / "data" / "raw"],
-    "magalu": [SCRAPER_ROOT / "MagazineLuiza" / "data" / "raw"],
-    "pneustore": [SCRAPER_ROOT / "pneustore" / "dados" / "raw"],
-}
-
-# Batch processing configuration
 BATCH_SIZE = 10000
 MAX_MEMORY_ROWS = 50000
 
@@ -314,7 +305,6 @@ def normalize_record(raw: Dict[str, Any], meta: Dict[str, Any]) -> Dict[str, Any
                     return value
         return None
     
-    # Enhanced field mapping
     cod_prod = pick_field("cod_prod", "internal_code", "product_id_internal", "codigo_produto", "id_produto")
     title = pick_field("title", "product_title", "productTitle", "name", "nome", "titulo", "Title", "product_name")
     price = pick_field("price", "preco", "product_price", "valor", "salePrice", "sellingPrice", "bestPrice", "final_price", "Price")
@@ -330,31 +320,26 @@ def normalize_record(raw: Dict[str, Any], meta: Dict[str, Any]) -> Dict[str, Any
     brand = pick_field("brand", "marca", "Brand", "fabricante")
     model = pick_field("model", "modelo", "Model")
     
-    # Size and dimensions
     width = pick_field("width", "largura", "Width")
     aspect = pick_field("aspect", "perfil", "Aspect", "aspect_ratio")
     rim = pick_field("rim", "aro", "Rim", "rim_size")
     size_norm = pick_field("size_norm", "size", "medida", "tamanho", "size_text")
     
-    # Timestamps
     observed_at = pick_field("observed_at", "scraped_at", "captured_at", "data_coleta", "data_captura")
     captured_at = pick_field("captured_at", "scraped_at") or meta.get("captured_at")
     
-    # Convert captured_at to string if needed
     if captured_at and not isinstance(captured_at, str):
         try:
             captured_at = str(captured_at)
         except Exception:
             captured_at = None
     
-    # Process cod_prod
     if cod_prod is not None:
         try:
             cod_prod = int(float(str(cod_prod)))
         except (ValueError, TypeError):
             cod_prod = None
     
-    # Process numeric fields
     width_val = to_float(width) if width else None
     aspect_val = to_float(aspect) if aspect else None
     rim_val = to_float(rim) if rim else None
@@ -397,7 +382,6 @@ def meta_from_path(path: Path) -> Dict[str, str]:
     """Extract metadata from file path with enhanced detection"""
     parts_lower = [s.lower() for s in path.parts]
     
-    # Detect marketplace from path
     marketplace = "unknown"
     marketplace_indicators = {
         "mercadolivre": ["mercadolivre", "mercadolibre", "ml"],
@@ -416,7 +400,6 @@ def meta_from_path(path: Path) -> Dict[str, str]:
     timestamp = parse_captured_from_query(query)
     captured_at = timestamp.isoformat() if pd.notna(timestamp) else None
     
-    # Try to extract run_id from filename
     run_id_match = re.search(r'(\d{8}_\d{6}_[^\.]+)', query)
     run_id = run_id_match.group(1) if run_id_match else None
     
@@ -434,7 +417,6 @@ def process_csv_file(path: Path) -> List[Dict[str, Any]]:
     rows = []
     meta = meta_from_path(path)
     
-    # Try different encoding and separator combinations
     configs = [
         {"sep": ";", "decimal": ",", "encoding": "utf-8"},
         {"sep": ",", "decimal": ".", "encoding": "utf-8"},
@@ -458,7 +440,6 @@ def process_csv_file(path: Path) -> List[Dict[str, Any]]:
         prod_logger.warning(f"Could not read CSV file: {path}")
         return rows
     
-    # Process records in batches to handle memory efficiently
     for i in range(0, len(df), BATCH_SIZE):
         batch = df.iloc[i:i+BATCH_SIZE]
         for record in batch.to_dict(orient="records"):
@@ -473,7 +454,6 @@ def process_csv_file(path: Path) -> List[Dict[str, Any]]:
 
 
 def iter_input_files():
-    """Iterate through input files with better error handling"""
     extensions = {".jsonl", ".json", ".csv"}
     for marketplace, directories in MARKET_PATHS.items():
         for directory in directories:
@@ -709,7 +689,6 @@ def ingest_sqlite() -> List[Dict[str, Any]]:
             continue
     
     return rows
-
 
 def export_sqlite_outputs(clean: pd.DataFrame, snap: pd.DataFrame, canon: pd.DataFrame, out_db: Path) -> None:
     out_db.parent.mkdir(parents=True, exist_ok=True)
@@ -1081,7 +1060,6 @@ def generate_diagnostic_report(full_data: pd.DataFrame, clean_data: pd.DataFrame
         for marketplace, count in marketplace_distribution.items():
             prod_logger.info(f"   → {marketplace}: {count:,}")
         
-        # Price statistics
         if not clean_data['price'].empty:
             price_stats = clean_data['price'].describe()
             prod_logger.info("📊 Price statistics:")
@@ -1144,6 +1122,7 @@ def rebuild_from_existing():
 
 def main():
     global BATCH_SIZE
+    global MARKET_PATHS
     parser = argparse.ArgumentParser(description="ETL Pipeline for Marketplace Data")
     parser.add_argument("--raw_dir", help="Directory containing JSON/CSV files")
     parser.add_argument("--sqlite_dir", help="Directory containing SQLite databases")
@@ -1154,12 +1133,27 @@ def main():
                        help=f"Batch size for processing (default: {BATCH_SIZE})")
     parser.add_argument("--verbose", "-v", action="store_true",
                        help="Enable verbose logging")
-    
+    parser.add_argument("--scraper_root", type=Path, help="Diretório raiz onde as pastas dos scrapers (mercadolivre, magalu, etc.) estão localizadas.")
+
     args = parser.parse_args()
     
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
         prod_logger.setLevel(logging.DEBUG)
+
+    if args.scraper_root:
+        if not args.scraper_root.exists():
+            prod_logger.error(f"O diretório raiz dos scrapers especificado não existe: {args.scraper_root}")
+            return 1
+            
+        SCRAPER_ROOT = args.scraper_root
+        MARKET_PATHS = {
+            "mercadolivre": [SCRAPER_ROOT / "mercadolivre" / "data" / "raw"],
+            "magalu": [SCRAPER_ROOT / "MagazineLuiza" / "data" / "raw"],
+            "pneustore": [SCRAPER_ROOT / "pneustore" / "dados" / "raw"],
+        }
+        prod_logger.info(f"Usando diretório raiz de scrapers personalizado: {SCRAPER_ROOT}")
+
     
     try:
         ensure_dirs()

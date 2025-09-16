@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Aro 20 225/35r20 Hu901 Horizon",
+    "link": "https://www.mercadolivre.com.br/pneu-aro-20-22535r20-hu901-horizon/up/MLBU1981357549",
+    "preco": 956.88,
+    "brand": "horizon",
+    "model": "hu901",
+    "size": "225/35R20",
+    "speed_index": "",
+    "query_strict": "pneu 225 35 r20 Horizon Hu901",
+    "size_norm": "225/35r20",
+    "brand_expected": "horizon",
+    "line_expected": "hu901",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "horizon",
+    "data_coleta": "2025-09-10 21:00:25",
+    "preco_original": null,
+    "preco_desconto": 956.88,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -34,15 +34,14 @@ class Settings:
     project_root: Path = Path(__file__).resolve().parent.parent 
 
     raw_dir: Path = project_root / "data" / "raw"
-    sqlite_dir: Path = project_root / "data" / "sqlite"
-    processed_dir: Path = project_root / "data" / "processed"
-    
-    db_url: str = os.getenv(
-        "PRICING_DB_URL",
-        str((processed_dir / "warehouse.db").resolve())
-    )
-    chunksize: int = int(os.getenv("PRICING_CHUNKSIZE", "5000"))
-    env: str = os.getenv("ENV", "dev")
+    sqlite_dir: Path = project_root / "ETL" / "data" / "sqlite"
+    processed_dir: Path = project_root / "ETL" / "data" / "processed"
+
+    db_path: Path = processed_dir / "warehouse.db"
+    db_url: str = f"sqlite:///{db_path.resolve()}"
+
+    chunksize: int = 5000
+    env: str = "dev"
 
 SETTINGS = Settings()
 
@@ -103,14 +102,13 @@ def utcnow_iso() -> str:
 
 def get_conn():
     try:
-        db_file = Path(SETTINGS.db_url) 
-        db_file.parent.mkdir(parents=True, exist_ok=True)
-        
-        conn = sqlite3.connect(SETTINGS.db_url) 
+        SETTINGS.db_path.parent.mkdir(parents=True, exist_ok=True)
+        conn = sqlite3.connect(SETTINGS.db_path)
         return conn
     except sqlite3.Error as e:
-        print(f"❌ Erro ao conectar ao banco de dados: {e}")
+        print(f"❌ Erro ao conectar ao banco de dados em '{SETTINGS.db_path}': {e}")
         raise
+
 
 
 
@@ -224,7 +222,6 @@ def salvar_df_sqlite(
                     for line in conn.iterdump():
                         f.write(line + "\n")
         return db_path
-
 
 def _infer_sqlite_type(pd_dtype: str) -> str:
     return _SQLITE_TYPE_MAP.get(str(pd_dtype), "TEXT")

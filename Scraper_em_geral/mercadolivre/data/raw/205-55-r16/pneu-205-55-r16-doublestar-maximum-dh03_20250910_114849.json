@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Doublestar Maximum DH03 P 205/55R16 84 V",
+    "link": "https://www.mercadolivre.com.br/pneu-doublestar-maximum-dh03-p-20555r16-84-v/p/MLB36680681",
+    "preco": 469.9,
+    "brand": "doublestar",
+    "model": "maximum dh03",
+    "size": "205/55R16",
+    "speed_index": "",
+    "query_strict": "pneu 205 55 r16 Doublestar Maximum Dh03",
+    "size_norm": "205/55r16",
+    "brand_expected": "doublestar",
+    "line_expected": "maximum dh03",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "doublestar",
+    "data_coleta": "2025-09-10 14:48:34",
+    "preco_original": null,
+    "preco_desconto": 469.9,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 275/70 R18 125/122r Roadian At Pro Ra8 Nexen",
+    "link": "https://www.mercadolivre.com.br/pneu-27570-r18-125122r-roadian-at-pro-ra8-nexen/p/MLB29101144",
+    "preco": 2799.0,
+    "brand": "nexen",
+    "model": "roadian at pro",
+    "size": "275/70R18",
+    "speed_index": "122R",
+    "query_strict": "pneu 275 70 r18 Nexen Roadian At Pro",
+    "size_norm": "275/70r18",
+    "brand_expected": "nexen",
+    "line_expected": "roadian at pro",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "nexen",
+    "data_coleta": "2025-09-10 23:44:51",
+    "preco_original": null,
+    "preco_desconto": 2799.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

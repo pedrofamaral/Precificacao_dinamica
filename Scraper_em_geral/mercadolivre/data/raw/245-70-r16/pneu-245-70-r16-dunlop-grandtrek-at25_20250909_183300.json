@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu 245/70r16 111 T Dunlop Grandtrek At25 Aro 16 T",
+    "link": "https://www.mercadolivre.com.br/pneu-24570r16-111-t-dunlop-grandtrek-at25-aro-16/up/MLBU3016791322",
+    "preco": 1097.0,
+    "brand": "dunlop",
+    "model": "grandtrek at25",
+    "size": "245/70R16",
+    "speed_index": "",
+    "query_strict": "pneu 245 70 r16 Dunlop Grandtrek At25",
+    "size_norm": "245/70r16",
+    "brand_expected": "dunlop",
+    "line_expected": "grandtrek at25",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "dunlop",
+    "data_coleta": "2025-09-09 21:32:42",
+    "preco_original": null,
+    "preco_desconto": 1097.0,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]

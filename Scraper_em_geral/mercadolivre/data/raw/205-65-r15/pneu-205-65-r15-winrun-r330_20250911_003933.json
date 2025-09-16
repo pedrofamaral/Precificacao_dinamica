@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Pneu Aro 15 205/65r15 94v R330 Winrun",
+    "link": "https://www.mercadolivre.com.br/pneu-aro-15-20565r15-94v-r330-winrun/up/MLBU3398708352",
+    "preco": 458.2,
+    "brand": "winrun",
+    "model": "r330",
+    "size": "205/65R15",
+    "speed_index": "94V",
+    "query_strict": "pneu 205 65 r15 Winrun R330",
+    "size_norm": "205/65r15",
+    "brand_expected": "winrun",
+    "line_expected": "r330",
+    "size_ok": true,
+    "free_ship": true,
+    "frete": 0.0,
+    "local": "",
+    "vendedor": "",
+    "condicao": "Novo",
+    "frete_gratis": true,
+    "marketplace": "mercadolivre",
+    "marca": "winrun",
+    "data_coleta": "2025-09-11 03:37:29",
+    "preco_original": null,
+    "preco_desconto": 458.2,
+    "desconto_pct": null,
+    "shipping": {}
+  }
+]
