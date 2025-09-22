@@ -1,3 +1,0 @@
-titulo,link,preco,query_strict,size_norm,brand_expected,line_expected,size_ok,free_ship,frete,local,vendedor,condicao,frete_gratis,marketplace,marca,data_coleta,preco_original,preco_desconto,desconto_pct,shipping
-Pneu Goodyear 175/70R13,https://exemplo.com/pneu1,299.9,,,,,True,False,,,,Novo,False,mercadolivre,goodyear,2025-08-08 15:03:21,,,,{}
-Pneu Michelin 185/65R14,https://exemplo.com/pneu2,399.9,,,,,True,False,,,,Novo,False,mercadolivre,michelin,2025-08-08 15:03:21,,,,{}

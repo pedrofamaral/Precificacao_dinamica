@@ -6,12 +6,11 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from ETL.common import SETTINGS, get_conn
 
-# --- Configurações ---
 BASE_DIR = Path(__file__).resolve().parent
-DEFAULT_INPUT_FILE = BASE_DIR / "data" / "processed" / "market_items_clean.parquet"
+DEFAULT_INPUT_FILE = SETTINGS.processed_dir / "market_items_clean.parquet"
 DEFAULT_DB_PATH = SETTINGS.db_url
-DEFAULT_OUTPUT_PER_MARKETPLACE = BASE_DIR / "data" / "processed" / "precos_referencia_por_marketplace.csv"
-DEFAULT_OUTPUT_FINAL = BASE_DIR / "data" / "processed" / "precos_referencia_final.csv"
+DEFAULT_OUTPUT_PER_MARKETPLACE = SETTINGS.processed_dir / "precos_referencia_por_marketplace.csv"
+DEFAULT_OUTPUT_FINAL = SETTINGS.processed_dir / "precos_referencia_final.csv"
 
 def calculate_reference_price(prices: pd.Series) -> pd.Series:
     prices = prices.dropna()
@@ -180,6 +179,10 @@ if __name__ == "__main__":
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT_FILE)
     parser.add_argument("--output_market", type=Path, default=DEFAULT_OUTPUT_PER_MARKETPLACE)
     parser.add_argument("--output_final", type=Path, default=DEFAULT_OUTPUT_FINAL)
+    parser.add_argument("--since", type=str, help="Considera apenas capturas a partir desta data (YYYY-MM-DD).")
+    parser.add_argument("--latest-only", action="store_true",
+                    help="Usa apenas o último preço por listing (captured_at mais recente por marketplace+listing).")
+
     args = parser.parse_args()
-    
-    main(args.input, args.output_market, args.output_final)
+
+    main(args.input, args.output_market, args.output_final, args.since, args.latest_only)
