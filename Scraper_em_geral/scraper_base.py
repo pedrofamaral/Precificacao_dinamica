@@ -28,23 +28,20 @@ class Product:
     marca: str = ""
     local: str = ""
     vendedor: str = ""
-    condicao: str = ""  # novo, usado, etc.
+    condicao: str = ""  
     frete_gratis: bool = False
-    data_coleta: str = ""  # YYYY‑MM‑DD HH:MM:SS
+    data_coleta: str = ""  
 
     def to_dict(self) -> dict:
         return asdict(self)
 
-    def __repr__(self) -> str:  # compacto para debug
+    def __repr__(self) -> str:  
         p = f"R$ {self.preco:,.2f}" if self.preco is not None else "–"
         return f"<{self.marketplace}:{self.titulo[:40]}… | {p}>"
 
 # ─────────────────────────────── Classe Base ────────────────────────────────────
 
 class ScraperBase(abc.ABC):
-    """Infra‑estrutura compartilhada para scrapers Selenium‑based."""
-
-    # Deve ser sobrescrito pela subclasse
     marketplace: str = "base"
 
     # --------------------------- Métodos que subclasses DEVEM implementar ------
@@ -58,8 +55,7 @@ class ScraperBase(abc.ABC):
     @abc.abstractmethod
     def _ir_proxima_pagina(self) -> bool: ...
 
-    # Sobrescreva se o site exigir clique em banner de cookies
-    def _aceitar_cookies(self) -> None:  # noqa: D401
+    def _aceitar_cookies(self) -> None: 
         pass
 
     # --------------------------- Construtor ------------------------------------
@@ -79,7 +75,6 @@ class ScraperBase(abc.ABC):
         self.max_scrolls = max_scrolls
         self.driver: Optional[webdriver.Chrome] = None
         
-        # Configurar logger - prioridade: parâmetro > classe específica > padrão
         if logger:
             self.logger = logger
         else:
@@ -94,7 +89,6 @@ class ScraperBase(abc.ABC):
         max_resultados: int = 100,
         max_paginas: int = 10,
     ) -> List[Product]:
-        """Raspa resultados para *termo* retornando até *max_resultados* itens."""
 
         url = self._build_search_url(termo, page=1)
         self.driver = self._configurar_driver()
@@ -157,7 +151,6 @@ class ScraperBase(abc.ABC):
         self.logger.info("✅ Busca finalizada: %s produtos coletados", len(produtos))
         return produtos[:max_resultados]
 
-    # Alias de compatibilidade com versão antiga
     buscar_produtos = buscar
 
     # --------------------------- Helpers genéricos -----------------------------

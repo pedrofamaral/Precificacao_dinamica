@@ -1,0 +1,517 @@
+﻿cod_prod;brand;line_model;width;aspect;rim;size_norm;original_label;query_strict;keywords;size_regex;ean_gtin
+23142;Aderenza;Perform;195;40;17;195 40 r17;;pneu 195 40 r17 Aderenza Perform;['195/40R17', '195 40 R17', 'Aderenza', 'Perform'];\b195[/\s-]?40\s*R?\s*17\b;23142
+48630;Aderenza;Speedline D2;185;65;15;185 65 r15;;pneu 185 65 r15 Aderenza Speedline D2;['185/65R15', '185 65 R15', 'Aderenza', 'Speedline D2'];\b185[/\s-]?65\s*R?\s*15\b;48630
+32522;Anteo;At59;900;20;14;900 20 r14;;pneu 900 20 r14 Anteo At59;['900/20R14', '900 20 R14', 'Anteo', 'At59'];\b900[/\s-]?20\s*R?\s*14\b;32522
+31104;Aplus;A607;215;55;16;215 55 r16;;pneu 215 55 r16 Aplus A607;['215/55R16', '215 55 R16', 'Aplus', 'A607'];\b215[/\s-]?55\s*R?\s*16\b;31104
+24289;Aplus;A609;235;60;16;235 60 r16;;pneu 235 60 r16 Aplus A609;['235/60R16', '235 60 R16', 'Aplus', 'A609'];\b235[/\s-]?60\s*R?\s*16\b;24289
+48047;Aplus;A609 (100H);225;70;15;225 70 r15;;pneu 225 70 r15 Aplus A609 (100H);['225/70R15', '225 70 R15', 'Aplus', 'A609 (100H)'];\b225[/\s-]?70\s*R?\s*15\b;48047
+46858;Aplus;A610;205;55;17;205 55 r17;;pneu 205 55 r17 Aplus A610;['205/55R17', '205 55 R17', 'Aplus', 'A610'];\b205[/\s-]?55\s*R?\s*17\b;46858
+47891;Aplus;A610;225;50;18;225 50 r18;;pneu 225 50 r18 Aplus A610;['225/50R18', '225 50 R18', 'Aplus', 'A610'];\b225[/\s-]?50\s*R?\s*18\b;47891
+24500;Aplus;A610;235;45;18;235 45 r18;;pneu 235 45 r18 Aplus A610;['235/45R18', '235 45 R18', 'Aplus', 'A610'];\b235[/\s-]?45\s*R?\s*18\b;24500
+45879;Aplus;A610;235;45;19;235 45 r19;;pneu 235 45 r19 Aplus A610;['235/45R19', '235 45 R19', 'Aplus', 'A610'];\b235[/\s-]?45\s*R?\s*19\b;45879
+48045;Aplus;A610 (103Y);235;50;19;235 50 r19;;pneu 235 50 r19 Aplus A610 (103Y);['235/50R19', '235 50 R19', 'Aplus', 'A610 (103Y)'];\b235[/\s-]?50\s*R?\s*19\b;48045
+43982;Aplus;A919;225;60;17;225 60 r17;;pneu 225 60 r17 Aplus A919;['225/60R17', '225 60 R17', 'Aplus', 'A919'];\b225[/\s-]?60\s*R?\s*17\b;43982
+48257;Aplus;A919;225;70;16;225 70 r16;;pneu 225 70 r16 Aplus A919;['225/70R16', '225 70 R16', 'Aplus', 'A919'];\b225[/\s-]?70\s*R?\s*16\b;48257
+22137;Aplus;A919;235;60;17;235 60 r17;;pneu 235 60 r17 Aplus A919;['235/60R17', '235 60 R17', 'Aplus', 'A919'];\b235[/\s-]?60\s*R?\s*17\b;22137
+25770;Aplus;A919;265;70;16;265 70 r16;;pneu 265 70 r16 Aplus A919;['265/70R16', '265 70 R16', 'Aplus', 'A919'];\b265[/\s-]?70\s*R?\s*16\b;25770
+47172;Aptany;Ra301;195;40;17;195 40 r17;;pneu 195 40 r17 Aptany Ra301;['195/40R17', '195 40 R17', 'Aptany', 'Ra301'];\b195[/\s-]?40\s*R?\s*17\b;47172
+47548;Aptany;Ra301;215;45;18;215 45 r18;;pneu 215 45 r18 Aptany Ra301;['215/45R18', '215 45 R18', 'Aptany', 'Ra301'];\b215[/\s-]?45\s*R?\s*18\b;47548
+41774;Aptany;Ra301;225;45;17;225 45 r17;;pneu 225 45 r17 Aptany Ra301;['225/45R17', '225 45 R17', 'Aptany', 'Ra301'];\b225[/\s-]?45\s*R?\s*17\b;41774
+46286;Aptany;Ra301;225;50;17;225 50 r17;;pneu 225 50 r17 Aptany Ra301;['225/50R17', '225 50 R17', 'Aptany', 'Ra301'];\b225[/\s-]?50\s*R?\s*17\b;46286
+48316;Aptany;Ra301;235;55;17;235 55 r17;;pneu 235 55 r17 Aptany Ra301;['235/55R17', '235 55 R17', 'Aptany', 'Ra301'];\b235[/\s-]?55\s*R?\s*17\b;48316
+48317;Aptany;Ra301;235;55;19;235 55 r19;;pneu 235 55 r19 Aptany Ra301;['235/55R19', '235 55 R19', 'Aptany', 'Ra301'];\b235[/\s-]?55\s*R?\s*19\b;48317
+42165;Aptany;Ra305;205;55;17;205 55 r17;;pneu 205 55 r17 Aptany Ra305;['205/55R17', '205 55 R17', 'Aptany', 'Ra305'];\b205[/\s-]?55\s*R?\s*17\b;42165
+27789;Aptany;Rl101;225;75;16;225 75 r16;;pneu 225 75 r16 Aptany Rl101;['225/75R16', '225 75 R16', 'Aptany', 'Rl101'];\b225[/\s-]?75\s*R?\s*16\b;27789
+44401;Aptany;Rp203;175;75;14;175 75 r14;;pneu 175 75 r14 Aptany Rp203;['175/75R14', '175 75 R14', 'Aptany', 'Rp203'];\b175[/\s-]?75\s*R?\s*14\b;44401
+27554;Aptany;Rp203;185;60;14;185 60 r14;;pneu 185 60 r14 Aptany Rp203;['185/60R14', '185 60 R14', 'Aptany', 'Rp203'];\b185[/\s-]?60\s*R?\s*14\b;27554
+27211;Aptany;Rp203;205;60;16;205 60 r16;;pneu 205 60 r16 Aptany Rp203;['205/60R16', '205 60 R16', 'Aptany', 'Rp203'];\b205[/\s-]?60\s*R?\s*16\b;27211
+45677;Aptany;Ru006 At;205;65;15;205 65 r15;;pneu 205 65 r15 Aptany Ru006 At;['205/65R15', '205 65 R15', 'Aptany', 'Ru006 At'];\b205[/\s-]?65\s*R?\s*15\b;45677
+48023;Aptany;Ru025;215;60;17;215 60 r17;;pneu 215 60 r17 Aptany Ru025;['215/60R17', '215 60 R17', 'Aptany', 'Ru025'];\b215[/\s-]?60\s*R?\s*17\b;48023
+46284;Aptany;Ru025;265;70;16;265 70 r16;;pneu 265 70 r16 Aptany Ru025;['265/70R16', '265 70 R16', 'Aptany', 'Ru025'];\b265[/\s-]?70\s*R?\s*16\b;46284
+45848;Aptany;Ru025 Ht;265;65;17;265 65 r17;;pneu 265 65 r17 Aptany Ru025 Ht;['265/65R17', '265 65 R17', 'Aptany', 'Ru025 Ht'];\b265[/\s-]?65\s*R?\s*17\b;45848
+47898;Aptany;Ru025Y;225;55;18;225 55 r18;;pneu 225 55 r18 Aptany Ru025Y;['225/55R18', '225 55 R18', 'Aptany', 'Ru025Y'];\b225[/\s-]?55\s*R?\s*18\b;47898
+48624;Aptany;Ru101;215;65;17;215 65 r17;;pneu 215 65 r17 Aptany Ru101;['215/65R17', '215 65 R17', 'Aptany', 'Ru101'];\b215[/\s-]?65\s*R?\s*17\b;48624
+27774;Aptany;Ru101;235;70;16;235 70 r16;;pneu 235 70 r16 Aptany Ru101;['235/70R16', '235 70 R16', 'Aptany', 'Ru101'];\b235[/\s-]?70\s*R?\s*16\b;27774
+47968;Aptany;Ru101;245;70;16;245 70 r16;;pneu 245 70 r16 Aptany Ru101;['245/70R16', '245 70 R16', 'Aptany', 'Ru101'];\b245[/\s-]?70\s*R?\s*16\b;47968
+27542;Aptany;Ru101 Expedite;235;60;17;235 60 r17;;pneu 235 60 r17 Aptany Ru101 Expedite;['235/60R17', '235 60 R17', 'Aptany', 'Ru101 Expedite'];\b235[/\s-]?60\s*R?\s*17\b;27542
+46263;Aptany;Sportmacro Ra301;215;35;18;215 35 r18;;pneu 215 35 r18 Aptany Sportmacro Ra301;['215/35R18', '215 35 R18', 'Aptany', 'Sportmacro Ra301'];\b215[/\s-]?35\s*R?\s*18\b;46263
+47549;Atlander;Xport-66;165;70;14;165 70 r14;;pneu 165 70 r14 Atlander Xport-66;['165/70R14', '165 70 R14', 'Atlander', 'Xport-66'];\b165[/\s-]?70\s*R?\s*14\b;47549
+46262;Atlander;Xsport66;185;65;14;185 65 r14;;pneu 185 65 r14 Atlander Xsport66;['185/65R14', '185 65 R14', 'Atlander', 'Xsport66'];\b185[/\s-]?65\s*R?\s*14\b;46262
+42225;Austone;A/T Csr34;255;75;15;255 75 r15;;pneu 255 75 r15 Austone A/T Csr34;['255/75R15', '255 75 R15', 'Austone', 'A/T Csr34'];\b255[/\s-]?75\s*R?\s*15\b;42225
+37046;Austone;Asr71;225;75;16;225 75 r16;;pneu 225 75 r16 Austone Asr71;['225/75R16', '225 75 R16', 'Austone', 'Asr71'];\b225[/\s-]?75\s*R?\s*16\b;37046
+35952;Austone;At78;215;75;17;215 75 r17;;pneu 215 75 r17 Austone At78;['215/75R17', '215 75 R17', 'Austone', 'At78'];\b215[/\s-]?75\s*R?\s*17\b;35952
+45529;Austone;Athena Sp302;205;60;15;205 60 r15;;pneu 205 60 r15 Austone Athena Sp302;['205/60R15', '205 60 R15', 'Austone', 'Athena Sp302'];\b205[/\s-]?60\s*R?\s*15\b;45529
+38026;Austone;Sp801;195;50;15;195 50 r15;;pneu 195 50 r15 Austone Sp801;['195/50R15', '195 50 R15', 'Austone', 'Sp801'];\b195[/\s-]?50\s*R?\s*15\b;38026
+47182;Austone;Sp801;205;70;15;205 70 r15;;pneu 205 70 r15 Austone Sp801;['205/70R15', '205 70 R15', 'Austone', 'Sp801'];\b205[/\s-]?70\s*R?\s*15\b;47182
+48325;Bf Goodrich;All Terrain T/A;265;70;16;265 70 r16;;pneu 265 70 r16 Bf Goodrich All Terrain T/A;['265/70R16', '265 70 R16', 'Bf Goodrich', 'All Terrain T/A'];\b265[/\s-]?70\s*R?\s*16\b;48325
+15407;Bf Goodrich;All Terrain Ta;245;70;16;245 70 r16;;pneu 245 70 r16 Bf Goodrich All Terrain Ta;['245/70R16', '245 70 R16', 'Bf Goodrich', 'All Terrain Ta'];\b245[/\s-]?70\s*R?\s*16\b;15407
+48326;Bf Goodrich;Trail Terrain;265;70;17;265 70 r17;;pneu 265 70 r17 Bf Goodrich Trail Terrain;['265/70R17', '265 70 R17', 'Bf Goodrich', 'Trail Terrain'];\b265[/\s-]?70\s*R?\s*17\b;48326
+33074;Bfgoodrich;All Terrain;265;60;18;265 60 r18;;pneu 265 60 r18 Bfgoodrich All Terrain;['265/60R18', '265 60 R18', 'Bfgoodrich', 'All Terrain'];\b265[/\s-]?60\s*R?\s*18\b;33074
+48152;Bridgestone;Alenza001;225;50;18;225 50 r18;;pneu 225 50 r18 Bridgestone Alenza001;['225/50R18', '225 50 R18', 'Bridgestone', 'Alenza001'];\b225[/\s-]?50\s*R?\s*18\b;48152
+18871;Bridgestone;Dueler A/T Revo 2;175;70;14;175 70 r14;;pneu 175 70 r14 Bridgestone Dueler A/T Revo 2;['175/70R14', '175 70 R14', 'Bridgestone', 'Dueler A/T Revo 2'];\b175[/\s-]?70\s*R?\s*14\b;18871
+3240;Bridgestone;Dueler At693;205;70;15;205 70 r15;;pneu 205 70 r15 Bridgestone Dueler At693;['205/70R15', '205 70 R15', 'Bridgestone', 'Dueler At693'];\b205[/\s-]?70\s*R?\s*15\b;3240
+5956;Bridgestone;Dueler H/T 684 Ii;265;65;17;265 65 r17;;pneu 265 65 r17 Bridgestone Dueler H/T 684 Ii;['265/65R17', '265 65 R17', 'Bridgestone', 'Dueler H/T 684 Ii'];\b265[/\s-]?65\s*R?\s*17\b;5956
+36249;Bridgestone;Dueler H/T 684 Iii;245;65;17;245 65 r17;;pneu 245 65 r17 Bridgestone Dueler H/T 684 Iii;['245/65R17', '245 65 R17', 'Bridgestone', 'Dueler H/T 684 Iii'];\b245[/\s-]?65\s*R?\s*17\b;36249
+42585;Bridgestone;Dueler H/T 684 Iii Ecopia;245;70;16;245 70 r16;;pneu 245 70 r16 Bridgestone Dueler H/T 684 Iii Ecopia;['245/70R16', '245 70 R16', 'Bridgestone', 'Dueler H/T 684 Iii Ecopia'];\b245[/\s-]?70\s*R?\s*16\b;42585
+23957;Bridgestone;Ecopia Ep150;195;55;15;195 55 r15;;pneu 195 55 r15 Bridgestone Ecopia Ep150;['195/55R15', '195 55 R15', 'Bridgestone', 'Ecopia Ep150'];\b195[/\s-]?55\s*R?\s*15\b;1234567891234
+33378;Bridgestone;T005;205;55;17;205 55 r17;;pneu 205 55 r17 Bridgestone T005;['205/55R17', '205 55 R17', 'Bridgestone', 'T005'];\b205[/\s-]?55\s*R?\s*17\b;33378
+31810;Bridgestone;Turanza T005;235;45;18;235 45 r18;;pneu 235 45 r18 Bridgestone Turanza T005;['235/45R18', '235 45 R18', 'Bridgestone', 'Turanza T005'];\b235[/\s-]?45\s*R?\s*18\b;31810
+48096;Ceat;Ecodrive;185;70;14;185 70 r14;;pneu 185 70 r14 Ceat Ecodrive;['185/70R14', '185 70 R14', 'Ceat', 'Ecodrive'];\b185[/\s-]?70\s*R?\s*14\b;48096
+37209;Chengshan;Sportcat Csc302 A/T;265;60;18;265 60 r18;;pneu 265 60 r18 Chengshan Sportcat Csc302 A/T;['265/60R18', '265 60 R18', 'Chengshan', 'Sportcat Csc302 A/T'];\b265[/\s-]?60\s*R?\s*18\b;37209
+44683;Chituma;Cp16;185;70;14;185 70 r14;;pneu 185 70 r14 Chituma Cp16;['185/70R14', '185 70 R14', 'Chituma', 'Cp16'];\b185[/\s-]?70\s*R?\s*14\b;44683
+44480;Chituma;Cp-16;165;70;13;165 70 r13;;pneu 165 70 r13 Chituma Cp-16;['165/70R13', '165 70 R13', 'Chituma', 'Cp-16'];\b165[/\s-]?70\s*R?\s*13\b;44480
+48571;Comforser;Cf1000;265;70;16;265 70 r16;;pneu 265 70 r16 Comforser Cf1000;['265/70R16', '265 70 R16', 'Comforser', 'Cf1000'];\b265[/\s-]?70\s*R?\s*16\b;48571
+48399;Comforser;Cf1100;205;60;15;205 60 r15;;pneu 205 60 r15 Comforser Cf1100;['205/60R15', '205 60 R15', 'Comforser', 'Cf1100'];\b205[/\s-]?60\s*R?\s*15\b;48399
+48401;Comforser;Cf1100;205;60;16;205 60 r16;;pneu 205 60 r16 Comforser Cf1100;['205/60R16', '205 60 R16', 'Comforser', 'Cf1100'];\b205[/\s-]?60\s*R?\s*16\b;48401
+48400;Comforser;Cf1100;205;70;15;205 70 r15;;pneu 205 70 r15 Comforser Cf1100;['205/70R15', '205 70 R15', 'Comforser', 'Cf1100'];\b205[/\s-]?70\s*R?\s*15\b;48400
+34170;Comforser;Cf2000;245;65;17;245 65 r17;;pneu 245 65 r17 Comforser Cf2000;['245/65R17', '245 65 R17', 'Comforser', 'Cf2000'];\b245[/\s-]?65\s*R?\s*17\b;34170
+34388;Comforser;Cf2000;255;65;17;255 65 r17;;pneu 255 65 r17 Comforser Cf2000;['255/65R17', '255 65 R17', 'Comforser', 'Cf2000'];\b255[/\s-]?65\s*R?\s*17\b;34388
+33621;Comforser;Cf2000;265;65;17;265 65 r17;;pneu 265 65 r17 Comforser Cf2000;['265/65R17', '265 65 R17', 'Comforser', 'Cf2000'];\b265[/\s-]?65\s*R?\s*17\b;33621
+32859;Comforser;Cf500;215;55;16;215 55 r16;;pneu 215 55 r16 Comforser Cf500;['215/55R16', '215 55 R16', 'Comforser', 'Cf500'];\b215[/\s-]?55\s*R?\s*16\b;32859
+34375;Comforser;Cf510;185;60;15;185 60 r15;;pneu 185 60 r15 Comforser Cf510;['185/60R15', '185 60 R15', 'Comforser', 'Cf510'];\b185[/\s-]?60\s*R?\s*15\b;34375
+32448;Comforser;Cf510;195;55;15;195 55 r15;;pneu 195 55 r15 Comforser Cf510;['195/55R15', '195 55 R15', 'Comforser', 'Cf510'];\b195[/\s-]?55\s*R?\s*15\b;32448
+48030;Comforser;Cf510;195;55;16;195 55 r16;;pneu 195 55 r16 Comforser Cf510;['195/55R16', '195 55 R16', 'Comforser', 'Cf510'];\b195[/\s-]?55\s*R?\s*16\b;48030
+48570;Comforser;Tl Cf1000;285;75;16;285 75 r16;;pneu 285 75 r16 Comforser Tl Cf1000;['285/75R16', '285 75 R16', 'Comforser', 'Tl Cf1000'];\b285[/\s-]?75\s*R?\s*16\b;48570
+43054;Compasal;Blazer Hp;205;60;16;205 60 r16;;pneu 205 60 r16 Compasal Blazer Hp;['205/60R16', '205 60 R16', 'Compasal', 'Blazer Hp'];\b205[/\s-]?60\s*R?\s*16\b;43054
+43808;Compasal;Blazer Uhp;235;45;19;235 45 r19;;pneu 235 45 r19 Compasal Blazer Uhp;['235/45R19', '235 45 R19', 'Compasal', 'Blazer Uhp'];\b235[/\s-]?45\s*R?\s*19\b;43808
+46476;Compasal;Blazer Uhp 2;225;45;18;225 45 r18;;pneu 225 45 r18 Compasal Blazer Uhp 2;['225/45R18', '225 45 R18', 'Compasal', 'Blazer Uhp 2'];\b225[/\s-]?45\s*R?\s*18\b;46476
+33762;Compasal;Smacher;205;50;17;205 50 r17;;pneu 205 50 r17 Compasal Smacher;['205/50R17', '205 50 R17', 'Compasal', 'Smacher'];\b205[/\s-]?50\s*R?\s*17\b;33762
+35475;Compasal;Vanmax;225;65;16;225 65 r16;;pneu 225 65 r16 Compasal Vanmax;['225/65R16', '225 65 R16', 'Compasal', 'Vanmax'];\b225[/\s-]?65\s*R?\s*16\b;35475
+46483;Compasal;Versant A/T;265;75;16;265 75 r16;;pneu 265 75 r16 Compasal Versant A/T;['265/75R16', '265 75 R16', 'Compasal', 'Versant A/T'];\b265[/\s-]?75\s*R?\s*16\b;46483
+36726;Continental;Barum Bravuris 4X4;265;65;17;265 65 r17;;pneu 265 65 r17 Continental Barum Bravuris 4X4;['265/65R17', '265 65 R17', 'Continental', 'Barum Bravuris 4X4'];\b265[/\s-]?65\s*R?\s*17\b;36726
+36529;Continental;Barum Bravuris 5Hm;185;60;14;185 60 r14;;pneu 185 60 r14 Continental Barum Bravuris 5Hm;['185/60R14', '185 60 R14', 'Continental', 'Barum Bravuris 5Hm'];\b185[/\s-]?60\s*R?\s*14\b;36529
+36536;Continental;Barum Bravuris 5Hm;185;65;14;185 65 r14;;pneu 185 65 r14 Continental Barum Bravuris 5Hm;['185/65R14', '185 65 R14', 'Continental', 'Barum Bravuris 5Hm'];\b185[/\s-]?65\s*R?\s*14\b;36536
+38993;Continental;Barum Bravuris 5Hm;185;70;14;185 70 r14;;pneu 185 70 r14 Continental Barum Bravuris 5Hm;['185/70R14', '185 70 R14', 'Continental', 'Barum Bravuris 5Hm'];\b185[/\s-]?70\s*R?\s*14\b;38993
+27978;Continental;Conticrosscontact Lx2;215;60;17;215 60 r17;;pneu 215 60 r17 Continental Conticrosscontact Lx2;['215/60R17', '215 60 R17', 'Continental', 'Conticrosscontact Lx2'];\b215[/\s-]?60\s*R?\s*17\b;27978
+45544;Continental;Contipowercontact;205;55;17;205 55 r17;;pneu 205 55 r17 Continental Contipowercontact;['205/55R17', '205 55 R17', 'Continental', 'Contipowercontact'];\b205[/\s-]?55\s*R?\s*17\b;45544
+38167;Continental;Contisport Contact;205;45;17;205 45 r17;;pneu 205 45 r17 Continental Contisport Contact;['205/45R17', '205 45 R17', 'Continental', 'Contisport Contact'];\b205[/\s-]?45\s*R?\s*17\b;38167
+44269;Continental;Generaltire Altimax One;175;70;14;175 70 r14;;pneu 175 70 r14 Continental Generaltire Altimax One;['175/70R14', '175 70 R14', 'Continental', 'Generaltire Altimax One'];\b175[/\s-]?70\s*R?\s*14\b;44269
+36017;Continental;Powercontact 2;185;65;15;185 65 r15;;pneu 185 65 r15 Continental Powercontact 2;['185/65R15', '185 65 R15', 'Continental', 'Powercontact 2'];\b185[/\s-]?65\s*R?\s*15\b;36017
+35931;Continental;Powercontact 2;185;70;14;185 70 r14;;pneu 185 70 r14 Continental Powercontact 2;['185/70R14', '185 70 R14', 'Continental', 'Powercontact 2'];\b185[/\s-]?70\s*R?\s*14\b;35931
+36629;Continental;Powercontact 2;195;65;15;195 65 r15;;pneu 195 65 r15 Continental Powercontact 2;['195/65R15', '195 65 R15', 'Continental', 'Powercontact 2'];\b195[/\s-]?65\s*R?\s*15\b;36629
+18885;Continental;Powercontact 2;205;55;16;205 55 r16;;pneu 205 55 r16 Continental Powercontact 2;['205/55R16', '205 55 R16', 'Continental', 'Powercontact 2'];\b205[/\s-]?55\s*R?\s*16\b;18885
+48572;Continental;Powercontact 2;215;60;16;215 60 r16;;pneu 215 60 r16 Continental Powercontact 2;['215/60R16', '215 60 R16', 'Continental', 'Powercontact 2'];\b215[/\s-]?60\s*R?\s*16\b;48572
+25708;Continental;Vancontact;225;65;16;225 65 r16;;pneu 225 65 r16 Continental Vancontact;['225/65R16', '225 65 R16', 'Continental', 'Vancontact'];\b225[/\s-]?65\s*R?\s*16\b;25708
+30968;Continental;Vancontact Ap;225;75;16;225 75 r16;;pneu 225 75 r16 Continental Vancontact Ap;['225/75R16', '225 75 R16', 'Continental', 'Vancontact Ap'];\b225[/\s-]?75\s*R?\s*16\b;30968
+44605;Davanti;Protoura Sport;225;45;18;225 45 r18;;pneu 225 45 r18 Davanti Protoura Sport;['225/45R18', '225 45 R18', 'Davanti', 'Protoura Sport'];\b225[/\s-]?45\s*R?\s*18\b;44605
+48626;Davanti;Terratoura;285;75;16;285 75 r16;;pneu 285 75 r16 Davanti Terratoura;['285/75R16', '285 75 R16', 'Davanti', 'Terratoura'];\b285[/\s-]?75\s*R?\s*16\b;48626
+48625;Davanti;Terratoura Rwl;265;60;18;265 60 r18;;pneu 265 60 r18 Davanti Terratoura Rwl;['265/60R18', '265 60 R18', 'Davanti', 'Terratoura Rwl'];\b265[/\s-]?60\s*R?\s*18\b;48625
+26085;Dayton;D300;295;80;22;295 80 r22;;pneu 295 80 r22 Dayton D300;['295/80R22', '295 80 R22', 'Dayton', 'D300'];\b295[/\s-]?80\s*R?\s*22\b;26085
+43623;Delmax;Expresspro;205;75;16;205 75 r16;;pneu 205 75 r16 Delmax Expresspro;['205/75R16', '205 75 R16', 'Delmax', 'Expresspro'];\b205[/\s-]?75\s*R?\s*16\b;43623
+46784;Delmax;Furious S1;215;55;18;215 55 r18;;pneu 215 55 r18 Delmax Furious S1;['215/55R18', '215 55 R18', 'Delmax', 'Furious S1'];\b215[/\s-]?55\s*R?\s*18\b;46784
+46348;Delmax;Ultimaplus;235;55;17;235 55 r17;;pneu 235 55 r17 Delmax Ultimaplus;['235/55R17', '235 55 R17', 'Delmax', 'Ultimaplus'];\b235[/\s-]?55\s*R?\s*17\b;46348
+46528;Delmax;Ultimapro Up1;215;55;16;215 55 r16;;pneu 215 55 r16 Delmax Ultimapro Up1;['215/55R16', '215 55 R16', 'Delmax', 'Ultimapro Up1'];\b215[/\s-]?55\s*R?\s*16\b;46528
+47176;Delmax;Ultimato Pro Up1;245;45;18;245 45 r18;;pneu 245 45 r18 Delmax Ultimato Pro Up1;['245/45R18', '245 45 R18', 'Delmax', 'Ultimato Pro Up1'];\b245[/\s-]?45\s*R?\s*18\b;47176
+48649;Delmax;Ultimatour;205;70;15;205 70 r15;;pneu 205 70 r15 Delmax Ultimatour;['205/70R15', '205 70 R15', 'Delmax', 'Ultimatour'];\b205[/\s-]?70\s*R?\s*15\b;48649
+42508;Dewostone;Wr9001 At;175;80;14;175 80 r14;;pneu 175 80 r14 Dewostone Wr9001 At;['175/80R14', '175 80 R14', 'Dewostone', 'Wr9001 At'];\b175[/\s-]?80\s*R?\s*14\b;42508
+46551;Dewostone;Wr9086A Ht;265;70;16;265 70 r16;;pneu 265 70 r16 Dewostone Wr9086A Ht;['265/70R16', '265 70 R16', 'Dewostone', 'Wr9086A Ht'];\b265[/\s-]?70\s*R?\s*16\b;46551
+35089;Dewostone;Wr9096;215;45;17;215 45 r17;;pneu 215 45 r17 Dewostone Wr9096;['215/45R17', '215 45 R17', 'Dewostone', 'Wr9096'];\b215[/\s-]?45\s*R?\s*17\b;35089
+48147;Double King;Dk728;235;60;16;235 60 r16;;pneu 235 60 r16 Double King Dk728;['235/60R16', '235 60 R16', 'Double King', 'Dk728'];\b235[/\s-]?60\s*R?\s*16\b;48147
+45533;Double King;Dk798;215;45;17;215 45 r17;;pneu 215 45 r17 Double King Dk798;['215/45R17', '215 45 R17', 'Double King', 'Dk798'];\b215[/\s-]?45\s*R?\s*17\b;45533
+47173;Doubleking;Dk558;215;60;16;215 60 r16;;pneu 215 60 r16 Doubleking Dk558;['215/60R16', '215 60 R16', 'Doubleking', 'Dk558'];\b215[/\s-]?60\s*R?\s*16\b;47173
+38767;Doublestar;Dh02;225;40;18;225 40 r18;;pneu 225 40 r18 Doublestar Dh02;['225/40R18', '225 40 R18', 'Doublestar', 'Dh02'];\b225[/\s-]?40\s*R?\s*18\b;38767
+45390;Doublestar;Dh03;195;55;16;195 55 r16;;pneu 195 55 r16 Doublestar Dh03;['195/55R16', '195 55 R16', 'Doublestar', 'Dh03'];\b195[/\s-]?55\s*R?\s*16\b;45390
+39220;Doublestar;Dh03;195;60;15;195 60 r15;;pneu 195 60 r15 Doublestar Dh03;['195/60R15', '195 60 R15', 'Doublestar', 'Dh03'];\b195[/\s-]?60\s*R?\s*15\b;39220
+44684;Doublestar;Dsrs01;215;75;17;215 75 r17;;pneu 215 75 r17 Doublestar Dsrs01;['215/75R17', '215 75 R17', 'Doublestar', 'Dsrs01'];\b215[/\s-]?75\s*R?\s*17\b;44684
+41389;Doublestar;Maximum Dh03;205;55;16;205 55 r16;;pneu 205 55 r16 Doublestar Maximum Dh03;['205/55R16', '205 55 R16', 'Doublestar', 'Maximum Dh03'];\b205[/\s-]?55\s*R?\s*16\b;41389
+22270;Dunlop;Direzza Dz102;195;50;16;195 50 r16;;pneu 195 50 r16 Dunlop Direzza Dz102;['195/50R16', '195 50 R16', 'Dunlop', 'Direzza Dz102'];\b195[/\s-]?50\s*R?\s*16\b;1234567891234
+32851;Dunlop;Dz102;195;50;15;195 50 r15;;pneu 195 50 r15 Dunlop Dz102;['195/50R15', '195 50 R15', 'Dunlop', 'Dz102'];\b195[/\s-]?50\s*R?\s*15\b;32851
+17111;Dunlop;Enasave Ec300;185;55;16;185 55 r16;;pneu 185 55 r16 Dunlop Enasave Ec300;['185/55R16', '185 55 R16', 'Dunlop', 'Enasave Ec300'];\b185[/\s-]?55\s*R?\s*16\b;17111
+40765;Dunlop;Enasave Ec300+;205;55;16;205 55 r16;;pneu 205 55 r16 Dunlop Enasave Ec300+;['205/55R16', '205 55 R16', 'Dunlop', 'Enasave Ec300+'];\b205[/\s-]?55\s*R?\s*16\b;40765
+34808;Dunlop;Enasave Ec300+;215;60;17;215 60 r17;;pneu 215 60 r17 Dunlop Enasave Ec300+;['215/60R17', '215 60 R17', 'Dunlop', 'Enasave Ec300+'];\b215[/\s-]?60\s*R?\s*17\b;34808
+47191;Dunlop;Enasave Ec350+;205;60;16;205 60 r16;;pneu 205 60 r16 Dunlop Enasave Ec350+;['205/60R16', '205 60 R16', 'Dunlop', 'Enasave Ec350+'];\b205[/\s-]?60\s*R?\s*16\b;47191
+34726;Dunlop;Fm800;225;45;17;225 45 r17;;pneu 225 45 r17 Dunlop Fm800;['225/45R17', '225 45 R17', 'Dunlop', 'Fm800'];\b225[/\s-]?45\s*R?\s*17\b;34726
+47082;Dunlop;Grandt At5;265;65;17;265 65 r17;;pneu 265 65 r17 Dunlop Grandt At5;['265/65R17', '265 65 R17', 'Dunlop', 'Grandt At5'];\b265[/\s-]?65\s*R?\s*17\b;47082
+39636;Dunlop;Grandtrek At20;225;70;17;225 70 r17;;pneu 225 70 r17 Dunlop Grandtrek At20;['225/70R17', '225 70 R17', 'Dunlop', 'Grandtrek At20'];\b225[/\s-]?70\s*R?\s*17\b;39636
+38995;Dunlop;Grandtrek At25;245;70;16;245 70 r16;;pneu 245 70 r16 Dunlop Grandtrek At25;['245/70R16', '245 70 R16', 'Dunlop', 'Grandtrek At25'];\b245[/\s-]?70\s*R?\s*16\b;38995
+46033;Dunlop;Grandtrek At25;255;60;18;255 60 r18;;pneu 255 60 r18 Dunlop Grandtrek At25;['255/60R18', '255 60 R18', 'Dunlop', 'Grandtrek At25'];\b255[/\s-]?60\s*R?\s*18\b;46033
+34725;Dunlop;Grandtrek At5;175;70;14;175 70 r14;;pneu 175 70 r14 Dunlop Grandtrek At5;['175/70R14', '175 70 R14', 'Dunlop', 'Grandtrek At5'];\b175[/\s-]?70\s*R?\s*14\b;34725
+43067;Dunlop;Grandtrek At5;205;60;16;205 60 r16;;pneu 205 60 r16 Dunlop Grandtrek At5;['205/60R16', '205 60 R16', 'Dunlop', 'Grandtrek At5'];\b205[/\s-]?60\s*R?\s*16\b;43067
+10860;Dunlop;Grandtrek At5;205;70;15;205 70 r15;;pneu 205 70 r15 Dunlop Grandtrek At5;['205/70R15', '205 70 R15', 'Dunlop', 'Grandtrek At5'];\b205[/\s-]?70\s*R?\s*15\b;3245
+37907;Dunlop;Grandtrek At5;265;60;18;265 60 r18;;pneu 265 60 r18 Dunlop Grandtrek At5;['265/60R18', '265 60 R18', 'Dunlop', 'Grandtrek At5'];\b265[/\s-]?60\s*R?\s*18\b;37907
+36016;Dunlop;Grandtrek At5;265;70;16;265 70 r16;;pneu 265 70 r16 Dunlop Grandtrek At5;['265/70R16', '265 70 R16', 'Dunlop', 'Grandtrek At5'];\b265[/\s-]?70\s*R?\s*16\b;36016
+42656;Dunlop;Grandtrek Mt2;265;70;16;265 70 r16;;pneu 265 70 r16 Dunlop Grandtrek Mt2;['265/70R16', '265 70 R16', 'Dunlop', 'Grandtrek Mt2'];\b265[/\s-]?70\s*R?\s*16\b;42656
+44854;Dunlop;Grantek At5;215;60;17;215 60 r17;;pneu 215 60 r17 Dunlop Grantek At5;['215/60R17', '215 60 R17', 'Dunlop', 'Grantek At5'];\b215[/\s-]?60\s*R?\s*17\b;44854
+37888;Dunlop;Grantrek At5;235;75;15;235 75 r15;;pneu 235 75 r15 Dunlop Grantrek At5;['235/75R15', '235 75 R15', 'Dunlop', 'Grantrek At5'];\b235[/\s-]?75\s*R?\s*15\b;37888
+16457;Dunlop;Lm 704;185;60;14;185 60 r14;;pneu 185 60 r14 Dunlop Lm 704;['185/60R14', '185 60 R14', 'Dunlop', 'Lm 704'];\b185[/\s-]?60\s*R?\s*14\b;16457
+45477;Dunlop;Sp Fm800;185;55;16;185 55 r16;;pneu 185 55 r16 Dunlop Sp Fm800;['185/55R16', '185 55 R16', 'Dunlop', 'Sp Fm800'];\b185[/\s-]?55\s*R?\s*16\b;45477
+45478;Dunlop;Sp Fm800;205;55;17;205 55 r17;;pneu 205 55 r17 Dunlop Sp Fm800;['205/55R17', '205 55 R17', 'Dunlop', 'Sp Fm800'];\b205[/\s-]?55\s*R?\s*17\b;45478
+34724;Dunlop;Sp Sport Fm800;185;60;15;185 60 r15;;pneu 185 60 r15 Dunlop Sp Sport Fm800;['185/60R15', '185 60 R15', 'Dunlop', 'Sp Sport Fm800'];\b185[/\s-]?60\s*R?\s*15\b;34724
+33803;Dunlop;Sp Sport Fm800;185;65;15;185 65 r15;;pneu 185 65 r15 Dunlop Sp Sport Fm800;['185/65R15', '185 65 R15', 'Dunlop', 'Sp Sport Fm800'];\b185[/\s-]?65\s*R?\s*15\b;33803
+33170;Dunlop;Sp Sport Fm800;195;55;15;195 55 r15;;pneu 195 55 r15 Dunlop Sp Sport Fm800;['195/55R15', '195 55 R15', 'Dunlop', 'Sp Sport Fm800'];\b195[/\s-]?55\s*R?\s*15\b;33170
+32874;Dunlop;Sp Sport Fm800;195;55;16;195 55 r16;;pneu 195 55 r16 Dunlop Sp Sport Fm800;['195/55R16', '195 55 R16', 'Dunlop', 'Sp Sport Fm800'];\b195[/\s-]?55\s*R?\s*16\b;32874
+33115;Dunlop;Sp Sport Fm800;195;60;15;195 60 r15;;pneu 195 60 r15 Dunlop Sp Sport Fm800;['195/60R15', '195 60 R15', 'Dunlop', 'Sp Sport Fm800'];\b195[/\s-]?60\s*R?\s*15\b;33115
+33374;Dunlop;Sp Sport Fm800;195;65;15;195 65 r15;;pneu 195 65 r15 Dunlop Sp Sport Fm800;['195/65R15', '195 65 R15', 'Dunlop', 'Sp Sport Fm800'];\b195[/\s-]?65\s*R?\s*15\b;33374
+32875;Dunlop;Sp Sport Fm800;205;50;17;205 50 r17;;pneu 205 50 r17 Dunlop Sp Sport Fm800;['205/50R17', '205 50 R17', 'Dunlop', 'Sp Sport Fm800'];\b205[/\s-]?50\s*R?\s*17\b;32875
+34820;Dunlop;Sp Sport Fm800;205;55;16;205 55 r16;;pneu 205 55 r16 Dunlop Sp Sport Fm800;['205/55R16', '205 55 R16', 'Dunlop', 'Sp Sport Fm800'];\b205[/\s-]?55\s*R?\s*16\b;34820
+33171;Dunlop;Sp Sport Fm800;205;60;15;205 60 r15;;pneu 205 60 r15 Dunlop Sp Sport Fm800;['205/60R15', '205 60 R15', 'Dunlop', 'Sp Sport Fm800'];\b205[/\s-]?60\s*R?\s*15\b;33171
+36271;Dunlop;Sp Sport Fm800;215;50;17;215 50 r17;;pneu 215 50 r17 Dunlop Sp Sport Fm800;['215/50R17', '215 50 R17', 'Dunlop', 'Sp Sport Fm800'];\b215[/\s-]?50\s*R?\s*17\b;36271
+33117;Dunlop;Sp Sport Fm800;225;50;17;225 50 r17;;pneu 225 50 r17 Dunlop Sp Sport Fm800;['225/50R17', '225 50 R17', 'Dunlop', 'Sp Sport Fm800'];\b225[/\s-]?50\s*R?\s*17\b;33117
+28008;Dunlop;Sp Touring R1;165;70;13;165 70 r13;;pneu 165 70 r13 Dunlop Sp Touring R1;['165/70R13', '165 70 R13', 'Dunlop', 'Sp Touring R1'];\b165[/\s-]?70\s*R?\s*13\b;28008
+26686;Dunlop;Sp Touring R1;175;65;14;175 65 r14;;pneu 175 65 r14 Dunlop Sp Touring R1;['175/65R14', '175 65 R14', 'Dunlop', 'Sp Touring R1'];\b175[/\s-]?65\s*R?\s*14\b;26686
+28007;Dunlop;Sp Touring R1;175;70;13;175 70 r13;;pneu 175 70 r13 Dunlop Sp Touring R1;['175/70R13', '175 70 R13', 'Dunlop', 'Sp Touring R1'];\b175[/\s-]?70\s*R?\s*13\b;28007
+27494;Dunlop;Sp Touring R1;175;70;14;175 70 r14;;pneu 175 70 r14 Dunlop Sp Touring R1;['175/70R14', '175 70 R14', 'Dunlop', 'Sp Touring R1'];\b175[/\s-]?70\s*R?\s*14\b;27494
+27495;Dunlop;Sp Touring R1;185;65;14;185 65 r14;;pneu 185 65 r14 Dunlop Sp Touring R1;['185/65R14', '185 65 R14', 'Dunlop', 'Sp Touring R1'];\b185[/\s-]?65\s*R?\s*14\b;27495
+27147;Dunlop;Sp Touring R1;185;70;14;185 70 r14;;pneu 185 70 r14 Dunlop Sp Touring R1;['185/70R14', '185 70 R14', 'Dunlop', 'Sp Touring R1'];\b185[/\s-]?70\s*R?\s*14\b;27147
+25982;Dunlop;Sp320;215;75;17;215 75 r17;;pneu 215 75 r17 Dunlop Sp320;['215/75R17', '215 75 R17', 'Dunlop', 'Sp320'];\b215[/\s-]?75\s*R?\s*17\b;25982
+27242;Dunlop;Sp320;235;75;17;235 75 r17;;pneu 235 75 r17 Dunlop Sp320;['235/75R17', '235 75 R17', 'Dunlop', 'Sp320'];\b235[/\s-]?75\s*R?\s*17\b;27242
+32045;Dunlop;Sp320;275;80;22;275 80 r22;;pneu 275 80 r22 Dunlop Sp320;['275/80R22', '275 80 R22', 'Dunlop', 'Sp320'];\b275[/\s-]?80\s*R?\s*22\b;32045
+28684;Dunlop;Sp835;275;80;22;275 80 r22;;pneu 275 80 r22 Dunlop Sp835;['275/80R22', '275 80 R22', 'Dunlop', 'Sp835'];\b275[/\s-]?80\s*R?\s*22\b;28684
+37226;Dunlop;Sport Max050;225;45;17;225 45 r17;;pneu 225 45 r17 Dunlop Sport Max050;['225/45R17', '225 45 R17', 'Dunlop', 'Sport Max050'];\b225[/\s-]?45\s*R?\s*17\b;37226
+27454;Dunlop;Touring R1;185;70;13;185 70 r13;;pneu 185 70 r13 Dunlop Touring R1;['185/70R13', '185 70 R13', 'Dunlop', 'Touring R1'];\b185[/\s-]?70\s*R?\s*13\b;27454
+47609;Durable;City Dc01;175;65;15;175 65 r15;;pneu 175 65 r15 Durable City Dc01;['175/65R15', '175 65 R15', 'Durable', 'City Dc01'];\b175[/\s-]?65\s*R?\s*15\b;47609
+39544;Durable;Dr755;295;80;22;295 80 r22;;pneu 295 80 r22 Durable Dr755;['295/80R22', '295 80 R22', 'Durable', 'Dr755'];\b295[/\s-]?80\s*R?\s*22\b;39544
+26061;Dyna;S526;207;8;15;207 8 r15;;pneu 207 8 r15 Dyna S526;['207/8R15', '207 8 R15', 'Dyna', 'S526'];\b207[/\s-]?8\s*R?\s*15\b;7891100352600
+46418;Dynamo;Mh01;205;55;16;205 55 r16;;pneu 205 55 r16 Dynamo Mh01;['205/55R16', '205 55 R16', 'Dynamo', 'Mh01'];\b205[/\s-]?55\s*R?\s*16\b;46418
+35966;Ecovision;Vi386 Hp;215;60;17;215 60 r17;;pneu 215 60 r17 Ecovision Vi386 Hp;['215/60R17', '215 60 R17', 'Ecovision', 'Vi386 Hp'];\b215[/\s-]?60\s*R?\s*17\b;35966
+18650;Falken;Linam R51;225;70;15;225 70 r15;;pneu 225 70 r15 Falken Linam R51;['225/70R15', '225 70 R15', 'Falken', 'Linam R51'];\b225[/\s-]?70\s*R?\s*15\b;18650
+19075;Falken;Wildpeak A/T;235;75;15;235 75 r15;;pneu 235 75 r15 Falken Wildpeak A/T;['235/75R15', '235 75 R15', 'Falken', 'Wildpeak A/T'];\b235[/\s-]?75\s*R?\s*15\b;19075
+20759;Falken;Ziex Ze914;195;55;16;195 55 r16;;pneu 195 55 r16 Falken Ziex Ze914;['195/55R16', '195 55 R16', 'Falken', 'Ziex Ze914'];\b195[/\s-]?55\s*R?\s*16\b;20759
+27196;Farroad;Frd26;215;40;18;215 40 r18;;pneu 215 40 r18 Farroad Frd26;['215/40R18', '215 40 R18', 'Farroad', 'Frd26'];\b215[/\s-]?40\s*R?\s*18\b;27196
+34373;Farroad;Frd26;235;40;18;235 40 r18;;pneu 235 40 r18 Farroad Frd26;['235/40R18', '235 40 R18', 'Farroad', 'Frd26'];\b235[/\s-]?40\s*R?\s*18\b;34373
+48328;Farroad;Frd66;225;65;17;225 65 r17;;pneu 225 65 r17 Farroad Frd66;['225/65R17', '225 65 R17', 'Farroad', 'Frd66'];\b225[/\s-]?65\s*R?\s*17\b;48328
+27152;Farroad;Frd96;195;65;16;195 65 r16;;pneu 195 65 r16 Farroad Frd96;['195/65R16', '195 65 R16', 'Farroad', 'Frd96'];\b195[/\s-]?65\s*R?\s*16\b;27152
+44138;Fate;Sentiva Ar360;185;65;14;185 65 r14;;pneu 185 65 r14 Fate Sentiva Ar360;['185/65R14', '185 65 R14', 'Fate', 'Sentiva Ar360'];\b185[/\s-]?65\s*R?\s*14\b;44138
+47245;Firemax;Fm601;225;45;17;225 45 r17;;pneu 225 45 r17 Firemax Fm601;['225/45R17', '225 45 R17', 'Firemax', 'Fm601'];\b225[/\s-]?45\s*R?\s*17\b;47245
+35131;Firestone;Atx Destination;265;65;17;265 65 r17;;pneu 265 65 r17 Firestone Atx Destination;['265/65R17', '265 65 R17', 'Firestone', 'Atx Destination'];\b265[/\s-]?65\s*R?\s*17\b;35131
+36587;Firestone;Destination A/T;245;70;16;245 70 r16;;pneu 245 70 r16 Firestone Destination A/T;['245/70R16', '245 70 R16', 'Firestone', 'Destination A/T'];\b245[/\s-]?70\s*R?\s*16\b;36587
+37662;Firestone;Destination Atx;265;70;16;265 70 r16;;pneu 265 70 r16 Firestone Destination Atx;['265/70R16', '265 70 R16', 'Firestone', 'Destination Atx'];\b265[/\s-]?70\s*R?\s*16\b;37662
+32527;Firestone;Destination H/T;265;65;17;265 65 r17;;pneu 265 65 r17 Firestone Destination H/T;['265/65R17', '265 65 R17', 'Firestone', 'Destination H/T'];\b265[/\s-]?65\s*R?\s*17\b;32527
+45516;Firestone;Destination Le3;205;65;16;205 65 r16;;pneu 205 65 r16 Firestone Destination Le3;['205/65R16', '205 65 R16', 'Firestone', 'Destination Le3'];\b205[/\s-]?65\s*R?\s*16\b;45516
+21310;Firestone;F700;175;65;14;175 65 r14;;pneu 175 65 r14 Firestone F700;['175/65R14', '175 65 R14', 'Firestone', 'F700'];\b175[/\s-]?65\s*R?\s*14\b;21310
+22005;Firestone;F700;175;70;14;175 70 r14;;pneu 175 70 r14 Firestone F700;['175/70R14', '175 70 R14', 'Firestone', 'F700'];\b175[/\s-]?70\s*R?\s*14\b;22005
+33333;Firestone;F700;185;60;15;185 60 r15;;pneu 185 60 r15 Firestone F700;['185/60R15', '185 60 R15', 'Firestone', 'F700'];\b185[/\s-]?60\s*R?\s*15\b;33333
+3153;Firestone;F700;185;70;14;185 70 r14;;pneu 185 70 r14 Firestone F700;['185/70R14', '185 70 R14', 'Firestone', 'F700'];\b185[/\s-]?70\s*R?\s*14\b;3153
+33523;Firestone;F700;195;55;15;195 55 r15;;pneu 195 55 r15 Firestone F700;['195/55R15', '195 55 R15', 'Firestone', 'F700'];\b195[/\s-]?55\s*R?\s*15\b;33523
+3212;Firestone;F700;195;65;15;195 65 r15;;pneu 195 65 r15 Firestone F700;['195/65R15', '195 65 R15', 'Firestone', 'F700'];\b195[/\s-]?65\s*R?\s*15\b;3212
+40280;Firestone;F700+;225;50;17;225 50 r17;;pneu 225 50 r17 Firestone F700+;['225/50R17', '225 50 R17', 'Firestone', 'F700+'];\b225[/\s-]?50\s*R?\s*17\b;40280
+34338;Firestone;Fs558;235;75;17;235 75 r17;;pneu 235 75 r17 Firestone Fs558;['235/75R17', '235 75 R17', 'Firestone', 'Fs558'];\b235[/\s-]?75\s*R?\s*17\b;34338
+45005;Forceland;Vitality F22;195;50;15;195 50 r15;;pneu 195 50 r15 Forceland Vitality F22;['195/50R15', '195 50 R15', 'Forceland', 'Vitality F22'];\b195[/\s-]?50\s*R?\s*15\b;45005
+45534;Forceland;Vitality F22;205;55;16;205 55 r16;;pneu 205 55 r16 Forceland Vitality F22;['205/55R16', '205 55 R16', 'Forceland', 'Vitality F22'];\b205[/\s-]?55\s*R?\s*16\b;45534
+48329;Forceland;Vitality F22;215;45;17;215 45 r17;;pneu 215 45 r17 Forceland Vitality F22;['215/45R17', '215 45 R17', 'Forceland', 'Vitality F22'];\b215[/\s-]?45\s*R?\s*17\b;48329
+43503;Forceland;Vitality F22;215;60;17;215 60 r17;;pneu 215 60 r17 Forceland Vitality F22;['215/60R17', '215 60 R17', 'Forceland', 'Vitality F22'];\b215[/\s-]?60\s*R?\s*17\b;43503
+20198;Formula;Energy;175;70;13;175 70 r13;;pneu 175 70 r13 Formula Energy;['175/70R13', '175 70 R13', 'Formula', 'Energy'];\b175[/\s-]?70\s*R?\s*13\b;20198
+30616;Formula;Evo;195;55;15;195 55 r15;;pneu 195 55 r15 Formula Evo;['195/55R15', '195 55 R15', 'Formula', 'Evo'];\b195[/\s-]?55\s*R?\s*15\b;30616
+39800;Formula;Evo;195;60;15;195 60 r15;;pneu 195 60 r15 Formula Evo;['195/60R15', '195 60 R15', 'Formula', 'Evo'];\b195[/\s-]?60\s*R?\s*15\b;39800
+30832;Goform;Gs03;245;65;17;245 65 r17;;pneu 245 65 r17 Goform Gs03;['245/65R17', '245 65 R17', 'Goform', 'Gs03'];\b245[/\s-]?65\s*R?\s*17\b;30832
+33372;Goodyear;Assur. Maxlife;165;70;13;165 70 r13;;pneu 165 70 r13 Goodyear Assur. Maxlife;['165/70R13', '165 70 R13', 'Goodyear', 'Assur. Maxlife'];\b165[/\s-]?70\s*R?\s*13\b;33372
+34564;Goodyear;Assur. Maxlife;165;70;14;165 70 r14;;pneu 165 70 r14 Goodyear Assur. Maxlife;['165/70R14', '165 70 R14', 'Goodyear', 'Assur. Maxlife'];\b165[/\s-]?70\s*R?\s*14\b;34564
+30456;Goodyear;Assur. Maxlife;175;65;14;175 65 r14;;pneu 175 65 r14 Goodyear Assur. Maxlife;['175/65R14', '175 65 R14', 'Goodyear', 'Assur. Maxlife'];\b175[/\s-]?65\s*R?\s*14\b;30456
+30451;Goodyear;Assur. Maxlife;175;70;13;175 70 r13;;pneu 175 70 r13 Goodyear Assur. Maxlife;['175/70R13', '175 70 R13', 'Goodyear', 'Assur. Maxlife'];\b175[/\s-]?70\s*R?\s*13\b;30451
+31764;Goodyear;Assur. Maxlife;175;70;14;175 70 r14;;pneu 175 70 r14 Goodyear Assur. Maxlife;['175/70R14', '175 70 R14', 'Goodyear', 'Assur. Maxlife'];\b175[/\s-]?70\s*R?\s*14\b;31764
+33194;Goodyear;Assur. Maxlife;185;70;14;185 70 r14;;pneu 185 70 r14 Goodyear Assur. Maxlife;['185/70R14', '185 70 R14', 'Goodyear', 'Assur. Maxlife'];\b185[/\s-]?70\s*R?\s*14\b;33194
+44329;Goodyear;Assurance Maxlife;185;65;14;185 65 r14;;pneu 185 65 r14 Goodyear Assurance Maxlife;['185/65R14', '185 65 R14', 'Goodyear', 'Assurance Maxlife'];\b185[/\s-]?65\s*R?\s*14\b;44329
+40691;Goodyear;Cargo Marathon 2;195;75;16;195 75 r16;;pneu 195 75 r16 Goodyear Cargo Marathon 2;['195/75R16', '195 75 R16', 'Goodyear', 'Cargo Marathon 2'];\b195[/\s-]?75\s*R?\s*16\b;40691
+27722;Goodyear;Cargo Marathon 2;205;70;15;205 70 r15;;pneu 205 70 r15 Goodyear Cargo Marathon 2;['205/70R15', '205 70 R15', 'Goodyear', 'Cargo Marathon 2'];\b205[/\s-]?70\s*R?\s*15\b;27722
+27074;Goodyear;Cargo Marathon 2;205;75;16;205 75 r16;;pneu 205 75 r16 Goodyear Cargo Marathon 2;['205/75R16', '205 75 R16', 'Goodyear', 'Cargo Marathon 2'];\b205[/\s-]?75\s*R?\s*16\b;27074
+27073;Goodyear;Cargo Marathon 2;225;75;16;225 75 r16;;pneu 225 75 r16 Goodyear Cargo Marathon 2;['225/75R16', '225 75 R16', 'Goodyear', 'Cargo Marathon 2'];\b225[/\s-]?75\s*R?\s*16\b;27073
+41383;Goodyear;Direction 2 Suv;205;65;15;205 65 r15;;pneu 205 65 r15 Goodyear Direction 2 Suv;['205/65R15', '205 65 R15', 'Goodyear', 'Direction 2 Suv'];\b205[/\s-]?65\s*R?\s*15\b;41383
+24119;Goodyear;Direction Touring;175;65;14;175 65 r14;;pneu 175 65 r14 Goodyear Direction Touring;['175/65R14', '175 65 R14', 'Goodyear', 'Direction Touring'];\b175[/\s-]?65\s*R?\s*14\b;24119
+37198;Goodyear;Eagle Sport 2;185;55;16;185 55 r16;;pneu 185 55 r16 Goodyear Eagle Sport 2;['185/55R16', '185 55 R16', 'Goodyear', 'Eagle Sport 2'];\b185[/\s-]?55\s*R?\s*16\b;37198
+37048;Goodyear;Eagle Sport 2;185;60;15;185 60 r15;;pneu 185 60 r15 Goodyear Eagle Sport 2;['185/60R15', '185 60 R15', 'Goodyear', 'Eagle Sport 2'];\b185[/\s-]?60\s*R?\s*15\b;37048
+36981;Goodyear;Eagle Sport 2;185;65;15;185 65 r15;;pneu 185 65 r15 Goodyear Eagle Sport 2;['185/65R15', '185 65 R15', 'Goodyear', 'Eagle Sport 2'];\b185[/\s-]?65\s*R?\s*15\b;36981
+36025;Goodyear;Eagle Sport 2;195;55;15;195 55 r15;;pneu 195 55 r15 Goodyear Eagle Sport 2;['195/55R15', '195 55 R15', 'Goodyear', 'Eagle Sport 2'];\b195[/\s-]?55\s*R?\s*15\b;36025
+38791;Goodyear;Eagle Sport 2;195;55;16;195 55 r16;;pneu 195 55 r16 Goodyear Eagle Sport 2;['195/55R16', '195 55 R16', 'Goodyear', 'Eagle Sport 2'];\b195[/\s-]?55\s*R?\s*16\b;38791
+37365;Goodyear;Eagle Sport 2;195;65;15;195 65 r15;;pneu 195 65 r15 Goodyear Eagle Sport 2;['195/65R15', '195 65 R15', 'Goodyear', 'Eagle Sport 2'];\b195[/\s-]?65\s*R?\s*15\b;37365
+36000;Goodyear;Eagle Sport 2;205;55;16;205 55 r16;;pneu 205 55 r16 Goodyear Eagle Sport 2;['205/55R16', '205 55 R16', 'Goodyear', 'Eagle Sport 2'];\b205[/\s-]?55\s*R?\s*16\b;36000
+37195;Goodyear;Eagle Sport 2;225;50;17;225 50 r17;;pneu 225 50 r17 Goodyear Eagle Sport 2;['225/50R17', '225 50 R17', 'Goodyear', 'Eagle Sport 2'];\b225[/\s-]?50\s*R?\s*17\b;37195
+34597;Goodyear;Eagle Touring;205;50;17;205 50 r17;;pneu 205 50 r17 Goodyear Eagle Touring;['205/50R17', '205 50 R17', 'Goodyear', 'Eagle Touring'];\b205[/\s-]?50\s*R?\s*17\b;34597
+47305;Goodyear;Edge Suv 2;255;75;15;255 75 r15;;pneu 255 75 r15 Goodyear Edge Suv 2;['255/75R15', '255 75 R15', 'Goodyear', 'Edge Suv 2'];\b255[/\s-]?75\s*R?\s*15\b;47305
+47554;Goodyear;Edge Suv 2 Sl;235;60;16;235 60 r16;;pneu 235 60 r16 Goodyear Edge Suv 2 Sl;['235/60R16', '235 60 R16', 'Goodyear', 'Edge Suv 2 Sl'];\b235[/\s-]?60\s*R?\s*16\b;47554
+21062;Goodyear;Efficientgrip;185;70;14;185 70 r14;;pneu 185 70 r14 Goodyear Efficientgrip;['185/70R14', '185 70 R14', 'Goodyear', 'Efficientgrip'];\b185[/\s-]?70\s*R?\s*14\b;21062
+27235;Goodyear;Efficientgrip;195;55;15;195 55 r15;;pneu 195 55 r15 Goodyear Efficientgrip;['195/55R15', '195 55 R15', 'Goodyear', 'Efficientgrip'];\b195[/\s-]?55\s*R?\s*15\b;27235
+46801;Goodyear;Efficientgrip;195;60;15;195 60 r15;;pneu 195 60 r15 Goodyear Efficientgrip;['195/60R15', '195 60 R15', 'Goodyear', 'Efficientgrip'];\b195[/\s-]?60\s*R?\s*15\b;46801
+12477;Goodyear;Efficientgrip;195;65;15;195 65 r15;;pneu 195 65 r15 Goodyear Efficientgrip;['195/65R15', '195 65 R15', 'Goodyear', 'Efficientgrip'];\b195[/\s-]?65\s*R?\s*15\b;12477
+19887;Goodyear;Efficientgrip;205;60;15;205 60 r15;;pneu 205 60 r15 Goodyear Efficientgrip;['205/60R15', '205 60 R15', 'Goodyear', 'Efficientgrip'];\b205[/\s-]?60\s*R?\s*15\b;19887
+21264;Goodyear;Efficientgrip;215;50;17;215 50 r17;;pneu 215 50 r17 Goodyear Efficientgrip;['215/50R17', '215 50 R17', 'Goodyear', 'Efficientgrip'];\b215[/\s-]?50\s*R?\s*17\b;21264
+27243;Goodyear;Efficientgrip Suv;215;55;17;215 55 r17;;pneu 215 55 r17 Goodyear Efficientgrip Suv;['215/55R17', '215 55 R17', 'Goodyear', 'Efficientgrip Suv'];\b215[/\s-]?55\s*R?\s*17\b;27243
+35247;Goodyear;Efficientgrip Suv;215;60;17;215 60 r17;;pneu 215 60 r17 Goodyear Efficientgrip Suv;['215/60R17', '215 60 R17', 'Goodyear', 'Efficientgrip Suv'];\b215[/\s-]?60\s*R?\s*17\b;35247
+27237;Goodyear;Efficientgrip Suv;225;55;18;225 55 r18;;pneu 225 55 r18 Goodyear Efficientgrip Suv;['225/55R18', '225 55 R18', 'Goodyear', 'Efficientgrip Suv'];\b225[/\s-]?55\s*R?\s*18\b;27237
+32665;Goodyear;Efficientgrip Suv;235;55;19;235 55 r19;;pneu 235 55 r19 Goodyear Efficientgrip Suv;['235/55R19', '235 55 R19', 'Goodyear', 'Efficientgrip Suv'];\b235[/\s-]?55\s*R?\s*19\b;32665
+27238;Goodyear;Efficientgrip Suv;255;55;19;255 55 r19;;pneu 255 55 r19 Goodyear Efficientgrip Suv;['255/55R19', '255 55 R19', 'Goodyear', 'Efficientgrip Suv'];\b255[/\s-]?55\s*R?\s*19\b;27238
+47553;Goodyear;Efficientgrip Suv Xl;235;55;18;235 55 r18;;pneu 235 55 r18 Goodyear Efficientgrip Suv Xl;['235/55R18', '235 55 R18', 'Goodyear', 'Efficientgrip Suv Xl'];\b235[/\s-]?55\s*R?\s*18\b;47553
+41274;Goodyear;Fortitude Ht;225;60;17;225 60 r17;;pneu 225 60 r17 Goodyear Fortitude Ht;['225/60R17', '225 60 R17', 'Goodyear', 'Fortitude Ht'];\b225[/\s-]?60\s*R?\s*17\b;41274
+10753;Goodyear;G32 Cargo;225;65;16;225 65 r16;;pneu 225 65 r16 Goodyear G32 Cargo;['225/65R16', '225 65 R16', 'Goodyear', 'G32 Cargo'];\b225[/\s-]?65\s*R?\s*16\b;10753
+47555;Goodyear;Ht Wrgl Territory;265;60;18;265 60 r18;;pneu 265 60 r18 Goodyear Ht Wrgl Territory;['265/60R18', '265 60 R18', 'Goodyear', 'Ht Wrgl Territory'];\b265[/\s-]?60\s*R?\s*18\b;47555
+32171;Goodyear;Kelly Edge Sport;195;50;16;195 50 r16;;pneu 195 50 r16 Goodyear Kelly Edge Sport;['195/50R16', '195 50 R16', 'Goodyear', 'Kelly Edge Sport'];\b195[/\s-]?50\s*R?\s*16\b;32171
+20539;Goodyear;Kelly Edge Sport;195;60;15;195 60 r15;;pneu 195 60 r15 Goodyear Kelly Edge Sport;['195/60R15', '195 60 R15', 'Goodyear', 'Kelly Edge Sport'];\b195[/\s-]?60\s*R?\s*15\b;20539
+46533;Goodyear;Kelly Edge Sport 2;175;65;15;175 65 r15;;pneu 175 65 r15 Goodyear Kelly Edge Sport 2;['175/65R15', '175 65 R15', 'Goodyear', 'Kelly Edge Sport 2'];\b175[/\s-]?65\s*R?\s*15\b;46533
+23403;Goodyear;Kelly Edge Sport 2;205;40;17;205 40 r17;;pneu 205 40 r17 Goodyear Kelly Edge Sport 2;['205/40R17', '205 40 R17', 'Goodyear', 'Kelly Edge Sport 2'];\b205[/\s-]?40\s*R?\s*17\b;1234567891234
+44542;Goodyear;Kelly Edge Sport 2;225;45;17;225 45 r17;;pneu 225 45 r17 Goodyear Kelly Edge Sport 2;['225/45R17', '225 45 R17', 'Goodyear', 'Kelly Edge Sport 2'];\b225[/\s-]?45\s*R?\s*17\b;44542
+23968;Goodyear;Kelly Edge Suv 2;175;80;14;175 80 r14;;pneu 175 80 r14 Goodyear Kelly Edge Suv 2;['175/80R14', '175 80 R14', 'Goodyear', 'Kelly Edge Suv 2'];\b175[/\s-]?80\s*R?\s*14\b;23968
+43998;Goodyear;Kelly Edge Suv 2;215;80;16;215 80 r16;;pneu 215 80 r16 Goodyear Kelly Edge Suv 2;['215/80R16', '215 80 R16', 'Goodyear', 'Kelly Edge Suv 2'];\b215[/\s-]?80\s*R?\s*16\b;43998
+47046;Goodyear;Kelly Edge Suv 2;265;70;16;265 70 r16;;pneu 265 70 r16 Goodyear Kelly Edge Suv 2;['265/70R16', '265 70 R16', 'Goodyear', 'Kelly Edge Suv 2'];\b265[/\s-]?70\s*R?\s*16\b;47046
+43353;Goodyear;Kelly Edge Touring 2;165;70;13;165 70 r13;;pneu 165 70 r13 Goodyear Kelly Edge Touring 2;['165/70R13', '165 70 R13', 'Goodyear', 'Kelly Edge Touring 2'];\b165[/\s-]?70\s*R?\s*13\b;43353
+44043;Goodyear;Kelly Edge Touring 2;175;65;14;175 65 r14;;pneu 175 65 r14 Goodyear Kelly Edge Touring 2;['175/65R14', '175 65 R14', 'Goodyear', 'Kelly Edge Touring 2'];\b175[/\s-]?65\s*R?\s*14\b;44043
+43354;Goodyear;Kelly Edge Touring 2;175;70;13;175 70 r13;;pneu 175 70 r13 Goodyear Kelly Edge Touring 2;['175/70R13', '175 70 R13', 'Goodyear', 'Kelly Edge Touring 2'];\b175[/\s-]?70\s*R?\s*13\b;43354
+42990;Goodyear;Kelly Edge Touring 2;175;70;14;175 70 r14;;pneu 175 70 r14 Goodyear Kelly Edge Touring 2;['175/70R14', '175 70 R14', 'Goodyear', 'Kelly Edge Touring 2'];\b175[/\s-]?70\s*R?\s*14\b;42990
+43455;Goodyear;Kelly Edge Touring 2;185;65;14;185 65 r14;;pneu 185 65 r14 Goodyear Kelly Edge Touring 2;['185/65R14', '185 65 R14', 'Goodyear', 'Kelly Edge Touring 2'];\b185[/\s-]?65\s*R?\s*14\b;43455
+46224;Goodyear;Kelly Edge Touring 2;185;70;14;185 70 r14;;pneu 185 70 r14 Goodyear Kelly Edge Touring 2;['185/70R14', '185 70 R14', 'Goodyear', 'Kelly Edge Touring 2'];\b185[/\s-]?70\s*R?\s*14\b;46224
+27232;Goodyear;Marathon 2;225;70;15;225 70 r15;;pneu 225 70 r15 Goodyear Marathon 2;['225/70R15', '225 70 R15', 'Goodyear', 'Marathon 2'];\b225[/\s-]?70\s*R?\s*15\b;27232
+3264;Goodyear;Steel Ags;215;75;17;215 75 r17;;pneu 215 75 r17 Goodyear Steel Ags;['215/75R17', '215 75 R17', 'Goodyear', 'Steel Ags'];\b215[/\s-]?75\s*R?\s*17\b;3264
+7195;Goodyear;Steel Ags;295;80;22;295 80 r22;;pneu 295 80 r22 Goodyear Steel Ags;['295/80R22', '295 80 R22', 'Goodyear', 'Steel Ags'];\b295[/\s-]?80\s*R?\s*22\b;7195
+5196;Goodyear;Wrangler Fortitude H/T;205;65;15;205 65 r15;;pneu 205 65 r15 Goodyear Wrangler Fortitude H/T;['205/65R15', '205 65 R15', 'Goodyear', 'Wrangler Fortitude H/T'];\b205[/\s-]?65\s*R?\s*15\b;5196
+35667;Goodyear;Wrangler Fortitude Ht;205;70;15;205 70 r15;;pneu 205 70 r15 Goodyear Wrangler Fortitude Ht;['205/70R15', '205 70 R15', 'Goodyear', 'Wrangler Fortitude Ht'];\b205[/\s-]?70\s*R?\s*15\b;35667
+19888;Goodyear;Wrangler Fortitude Ht;215;65;16;215 65 r16;;pneu 215 65 r16 Goodyear Wrangler Fortitude Ht;['215/65R16', '215 65 R16', 'Goodyear', 'Wrangler Fortitude Ht'];\b215[/\s-]?65\s*R?\s*16\b;19888
+45831;Goodyear;Wrangler Fortitude Ht;225;60;18;225 60 r18;;pneu 225 60 r18 Goodyear Wrangler Fortitude Ht;['225/60R18', '225 60 R18', 'Goodyear', 'Wrangler Fortitude Ht'];\b225[/\s-]?60\s*R?\s*18\b;45831
+46529;Goodyear;Wrangler Fortitude Ht;225;65;17;225 65 r17;;pneu 225 65 r17 Goodyear Wrangler Fortitude Ht;['225/65R17', '225 65 R17', 'Goodyear', 'Wrangler Fortitude Ht'];\b225[/\s-]?65\s*R?\s*17\b;46529
+34236;Goodyear;Wrangler Fortitude Ht;235;60;16;235 60 r16;;pneu 235 60 r16 Goodyear Wrangler Fortitude Ht;['235/60R16', '235 60 R16', 'Goodyear', 'Wrangler Fortitude Ht'];\b235[/\s-]?60\s*R?\s*16\b;34236
+35898;Goodyear;Wrangler Fortitude Ht;235;60;18;235 60 r18;;pneu 235 60 r18 Goodyear Wrangler Fortitude Ht;['235/60R18', '235 60 R18', 'Goodyear', 'Wrangler Fortitude Ht'];\b235[/\s-]?60\s*R?\s*18\b;35898
+48377;Goodyear;Wrangler Fortitude Ht;235;70;16;235 70 r16;;pneu 235 70 r16 Goodyear Wrangler Fortitude Ht;['235/70R16', '235 70 R16', 'Goodyear', 'Wrangler Fortitude Ht'];\b235[/\s-]?70\s*R?\s*16\b;48377
+46534;Goodyear;Wrangler Rt/S;265;75;16;265 75 r16;;pneu 265 75 r16 Goodyear Wrangler Rt/S;['265/75R16', '265 75 R16', 'Goodyear', 'Wrangler Rt/S'];\b265[/\s-]?75\s*R?\s*16\b;46534
+37925;Goodyear;Wrangler Territory;205;55;17;205 55 r17;;pneu 205 55 r17 Goodyear Wrangler Territory;['205/55R17', '205 55 R17', 'Goodyear', 'Wrangler Territory'];\b205[/\s-]?55\s*R?\s*17\b;37925
+45839;Goodyear;Wrangler Territory;225;50;18;225 50 r18;;pneu 225 50 r18 Goodyear Wrangler Territory;['225/50R18', '225 50 R18', 'Goodyear', 'Wrangler Territory'];\b225[/\s-]?50\s*R?\s*18\b;45839
+37407;Goodyear;Wrangler Territory Ht;205;60;16;205 60 r16;;pneu 205 60 r16 Goodyear Wrangler Territory Ht;['205/60R16', '205 60 R16', 'Goodyear', 'Wrangler Territory Ht'];\b205[/\s-]?60\s*R?\s*16\b;37407
+41465;Goodyear;Wrangler Territory Ht;215;55;18;215 55 r18;;pneu 215 55 r18 Goodyear Wrangler Territory Ht;['215/55R18', '215 55 R18', 'Goodyear', 'Wrangler Territory Ht'];\b215[/\s-]?55\s*R?\s*18\b;41465
+41486;Goodyear;Wrangler Workhorse At;215;80;16;215 80 r16;;pneu 215 80 r16 Goodyear Wrangler Workhorse At;['215/80R16', '215 80 R16', 'Goodyear', 'Wrangler Workhorse At'];\b215[/\s-]?80\s*R?\s*16\b;41486
+40283;Goodyear;Wrangler Workhorse At;235;70;16;235 70 r16;;pneu 235 70 r16 Goodyear Wrangler Workhorse At;['235/70R16', '235 70 R16', 'Goodyear', 'Wrangler Workhorse At'];\b235[/\s-]?70\s*R?\s*16\b;40283
+40634;Goodyear;Wrangler Workhorse At;245;70;16;245 70 r16;;pneu 245 70 r16 Goodyear Wrangler Workhorse At;['245/70R16', '245 70 R16', 'Goodyear', 'Wrangler Workhorse At'];\b245[/\s-]?70\s*R?\s*16\b;40634
+37210;Gt Radial;Savero Ht2;235;70;16;235 70 r16;;pneu 235 70 r16 Gt Radial Savero Ht2;['235/70R16', '235 70 R16', 'Gt Radial', 'Savero Ht2'];\b235[/\s-]?70\s*R?\s*16\b;37210
+44925;Habilead;Rs21;265;65;17;265 65 r17;;pneu 265 65 r17 Habilead Rs21;['265/65R17', '265 65 R17', 'Habilead', 'Rs21'];\b265[/\s-]?65\s*R?\s*17\b;44925
+39860;Hankook;Dynapro At2;255;65;17;255 65 r17;;pneu 255 65 r17 Hankook Dynapro At2;['255/65R17', '255 65 R17', 'Hankook', 'Dynapro At2'];\b255[/\s-]?65\s*R?\s*17\b;39860
+40757;Hankook;Dynapro Mt2;265;65;17;265 65 r17;;pneu 265 65 r17 Hankook Dynapro Mt2;['265/65R17', '265 65 R17', 'Hankook', 'Dynapro Mt2'];\b265[/\s-]?65\s*R?\s*17\b;40757
+40866;Hankook;Kinergy Gt;245;45;19;245 45 r19;;pneu 245 45 r19 Hankook Kinergy Gt;['245/45R19', '245 45 R19', 'Hankook', 'Kinergy Gt'];\b245[/\s-]?45\s*R?\s*19\b;40866
+39571;Hankook;Ventus V12 Evo2;205;50;17;205 50 r17;;pneu 205 50 r17 Hankook Ventus V12 Evo2;['205/50R17', '205 50 R17', 'Hankook', 'Ventus V12 Evo2'];\b205[/\s-]?50\s*R?\s*17\b;112517001
+48493;Hifly;Hf261;175;65;14;175 65 r14;;pneu 175 65 r14 Hifly Hf261;['175/65R14', '175 65 R14', 'Hifly', 'Hf261'];\b175[/\s-]?65\s*R?\s*14\b;48493
+48629;Hifly;Hf261;175;70;13;175 70 r13;;pneu 175 70 r13 Hifly Hf261;['175/70R13', '175 70 R13', 'Hifly', 'Hf261'];\b175[/\s-]?70\s*R?\s*13\b;48629
+43076;Hifly;Hf261;185;60;14;185 60 r14;;pneu 185 60 r14 Hifly Hf261;['185/60R14', '185 60 R14', 'Hifly', 'Hf261'];\b185[/\s-]?60\s*R?\s*14\b;43076
+48095;Hifly;Hf261;185;70;14;185 70 r14;;pneu 185 70 r14 Hifly Hf261;['185/70R14', '185 70 R14', 'Hifly', 'Hf261'];\b185[/\s-]?70\s*R?\s*14\b;48095
+46720;Hifly;Hf261;195;65;15;195 65 r15;;pneu 195 65 r15 Hifly Hf261;['195/65R15', '195 65 R15', 'Hifly', 'Hf261'];\b195[/\s-]?65\s*R?\s*15\b;46720
+44183;Hifly;Hf261;215;65;16;215 65 r16;;pneu 215 65 r16 Hifly Hf261;['215/65R16', '215 65 R16', 'Hifly', 'Hf261'];\b215[/\s-]?65\s*R?\s*16\b;44183
+20751;Hifly;Hh102;215;75;17;215 75 r17;;pneu 215 75 r17 Hifly Hh102;['215/75R17', '215 75 R17', 'Hifly', 'Hh102'];\b215[/\s-]?75\s*R?\s*17\b;20751
+46241;Hifly;Super 2000;205;75;16;205 75 r16;;pneu 205 75 r16 Hifly Super 2000;['205/75R16', '205 75 R16', 'Hifly', 'Super 2000'];\b205[/\s-]?75\s*R?\s*16\b;46241
+48094;Hifly;Vigorous At601;245;70;16;245 70 r16;;pneu 245 70 r16 Hifly Vigorous At601;['245/70R16', '245 70 R16', 'Hifly', 'Vigorous At601'];\b245[/\s-]?70\s*R?\s*16\b;48094
+46496;Hifly;Vigorous At601;265;75;16;265 75 r16;;pneu 265 75 r16 Hifly Vigorous At601;['265/75R16', '265 75 R16', 'Hifly', 'Vigorous At601'];\b265[/\s-]?75\s*R?\s*16\b;46496
+17319;Hifly;Vigorous Ht601;235;75;15;235 75 r15;;pneu 235 75 r15 Hifly Vigorous Ht601;['235/75R15', '235 75 R15', 'Hifly', 'Vigorous Ht601'];\b235[/\s-]?75\s*R?\s*15\b;17319
+47542;Hifly;Vigorous Ht601;255;75;15;255 75 r15;;pneu 255 75 r15 Hifly Vigorous Ht601;['255/75R15', '255 75 R15', 'Hifly', 'Vigorous Ht601'];\b255[/\s-]?75\s*R?\s*15\b;47542
+19500;Horizon;Hu901;225;35;20;225 35 r20;;pneu 225 35 r20 Horizon Hu901;['225/35R20', '225 35 R20', 'Horizon', 'Hu901'];\b225[/\s-]?35\s*R?\s*20\b;19500
+45208;Invovic;El601;215;40;18;215 40 r18;;pneu 215 40 r18 Invovic El601;['215/40R18', '215 40 R18', 'Invovic', 'El601'];\b215[/\s-]?40\s*R?\s*18\b;45208
+47643;Itaro;Itr01T;215;75;17;215 75 r17;;pneu 215 75 r17 Itaro Itr01T;['215/75R17', '215 75 R17', 'Itaro', 'Itr01T'];\b215[/\s-]?75\s*R?\s*17\b;47643
+48579;Itaro;Street Mh01;175;70;13;175 70 r13;;pneu 175 70 r13 Itaro Street Mh01;['175/70R13', '175 70 R13', 'Itaro', 'Street Mh01'];\b175[/\s-]?70\s*R?\s*13\b;48579
+37851;Jk Tyre;Ultima Royal;185;70;13;185 70 r13;;pneu 185 70 r13 Jk Tyre Ultima Royal;['185/70R13', '185 70 R13', 'Jk Tyre', 'Ultima Royal'];\b185[/\s-]?70\s*R?\s*13\b;37851
+7639;Jk Tyre;Vectra;175;70;14;175 70 r14;;pneu 175 70 r14 Jk Tyre Vectra;['175/70R14', '175 70 R14', 'Jk Tyre', 'Vectra'];\b175[/\s-]?70\s*R?\s*14\b;3082
+8101;Jktyre;Vectra;175;65;14;175 65 r14;;pneu 175 65 r14 Jktyre Vectra;['175/65R14', '175 65 R14', 'Jktyre', 'Vectra'];\b175[/\s-]?65\s*R?\s*14\b;8101
+43699;Kpatos;Fm601;185;55;16;185 55 r16;;pneu 185 55 r16 Kpatos Fm601;['185/55R16', '185 55 R16', 'Kpatos', 'Fm601'];\b185[/\s-]?55\s*R?\s*16\b;43699
+45115;Kpatos;Fm601;205;55;16;205 55 r16;;pneu 205 55 r16 Kpatos Fm601;['205/55R16', '205 55 R16', 'Kpatos', 'Fm601'];\b205[/\s-]?55\s*R?\s*16\b;45115
+46482;Kpatos;Fm601;235;50;18;235 50 r18;;pneu 235 50 r18 Kpatos Fm601;['235/50R18', '235 50 R18', 'Kpatos', 'Fm601'];\b235[/\s-]?50\s*R?\s*18\b;46482
+37632;Kumho;Es31;205;55;17;205 55 r17;;pneu 205 55 r17 Kumho Es31;['205/55R17', '205 55 R17', 'Kumho', 'Es31'];\b205[/\s-]?55\s*R?\s*17\b;37632
+26256;Kumho;Kl33;225;55;19;225 55 r19;;pneu 225 55 r19 Kumho Kl33;['225/55R19', '225 55 R19', 'Kumho', 'Kl33'];\b225[/\s-]?55\s*R?\s*19\b;26256
+39887;Kumho Tire;New Sense;185;70;14;185 70 r14;;pneu 185 70 r14 Kumho Tire New Sense;['185/70R14', '185 70 R14', 'Kumho Tire', 'New Sense'];\b185[/\s-]?70\s*R?\s*14\b;39887
+46717;Landspider;Citytraxx;175;65;14;175 65 r14;;pneu 175 65 r14 Landspider Citytraxx;['175/65R14', '175 65 R14', 'Landspider', 'Citytraxx'];\b175[/\s-]?65\s*R?\s*14\b;46717
+48321;Lanvigator;Catchpower Plus;215;55;17;215 55 r17;;pneu 215 55 r17 Lanvigator Catchpower Plus;['215/55R17', '215 55 R17', 'Lanvigator', 'Catchpower Plus'];\b215[/\s-]?55\s*R?\s*17\b;48321
+48322;Lanvigator;Catchpower Plus;225;55;18;225 55 r18;;pneu 225 55 r18 Lanvigator Catchpower Plus;['225/55R18', '225 55 R18', 'Lanvigator', 'Catchpower Plus'];\b225[/\s-]?55\s*R?\s*18\b;48322
+48318;Lanvigator;Catchpower Plus;235;45;19;235 45 r19;;pneu 235 45 r19 Lanvigator Catchpower Plus;['235/45R19', '235 45 R19', 'Lanvigator', 'Catchpower Plus'];\b235[/\s-]?45\s*R?\s*19\b;48318
+41459;Lanvigator;Catchpower Plus;235;50;18;235 50 r18;;pneu 235 50 r18 Lanvigator Catchpower Plus;['235/50R18', '235 50 R18', 'Lanvigator', 'Catchpower Plus'];\b235[/\s-]?50\s*R?\s*18\b;41459
+48323;Lanvigator;Catchpower Plus;235;55;18;235 55 r18;;pneu 235 55 r18 Lanvigator Catchpower Plus;['235/55R18', '235 55 R18', 'Lanvigator', 'Catchpower Plus'];\b235[/\s-]?55\s*R?\s*18\b;48323
+48622;Lanvigator;Catchpower Plus Xl;225;45;17;225 45 r17;;pneu 225 45 r17 Lanvigator Catchpower Plus Xl;['225/45R17', '225 45 R17', 'Lanvigator', 'Catchpower Plus Xl'];\b225[/\s-]?45\s*R?\s*17\b;48622
+45389;Lanvigator;Comfort 2;185;65;15;185 65 r15;;pneu 185 65 r15 Lanvigator Comfort 2;['185/65R15', '185 65 R15', 'Lanvigator', 'Comfort 2'];\b185[/\s-]?65\s*R?\s*15\b;45389
+48089;Lanvigator;Comfort Ii Xl;185;55;16;185 55 r16;;pneu 185 55 r16 Lanvigator Comfort Ii Xl;['185/55R16', '185 55 R16', 'Lanvigator', 'Comfort Ii Xl'];\b185[/\s-]?55\s*R?\s*16\b;48089
+48319;Lanvigator;Confort Ii;195;60;16;195 60 r16;;pneu 195 60 r16 Lanvigator Confort Ii;['195/60R16', '195 60 R16', 'Lanvigator', 'Confort Ii'];\b195[/\s-]?60\s*R?\s*16\b;48319
+46091;Lanvigator;Performax Ht;215;60;17;215 60 r17;;pneu 215 60 r17 Lanvigator Performax Ht;['215/60R17', '215 60 R17', 'Lanvigator', 'Performax Ht'];\b215[/\s-]?60\s*R?\s*17\b;46091
+47552;Lavigator;Comfort Ii;195;65;15;195 65 r15;;pneu 195 65 r15 Lavigator Comfort Ii;['195/65R15', '195 65 R15', 'Lavigator', 'Comfort Ii'];\b195[/\s-]?65\s*R?\s*15\b;47552
+40696;Levorin;Duna Ii;120;80;18;120 80 r18;;pneu 120 80 r18 Levorin Duna Ii;['120/80R18', '120 80 R18', 'Levorin', 'Duna Ii'];\b120[/\s-]?80\s*R?\s*18\b;40696
+48595;Levorin;Duna Ii Tl;110;90;17;110 90 r17;;pneu 110 90 r17 Levorin Duna Ii Tl;['110/90R17', '110 90 R17', 'Levorin', 'Duna Ii Tl'];\b110[/\s-]?90\s*R?\s*17\b;48595
+43336;Levorin;Matrix Sport Ii;100;80;17;100 80 r17;;pneu 100 80 r17 Levorin Matrix Sport Ii;['100/80R17', '100 80 R17', 'Levorin', 'Matrix Sport Ii'];\b100[/\s-]?80\s*R?\s*17\b;43336
+45019;Linglong;Crosswind A/T;265;70;17;265 70 r17;;pneu 265 70 r17 Linglong Crosswind A/T;['265/70R17', '265 70 R17', 'Linglong', 'Crosswind A/T'];\b265[/\s-]?70\s*R?\s*17\b;45019
+45018;Linglong;Green-Max Van;215;75;16;215 75 r16;;pneu 215 75 r16 Linglong Green-Max Van;['215/75R16', '215 75 R16', 'Linglong', 'Green-Max Van'];\b215[/\s-]?75\s*R?\s*16\b;45018
+48412;Linglong;Grip Master C/S;255;55;20;255 55 r20;;pneu 255 55 r20 Linglong Grip Master C/S;['255/55R20', '255 55 R20', 'Linglong', 'Grip Master C/S'];\b255[/\s-]?55\s*R?\s*20\b;48412
+11105;Linglong;Llf86;215;75;17;215 75 r17;;pneu 215 75 r17 Linglong Llf86;['215/75R17', '215 75 R17', 'Linglong', 'Llf86'];\b215[/\s-]?75\s*R?\s*17\b;11105
+47814;Luistone;Dk365 Ht;215;55;18;215 55 r18;;pneu 215 55 r18 Luistone Dk365 Ht;['215/55R18', '215 55 R18', 'Luistone', 'Dk365 Ht'];\b215[/\s-]?55\s*R?\s*18\b;47814
+43532;Magnum;Giornata;205;60;16;205 60 r16;;pneu 205 60 r16 Magnum Giornata;['205/60R16', '205 60 R16', 'Magnum', 'Giornata'];\b205[/\s-]?60\s*R?\s*16\b;43532
+43695;Massimo Tyre;Ottima Plus;185;60;15;185 60 r15;;pneu 185 60 r15 Massimo Tyre Ottima Plus;['185/60R15', '185 60 R15', 'Massimo Tyre', 'Ottima Plus'];\b185[/\s-]?60\s*R?\s*15\b;43695
+48641;Maxtrek;Maximus M1;195;60;15;195 60 r15;;pneu 195 60 r15 Maxtrek Maximus M1;['195/60R15', '195 60 R15', 'Maxtrek', 'Maximus M1'];\b195[/\s-]?60\s*R?\s*15\b;48641
+48632;Maxtrek;Maximus M2;195;65;15;195 65 r15;;pneu 195 65 r15 Maxtrek Maximus M2;['195/65R15', '195 65 R15', 'Maxtrek', 'Maximus M2'];\b195[/\s-]?65\s*R?\s*15\b;48632
+43708;Mazzini;Eco307;195;70;14;195 70 r14;;pneu 195 70 r14 Mazzini Eco307;['195/70R14', '195 70 R14', 'Mazzini', 'Eco307'];\b195[/\s-]?70\s*R?\s*14\b;43708
+44629;Mazzini;Eco603 Xl;195;55;16;195 55 r16;;pneu 195 55 r16 Mazzini Eco603 Xl;['195/55R16', '195 55 R16', 'Mazzini', 'Eco603 Xl'];\b195[/\s-]?55\s*R?\s*16\b;44629
+45843;Mazzini;Ecosaver Ht;265;70;16;265 70 r16;;pneu 265 70 r16 Mazzini Ecosaver Ht;['265/70R16', '265 70 R16', 'Mazzini', 'Ecosaver Ht'];\b265[/\s-]?70\s*R?\s*16\b;45843
+38766;Mazzini;Varenna S01;235;50;19;235 50 r19;;pneu 235 50 r19 Mazzini Varenna S01;['235/50R19', '235 50 R19', 'Mazzini', 'Varenna S01'];\b235[/\s-]?50\s*R?\s*19\b;38766
+3297;Michelin;Agilis;225;75;16;225 75 r16;;pneu 225 75 r16 Michelin Agilis;['225/75R16', '225 75 R16', 'Michelin', 'Agilis'];\b225[/\s-]?75\s*R?\s*16\b;3297
+19455;Michelin;Agilis 3;205;70;15;205 70 r15;;pneu 205 70 r15 Michelin Agilis 3;['205/70R15', '205 70 R15', 'Michelin', 'Agilis 3'];\b205[/\s-]?70\s*R?\s*15\b;19455
+37853;Michelin;Agilis 3;205;75;16;205 75 r16;;pneu 205 75 r16 Michelin Agilis 3;['205/75R16', '205 75 R16', 'Michelin', 'Agilis 3'];\b205[/\s-]?75\s*R?\s*16\b;37853
+35709;Michelin;Agilis 3;225;65;16;225 65 r16;;pneu 225 65 r16 Michelin Agilis 3;['225/65R16', '225 65 R16', 'Michelin', 'Agilis 3'];\b225[/\s-]?65\s*R?\s*16\b;35709
+37680;Michelin;Energy Xm2;185;65;15;185 65 r15;;pneu 185 65 r15 Michelin Energy Xm2;['185/65R15', '185 65 R15', 'Michelin', 'Energy Xm2'];\b185[/\s-]?65\s*R?\s*15\b;37680
+9639;Michelin;Energy Xm2;195;55;15;195 55 r15;;pneu 195 55 r15 Michelin Energy Xm2;['195/55R15', '195 55 R15', 'Michelin', 'Energy Xm2'];\b195[/\s-]?55\s*R?\s*15\b;9639
+5197;Michelin;Energy Xm2;195;60;15;195 60 r15;;pneu 195 60 r15 Michelin Energy Xm2;['195/60R15', '195 60 R15', 'Michelin', 'Energy Xm2'];\b195[/\s-]?60\s*R?\s*15\b;5197
+46467;Michelin;Energy Xm2;205;60;15;205 60 r15;;pneu 205 60 r15 Michelin Energy Xm2;['205/60R15', '205 60 R15', 'Michelin', 'Energy Xm2'];\b205[/\s-]?60\s*R?\s*15\b;46467
+20153;Michelin;Ltx Force;205;60;16;205 60 r16;;pneu 205 60 r16 Michelin Ltx Force;['205/60R16', '205 60 R16', 'Michelin', 'Ltx Force'];\b205[/\s-]?60\s*R?\s*16\b;20153
+36182;Michelin;Ltx Force;205;65;15;205 65 r15;;pneu 205 65 r15 Michelin Ltx Force;['205/65R15', '205 65 R15', 'Michelin', 'Ltx Force'];\b205[/\s-]?65\s*R?\s*15\b;36182
+40951;Michelin;Ltx Force;205;70;15;205 70 r15;;pneu 205 70 r15 Michelin Ltx Force;['205/70R15', '205 70 R15', 'Michelin', 'Ltx Force'];\b205[/\s-]?70\s*R?\s*15\b;40951
+45073;Michelin;Ltx Force;215;65;16;215 65 r16;;pneu 215 65 r16 Michelin Ltx Force;['215/65R16', '215 65 R16', 'Michelin', 'Ltx Force'];\b215[/\s-]?65\s*R?\s*16\b;45073
+40025;Michelin;Ltx Force;225;60;18;225 60 r18;;pneu 225 60 r18 Michelin Ltx Force;['225/60R18', '225 60 R18', 'Michelin', 'Ltx Force'];\b225[/\s-]?60\s*R?\s*18\b;40025
+43749;Michelin;Ltx Force;225;65;17;225 65 r17;;pneu 225 65 r17 Michelin Ltx Force;['225/65R17', '225 65 R17', 'Michelin', 'Ltx Force'];\b225[/\s-]?65\s*R?\s*17\b;43749
+39938;Michelin;Ltx Force;265;60;18;265 60 r18;;pneu 265 60 r18 Michelin Ltx Force;['265/60R18', '265 60 R18', 'Michelin', 'Ltx Force'];\b265[/\s-]?60\s*R?\s*18\b;39938
+16112;Michelin;Ltx Force;265;70;16;265 70 r16;;pneu 265 70 r16 Michelin Ltx Force;['265/70R16', '265 70 R16', 'Michelin', 'Ltx Force'];\b265[/\s-]?70\s*R?\s*16\b;16112
+43810;Michelin;Ltx Trail;235;45;19;235 45 r19;;pneu 235 45 r19 Michelin Ltx Trail;['235/45R19', '235 45 R19', 'Michelin', 'Ltx Trail'];\b235[/\s-]?45\s*R?\s*19\b;43810
+43512;Michelin;Ltx Trail;265;65;17;265 65 r17;;pneu 265 65 r17 Michelin Ltx Trail;['265/65R17', '265 65 R17', 'Michelin', 'Ltx Trail'];\b265[/\s-]?65\s*R?\s*17\b;43512
+43759;Michelin;Ltx Trail St;265;60;18;265 60 r18;;pneu 265 60 r18 Michelin Ltx Trail St;['265/60R18', '265 60 R18', 'Michelin', 'Ltx Trail St'];\b265[/\s-]?60\s*R?\s*18\b;43759
+35869;Michelin;Pilot Sport 4 Suv;225;60;18;225 60 r18;;pneu 225 60 r18 Michelin Pilot Sport 4 Suv;['225/60R18', '225 60 R18', 'Michelin', 'Pilot Sport 4 Suv'];\b225[/\s-]?60\s*R?\s*18\b;35869
+48545;Michelin;Primacy 3;225;50;17;225 50 r17;;pneu 225 50 r17 Michelin Primacy 3;['225/50R17', '225 50 R17', 'Michelin', 'Primacy 3'];\b225[/\s-]?50\s*R?\s*17\b;48545
+31994;Michelin;Primacy 4;195;65;15;195 65 r15;;pneu 195 65 r15 Michelin Primacy 4;['195/65R15', '195 65 R15', 'Michelin', 'Primacy 4'];\b195[/\s-]?65\s*R?\s*15\b;31994
+38763;Michelin;Primacy 4;205;50;17;205 50 r17;;pneu 205 50 r17 Michelin Primacy 4;['205/50R17', '205 50 R17', 'Michelin', 'Primacy 4'];\b205[/\s-]?50\s*R?\s*17\b;38763
+26465;Michelin;Primacy 4;205;55;16;205 55 r16;;pneu 205 55 r16 Michelin Primacy 4;['205/55R16', '205 55 R16', 'Michelin', 'Primacy 4'];\b205[/\s-]?55\s*R?\s*16\b;26465
+40229;Michelin;Primacy 4;205;60;16;205 60 r16;;pneu 205 60 r16 Michelin Primacy 4;['205/60R16', '205 60 R16', 'Michelin', 'Primacy 4'];\b205[/\s-]?60\s*R?\s*16\b;40229
+33412;Michelin;Primacy 4;215;50;17;215 50 r17;;pneu 215 50 r17 Michelin Primacy 4;['215/50R17', '215 50 R17', 'Michelin', 'Primacy 4'];\b215[/\s-]?50\s*R?\s*17\b;33412
+35437;Michelin;Primacy 4;215;55;17;215 55 r17;;pneu 215 55 r17 Michelin Primacy 4;['215/55R17', '215 55 R17', 'Michelin', 'Primacy 4'];\b215[/\s-]?55\s*R?\s*17\b;35437
+40774;Michelin;Primacy 4;215;60;17;215 60 r17;;pneu 215 60 r17 Michelin Primacy 4;['215/60R17', '215 60 R17', 'Michelin', 'Primacy 4'];\b215[/\s-]?60\s*R?\s*17\b;40774
+28049;Michelin;Primacy 4;225;45;17;225 45 r17;;pneu 225 45 r17 Michelin Primacy 4;['225/45R17', '225 45 R17', 'Michelin', 'Primacy 4'];\b225[/\s-]?45\s*R?\s*17\b;28049
+27441;Michelin;Primacy 4;225;50;17;225 50 r17;;pneu 225 50 r17 Michelin Primacy 4;['225/50R17', '225 50 R17', 'Michelin', 'Primacy 4'];\b225[/\s-]?50\s*R?\s*17\b;27441
+43758;Michelin;Primacy 4;225;50;17;225 50 r17;;pneu 225 50 r17 Michelin Primacy 4;['225/50R17', '225 50 R17', 'Michelin', 'Primacy 4'];\b225[/\s-]?50\s*R?\s*17\b;43758
+24580;Michelin;Primacy 4;235;55;17;235 55 r17;;pneu 235 55 r17 Michelin Primacy 4;['235/55R17', '235 55 R17', 'Michelin', 'Primacy 4'];\b235[/\s-]?55\s*R?\s*17\b;24580
+39112;Michelin;Primacy 4+;235;45;18;235 45 r18;;pneu 235 45 r18 Michelin Primacy 4+;['235/45R18', '235 45 R18', 'Michelin', 'Primacy 4+'];\b235[/\s-]?45\s*R?\s*18\b;39112
+44072;Michelin;Primacy 4+;235;55;18;235 55 r18;;pneu 235 55 r18 Michelin Primacy 4+;['235/55R18', '235 55 R18', 'Michelin', 'Primacy 4+'];\b235[/\s-]?55\s*R?\s*18\b;44072
+27497;Michelin;Xl Tl Primacy 4 Mi;185;60;15;185 60 r15;;pneu 185 60 r15 Michelin Xl Tl Primacy 4 Mi;['185/60R15', '185 60 R15', 'Michelin', 'Xl Tl Primacy 4 Mi'];\b185[/\s-]?60\s*R?\s*15\b;27497
+40706;Michelin;Xlt A/S;265;70;16;265 70 r16;;pneu 265 70 r16 Michelin Xlt A/S;['265/70R16', '265 70 R16', 'Michelin', 'Xlt A/S'];\b265[/\s-]?70\s*R?\s*16\b;40706
+37586;Michelin;Xlt A/S 2;265;50;20;265 50 r20;;pneu 265 50 r20 Michelin Xlt A/S 2;['265/50R20', '265 50 R20', 'Michelin', 'Xlt A/S 2'];\b265[/\s-]?50\s*R?\s*20\b;37586
+48492;Milever;Ma349;215;50;17;215 50 r17;;pneu 215 50 r17 Milever Ma349;['215/50R17', '215 50 R17', 'Milever', 'Ma349'];\b215[/\s-]?50\s*R?\s*17\b;48492
+42157;Milever;Mp270;205;55;16;205 55 r16;;pneu 205 55 r16 Milever Mp270;['205/55R16', '205 55 R16', 'Milever', 'Mp270'];\b205[/\s-]?55\s*R?\s*16\b;42157
+48269;Milever;Mu069;235;75;15;235 75 r15;;pneu 235 75 r15 Milever Mu069;['235/75R15', '235 75 R15', 'Milever', 'Mu069'];\b235[/\s-]?75\s*R?\s*15\b;48269
+3749;Nakata;N92018;350;99;7;350 99 r7;;pneu 350 99 r7 Nakata N92018;['350/99R7', '350 99 R7', 'Nakata', 'N92018'];\b350[/\s-]?99\s*R?\s*7\b;7890903004914
+41483;Nexen;Roadian At Pro;275;70;18;275 70 r18;;pneu 275 70 r18 Nexen Roadian At Pro;['275/70R18', '275 70 R18', 'Nexen', 'Roadian At Pro'];\b275[/\s-]?70\s*R?\s*18\b;41483
+46905;Nexen;Roadian Gtx;225;65;17;225 65 r17;;pneu 225 65 r17 Nexen Roadian Gtx;['225/65R17', '225 65 R17', 'Nexen', 'Roadian Gtx'];\b225[/\s-]?65\s*R?\s*17\b;46905
+35880;Onyx;Ny-20;225;70;15;225 70 r15;;pneu 225 70 r15 Onyx Ny-20;['225/70R15', '225 70 R15', 'Onyx', 'Ny-20'];\b225[/\s-]?70\s*R?\s*15\b;35880
+48093;Onyx;Ny805;175;65;14;175 65 r14;;pneu 175 65 r14 Onyx Ny805;['175/65R14', '175 65 R14', 'Onyx', 'Ny805'];\b175[/\s-]?65\s*R?\s*14\b;48093
+46718;Onyx;Ny901;185;55;16;185 55 r16;;pneu 185 55 r16 Onyx Ny901;['185/55R16', '185 55 R16', 'Onyx', 'Ny901'];\b185[/\s-]?55\s*R?\s*16\b;46718
+32657;Pirelli;Cint P1;185;70;14;185 70 r14;;pneu 185 70 r14 Pirelli Cint P1;['185/70R14', '185 70 R14', 'Pirelli', 'Cint P1'];\b185[/\s-]?70\s*R?\s*14\b;32657
+25765;Pirelli;Cint P1 Plus;215;45;17;215 45 r17;;pneu 215 45 r17 Pirelli Cint P1 Plus;['215/45R17', '215 45 R17', 'Pirelli', 'Cint P1 Plus'];\b215[/\s-]?45\s*R?\s*17\b;25765
+15347;Pirelli;Cint P7;215;50;17;215 50 r17;;pneu 215 50 r17 Pirelli Cint P7;['215/50R17', '215 50 R17', 'Pirelli', 'Cint P7'];\b215[/\s-]?50\s*R?\s*17\b;15347
+46906;Pirelli;P400;185;60;15;185 60 r15;;pneu 185 60 r15 Pirelli P400;['185/60R15', '185 60 R15', 'Pirelli', 'P400'];\b185[/\s-]?60\s*R?\s*15\b;46906
+3038;Pirelli;P400 Evo;175;65;14;175 65 r14;;pneu 175 65 r14 Pirelli P400 Evo;['175/65R14', '175 65 R14', 'Pirelli', 'P400 Evo'];\b175[/\s-]?65\s*R?\s*14\b;3038
+26475;Pirelli;P400 Evo;175;70;14;175 70 r14;;pneu 175 70 r14 Pirelli P400 Evo;['175/70R14', '175 70 R14', 'Pirelli', 'P400 Evo'];\b175[/\s-]?70\s*R?\s*14\b;26475
+47970;Pirelli;P400 Evo;185;60;15;185 60 r15;;pneu 185 60 r15 Pirelli P400 Evo;['185/60R15', '185 60 R15', 'Pirelli', 'P400 Evo'];\b185[/\s-]?60\s*R?\s*15\b;47970
+28822;Pirelli;P400 Evo;195;55;15;195 55 r15;;pneu 195 55 r15 Pirelli P400 Evo;['195/55R15', '195 55 R15', 'Pirelli', 'P400 Evo'];\b195[/\s-]?55\s*R?\s*15\b;28822
+25678;Pirelli;P400 Evo;195;65;15;195 65 r15;;pneu 195 65 r15 Pirelli P400 Evo;['195/65R15', '195 65 R15', 'Pirelli', 'P400 Evo'];\b195[/\s-]?65\s*R?\s*15\b;25678
+28242;Pirelli;P400 Evo;205;55;16;205 55 r16;;pneu 205 55 r16 Pirelli P400 Evo;['205/55R16', '205 55 R16', 'Pirelli', 'P400 Evo'];\b205[/\s-]?55\s*R?\s*16\b;28242
+43590;Pirelli;Powergy;215;45;17;215 45 r17;;pneu 215 45 r17 Pirelli Powergy;['215/45R17', '215 45 R17', 'Pirelli', 'Powergy'];\b215[/\s-]?45\s*R?\s*17\b;43590
+40602;Pirelli;Powergy;225;45;17;225 45 r17;;pneu 225 45 r17 Pirelli Powergy;['225/45R17', '225 45 R17', 'Pirelli', 'Powergy'];\b225[/\s-]?45\s*R?\s*17\b;40602
+46634;Pirelli;Pv400 Evo;185;65;15;185 65 r15;;pneu 185 65 r15 Pirelli Pv400 Evo;['185/65R15', '185 65 R15', 'Pirelli', 'Pv400 Evo'];\b185[/\s-]?65\s*R?\s*15\b;46634
+41068;Pirelli;Scorpion;215;55;17;215 55 r17;;pneu 215 55 r17 Pirelli Scorpion;['215/55R17', '215 55 R17', 'Pirelli', 'Scorpion'];\b215[/\s-]?55\s*R?\s*17\b;41068
+41872;Pirelli;Scorpion;225;60;18;225 60 r18;;pneu 225 60 r18 Pirelli Scorpion;['225/60R18', '225 60 R18', 'Pirelli', 'Scorpion'];\b225[/\s-]?60\s*R?\s*18\b;41872
+22852;Pirelli;Scorpion Atr Xl;225;65;17;225 65 r17;;pneu 225 65 r17 Pirelli Scorpion Atr Xl;['225/65R17', '225 65 R17', 'Pirelli', 'Scorpion Atr Xl'];\b225[/\s-]?65\s*R?\s*17\b;22852
+44649;Pirelli;Scorpion Ks;205;60;16;205 60 r16;;pneu 205 60 r16 Pirelli Scorpion Ks;['205/60R16', '205 60 R16', 'Pirelli', 'Scorpion Ks'];\b205[/\s-]?60\s*R?\s*16\b;44649
+46652;Pirelli;Scorpion Ks;205;65;16;205 65 r16;;pneu 205 65 r16 Pirelli Scorpion Ks;['205/65R16', '205 65 R16', 'Pirelli', 'Scorpion Ks'];\b205[/\s-]?65\s*R?\s*16\b;46652
+16821;Pirelli;Scorpion Str;245;50;20;245 50 r20;;pneu 245 50 r20 Pirelli Scorpion Str;['245/50R20', '245 50 R20', 'Pirelli', 'Scorpion Str'];\b245[/\s-]?50\s*R?\s*20\b;16821
+21557;Pirelli;Scorpion Verde;225;55;18;225 55 r18;;pneu 225 55 r18 Pirelli Scorpion Verde;['225/55R18', '225 55 R18', 'Pirelli', 'Scorpion Verde'];\b225[/\s-]?55\s*R?\s*18\b;21557
+46047;Roadcruza;Ra1100;175;70;14;175 70 r14;;pneu 175 70 r14 Roadcruza Ra1100;['175/70R14', '175 70 R14', 'Roadcruza', 'Ra1100'];\b175[/\s-]?70\s*R?\s*14\b;46047
+42287;Roadcruza;Ra1100;205;60;15;205 60 r15;;pneu 205 60 r15 Roadcruza Ra1100;['205/60R15', '205 60 R15', 'Roadcruza', 'Ra1100'];\b205[/\s-]?60\s*R?\s*15\b;42287
+46043;Roadcruza;Ra1100;225;60;18;225 60 r18;;pneu 225 60 r18 Roadcruza Ra1100;['225/60R18', '225 60 R18', 'Roadcruza', 'Ra1100'];\b225[/\s-]?60\s*R?\s*18\b;46043
+44822;Roadcruza;Ra1100;235;60;18;235 60 r18;;pneu 235 60 r18 Roadcruza Ra1100;['235/60R18', '235 60 R18', 'Roadcruza', 'Ra1100'];\b235[/\s-]?60\s*R?\s*18\b;44822
+46127;Roadcruza;Ra1100;235;75;15;235 75 r15;;pneu 235 75 r15 Roadcruza Ra1100;['235/75R15', '235 75 R15', 'Roadcruza', 'Ra1100'];\b235[/\s-]?75\s*R?\s*15\b;46127
+43436;Roadcruza;Ra1100 At;235;70;16;235 70 r16;;pneu 235 70 r16 Roadcruza Ra1100 At;['235/70R16', '235 70 R16', 'Roadcruza', 'Ra1100 At'];\b235[/\s-]?70\s*R?\s*16\b;43436
+43181;Roadcruza;Ra1100 At;265;60;18;265 60 r18;;pneu 265 60 r18 Roadcruza Ra1100 At;['265/60R18', '265 60 R18', 'Roadcruza', 'Ra1100 At'];\b265[/\s-]?60\s*R?\s*18\b;43181
+48162;Roadcruza;Ra1100 At;265;65;17;265 65 r17;;pneu 265 65 r17 Roadcruza Ra1100 At;['265/65R17', '265 65 R17', 'Roadcruza', 'Ra1100 At'];\b265[/\s-]?65\s*R?\s*17\b;48162
+47930;Roadcruza;Ra7000;265;65;17;265 65 r17;;pneu 265 65 r17 Roadcruza Ra7000;['265/65R17', '265 65 R17', 'Roadcruza', 'Ra7000'];\b265[/\s-]?65\s*R?\s*17\b;47930
+47741;Routeway;Ecoblue Ry26;175;75;14;175 75 r14;;pneu 175 75 r14 Routeway Ecoblue Ry26;['175/75R14', '175 75 R14', 'Routeway', 'Ecoblue Ry26'];\b175[/\s-]?75\s*R?\s*14\b;47741
+46900;Routeway;Ecoblue Ry6;175;75;13;175 75 r13;;pneu 175 75 r13 Routeway Ecoblue Ry6;['175/75R13', '175 75 R13', 'Routeway', 'Ecoblue Ry6'];\b175[/\s-]?75\s*R?\s*13\b;46900
+44930;Royal Black;Royal A/T;265;65;17;265 65 r17;;pneu 265 65 r17 Royal Black Royal A/T;['265/65R17', '265 65 R17', 'Royal Black', 'Royal A/T'];\b265[/\s-]?65\s*R?\s*17\b;44930
+43429;Royal Black;Royal Comfort;215;55;16;215 55 r16;;pneu 215 55 r16 Royal Black Royal Comfort;['215/55R16', '215 55 R16', 'Royal Black', 'Royal Comfort'];\b215[/\s-]?55\s*R?\s*16\b;43429
+42321;Royal Black;Royal Mile;185;60;15;185 60 r15;;pneu 185 60 r15 Royal Black Royal Mile;['185/60R15', '185 60 R15', 'Royal Black', 'Royal Mile'];\b185[/\s-]?60\s*R?\s*15\b;42321
+40767;Royal Black;Royal Mile;195;55;15;195 55 r15;;pneu 195 55 r15 Royal Black Royal Mile;['195/55R15', '195 55 R15', 'Royal Black', 'Royal Mile'];\b195[/\s-]?55\s*R?\s*15\b;40767
+42426;Royal Black;Royal Mile;205;55;16;205 55 r16;;pneu 205 55 r16 Royal Black Royal Mile;['205/55R16', '205 55 R16', 'Royal Black', 'Royal Mile'];\b205[/\s-]?55\s*R?\s*16\b;42426
+40769;Royal Black;Royal Mile;215;65;16;215 65 r16;;pneu 215 65 r16 Royal Black Royal Mile;['215/65R16', '215 65 R16', 'Royal Black', 'Royal Mile'];\b215[/\s-]?65\s*R?\s*16\b;40769
+48496;Royal Black;Royal Mile Xl;185;55;16;185 55 r16;;pneu 185 55 r16 Royal Black Royal Mile Xl;['185/55R16', '185 55 R16', 'Royal Black', 'Royal Mile Xl'];\b185[/\s-]?55\s*R?\s*16\b;48496
+42322;Royal Black;Royal Performance;215;35;18;215 35 r18;;pneu 215 35 r18 Royal Black Royal Performance;['215/35R18', '215 35 R18', 'Royal Black', 'Royal Performance'];\b215[/\s-]?35\s*R?\s*18\b;42322
+48523;Saferich;Frc866;215;55;18;215 55 r18;;pneu 215 55 r18 Saferich Frc866;['215/55R18', '215 55 R18', 'Saferich', 'Frc866'];\b215[/\s-]?55\s*R?\s*18\b;48523
+19553;Sailun;Atrezzo;185;65;14;185 65 r14;;pneu 185 65 r14 Sailun Atrezzo;['185/65R14', '185 65 R14', 'Sailun', 'Atrezzo'];\b185[/\s-]?65\s*R?\s*14\b;19553
+38156;Semperit;Trail Life A/T;205;60;16;205 60 r16;;pneu 205 60 r16 Semperit Trail Life A/T;['205/60R16', '205 60 R16', 'Semperit', 'Trail Life A/T'];\b205[/\s-]?60\s*R?\s*16\b;38156
+37864;Semperit;Trail Life A/T;265;70;16;265 70 r16;;pneu 265 70 r16 Semperit Trail Life A/T;['265/70R16', '265 70 R16', 'Semperit', 'Trail Life A/T'];\b265[/\s-]?70\s*R?\s*16\b;37864
+47641;Speedmax;Controlmax;185;35;17;185 35 r17;;pneu 185 35 r17 Speedmax Controlmax;['185/35R17', '185 35 R17', 'Speedmax', 'Controlmax'];\b185[/\s-]?35\s*R?\s*17\b;47641
+47244;Speedmax;Controlmax;215;45;18;215 45 r18;;pneu 215 45 r18 Speedmax Controlmax;['215/45R18', '215 45 R18', 'Speedmax', 'Controlmax'];\b215[/\s-]?45\s*R?\s*18\b;47244
+46291;Speedmax;Hh301;195;55;15;195 55 r15;;pneu 195 55 r15 Speedmax Hh301;['195/55R15', '195 55 R15', 'Speedmax', 'Hh301'];\b195[/\s-]?55\s*R?\s*15\b;46291
+48580;Speedmax;Hiscend-H Mht01;265;65;17;265 65 r17;;pneu 265 65 r17 Speedmax Hiscend-H Mht01;['265/65R17', '265 65 R17', 'Speedmax', 'Hiscend-H Mht01'];\b265[/\s-]?65\s*R?\s*17\b;48580
+37657;Speedmax;Hr805;235;60;18;235 60 r18;;pneu 235 60 r18 Speedmax Hr805;['235/60R18', '235 60 R18', 'Speedmax', 'Hr805'];\b235[/\s-]?60\s*R?\s*18\b;37657
+39967;Speedmax;Hu901;235;40;19;235 40 r19;;pneu 235 40 r19 Speedmax Hu901;['235/40R19', '235 40 R19', 'Speedmax', 'Hu901'];\b235[/\s-]?40\s*R?\s*19\b;39967
+47242;Speedmax;Mh01;175;65;14;175 65 r14;;pneu 175 65 r14 Speedmax Mh01;['175/65R14', '175 65 R14', 'Speedmax', 'Mh01'];\b175[/\s-]?65\s*R?\s*14\b;47242
+48273;Speedmax;Pangea All Terrain;245;70;16;245 70 r16;;pneu 245 70 r16 Speedmax Pangea All Terrain;['245/70R16', '245 70 R16', 'Speedmax', 'Pangea All Terrain'];\b245[/\s-]?70\s*R?\s*16\b;48273
+48272;Speedmax;Pangea All Terrain;265;50;20;265 50 r20;;pneu 265 50 r20 Speedmax Pangea All Terrain;['265/50R20', '265 50 R20', 'Speedmax', 'Pangea All Terrain'];\b265[/\s-]?50\s*R?\s*20\b;48272
+48277;Speedmax;Pangea At;235;60;18;235 60 r18;;pneu 235 60 r18 Speedmax Pangea At;['235/60R18', '235 60 R18', 'Speedmax', 'Pangea At'];\b235[/\s-]?60\s*R?\s*18\b;48277
+48274;Speedmax;Pangea At;235;75;15;235 75 r15;;pneu 235 75 r15 Speedmax Pangea At;['235/75R15', '235 75 R15', 'Speedmax', 'Pangea At'];\b235[/\s-]?75\s*R?\s*15\b;48274
+37661;Speedmax;Spm305;225;50;17;225 50 r17;;pneu 225 50 r17 Speedmax Spm305;['225/50R17', '225 50 R17', 'Speedmax', 'Spm305'];\b225[/\s-]?50\s*R?\s*17\b;37661
+48324;Speedmax;Wildwolf W01;225;60;17;225 60 r17;;pneu 225 60 r17 Speedmax Wildwolf W01;['225/60R17', '225 60 R17', 'Speedmax', 'Wildwolf W01'];\b225[/\s-]?60\s*R?\s*17\b;48324
+46804;Sumitomo;Bc100;215;45;17;215 45 r17;;pneu 215 45 r17 Sumitomo Bc100;['215/45R17', '215 45 R17', 'Sumitomo', 'Bc100'];\b215[/\s-]?45\s*R?\s*17\b;46804
+46806;Sumitomo;Bc100;225;65;17;225 65 r17;;pneu 225 65 r17 Sumitomo Bc100;['225/65R17', '225 65 R17', 'Sumitomo', 'Bc100'];\b225[/\s-]?65\s*R?\s*17\b;46806
+40532;Sumitomo;Bc20;175;65;14;175 65 r14;;pneu 175 65 r14 Sumitomo Bc20;['175/65R14', '175 65 R14', 'Sumitomo', 'Bc20'];\b175[/\s-]?65\s*R?\s*14\b;40532
+46805;Sumitomo;Reinforced Bc100;215;65;16;215 65 r16;;pneu 215 65 r16 Sumitomo Reinforced Bc100;['215/65R16', '215 65 R16', 'Sumitomo', 'Reinforced Bc100'];\b215[/\s-]?65\s*R?\s*16\b;46805
+47820;Sumitomo Tire;Bc100;205;60;16;205 60 r16;;pneu 205 60 r16 Sumitomo Tire Bc100;['205/60R16', '205 60 R16', 'Sumitomo Tire', 'Bc100'];\b205[/\s-]?60\s*R?\s*16\b;47820
+44238;Sumitomo Tires;Bc20;185;65;14;185 65 r14;;pneu 185 65 r14 Sumitomo Tires Bc20;['185/65R14', '185 65 R14', 'Sumitomo Tires', 'Bc20'];\b185[/\s-]?65\s*R?\s*14\b;44238
+36294;Sumitomo Tires;Bc20;185;65;15;185 65 r15;;pneu 185 65 r15 Sumitomo Tires Bc20;['185/65R15', '185 65 R15', 'Sumitomo Tires', 'Bc20'];\b185[/\s-]?65\s*R?\s*15\b;36294
+44562;Sumitomo Tires;Bc20;195;60;15;195 60 r15;;pneu 195 60 r15 Sumitomo Tires Bc20;['195/60R15', '195 60 R15', 'Sumitomo Tires', 'Bc20'];\b195[/\s-]?60\s*R?\s*15\b;44562
+33696;Sunfull;Ht782;265;65;17;265 65 r17;;pneu 265 65 r17 Sunfull Ht782;['265/65R17', '265 65 R17', 'Sunfull', 'Ht782'];\b265[/\s-]?65\s*R?\s*17\b;33696
+46538;Sunfull;Sf600;175;75;13;175 75 r13;;pneu 175 75 r13 Sunfull Sf600;['175/75R13', '175 75 R13', 'Sunfull', 'Sf600'];\b175[/\s-]?75\s*R?\s*13\b;46538
+37670;Sunfull;Sf688;175;80;14;175 80 r14;;pneu 175 80 r14 Sunfull Sf688;['175/80R14', '175 80 R14', 'Sunfull', 'Sf688'];\b175[/\s-]?80\s*R?\s*14\b;37670
+43859;Sunny;Na305;205;45;17;205 45 r17;;pneu 205 45 r17 Sunny Na305;['205/45R17', '205 45 R17', 'Sunny', 'Na305'];\b205[/\s-]?45\s*R?\s*17\b;43859
+46489;Sunny;Na305;205;50;17;205 50 r17;;pneu 205 50 r17 Sunny Na305;['205/50R17', '205 50 R17', 'Sunny', 'Na305'];\b205[/\s-]?50\s*R?\s*17\b;46489
+46490;Sunny;Na305;215;55;18;215 55 r18;;pneu 215 55 r18 Sunny Na305;['215/55R18', '215 55 R18', 'Sunny', 'Na305'];\b215[/\s-]?55\s*R?\s*18\b;46490
+45783;Sunny;Na305;225;45;17;225 45 r17;;pneu 225 45 r17 Sunny Na305;['225/45R17', '225 45 R17', 'Sunny', 'Na305'];\b225[/\s-]?45\s*R?\s*17\b;45783
+46492;Sunny;Nu025;225;65;17;225 65 r17;;pneu 225 65 r17 Sunny Nu025;['225/65R17', '225 65 R17', 'Sunny', 'Nu025'];\b225[/\s-]?65\s*R?\s*17\b;46492
+46485;Sunny;Nu025 H/T;215;60;17;215 60 r17;;pneu 215 60 r17 Sunny Nu025 H/T;['215/60R17', '215 60 R17', 'Sunny', 'Nu025 H/T'];\b215[/\s-]?60\s*R?\s*17\b;46485
+46493;Sunny;Nu025 H/T;225;60;18;225 60 r18;;pneu 225 60 r18 Sunny Nu025 H/T;['225/60R18', '225 60 R18', 'Sunny', 'Nu025 H/T'];\b225[/\s-]?60\s*R?\s*18\b;46493
+46488;Sunny;Nu031;205;60;16;205 60 r16;;pneu 205 60 r16 Sunny Nu031;['205/60R16', '205 60 R16', 'Sunny', 'Nu031'];\b205[/\s-]?60\s*R?\s*16\b;46488
+43536;Sunset;All Terrain T/A;215;65;16;215 65 r16;;pneu 215 65 r16 Sunset All Terrain T/A;['215/65R16', '215 65 R16', 'Sunset', 'All Terrain T/A'];\b215[/\s-]?65\s*R?\s*16\b;43536
+48025;Sunset;Enzo B2;205;60;15;205 60 r15;;pneu 205 60 r15 Sunset Enzo B2;['205/60R15', '205 60 R15', 'Sunset', 'Enzo B2'];\b205[/\s-]?60\s*R?\s*15\b;48025
+48535;Sunset;G1;205;75;16;205 75 r16;;pneu 205 75 r16 Sunset G1;['205/75R16', '205 75 R16', 'Sunset', 'G1'];\b205[/\s-]?75\s*R?\s*16\b;48535
+48149;Sunset;Over Cargo B3 8Pr;205;75;16;205 75 r16;;pneu 205 75 r16 Sunset Over Cargo B3 8Pr;['205/75R16', '205 75 R16', 'Sunset', 'Over Cargo B3 8Pr'];\b205[/\s-]?75\s*R?\s*16\b;48149
+48524;Sunset;Venttura Hp B1;235;45;19;235 45 r19;;pneu 235 45 r19 Sunset Venttura Hp B1;['235/45R19', '235 45 R19', 'Sunset', 'Venttura Hp B1'];\b235[/\s-]?45\s*R?\s*19\b;48524
+40060;Sunset Tires;All Terrain T/A;225;60;18;225 60 r18;;pneu 225 60 r18 Sunset Tires All Terrain T/A;['225/60R18', '225 60 R18', 'Sunset Tires', 'All Terrain T/A'];\b225[/\s-]?60\s*R?\s*18\b;40060
+45201;Sunwide;Rs Zero;185;55;16;185 55 r16;;pneu 185 55 r16 Sunwide Rs Zero;['185/55R16', '185 55 R16', 'Sunwide', 'Rs Zero'];\b185[/\s-]?55\s*R?\s*16\b;45201
+38322;Sunwide;Rs-One;205;60;16;205 60 r16;;pneu 205 60 r16 Sunwide Rs-One;['205/60R16', '205 60 R16', 'Sunwide', 'Rs-One'];\b205[/\s-]?60\s*R?\s*16\b;38322
+48250;Sunwide;Rs-One;235;50;18;235 50 r18;;pneu 235 50 r18 Sunwide Rs-One;['235/50R18', '235 50 R18', 'Sunwide', 'Rs-One'];\b235[/\s-]?50\s*R?\s*18\b;48250
+36753;Sunwide;Rs-One;235;55;17;235 55 r17;;pneu 235 55 r17 Sunwide Rs-One;['235/55R17', '235 55 R17', 'Sunwide', 'Rs-One'];\b235[/\s-]?55\s*R?\s*17\b;36753
+48501;Tbb Tires;Tp-16;165;70;13;165 70 r13;;pneu 165 70 r13 Tbb Tires Tp-16;['165/70R13', '165 70 R13', 'Tbb Tires', 'Tp-16'];\b165[/\s-]?70\s*R?\s*13\b;48501
+46238;Towin;Wdl0;275;80;22;275 80 r22;;pneu 275 80 r22 Towin Wdl0;['275/80R22', '275 80 R22', 'Towin', 'Wdl0'];\b275[/\s-]?80\s*R?\s*22\b;46238
+48024;Tracmax;Xprivilo Ht;265;60;18;265 60 r18;;pneu 265 60 r18 Tracmax Xprivilo Ht;['265/60R18', '265 60 R18', 'Tracmax', 'Xprivilo Ht'];\b265[/\s-]?60\s*R?\s*18\b;48024
+46226;Trazano;Cr976A;295;80;22;295 80 r22;;pneu 295 80 r22 Trazano Cr976A;['295/80R22', '295 80 R22', 'Trazano', 'Cr976A'];\b295[/\s-]?80\s*R?\s*22\b;46226
+47134;Trazano;H188;225;75;16;225 75 r16;;pneu 225 75 r16 Trazano H188;['225/75R16', '225 75 R16', 'Trazano', 'H188'];\b225[/\s-]?75\s*R?\s*16\b;47134
+46787;Trazano;Sa37;205;55;17;205 55 r17;;pneu 205 55 r17 Trazano Sa37;['205/55R17', '205 55 R17', 'Trazano', 'Sa37'];\b205[/\s-]?55\s*R?\s*17\b;46787
+34374;Triangle;Te301;175;65;15;175 65 r15;;pneu 175 65 r15 Triangle Te301;['175/65R15', '175 65 R15', 'Triangle', 'Te301'];\b175[/\s-]?65\s*R?\s*15\b;34374
+48150;Triangle;Te307;205;70;15;205 70 r15;;pneu 205 70 r15 Triangle Te307;['205/70R15', '205 70 R15', 'Triangle', 'Te307'];\b205[/\s-]?70\s*R?\s*15\b;48150
+47740;Valeo;Vf26;207;1;5;207 1 r5;;pneu 207 1 r5 Valeo Vf26;['207/1R5', '207 1 R5', 'Valeo', 'Vf26'];\b207[/\s-]?1\s*R?\s*5\b;47740
+32219;Viemar;503112;408;1;13;408 1 r13;;pneu 408 1 r13 Viemar 503112;['408/1R13', '408 1 R13', 'Viemar', '503112'];\b408[/\s-]?1\s*R?\s*13\b;7899013309513
+35434;Wanli;As028;225;60;18;225 60 r18;;pneu 225 60 r18 Wanli As028;['225/60R18', '225 60 R18', 'Wanli', 'As028'];\b225[/\s-]?60\s*R?\s*18\b;35434
+27229;Wanli;H220;215;60;17;215 60 r17;;pneu 215 60 r17 Wanli H220;['215/60R17', '215 60 R17', 'Wanli', 'H220'];\b215[/\s-]?60\s*R?\s*17\b;27229
+26009;Wanli;Sa302;205;45;17;205 45 r17;;pneu 205 45 r17 Wanli Sa302;['205/45R17', '205 45 R17', 'Wanli', 'Sa302'];\b205[/\s-]?45\s*R?\s*17\b;26009
+27771;Wanli;Sa302;205;50;17;205 50 r17;;pneu 205 50 r17 Wanli Sa302;['205/50R17', '205 50 R17', 'Wanli', 'Sa302'];\b205[/\s-]?50\s*R?\s*17\b;27771
+26627;Wanli;Sa302;225;40;18;225 40 r18;;pneu 225 40 r18 Wanli Sa302;['225/40R18', '225 40 R18', 'Wanli', 'Sa302'];\b225[/\s-]?40\s*R?\s*18\b;26627
+24344;Wanli;Sa302;225;45;18;225 45 r18;;pneu 225 45 r18 Wanli Sa302;['225/45R18', '225 45 R18', 'Wanli', 'Sa302'];\b225[/\s-]?45\s*R?\s*18\b;24344
+26852;Wanli;Sa302;235;45;18;235 45 r18;;pneu 235 45 r18 Wanli Sa302;['235/45R18', '235 45 R18', 'Wanli', 'Sa302'];\b235[/\s-]?45\s*R?\s*18\b;26852
+40059;Wanli;Sl106;225;65;16;225 65 r16;;pneu 225 65 r16 Wanli Sl106;['225/65R16', '225 65 R16', 'Wanli', 'Sl106'];\b225[/\s-]?65\s*R?\s*16\b;40059
+45003;Wanli;Sl106 (Ec);205;70;15;205 70 r15;;pneu 205 70 r15 Wanli Sl106 (Ec);['205/70R15', '205 70 R15', 'Wanli', 'Sl106 (Ec)'];\b205[/\s-]?70\s*R?\s*15\b;45003
+39911;Wanli;Sp026;195;60;15;195 60 r15;;pneu 195 60 r15 Wanli Sp026;['195/60R15', '195 60 R15', 'Wanli', 'Sp026'];\b195[/\s-]?60\s*R?\s*15\b;39911
+29213;Wanli;Sp026;215;65;16;215 65 r16;;pneu 215 65 r16 Wanli Sp026;['215/65R16', '215 65 R16', 'Wanli', 'Sp026'];\b215[/\s-]?65\s*R?\s*16\b;29213
+43947;Wanli;Su006 A/T L. Branca;265;70;16;265 70 r16;;pneu 265 70 r16 Wanli Su006 A/T L. Branca;['265/70R16', '265 70 R16', 'Wanli', 'Su006 A/T L. Branca'];\b265[/\s-]?70\s*R?\s*16\b;43947
+47965;Wanli;Su009 A/T;205;60;16;205 60 r16;;pneu 205 60 r16 Wanli Su009 A/T;['205/60R16', '205 60 R16', 'Wanli', 'Su009 A/T'];\b205[/\s-]?60\s*R?\s*16\b;47965
+37849;Wanli;Su025;235;60;16;235 60 r16;;pneu 235 60 r16 Wanli Su025;['235/60R16', '235 60 R16', 'Wanli', 'Su025'];\b235[/\s-]?60\s*R?\s*16\b;37849
+24358;Wanli;Su025;235;75;15;235 75 r15;;pneu 235 75 r15 Wanli Su025;['235/75R15', '235 75 R15', 'Wanli', 'Su025'];\b235[/\s-]?75\s*R?\s*15\b;6950306361609
+38538;Wanli;Su025 Rangetour Plus;225;65;17;225 65 r17;;pneu 225 65 r17 Wanli Su025 Rangetour Plus;['225/65R17', '225 65 R17', 'Wanli', 'Su025 Rangetour Plus'];\b225[/\s-]?65\s*R?\s*17\b;38538
+41748;Westlake;Rp18;175;75;13;175 75 r13;;pneu 175 75 r13 Westlake Rp18;['175/75R13', '175 75 R13', 'Westlake', 'Rp18'];\b175[/\s-]?75\s*R?\s*13\b;41748
+47254;Westlake;Z108;205;45;17;205 45 r17;;pneu 205 45 r17 Westlake Z108;['205/45R17', '205 45 R17', 'Westlake', 'Z108'];\b205[/\s-]?45\s*R?\s*17\b;47254
+48155;Westlake;Z-108;205;65;16;205 65 r16;;pneu 205 65 r16 Westlake Z-108;['205/65R16', '205 65 R16', 'Westlake', 'Z-108'];\b205[/\s-]?65\s*R?\s*16\b;48155
+48263;Westlake;Zupereco Z108;195;50;15;195 50 r15;;pneu 195 50 r15 Westlake Zupereco Z108;['195/50R15', '195 50 R15', 'Westlake', 'Zupereco Z108'];\b195[/\s-]?50\s*R?\s*15\b;48263
+46537;Westlake;Zuperecoz108;185;60;14;185 60 r14;;pneu 185 60 r14 Westlake Zuperecoz108;['185/60R14', '185 60 R14', 'Westlake', 'Zuperecoz108'];\b185[/\s-]?60\s*R?\s*14\b;46537
+45190;Windforce;Catchfors T/A;265;60;18;265 60 r18;;pneu 265 60 r18 Windforce Catchfors T/A;['265/60R18', '265 60 R18', 'Windforce', 'Catchfors T/A'];\b265[/\s-]?60\s*R?\s*18\b;45190
+42360;Winrun;R330;195;55;16;195 55 r16;;pneu 195 55 r16 Winrun R330;['195/55R16', '195 55 R16', 'Winrun', 'R330'];\b195[/\s-]?55\s*R?\s*16\b;42360
+48495;Winrun;R380;175;65;15;175 65 r15;;pneu 175 65 r15 Winrun R380;['175/65R15', '175 65 R15', 'Winrun', 'R380'];\b175[/\s-]?65\s*R?\s*15\b;48495
+31843;Xbri;Brutus All Terrain;265;60;18;265 60 r18;;pneu 265 60 r18 Xbri Brutus All Terrain;['265/60R18', '265 60 R18', 'Xbri', 'Brutus All Terrain'];\b265[/\s-]?60\s*R?\s*18\b;31843
+41787;Xbri;Brutus T/A;215;65;16;215 65 r16;;pneu 215 65 r16 Xbri Brutus T/A;['215/65R16', '215 65 R16', 'Xbri', 'Brutus T/A'];\b215[/\s-]?65\s*R?\s*16\b;41787
+41568;Xbri;Brutus T/A;265;65;18;265 65 r18;;pneu 265 65 r18 Xbri Brutus T/A;['265/65R18', '265 65 R18', 'Xbri', 'Brutus T/A'];\b265[/\s-]?65\s*R?\s*18\b;41568
+30537;Xbri;Ecology;195;60;15;195 60 r15;;pneu 195 60 r15 Xbri Ecology;['195/60R15', '195 60 R15', 'Xbri', 'Ecology'];\b195[/\s-]?60\s*R?\s*15\b;30537
+31117;Xbri;Ecology;205;55;16;205 55 r16;;pneu 205 55 r16 Xbri Ecology;['205/55R16', '205 55 R16', 'Xbri', 'Ecology'];\b205[/\s-]?55\s*R?\s*16\b;31117
+48576;Xbri;Ecoplus C2 Tl;215;75;17;215 75 r17;;pneu 215 75 r17 Xbri Ecoplus C2 Tl;['215/75R17', '215 75 R17', 'Xbri', 'Ecoplus C2 Tl'];\b215[/\s-]?75\s*R?\s*17\b;48576
+47795;Xbri;Ecoplus P1;215;75;17;215 75 r17;;pneu 215 75 r17 Xbri Ecoplus P1;['215/75R17', '215 75 R17', 'Xbri', 'Ecoplus P1'];\b215[/\s-]?75\s*R?\s*17\b;47795
+47627;Xbri;Fastdrive;225;50;17;225 50 r17;;pneu 225 50 r17 Xbri Fastdrive;['225/50R17', '225 50 R17', 'Xbri', 'Fastdrive'];\b225[/\s-]?50\s*R?\s*17\b;47627
+48167;Xbri;Fastway B2;175;70;14;175 70 r14;;pneu 175 70 r14 Xbri Fastway B2;['175/70R14', '175 70 R14', 'Xbri', 'Fastway B2'];\b175[/\s-]?70\s*R?\s*14\b;48167
+46540;Xbri;Fastway E1;205;70;15;205 70 r15;;pneu 205 70 r15 Xbri Fastway E1;['205/70R15', '205 70 R15', 'Xbri', 'Fastway E1'];\b205[/\s-]?70\s*R?\s*15\b;46540
+48569;Xbri;Fastway W2;205;55;16;205 55 r16;;pneu 205 55 r16 Xbri Fastway W2;['205/55R16', '205 55 R16', 'Xbri', 'Fastway W2'];\b205[/\s-]?55\s*R?\s*16\b;48569
+42462;Xbri;Forza A/T 2;175;75;13;175 75 r13;;pneu 175 75 r13 Xbri Forza A/T 2;['175/75R13', '175 75 R13', 'Xbri', 'Forza A/T 2'];\b175[/\s-]?75\s*R?\s*13\b;42462
+46799;Xbri;Forza A/T F2;175;75;14;175 75 r14;;pneu 175 75 r14 Xbri Forza A/T F2;['175/75R14', '175 75 R14', 'Xbri', 'Forza A/T F2'];\b175[/\s-]?75\s*R?\s*14\b;46799
+48081;Xbri;Forza Ht 2 Extra;235;60;18;235 60 r18;;pneu 235 60 r18 Xbri Forza Ht 2 Extra;['235/60R18', '235 60 R18', 'Xbri', 'Forza Ht 2 Extra'];\b235[/\s-]?60\s*R?\s*18\b;48081
+41909;Xbri;Premium F1;165;70;13;165 70 r13;;pneu 165 70 r13 Xbri Premium F1;['165/70R13', '165 70 R13', 'Xbri', 'Premium F1'];\b165[/\s-]?70\s*R?\s*13\b;41909
+30535;Xbri;Premium F1;185;70;14;185 70 r14;;pneu 185 70 r14 Xbri Premium F1;['185/70R14', '185 70 R14', 'Xbri', 'Premium F1'];\b185[/\s-]?70\s*R?\s*14\b;30535
+43751;Xbri;Robusto;295;80;22;295 80 r22;;pneu 295 80 r22 Xbri Robusto;['295/80R22', '295 80 R22', 'Xbri', 'Robusto'];\b295[/\s-]?80\s*R?\s*22\b;43751
+43736;Xbri;Sport+2;225;45;19;225 45 r19;;pneu 225 45 r19 Xbri Sport+2;['225/45R19', '225 45 R19', 'Xbri', 'Sport+2'];\b225[/\s-]?45\s*R?\s*19\b;43736
+40176;Xbri;Xforza;215;75;17;215 75 r17;;pneu 215 75 r17 Xbri Xforza;['215/75R17', '215 75 R17', 'Xbri', 'Xforza'];\b215[/\s-]?75\s*R?\s*17\b;40176
+44817;Xbri;Xforza;235;75;17;235 75 r17;;pneu 235 75 r17 Xbri Xforza;['235/75R17', '235 75 R17', 'Xbri', 'Xforza'];\b235[/\s-]?75\s*R?\s*17\b;44817
+46541;Yeada;Opteco S1;195;65;15;195 65 r15;;pneu 195 65 r15 Yeada Opteco S1;['195/65R15', '195 65 R15', 'Yeada', 'Opteco S1'];\b195[/\s-]?65\s*R?\s*15\b;46541
+46526;Yeada;Yda266;235;60;18;235 60 r18;;pneu 235 60 r18 Yeada Yda266;['235/60R18', '235 60 R18', 'Yeada', 'Yda266'];\b235[/\s-]?60\s*R?\s*18\b;46526
+46086;Yeada;Yda286 At;285;75;16;285 75 r16;;pneu 285 75 r16 Yeada Yda286 At;['285/75R16', '285 75 R16', 'Yeada', 'Yda286 At'];\b285[/\s-]?75\s*R?\s*16\b;46086
+47971;Zmax;Gallopro Ht;235;60;16;235 60 r16;;pneu 235 60 r16 Zmax Gallopro Ht;['235/60R16', '235 60 R16', 'Zmax', 'Gallopro Ht'];\b235[/\s-]?60\s*R?\s*16\b;47971
+48154;Zmax;Zealion;205;55;17;205 55 r17;;pneu 205 55 r17 Zmax Zealion;['205/55R17', '205 55 R17', 'Zmax', 'Zealion'];\b205[/\s-]?55\s*R?\s*17\b;48154

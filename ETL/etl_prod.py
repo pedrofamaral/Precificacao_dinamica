@@ -1,4 +1,5 @@
 from __future__ import annotations
+import sys
 
 if __package__ is None or __package__ == "":
     import os as _os, sys as _sys
@@ -63,33 +64,39 @@ except ImportError:
         get_conn,
     )
 
-# Constants
 GENERIC_TOKENS = {"p", "produto", "products", "product", "click", "clicks", "count", "item"}
 
 BATCH_SIZE = 10000
 MAX_MEMORY_ROWS = 50000
+MARKET_PATHS: Dict[str, List[Path]] = {}
 
+def setup_logging(log_dir: str = "log"):
+    log_dir_path = Path(log_dir)
+    log_dir_path.mkdir(parents=True, exist_ok=True)
+    log_file = log_dir_path / "etl_prod.log"
 
-def setup_logging():
-    """Configure logging with proper encoding and format"""
+    root_logger = logging.getLogger()
+    for h in list(root_logger.handlers):
+        root_logger.removeHandler(h)
+
     logging.basicConfig(
         level=logging.INFO,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        format="%(asctime)s [%(levelname)s] %(message)s",
         handlers=[
-            logging.StreamHandler(),
-            logging.FileHandler('etl_prod.log', encoding='utf-8')
-        ]
-    )
-    return logging.getLogger(__name__)
+            logging.FileHandler(log_file, encoding="utf-8"),
+            logging.StreamHandler(stream=sys.stdout)
+        ])
+    
+    logging.getLogger().handlers[-1].formatter.encoding = 'utf-8'
+
+    return logging.getLogger("etl_prod")
 
 
-# Use our own logger setup
 prod_logger = setup_logging()
 
 
 @contextmanager
 def get_db_connection(db_path: Union[str, Path]):
-    """Context manager for database connections with proper error handling"""
     conn = None
     try:
         conn = sqlite3.connect(str(db_path), timeout=30.0)
@@ -109,7 +116,6 @@ def get_db_connection(db_path: Union[str, Path]):
 
 
 def to_float(x) -> Optional[float]:
-    """Enhanced float conversion with better error handling"""
     if x is None or (isinstance(x, float) and pd.isna(x)):
         return None
     if isinstance(x, (int, float)):
@@ -121,30 +127,24 @@ def to_float(x) -> Optional[float]:
         except (ValueError, TypeError):
             return None
     
-    # Clean string
     s = x.strip()
     if not s:
         return None
         
-    # Remove currency symbols and clean
     s = re.sub(r'[R$€$£¥]', '', s)
-    s = s.replace(' ', '').replace('\xa0', '')  # Remove spaces and non-breaking spaces
+    s = s.replace(' ', '').replace('\xa0', '')
     
-    # Handle Brazilian decimal format (1.234,56 -> 1234.56)
     if ',' in s and '.' in s:
-        # If both comma and dot, assume Brazilian format
         if s.rfind(',') > s.rfind('.'):
             s = s.replace('.', '').replace(',', '.')
     elif ',' in s and s.count(',') == 1:
-        # Single comma, could be decimal separator
         parts = s.split(',')
         if len(parts) == 2 and len(parts[1]) <= 2:
             s = s.replace(',', '.')
     
     try:
         value = float(s)
-        # Sanity check for prices
-        if 0 < value < 1000000:  # Reasonable price range
+        if 0 < value < 1000000:  
             return value
         return None
     except (ValueError, TypeError):
@@ -152,7 +152,6 @@ def to_float(x) -> Optional[float]:
 
 
 def safe_json_loads(text: str) -> Optional[Dict]:
-    """Safely load JSON with better error handling"""
     if not text or not text.strip():
         return None
     try:
@@ -163,7 +162,6 @@ def safe_json_loads(text: str) -> Optional[Dict]:
 
 
 def _save_parquet_with_fallback(df: pd.DataFrame, out_path: Path, csv_name: str):
-    """Save parquet with CSV fallback and proper error handling"""
     try:
         out_path.parent.mkdir(parents=True, exist_ok=True)
         df.to_parquet(out_path, index=False, engine='auto')
@@ -179,7 +177,6 @@ def _save_parquet_with_fallback(df: pd.DataFrame, out_path: Path, csv_name: str)
 
 
 def unwrap_ml_click(url: Optional[str]) -> Optional[str]:
-    """Unwrap MercadoLivre click tracking URLs"""
     if not url or not isinstance(url, str):
         return url
     try:
@@ -197,14 +194,12 @@ def unwrap_ml_click(url: Optional[str]) -> Optional[str]:
 
 
 def name_from_url(url_unwrapped: Optional[str]) -> Optional[str]:
-    """Extract product name from URL path"""
     if not url_unwrapped or not isinstance(url_unwrapped, str):
         return None
     try:
         parsed = urlparse(url_unwrapped)
         path = (parsed.path or "").strip("/").lower()
         
-        # Clean path
         s = re.sub(r"[-_/]+", " ", path)
         s = re.sub(r"\.(html|htm|php|aspx)$", "", s, flags=re.IGNORECASE)
         s = re.sub(r"\s+", " ", s).strip()
@@ -218,15 +213,12 @@ def name_from_url(url_unwrapped: Optional[str]) -> Optional[str]:
 
 
 def name_from_query(query: Optional[str]) -> Optional[str]:
-    """Extract product name from query/filename"""
     if not query or not isinstance(query, str):
         return None
     
-    # Extract base name from filename pattern
     match = re.search(r"(.+?)_(?:\d{8})_(?:\d{6})\.(?:jsonl|json|csv|txt)$", query, flags=re.I)
     base = match.group(1) if match else query
     
-    # Clean base name
     s = re.sub(r"[-_]+", " ", base)
     s = re.sub(r"\s+", " ", s).strip().lower()
     
@@ -236,7 +228,6 @@ def name_from_query(query: Optional[str]) -> Optional[str]:
 
 
 def infer_marketplace_from_url(url_unwrapped: Optional[str]) -> Optional[str]:
-    """Infer marketplace from URL with enhanced detection"""
     if not url_unwrapped or not isinstance(url_unwrapped, str):
         return None
     try:
@@ -244,7 +235,6 @@ def infer_marketplace_from_url(url_unwrapped: Optional[str]) -> Optional[str]:
     except Exception:
         return None
     
-    # Marketplace detection mapping
     marketplace_patterns = {
         "mercadolivre": ["mercadolivre.com", "mercadolibre.com", "mlb.com"],
         "magalu": ["magazineluiza.com.br", "magalu.com"],
@@ -260,20 +250,17 @@ def infer_marketplace_from_url(url_unwrapped: Optional[str]) -> Optional[str]:
         if any(pattern in host for pattern in patterns):
             return marketplace
     
-    # Return cleaned hostname if no match
     return host.split(":")[0] if host else None
 
 
 def parse_captured_from_query(query: Optional[str]) -> pd.Timestamp:
-    """Parse capture timestamp from query with enhanced error handling"""
     if not query or not isinstance(query, str):
         return pd.NaT
     
-    # Try multiple patterns
     patterns = [
-        r"_(\d{8})_(\d{6})",  # Original pattern
-        r"(\d{8})_(\d{6})",   # Without leading underscore
-        r"(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})",  # Alternative format
+        r"_(\d{8})_(\d{6})",  
+        r"(\d{8})_(\d{6})",   
+        r"(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})",  
     ]
     
     for pattern in patterns:
@@ -294,10 +281,8 @@ def parse_captured_from_query(query: Optional[str]) -> pd.Timestamp:
 
 
 def normalize_record(raw: Dict[str, Any], meta: Dict[str, Any]) -> Dict[str, Any]:
-    """Enhanced record normalization with better field mapping"""
     
     def pick_field(*keys):
-        """Pick first non-empty value from multiple possible keys"""
         for key in keys:
             if key in raw:
                 value = raw[key]
@@ -379,7 +364,6 @@ def normalize_record(raw: Dict[str, Any], meta: Dict[str, Any]) -> Dict[str, Any
 
 
 def meta_from_path(path: Path) -> Dict[str, str]:
-    """Extract metadata from file path with enhanced detection"""
     parts_lower = [s.lower() for s in path.parts]
     
     marketplace = "unknown"
@@ -413,7 +397,6 @@ def meta_from_path(path: Path) -> Dict[str, str]:
 
 
 def process_csv_file(path: Path) -> List[Dict[str, Any]]:
-    """Process CSV file with enhanced error handling and encoding detection"""
     rows = []
     meta = meta_from_path(path)
     
@@ -455,12 +438,15 @@ def process_csv_file(path: Path) -> List[Dict[str, Any]]:
 
 def iter_input_files():
     extensions = {".jsonl", ".json", ".csv"}
-    for marketplace, directories in MARKET_PATHS.items():
+    market_paths = globals().get("MARKET_PATHS", {}) or {}
+    if not market_paths:
+        prod_logger.debug("MARKET_PATHS não definido; pulando ingestão de diretórios de scraper.")
+        return
+    for marketplace, directories in market_paths.items():
         for directory in directories:
             if not directory.exists():
                 prod_logger.debug(f"Directory does not exist: {directory}")
                 continue
-            
             try:
                 for path in directory.rglob("*"):
                     if path.suffix.lower() in extensions and path.is_file():
@@ -468,7 +454,6 @@ def iter_input_files():
             except Exception as e:
                 prod_logger.error(f"Error accessing directory {directory}: {e}")
                 continue
-
 
 def ingest_scraper_dirs() -> Generator[List[Dict[str, Any]], None, None]:
     rows = []
@@ -773,248 +758,242 @@ def validate_dataframe(df: pd.DataFrame, name: str) -> pd.DataFrame:
 def clean_and_snapshot(all_rows_df: pd.DataFrame, out_db: Optional[Path] = None):
     if not all_rows_df.empty:
         all_rows_df = validate_dataframe(all_rows_df, "input_data")
-        
+
         required_columns = {
-            'marketplace': None,
-            'sku_norm': '',
-            'captured_at': pd.NaT
+            "marketplace": None,
+            "sku_norm": "",
+            "captured_at": pd.NaT,
         }
-        
         for col, default_val in required_columns.items():
             if col not in all_rows_df.columns:
                 all_rows_df[col] = default_val
+
+        if "sku_norm" not in all_rows_df.columns or all_rows_df["sku_norm"].isna().all():
+            sku_source = all_rows_df.get("sku_text", all_rows_df.get("title", ""))
+            all_rows_df["sku_norm"] = sku_source.fillna("").apply(lambda x: norm_sku(str(x)) if x else "")
+
+        if "captured_at" not in all_rows_df.columns or all_rows_df["captured_at"].isna().all():
+            all_rows_df["captured_at"] = all_rows_df.get("query", "").apply(parse_captured_from_query)
         
-        if 'sku_norm' not in all_rows_df.columns or all_rows_df['sku_norm'].isna().all():
-            sku_source = all_rows_df.get('sku_text', all_rows_df.get('title', ''))
-            all_rows_df['sku_norm'] = sku_source.fillna('').apply(
-                lambda x: norm_sku(str(x)) if x else ''
-            )
-        
-        if 'captured_at' not in all_rows_df.columns or all_rows_df['captured_at'].isna().all():
-            all_rows_df['captured_at'] = all_rows_df.get('query', '').apply(parse_captured_from_query)
-        
-        all_rows_df['captured_at'] = pd.to_datetime(all_rows_df['captured_at'], errors='coerce', utc=True)
-        
+        all_rows_df["captured_at"] = pd.to_datetime(all_rows_df["captured_at"], errors="coerce", utc=True)
+
+        for col in all_rows_df.select_dtypes(include=['datetime64[ns, UTC]', 'datetime64[ns]']).columns:
+                all_rows_df[col] = all_rows_df[col].astype(str)
+
         try:
-            key_columns = ["marketplace", "sku_norm", "captured_at"]
+            if 'listing_id' in all_rows_df.columns and all_rows_df['listing_id'].notna().any():
+                key_columns = ["marketplace", "listing_id", "captured_at"]  
+            else:
+                key_columns = ["marketplace", "url", "captured_at"]
+
             to_sql_merge(all_rows_df, "market_items", key_cols=key_columns)
-            prod_logger.info(f"Merged {len(all_rows_df)} new records into market_items")
+            prod_logger.info(f"Merged {len(all_rows_df)} new records into market_items (keys={key_columns})")
         except Exception as e:
             prod_logger.warning(f"Merge failed, using append: {e}")
             to_sql(all_rows_df, "market_items", if_exists="append", index=False)
-    
+
     if not _table_exists("market_items"):
         prod_logger.info("Table 'market_items' does not exist. Nothing to rebuild yet.")
         return
-    
+
     try:
         full_data = read_sql("SELECT * FROM market_items")
     except Exception as e:
         prod_logger.error(f"Error reading market_items table: {e}")
         return
-    
     if full_data.empty:
         prod_logger.info("market_items table is empty after ingestion.")
         return
-    
+
     prod_logger.info(f"Processing {len(full_data)} total records from market_items")
-    
+
     try:
-        full_data['url_unwrapped'] = full_data['url'].apply(unwrap_ml_click)
-        
-        inferred_marketplace = full_data['url_unwrapped'].apply(infer_marketplace_from_url)
-        full_data['marketplace'] = np.where(
-            full_data['marketplace'].isna() | (full_data['marketplace'] == full_data.get('source', '')),
+        full_data["url_unwrapped"] = full_data["url"].apply(unwrap_ml_click)
+
+        inferred_marketplace = full_data["url_unwrapped"].apply(infer_marketplace_from_url)
+        full_data["marketplace"] = np.where(
+            full_data["marketplace"].isna() | (full_data["marketplace"] == full_data.get("source", "")),
             inferred_marketplace,
-            full_data['marketplace']
+            full_data["marketplace"],
         )
-        
-        title_from_url = full_data['url_unwrapped'].apply(name_from_url)
-        title_from_query = full_data['query'].apply(name_from_query)
-        full_data['title'] = full_data['title'].fillna(title_from_url).fillna(title_from_query)
-        
-        full_data['price'] = pd.to_numeric(full_data['price'], errors='coerce')
-        full_data['promo_price'] = pd.to_numeric(full_data['promo_price'], errors='coerce')
-        
-        parsed_timestamps = full_data['query'].apply(parse_captured_from_query)
-        full_data['captured_at'] = pd.to_datetime(full_data.get('captured_at'), errors='coerce', utc=True)
-        full_data.loc[full_data['captured_at'].isna(), 'captured_at'] = parsed_timestamps
-        full_data['captured_date'] = full_data['captured_at'].dt.date.astype('string')
-        
+
+        title_from_url = full_data["url_unwrapped"].apply(name_from_url)
+        title_from_query = full_data["query"].apply(name_from_query)
+        full_data["title"] = full_data["title"].fillna(title_from_url).fillna(title_from_query)
+
+        full_data["price"] = pd.to_numeric(full_data["price"], errors="coerce")
+        full_data["promo_price"] = pd.to_numeric(full_data["promo_price"], errors="coerce")
+
+        parsed_timestamps = full_data["query"].apply(parse_captured_from_query)
+        full_data["captured_at"] = pd.to_datetime(full_data.get("captured_at"), errors="coerce", utc=True)
+        full_data.loc[full_data["captured_at"].isna(), "captured_at"] = parsed_timestamps
+        full_data["captured_date"] = full_data["captured_at"].dt.date.astype("string")
+
         prod_logger.info("Data enrichment completed successfully")
-        
     except Exception as e:
         prod_logger.error(f"Error during data enrichment: {e}")
         raise
-    
+
     essential_mask = (
-        (~full_data['price'].isna()) &
-        (full_data['price'] > 0) &
-        (~full_data['url_unwrapped'].isna()) &
-        (~full_data['title'].isna()) &
-        (~full_data['marketplace'].isna())
+        (~full_data["price"].isna())
+        & (full_data["price"] > 0)
+        & (~full_data["url_unwrapped"].isna())
+        & (~full_data["title"].isna())
+        & (~full_data["marketplace"].isna())
     )
-    
     clean_data = full_data.loc[essential_mask].copy()
-    
     if clean_data.empty:
         prod_logger.warning("No records passed essential filters")
         return
-    
     prod_logger.info(f"After essential filters: {len(clean_data)} records remain")
-    
-    clean_data['url'] = clean_data['url_unwrapped']
-    clean_data.drop(columns=['url_unwrapped'], inplace=True, errors='ignore')
-    
-    clean_data.sort_values('captured_at', ascending=False, inplace=True)
-    
+
+    clean_data["url"] = clean_data["url_unwrapped"]
+    clean_data.drop(columns=["url_unwrapped"], inplace=True, errors="ignore")
+
+    clean_data.sort_values("captured_at", ascending=False, inplace=True)
+
     try:
-        has_cod_prod = clean_data['cod_prod'].notna()
-        
-        df_with_cod = clean_data[has_cod_prod].drop_duplicates(
-            subset=['marketplace', 'cod_prod'], keep='first'
-        )
-        
-        df_without_cod = clean_data[~has_cod_prod].drop_duplicates(
-            subset=['marketplace', 'url'], keep='first'
-        )
-        
-        clean_data = pd.concat([df_with_cod, df_without_cod], ignore_index=True)
-        clean_data = clean_data.drop_duplicates(
-            subset=['marketplace', 'title', 'price'], keep='last'
-        )
-        
-        prod_logger.info(f"After deduplication: {len(clean_data)} records remain")
-        
+        has_listing = "listing_id" in clean_data.columns and clean_data["listing_id"].notna().any()
+
+        if has_listing:
+            dedup_a = clean_data.drop_duplicates(
+                subset=["marketplace", "listing_id", "captured_at", "price", "promo_price"],
+                keep="last",
+            )
+            clean_data = dedup_a
+        else:
+            dedup_b = clean_data.drop_duplicates(
+                subset=["marketplace", "url", "captured_at", "price", "promo_price"],
+                keep="last",
+            )
+            clean_data = dedup_b
+
+        prod_logger.info(f"After strict de-dup (keep all listings): {len(clean_data)} records remain")
     except Exception as e:
         prod_logger.error(f"Error during deduplication: {e}")
         raise
-    
+
     try:
-        has_cod_prod = clean_data['cod_prod'].notna()
-        if has_cod_prod.any():
+        has_cod_prod = ("cod_prod" in clean_data.columns) and clean_data["cod_prod"].notna().any()
+        if has_cod_prod:
             canonical_names_cod = (
-                clean_data.loc[has_cod_prod]
-                .groupby('cod_prod', dropna=False)['title']
-                .agg(lambda x: x.value_counts().index[0] if not x.empty else None)
-                .rename('product_name_cod')
-                .reset_index()
+            clean_data.loc[clean_data["cod_prod"].notna()]
+            .groupby(["marketplace", "cod_prod"], dropna=False)["title"] # <-- ALTERAÇÃO AQUI
+            .agg(lambda x: x.value_counts().index[0] if not x.empty else None)
+            .rename("product_name_cod")
+            .reset_index()
             )
-            clean_data = clean_data.merge(canonical_names_cod, on='cod_prod', how='left')
+            clean_data = clean_data.merge(canonical_names_cod, on=["marketplace", "cod_prod"], how="left")
         else:
-            clean_data['product_name_cod'] = None
-        
-        no_cod_mask = ~has_cod_prod
+            clean_data["product_name_cod"] = None
+
+        no_cod_mask = ~clean_data["cod_prod"].notna() if "cod_prod" in clean_data.columns else pd.Series(False, index=clean_data.index)
         if no_cod_mask.any():
             canonical_names_sku = (
                 clean_data.loc[no_cod_mask]
-                .groupby(['marketplace', 'sku_norm'], dropna=False)['title']
+                .groupby(["marketplace", "sku_norm"], dropna=False)["title"]
                 .agg(lambda x: x.value_counts().index[0] if not x.empty else None)
-                .rename('product_name_sku')
+                .rename("product_name_sku")
                 .reset_index()
             )
-            clean_data = clean_data.merge(canonical_names_sku, on=['marketplace', 'sku_norm'], how='left')
+            clean_data = clean_data.merge(canonical_names_sku, on=["marketplace", "sku_norm"], how="left")
         else:
-            clean_data['product_name_sku'] = None
-        
-        clean_data['product_name'] = clean_data['product_name_cod'].fillna(clean_data['product_name_sku'])
-        clean_data.drop(columns=['product_name_cod', 'product_name_sku'], inplace=True, errors='ignore')
-        
+            clean_data["product_name_sku"] = None
+
+        clean_data["product_name"] = clean_data["product_name_cod"].fillna(clean_data["product_name_sku"])
+        clean_data.drop(columns=["product_name_cod", "product_name_sku"], inplace=True, errors="ignore")
+
         prod_logger.info("Canonical product names generated successfully")
-        
     except Exception as e:
         prod_logger.error(f"Error generating canonical names: {e}")
-        clean_data['product_name'] = clean_data['title']
-    
-    if 'product_name' not in clean_data.columns or clean_data['product_name'].isna().all():
+        clean_data["product_name"] = clean_data["title"]
+
+    if "product_name" not in clean_data.columns or clean_data["product_name"].isna().all():
         prod_logger.warning("Coluna 'product_name' não foi criada, usando 'title' como fallback.")
-        clean_data['product_name'] = clean_data['title']
-    
+        clean_data["product_name"] = clean_data["title"]
+
     try:
         clean_data = enrich_with_parsed_fields(clean_data)
         prod_logger.info("Tire size parsing completed successfully")
     except Exception as e:
         prod_logger.error(f"Error during tire size parsing: {e}")
-    
+
     clean_data = validate_dataframe(clean_data, "clean_data")
-    
+
     try:
         to_sql(clean_data, "market_items_clean", if_exists="replace", index=False)
         prod_logger.info(f"Saved {len(clean_data)} clean records to market_items_clean")
     except Exception as e:
         prod_logger.error(f"Error saving clean data: {e}")
         raise
-    
+
     try:
-        if clean_data['cod_prod'].notna().any():
-            key_columns = ['cod_prod']
+        if ("cod_prod" in clean_data.columns) and clean_data["cod_prod"].notna().any():
+            key_columns = ["marketplace", "cod_prod"] 
         else:
-            key_columns = ['marketplace', 'sku_norm']
-        
+            key_columns = ["marketplace", "sku_norm"]
+
         snapshot_data = clean_data[
-            clean_data.groupby(key_columns)['captured_at'].transform('max') == clean_data['captured_at']
+            clean_data.groupby(key_columns)["captured_at"].transform("max") == clean_data["captured_at"]
         ].drop_duplicates(subset=key_columns)
-        
+
         to_sql(snapshot_data, "unifier_input", if_exists="replace", index=False)
         prod_logger.info(f"Created snapshot with {len(snapshot_data)} records")
-        
     except Exception as e:
         prod_logger.error(f"Error creating snapshot: {e}")
-        snapshot_data = clean_data.copy()  
-    
+        snapshot_data = clean_data.copy()
+
     try:
-        if 'cod_prod' in key_columns:
+        if "cod_prod" in snapshot_data.columns and snapshot_data["cod_prod"].notna().any():
             canonical_products = (
-                clean_data.groupby('cod_prod', dropna=False)['product_name']
+                clean_data.groupby(["marketplace", "cod_prod"], dropna=False)["product_name"]
                 .agg(lambda x: x.value_counts().index[0] if not x.empty else None)
                 .reset_index()
             )
         else:
             canonical_products = (
-                clean_data.groupby(['marketplace', 'sku_norm'], dropna=False)['product_name']
+                clean_data.groupby(["marketplace", "sku_norm"], dropna=False)["product_name"]
                 .agg(lambda x: x.value_counts().index[0] if not x.empty else None)
                 .reset_index()
             )
-        
-        canonical_products = canonical_products.rename(columns={'product_name': 'product_name'})
-        to_sql(canonical_products, "products_dim", if_exists="replace", index=False)
+
+        to_sql(canonical_products.rename(columns={"product_name": "product_name"}), "products_dim", if_exists="replace", index=False)
         prod_logger.info(f"Created products dimension with {len(canonical_products)} records")
-        
     except Exception as e:
         prod_logger.error(f"Error creating canonical products: {e}")
-        canonical_products = pd.DataFrame()  
-    
+        canonical_products = pd.DataFrame()
+
     try:
         ensure_dirs()
         _save_parquet_with_fallback(
-            clean_data, 
-            SETTINGS.processed_dir / "market_items_clean.parquet", 
-            "market_items_clean.csv"
+            clean_data,
+            SETTINGS.processed_dir / "market_items_clean.parquet",
+            "market_items_clean.csv",
         )
         _save_parquet_with_fallback(
-            snapshot_data, 
-            SETTINGS.processed_dir / "unifier_input.parquet", 
-            "unifier_input.csv"
+            snapshot_data,
+            SETTINGS.processed_dir / "unifier_input.parquet",
+            "unifier_input.csv",
         )
-        
     except Exception as e:
         prod_logger.error(f"Error saving parquet files: {e}")
-    
+
     if out_db is not None:
         try:
             export_sqlite_outputs(clean_data, snapshot_data, canonical_products, out_db)
         except Exception as e:
             prod_logger.error(f"Error exporting to SQLite {out_db}: {e}")
-    
+
     try:
         generate_diagnostic_report(full_data, clean_data, essential_mask)
     except Exception as e:
         prod_logger.debug(f"Error generating diagnostic report: {e}")
-    
+
     prod_logger.info(f"✅ Processing completed successfully")
     prod_logger.info(f"   → market_items_clean: {len(clean_data)} records")
     prod_logger.info(f"   → unifier_input: {len(snapshot_data)} records")
     prod_logger.info(f"   → products_dim: {len(canonical_products)} records")
+
 
 
 def generate_diagnostic_report(full_data: pd.DataFrame, clean_data: pd.DataFrame, mask: pd.Series):
@@ -1119,10 +1098,45 @@ def rebuild_from_existing():
     
     return None, None, None
 
+def ingest_input_path(input_path: Union[str, Path]) -> List[Dict[str, Any]]:
+    inp = Path(input_path)
+    rows: List[Dict[str, Any]] = []
+
+    if not inp.exists():
+        prod_logger.error(f"--input não existe: {inp}")
+        return rows
+
+    if inp.is_file():
+        ext = inp.suffix.lower()
+        if ext == ".jsonl":
+            return process_jsonl_file(inp)   
+        elif ext == ".json":
+            return process_json_file(inp)    
+        elif ext == ".csv":
+            return process_csv_file(inp)     
+        else:
+            prod_logger.warning(f"Extensão não suportada em --input: {ext}")
+            return rows
+
+    for path in inp.rglob("*"):
+        if path.is_file() and path.suffix.lower() in {".jsonl", ".json", ".csv"}:
+            try:
+                if path.suffix.lower() == ".jsonl":
+                    rows.extend(process_jsonl_file(path))
+                elif path.suffix.lower() == ".json":
+                    rows.extend(process_json_file(path))
+                elif path.suffix.lower() == ".csv":
+                    rows.extend(process_csv_file(path))
+            except Exception as e:
+                prod_logger.error(f"Erro processando {path}: {e}")
+                continue
+
+    return rows
 
 def main():
     global BATCH_SIZE
     global MARKET_PATHS
+    global prod_logger
     parser = argparse.ArgumentParser(description="ETL Pipeline for Marketplace Data")
     parser.add_argument("--raw_dir", help="Directory containing JSON/CSV files")
     parser.add_argument("--sqlite_dir", help="Directory containing SQLite databases")
@@ -1134,8 +1148,15 @@ def main():
     parser.add_argument("--verbose", "-v", action="store_true",
                        help="Enable verbose logging")
     parser.add_argument("--scraper_root", type=Path, help="Diretório raiz onde as pastas dos scrapers (mercadolivre, magalu, etc.) estão localizadas.")
+    parser.add_argument("--input", "-i", action="append",
+                        help="Arquivo ou diretório a processar. Pode repetir várias vezes.")
+    parser.add_argument("--only-input", action="store_true",
+                        help="Processa apenas o(s) caminho(s) informado(s) em --input e ignora scans padrão.")
+    parser.add_argument("--log_dir", default="log",
+                        help="Diretório onde salvar o log (default: log)")
 
     args = parser.parse_args()
+    prod_logger = setup_logging(args.log_dir)
     
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
@@ -1148,10 +1169,10 @@ def main():
             
         SCRAPER_ROOT = args.scraper_root
         MARKET_PATHS = {
-            "mercadolivre": [SCRAPER_ROOT / "mercadolivre" / "data" / "raw"],
-            "magalu": [SCRAPER_ROOT / "MagazineLuiza" / "data" / "raw"],
-            "pneustore": [SCRAPER_ROOT / "pneustore" / "dados" / "raw"],
-        }
+        "mercadolivre": [SCRAPER_ROOT / "mercadolivre" / "data" / "raw"],
+        "magalu":       [SCRAPER_ROOT / "MagazineLuiza" / "data" / "raw"],
+        "pneustore":    [SCRAPER_ROOT / "pneustore" / "dados" / "raw"],
+    }
         prod_logger.info(f"Usando diretório raiz de scrapers personalizado: {SCRAPER_ROOT}")
 
     
@@ -1175,37 +1196,56 @@ def main():
         prod_logger.info(f"   → Batch size: {BATCH_SIZE}")
         
         all_new_rows = []
-        
-        prod_logger.info("📂 Ingesting data from all sources...")
-        
-        try:
-            scraper_rows = ingest_scraper_dirs()
-            for batch in scraper_rows:  
-                all_new_rows.extend(batch)
-            prod_logger.info(f"   → Scraper directories: {len(all_new_rows)} records")
-        except Exception as e:
-            prod_logger.error(f"Error ingesting scraper directories: {e}")
-        
-        try:
-            json_rows = ingest_json()
-            all_new_rows.extend(json_rows)
-            prod_logger.info(f"   → JSON/JSONL files: {len(json_rows)} records")
-        except Exception as e:
-            prod_logger.error(f"Error ingesting JSON files: {e}")
-        
-        try:
-            csv_rows = ingest_csv()
-            all_new_rows.extend(csv_rows)
-            prod_logger.info(f"   → CSV files: {len(csv_rows)} records")
-        except Exception as e:
-            prod_logger.error(f"Error ingesting CSV files: {e}")
-        
-        try:
-            sqlite_rows = ingest_sqlite()
-            all_new_rows.extend(sqlite_rows)
-            prod_logger.info(f"   → SQLite databases: {len(sqlite_rows)} records")
-        except Exception as e:
-            prod_logger.error(f"Error ingesting SQLite files: {e}")
+        prod_logger.info("📂 Ingesting data conforme argumentos...")
+
+        if args.input:
+            total_input = 0
+            for inp in args.input:
+                rows_from_inp = ingest_input_path(inp)
+                all_new_rows.extend(rows_from_inp)
+                total_input += len(rows_from_inp)
+            prod_logger.info(f"   → --input: {total_input} registros dos caminhos informados")
+
+            if args.only_input:
+                prod_logger.info("   → --only-input ativo: ignorando outras fontes.")
+            else:
+                prod_logger.info("   → --only-input NÃO informado: seguiremos com fontes padrão também.")
+
+        if not (args.input and args.only_input):
+            try:
+                if args.scraper_root:
+                    for batch in ingest_scraper_dirs():
+                        all_new_rows.extend(batch)
+                    prod_logger.info("   → Scraper directories: OK (com --scraper_root)")
+                else:
+                    prod_logger.info("   → Scraper directories: ignorado (sem --scraper_root)")
+            except Exception as e:
+                prod_logger.error(f"Error ingesting scraper directories: {e}")
+
+            try:
+                json_rows = ingest_json()
+                all_new_rows.extend(json_rows)
+                prod_logger.info(f"   → JSON/JSONL files: {len(json_rows)} registros")
+            except Exception as e:
+                prod_logger.error(f"Error ingesting JSON files: {e}")
+
+            try:
+                csv_rows = ingest_csv()
+                all_new_rows.extend(csv_rows)
+                prod_logger.info(f"   → CSV files: {len(csv_rows)} registros")
+            except Exception as e:
+                prod_logger.error(f"Error ingesting CSV files: {e}")
+
+            try:
+                if args.sqlite_dir: 
+                    sqlite_rows = ingest_sqlite()
+                    all_new_rows.extend(sqlite_rows)
+                    prod_logger.info(f"   → SQLite databases: {len(sqlite_rows)} registros")
+                else:
+                    prod_logger.info("   → SQLite databases: ignorado (sem --sqlite_dir)")
+            except Exception as e:
+                prod_logger.error(f"Error ingesting SQLite files: {e}")
+
         
         if not all_new_rows and not args.force_rebuild:
             prod_logger.info("📝 No new data found (idempotent run)")
@@ -1252,7 +1292,6 @@ def main():
         return 1
     
     return 0
-
 
 if __name__ == "__main__":
     exit_code = main()
